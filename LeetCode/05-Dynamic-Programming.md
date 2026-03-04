@@ -399,3 +399,295 @@ def minDistance(word1, word2):
 ### 复杂度分析
 - **时间复杂度**：O(m·n)
 - **空间复杂度**：O(m·n)
+
+---
+
+## 10. 最长回文子串（Longest Palindromic Substring）
+
+**题号**：005  
+**难度**：中等
+
+### 题目描述
+给你一个字符串 `s`，找到 `s` 中最长的 **回文子串**。
+
+### 示例
+```
+输入：s = "babad"
+输出："bab"
+解释："aba" 同样是符合题意的答案
+
+输入：s = "cbbd"
+输出："bb"
+```
+
+### 解题思路
+中心扩展法，从每个位置向两边扩展；或动态规划。
+
+### 代码实现
+```python
+def longestPalindrome(s):
+    if not s:
+        return ""
+    
+    start, end = 0, 0
+    
+    def expandAroundCenter(left, right):
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return right - left - 1
+    
+    for i in range(len(s)):
+        len1 = expandAroundCenter(i, i)       # 奇数长度
+        len2 = expandAroundCenter(i, i + 1)   # 偶数长度
+        max_len = max(len1, len2)
+        if max_len > end - start:
+            start = i - (max_len - 1) // 2
+            end = i + max_len // 2
+    
+    return s[start:end+1]
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n²)
+- **空间复杂度**：O(1)
+
+---
+
+## 11. 分割等和子集（Partition Equal Subset Sum）
+
+**题号**：416  
+**难度**：中等
+
+### 题目描述
+给你一个 **只包含正整数** 的 **非空** 数组 `nums`。请你判断是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。
+
+### 示例
+```
+输入：nums = [1,5,11,5]
+输出：true
+解释：数组可以分割成 [1, 5, 5] 和 [11]
+
+输入：nums = [1,2,3,5]
+输出：false
+解释：数组不能分割成两个元素和相等的子集
+```
+
+### 解题思路
+0-1 背包问题，判断是否存在子集和为总和的一半。
+
+### 代码实现
+```python
+def canPartition(nums):
+    total = sum(nums)
+    if total % 2 != 0:
+        return False
+    
+    target = total // 2
+    dp = [False] * (target + 1)
+    dp[0] = True
+    
+    for num in nums:
+        for i in range(target, num - 1, -1):
+            dp[i] = dp[i] or dp[i - num]
+    
+    return dp[target]
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n·target)
+- **空间复杂度**：O(target)
+
+---
+
+## 12. 单词拆分（Word Break）
+
+**题号**：139  
+**难度**：中等
+
+### 题目描述
+给你一个字符串 `s` 和一个字符串列表 `wordDict` 作为字典。请你判断是否可以利用字典中出现的单词拼接出 `s`。
+
+**注意**：不要求字典中出现的单词全部都使用，并且字典中的单词可以重复使用。
+
+### 示例
+```
+输入: s = "leetcode", wordDict = ["leet", "code"]
+输出: true
+解释: 返回 true 因为 "leetcode" 可以由 "leet" 和 "code" 拼接成
+
+输入: s = "applepenapple", wordDict = ["apple", "pen"]
+输出: true
+```
+
+### 解题思路
+`dp[i]` 表示 `s[0:i]` 是否可以被拆分。
+
+### 代码实现
+```python
+def wordBreak(s, wordDict):
+    word_set = set(wordDict)
+    n = len(s)
+    dp = [False] * (n + 1)
+    dp[0] = True
+    
+    for i in range(1, n + 1):
+        for j in range(i):
+            if dp[j] and s[j:i] in word_set:
+                dp[i] = True
+                break
+    
+    return dp[n]
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n²)
+- **空间复杂度**：O(n)
+
+---
+
+## 13. 乘积最大子数组（Maximum Product Subarray）
+
+**题号**：152  
+**难度**：中等
+
+### 题目描述
+给你一个整数数组 `nums`，请你找出数组中乘积最大的非空连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。
+
+测试用例的答案是一个 **32-位** 整数。
+
+### 示例
+```
+输入: nums = [2,3,-2,4]
+输出: 6
+解释: 子数组 [2,3] 有最大乘积 6
+
+输入: nums = [-2,0,-1]
+输出: 0
+解释: 结果不能为 2，因为 [-2,-1] 不是子数组
+```
+
+### 解题思路
+同时维护最大和最小值（负数可能变成最大），遍历更新。
+
+### 代码实现
+```python
+def maxProduct(nums):
+    if not nums:
+        return 0
+    
+    max_prod = min_prod = result = nums[0]
+    
+    for i in range(1, len(nums)):
+        if nums[i] < 0:
+            max_prod, min_prod = min_prod, max_prod
+        
+        max_prod = max(nums[i], max_prod * nums[i])
+        min_prod = min(nums[i], min_prod * nums[i])
+        result = max(result, max_prod)
+    
+    return result
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(1)
+
+---
+
+## 14. 最长有效括号（Longest Valid Parentheses）
+
+**题号**：032  
+**难度**：困难
+
+### 题目描述
+给你一个只包含 `'('` 和 `')'` 的字符串，找出最长有效（匹配正确）括号子串的长度。
+
+### 示例
+```
+输入：s = "(()"
+输出：2
+解释：最长有效括号子串是 "()"
+
+输入：s = ")()())"
+输出：4
+解释：最长有效括号子串是 "()()"
+
+输入：s = ""
+输出：0
+```
+
+### 解题思路
+栈存储索引，栈底元素为当前有效括号子串的前一个位置。
+
+### 代码实现
+```python
+def longestValidParentheses(s):
+    stack = [-1]  # 初始值，用于计算长度
+    max_len = 0
+    
+    for i, char in enumerate(s):
+        if char == '(':
+            stack.append(i)
+        else:
+            stack.pop()
+            if not stack:
+                stack.append(i)  # 新的基准位置
+            else:
+                max_len = max(max_len, i - stack[-1])
+    
+    return max_len
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(n)
+
+---
+
+## 15. 最佳买卖股票时机含冷冻期（Best Time to Buy and Sell Stock with Cooldown）
+
+**题号**：309  
+**难度**：中等
+
+### 题目描述
+给定一个整数数组 `prices`，其中第 `prices[i]` 表示某支股票第 `i` 天的价格。
+
+在每一天，你可以决定是否购买和/或出售股票。你在任何时候 **最多** 只能持有 **一股** 股票。你也可以先购买，然后在 **同一天** 出售。
+
+返回你能获得的 **最大** 利润。注意：卖出股票后，你无法在第二天买入股票 (即冷冻期为 1 天)。
+
+### 示例
+```
+输入: prices = [1,2,3,0,2]
+输出: 3
+解释: 对应的交易状态为: [买入, 卖出, 冷冻期, 买入, 卖出]
+```
+
+### 解题思路
+三个状态：持有股票、不持有股票且处于冷冻期、不持有股票且不处于冷冻期。
+
+### 代码实现
+```python
+def maxProfit(prices):
+    if not prices:
+        return 0
+    
+    n = len(prices)
+    hold = [0] * n      # 持有股票
+    sold = [0] * n      # 不持有，刚卖出（冷冻期）
+    rest = [0] * n      # 不持有，可买
+    
+    hold[0] = -prices[0]
+    
+    for i in range(1, n):
+        hold[i] = max(hold[i-1], rest[i-1] - prices[i])
+        sold[i] = hold[i-1] + prices[i]
+        rest[i] = max(rest[i-1], sold[i-1])
+    
+    return max(sold[-1], rest[-1])
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(n) - 可优化至 O(1)

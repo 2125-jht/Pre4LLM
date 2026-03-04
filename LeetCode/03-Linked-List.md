@@ -289,3 +289,221 @@ def getIntersectionNode(headA, headB):
 ### 复杂度分析
 - **时间复杂度**：O(m+n)
 - **空间复杂度**：O(1)
+
+---
+
+## 8. 排序链表（Sort List）
+
+**题号**：148  
+**难度**：中等
+
+### 题目描述
+给你链表的头结点 `head`，请将其按 **升序** 排列并返回 **排序后的链表**。
+
+### 示例
+```
+输入：head = [4,2,1,3]
+输出：[1,2,3,4]
+
+输入：head = [-1,5,3,4,0]
+输出：[-1,0,3,4,5]
+```
+
+### 解题思路
+归并排序，快慢指针找中点，递归排序左右两部分后合并。
+
+### 代码实现
+```python
+def sortList(head):
+    if not head or not head.next:
+        return head
+    
+    # 快慢指针找中点
+    slow, fast = head, head.next
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    
+    mid = slow.next
+    slow.next = None
+    
+    # 递归排序
+    left = sortList(head)
+    right = sortList(mid)
+    
+    # 合并两个有序链表
+    dummy = ListNode(0)
+    curr = dummy
+    while left and right:
+        if left.val < right.val:
+            curr.next = left
+            left = left.next
+        else:
+            curr.next = right
+            right = right.next
+        curr = curr.next
+    curr.next = left or right
+    
+    return dummy.next
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n·logn)
+- **空间复杂度**：O(logn) - 递归栈空间
+
+---
+
+## 9. 随机链表的复制（Copy List with Random Pointer）
+
+**题号**：138  
+**难度**：中等
+
+### 题目描述
+给你一个长度为 `n` 的链表，每个节点包含一个额外增加的随机指针 `random`，该指针可以指向链表中的任何节点或空节点。
+
+构造这个链表的 **深拷贝**。深拷贝应该正好由 `n` 个 **全新** 节点组成，其中每个新节点的值与其对应的原节点的值相同。
+
+### 示例
+```
+输入：head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
+输出：[[7,null],[13,0],[11,4],[10,2],[1,0]]
+```
+
+### 解题思路
+哈希表存储原节点到新节点的映射，两次遍历完成复制。
+
+### 代码实现
+```python
+def copyRandomList(head):
+    if not head:
+        return None
+    
+    # 第一次遍历：创建新节点并建立映射
+    old_to_new = {}
+    curr = head
+    while curr:
+        old_to_new[curr] = ListNode(curr.val)
+        curr = curr.next
+    
+    # 第二次遍历：设置 next 和 random 指针
+    curr = head
+    while curr:
+        if curr.next:
+            old_to_new[curr].next = old_to_new[curr.next]
+        if curr.random:
+            old_to_new[curr].random = old_to_new[curr.random]
+        curr = curr.next
+    
+    return old_to_new[head]
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(n)
+
+---
+
+## 10. 回文链表（Palindrome Linked List）
+
+**题号**：234  
+**难度**：简单
+
+### 题目描述
+给你一个单链表的头节点 `head`，请判断该链表是否为回文链表。如果是，返回 `true`；否则，返回 `false`。
+
+### 示例
+```
+输入：head = [1,2,2,1]
+输出：true
+
+输入：head = [1,2]
+输出：false
+```
+
+### 解题思路
+快慢指针找中点，反转后半部分，然后比较前后两部分。
+
+### 代码实现
+```python
+def isPalindrome(head):
+    if not head or not head.next:
+        return True
+    
+    # 快慢指针找中点
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    
+    # 反转后半部分
+    prev = None
+    while slow:
+        next_temp = slow.next
+        slow.next = prev
+        prev = slow
+        slow = next_temp
+    
+    # 比较前后两部分
+    left, right = head, prev
+    while right:  # 后半部分可能更短
+        if left.val != right.val:
+            return False
+        left = left.next
+        right = right.next
+    
+    return True
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(1)
+
+---
+
+## 11. 奇偶链表（Odd Even Linked List）
+
+**题号**：328  
+**难度**：中等
+
+### 题目描述
+给定单链表的头节点 `head`，将所有索引为奇数的节点和索引为偶数的节点分别组合在一起，然后返回重新排序的列表。
+
+**第一个**节点的索引被认为是 **奇数**，**第二个**节点的索引为 **偶数**，以此类推。
+
+请注意，偶数组和奇数组内部的相对顺序应该与输入时保持一致。
+
+### 示例
+```
+输入: head = [1,2,3,4,5]
+输出: [1,3,5,2,4]
+
+输入: head = [2,1,3,5,6,4,7]
+输出: [2,3,6,7,1,5,4]
+```
+
+### 解题思路
+分离奇偶节点，然后将偶链表接到奇链表后面。
+
+### 代码实现
+```python
+def oddEvenList(head):
+    if not head or not head.next:
+        return head
+    
+    odd = head           # 奇数索引节点头
+    even = head.next     # 偶数索引节点头
+    even_head = even     # 保存偶数头
+    
+    while even and even.next:
+        odd.next = even.next
+        odd = odd.next
+        even.next = odd.next
+        even = even.next
+    
+    odd.next = even_head
+    return head
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(1)

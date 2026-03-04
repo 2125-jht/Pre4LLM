@@ -328,3 +328,291 @@ def flatten(root):
 ### 复杂度分析
 - **时间复杂度**：O(n)
 - **空间复杂度**：O(h)
+
+---
+
+## 9. 相同的树（Same Tree）
+
+**题号**：100  
+**难度**：简单
+
+### 题目描述
+给你两棵二叉树的根节点 `p` 和 `q`，编写一个函数来检验这两棵树是否相同。
+
+如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
+
+### 示例
+```
+输入：p = [1,2,3], q = [1,2,3]
+输出：true
+
+输入：p = [1,2], q = [1,null,2]
+输出：false
+```
+
+### 解题思路
+递归比较，同时遍历两棵树。
+
+### 代码实现
+```python
+def isSameTree(p, q):
+    if not p and not q:
+        return True
+    if not p or not q:
+        return False
+    return (p.val == q.val and
+            isSameTree(p.left, q.left) and
+            isSameTree(p.right, q.right))
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(h)
+
+---
+
+## 10. 对称二叉树（Symmetric Tree）
+
+**题号**：101  
+**难度**：简单
+
+### 题目描述
+给你一个二叉树的根节点 `root`，检查它是否轴对称。
+
+### 示例
+```
+输入：root = [1,2,2,3,4,4,3]
+输出：true
+
+输入：root = [1,2,2,null,3,null,3]
+输出：false
+```
+
+### 解题思路
+递归比较左右子树是否镜像对称。
+
+### 代码实现
+```python
+def isSymmetric(root):
+    if not root:
+        return True
+    
+    def isMirror(left, right):
+        if not left and not right:
+            return True
+        if not left or not right:
+            return False
+        return (left.val == right.val and
+                isMirror(left.left, right.right) and
+                isMirror(left.right, right.left))
+    
+    return isMirror(root.left, root.right)
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(h)
+
+---
+
+## 11. 从前序与中序遍历序列构造二叉树（Construct BT from Preorder and Inorder）
+
+**题号**：105  
+**难度**：中等
+
+### 题目描述
+给定两个整数数组 `preorder` 和 `inorder`，其中 `preorder` 是二叉树的**先序遍历**，`inorder` 是同一棵树的**中序遍历**，请构造二叉树并返回其根节点。
+
+### 示例
+```
+输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
+输出: [3,9,20,null,null,15,7]
+```
+
+### 解题思路
+先序第一个元素是根，在中序中找到根的位置划分左右子树。
+
+### 代码实现
+```python
+def buildTree(preorder, inorder):
+    if not preorder or not inorder:
+        return None
+    
+    # 先序第一个元素是根
+    root_val = preorder[0]
+    root = TreeNode(root_val)
+    
+    # 在中序中找到根的位置
+    root_idx = inorder.index(root_val)
+    
+    # 递归构建左右子树
+    root.left = buildTree(preorder[1:1+root_idx], inorder[:root_idx])
+    root.right = buildTree(preorder[1+root_idx:], inorder[root_idx+1:])
+    
+    return root
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n²) - 可用哈希表优化到 O(n)
+- **空间复杂度**：O(n)
+
+---
+
+## 12. 路径总和 III（Path Sum III）
+
+**题号**：437  
+**难度**：中等
+
+### 题目描述
+给定一个二叉树的根节点 `root`，和一个整数目标值 `targetSum`，求该二叉树里节点值之和等于 `targetSum` 的 **路径** 的数目。
+
+**路径** 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。
+
+### 示例
+```
+输入：root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
+输出：3
+解释：和等于 8 的路径有:
+1. 5 -> 3
+2. 5 -> 2 -> 1
+3. -3 -> 11
+```
+
+### 解题思路
+前缀和 + 哈希表，类似数组中和为 k 的子数组个数。
+
+### 代码实现
+```python
+def pathSum(root, targetSum):
+    from collections import defaultdict
+    prefix_sum = defaultdict(int)
+    prefix_sum[0] = 1  # 前缀和为 0 的路径有 1 条
+    
+    def dfs(node, curr_sum):
+        if not node:
+            return 0
+        
+        curr_sum += node.val
+        count = prefix_sum[curr_sum - targetSum]  # 以当前节点结尾的路径数
+        
+        prefix_sum[curr_sum] += 1
+        count += dfs(node.left, curr_sum)
+        count += dfs(node.right, curr_sum)
+        prefix_sum[curr_sum] -= 1  # 回溯
+        
+        return count
+    
+    return dfs(root, 0)
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(n)
+
+---
+
+## 13. 二叉树的右视图（Binary Tree Right Side View）
+
+**题号**：199  
+**难度**：中等
+
+### 题目描述
+给定一个二叉树的 **根节点** `root`，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。
+
+### 示例
+```
+输入: [1,2,3,null,5,null,4]
+输出: [1,3,4]
+解释:
+       1            <---
+     /   \
+    2     3         <---
+     \     \
+      5     4       <---
+```
+
+### 解题思路
+BFS 层序遍历，每层最后一个节点；或 DFS 优先遍历右子树。
+
+### 代码实现
+```python
+def rightSideView(root):
+    if not root:
+        return []
+    from collections import deque
+    queue = deque([root])
+    res = []
+    
+    while queue:
+        level_size = len(queue)
+        for i in range(level_size):
+            node = queue.popleft()
+            if i == level_size - 1:  # 每层最后一个节点
+                res.append(node.val)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+    
+    return res
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(n)
+
+---
+
+## 14. 二叉树中的最大路径和（Binary Tree Maximum Path Sum）
+
+**题号**：124  
+**难度**：困难
+
+### 题目描述
+二叉树中的 **路径** 被定义为一条节点序列，序列中每对相邻节点之间都存在一条边。同一个节点在一条路径序列中 **至多出现一次** 。该路径 **至少包含一个** 节点，且不一定经过根节点。
+
+**路径和** 是路径中各节点值的总和。
+
+给你一个二叉树的根节点 `root`，返回其 **最大路径和** 。
+
+### 示例
+```
+输入：root = [1,2,3]
+输出：6
+解释：最优路径是 2 -> 1 -> 3 ，路径和为 2 + 1 + 3 = 6
+
+输入：root = [-10,9,20,null,null,15,7]
+输出：42
+解释：最优路径是 15 -> 20 -> 7 ，路径和为 15 + 20 + 7 = 42
+```
+
+### 解题思路
+后序遍历，计算以当前节点为起点的最大路径和，更新全局最大值。
+
+### 代码实现
+```python
+def maxPathSum(root):
+    self.max_sum = float('-inf')
+    
+    def maxGain(node):
+        if not node:
+            return 0
+        
+        # 递归计算左右子树的最大贡献值（负数取0表示不选）
+        left_gain = max(maxGain(node.left), 0)
+        right_gain = max(maxGain(node.right), 0)
+        
+        # 以当前节点为根的路径和
+        price_newpath = node.val + left_gain + right_gain
+        self.max_sum = max(self.max_sum, price_newpath)
+        
+        # 返回以当前节点为起点的最大路径和（只能选一边）
+        return node.val + max(left_gain, right_gain)
+    
+    maxGain(root)
+    return self.max_sum
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(h)

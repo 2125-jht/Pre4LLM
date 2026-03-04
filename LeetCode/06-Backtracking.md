@@ -162,7 +162,63 @@ def combinationSum(candidates, target):
 
 ---
 
-## 4. 全排列（Permutations）
+## 4. 组合总和 II（Combination Sum II）
+
+**题号**：040  
+**难度**：中等
+
+### 题目描述
+给定一个候选人集合 `candidates` 和一个目标数 `target`，找出 `candidates` 中所有可以使数字和为 `target` 的组合。
+
+`candidates` 中的每个数字在每个组合中只能使用 **一次**。
+
+**注意**：解集不能包含重复的组合。
+
+### 示例
+```
+输入: candidates = [10,1,2,7,6,1,5], target = 8
+输出:
+[[1,1,6],[1,2,5],[1,7],[2,6]]
+
+输入: candidates = [2,5,2,1,2], target = 5
+输出:
+[[1,2,2],[5]]
+```
+
+### 解题思路
+回溯，每个数字只能用一次，需要去重（排序后跳过相同元素）。
+
+### 代码实现
+```python
+def combinationSum2(candidates, target):
+    res = []
+    candidates.sort()
+    
+    def backtrack(start, target, path):
+        if target == 0:
+            res.append(path[:])
+            return
+        for i in range(start, len(candidates)):
+            # 去重：跳过同一层相同的元素
+            if i > start and candidates[i] == candidates[i-1]:
+                continue
+            if candidates[i] > target:
+                break
+            path.append(candidates[i])
+            backtrack(i + 1, target - candidates[i], path)  # i+1，不可重复
+            path.pop()
+    
+    backtrack(0, target, [])
+    return res
+```
+
+### 复杂度分析
+- **时间复杂度**：O(2ⁿ)
+- **空间复杂度**：O(n)
+
+---
+
+## 5. 全排列（Permutations）
 
 **题号**：046  
 **难度**：中等
@@ -211,7 +267,62 @@ def permute(nums):
 
 ---
 
-## 5. 子集（Subsets）
+## 6. 全排列 II（Permutations II）
+
+**题号**：047  
+**难度**：中等
+
+### 题目描述
+给定一个可包含重复数字的序列 `nums`，**按任意顺序** 返回所有不重复的全排列。
+
+### 示例
+```
+输入：nums = [1,1,2]
+输出：
+[[1,1,2],[1,2,1],[2,1,1]]
+
+输入：nums = [1,2,3]
+输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+```
+
+### 解题思路
+回溯，排序后去重，同一层相同元素不能重复使用。
+
+### 代码实现
+```python
+def permuteUnique(nums):
+    res = []
+    nums.sort()
+    n = len(nums)
+    visited = [False] * n
+    
+    def backtrack(path):
+        if len(path) == n:
+            res.append(path[:])
+            return
+        for i in range(n):
+            if visited[i]:
+                continue
+            # 去重：同一层相同元素不能重复使用
+            if i > 0 and nums[i] == nums[i-1] and not visited[i-1]:
+                continue
+            visited[i] = True
+            path.append(nums[i])
+            backtrack(path)
+            path.pop()
+            visited[i] = False
+    
+    backtrack([])
+    return res
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n·n!)
+- **空间复杂度**：O(n)
+
+---
+
+## 7. 子集（Subsets）
 
 **题号**：078  
 **难度**：中等
@@ -255,7 +366,54 @@ def subsets(nums):
 
 ---
 
-## 6. 单词搜索（Word Search）
+## 8. 子集 II（Subsets II）
+
+**题号**：090  
+**难度**：中等
+
+### 题目描述
+给你一个整数数组 `nums`，其中可能包含重复元素，请你返回该数组所有可能的子集（幂集）。
+
+解集 **不能** 包含重复的子集。返回的解集中，子集可以按 **任意顺序** 排列。
+
+### 示例
+```
+输入：nums = [1,2,2]
+输出：[[],[1],[1,2],[1,2,2],[2],[2,2]]
+
+输入：nums = [0]
+输出：[[],[0]]
+```
+
+### 解题思路
+回溯，排序后去重，同一层相同元素不能重复选择。
+
+### 代码实现
+```python
+def subsetsWithDup(nums):
+    res = []
+    nums.sort()
+    
+    def backtrack(start, path):
+        res.append(path[:])
+        for i in range(start, len(nums)):
+            if i > start and nums[i] == nums[i-1]:  # 去重
+                continue
+            path.append(nums[i])
+            backtrack(i + 1, path)
+            path.pop()
+    
+    backtrack(0, [])
+    return res
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n·2ⁿ)
+- **空间复杂度**：O(n)
+
+---
+
+## 9. 单词搜索（Word Search）
 
 **题号**：079  
 **难度**：中等
@@ -315,7 +473,7 @@ def exist(board, word):
 
 ---
 
-## 7. N 皇后（N-Queens）
+## 10. N 皇后（N-Queens）
 
 **题号**：051  
 **难度**：困难

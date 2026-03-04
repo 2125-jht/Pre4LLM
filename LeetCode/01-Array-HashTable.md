@@ -280,3 +280,203 @@ def trap(height):
 ### 复杂度分析
 - **时间复杂度**：O(n)
 - **空间复杂度**：O(1)
+
+---
+
+## 8. 除自身以外数组的乘积（Product of Array Except Self）
+
+**题号**：238  
+**难度**：中等
+
+### 题目描述
+给你一个整数数组 `nums`，返回 **数组 `answer`** ，其中 `answer[i]` 等于 `nums` 中除 `nums[i]` 之外其余各元素的乘积。
+
+题目数据 **保证** 数组 `nums`之中任意元素的全部前缀元素和后缀的乘积都在 **32 位** 整数范围内。
+
+请**不要使用除法**，且在 `O(n)` 时间复杂度内完成此题。
+
+### 示例
+```
+输入: nums = [1,2,3,4]
+输出: [24,12,8,6]
+解释：
+- answer[0] = 2*3*4 = 24
+- answer[1] = 1*3*4 = 12
+- answer[2] = 1*2*4 = 8
+- answer[3] = 1*2*3 = 6
+
+输入: nums = [-1,1,0,-3,3]
+输出: [0,0,9,0,0]
+```
+
+### 解题思路
+两次遍历，先计算左边所有元素的乘积，再计算右边所有元素的乘积。
+
+### 代码实现
+```python
+def productExceptSelf(nums):
+    n = len(nums)
+    answer = [1] * n
+    
+    # 先计算左边所有元素的乘积
+    left_product = 1
+    for i in range(n):
+        answer[i] = left_product
+        left_product *= nums[i]
+    
+    # 再计算右边所有元素的乘积
+    right_product = 1
+    for i in range(n - 1, -1, -1):
+        answer[i] *= right_product
+        right_product *= nums[i]
+    
+    return answer
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(1)（输出数组不计入空间复杂度）
+
+---
+
+## 9. 寻找重复数（Find the Duplicate Number）
+
+**题号**：287  
+**难度**：中等
+
+### 题目描述
+给定一个包含 `n + 1` 个整数的数组 `nums`，其数字都在 `[1, n]` 范围内（包括 `1` 和 `n`），可知至少存在一个重复的整数。
+
+假设 `nums` 只有 **一个重复的整数**，返回这个重复的数。
+
+你设计的解决方案必须 **不修改** 数组 `nums` 且只用常量级 `O(1)` 的额外空间。
+
+### 示例
+```
+输入：nums = [1,3,4,2,2]
+输出：2
+
+输入：nums = [3,1,3,4,2]
+输出：3
+```
+
+### 解题思路
+ Floyd 判圈算法（快慢指针），将数组看作链表，重复数字即环的入口。
+
+### 代码实现
+```python
+def findDuplicate(nums):
+    # 快慢指针找环
+    slow = fast = nums[0]
+    while True:
+        slow = nums[slow]
+        fast = nums[nums[fast]]
+        if slow == fast:
+            break
+    
+    # 找环的入口
+    slow = nums[0]
+    while slow != fast:
+        slow = nums[slow]
+        fast = nums[fast]
+    
+    return slow
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(1)
+
+---
+
+## 10. 缺失的第一个正数（First Missing Positive）
+
+**题号**：041  
+**难度**：困难
+
+### 题目描述
+给你一个未排序的整数数组 `nums`，请你找出其中没有出现的最小的正整数。
+
+请你实现时间复杂度为 `O(n)` 并且只使用常数级别额外空间的解决方案。
+
+### 示例
+```
+输入：nums = [1,2,0]
+输出：3
+解释：数字 1, 2 存在，下一个正整数是 3
+
+输入：nums = [3,4,-1,1]
+输出：2
+
+输入：nums = [7,8,9,11,12]
+输出：1
+```
+
+### 解题思路
+原地哈希，将数字 `i` 放到索引 `i-1` 处，然后遍历找第一个不匹配的位置。
+
+### 代码实现
+```python
+def firstMissingPositive(nums):
+    n = len(nums)
+    
+    # 原地哈希：将数字 i 放到索引 i-1 处
+    for i in range(n):
+        while 1 <= nums[i] <= n and nums[nums[i] - 1] != nums[i]:
+            nums[nums[i] - 1], nums[i] = nums[i], nums[nums[i] - 1]
+    
+    # 找第一个不匹配的位置
+    for i in range(n):
+        if nums[i] != i + 1:
+            return i + 1
+    
+    return n + 1
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(1)
+
+---
+
+## 11. 轮转数组（Rotate Array）
+
+**题号**：189  
+**难度**：中等
+
+### 题目描述
+给定一个整数数组 `nums`，将数组中的元素向右轮转 `k` 个位置，其中 `k` 是非负数。
+
+### 示例
+```
+输入: nums = [1,2,3,4,5,6,7], k = 3
+输出: [5,6,7,1,2,3,4]
+解释:
+向右轮转 1 步: [7,1,2,3,4,5,6]
+向右轮转 2 步: [6,7,1,2,3,4,5]
+向右轮转 3 步: [5,6,7,1,2,3,4]
+```
+
+### 解题思路
+三次反转：先整体反转，再分别反转前 k 个和剩余部分。
+
+### 代码实现
+```python
+def rotate(nums, k):
+    n = len(nums)
+    k %= n  # 处理 k > n 的情况
+    
+    def reverse(left, right):
+        while left < right:
+            nums[left], nums[right] = nums[right], nums[left]
+            left += 1
+            right -= 1
+    
+    reverse(0, n - 1)      # 整体反转
+    reverse(0, k - 1)      # 反转前 k 个
+    reverse(k, n - 1)      # 反转剩余部分
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(1)
