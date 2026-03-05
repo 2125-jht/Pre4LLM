@@ -22,7 +22,7 @@
 ```
 
 ### 解题思路
-双指针 + 哈希集合，右指针扩展窗口，遇到重复字符时左指针收缩。
+双指针 + 哈希集合，右指针扩展窗口，遇到重复字符时左指针收缩，直到该字符不在重复。
 
 ### 代码实现
 ```python
@@ -68,21 +68,24 @@ def lengthOfLongestSubstring(s):
 
 ### 代码实现
 ```python
-def findAnagrams(s, p):
-    from collections import Counter
-    p_count = Counter(p)
-    s_count = Counter()
-    res = []
-    for i, c in enumerate(s):
-        s_count[c] += 1
-        if i >= len(p):
-            if s_count[s[i - len(p)]] == 1:
-                del s_count[s[i - len(p)]]
-            else:
-                s_count[s[i - len(p)]] -= 1
-        if s_count == p_count:
-            res.append(i - len(p) + 1)
-    return res
+def findAnagrams(self, s: str, p: str) -> List[int]:
+    m, n = len(s), len(p)
+    if n > m: return []
+    need = Counter(p)           # p 的字符需求
+    window = Counter(s[:n])     # 初始窗口
+    ans = []
+
+    if window == need: 
+        ans.append(0)
+    for i in range(n, m):
+        window[s[i]] += 1
+        window[s[i - n]] -= 1
+        if window[s[i - n]] == 0:
+            del window[s[i - n]]
+        
+        if window == need:
+            ans.append(i - n + 1)
+    return ans
 ```
 
 ### 复杂度分析
@@ -178,6 +181,27 @@ def maxSlidingWindow(nums, k):
 - **时间复杂度**：O(n)
 - **空间复杂度**：O(k)
 
+### 解题思路
+优先队列（堆），大根堆维护窗口元素和索引，根据索引决定是否弹出堆顶元素。
+
+### 代码实现
+```python
+def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+    heap = []
+    ans = []
+    for i in range(len(nums)):
+        heapq.heappush(heap, (-nums[i], i))
+        if i >= k-1:
+            while heap[0][1] <= i-k:
+                heapq.heappop(heap)
+            ans.append(-heap[0][0])
+    return ans
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n log n)
+- **空间复杂度**：O(n)
+
 ---
 
 ## 5. 最小覆盖子串（Minimum Window Substring）
@@ -200,7 +224,7 @@ def maxSlidingWindow(nums, k):
 ```
 
 ### 解题思路
-双指针 + 字符计数，收缩左边界找最小窗口。
+双指针 + 字符计数，收缩左边界找最小窗口，难点在于窗口字符串判断。
 
 ### 代码实现
 ```python

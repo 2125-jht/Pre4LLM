@@ -258,28 +258,62 @@ def threeSum(nums):
 ```
 
 ### 解题思路
-双指针，维护左右最大高度，计算当前位置能接的雨水量。
+双指针，分别从两端出发，维护左右最大高度，谁那边低就先处理谁，计算当前位置能接的雨水量。
 
 ### 代码实现
 ```python
-def trap(height):
+def trap(self, height: List[int]) -> int:
     left, right = 0, len(height) - 1
-    left_max = right_max = water = 0
+    left_max = right_max = 0
+    ans = 0
+    
     while left < right:
         if height[left] < height[right]:
-            left_max = max(left_max, height[left])
-            water += left_max - height[left]
+            # 左边矮：右边一定有个更高的墙挡着，安全接水
+            if height[left] >= left_max:
+                left_max = height[left]  # 更新左边最高墙
+            else:
+                ans += left_max - height[left]  # 接水！
             left += 1
         else:
-            right_max = max(right_max, height[right])
-            water += right_max - height[right]
+            # 右边矮：左边一定有个更高的墙挡着，安全接水  
+            if height[right] >= right_max:
+                right_max = height[right]
+            else:
+                ans += right_max - height[right]
             right -= 1
-    return water
+    return ans
 ```
 
 ### 复杂度分析
 - **时间复杂度**：O(n)
 - **空间复杂度**：O(1)
+
+### 解题思路
+单调栈，想象你不是一格一格算水，而是一层一层铺水。栈里存的是"可能成为左边边界的墙"（索引），保持从栈底到栈顶递减。当遇到一堵更高的墙时，栈顶那堵墙就成了凹槽底部，可以计算它和新的墙、以及栈中下一个墙形成的"水坑"。
+
+### 代码实现
+```python
+def trap(self, height: List[int]) -> int:
+    stack = []  # 存储索引，维护递减栈
+    ans = 0
+    
+    for i, h in enumerate(height):
+        while stack and h > height[stack[-1]]:
+            top = stack.pop()
+            if not stack:
+                break
+            # 计算当前层接水量
+            distance = i - stack[-1] - 1
+            bounded_height = min(height[stack[-1]], h) - height[top]
+            ans += distance * bounded_height
+        stack.append(i)
+    return ans
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(n)
 
 ---
 
