@@ -65,11 +65,11 @@ Pre4LLM/
 | 章节 | 内容 | 状态 |
 |------|------|------|
 | 01-Foundation | 大模型基础概念（Transformer、注意力机制等） | ✅ 已完成 |
-| 02-Training | 预训练、SFT、RLHF 等训练技术 | 📝 部分完成 |
+| 02-Training | 预训练、SFT、RLHF 等训练技术 | ✅ 已完成 |
 | 03-Multimodal | 多模态模型架构与训练 | ✅ 已完成 |
 | 04-RAG-and-Agent | RAG 流程、Agent 架构、ReAct 等 | ✅ 已完成 |
 | 05-Evaluation | 模型评估方法与指标 | ✅ 已完成 |
-| 06-Inference | 推理优化与部署 | 📝 待补充 |
+| 06-Inference | 推理优化与部署 | ✅ 已完成 |
 
 > **提示**：部分章节（如 7、8 章节面试题）为半开放题目，建议结合自身经历回答。
 
