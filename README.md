@@ -20,8 +20,8 @@ Pre4LLM/
 │   └── LLM-Basics.md                  # 大模型基础概念与原理
 │
 ├── 02-Training/                       # 训练技术
-│   ├── Pretraining.md                 # 预训练技术（待补充）
-│   ├── SFT.md                         # 监督微调（待补充）
+│   ├── Pretraining.md                 # 预训练技术
+│   ├── SFT.md                         # 监督微调
 │   └── RLHF.md                        # 强化学习人类反馈对齐
 │
 ├── 03-Multimodal/                     # 多模态
@@ -35,22 +35,29 @@ Pre4LLM/
 │   └── Model-Evaluation.md            # 评估方法与指标
 │
 ├── 06-Inference/                      # 推理与部署
-│   └── Inference-Optimization.md      # 推理优化技术（待补充）
+│   └── Inference-Optimization.md      # 推理优化技术
 │
 ├── LeetCode/                          # 算法刷题（LeetCode Hot 100）
 │   ├── README.md                      # 刷题进度总览
-│   ├── 01-Array-HashTable.md          # 数组与哈希表（7题）
+│   ├── 01-Array-HashTable.md          # 数组与哈希表（11题）
 │   ├── 02-Sliding-Window.md           # 滑动窗口（5题）
-│   ├── 03-Linked-List.md              # 链表（7题）
-│   ├── 04-Binary-Tree.md              # 二叉树（8题）
-│   ├── 05-Dynamic-Programming.md      # 动态规划（9题）
-│   ├── 06-Backtracking.md             # 回溯（7题）
+│   ├── 03-Linked-List.md              # 链表（11题）
+│   ├── 04-Binary-Tree.md              # 二叉树（14题）
+│   ├── 05-Dynamic-Programming.md      # 动态规划（15题）
+│   ├── 06-Backtracking.md             # 回溯（10题）
 │   ├── 07-Binary-Search.md            # 二分查找（4题）
 │   ├── 08-Stack-Heap.md               # 栈与堆（5题）
-│   └── 09-Graph.md                    # 图论（4题）
+│   ├── 09-Graph.md                    # 图论（4题）
+│   └── 10-Greedy.md                   # 贪心算法（5题）
 │
-└── Resume/                            # 个人简历相关
-    └── （待补充）
+├── Others/                            # 其他资料
+│   └── Prospects-and-Development.md   # 大模型行业前景与个人发展
+│
+├── Resume/                            # 个人简历相关（待补充）
+│
+└── files/                             # 参考资料文件
+    ├── 00：概率和智力题.pdf
+    └── 大模型 LLM 最全八股和答案.pdf
 
 ```
 
@@ -71,7 +78,7 @@ Pre4LLM/
 | 05-Evaluation | 模型评估方法与指标 | ✅ 已完成 |
 | 06-Inference | 推理优化与部署 | ✅ 已完成 |
 
-> **提示**：部分章节（如 7、8 章节面试题）为半开放题目，建议结合自身经历回答。
+> **提示**：部分章节包含开放性问题，建议结合自身经历回答。
 
 ---
 
@@ -84,28 +91,32 @@ Pre4LLM/
 - ✅ Python 代码实现
 - ✅ 复杂度分析
 
-**当前进度**：56 / 100 题
+**当前进度**：85+ 题
 
 **分类覆盖**：
-- 数组与哈希表（7题）
+- 数组与哈希表（11题）
 - 滑动窗口（5题）
-- 链表（7题）
-- 二叉树（8题）
-- 动态规划（9题）
-- 回溯（7题）
+- 链表（11题）
+- 二叉树（14题）
+- 动态规划（15题）
+- 回溯（10题）
 - 二分查找（4题）
 - 栈与堆（5题）
 - 图论（4题）
+- 贪心算法（5题）
 
 ---
 
 ### 📄 个人简历（Resume）
 
-存放个人简历相关的文档和资料，包括：
-- 简历模板与版本
-- 项目经历整理
-- 面试经验总结
-- 待完善...
+存放个人简历相关的文档和资料，待补充...
+
+---
+
+### 📦 参考资料（files）
+
+- `00：概率和智力题.pdf` - 概率题与智力题汇总
+- `大模型 LLM 最全八股和答案.pdf` - 大模型面试八股文参考
 
 ---
 
