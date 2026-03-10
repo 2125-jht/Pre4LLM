@@ -514,3 +514,93 @@ def rotate(nums, k):
 ### 复杂度分析
 - **时间复杂度**：O(n)
 - **空间复杂度**：O(1)
+
+---
+
+## 12. 最大子数组和（Maximum Subarray）
+
+**题号**：053  
+**难度**：中等
+
+### 题目描述
+给你一个整数数组 `nums`，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+
+**子数组** 是数组中的一个连续部分。
+
+### 示例
+```
+输入：nums = [-2,1,-3,4,-1,2,1,-5,4]
+输出：6
+解释：连续子数组 [4,-1,2,1] 的和最大，为 6
+
+输入：nums = [1]
+输出：1
+```
+
+### 解题思路
+Kadane 算法，`dp[i] = max(nums[i], dp[i-1] + nums[i])`。
+
+### 代码实现
+```python
+def maxSubArray(nums):
+    curr_sum = max_sum = nums[0]
+    for num in nums[1:]:
+        curr_sum = max(num, curr_sum + num)
+        max_sum = max(max_sum, curr_sum)
+    return max_sum
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n)
+- **空间复杂度**：O(1)
+
+---
+
+## 13. 合并区间（Merge Intervals）
+
+**题号**：056  
+**难度**：中等
+
+### 题目描述
+以数组 `intervals` 表示若干个区间的集合，其中单个区间为 `intervals[i] = [starti, endi]` 。请你合并所有重叠的区间，并返回 **一个不重叠的区间数组**，该数组需恰好覆盖输入中的所有区间。
+
+### 示例
+```
+输入：intervals = [[1,3],[2,6],[8,10],[15,18]]
+输出：[[1,6],[8,10],[15,18]]
+解释：区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6]
+
+输入：intervals = [[1,4],[4,5]]
+输出：[[1,5]]
+解释：区间 [1,4] 和 [4,5] 可被视为重叠区间
+```
+
+### 解题思路
+先按区间的 **起点** 进行排序，遍历排序后的区间，如果当前区间起点 <= 上一个区间的终点，说明有重叠，合并（更新终点为两者最大值）
+
+### 代码实现
+```python
+def merge(intervals):
+    if not intervals:
+        return []
+    
+    # 按区间起点排序
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = [intervals[0]]  # 结果列表，先放入第一个区间
+    
+    for i in range(1, len(intervals)):
+        curr = intervals[i]
+        last = merged[-1]
+        
+        if curr[0] <= last[1]:  # 有重叠，合并
+            last[1] = max(last[1], curr[1])
+        else:  # 无重叠，加入新区间
+            merged.append(curr)
+    
+    return merged
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n·logn) - 主要是排序的时间复杂度
+- **空间复杂度**：O(n) - 存储合并后的结果，或 O(logn) 到 O(n) 的排序栈空间
