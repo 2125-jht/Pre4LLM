@@ -220,36 +220,51 @@ def mergeKLists(lists):
 
 ---
 
-## 6. 环形链表（Linked List Cycle）
+## 6. 环形链表Ⅱ（Linked List Cycle II）
 
-**题号**：141  
-**难度**：简单
+**题号**：142  
+**难度**：中等
 
 ### 题目描述
-给你一个链表的头节点 `head`，判断链表中是否有环。
+给定一个链表的头节点 `head`，返回链表开始入环的第一个节点。如果链表无环，则返回 `null`。
 
 如果链表中有某个节点，可以通过连续跟踪 `next` 指针再次到达，则链表中存在环。
 
 ### 示例
 ```
 输入：head = [3,2,0,-4], pos = 1
-输出：true
+输出：tail connects to node index 1
 解释：链表中有一个环，其尾部连接到第二个节点
 ```
 
 ### 解题思路
-快慢指针，相遇则有环。
+快慢指针：
+1. 先判断是否有环（快慢指针相遇）
+2. 有环时，将慢指针移回头部，两指针同速前进，再次相遇点即为环入口
+
+数学推导：设头到环入口距离为 a，环入口到相遇点距离为 b，相遇点到环入口距离为 c。快指针走了 a+b+c+b，慢指针走了 a+b。由于快指针速度是慢指针2倍：2(a+b) = a+b+c+b，可得 a = c。
 
 ### 代码实现
 ```python
-def hasCycle(head):
+def detectCycle(head):
     slow = fast = head
+    
+    # 第一步：判断是否有环，找到相遇点
     while fast and fast.next:
         slow = slow.next
         fast = fast.next.next
         if slow == fast:
-            return True
-    return False
+            break
+    else:
+        return None  # 无环
+    
+    # 第二步：找环入口
+    slow = head
+    while slow != fast:
+        slow = slow.next
+        fast = fast.next
+    
+    return slow
 ```
 
 ### 复杂度分析
