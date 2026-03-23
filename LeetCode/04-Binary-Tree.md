@@ -288,7 +288,50 @@ def isValidBST(root, min_val=float('-inf'), max_val=float('inf')):
 
 ---
 
-## 8. 二叉树展开为链表（Flatten Binary Tree to Linked List）
+## 8. 二叉搜索树中第 K 小的元素（Kth Smallest Element in a BST）
+
+**题号**：230  
+**难度**：中等
+
+### 题目描述
+给定一个二叉搜索树的根节点 `root`，和整数 `k`，请你设计一个算法查找其中第 `k` 小的元素。
+
+### 示例
+```
+输入：root = [3,1,4,null,2], k = 1
+输出：1
+
+输入：root = [5,3,6,2,4,null,null,1], k = 3
+输出：3
+```
+
+### 解题思路
+二叉搜索树中序遍历为递增序列，第 k 个元素即为第 k 小的元素。
+
+### 代码实现
+```python
+def kthSmallest(root, k):
+    stack = []
+    curr = root
+    
+    while curr or stack:
+        while curr:
+            stack.append(curr)
+            curr = curr.left
+        curr = stack.pop()
+        k -= 1
+        if k == 0:
+            return curr.val
+        curr = curr.right
+```
+
+### 复杂度分析
+- **时间复杂度**：O(H + k)，H 为树高，平均 O(log n + k)，最坏 O(n + k)
+- **空间复杂度**：O(H)，递归栈空间
+
+---
+
+## 9. 二叉树展开为链表（Flatten Binary Tree to Linked List）
 
 **题号**：114  
 **难度**：中等
@@ -305,64 +348,26 @@ def isValidBST(root, min_val=float('-inf'), max_val=float('inf')):
 ```
 
 ### 解题思路
-递归，将左右子树分别展开后拼接。
+先序遍历过程中，用 `pre` 指针记录前一个访问的节点，将 `pre.right` 指向当前节点，`pre.left` 置为 `None`，实现原地展开。
 
 ### 代码实现
 ```python
 def flatten(root):
-    if not root:
-        return
-    flatten(root.left)
-    flatten(root.right)
-    
-    temp = root.right
-    root.right = root.left
-    root.left = None
-    
-    curr = root
-    while curr.right:
-        curr = curr.right
-    curr.right = temp
-```
-
-### 复杂度分析
-- **时间复杂度**：O(n)
-- **空间复杂度**：O(h)
-
----
-
-## 9. 相同的树（Same Tree）
-
-**题号**：100  
-**难度**：简单
-
-### 题目描述
-给你两棵二叉树的根节点 `p` 和 `q`，编写一个函数来检验这两棵树是否相同。
-
-如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
-
-### 示例
-```
-输入：p = [1,2,3], q = [1,2,3]
-输出：true
-
-输入：p = [1,2], q = [1,null,2]
-输出：false
-```
-
-### 解题思路
-递归比较，同时遍历两棵树。
-
-### 代码实现
-```python
-def isSameTree(p, q):
-    if not p and not q:
-        return True
-    if not p or not q:
-        return False
-    return (p.val == q.val and
-            isSameTree(p.left, q.left) and
-            isSameTree(p.right, q.right))
+    self.pre = None
+    def preorder(node):
+        if not node:
+            return
+        # 保存左右子树引用
+        left, right = node.left, node.right
+        # 将 pre 的右指针指向当前节点
+        if self.pre:
+            self.pre.left = None
+            self.pre.right = node
+        self.pre = node
+        # 递归处理左右子树
+        preorder(left)
+        preorder(right)
+    preorder(root)
 ```
 
 ### 复杂度分析
@@ -554,6 +559,26 @@ def rightSideView(root):
             if node.right:
                 queue.append(node.right)
     
+    return res
+```
+
+### DFS 解法
+
+```python
+def rightSideView(root):
+    res = []
+    
+    def dfs(node, depth):
+        if not node:
+            return
+        # 第一次访问该深度时，即为右视图看到的节点
+        if depth == len(res):
+            res.append(node.val)
+        # 优先遍历右子树，确保右视图节点先被访问
+        dfs(node.right, depth + 1)
+        dfs(node.left, depth + 1)
+    
+    dfs(root, 0)
     return res
 ```
 

@@ -373,11 +373,7 @@ $$\text{RMSNorm}(x) = \frac{x}{\sqrt{\text{Mean}(x^2) + \epsilon}} \times \gamma
 4. 将处理后的数据传递给下一层
 
 **优点：**
-1. 改善梯度传播，解决梯度消失和梯度爆炸问题
-2. 提高泛化能力
-3. 减少对学习率的敏感性
-4. 网络结构更简洁
-5. 提高模型的可解释性
+1. 改善梯度传播，解决梯度消失和梯度爆炸问题 2. 提高泛化能力 3. 减少对学习率的敏感性 4. 网络结构更简洁 5. 提高模型的可解释性
 
 **4. 各模型使用的归一化方法对比：**
 
@@ -387,12 +383,30 @@ $$\text{RMSNorm}(x) = \frac{x}{\sqrt{\text{Mean}(x^2) + \epsilon}} \times \gamma
 | GPT | LayerNorm (GPT-Norm) | 每个 Transformer 解码层的每个子层之后 |
 | LLaMA | RMSNorm | Pre-Norm（在自注意力和 FFN 之前） |
 | T5 | LayerNorm | 编码器和解码器中 |
-| RoBERTa | LayerNorm | 每个 Transformer 编码层中 |
 
 **归一化位置的区别：**
 
-- **Post-Norm（后归一化）：** 在自注意力和 FFN 之后进行归一化（原始 Transformer 使用）
-- **Pre-Norm（前归一化）：** 在自注意力和 FFN 之前进行归一化（现代 LLM 主流，训练更稳定）
+- **Post-Norm（后归一化）：** 在自注意力和 FFN 之后进行归一化（原始 Transformer），性能好，但输出层附近梯度过大训练容易崩溃
+- **Pre-Norm（前归一化）：** 在自注意力和 FFN 之前进行归一化（现代 LLM 主流，训练更稳定），但性能略逊于 Post-LN
+
+**补充：为什么不用 BatchNorm？**
+
+| 对比项 | BatchNorm | LayerNorm |
+|--------|-----------|-----------|
+| **归一化维度** | 沿 batch 维度 | 沿特征维度 |
+| **序列长度** | 不适应变长序列 | 天然支持 |
+| **Batch Size** | 小 batch 效果差 | 与 batch size 无关 |
+| **自回归生成** | 难以处理（需未来信息） | 天然支持 |
+| **训练/推理一致性** | 不一致（用滑动平均） | 完全一致 |
+
+**核心原因：**
+
+1. **小 batch 问题：** LLM 训练 batch size 通常很小（受显存限制），BatchNorm 统计量不稳定
+2. **变长序列：** NLP 序列长度不一，BatchNorm 对同一位置统计无意义
+3. **自回归约束：** 生成任务需逐个 token 预测，BatchNorm 难以满足因果性要求
+4. **分布式开销：** 多卡训练需同步 batch 统计量，增加通信复杂度
+
+**结论：** LayerNorm 对每个样本独立归一化，不依赖 batch 维度，更适合 NLP 任务特点。
 
 ---
 
