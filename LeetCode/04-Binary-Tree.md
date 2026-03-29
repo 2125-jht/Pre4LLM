@@ -81,7 +81,7 @@ def maxDepth(root):
 
 ### 复杂度分析
 - **时间复杂度**：O(n)
-- **空间复杂度**：O(h)，h 为树高
+- **空间复杂度**：O(h)
 
 ---
 
@@ -503,11 +503,35 @@ def pathSum(root, targetSum):
         prefix_sum[curr_sum] += 1
         count += dfs(node.left, curr_sum)
         count += dfs(node.right, curr_sum)
-        prefix_sum[curr_sum] -= 1  # 回溯
+        prefix_sum[curr_sum] -= 1  # 回溯：离开当前节点时，移除当前前缀和的计数
         
         return count
     
     return dfs(root, 0)
+```
+
+### 解法二：双重 DFS
+
+```python
+def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
+    if not root:
+        return 0
+
+    def dfs(root, targetSum):
+        if not root:
+            return 0
+
+        ret = 0
+        if targetSum == root.val: ret = 1
+        ret += dfs(root.left, targetSum - root.val)
+        ret += dfs(root.right, targetSum - root.val)
+        return ret
+
+    path = 0
+    path += dfs(root, targetSum)
+    path += pathSum(root.left, targetSum)
+    path += pathSum(root.right, targetSum)
+    return path
 ```
 
 ### 复杂度分析
@@ -641,3 +665,93 @@ def maxPathSum(root):
 ### 复杂度分析
 - **时间复杂度**：O(n)
 - **空间复杂度**：O(h)
+
+---
+
+## 15. 二叉树的最近公共祖先（Lowest Common Ancestor of a Binary Tree）
+
+**题号**：236  
+**难度**：中等
+
+### 题目描述
+给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
+
+**最近公共祖先**的定义为：对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。
+
+### 示例
+```
+输入：root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
+输出：3
+解释：节点 5 和节点 1 的最近公共祖先是节点 3
+
+输入：root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+输出：5
+解释：节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。
+```
+
+### 解题思路
+递归查找：
+1. 如果当前节点为空，或等于 p，或等于 q，直接返回当前节点
+2. 递归在左右子树中查找 p 和 q
+3. 如果左右子树都找到了，说明当前节点就是最近公共祖先
+4. 如果只有一边找到，返回找到的那一边
+
+### 解法一：递归（后序遍历）
+
+```python
+def lowestCommonAncestor(root, p, q):
+    if not root or root == p or root == q:
+        return root
+    
+    left = lowestCommonAncestor(root.left, p, q)
+    right = lowestCommonAncestor(root.right, p, q)
+    
+    # 左右子树都找到了，当前节点就是 LCA
+    if left and right:
+        return root
+    
+    # 只有一边找到，返回那一边
+    return left if left else right
+```
+
+### 解法二：存储父节点 + 哈希表
+
+**思路**：
+1. 从根节点开始遍历，用哈希表记录每个节点的父节点
+2. 从节点 p 开始，不断向上遍历祖先节点，并用集合记录所有访问过的节点
+3. 从节点 q 开始，不断向上遍历，第一个出现在集合中的节点即为 LCA
+
+```python
+def lowestCommonAncestor(root, p, q):
+    # 记录每个节点的父节点
+    parent = {root: None}
+    
+    def dfs(node):
+        if node.left:
+            parent[node.left] = node
+            dfs(node.left)
+        if node.right:
+            parent[node.right] = node
+            dfs(node.right)
+    
+    dfs(root)
+    
+    # 记录 p 的所有祖先节点
+    ancestors = set()
+    while p:
+        ancestors.add(p)
+        p = parent[p]
+    
+    # 找 q 的祖先中第一个在 ancestors 中的节点
+    while q not in ancestors:
+        q = parent[q]
+    
+    return q
+```
+
+### 复杂度分析
+
+| 解法 | 时间复杂度 | 空间复杂度 |
+|------|-----------|-----------|
+| 递归 | O(n) | O(h) |
+| 存储父节点 | O(n) | O(n) |
