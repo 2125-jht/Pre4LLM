@@ -533,3 +533,102 @@ def solveNQueens(n):
 ### 复杂度分析
 - **时间复杂度**：O(n!)
 - **空间复杂度**：O(n²)
+
+---
+
+## 11. 分割回文串（Palindrome Partitioning）
+
+**题号**：131  
+**难度**：中等
+
+### 题目描述
+给你一个字符串 `s`，请你将 `s` 分割成一些子串，使每个子串都是 **回文串**。返回 `s` 所有可能的分割方案。
+
+### 示例
+```
+输入：s = "aab"
+输出：[["a","a","b"],["aa","b"]]
+
+输入：s = "a"
+输出：[["a"]]
+```
+
+### 解题思路
+回溯，枚举每个分割位置，判断是否为回文串。
+
+### 代码实现
+
+#### 方法一：循环检查（双指针）
+```python
+def partition(s):
+    res = []
+    n = len(s)
+    
+    def is_palindrome(subs):
+        # 双指针循环检查
+        left, right = 0, len(subs) - 1
+        while left < right:
+            if subs[left] != subs[right]:
+                return False
+            left += 1
+            right -= 1
+        return True
+    
+    def backtrack(start, path):
+        if start == n:
+            res.append(path[:])
+            return
+        for i in range(start, n):
+            substr = s[start:i+1]
+            if is_palindrome(substr):
+                path.append(substr)
+                backtrack(i + 1, path)
+                path.pop()
+    
+    backtrack(0, [])
+    return res
+```
+
+#### 方法二：动态规划预处理
+```python
+def partition(s):
+    res = []
+    n = len(s)
+    
+    # dp[i][j] 表示 s[i:j+1] 是否为回文串
+    dp = [[False] * n for _ in range(n)]
+    
+    # 预处理所有子串是否为回文
+    for i in range(n - 1, -1, -1):
+        for j in range(i, n):
+            if i == j:
+                dp[i][j] = True  # 单个字符是回文
+            elif s[i] == s[j]:
+                if j - i == 1:
+                    dp[i][j] = True  # 两个相同字符
+                else:
+                    dp[i][j] = dp[i+1][j-1]  # 依赖内部子串
+    
+    def backtrack(start, path):
+        if start == n:
+            res.append(path[:])
+            return
+        for i in range(start, n):
+            if dp[start][i]:  # O(1) 查询
+                path.append(s[start:i+1])
+                backtrack(i + 1, path)
+                path.pop()
+    
+    backtrack(0, [])
+    return res
+```
+
+### 复杂度分析
+
+**方法一：循环检查**
+- **时间复杂度**：O(n·2ⁿ)，每次判断回文需要 O(n)，共 2ⁿ 种分割方案
+- **空间复杂度**：O(n)，递归栈深度
+
+**方法二：动态规划预处理**
+- **时间复杂度**：O(n² + 2ⁿ)，预处理 O(n²)，回溯 O(2ⁿ)
+- **空间复杂度**：O(n²)，dp 数组 + 递归栈
