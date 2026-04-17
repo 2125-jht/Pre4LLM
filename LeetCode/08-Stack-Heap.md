@@ -188,7 +188,50 @@ def findKthLargest(nums, k):
 
 ---
 
-## 5. 数据流的中位数（Find Median from Data Stream）
+## 5. 前 K 个高频元素（Top K Frequent Elements）
+
+**题号**：347  
+**难度**：中等
+
+### 题目描述
+给你一个整数数组 `nums` 和一个整数 `k`，请你返回其中出现频率前 `k` 高的元素。可以按 **任意顺序** 返回。
+
+### 示例
+```
+输入: nums = [1,1,1,2,2,3], k = 2
+输出: [1,2]
+
+输入: nums = [1], k = 1
+输出: [1]
+```
+
+### 解题思路
+最小堆：先用哈希表统计频率，再维护一个大小为 `k` 的最小堆，堆顶是第 `k` 高频的元素。也可以按频率做桶排序。
+
+### 代码实现（最小堆）
+```python
+def topKFrequent(nums, k):
+    import heapq
+    from collections import Counter
+    
+    count = Counter(nums)
+    heap = []
+    
+    for num, freq in count.items():
+        heapq.heappush(heap, (freq, num))
+        if len(heap) > k:
+            heapq.heappop(heap)
+    
+    return [x[1] for x in heap]
+```
+
+### 复杂度分析
+- **时间复杂度**：O(n·log k)，统计频率 O(n)，建堆 O(n·log k)
+- **空间复杂度**：O(n)，哈希表和堆的空间
+
+---
+
+## 6. 数据流的中位数（Find Median from Data Stream）
 
 **题号**：295  
 **难度**：困难
