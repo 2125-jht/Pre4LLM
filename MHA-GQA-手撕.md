@@ -17,6 +17,12 @@ def MHA(x, W_q, W_k, W_v, W_o, n_heads):
     Q = Q.view(batch, seq, n_heads, head_dim).transpose(1, 2)  # [b, h, s, d]
     K = K.view(batch, seq, n_heads, head_dim).transpose(1, 2)
     V = V.view(batch, seq, n_heads, head_dim).transpose(1, 2)
+    # # kv cache 版本
+    # Q = Q.view(batch, seq, n_heads, head_dim).transpose(1, 2)      # [b, h, 1, d]
+    # K_new = K_new.view(batch, seq, n_heads, head_dim).transpose(1, 2)
+    # V_new = V_new.view(batch, seq, n_heads, head_dim).transpose(1, 2)
+    # K = torch.cat([past_k, K_new], dim=2)   # [b, h, past_seq + 1, d]
+    # V = torch.cat([past_v, V_new], dim=2)
 
     # 3) Scaled Dot-Product Attention
     scores = Q @ K.transpose(-2, -1) / sqrt(head_dim)  # [b, h, s, s]
@@ -33,9 +39,9 @@ def MHA(x, W_q, W_k, W_v, W_o, n_heads):
 ## 2. GQA (Grouped Query Attention)
 
 ```python
-def GQA(x, W_q, W_k, W_v, W_o, n_heads, n_kv_heads):
+def GQA(x, W_q, W_k, W_v, W_o, n_heads, groups):
     # n_heads:    Q 的头数 (如 8)
-    # n_kv_heads: K/V 的头数 (如 2)
+    # n_kv_heads: K/V 的头数 (如 2, groups = 8 // 2)
     batch, seq, dim = x.shape
     head_dim = dim // n_heads
 
@@ -44,15 +50,14 @@ def GQA(x, W_q, W_k, W_v, W_o, n_heads, n_kv_heads):
     K = x @ W_k    # [b, s, n_kv_heads * head_dim]
     V = x @ W_v
 
-    # 2) 分头：Q 分 n_heads，K/V 分 n_kv_heads
+    # 2) 分头：Q 分 n_heads，K/V 分 n_heads // groups
     Q = Q.view(batch, seq, n_heads,    head_dim).transpose(1, 2)  # [b, n_h,  s, d]
-    K = K.view(batch, seq, n_kv_heads, head_dim).transpose(1, 2)  # [b, n_kvh, s, d]
-    V = V.view(batch, seq, n_kv_heads, head_dim).transpose(1, 2)
+    K = K.view(batch, seq, n_heads // groups, head_dim).transpose(1, 2)  # [b, n_kvh, s, d]
+    V = V.view(batch, seq, n_heads // groups, head_dim).transpose(1, 2)
 
     # 3) 把 K/V 复制(repeat)到与 Q 相同的头数，以便做矩阵乘法
-    n_repeat = n_heads // n_kv_heads
-    K = K.repeat_interleave(n_repeat, dim=1)   # [b, n_h, s, d]
-    V = V.repeat_interleave(n_repeat, dim=1)
+    K = K.repeat_interleave(groups, dim=1)   # [b, n_h, s, d]
+    V = V.repeat_interleave(groups, dim=1)
 
     # 4) Attention
     scores = Q @ K.transpose(-2, -1) / sqrt(head_dim)
