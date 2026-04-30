@@ -26,6 +26,11 @@ def MHA(x, W_q, W_k, W_v, W_o, n_heads):
 
     # 3) Scaled Dot-Product Attention
     scores = Q @ K.transpose(-2, -1) / sqrt(head_dim)  # [b, h, s, s]
+    
+    # 因果掩码: 屏蔽未来位置 (j > i 的位置设为 -inf)
+    # mask = torch.triu(torch.ones(seq, seq), diagonal=1).bool()
+    # scores = scores.masked_fill(mask, float('-inf'))
+    
     attn   = softmax(scores, dim=-1)
     out    = attn @ V                                  # [b, h, s, d]
 
