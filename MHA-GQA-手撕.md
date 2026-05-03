@@ -1,4 +1,4 @@
-# MHA & GQA 手撕伪代码
+# MHA & GQA 伪代码
 
 ## 1. MHA (Multi-Head Attention)
 
