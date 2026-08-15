@@ -71,36 +71,44 @@
 
 \datedsubsection{\textbf{大模型推理能力增强} 
 \quad\quad\quad\quad
-\textit{基于解码概率奖励的后训练}}{2025.09 - 2025.12}
+\textit{基于解码概率奖励的无验证器后训练}}{2025.09 - 2025.12}
 \begin{itemize}
-  \item \textbf{项目描述:} 
-  % 需要提升基座模型的通用推理能力以支撑智能体在复杂场景下的逻辑推演与知识应用。
-  面向复杂场景下逻辑推演的需求，整体采用\textbf{冷启动 SFT + RLPR 两阶段训练范式}。
+  % \item \textbf{项目描述:} 
+  % 面向复杂场景下逻辑推演的需求，整体采用\textbf{冷启动 SFT + RLPR 两阶段训练范式}。
   
-  \item \textbf{训练数据:} 
-  % 整体采用\textbf{冷启动 SFT + RLPR 两阶段训练}。
-  基于 DeepSeek-R1 范式构造 8K CoT 数据完成冷启动，使模型掌握规范推理格式。
-  基于 WebInstruct 数据集，使用大模型进行推理复杂度评分（1-4分），筛选出 77K 高质量 RL 训练样本（评分$\geq$3），采用 10-gram 去重避免数据污染。
+  % \item \textbf{训练数据:} 
+  % 基于 DeepSeek-R1 范式构造 8K CoT 数据完成冷启动，使模型掌握规范推理格式。
+  % 基于 WebInstruct 数据集，使用大模型进行推理复杂度评分（1-4分），筛选出 77K 高质量 RL 训练样本（评分$\geq$3），采用 10-gram 去重避免数据污染。
   
-  \item \textbf{技术实现:} 
-  采用 Token 平均解码概率的内在奖励机制（Probability as Reward）替代传统验证器，避免序列似然的高方差问题，引入奖励去偏策略消除题目本身难度偏差，结合自适应标准差过滤动态筛选样本，解决奖励稀疏导致的训练不稳定。
-  基于 Qwen2.5-7B 模型，GRPO 算法（KL\_coef=0, clip\_eps=0.27）进行训练。在 MMLU-Pro（+4.2\%）、TheoremQA（+10.1\%）等多个基准上评估，平均推理能力达到 59.7\%（+7.5\%）。
+  % \item \textbf{技术实现:} 
+  % 采用 Token 平均解码概率的内在奖励机制（Probability as Reward）替代传统验证器，避免序列似然的高方差问题，引入奖励去偏策略消除题目本身难度偏差，结合自适应标准差过滤动态筛选样本，解决奖励稀疏导致的训练不稳定。
+  % 基于 Qwen2.5-7B 模型，GRPO 算法（KL\_coef=0, clip\_eps=0.27）进行训练。在 MMLU-Pro（+4.2\%）、TheoremQA（+10.1\%）等多个基准上评估，平均推理能力达到 59.7\%（+7.5\%）。
+
+  \item \textbf{项目描述:}
+  面向缺少规则验证器的通用领域推理任务，基于 Qwen2.5-7B 构建冷启动 SFT + RLPR 两阶段后训练框架，重点解决传统 RLVR 依赖领域专用验证器、难以扩展至开放域推理的问题。
+
+  \item \textbf{数据构建:}
+  基于 DeepSeek-R1 范式蒸馏 8K 高质量 CoT 数据完成冷启动；从 WebInstruct 中按推理复杂度筛选 77K RL 训练样本，并通过 10-gram 去重控制评测集污染。
+
+  \item \textbf{技术实现:}
+  将 rollout 生成答案替换为参考答案，以模型在给定推理过程下对参考答案 token 的平均概率构造连续奖励；引入无 CoT 基线去偏消除题目本身难度偏差，结合自适应标准差过滤动态筛选样本，实现更稳定的 GRPO 训练；在 MMLU-Pro、TheoremQA 等基准上平均推理能力达到 59.7\%，较基座提升 7.5\%。
 \end{itemize}
 
 
-\vspace{-0.6em}
+% \vspace{-0.6em}
 \datedsubsection{\textbf{长程工具智能体强化学习}
 \quad\quad
 \textit{基于动作级信用分配与可验证过程奖励}}{2026.05 - 2026.07}
 \begin{itemize}
   \item \textbf{项目描述:}
-  面向 ALFWorld 长程工具交互任务，基于 Qwen3-1.7B 构建 Agentic RL 训练框架，重点解决稀疏终局奖励下的动作信用分配与无效探索问题。
+  面向 ALFWorld 长程工具交互任务，基于 Qwen3-4B 构建 Agentic RL 训练框架，重点解决稀疏终局奖励下的动作信用分配与无效探索问题。
 
   \item \textbf{技术实现:}
   针对 GRPO 轨迹级归因过粗、Token-GAE 的信用传播与裁剪粒度同环境决策错位的问题，采用 CAPO 在动作边界估计 critic、沿交互 step 计算 action-level GAE；基于中心化平方根长度校准构造 action-aware ratio，对完整动作统一加权与裁剪。
 
   \item \textbf{奖励优化:}
-  基于 ALFWorld 合法动作集合与符号状态构建 Environment Verifier，识别非法操作和关键子目标进展，融合 terminal reward、invalid penalty 与 potential-based process reward；对比 GRPO、CAPO 与 CAPO + Verifier，降低无效探索并增强长程任务表现。
+  % 基于 ALFWorld 合法动作集合与符号状态构建 Environment Verifier，识别非法操作和关键子目标进展，融合 terminal reward、invalid penalty 与 potential-based process reward；对比 GRPO、CAPO 与 CAPO + Verifier，降低无效探索并增强长程任务表现。
+  基于 ALFWorld 合法动作集合与符号状态构建 Environment Verifier，识别非法操作和关键子目标进展，融合 terminal reward、invalid penalty 与 potential-based process reward，降低无效探索并增强长程任务表现；在 Seen / Unseen 任务上取得 93.86\% / 88.67\% 成功率，较 GRPO 基线提升 12.43 / 14.04 个百分点。
 \end{itemize}
 
 

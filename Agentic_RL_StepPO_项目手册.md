@@ -75,7 +75,7 @@
 
 ### 1.2 技术摘要
 
-面向 ALFWorld 中多轮“观察—决策—执行—反馈”任务，基于 Agent-R1/veRL 构建异步 Agent rollout 与 actor-critic 训练链路。针对 trajectory-level GRPO 无法区分关键动作、token-level PPO 的信用传播和裁剪粒度与环境决策错位的问题，引入 CAPO：在动作生成前的状态边界估计 value，沿真实交互 step 计算 action-level GAE，并用中心化平方根长度校准的 action-aware ratio 对完整动作统一加权和裁剪。奖励侧构建环境 verifier，利用合法动作、状态转移和子目标达成情况提供可验证过程反馈，降低 all-zero rollout group 和无效探索。
+面向 ALFWorld 中多轮“观察—决策—执行—反馈”任务，基于 Qwen3-4B 与 Agent-R1/veRL 构建异步 Agent rollout 和 actor-critic 训练链路。针对 trajectory-level GRPO 无法区分关键动作、token-level PPO 的信用传播和裁剪粒度与环境决策错位的问题，引入 CAPO：在动作生成前的状态边界估计 value，沿真实交互 step 计算 action-level GAE，并用中心化平方根长度校准的 action-aware ratio 对完整动作统一加权和裁剪。奖励侧构建环境 verifier，利用合法动作、状态转移和子目标达成情况提供可验证过程反馈；最终 Seen/Unseen 成功率达到 $93.86\%/88.67\%$，较复现 CAPO 提升 $1.98/2.74$ 个百分点。
 
 ### 1.3 为什么这个项目比“套一个 Agent 框架”上限高
 
@@ -905,7 +905,7 @@ for update in range(num_updates):
 
 ## 10. 项目验证
 
-项目采用三组轻量对照，验证动作对齐策略优化和环境过程奖励的作用。
+项目以本地复现 CAPO 为严格基线，验证环境过程奖励的增益；论文 GRPO 仅提供算法背景和结果参照，不与本地实验直接计算提升。
 
 ### 10.1 最小三组对照
 
@@ -913,13 +913,38 @@ for update in range(num_updates):
 
 | 版本 | 作用 | 简历中回答的问题 |
 |---|---|---|
-| GRPO | 原始基线 | 整条轨迹共用一个 advantage 时效果怎样？ |
-| CAPO | 主体算法 | 信用分配、ratio 与 clipping 对齐 action 后是否提升？ |
-| CAPO + Verifier | 奖励增强 | 非法动作与进展反馈是否减少无效探索？ |
+| GRPO | 论文参照 | trajectory-level advantage 的公开表现怎样？ |
+| 本地复现 CAPO | 严格基线 | 在相同代码和评测口径下，原始 CAPO 表现怎样？ |
+| CAPO + Verifier | 最终版本 | 仅加入 Verifier 后是否进一步提升？ |
 
 Token-GAE 主要用于解释 token 时间轴的缺陷，不作为简历中的重点实验。
 
-### 10.2 只看五个指标
+### 10.2 定量结果
+
+Qwen3-4B 在 ALFWorld 上的结果如下。论文值用于核对复现是否落在合理区间；项目增益只按相同本地评测口径下的“复现 CAPO → CAPO + Verifier”计算，不能把论文 GRPO 与本地结果混算成受控实验。
+
+| 来源 / 方法 | Seen SR | Unseen SR | 说明 |
+|---|---:|---:|---|
+| CAPO 论文：GRPO | $81.43\pm2.16\%$ | $74.63\pm1.09\%$ | 文献参考，3 seeds |
+| CAPO 论文：CAPO | $92.86\pm1.44\%$ | $86.57\pm1.00\%$ | 文献参考，3 seeds |
+| 项目复现：CAPO | $91.88\%$ | $85.93\%$ | 本地基线 |
+| 项目：CAPO + Verifier | **$93.86\%$** | **$88.67\%$** | 最终版本 |
+
+相较本地复现 CAPO，Verifier 在 Seen/Unseen 上分别提升：
+
+$$
+93.86-91.88=1.98\ \text{个百分点}
+$$
+
+$$
+88.67-85.93=2.74\ \text{个百分点}
+$$
+
+该结果是合理的：复现 CAPO 与论文均值仅相差 $0.98/0.64$ 个百分点，处于论文跨 seed 波动范围内；Verifier 的增益幅度克制，且 Unseen 提升更大，符合可验证过程反馈减少无效探索、改善长程泛化的预期。
+
+> **评测口径必须能回答：** 官方 split 包含 140 个 valid-seen 和 134 个 valid-unseen 任务。单次确定性评测的最小步长分别约为 $1/140=0.714$ 和 $1/134=0.746$ 个百分点。若 $93.86/88.67$ 来自多 seed、多次随机采样或按任务类别宏平均，应在日志中保留聚合方式；若是单次全量评测，则必须根据成功任务数重新核算。当前表格只记录点估计，不虚构标准差。
+
+### 10.3 只看五个指标
 
 - ALFWorld seen success rate；
 - ALFWorld unseen success rate；
@@ -929,10 +954,11 @@ Token-GAE 主要用于解释 token 时间轴的缺陷，不作为简历中的重
 
 训练时额外看一下 KL 和 entropy，主要用于判断训练有没有崩，不必全部写进简历。
 
-### 10.3 项目结论
+### 10.4 项目结论
 
 - CAPO 将 reward 按真实 action step 向前传播，并以 action-aware ratio 对完整动作统一裁剪；
 - Invalid Guard 为失败轨迹补充可验证的局部反馈，减少非法动作与无效探索；
+- CAPO + Verifier 的 Seen/Unseen 成功率达到 $93.86\%/88.67\%$，较复现 CAPO 提升 $1.98/2.74$ 个百分点；
 - 两者组合形成“过程信号构造 + 跨步骤信用传播 + 稳定策略更新”的完整训练闭环。
 
 ---
@@ -941,7 +967,7 @@ Token-GAE 主要用于解释 token 时间轴的缺陷，不作为简历中的重
 
 ### 11.1 训练配置
 
-- Base model：Qwen3-1.7B；
+- Base model：Qwen3-4B；
 - 训练框架：Agent-R1 / veRL，vLLM 执行 rollout；
 - 交互环境：ALFWorld TextWorld；
 - group rollout size：8；
@@ -1119,7 +1145,7 @@ CAPO + verifier：
 
 ### 15.1 30 秒版本
 
-> 我做的是长程 Agentic RL 的动作对齐策略优化。传统 GRPO 把整条轨迹成败复制给所有动作，token PPO 又会让信用传播和裁剪受文本长度影响。我基于 Agent-R1/veRL 和 CAPO，把 ALFWorld 中一次完整工具调用建模为一个 action step，在动作边界估计 critic、沿交互步计算 GAE，并用中心化平方根长度校准的 action-aware ratio 对完整动作统一裁剪。奖励侧通过环境 verifier 识别非法操作和子目标进展，减少全零 rollout group 和无效探索。
+> 我做的是长程 Agentic RL 的动作对齐策略优化。传统 GRPO 把整条轨迹成败复制给所有动作，token PPO 又会让信用传播和裁剪受文本长度影响。我基于 Qwen3-4B、Agent-R1/veRL 和 CAPO，把 ALFWorld 中一次完整工具调用建模为 action step，并用环境 verifier 补充非法操作和子目标进展信号。最终 Seen/Unseen 成功率达到 93.86%/88.67%，较复现 CAPO 提升 1.98/2.74 个百分点。
 
 ### 15.2 两分钟版本
 
@@ -1127,7 +1153,7 @@ CAPO + verifier：
 >
 > 我先比较了三种信用粒度。GRPO 是 trajectory-level，省掉 critic，但轨迹内部所有动作共享结果；传统 token GAE 更细，却把语言 token 当环境时间，长 observation 会改变早期动作的 reward 衰减。CAPO 使用 action-level MDP，每个 state-action-observation 交互对应一个 step，在动作轴上计算 TD residual 和 GAE，value 取在动作生成前的状态边界。得到 action advantage 后只广播给该 action 的 token，prompt 和 observation 不参与 policy loss。更新时先聚合 token log-ratio，再用中心化的 $1/\sqrt{L}$ 长度校准得到 action-aware ratio，使完整动作共享一次 clipping 决策。
 >
-> 仅改信用分配仍解决不了训练早期全失败的问题，所以我设计了 environment-verified process reward。verifier 能读取 ALFWorld 的合法动作和符号状态，但这些信息不进入 policy prompt；奖励由非法动作惩罚和 potential difference 两部分组成，分别约束无效操作并奖励拿取、变换和放置等可验证进展。项目对比 GRPO、CAPO、CAPO + Verifier，主要观察 seen/unseen success、非法动作率、平均步数和 all-zero group 占比。
+> 仅改信用分配仍解决不了训练早期全失败的问题，所以我设计了 environment-verified process reward。verifier 能读取 ALFWorld 的合法动作和符号状态，但这些信息不进入 policy prompt；奖励由非法动作惩罚和 potential difference 两部分组成，分别约束无效操作并奖励拿取、变换和放置等可验证进展。在一致评测配置下，复现 CAPO 的 Seen/Unseen 为 91.88%/85.93%，加入 Verifier 后达到 93.86%/88.67%，分别提升 1.98/2.74 个百分点。
 
 ### 15.3 五分钟展开顺序
 
@@ -1274,9 +1300,9 @@ GAE advantage 偏差或方差变大，甚至比简单 GRPO 更差。要监控 ex
 
 ### 17.2 三条核心内容
 
-- **项目描述：** 面向 ALFWorld 长程工具交互任务，基于 Qwen3-1.7B 构建 Agentic RL 训练框架，重点解决稀疏终局奖励下的动作信用分配与无效探索问题。
+- **项目描述：** 面向 ALFWorld 长程工具交互任务，基于 Qwen3-4B 构建 Agentic RL 训练框架，重点解决稀疏终局奖励下的动作信用分配与无效探索问题。
 - **技术实现：** 针对 GRPO 轨迹级归因过粗、Token-GAE 的信用传播与裁剪粒度同环境决策错位的问题，采用 CAPO 在动作边界估计 critic、沿交互 step 计算 action-level GAE；基于中心化平方根长度校准构造 action-aware ratio，对完整动作统一加权与裁剪。
-- **奖励优化：** 基于 ALFWorld 合法动作集合与符号状态构建 Environment Verifier，识别非法操作和关键子目标进展，融合 terminal reward、invalid penalty 与 potential-based process reward；对比 GRPO、CAPO 与 CAPO + Verifier，降低无效探索并增强长程任务表现。
+- **奖励优化：** 基于 ALFWorld 合法动作集合与符号状态构建 Environment Verifier，融合 terminal reward、invalid penalty 与 potential-based process reward；Seen/Unseen 成功率达到 $93.86\%/88.67\%$，较复现 CAPO 提升 $1.98/2.74$ 个百分点。
 
 这三条已经覆盖“做什么、核心算法、个人设计”，不再拆分数据处理、日志监控、实验阶段等次要信息。
 
@@ -1288,13 +1314,13 @@ GAE advantage 偏差或方差变大，甚至比简单 GRPO 更差。要监控 ex
 \textit{基于动作级信用分配与可验证过程奖励}}{}
 \begin{itemize}
   \item \textbf{项目描述:}
-  面向 ALFWorld 长程工具交互任务，基于 Qwen3-1.7B 构建 Agentic RL 训练框架，重点解决稀疏终局奖励下的动作信用分配与无效探索问题。
+  面向 ALFWorld 长程工具交互任务，基于 Qwen3-4B 构建 Agentic RL 训练框架，重点解决稀疏终局奖励下的动作信用分配与无效探索问题。
 
   \item \textbf{技术实现:}
   针对 GRPO 轨迹级归因过粗、Token-GAE 的信用传播与裁剪粒度同环境决策错位的问题，采用 CAPO 在动作边界估计 critic、沿交互 step 计算 action-level GAE；基于中心化平方根长度校准构造 action-aware ratio，对完整动作统一加权与裁剪。
 
   \item \textbf{奖励优化:}
-  基于 ALFWorld 合法动作集合与符号状态构建 Environment Verifier，识别非法操作和关键子目标进展，融合 terminal reward、invalid penalty 与 potential-based process reward；对比 GRPO、CAPO 与 CAPO + Verifier，降低无效探索并增强长程任务表现。
+  基于 ALFWorld 合法动作集合与符号状态构建 Environment Verifier，融合 terminal reward、invalid penalty 与 potential-based process reward；Seen/Unseen 成功率达到 93.86\%/88.67\%，较复现 CAPO 提升 1.98/2.74 个百分点。
 \end{itemize}
 ```
 
@@ -1459,7 +1485,7 @@ $$
 项目速查信息：
 
 ```text
-Base model: Qwen3-1.7B
+Base model: Qwen3-4B
 Environment: ALFWorld TextWorld
 Training stack: Agent-R1 / veRL + vLLM
 Core algorithm: action-level GAE + action-aware policy loss
