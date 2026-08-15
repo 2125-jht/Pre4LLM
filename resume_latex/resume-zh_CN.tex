@@ -1,0 +1,131 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+%\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{linespacing_fix} % disable extra space before next section
+\usepackage{cite}
+\usepackage{xcolor}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+
+% \name{姜海涛}
+% \vspace{4pt}
+
+{
+  \centering
+  \LARGE\bfseries 姜海涛\par
+}
+\vspace{16pt} % 或你想要的任意间距
+
+
+\basicInfo{
+  \email{2125996426@qq.com} \textperiodcentered\ 
+  \faBullseye{\small 求职意向:算法工程师} \textperiodcentered\ 
+  \phone{(+86) 135-2376-8662}
+}
+
+
+% \vspace{-0.5em}
+% ######## education #########
+\section{\faGraduationCap\  教育背景}
+% \vspace{-0.2em}
+\datedsubsection{\textbf{西安交通大学}\quad \textit{人工智能}\quad \textit{在读硕士}}{2024.09 - 2027.06}
+\begin{itemize}
+  \item 研究方向：视觉语言模型（VLM）、大语言模型（LLM）
+\end{itemize}
+
+\vspace{-0.8em}
+\datedsubsection{\textbf{杭州电子科技大学}\quad \textit{机械设计制造及其自动化}\quad \textit{学士}}{2019.09 - 2023.06}
+\begin{itemize}
+  \item 相关课程：数理统计、数据结构与算法、操作系统、计算机网络
+\end{itemize}
+
+
+% \vspace{-1.0em}
+% ######### paper ##########
+\section{\faBook\ 科研经历}
+
+\vspace{-0.2em}
+\datedsubsection{\textbf{VR-CLIP: Visual Refinement of CLIP for Zero-Shot Semantic Segmentation}}{}
+\role{第一作者}{CVPR 2026}
+\vspace{-0.6em}
+\begin{itemize}
+  \item \textbf{问题背景:} 
+  现有方法普遍依赖更强的解码器来弥补 CLIP 图像级表征的密集判别不足问题，而直接微调视觉编码器的方法又会破坏原始 CLIP 的跨模态对齐能力，导致解码阶段匹配失效。
+  
+  \item \textbf{成果描述:} 
+  提出一种 \textbf{单阶段 in-encoder 特征增强框架}。在 CLIP ViT 浅层引入 NSA 强化邻近空间信息，避免破坏原始语义对齐能力，设计 SGR 基于相似度映射将高级语义信息注入视觉 patch 特征，实现残差式层级语义校正，并设计\textbf{跨层参数共享机制}学习共性语义映射，大幅提升对未知类别的泛化能力。
+  在 COCO-Stuff 上取得 hIoU 51.3\%（+2.2\%），同时维持轻量级训练参数（8\%）。
+\end{itemize}
+
+
+% \vspace{-1.0em}
+% ######## project ########
+\section{\faUsers\ 项目经历}
+% \vspace{-0.2em}
+
+\datedsubsection{\textbf{大模型推理能力增强} 
+\quad\quad\quad\quad
+\textit{基于解码概率奖励的后训练}}{2025.09 - 2025.12}
+\begin{itemize}
+  \item \textbf{项目描述:} 
+  % 需要提升基座模型的通用推理能力以支撑智能体在复杂场景下的逻辑推演与知识应用。
+  面向复杂场景下逻辑推演的需求，整体采用\textbf{冷启动 SFT + RLPR 两阶段训练范式}。
+  
+  \item \textbf{训练数据:} 
+  % 整体采用\textbf{冷启动 SFT + RLPR 两阶段训练}。
+  基于 DeepSeek-R1 范式构造 8K CoT 数据完成冷启动，使模型掌握规范推理格式。
+  基于 WebInstruct 数据集，使用大模型进行推理复杂度评分（1-4分），筛选出 77K 高质量 RL 训练样本（评分$\geq$3），采用 10-gram 去重避免数据污染。
+  
+  \item \textbf{技术实现:} 
+  采用 Token 平均解码概率的内在奖励机制（Probability as Reward）替代传统验证器，避免序列似然的高方差问题，引入奖励去偏策略消除题目本身难度偏差，结合自适应标准差过滤动态筛选样本，解决奖励稀疏导致的训练不稳定。
+  基于 Qwen2.5-7B 模型，GRPO 算法（KL\_coef=0, clip\_eps=0.27）进行训练。在 MMLU-Pro（+4.2\%）、TheoremQA（+10.1\%）等多个基准上评估，平均推理能力达到 59.7\%（+7.5\%）。
+\end{itemize}
+
+
+\vspace{-0.6em}
+\datedsubsection{\textbf{长程工具智能体强化学习}
+\quad\quad
+\textit{基于动作级信用分配与可验证过程奖励}}{2026.05 - 2026.07}
+\begin{itemize}
+  \item \textbf{项目描述:}
+  面向 ALFWorld 长程工具交互任务，基于 Qwen3-1.7B 构建 Agentic RL 训练框架，重点解决稀疏终局奖励下的动作信用分配与无效探索问题。
+
+  \item \textbf{技术实现:}
+  针对 GRPO 轨迹级归因过粗、Token-GAE 的信用传播与裁剪粒度同环境决策错位的问题，采用 CAPO 在动作边界估计 critic、沿交互 step 计算 action-level GAE；基于中心化平方根长度校准构造 action-aware ratio，对完整动作统一加权与裁剪。
+
+  \item \textbf{奖励优化:}
+  基于 ALFWorld 合法动作集合与符号状态构建 Environment Verifier，识别非法操作和关键子目标进展，融合 terminal reward、invalid penalty 与 potential-based process reward；对比 GRPO、CAPO 与 CAPO + Verifier，降低无效探索并增强长程任务表现。
+\end{itemize}
+
+
+
+% \vspace{-0.6em}
+% \datedsubsection{\textbf{全模态生成式推荐}
+% \quad\quad\quad\quad\quad
+% \textit{基于 SID 的生成式推荐}}{}
+% \begin{itemize}
+%   \item \textbf{项目描述:} 
+%   将 LLM 范式迁移到推荐场景，统一建模用户历史行为序列、商品多模态特征与
+%   行为类型，整体采用\textbf{协作式 SID + Decoder-only}的端到端范式，通过 SID 映射实现 Top-10 推荐。
+  
+%   \item \textbf{技术实现:} 
+%   首先采用 InfoNCE 对比学习 + 大负样本库 训练专用 item embedding，
+%   基于协作 embedding 执行两级 RQ-KMeans，配合碰撞解决机制实现约 1700 万广告 item 的唯一 SID 映射。
+%   主模型采用 Decoder-only 架构，将用户历史行为序列编码为前缀上下文，结合 action-conditioning（Gated Fusion / FiLM）显式建模 click/conversion 不同行为语义，注入相对时间间隔与绝对时间特征，自回归生成目标物品的 SID1→SID2 层级语义路径。
+% \end{itemize}
+
+
+% \vspace{-1.0em}
+\section{\faInfo\ 个人描述}
+% increase linespacing [parsep=0.5ex]
+\vspace{-0.2em}
+本人心态乐观向上，情绪稳定，具备良好的英文能力（CET-6），掌握 Python / C++ 语言，熟悉 VLM、LLM 后训练领域，具备扎实的数理基础与工程实现能力（数学建模一等奖），良好的团队协作与沟通能力（青协优秀社员），能够快速融入团队并推动工程落地。
+
+
+\end{document}

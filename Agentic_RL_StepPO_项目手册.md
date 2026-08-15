@@ -1,6 +1,6 @@
 # Long-Horizon Agentic RL 项目手册
 
-> 项目方向：基于 StepPO 的步骤级信用分配与环境可验证过程奖励
+> 项目方向：基于 CAPO 的动作对齐策略优化与环境可验证过程奖励
 >
 > 目标场景：ALFWorld 长程工具交互任务
 >
@@ -19,10 +19,10 @@
 2. 项目标题、摘要和技术卖点
 3. Agentic RL 的 MDP 背景
 4. ALFWorld 环境与具体轨迹
-5. GRPO、Token-GAE、StepPO 对比
-6. StepPO 公式与实现细节
+5. GRPO、Token-PPO、CAPO 对比
+6. CAPO 动作级信用分配与策略更新
 7. 端到端训练架构
-8. Agent-R1 / StepPO / veRL 代码地图
+8. Agent-R1 / CAPO / veRL 代码地图
 9. 环境可验证过程奖励设计
 10. 完整训练伪代码与最小结果验证
 11. 配置、工程 bug、曲线诊断和 case study
@@ -39,24 +39,26 @@
 
 这个项目研究的是：**如何用强化学习训练一个需要连续与环境交互很多步的 LLM Agent，并让最终任务奖励更准确地归因到中间每一步决策。**
 
-普通 GRPO 往往把整条轨迹的成败分数复制给所有 token；token-level GAE 虽然能细分信用，却会把环境返回的 observation 也当作时间轴的一部分，使折扣跨度随文本长度而变化。项目采用 StepPO 的 step-level MDP：把一次完整的 `状态 → Agent 动作 → 环境反馈` 视为一个决策步，在 step 维度做 GAE，再把同一步的 advantage 广播给该动作的有效 token。
+普通 GRPO 往往把整条轨迹的成败分数复制给所有 token；token-level PPO 又把语言 token 当作决策时间轴，使折扣和 clipping 都受动作长度影响。项目采用 CAPO：把一次完整 action 作为环境决策单位，在 action 边界估计 critic、沿交互 step 计算 GAE，并用长度校准的 action-aware ratio 对整条动作统一加权和裁剪。
 
 项目同时**利用 ALFWorld 环境内部状态构造仅用于训练的 verifier，给非法动作和可验证子目标提供步骤级反馈**，缓解稀疏终局奖励导致的 all-zero rollout group。
+
+> **版本口径：** CAPO 是 arXiv:2604.18401 在 2026-08-11 发布的 v5 名称；该论文早期版本名为 StepPO。两者是同一论文的连续升级，简历只写 CAPO，不把它们包装成两个叠加算法。
 
 ### 0.2 项目组成
 
 | 部分 | 作用 | 身份 |
 |---|---|---|
 | Agent-R1 / veRL | Agent rollout 与分布式 RL 训练 | 训练框架 |
-| StepPO | step-level MDP、step GAE、step-level importance ratio | 核心算法 |
+| CAPO | action-level GAE、action-aware ratio、action-level clipping | 核心算法 |
 | ALFWorld | 文本化具身长程任务与环境反馈 | 训练环境 |
 | Environment-Verified Process Reward | 用环境可验证信号补充稀疏终局奖励 | 奖励模块 |
-| 最小对照 | GRPO、StepPO、StepPO + Verifier | 结果验证 |
+| 最小对照 | GRPO、CAPO、CAPO + Verifier | 结果验证 |
 
 ### 0.3 最值得面试官追问的三点
 
 1. **建模单位变了**：Agent 的自然动作单位不是单个 token，而是一次完整 tool call / environment action。
-2. **信用分配变了**：在 step 维度递推 GAE，避免 observation 长度和 action token 数量扭曲折扣距离。
+2. **策略更新也对齐 action**：同一动作共用 advantage、ratio 和 clipping 决策，并通过平方根长度校准避免长短动作更新失衡。
 3. **奖励更可验证**：只从环境真实状态提取训练信号，不让模型看到 verifier 私有信息，减少 reward hacking 和信息泄漏。
 
 ---
@@ -65,15 +67,15 @@
 
 ### 1.1 推荐标题
 
-**Long-Horizon Agentic RL：基于步骤级信用分配与可验证过程奖励的长程智能体训练**
+**Long-Horizon Agentic RL：基于动作级信用分配与可验证过程奖励的长程智能体训练**
 
 英文版：
 
-**Long-Horizon Agentic RL with Step-Level Credit Assignment and Verifiable Process Rewards**
+**Long-Horizon Agentic RL with Action-Aligned Policy Optimization and Verifiable Process Rewards**
 
 ### 1.2 技术摘要
 
-面向 ALFWorld 中多轮“观察—决策—执行—反馈”任务，基于 Agent-R1/veRL 构建异步 Agent rollout 与 PPO 训练链路。针对 trajectory-level GRPO 无法区分关键步骤、token-level GAE 的折扣距离受动作及 observation 文本长度干扰的问题，引入 StepPO：在交互 step 上估计 value 和 GAE，并用动作 token 的几何平均重要性比率进行 PPO 更新。进一步设计环境可验证过程奖励，利用合法动作、状态转移和子目标达成情况提供低泄漏、高精度的步骤反馈，以降低 all-zero reward group 和无效探索。
+面向 ALFWorld 中多轮“观察—决策—执行—反馈”任务，基于 Agent-R1/veRL 构建异步 Agent rollout 与 actor-critic 训练链路。针对 trajectory-level GRPO 无法区分关键动作、token-level PPO 的信用传播和裁剪粒度与环境决策错位的问题，引入 CAPO：在动作生成前的状态边界估计 value，沿真实交互 step 计算 action-level GAE，并用中心化平方根长度校准的 action-aware ratio 对完整动作统一加权和裁剪。奖励侧构建环境 verifier，利用合法动作、状态转移和子目标达成情况提供可验证过程反馈，降低 all-zero rollout group 和无效探索。
 
 ### 1.3 为什么这个项目比“套一个 Agent 框架”上限高
 
@@ -138,7 +140,7 @@ $$
 \pi_\theta(a_t|s_t)=\prod_{j=1}^{L_t}\pi_\theta(a_{t,j}|s_t,a_{t,<j})
 $$
 
-关键是：**策略在 token 级生成，但环境在 action/step 级转移。** StepPO 就是在这两个粒度之间搭桥。
+关键是：**策略在 token 级生成，但环境在 action/step 级转移。** CAPO 就是在这两个粒度之间搭桥。
 
 ---
 
@@ -253,7 +255,7 @@ ALFWorld 通常区分 seen 和 unseen 测试设置。seen 更接近训练分布�
 
 ---
 
-## 4. 三种信用分配方法：为什么要选 StepPO
+## 4. 三种信用分配方法：为什么要选 CAPO
 
 ### 4.1 轨迹级 GRPO
 
@@ -306,9 +308,9 @@ $$
 
 同样相隔 5 个环境步骤，如果中间 observation 更长，早期动作拿到的 credit 就更小。这是一个建模错误：**环境时间被文本长度替代了。**
 
-### 4.3 StepPO / Step-level GAE
+### 4.3 CAPO / Action-level GAE
 
-StepPO 把一次完整交互当成一个 step，并在 step 轴上递推：
+CAPO 把一次完整 action（例如一条工具调用）当成一个环境决策，并在 action/step 轴上递推：
 
 $$
 \delta_t=r_t+\gamma V(s_{t+1})-V(s_t)
@@ -332,21 +334,21 @@ $$
 |---|---|---:|---|---|
 | GRPO | 整条 trajectory | 否 | 简单、省显存 | 无法区分轨迹内部好坏步骤 |
 | Token-GAE | token | 是 | 粒度细、兼容传统 PPO | 折扣随文本长度变化，tool token 处理复杂 |
-| StepPO | environment step | 是 | 与 Agent 的真实决策过程对齐 | 需要维护 step 边界、critic 与轨迹元信息 |
+| CAPO | complete action / environment step | 是 | 信用分配和策略裁剪都与真实决策对齐 | 需要维护动作边界、critic 与轨迹元信息 |
 
 一句话回答“为什么不用 GRPO”：
 
-> GRPO 的相对优势只比较整条 rollout，适合终局可验证的单次回答；长程 Agent 失败往往只错一两步，我需要在 step 维度判断哪次决策导致状态变坏，所以采用带 critic 的 step-level GAE。
+> GRPO 的相对优势只比较整条 rollout，适合终局可验证的单次回答；长程 Agent 失败往往只错一两个动作，我需要判断哪次环境决策导致状态变坏，所以采用带 critic 的 action-level GAE。
 
 一句话回答“为什么不用 token GAE”：
 
-> Agent 的环境时间是 tool call 次数，不是 token 数；token GAE 会让 observation 长度和动作表达长度改变信用衰减，StepPO 把折扣重新对齐到真实交互 step。
+> Agent 的环境时间是 tool call 次数，不是 token 数；token GAE 会让 observation 长度和动作表达长度改变信用衰减，CAPO 把折扣、importance ratio 和 clipping 都重新对齐到完整 action。
 
 ---
 
-## 5. StepPO 算法拆解
+## 5. CAPO 算法拆解
 
-### 5.1 Step 的数据结构
+### 5.1 Action step 的数据结构
 
 一条轨迹应被保存为有序 step，而不是先粗暴拼成一个长字符串：
 
@@ -394,7 +396,7 @@ $$
 
 工程中必须区分 `terminated` 与 `truncated`，否则会把“没来得及完成”误当成真正失败终态。
 
-### 5.3 Step-level GAE 的计算
+### 5.3 Action-level GAE 的计算
 
 对每条 trajectory：
 
@@ -432,45 +434,56 @@ $$
 - gradient 仍流过每一个动作 token；
 - 只是 advantage 的语义来自 step，而不是假设环境每生成一个 token 都转移一次。
 
-如果未来有可靠的 token-level verifier，才适合进一步定位到某个 token；StepPO 本身解决的是 step/turn 粒度。
+如果未来有可靠的 token-level verifier，才适合进一步定位到某个 token；CAPO 本身解决的是 step/turn 粒度。
 
-### 5.5 Step-level importance ratio
+### 5.5 Action-aware importance ratio
 
-旧策略和新策略的 token ratio 为：
-
-$$
-r_{t,j}(\theta)=
-\frac{\pi_\theta(a_{t,j}|s_t,a_{t,<j})}
-{\pi_{\text{old}}(a_{t,j}|s_t,a_{t,<j})}
-$$
-
-如果直接把一整步所有 token 概率相乘，动作越长，ratio 越容易爆炸或下溢。StepPO/GSPO 风格使用 token ratio 的几何平均：
+先计算旧策略与新策略在第 $t$ 个 action、第 $j$ 个 token 上的 log-ratio：
 
 $$
-\rho_t(\theta)=
-\exp\left(
-\frac{1}{L_t}\sum_{j=1}^{L_t}
-[\log\pi_\theta(a_{t,j}|\cdot)-\log\pi_{\text{old}}(a_{t,j}|\cdot)]
+z_{t,j}=\log \pi_\theta(a_{t,j}|s_t,a_{t,<j})
+-\log \pi_{\text{old}}(a_{t,j}|s_t,a_{t,<j})
+$$
+
+直接求和相当于完整序列概率比，方差随动作长度增长；除以 $L_t$ 的几何平均虽然稳定，却会把长动作的更新过度压小。CAPO 使用**中心化平方根长度校准**。先计算当前 batch 中所有有效 action token 的停止梯度均值：
+
+$$
+\hat\mu=\operatorname{stopgrad}\left(
+\frac{\sum_{t,j}m_{t,j}z_{t,j}}{\sum_{t,j}m_{t,j}}
 \right)
 $$
 
-几何平均有两个直觉：
+再构造一个 action 对应一个 ratio：
 
-1. 在 log space 里做平均，数值稳定；
-2. 对动作长度归一化，避免长动作天然具有更极端的 ratio。
+$$
+\log \rho_t^{\text{Act}}
+=\hat\mu+
+\frac{1}{\sqrt{L_t}}
+\sum_{j=1}^{L_t}(z_{t,j}-\hat\mu),
+\qquad
+\rho_t^{\text{Act}}=\exp(\log \rho_t^{\text{Act}})
+$$
+
+这里 $L_t$ 只统计有效 action token。这个设计有三个直觉：
+
+1. $1/\sqrt{L_t}$ 使不同长度 action 的 log-ratio 方差处于相近尺度；
+2. 减去再加回 $\hat\mu$，避免长度校准改变 batch 的平均更新方向；
+3. 完整 action 共享一个 ratio 和一次 clipping 决策，优化单位与环境动作一致。
+
+它是为稳定策略优化构造的 surrogate ratio，不应解释成完整 action 概率比的精确无偏估计。
 
 PPO clipped surrogate 可以写成：
 
 $$
 L_{\text{actor}}=-\mathbb E_t\left[
 \min\left(
-\rho_t\tilde A_t,
-\operatorname{clip}(\rho_t,1-\epsilon,1+\epsilon)\tilde A_t
+\rho_t^{\text{Act}}\tilde A_t,
+\operatorname{clip}(\rho_t^{\text{Act}},1-\epsilon,1+\epsilon)\tilde A_t
 \right)
 \right]
 $$
 
-实际实现仍会把 step-level loss 映射/聚合到有效动作 token，并加 entropy 或 KL 约束。
+训练中仍保留 token-level log-prob、KL 和 entropy 诊断，但 policy surrogate 对每个完整 action 聚合一次。
 
 ### 5.6 Value loss 与 KL
 
@@ -488,15 +501,15 @@ $$
 
 KL 太大：模型几乎不学；KL 太小：容易格式崩坏、语言退化或钻奖励漏洞。监控时要把 reward、KL、entropy、clip fraction 放在一起看，不能只盯 success rate。
 
-### 5.7 StepPO 与截图中“token-level process credit”的关系
+### 5.7 CAPO 与截图中“token-level process credit”的关系
 
 两者不是同一种方法：
 
 - 截图项目把错误定位到某个 assistant action token，并对该 token 施加 advantage，更接近 token-level localized loss；
-- StepPO 把一次完整 action 视为一个 step，同一步动作 token 共享 advantage；
-- 截图重点是 protocol violation 定位，StepPO 重点是 Agentic MDP 和时序信用的粒度对齐。
+- CAPO 把一次完整 action 视为一个 step，同一动作的 token 共享 advantage、ratio 和 clipping 决策；
+- 截图重点是 protocol violation 定位，CAPO 重点是 Agentic MDP 和时序信用的粒度对齐。
 
-你的项目无需硬抄截图。对秋招而言，StepPO + 环境 verifier 已经形成一个自然、可复现且容易讲清楚的完整故事。
+你的项目无需硬抄截图。对秋招而言，CAPO + 环境 verifier 已经形成一个自然、可复现且容易讲清楚的完整故事。
 
 ---
 
@@ -512,10 +525,10 @@ flowchart LR
     T --> V["Environment verifier"]
     V --> RW["terminal + process rewards"]
     T --> C["Critic values at state boundary"]
-    RW --> G["Step-level GAE"]
+    RW --> G["Action-level GAE"]
     C --> G
     G --> B["Broadcast step advantage<br/>to action-token mask"]
-    B --> O["PPO/GSPO clipped update"]
+    B --> O["CAPO action-aware clipped update"]
     O --> P
     REF["Reference policy"] --> O
 ```
@@ -594,20 +607,23 @@ recipes/<task>/
 └── env/
 ```
 
-### 7.2 StepPO
+### 7.2 CAPO
 
-仓库：[StepPO](https://github.com/AgentR1/StepPO)
+仓库：[CAPO](https://github.com/AgentR1/CAPO)
 
 最重要的目录：
 
 ```text
-StepPO/
+CAPO/
 ├── arft/
 │   ├── agent_flow/
 │   ├── config/
+│   ├── workers/
 │   ├── core_algos.py
 │   ├── main_agent_ppo.py
 │   ├── metric_utils.py
+│   ├── policy_losses.py
+│   ├── ratio_diagnostics.py
 │   ├── ray_agent_trainer.py
 │   ├── reward_loop.py
 │   └── reward_scaling.py
@@ -621,26 +637,25 @@ StepPO/
 └── verl/
 ```
 
-ALFWorld 的三条关键对照入口：
+ALFWorld 的关键入口位于：
 
 ```text
-examples/run_alfworld_grpo.sh
-examples/run_alfworld_token_adv.sh
-examples/run_alfworld_step_adv.sh
+examples/alfworld/run_grpo.sh
+examples/alfworld/run_ppo.sh
+examples/alfworld/run_gspo.sh
+examples/alfworld/run_steppo.sh
+recipe/alfworld/alfworld_agent_flow.py
+recipe/alfworld/reward_fn.py
 ```
 
-它们分别对应：
-
-- outcome-level GRPO；
-- token-level GAE；
-- step-level GAE + GSPO 风格 policy loss。
+仓库仍保留 `run_steppo.sh` 这一历史文件名，用于 action-level GAE 配方；CAPO 当前版本在此基础上进一步加入 action-aware ratio 与 action-level clipping。它与 StepPO 是同一 arXiv 论文的版本演进，不是两个需要同时堆进简历的算法。
 
 ### 7.3 `core_algos.py` 的关键逻辑
 
-StepPO 训练器根据 `algorithm.adv_estimator` 选择算法：
+`core_algos.py` 根据 `algorithm.adv_estimator` 选择信用分配方式：
 
 ```text
-gae        -> step-level GAE
+gae        -> action/step-level GAE
 token_gae  -> token-level GAE
 grpo       -> group relative outcome advantage
 ```
@@ -669,7 +684,7 @@ def compute_step_gae(
 
 Token GAE 路径会沿动作 token 递推，同时跳过 tool/padding token；GRPO 路径先汇总每步 reward，再汇总整条 trajectory reward，在同一 prompt 的 rollout group 内标准化，最后把同一轨迹 advantage 广播给所有 step。
 
-这三条路径共用数据和训练系统，是很干净的 controlled comparison：差别主要在 advantage 如何计算，而不是模型、任务或 rollout 框架不同。
+这三条路径共用数据和训练系统，适合受控比较 advantage 如何计算。CAPO 的另一半——action-aware ratio、统一 clipping 及长度诊断——位于 policy loss / trainer 路径，不能只读 `core_algos.py` 就认为掌握了完整 CAPO。
 
 ### 7.4 veRL
 
@@ -689,7 +704,7 @@ veRL 负责大规模后训练的底层能力，包括 actor/critic/reference、r
 
 ### 8.1 为什么还要加过程奖励
 
-StepPO 改善的是“已有 reward 如何跨 step 分配”，但如果整条失败轨迹从头到尾只有 0，critic 也无法凭空知道哪个动作正确。
+CAPO 改善的是“已有 reward 如何跨 action 分配并稳定更新”，但如果整条失败轨迹从头到尾只有 0，critic 也无法凭空知道哪个动作正确。
 
 尤其训练早期，同一个 prompt 采样的多条轨迹可能全部失败：
 
@@ -794,7 +809,7 @@ VerifierView = {
 
 加入单元测试：序列化 `PolicyView` 后搜索 private 字段中的对象 ID、合法命令列表和 goal predicate，确保它们没有进入 prompt。
 
-### 8.7 为什么过程奖励和 StepPO 是互补的
+### 8.7 为什么过程奖励和 CAPO 是互补的
 
 - process verifier 决定每一步有没有更有信息量的 reward；
 - Step GAE 决定这些 reward 如何跨真实环境步骤向前传播；
@@ -854,8 +869,8 @@ for update in range(num_updates):
     step_batch = flatten_steps(trajectories)
     values = critic.value_at_state_boundary(step_batch)
 
-    # C. Step-level credit assignment
-    step_adv, step_returns = step_gae(
+    # C. Action-level credit assignment
+    action_adv, action_returns = action_gae(
         rewards=step_batch.step_rewards,
         values=values,
         trajectory_uids=step_batch.trajectory_uids,
@@ -864,18 +879,20 @@ for update in range(num_updates):
         gamma=gamma,
         lam=gae_lambda,
     )
-    step_adv = whiten_over_valid_steps(step_adv)
-    token_adv = step_adv[:, None] * step_batch.action_token_mask
+    action_adv = whiten_over_valid_actions(action_adv)
+    token_adv = action_adv[:, None] * step_batch.action_token_mask
 
-    # D. PPO / GSPO-style update
+    # D. CAPO action-aware update
     new_logprobs = actor.logprobs(step_batch)
-    step_ratio = geometric_mean_ratio(
-        new_logprobs,
-        step_batch.old_logprobs,
-        step_batch.action_token_mask,
-    )
-    actor_loss = clipped_surrogate(step_ratio, step_adv, clip_eps)
-    critic_loss = mse(values, step_returns)
+    token_log_ratio = new_logprobs - step_batch.old_logprobs
+    mask = step_batch.action_token_mask
+    action_len = mask.sum(dim=-1).clamp_min(1)
+    mean_log_ratio = stop_gradient((token_log_ratio * mask).sum() / mask.sum())
+    centered_sum = ((token_log_ratio - mean_log_ratio) * mask).sum(dim=-1)
+    action_log_ratio = mean_log_ratio + centered_sum / sqrt(action_len)
+    action_ratio = exp(action_log_ratio)
+    actor_loss = clipped_surrogate(action_ratio, action_adv, clip_eps)
+    critic_loss = mse(values, action_returns)
     kl_loss = kl_to_reference(actor, reference, step_batch)
 
     optimize(actor_loss + value_coef * critic_loss + kl_coef * kl_loss)
@@ -888,7 +905,7 @@ for update in range(num_updates):
 
 ## 10. 项目验证
 
-项目采用三组轻量对照，分别验证步骤级信用分配和环境过程奖励的作用。
+项目采用三组轻量对照，验证动作对齐策略优化和环境过程奖励的作用。
 
 ### 10.1 最小三组对照
 
@@ -897,8 +914,8 @@ for update in range(num_updates):
 | 版本 | 作用 | 简历中回答的问题 |
 |---|---|---|
 | GRPO | 原始基线 | 整条轨迹共用一个 advantage 时效果怎样？ |
-| StepPO | 主体算法 | 改成步骤级信用分配后是否提升？ |
-| StepPO + Verifier | 奖励增强 | 非法动作与进展反馈是否减少无效探索？ |
+| CAPO | 主体算法 | 信用分配、ratio 与 clipping 对齐 action 后是否提升？ |
+| CAPO + Verifier | 奖励增强 | 非法动作与进展反馈是否减少无效探索？ |
 
 Token-GAE 主要用于解释 token 时间轴的缺陷，不作为简历中的重点实验。
 
@@ -914,7 +931,7 @@ Token-GAE 主要用于解释 token 时间轴的缺陷，不作为简历中的重
 
 ### 10.3 项目结论
 
-- StepPO 将 reward 按真实环境 step 向前传播，避免 observation 长度干扰信用衰减；
+- CAPO 将 reward 按真实 action step 向前传播，并以 action-aware ratio 对完整动作统一裁剪；
 - Invalid Guard 为失败轨迹补充可验证的局部反馈，减少非法动作与无效探索；
 - 两者组合形成“过程信号构造 + 跨步骤信用传播 + 稳定策略更新”的完整训练闭环。
 
@@ -931,8 +948,10 @@ Token-GAE 主要用于解释 token 时间轴的缺陷，不作为简历中的重
 - prompt batch size：16；
 - $\gamma=0.99$，$\lambda=1.0$；
 - KL coefficient：0.001；
-- 主算法：step-level GAE + GSPO-style policy loss；
-- 对照版本：GRPO、StepPO、StepPO + Verifier。
+- 主算法：action-level GAE + action-aware policy loss；
+- actor learning rate：$1\times10^{-6}$，critic learning rate：$1\times10^{-5}$；
+- CAPO clip epsilon：0.001；ALFWorld 最大环境步数：20；
+- 对照版本：GRPO、CAPO、CAPO + Verifier。
 
 ### 11.2 核心模块
 
@@ -941,8 +960,8 @@ Token-GAE 主要用于解释 token 时间轴的缺陷，不作为简历中的重
 | AgentFlow | 维护多轮 state，生成并执行环境动作 |
 | Trajectory Builder | 用 UID 和 step index 重组异步可变长轨迹 |
 | Environment Verifier | 判断非法动作、状态进展和终局成功 |
-| Step Credit | 在环境 step 上计算 value、GAE 和 return |
-| PPO Trainer | 将 step advantage 映射到动作 token 并更新 actor/critic |
+| Action Credit | 在环境 action 上计算 value、GAE 和 return |
+| CAPO Trainer | 聚合 action-aware ratio，对完整动作统一裁剪并更新 actor/critic |
 | Metrics | 统计成功率、非法动作率、交互步数、KL 与 entropy |
 
 ---
@@ -995,9 +1014,9 @@ rollout engine 与 trainer 若使用不同 chat template、special token 或截�
 
 Step advantage 应先以“有效 step”为样本标准化，再广播到 token。如果先广播再按 token whitening，长动作会在统计中占更大权重，重新引入长度偏差。
 
-### 12.7 几何平均除数错误
+### 12.7 动作长度校准错误
 
-$L_t$ 必须是有效 action token 数，不能包括 padding、prompt 或 observation。空动作要在 parser 层处理，不能让分母为 0。
+$L_t$ 必须是有效 action token 数，不能包括 padding、prompt 或 observation；校准项是 $1/\sqrt{L_t}$，不是 $1/L_t$。同时要用停止梯度的 batch token 均值完成中心化，空动作则应在 parser 层拦截。建议按动作长度分桶监控 ratio 方差和 clip fraction，防止长动作被系统性过裁剪。
 
 ### 12.8 Process reward 压过终局目标
 
@@ -1058,7 +1077,7 @@ reward 本身接近常数，critic 预测均值就能有低 MSE。不能只看 v
 
 可能记住任务模板、房间或动作序列。检查 prompt/data 泄漏，并按 task type 和轨迹长度分桶。
 
-### 情况六：StepPO 与 Token-GAE 短任务相近，长任务差距扩大
+### 情况六：CAPO 与 Token-GAE 短任务相近，长任务差距扩大
 
 这是符合理论预期的结果：step 建模主要改善长 horizon 下由 token 长度造成的信用衰减。但仍要确认比较使用的是同一批评估任务。
 
@@ -1081,7 +1100,7 @@ reward 本身接近常数，critic 预测均值就能有低 MSE。不能只看 v
 
 GRPO：整条失败，所有 token 同为负 advantage。
 
-StepPO + verifier：
+CAPO + verifier：
 
 | Step | 行为判断 | 可能的即时信号 | GAE 作用 |
 |---:|---|---:|---|
@@ -1100,15 +1119,15 @@ StepPO + verifier：
 
 ### 15.1 30 秒版本
 
-> 我做的是长程 Agentic RL 的信用分配。传统 GRPO 把整条轨迹成败复制给所有动作，token GAE 又会让 observation 文本长度改变折扣距离。我基于 Agent-R1/veRL 和 StepPO，把 ALFWorld 中一次完整环境交互建模为一个 step，在 step 维度估计 critic 和 GAE，再把 advantage 广播到该动作 token，并用几何平均 token ratio 做稳定 PPO 更新。奖励侧通过环境 verifier 识别非法动作和子目标进展，减少 all-zero group 和无效探索。
+> 我做的是长程 Agentic RL 的动作对齐策略优化。传统 GRPO 把整条轨迹成败复制给所有动作，token PPO 又会让信用传播和裁剪受文本长度影响。我基于 Agent-R1/veRL 和 CAPO，把 ALFWorld 中一次完整工具调用建模为一个 action step，在动作边界估计 critic、沿交互步计算 GAE，并用中心化平方根长度校准的 action-aware ratio 对完整动作统一裁剪。奖励侧通过环境 verifier 识别非法操作和子目标进展，减少全零 rollout group 和无效探索。
 
 ### 15.2 两分钟版本
 
 > 场景选的是 ALFWorld，它要求 LLM 连续导航、拿取、开关容器、加热或清洁物品，最后才得到任务成功奖励。这里核心问题是 temporal credit assignment：一条十几步的失败轨迹可能前面都对，只在最后一个关键动作出错。
 >
-> 我先比较了三种训练方式。GRPO 是 trajectory-level，省掉 critic，但轨迹内部所有动作共享结果；传统 token GAE 更细，却把语言 token 当环境时间，长 observation 会让早期动作的 reward 多衰减很多。StepPO 使用 step-level MDP，每个 state-action-observation 交互对应一个 step，在 step 上算 TD residual 和 GAE，value 取在动作生成前的状态边界。得到 step advantage 后只广播给该 action 的 token，prompt 和环境 observation 不参与 policy loss。PPO ratio 则对动作 token 的 log-ratio 求平均再 exponentiate，避免长动作 ratio 爆炸。
+> 我先比较了三种信用粒度。GRPO 是 trajectory-level，省掉 critic，但轨迹内部所有动作共享结果；传统 token GAE 更细，却把语言 token 当环境时间，长 observation 会改变早期动作的 reward 衰减。CAPO 使用 action-level MDP，每个 state-action-observation 交互对应一个 step，在动作轴上计算 TD residual 和 GAE，value 取在动作生成前的状态边界。得到 action advantage 后只广播给该 action 的 token，prompt 和 observation 不参与 policy loss。更新时先聚合 token log-ratio，再用中心化的 $1/\sqrt{L}$ 长度校准得到 action-aware ratio，使完整动作共享一次 clipping 决策。
 >
-> 仅改信用分配仍解决不了训练早期全失败的问题，所以我设计了 environment-verified process reward。verifier 能读取 ALFWorld 的合法动作和符号状态，但这些信息不进入 policy prompt；奖励由非法动作惩罚和 potential difference 两部分组成，分别约束无效操作并奖励拿取、变换和放置等可验证进展。项目对比 GRPO、StepPO、StepPO + Verifier，主要观察 seen/unseen success、非法动作率、平均步数和 all-zero group 占比。
+> 仅改信用分配仍解决不了训练早期全失败的问题，所以我设计了 environment-verified process reward。verifier 能读取 ALFWorld 的合法动作和符号状态，但这些信息不进入 policy prompt；奖励由非法动作惩罚和 potential difference 两部分组成，分别约束无效操作并奖励拿取、变换和放置等可验证进展。项目对比 GRPO、CAPO、CAPO + Verifier，主要观察 seen/unseen success、非法动作率、平均步数和 all-zero group 占比。
 
 ### 15.3 五分钟展开顺序
 
@@ -1116,7 +1135,7 @@ StepPO + verifier：
 2. 画 trajectory-level、token-level、step-level 三条时间轴；
 3. 写 $\delta_t$ 和 GAE 公式；
 4. 解释 value 的状态边界和 action mask；
-5. 解释几何平均 ratio；
+5. 解释中心化平方根长度校准和 action-aware ratio；
 6. 讲 verifier 私有信息与 policy 可见信息隔离；
 7. 讲 A/C/D 对照、长轨迹分桶和失败案例；
 8. 最后用三组对照和具体失败轨迹总结项目效果。
@@ -1129,15 +1148,15 @@ StepPO + verifier：
 
 因为环境只在完整命令提交后转移一次。生成 `open fridge 1` 的四个 token 时，环境没有执行四次动作；把 token 当环境 step 会让文本表达长度影响折扣。
 
-### Q2：StepPO 是否完全不做 token-level loss？
+### Q2：CAPO 是否完全不做 token-level loss？
 
 不是。log-prob 和梯度仍在动作 token 上计算，只是 advantage 和 importance ratio 的语义在 action step 上聚合。非动作 token 被 mask。
 
-### Q3：StepPO 和 GRPO 最大区别是什么？
+### Q3：CAPO 和 GRPO 最大区别是什么？
 
-GRPO 用同 prompt 多条轨迹的终局 reward 构造相对优势，不需要 critic；StepPO 用 critic 在轨迹内部计算 step GAE，能区分同一轨迹中的不同动作。
+GRPO 用同 prompt 多条轨迹的终局 reward 构造相对优势，不需要 critic；CAPO 用 critic 在轨迹内部计算 step GAE，能区分同一轨迹中的不同动作。
 
-### Q4：为什么 StepPO 需要 critic？
+### Q4：为什么 CAPO 需要 critic？
 
 GAE 的 TD residual 需要 $V(s_t)$ 和 $V(s_{t+1})$。critic 提供状态基线，降低 policy gradient 方差，并允许从中间 reward 向前传播。
 
@@ -1149,13 +1168,13 @@ GAE 的 TD residual 需要 $V(s_t)$ 和 $V(s_{t+1})$。critic 提供状态基线
 
 如果广播后按 token 统计，长 action 会出现更多次，在均值和方差中权重更大；先按 step 标准化保证每次环境决策权重一致。
 
-### Q7：为什么 ratio 用几何平均？
+### Q7：为什么 ratio 用平方根长度校准，而不是几何平均？
 
-整步概率是 token 概率乘积，随长度指数变化。对 log-ratio 求均值等价于 token ratio 的几何平均，既数值稳定，也消除动作长度带来的尺度偏差。
+完整动作的 token log-ratio 求和，方差大致随长度增长；直接除以 $L$ 的几何平均又会过度缩小长动作更新。CAPO 除以 $\sqrt{L}$，让不同长度 action 的 log-ratio 方差更接近，从而减少长度导致的 clipping 偏差。
 
-### Q8：几何平均会不会掩盖某个 token 的剧烈变化？
+### Q8：为什么还要减去再加回 batch 均值？
 
-会有这种风险，所以需要同时监控 token-level KL、最大 log-ratio 和 clip fraction。step ratio 对齐动作单位，但不是说单 token 异常无需监控。
+只做 $1/\sqrt{L}$ 会让非零平均 log-ratio 随动作长度被放大。CAPO 先减去停止梯度的 batch token 均值，只缩放中心化波动，再把均值加回，从而兼顾长度方差校准和平均更新方向。它仍是 surrogate ratio，所以还要监控 token-level KL、最大 log-ratio及按长度分桶的 clip fraction。
 
 ### Q9：$\lambda=1$ 有什么含义？
 
@@ -1217,17 +1236,17 @@ PPO 用新旧策略概率比限制更新幅度。若用更新后的模型重新�
 
 Agent 可能记住任务模板和常见物体位置。unseen 更能检验组合泛化和真实状态理解。
 
-### Q24：StepPO 的额外成本是什么？
+### Q24：CAPO 的额外成本是什么？
 
-需要 critic 的参数、前反向计算和 optimizer state；还要维护 step 边界、UID、value boundary 与可变长 trajectory。它用更多系统复杂度换更细信用。
+需要 critic 的参数、前反向计算和 optimizer state；还要维护动作边界、UID、value boundary、action length 与可变长 trajectory。它用更多系统复杂度换取动作级信用和更一致的策略裁剪。
 
-### Q25：若 critic 很差，StepPO 会怎样？
+### Q25：若 critic 很差，CAPO 会怎样？
 
 GAE advantage 偏差或方差变大，甚至比简单 GRPO 更差。要监控 explained variance、做 return/advantage 单测，并可通过 warm-up、不同 learning rate 或 Monte Carlo 比重调节改善。
 
-### Q26：StepPO 提升是否只是因为用了 critic？
+### Q26：CAPO 提升是否只是因为用了 critic？
 
-不能凭主实验断言。需要相同 critic 下比较 token GAE 与 step GAE，进一步固定 step advantage 比较 token ratio 与 step ratio，拆开 credit unit 和 optimizer unit 的贡献。
+不能凭主实验断言。需要区分两部分贡献：action-level GAE 改变信用分配，action-aware ratio/clipping 改变策略更新。面试中要明确这个因果拆分，不把全部收益笼统归于 critic。
 
 ### Q27：过程奖励是否也能用在 GRPO？
 
@@ -1243,7 +1262,7 @@ GAE advantage 偏差或方差变大，甚至比简单 GRPO 更差。要监控 ex
 
 ### Q30：项目真正的新意是什么？
 
-项目不是简单套用 Agent 框架，而是围绕长程交互中的信用分配完成三层设计：用 step-level MDP 对齐真实环境时间，用 critic/GAE 将终局反馈传播到关键动作，再用隔离于 policy observation 的环境 verifier 补充非法动作和子目标进展信号。三部分共同解决“奖励稀疏、归因过粗、无效探索”问题。
+项目围绕长程交互完成三层设计：用 action-level MDP 和 critic/GAE 将终局反馈传播到关键动作，用 action-aware ratio 将更新与裁剪对齐完整工具调用，再用隔离于 policy observation 的环境 verifier 补充非法动作和子目标进展信号。三部分共同解决“奖励稀疏、归因过粗、更新粒度错位和无效探索”问题。
 
 ---
 
@@ -1251,13 +1270,13 @@ GAE advantage 偏差或方差变大，甚至比简单 GRPO 更差。要监控 ex
 
 ### 17.1 项目标题
 
-**长程工具智能体强化学习｜基于步骤级信用分配与可验证过程奖励**
+**长程工具智能体强化学习｜基于动作级信用分配与可验证过程奖励**
 
 ### 17.2 三条核心内容
 
-- **项目描述：** 面向 ALFWorld 长程工具交互任务，基于 Qwen3-1.7B 构建 Agentic RL 训练框架，重点解决稀疏终局奖励下的跨步骤信用分配与无效探索问题。
-- **技术实现：** 针对 GRPO 轨迹级奖励归因过粗、Token-GAE 折扣跨度受文本长度干扰的问题，将完整工具调用建模为一个环境 step，在动作边界估计 critic 并计算 step-level GAE；将优势仅广播至 action token，结合几何平均 importance ratio 完成稳定策略更新。
-- **奖励优化：** 基于 ALFWorld 合法动作集合与符号状态构建 Environment Verifier，识别非法操作和关键子目标进展，融合 terminal reward、invalid penalty 与 potential-based process reward；对比 GRPO、StepPO 与 StepPO + Verifier，降低无效探索并增强长程任务表现。
+- **项目描述：** 面向 ALFWorld 长程工具交互任务，基于 Qwen3-1.7B 构建 Agentic RL 训练框架，重点解决稀疏终局奖励下的动作信用分配与无效探索问题。
+- **技术实现：** 针对 GRPO 轨迹级归因过粗、Token-GAE 的信用传播与裁剪粒度同环境决策错位的问题，采用 CAPO 在动作边界估计 critic、沿交互 step 计算 action-level GAE；基于中心化平方根长度校准构造 action-aware ratio，对完整动作统一加权与裁剪。
+- **奖励优化：** 基于 ALFWorld 合法动作集合与符号状态构建 Environment Verifier，识别非法操作和关键子目标进展，融合 terminal reward、invalid penalty 与 potential-based process reward；对比 GRPO、CAPO 与 CAPO + Verifier，降低无效探索并增强长程任务表现。
 
 这三条已经覆盖“做什么、核心算法、个人设计”，不再拆分数据处理、日志监控、实验阶段等次要信息。
 
@@ -1266,16 +1285,16 @@ GAE advantage 偏差或方差变大，甚至比简单 GRPO 更差。要监控 ex
 ```latex
 \datedsubsection{\textbf{长程工具智能体强化学习}
 \quad\quad\quad
-\textit{基于步骤级信用分配与可验证过程奖励}}{}
+\textit{基于动作级信用分配与可验证过程奖励}}{}
 \begin{itemize}
   \item \textbf{项目描述:}
-  面向 ALFWorld 长程工具交互任务，基于 Qwen3-1.7B 构建 Agentic RL 训练框架，重点解决稀疏终局奖励下的跨步骤信用分配与无效探索问题。
+  面向 ALFWorld 长程工具交互任务，基于 Qwen3-1.7B 构建 Agentic RL 训练框架，重点解决稀疏终局奖励下的动作信用分配与无效探索问题。
 
   \item \textbf{技术实现:}
-  针对 GRPO 轨迹级奖励归因过粗、Token-GAE 折扣跨度受文本长度干扰的问题，将完整工具调用建模为环境 step，在动作边界估计 critic 并计算 step-level GAE；将优势仅广播至 action token，结合几何平均 importance ratio 完成稳定策略更新。
+  针对 GRPO 轨迹级归因过粗、Token-GAE 的信用传播与裁剪粒度同环境决策错位的问题，采用 CAPO 在动作边界估计 critic、沿交互 step 计算 action-level GAE；基于中心化平方根长度校准构造 action-aware ratio，对完整动作统一加权与裁剪。
 
   \item \textbf{奖励优化:}
-  基于 ALFWorld 合法动作集合与符号状态构建 Environment Verifier，识别非法操作和关键子目标进展，融合 terminal reward、invalid penalty 与 potential-based process reward；对比 GRPO、StepPO 与 StepPO + Verifier，降低无效探索并增强长程任务表现。
+  基于 ALFWorld 合法动作集合与符号状态构建 Environment Verifier，识别非法操作和关键子目标进展，融合 terminal reward、invalid penalty 与 potential-based process reward；对比 GRPO、CAPO 与 CAPO + Verifier，降低无效探索并增强长程任务表现。
 \end{itemize}
 ```
 
@@ -1286,7 +1305,7 @@ GAE advantage 偏差或方差变大，甚至比简单 GRPO 更差。要监控 ex
 ### 第一遍：只理解数据怎么流
 
 1. ALFWorld README 与基础 `reset/step` 示例；
-2. StepPO 的 `examples/run_alfworld_*.sh`；
+2. CAPO 的 `examples/alfworld/run_*.sh`；
 3. ALFWorld recipe / AgentFlow；
 4. rollout 输出的 step record；
 5. trainer 如何按 UID 重组。
@@ -1299,7 +1318,7 @@ GAE advantage 偏差或方差变大，甚至比简单 GRPO 更差。要监控 ex
 2. `token_gae`；
 3. `gae`（step GAE）；
 4. advantage whitening 与 response mask；
-5. GSPO-style loss 和 geometric-mean ratio。
+5. `policy_losses.py` 与 `ratio_diagnostics.py` 中的 action-aware update 和长度诊断。
 
 目标：能在纸上用 3-step trajectory 手算三种 advantage。
 
@@ -1375,10 +1394,10 @@ $$
 ### 概念
 
 - [ ] 能解释 Agentic RL 与单轮 reasoning RL 的 MDP 差异；
-- [ ] 能比较 GRPO、Token-GAE、StepPO；
+- [ ] 能比较 GRPO、Token-GAE、CAPO；
 - [ ] 能推导 step GAE；
 - [ ] 能解释 critic 的 value boundary；
-- [ ] 能解释几何平均 ratio；
+- [ ] 能解释中心化平方根长度校准的 action-aware ratio；
 - [ ] 能说明 potential-based shaping 和 reward hacking。
 
 ### 代码
@@ -1392,7 +1411,7 @@ $$
 
 ### 实验
 
-- [ ] 有 GRPO / StepPO / StepPO + Verifier 三组最小对照；
+- [ ] 有 GRPO / CAPO / CAPO + Verifier 三组最小对照；
 - [ ] 所有版本使用同一批评估任务和最大步数；
 - [ ] 记录 seen/unseen success、invalid rate 和平均步数；
 - [ ] 保留训练日志及典型成功、失败轨迹。
@@ -1408,10 +1427,10 @@ $$
 
 ## 21. 最终判断：这个项目是否足够应对面试
 
-如果只是背诵 StepPO 摘要，不够。若你能做到以下几点，这一个项目足以作为 Agentic RL 主项目，不必再硬塞第二套算法：
+如果只是背诵 CAPO 摘要，不够。若你能做到以下几点，这一个项目足以作为 Agentic RL 主项目，不必再硬塞第二套算法：
 
 1. 用具体轨迹解释 credit mismatch，而不是只说“稀疏奖励”；
-2. 手算 step GAE 并解释 value boundary、mask 和 ratio；
+2. 手算 action-level GAE，并解释 value boundary、mask 和 action-aware ratio；
 3. 说清 AgentFlow 到 learner 的数据结构；
 4. 讲出至少五个真实工程风险及排查方式；
 5. 对过程奖励给出无泄漏设计、reward hacking 反例和最小对照；
@@ -1419,7 +1438,7 @@ $$
 
 这个项目的面试证据集中在三类内容：
 
-- 一组同预算的 GRPO / StepPO / Verifier 对照结果；
+- 一组同预算的 GRPO / CAPO / Verifier 对照结果；
 - 两到三条成功与失败 trajectory case study；
 - 能定位到文件和函数的实现细节与调试经验。
 
@@ -1429,9 +1448,8 @@ $$
 
 ## 22. 参考资料索引
 
-- [StepPO 论文：Step-wise Policy Optimization for Agentic Reinforcement Learning](https://arxiv.org/abs/2604.18401)
-- [StepPO 官方项目页](https://agentr1.github.io/steppo/)
-- [StepPO GitHub 仓库](https://github.com/AgentR1/StepPO)
+- [CAPO 论文：Critic-Guided Action-Aligned Policy Optimization for Advancing LLM Agent Capabilities（v5）](https://arxiv.org/abs/2604.18401v5)
+- [CAPO GitHub 仓库](https://github.com/AgentR1/CAPO)
 - [Agent-R1 GitHub 仓库](https://github.com/AgentR1/Agent-R1)
 - [ALFWorld GitHub 仓库](https://github.com/alfworld/alfworld)
 - [veRL Agentic RL 文档](https://verl.readthedocs.io/en/latest/start/agentic_rl.html)
@@ -1444,9 +1462,9 @@ $$
 Base model: Qwen3-1.7B
 Environment: ALFWorld TextWorld
 Training stack: Agent-R1 / veRL + vLLM
-Core algorithm: step-level GAE + GSPO-style policy loss
+Core algorithm: action-level GAE + action-aware policy loss
 Reward: terminal + invalid penalty + potential progress
-Baselines: GRPO / StepPO / StepPO + Verifier
+Baselines: GRPO / CAPO / CAPO + Verifier
 ```
 
 ---
@@ -1456,10 +1474,10 @@ Baselines: GRPO / StepPO / StepPO + Verifier
 1. Agentic RL 的时间单位是环境交互 step，不是语言 token。
 2. GRPO 比较整条 rollout，难以定位轨迹内部关键错误。
 3. Token GAE 会让文本长度影响 reward 的折扣距离。
-4. StepPO 在 step 轴计算 GAE，再把 advantage 广播给动作 token。
+4. CAPO 在 action/step 轴计算 GAE，再把 advantage 广播给对应动作 token。
 5. Critic value 取在动作生成前的 state boundary。
 6. Observation 是下一步状态的一部分，但不是 policy action，loss mask 必须为 0。
-7. Step ratio 使用动作 token ratio 的几何平均，减少长度偏差和数值问题。
-8. StepPO 改善 credit propagation，但不能凭空解决全零奖励。
+7. CAPO 用中心化 $1/\sqrt{L}$ 校准聚合 token log-ratio，让完整 action 共享一次 clipping 决策。
+8. CAPO 同时改善 credit propagation 与 policy update 对齐，但不能凭空解决全零奖励。
 9. 环境 verifier 只奖励可验证事实，而且私有状态不能泄漏给 policy。
 10. 最有说服力的项目证据是同预算对照、日志和失败轨迹，不是更夸张的项目描述。
