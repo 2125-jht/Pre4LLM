@@ -13,20 +13,20 @@
 \pagenumbering{gobble} % suppress displaying page number
 
 
-% \name{姜海涛}
-% \vspace{4pt}
+\name{姜海涛}
+\vspace{4pt}
 
-{
-  \centering
-  \LARGE\bfseries 姜海涛\par
-}
-\vspace{16pt} % 或你想要的任意间距
+% {
+%   \centering
+%   \LARGE\bfseries 姜海涛\par
+% }
+% \vspace{16pt} % 或你想要的任意间距
 
 
 \basicInfo{
   \email{2125996426@qq.com} \textperiodcentered\ 
-  \faBullseye{\small 求职意向:算法工程师} \textperiodcentered\ 
-  \phone{(+86) 135-2376-8662}
+  \phone{(+86) 135-2376-8662} \textperiodcentered\ 
+  \faBullseye{\small 求职意向:算法工程师}
 }
 
 
@@ -34,39 +34,40 @@
 % ######## education #########
 \section{\faGraduationCap\  教育背景}
 % \vspace{-0.2em}
-\datedsubsection{\textbf{西安交通大学}\quad \textit{人工智能}\quad \textit{在读硕士}}{2024.09 - 2027.06}
-\begin{itemize}
-  \item 研究方向：视觉语言模型（VLM）、大语言模型（LLM）
-\end{itemize}
+\datedsubsection{\textbf{西安交通大学}\quad \textit{人工智能}\quad \textit{在读硕士}}{2024 - Present}
+% \begin{itemize}
+%   \item 研究方向：视觉语言模型（VLM）、大语言模型（LLM）
+% \end{itemize}
 
-\vspace{-0.8em}
-\datedsubsection{\textbf{杭州电子科技大学}\quad \textit{机械设计制造及其自动化}\quad \textit{学士}}{2019.09 - 2023.06}
-\begin{itemize}
-  \item 相关课程：数理统计、数据结构与算法、操作系统、计算机网络
-\end{itemize}
+% \vspace{-0.8em}
+\datedsubsection{\textbf{杭州电子科技大学}\quad \textit{机械设计制造及其自动化}\quad \textit{学士}}{2019 - 2023}
+% \begin{itemize}
+%   \item 相关课程：数理统计、数据结构与算法、操作系统、计算机网络
+% \end{itemize}
 
 
-% \vspace{-1.0em}
-% ######### paper ##########
-\section{\faBook\ 科研经历}
-
+% ######## internship ########
+\section{\faLaptop\ 实习经历}
 \vspace{-0.2em}
-\datedsubsection{\textbf{VR-CLIP: Visual Refinement of CLIP for Zero-Shot Semantic Segmentation}}{}
-\role{第一作者}{CVPR 2026}
+
+\datedsubsection{\textbf{快手科技}\quad \textit{主站推荐中心 · 推荐大模型算法工程师}}{2026.06 - Present}
+\role{负责快手主站双列推荐 Generator--Evaluator 重排链路优化，研究列表级价值建模与生成评估协同优化，提升重排系统对高价值消费序列的识别和搜索能力}{}
 \vspace{-0.6em}
 \begin{itemize}
-  \item \textbf{问题背景:} 
-  现有方法普遍依赖更强的解码器来弥补 CLIP 图像级表征的密集判别不足问题，而直接微调视觉编码器的方法又会破坏原始 CLIP 的跨模态对齐能力，导致解码阶段匹配失效。
-  
-  \item \textbf{成果描述:} 
-  提出一种 \textbf{单阶段 in-encoder 特征增强框架}。在 CLIP ViT 浅层引入 NSA 强化邻近空间信息，避免破坏原始语义对齐能力，设计 SGR 基于相似度映射将高级语义信息注入视觉 patch 特征，实现残差式层级语义校正，并设计\textbf{跨层参数共享机制}学习共性语义映射，大幅提升对未知类别的泛化能力。
-  在 COCO-Stuff 上取得 hIoU 51.3\%（+2.2\%），同时维持轻量级训练参数（8\%）。
+  \item \textbf{Evaluator 优化:}
+  将现有逐 item 预估、规则累加的评估范式升级为消费过程感知的 List-wise Value Model。基于 Causal Prefix Transformer 建模序列上下文，将消费长度分解为逐位置继续概率并递推 $P(K)$，联合预测各 Prefix 的累计观看时长、有效 VV 与互动价值；针对曝光截断、长尾价值标签及未曝光后缀缺少反事实监督等问题，设计右截断 Continuation NLL、Prefix/List 双层价值回归、累计价值单调约束与反馈偏好 RankNet Loss，最终通过
+  $\sum_k P(K=k)V(\mathrm{Prefix}_{1:k})$
+  直接估计候选 List 的长期消费价值。
+
+  \item \textbf{G--E 联合优化:}
+  完成 Evaluator-guided Generator 自迭代方案设计。借鉴 NLGR 的邻域相对奖励与 DeGRe 的 Lookahead Search，由 Evaluator 离线挖掘高价值 Beam Paths，并向 AR/NAR Generator 蒸馏列表偏好、路径权重与 Step-wise Action Distribution，推进“候选生成—列表评估—稠密监督—生成器迭代”的优化闭环。
 \end{itemize}
+
 
 
 % \vspace{-1.0em}
 % ######## project ########
-\section{\faCogs\ 项目经历}
+\section{\faBriefcase\ 项目经历}
 \vspace{-0.2em}
 
 % \faBriefcase \faBuilding \faIndustry \faSuitcase
@@ -127,6 +128,24 @@
 %   基于协作 embedding 执行两级 RQ-KMeans，配合碰撞解决机制实现约 1700 万广告 item 的唯一 SID 映射。
 %   主模型采用 Decoder-only 架构，将用户历史行为序列编码为前缀上下文，结合 action-conditioning（Gated Fusion / FiLM）显式建模 click/conversion 不同行为语义，注入相对时间间隔与绝对时间特征，自回归生成目标物品的 SID1→SID2 层级语义路径。
 % \end{itemize}
+
+
+% \vspace{-1.0em}
+% ######### paper ##########
+\section{\faBook\ 科研经历}
+
+\vspace{-0.2em}
+\datedsubsection{\textbf{VR-CLIP: Visual Refinement of CLIP for Zero-Shot Semantic Segmentation}}{}
+\role{第一作者}{CVPR 2026}
+\vspace{-0.6em}
+\begin{itemize}
+  \item \textbf{问题背景:} 
+  现有方法普遍依赖更强的解码器来弥补 CLIP 图像级表征的密集判别不足问题，而直接微调视觉编码器的方法又会破坏原始 CLIP 的跨模态对齐能力，导致解码阶段匹配失效。
+  
+  \item \textbf{成果描述:} 
+  提出一种 \textbf{单阶段 in-encoder 特征增强框架}。在 CLIP ViT 浅层引入 NSA 强化邻近空间信息，避免破坏原始语义对齐能力，设计 SGR 基于相似度映射将高级语义信息注入视觉 patch 特征，实现残差式层级语义校正，并设计\textbf{跨层参数共享机制}学习共性语义映射，大幅提升对未知类别的泛化能力。
+  在 COCO-Stuff 上取得 hIoU 51.3\%（+2.2\%），同时维持轻量级训练参数（8\%）。
+\end{itemize}
 
 
 % \vspace{-1.0em}
