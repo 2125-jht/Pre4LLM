@@ -30,10 +30,10 @@
 }
 
 
-% \vspace{-0.5em}
+\vspace{-0.6em}
 % ######## education #########
 \section{\faGraduationCap\  教育背景}
-% \vspace{-0.2em}
+\vspace{-0.2em}
 \datedsubsection{\textbf{西安交通大学}\quad \textit{人工智能}\quad \textit{在读硕士}}{2024 - Present}
 % \begin{itemize}
 %   \item 研究方向：视觉语言模型（VLM）、大语言模型（LLM）
@@ -50,23 +50,57 @@
 \section{\faLaptop\ 实习经历}
 \vspace{-0.2em}
 
+% % ######## 生成-评估 重排 ########
+% \datedsubsection{\textbf{快手科技}\quad \textit{主站推荐中心 · 算法工程师}}{2026.06 - Present}
+% \role{负责快手主站双列推荐 Generator--Evaluator 重排链路优化，研究列表级价值建模与生成评估协同优化，提升重排系统对高价值消费序列的识别和搜索能力}{}
+% \vspace{-0.6em}
+% \begin{itemize}
+%   \item \textbf{Evaluator 优化:}
+%   将现有逐 item 预估、规则累加的评估范式升级为消费过程感知的 List-wise Model。基于 Causal Prefix Transformer 建模序列上下文，将消费长度分解为逐位置继续概率并递推 $P(K)$，联合预测各 Prefix 的累计观看时长、有效 VV 与互动价值；针对曝光截断、长尾价值标签及未曝光后缀缺少反事实监督等问题，设计右截断 Prefix / List 双层价值回归、累计价值单调约束与反馈偏好 RankNet Loss，最终通过
+%   $\sum_k P(K=k)V(\mathrm{Prefix}_{1:k})$
+%   直接估计候选 List 的长期消费价值。
+
+%   \item \textbf{G--E 联合优化:}
+%   完成 Evaluator-guided Generator 自迭代方案设计。借鉴 NLGR 的邻域相对奖励与 DeGRe 的 Lookahead Search，由 Evaluator 离线挖掘高价值 Beam Paths，并向 AR/NAR Generator 蒸馏列表偏好、路径权重与 Step-wise Action Distribution，推进“候选生成—列表评估—稠密监督—生成器迭代”的优化闭环。
+% \end{itemize}
+
+
+% ######## 生成式召回 ########
+% \datedsubsection{\textbf{快手科技}\quad \textit{主站推荐中心 · 推荐大模型算法工程师}}{2026.06 - Present}
+% \role{负责快手主站双列外流生成式召回通道建设，针对 SID 自回归生成中的语义漂移与线上时延问题，完成轻量生成架构、路径级 PRM 及推理链路优化，实现增量候选召回与线上消费提升}{}
+% \vspace{-0.6em}
+% \begin{itemize}
+%   \item \textbf{轻量生成式召回:}
+%   基于用户画像与最长 200 条点击序列，自回归生成三层 Semantic ID，并通过 SID 索引召回真实视频；将原有独立 4 层 Encoder--Decoder 改造为 MLP + LayerNorm 用户表征与轻量 Decoder 架构，由 Decoder Cross-Attention 直接读取用户上下文，降低生成式召回的线上计算开销。
+
+%   \item \textbf{路径级过程监督:}
+%   针对 Teacher Forcing 与自回归推理不一致造成的误差累积，以及 NTP 局部 Token 目标难以刻画完整路径用户匹配度的问题，引入路径级 PRM，将各层 SID Prefix 视为中间生成步骤，通过 NTP + InfoNCE 端到端联合训练提供逐层稠密监督；设计 False Negative Mask 排除同路径假负样本，并采用 logQ Correction 缓解热门路径采样偏差。
+
+%   \item \textbf{PRM 引导搜索与线上收益:}
+%   设计 PRM-guided Beam Search，由 Decoder 按累积生成概率预筛 Top-1024 路径，再由 PRM 剪枝保留 Top-512，及时阻断低匹配度分支、缓解路径语义漂移；结合高质量消费样本过滤、播放时长加权、多级 KV Cache 与混合精度部署，在 Leaf 平均耗时仅增加 1.411\% 的情况下，召回候选独占率达到 31.43\%，发现页外流播放时长与次均播放时长分别提升 0.358\%/0.409\%，关注率与收藏率分别提升 0.892\%/0.794\%，负反馈下降 1.415\%。
+% \end{itemize}
+
 \datedsubsection{\textbf{快手科技}\quad \textit{主站推荐中心 · 推荐大模型算法工程师}}{2026.06 - Present}
-\role{负责快手主站双列推荐 Generator--Evaluator 重排链路优化，研究列表级价值建模与生成评估协同优化，提升重排系统对高价值消费序列的识别和搜索能力}{}
+\role{负责快手主站双列推荐生成式召回优化，针对 SID 自回归生成中的路径语义漂移与线上时延问题，完成轻量生成架构、路径级 PRM 及推理链路优化，实现增量候选召回与线上消费提升}{}
 \vspace{-0.6em}
 \begin{itemize}
-  \item \textbf{Evaluator 优化:}
-  将现有逐 item 预估、规则累加的评估范式升级为消费过程感知的 List-wise Value Model。基于 Causal Prefix Transformer 建模序列上下文，将消费长度分解为逐位置继续概率并递推 $P(K)$，联合预测各 Prefix 的累计观看时长、有效 VV 与互动价值；针对曝光截断、长尾价值标签及未曝光后缀缺少反事实监督等问题，设计右截断 Continuation NLL、Prefix/List 双层价值回归、累计价值单调约束与反馈偏好 RankNet Loss，最终通过
-  $\sum_k P(K=k)V(\mathrm{Prefix}_{1:k})$
-  直接估计候选 List 的长期消费价值。
+  \item \textbf{生成式架构:}
+  基于用户画像与最长 200 条行为序列，自回归生成三层 Semantic ID，并通过 SID 索引完成真实视频召回；将原有独立 4 层 Encoder--Decoder 改造为轻量 Decoder 架构，由 MLP 编码用户特征并直接作为 Cross-Attention 的 Key / Value，降低序列建模与线上生成开销。
 
-  \item \textbf{G--E 联合优化:}
-  完成 Evaluator-guided Generator 自迭代方案设计。借鉴 NLGR 的邻域相对奖励与 DeGRe 的 Lookahead Search，由 Evaluator 离线挖掘高价值 Beam Paths，并向 AR/NAR Generator 蒸馏列表偏好、路径权重与 Step-wise Action Distribution，推进“候选生成—列表评估—稠密监督—生成器迭代”的优化闭环。
+  \item \textbf{路径级 PRM:}
+  % 针对 NTP 仅优化局部 Token 概率、难以衡量完整路径与用户兴趣匹配度的问题，设计轻量级路径判别模型；
+  将各层 SID Prefix Embedding 累加为路径 Query，通过 Cross-Attention 聚合用户上下文并由 MLP 输出用户--路径匹配分数；以 Batch 内其他用户的同层路径作为负样本，通过 NTP + InfoNCE 端到端联合训练，为每一步 SID 生成提供路径级监督；设计 False Negative Mask 排除重复路径假负样本，并采用 logQ Correction 缓解热门路径采样偏差。
+
+  \item \textbf{推理部署优化:}
+  由 Decoder 按累积生成概率预筛 Top-1024 路径，再利用 PRM 匹配分数剪枝至 Top-512，及时淘汰偏离用户兴趣的中间分支；实现 Decoder Self / Cross-Attention 与 PRM 多级 KV Cache，结合 FP16 / FP32 混合精度，控制大规模 Beam Search 的延迟与显存开销。
+
+  \item \textbf{线上收益:}
+  召回候选独占率达到 31.43\%，透出占比约 9.914\%；在 Leaf 平均耗时仅增加 1.411\% 的情况下，外流播放时长提升 0.358\%。
 \end{itemize}
 
 
-
-% \vspace{-1.0em}
-% ######## project ########
+\vspace{-1.0em}
+% ######## 项目经历 ########
 \section{\faBriefcase\ 项目经历}
 \vspace{-0.2em}
 
@@ -97,7 +131,7 @@
 \end{itemize}
 
 
-% \vspace{-0.6em}
+\vspace{-0.6em}
 \datedsubsection{\textbf{长程工具智能体强化学习}
 \quad\quad\quad
 \textit{动作对齐优化与可验证过程奖励}}{2026.05 - 2026.07}
@@ -113,46 +147,29 @@
 \end{itemize}
 
 
-
+\vspace{-1.0em}
+% ######## paper #########
+\section{\faBook\ 科研经历}
+\vspace{-0.2em}
+% \datedsubsection{\textbf{VR-CLIP: Visual Refinement of CLIP for Zero-Shot Semantic Segmentation}}{}
+\role{\textbf{VR-CLIP: Visual Refinement of CLIP for Zero-Shot Semantic Segmentation \quad\quad\quad\quad CVPR 2026 \quad 一作}}{}
+\role{现有零样本语义分割过度依赖解码器弥补 CLIP 像素表征不足，我们通过浅层局部空间建模与跨层文本语义校正，在保持视觉--语言对齐能力的前提下兼顾像素判别能力与未见类别泛化。}{}
 % \vspace{-0.6em}
-% \datedsubsection{\textbf{全模态生成式推荐}
-% \quad\quad\quad\quad\quad
-% \textit{基于 SID 的生成式推荐}}{}
 % \begin{itemize}
-%   \item \textbf{项目描述:} 
-%   将 LLM 范式迁移到推荐场景，统一建模用户历史行为序列、商品多模态特征与
-%   行为类型，整体采用\textbf{协作式 SID + Decoder-only}的端到端范式，通过 SID 映射实现 Top-10 推荐。
+%   \item \textbf{问题背景:} 
+%   现有方法普遍依赖更强的解码器来弥补 CLIP 图像级表征的密集判别不足问题，而直接微调视觉编码器的方法又会破坏原始 CLIP 的跨模态对齐能力，导致解码阶段匹配失效。
   
-%   \item \textbf{技术实现:} 
-%   首先采用 InfoNCE 对比学习 + 大负样本库 训练专用 item embedding，
-%   基于协作 embedding 执行两级 RQ-KMeans，配合碰撞解决机制实现约 1700 万广告 item 的唯一 SID 映射。
-%   主模型采用 Decoder-only 架构，将用户历史行为序列编码为前缀上下文，结合 action-conditioning（Gated Fusion / FiLM）显式建模 click/conversion 不同行为语义，注入相对时间间隔与绝对时间特征，自回归生成目标物品的 SID1→SID2 层级语义路径。
+%   \item \textbf{成果描述:} 
+%   提出一种 \textbf{单阶段 in-encoder 特征增强框架}。在 CLIP ViT 浅层引入 NSA 强化邻近空间信息，避免破坏原始语义对齐能力，设计 SGR 基于相似度映射将高级语义信息注入视觉 patch 特征，实现残差式层级语义校正，并设计\textbf{跨层参数共享机制}学习共性语义映射，大幅提升对未知类别的泛化能力。
+%   在 COCO-Stuff 上取得 hIoU 51.3\%（+2.2\%），同时维持轻量级训练参数（8\%）。
 % \end{itemize}
 
 
 % \vspace{-1.0em}
-% ######### paper ##########
-\section{\faBook\ 科研经历}
-
-\vspace{-0.2em}
-\datedsubsection{\textbf{VR-CLIP: Visual Refinement of CLIP for Zero-Shot Semantic Segmentation}}{}
-\role{第一作者}{CVPR 2026}
-\vspace{-0.6em}
-\begin{itemize}
-  \item \textbf{问题背景:} 
-  现有方法普遍依赖更强的解码器来弥补 CLIP 图像级表征的密集判别不足问题，而直接微调视觉编码器的方法又会破坏原始 CLIP 的跨模态对齐能力，导致解码阶段匹配失效。
-  
-  \item \textbf{成果描述:} 
-  提出一种 \textbf{单阶段 in-encoder 特征增强框架}。在 CLIP ViT 浅层引入 NSA 强化邻近空间信息，避免破坏原始语义对齐能力，设计 SGR 基于相似度映射将高级语义信息注入视觉 patch 特征，实现残差式层级语义校正，并设计\textbf{跨层参数共享机制}学习共性语义映射，大幅提升对未知类别的泛化能力。
-  在 COCO-Stuff 上取得 hIoU 51.3\%（+2.2\%），同时维持轻量级训练参数（8\%）。
-\end{itemize}
-
-
-% \vspace{-1.0em}
-\section{\faInfo\ 个人描述}
-% increase linespacing [parsep=0.5ex]
-\vspace{-0.2em}
-本人心态乐观向上，情绪稳定，具备良好的英文能力（CET-6），掌握 Python / C++ 语言，熟悉 VLM、LLM 后训练领域，具备扎实的数理基础与工程实现能力（数学建模一等奖），良好的团队协作与沟通能力（青协优秀社员），能够快速融入团队并推动工程落地。
+% \section{\faInfo\ 个人描述}
+% % increase linespacing [parsep=0.5ex]
+% \vspace{-0.2em}
+% 本人心态乐观向上，情绪稳定，具备良好的英文能力（CET-6），掌握 Python / C++ 语言，熟悉 VLM、LLM 后训练领域，具备扎实的数理基础与工程实现能力（数学建模一等奖），良好的团队协作与沟通能力（青协优秀社员），能够快速融入团队并推动工程落地。
 
 
 \end{document}
