@@ -1,0 +1,200 @@
+# Standalone List 模型说明
+
+该目录是从 v2 拆出的纯 List 模型，不再构建或训练原来的单点预估分支。
+本版本将原来的 EVV 与互动价值头合并为 Engagement，业务价值目标收敛为
+WT 和 Engagement 两项；消费长度 `P(K)` 继续作为期望价值计算所需的结构头。
+
+## 计算路径
+
+```text
+原始 user / item / history / context 特征
+    -> 独立 embedding
+    -> list_backbone（用户历史交叉注意力 + 候选集自注意力）
+    -> 按候选 List 下标 gather
+    -> causal prefix decoder
+    -> P(K) / Prefix WT / Prefix Engagement
+    -> expected_consume_length
+       expected_list_watch_time
+       expected_list_engagement
+    -> 正向反馈序 Y_w / 旧分 Top1 顺序 Y_l / 反向反馈序 Y_b（仅训练）
+    -> WT-primary RankNet preference loss
+```
+
+embedding、`list_backbone` 和 `list_value_branch` 都只接受 List loss 的梯度。
+这里保留的 `fullrank_detail_*` 等字段是原始输入特征，不是本模型中的单点预测头。
+
+## 两阶段训练开关
+
+训练阶段只由 `kai_v2_model.py` 顶部的配置参数控制：
+
+```python
+# 只训练日志事实目标，不训练 Preference
+TRAINING_STAGE = "pretrain"
+
+# 只训练 Preference（本目录默认值）
+TRAINING_STAGE = "preference_posttrain"
+```
+
+可选值只有：
+
+- `pretrain`：总 loss 只包含 Length、Prefix WT/Engagement、List WT/Engagement
+  和 Prefix monotonic，Preference 虽会计算用于诊断，但不参与反向传播。
+- `preference_posttrain`：总 loss 只有 Anchor + Reverse Preference；原有 factual
+  loss 仍计算并上报，用于观察后训练是否损伤校准和 AUC，但不参与反向传播。
+
+`preference_posttrain` 必须加载已经收敛的 `pretrain` checkpoint，不能冷启动。
+训练平台上的 checkpoint/load 配置仍由作业配置负责，本开关只控制优化目标，
+不会自动寻找或加载 checkpoint。
+
+## 训练目标
+
+- 唯一反传总损失为 `list_value_loss`，其内容由上述阶段开关决定；两个阶段严格
+  互斥，不再联合训练 factual 与 Preference。
+- 与 `fountain_rerank_eval_listwise_v2_new` 一致，主模型从 30 条候选中选取
+  旧分最高的完整 6-item List。Length、List WT、List Engagement 及离线 AUC
+  都使用这条 List、相同的六个位置和相同的 Top1 mask。
+- 训练图另外用 `context_info__real_show` 筛出曝光 item，按
+  `context_info__real_show_index` 升序恢复真实曝光 Prefix，并用
+  `fountain_fulllink_rerank_index` 映射到统一候选池。真实 Prefix 不替换主模型
+  的完整 List：它只用于前 K 位的 Prefix loss、Preference pair 构造资格和匹配诊断；
+  仅当旧分 Top1 的前 K 位与真实曝光 Prefix 一致时，才使用这些位置级反馈。
+- WT 在 Prefix 和 List 总值上分别使用 `log1p` Huber，权重为 `1.0/0.5`。
+- Engagement 在 Prefix 和 List 总值上分别使用 `log1p` Huber，权重为
+  `0.5/0.2`；包含显式互动的 Prefix/List 使用 3 倍样本权重，避免稀疏互动
+  在 `log1p` 与 Huber 截断后被 EVV 样本淹没。
+- 消费长度 hazard loss 权重为 `1.0`，WT/Engagement 前缀单调约束权重为 `0.1`。
+- 不创建 click、VTR、LTR、WTD 等单点 tower，也不生成对应 loss 或输出。
+- `pretrain` 可按新参数空间冷启动；`preference_posttrain` 必须加载同结构
+  standalone 模型的预训练 checkpoint，不能加载旧三头版本参数，也不能冷启动。
+
+## Engagement 口径
+
+单 item 标签为：
+
+```text
+interaction_value
+  = like + 10 * comment + 10 * follow + 2.5 * forward
+
+engagement_value = EVV + interaction_value
+```
+
+互动相对权重来自原单点 LTR 样本权重中的 `20/200/200/50`，统一除以 20
+以控制尺度。EVV 最大为 1，因此单 item Engagement 上界为 24.5，六条
+List 上界为 147。对已曝光位置累加得到 `PrefixEngagement(k)`，最终输出为：
+
+```text
+expected_list_engagement
+  = sum_k P(K=k) * PrefixEngagementPred(k)
+```
+
+合并后不再要求一个共享表示同时校准两个量纲差异较大的独立 head，同时保留
+EVV-only 与 interaction-positive 分桶，便于监控稠密基础价值和稀疏高价值行为。
+
+## WT-primary 用户反馈顺序偏好
+
+训练时借鉴 GReF 的用户反馈正负 List 构造思路，但 evaluator 不使用 DPO。
+锚点 List `Y_l` 使用旧分 Top1 的完整 6-item List；正 List `Y_w` 只在其前 K 个
+真实曝光位置内按用户反馈正向重排；辅助负 List `Y_b` 在同一 Prefix 内反向使用
+反馈效用，使高反馈 item 更难排在前面。三条 List 的 K 后候选内容和相对顺序都
+保持不变。只有当
+`Y_l[:K]` 与重建出的真实曝光 Prefix 一致时，才生成有效 pair，因此反馈不会被
+错误归因给未曝光候选。
+
+每个已曝光 item 的反馈效用为：
+
+```text
+wt = clip(log1p(play_time) / log1p(400), 0, 1)
+engagement = clip(log1p(engagement_value) / log1p(24.5), 0, 1)
+
+feedback_utility = 0.70 * wt + 0.30 * engagement
+positive_score_i = 1 / position_i + 2 * feedback_utility_i
+reverse_score_i = 1 / position_i - 2 * feedback_utility_i
+```
+
+只有 `Y_w != Y_l`、至少真实曝光两个 item、`Y_l[:K]` 匹配真实曝光 Prefix，
+且每个曝光 item 都具有合法、不重复的候选池坐标、`real_show_index` 严格递增时，
+才计算 preference loss。训练图在原 30 条候选后追加 `Y_w/Y_l/Y_b`，共享同一次
+`list_backbone` 前向；三条合成 List 只参与 pairwise loss，不接受事实回归标签。
+
+模型的偏好价值与样本构造使用同一口径：
+
+```text
+V(List)
+  = 0.70 * log1p(expected_list_watch_time) / log1p(2400)
+  + 0.30 * log1p(expected_list_engagement) / log1p(147)
+
+L_anchor = -log sigmoid((V(Y_w) - V(Y_l)) / 0.1)
+L_reverse = -log sigmoid((V(Y_w) - V(Y_b)) / 0.1)
+L_preference = L_anchor + 0.3 * L_reverse
+```
+
+在 `preference_posttrain` 阶段，反传目标为 `0.4 * L_preference`；因为没有其他
+loss 同时训练，`loss_contribution/preference_ratio` 应为 1。外层系数 `0.4`
+保留上一版目标配置。`Y_w/Y_b` 都不解释为具有真实反事实回报的曝光样本。
+
+## 推理与在线融合
+
+模型图导出两项业务价值及消费长度：
+
+- `expected_list_watch_time`
+- `expected_list_engagement`
+- `expected_consume_length`
+
+在线兼容字段 `eval_list_scores` 的 List 分支增量项为：
+
+```text
+WT weight * expected_list_watch_time
++ Engagement weight * expected_list_engagement
++ Length weight * expected_consume_length
+```
+
+对应 AB 参数默认均为 0，正式使用前需要显式配置。原来的
+`expected_list_effective_vv(_weight)` 和 `expected_list_interaction(_weight)`
+不再导出或参与融合。
+
+## 监控
+
+除消费长度和 WT 的原有监控外，本版本增加或调整了：
+
+- Engagement 整体 pred/label ratio 与 MAE；
+- EVV 与互动对 Engagement 标签总价值的占比；
+- EVV-only、interaction-positive 两个分桶的 pred/label ratio 与 MAE；
+- interaction-positive 样本率；
+- interaction-positive 经 3 倍加权后在 List Engagement 样本权重中的占比；
+- 偏好样本中 WT/Engagement 的反馈贡献和预测 margin；
+- 正向相对原序及正向相对反序的 pair rate、accuracy、margin 和重排距离；
+- Anchor/Reverse 两部分 Preference 的加权 loss 贡献；
+- 当前训练阶段，以及未参与反传的 factual/preference raw loss；
+- Prefix/List Engagement 加权 loss 贡献及其总 loss 占比；
+- 曝光 item 映射覆盖率、曝光位次/候选坐标唯一率、真实曝光 Prefix 有效率，以及
+  Preference 对总 loss 的实际占比。
+
+离线 target 同时输出 Engagement 总体、EVV-only 和 interaction-positive
+线性回归指标，便于判断合并目标是否牺牲某一类行为。
+
+## 外部 PWTD 的 List 时长对照
+
+以下两项只用于离线评估，不进入任何 loss：
+
+- `list_wt_from_context_pwtd_sum`：累加旧分 Top1 完整 List 的全部 6 个 item；
+- `list_wt_from_context_pwtd_position_decay`：对相同 6 个 item 使用
+  `1 / (0.3 + position^0.6)` 的固定位置衰减后求和，与 backbone
+  线上 item 聚合方式保持一致。
+
+两项 PWTD 与 `expected_list_watch_time` 使用相同的旧分 Top1、相同的六个位置、
+相同的 List WT label 和 Top1 mask，不用真实 K 截断。因此在样本流、统计窗口及
+checkpoint 进度一致时，其 AUC 可与 `fountain_rerank_eval_listwise_v2_new` 直接对照；
+不同 job pass 的瞬时日志仍不能当作严格同批比较。
+
+## 配置生成
+
+代码或输出项变更后，需要在具备内部 `kai`、TensorFlow 和 Dragonfly
+依赖的环境中执行：
+
+```bash
+bash init_train.sh
+bash init_infer.sh
+```
+
+当前复制目录中的 `training/`、`infer/` 属于旧三头版本的生成物；在上述脚本
+成功执行并覆盖前不可用于部署，本次改动以源代码输出定义为准。

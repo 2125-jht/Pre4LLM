@@ -1,0 +1,132 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_supervised_hetu_interset_retrieval",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "kess_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_supervised_hetu_interset_retr_kess_name",
+        "param_type": "string",
+        "default_value": "grpc_SupervisedHetuInterestRetr"
+      },
+      "service_request_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_supervised_hetu_interset_retr_request_num",
+        "param_type": "int",
+        "default_value": 1000
+      },
+      "service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_supervised_hetu_interset_retr_service_timeout_ms",
+        "param_type": "int",
+        "default_value": 100
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "featureUId",
+        "did",
+        "upload_count",
+        "fans_count",
+        "featureUserRequestProvinceId",
+        "featureUserRequestCityId",
+        "gender",
+        "true_gender",
+        "infer_gender",
+        "true_year",
+        "infer_year",
+        "featureVisitNet",
+        "is_douyin",
+        "featrueUserLongTermHetu1Id",
+        "featrueUserLongTermHetu1Score",
+        "featrueUserLongTermHetu2Id",
+        "featrueUserLongTermHetu2Score",
+        "featrueUserLongTermHetu3Id",
+        "featrueUserLongTermHetu3Score",
+        "videoPlayingPid",
+        "profile_v1_click_trigger_aids",
+        "playstat_playtimes",
+        "playstat_durations",
+        "playstat_hetu1s",
+        "playstat_hetu2s",
+        "playstat_hetu3s",
+        "playstat_hetu4s",
+        "userRecentViewTimeListRaw",
+        "userRecentViewPageListRaw",
+        "click_list",
+        "follow_count",
+        "location_city_level_v2",
+        "user_age_segment",
+        "upload_rate",
+        "user_fountain_play_id_list",
+        "user_fountain_play_aid_list",
+        "user_fountain_play_time_list",
+        "user_fountain_play_duration_list",
+        "user_fountain_play_timestamp_list",
+        "user_fountain_play_page_list",
+        "user_fountain_play_hetu_l1_top1_list",
+        "user_fountain_play_hetu_l2_top1_list",
+        "user_fountain_play_hetu_l3_top1_list",
+        "user_fountain_play_hetu_l4_top1_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "supervised_hetu_interset__result"
+      ]
+    }
+  },
+  "reason": 1050,
+  "send_browse_set": false,
+  "trimed_user_info": [],
+  "send_common_attrs": [
+    {"name": "featureUId", "as": "uId"},
+    {"name": "did", "as": "dId"},
+    {"name": "upload_count", "as": "uUploadCount"},
+    {"name": "follow_count", "as": "uFollowCount"},
+    {"name": "fans_count", "as": "uFansCount"},
+    {"name": "user_age_segment", "as": "uBasicAge"},
+    {"name": "location_city_level_v2", "as": "uCityLevelNew"},
+    {"name": "upload_rate", "as": "uUploadRate"},
+    {"name": "featureUserRequestProvinceId", "as": "uProvinceId"},
+    {"name": "featureUserRequestCityId", "as": "uCityId"},
+    {"name": "gender", "as": "uGender"},
+    {"name": "true_gender", "as": "uTrueGender"},
+    {"name": "infer_gender", "as": "uInferGender"},
+    {"name": "true_year", "as": "uTrueYear"},
+    {"name": "infer_year", "as": "uInferYear"},
+    {"name": "featureVisitNet", "as": "uNetwork"},
+    {"name": "is_douyin", "as": "uIsDouYin"},
+    "featrueUserLongTermHetu1Id",
+    "featrueUserLongTermHetu1Score",
+    "featrueUserLongTermHetu2Id",
+    "featrueUserLongTermHetu2Score",
+    "featrueUserLongTermHetu3Id",
+    "featrueUserLongTermHetu3Score",
+    {"name": "videoPlayingPid", "as": "playstat_pids"},
+    {"name": "profile_v1_click_trigger_aids", "as": "playstat_aids"},
+    "playstat_playtimes",
+    "playstat_durations",
+    "playstat_hetu1s",
+    "playstat_hetu2s",
+    "playstat_hetu3s",
+    "playstat_hetu4s",
+    "userRecentViewTimeListRaw",
+    "userRecentViewPageListRaw",
+    "click_list",
+    "user_fountain_play_id_list",
+    "user_fountain_play_aid_list",
+    "user_fountain_play_time_list",
+    "user_fountain_play_duration_list",
+    "user_fountain_play_timestamp_list",
+    "user_fountain_play_page_list",
+    "user_fountain_play_hetu_l1_top1_list",
+    "user_fountain_play_hetu_l2_top1_list",
+    "user_fountain_play_hetu_l3_top1_list",
+    "user_fountain_play_hetu_l4_top1_list"
+  ]
+}

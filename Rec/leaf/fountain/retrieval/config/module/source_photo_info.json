@@ -1,0 +1,53 @@
+{
+  "dragon_params": {
+    "import": {
+      "common_attrs": [
+        "featureSourcePId"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "source_photo_info"
+      ]
+    }
+  },
+  "abtest_params_config": {
+    "biz_name": "RECO_RPC",
+    "ab_params": [
+      {
+        "attr_name": "fountain_request_data_set_tags_all",
+        "default_value": "",
+        "param_name": "fountain_request_data_set_tags_all",
+        "param_type": "string"
+      }
+    ]
+  },
+  "distributed_flat_index_config": {
+    "photo_store_kconf_key": "reco.distributedIndex.hotPhotoInfoCommonIndex",    
+    "perf_log": "entry_photo",
+    "photo_store_request_data_set_tags_attr": "fountain_request_data_set_tags_all",
+    "use_dynamic_photo_store": true,
+    "attrs": [
+      "photo_id",
+      "duration_ms",
+      "hetu_tag_level_info_v2__hetu_level_one",
+      "hetu_tag_level_info_v2__hetu_level_two",
+      "hetu_tag_level_info_v2__hetu_level_three",
+      "hetu_tag_level_info_v2__hetu_level_four",
+      "hetu_tag_level_info_v2__hetu_tag",
+      "hetu_tag_level_info_v2__hetu_face_id",
+      "hetu_tag_level_info_v2__hetu_cluster_id",
+      "hetu_tag_level_info__hetu_level_one",
+      "hetu_tag_level_info__hetu_level_two",
+      "hetu_tag_level_info__hetu_level_three",
+      "hetu_tag_level_info__hetu_level_five",
+      "hetu_tag_level_info__hetu_face_id",
+      "hetu_sim_cluster_id",
+      "user_hash_tag_id"
+    ],
+    "additional_item_source": {
+      "reco_results": false,
+      "common_attr": ["featureSourcePId"]
+    }
+  }
+}

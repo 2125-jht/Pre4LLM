@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_fountain_colossus_parse": 0,
+      "fountain_colossus_parse_max_len": 200,
+      "enable_fountain_possible_calc": false,
+      "fountain_possible_history_item_threshold": 500,
+      "fountain_possible_explore_vv_threshold": 200,
+      "fountain_possible_fountain_vv_threshold": 3
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_resp_v2"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "colossus_photo_id_list",
+        "colossus_play_time_list",
+        "colossus_label_list",
+        "colossus_timestamp_list",
+        "colossus_author_id_list",
+        "colossus_channel_list",
+        "colossus_duration_list",
+        "colossus_tag_list"
+      ]
+    }
+  },
+  "calc_fountain_possible": true
+}

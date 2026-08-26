@@ -1,0 +1,224 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_mc_sort_weight_adjust": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mc_sort_weight_adjust",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "enable_cal_explore_opt_card_weight": {
+        "biz_name": "MOBILE",
+        "param_name": "enable_cal_explore_opt_card_weight",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "adjust_mode": {
+        "biz_name": "MOBILE",
+        "param_name": "adjust_mode",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "opt_card_adjust_smooth": {
+        "biz_name": "MOBILE",
+        "param_name": "opt_card_adjust_smooth",
+        "param_type": "double",
+        "default_value": 1.0
+      },
+      "opt_card_adjust_weight": {
+        "biz_name": "MOBILE",
+        "param_name": "opt_card_adjust_weight",
+        "param_type": "double",
+        "default_value": 1.1
+      },
+      "opt_card_min_score": {
+        "biz_name": "MOBILE",
+        "param_name": "opt_card_min_score",
+        "param_type": "double",
+        "default_value": 0.1
+      },
+      "opt_card_max_score": {
+        "biz_name": "MOBILE",
+        "param_name": "opt_card_max_score",
+        "param_type": "double",
+        "default_value": 2.0
+      },
+      "enable_fr_hetu_distribution_adjust": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_fr_hetu_distribution_adjust",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "fr_hetu_distribution_only_hot": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fr_hetu_distribution_only_hot",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "enable_mc_hetu_distribution_adjust": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_mc_hetu_distribution_adjust",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "enable_kl_fusion_hetu_distribution" : 0,
+      "explore_pic_enable_mc_adjust_weights_by_emp_xtr" : 0,
+      "explore_pic_s1_cluster_sort__enable":[ "explore_pic_s1_cluster_sort__enable", 0],
+      "explore_cascade_debias_xtr_map" : "explore_cascade_debias_xtr_map",
+      "explore_pic_tower_model_infer_v3_skip": 1,
+      "explore_pic_prerank_pic_colossus_skip": 1,
+      "enable_explore_weight_adjust_v2" : 0,
+      "explore_colossus_user_emp_xtr_map" : "explore_colossus_user_emp_xtr_map",
+      "explore_user_pic_stat_redis_key_prefix" : "ep_u_pic_st_",
+      "explore_user_pic_stat_redis_expire_sec" : 600,
+      "explore_pic_enable_write_user_cnts_to_redis": 1,
+      "skip_cascade_enrich_pic_play_cnt": 1,
+      "user_effect_playtime_thresh_s": 3,
+      "enable_colossus_item_limit":0,
+      "max_colossus_item_num":7000,
+      "user_colossus_min_sec_ago":3600,
+      "user_colossus_max_sec_ago":7776000,
+      "explore_enable_user_pic_hetu_distr": false,
+      "explore_interest_distr_use_hetu_l1_backup": false,
+      "enable_enrich_pic_feasury_action_list": 0,
+      "explore_pic_quota_enable_recent_realshow_decay": 0,
+      "explore_pic_interest_explore__enable": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_interest_explore__enable",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "user_level_for_pic_explore_str": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_level_for_pic_explore_str",
+        "param_type": "string",
+        "default_value": "0,1,2,3,4,5,6"
+      },
+      "user_gender_for_pic_explore_str": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_gender_for_pic_explore_str",
+        "param_type": "string",
+        "default_value": "0,1"
+      },
+      "user_age_for_pic_explore_str": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_age_for_pic_explore_str",
+        "param_type": "string",
+        "default_value": "0,1,2,3,4,5,6"
+      },
+      "explore_pic_interval_hour": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_interval_hour",
+        "param_type": "int",
+        "default_value": 24
+      },
+      "enable_explore_get_pic_interest": 0,
+      "explore_hetu_distribution_stat_only_positive": 1,
+      "explore_interest_stat_use_reward": 0,
+      "explore_interest_stat_vv_weight": 1.0,
+      "explore_interest_stat_reward_weight": 0.0,
+      "explore_interest_stat_avg_reward_smooth": 50,
+      "explore_enable_interest_stat_avg_reward": 1,
+      "explore_interest_stat_minus_hate_coeff": 2,
+      "explore_interest_stat_minus_sv_coeff": 1,
+      "explore_colossus_enable_use_actual_reward": true,
+      "explore_colossus_actual_reward_max_history_size": 1000,
+      "enable_explore_mc_interest_stat_use_true_feedback": false,
+      "life_hetu_distribution_stat_only_hot": false,
+      "enable_life_calc_user_positive_hetu": 0,
+      "life_user_pos_hetu_boost_limit_low_active": false,
+      "life_user_positive_hetu_action_days_thresh": 3,
+      "life_user_positive_hetu_action_minutes_thresh": 10,
+      "life_user_positive_hetu_action_time_mode": 0,
+      "life_user_positive_hetu_save_hetu_count": 10,
+      "life_user_positive_hetu_enable_use_click_list": false,
+      "life_user_positive_hetu_enable_use_like_list": true,
+      "life_user_positive_hetu_enable_use_follow_list": true,
+      "life_user_positive_hetu_enable_use_forward_list": true,
+      "life_user_positive_hetu_enable_use_comment_list": true,
+      "life_user_positive_hetu_enable_use_collect_list": true,
+      "life_user_positive_hetu_enable_user_video_play_stats": true,
+      "life_user_positive_hetu_click_weight": 1.0,
+      "life_user_positive_hetu_like_weight": 2.0,
+      "life_user_positive_hetu_follow_weight": 2.0,
+      "life_user_positive_hetu_forward_weight": 2.0,
+      "life_user_positive_hetu_collect_weight": 2.0,
+      "life_user_positive_hetu_comment_weight": 2.0,
+      "life_user_positive_hetu_video_play_weight": 2.0,
+      "life_user_positive_hetu_min_effective_play_length": 7000,
+      "enable_life_user_emp_xtr_method": false,
+      "life_user_emp_ctr_init_alpha": 0.588198,
+      "life_user_emp_ctr_init_alpha_low_active": 0.151395,
+      "life_user_emp_ctr_init_beta": 5.316878,
+      "life_user_emp_ctr_init_beta_low_active": 3.255039,
+      "enable_life_calc_user_recent_uninterest_rate": false,
+      "life_user_recent_uninterest_play_cnt_thr": 20,
+      "life_user_recent_uninterest_real_show_cnt_thr": 20,
+      "life_user_recent_uninterest_time_gap_min": 60,
+      "life_user_recent_uninterest_short_play_thresh": 3000,
+      "enable_life_get_user_group_emp_xtr": false
+    },
+    "import": {
+      "common_attrs":[
+        "user_info_ptr",
+        "colossus_resp_v2",
+        "gamora_hetu_adjust_history_list",
+        "opt_card_like_list",
+        "opt_card_dis_like_list",
+        "uIsLifeHighActive"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "embedding_source_pids",
+        "user_emp_ltr",
+        "user_emp_wtr",
+        "user_emp_ftr",
+        "user_emp_cmtr",
+        "user_emp_eptr",
+        "user_emp_watchtime",
+        "user_emp_fountain_time_ratio",
+        "pic_stat_pic_like_cnt",
+        "pic_stat_pic_follow_cnt",
+        "pic_stat_pic_forward_cnt",
+        "pic_stat_pic_comment_cnt",
+        "pic_stat_pic_play_cnt",
+        "pic_stat_pic_eff_play_cnt",
+        "pic_stat_video_like_cnt",
+        "pic_stat_video_follow_cnt",
+        "pic_stat_video_forward_cnt",
+        "pic_stat_video_comment_cnt",
+        "pic_stat_video_play_cnt",
+        "pic_stat_video_eff_play_cnt",
+        "pic_play_list",
+        "pic_like_list",
+        "pic_follow_list",
+        "pic_comment_list",
+        "pic_comment_aid_list",
+        "pic_hetu_l1_cnt",
+        "pic_hetu_l1_cnt2",
+        "short_term_pic_cnt",
+        "short_term_video_cnt",
+        "user_gender",
+        "user_age_segment",
+        "explore_colossus_user_emp_xtr_map_ptr",
+        "output_intrest_key_list",
+        "output_intrest_value_list",
+        "colossus_hetu_distribution_total_count",
+        "colossus_hetu_distribution_hetu_stat",
+        "user_pic_interest_hetu_distr",
+        "user_pic_interest_hetu_distr_str",
+        "uStandardRealShowPicAllIdList",
+        "uStandardClickPicAllIdList",
+        "uStandardLongviewPicAllIdList",
+        "uIsPicDeep",
+        "enable_pic_explore_flag",
+        "colossus_actual_reward_hetu_stat",
+        "user_positive_hetu2_list",
+        "recent_short_play_rate",
+        "recent_unclick_rate"
+      ]
+    }
+  }
+}

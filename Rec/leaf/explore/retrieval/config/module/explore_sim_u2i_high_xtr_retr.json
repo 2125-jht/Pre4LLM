@@ -1,0 +1,76 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_sim_u2i_high_xtr_retrieval",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "retrieval_cache_config": ["explore_sim_u2i_high_xtr_retr_cache_config", ""],
+      "explore_sim_u2i_retr_kess_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_sim_u2i_high_xtr_retr_kess_name",
+        "param_type": "string",
+        "default_value": "grpc_exploreSimRetrAsync"
+      },
+      "explore_sim_u2i_retr_total_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_sim_u2i_high_xtr_retr_total_num",
+        "param_type": "int",
+        "default_value": 500
+      },
+      "enable_explore_sim_u2i_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_sim_u2i_high_xtr_retrieval",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "explore_only_hot_tab": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_only_hot_tab_high_xtr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "explore_sim_u2i_action_weight_str": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_sim_u2i_high_xtr_action_weight_str",
+        "param_type": "string",
+        "default_value": ""
+      },
+      "explore_sim_u2i_hetu_count": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_sim_u2i_high_xtr_hetu_count",
+        "param_type": "int",
+        "default_value": 4
+      },
+      "explore_sim_u2i_exploit_hetu_count": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_sim_u2i_high_xtr_exploit_hetu_count",
+        "param_type": "int",
+        "default_value": 3
+      },
+      "explore_sim_u2i_hetu_l1_white_list": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_sim_u2i_high_xtr_hetu_l1_white_list",
+        "param_type": "string",
+        "default_value": ""
+      },
+      "skip_personal_quota": ["explore_sim_u2i_high_xtr_skip_personal_quota", 1]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "colossus_resp_v2",
+        "reason_ratio_map_attr",
+        "uIsExploreTnuCrowdUser"
+      ]
+    },
+    "export": {
+      "results": [
+        "explore_sim_u2i_high_xtr__result"
+      ]
+    }
+  },
+  "reason": 5050
+}

@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_focal_u2u_retr_fountain", true],
+      "fountain_focal_u2u_emb_service": "grpc_exploreFocalEmb",
+      "fountain_focal_u2u_ann_service": "grpc_exploreFocalU2u",
+      "fountain_focal_u2u_user_num": 200,
+      "fountain_user_photo_redis_cluster_name": "recoColossusTriggers",
+      "fountain_user_photo_redis_key_prefix": "clicks_",
+      "fountain_focal_u2u_num_per_user": 20,
+      "fountain_focal_u2u_cand_num": 1000,
+      "skip_fountain_focal_u2u_retr": 1
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "focal_user_list"
+      ],
+      "results": [
+        "focal_u2u_retr__result"
+      ]
+    }
+  },
+  "reason": 314
+}

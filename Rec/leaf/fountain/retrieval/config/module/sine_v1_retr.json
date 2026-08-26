@@ -1,0 +1,32 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_sine_v1_retr_fountain", true],
+      "fountain_sine_v1_retr_server_name": "grpc_fountainSineV1CommonRetrServer",
+      "fountain_sine_v1_retr_request_num": 1000,
+      "skip_fountain_sine_v1_retr_server": {
+        "default_value": 1
+      },
+      "fountain_sine_v1_search_num": 1000,
+      "fountain_sine_v1_interest_depth": 400,
+      "fountain_sine_v1_diversity_boost": 0.1,
+      "fountain_sine_v1_photo_score_boost": 0.0
+    }, 
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "featureUId",
+        "featureDeviceId",
+        "featureUserProfileV1FollowAidList",
+        "featureUserProfileV1Play18SPidList",
+        "featureUserProfileV1Play18SAidList"
+      ]
+    },
+    "export": {
+      "results": [
+        "sine_v1_retr__result"
+      ]
+    }
+  },
+  "reason": 415
+}

@@ -1,0 +1,43 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_cascade_downgrade": ["enable_mc_emp_xtr_fill_pxtr_downgrade", false],
+      "mc_new_arch_tower_service": "grpc_newArchHotMcTowerExp2",
+      "mc_new_arch_tower_request_type": "predict_by_hot_mc_tower"
+    },
+    "import": {
+      "common_attrs": [
+        "prerank_step3",
+        "userInfo"
+      ],
+      "results": [
+        "cascading_prerank_channel_sort__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "mc_step1"
+      ],
+      "item_attrs": [
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_pftr",
+        "cascade_plvtr2",
+        "cascade_ptr",
+        "cascade_pepstr",
+        "cascade_pcestr",
+        "cascade_pcmtr",
+        "cascade_plivingtr",
+        "cascade_pcltr",
+        "cascade_pdtr",
+        "cascade_phtr",
+        "cascade_peftr",
+        "cascade_pefctr",
+        "cascade_pwtd",
+        "cascade_pic_wtd",
+        "cascade_pic_lvtr",
+        "cascade_pic_cpr"
+      ]
+    }
+  }
+}

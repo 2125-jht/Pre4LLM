@@ -1,0 +1,23 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": ["enable_focal_u2i_retrieval", false],
+        "embedding_service": ["focal_u2i_emb_service", "grpc_exploreFocalEmb"],
+        "ann_service": ["focal_u2i_ann_service", "grpc_exploreFocalU2i"],
+        "retrieve_num": ["focal_u2i_cand_num", 1000]
+      },
+      "import": {
+        "common_attrs": [
+          "browse_screen__pid_list"
+        ]
+      },
+      "export": {
+        "results": [
+          "focal_u2i_retr__result"
+        ]
+      }
+    },
+    "reason": 4013,
+    "slot": 100,
+    "space": "ip"
+}

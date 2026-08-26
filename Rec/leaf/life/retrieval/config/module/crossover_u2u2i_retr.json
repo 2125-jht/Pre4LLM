@@ -1,0 +1,33 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_life_crossover_u2u2i_retrieval", false],
+      "enable_rand_source": ["enable_life_crossover_u2u2i_rand_source", false],
+      "redis_prefix": ["life_crossover_u2u2i_sim_redis_prefix", "coRetr_a2i"],
+      "max_interact_aids_num": ["life_crossover_u2u2i_retr_max_interact_aids_num", 100],
+      "playtime_ths": ["life_crossover_u2u2i_retr_playtime_ths", 18000],
+      "duration_ths": ["life_crossover_u2u2i_retr_duration_ths", 7000],
+      "max_source_aids_num": ["life_crossover_u2u2i_retr_max_source_aids_num", 200],
+      "retr_num_each": ["life_crossover_u2u2i_retr_num_each", 15],
+      "max_long_view_aid_num": ["life_crossover_u2u2i_max_long_view_aid_num", 200],
+      "max_interest_auhtor_ppage__author_num": ["exploremax_interest_auhtor_ppage__author_num", 0],
+      "max_interest_auhtor_hpage__author_num": ["explore_max_interest_auhtor_hpage__author_num", 0],
+      "retr_num_limit": ["life_crossover_u2u2i_retr_num_limit", 1000],
+      "retrieve_num": ["life_crossover_u2u2i_retr_cand_limit_num", 1000],
+      "enable_trigger_shuffle": ["life_crossover_u2u2i_retr_enable_trigger_shuffle", false],
+      "enable_life_crossover_colossus": ["life_crossover_u2u2i_retr_enable_life_crossover_colossus", true],
+      "enable_life_crossover_explore": ["life_crossover_u2u2i_retr_enable_life_crossover_explore", true]
+    },
+    "import": {
+      "common_attrs": [
+        "like_aids"
+      ]
+    },
+    "export": {
+      "results": [
+        "life_crossover_u2u2i_retr__result"
+      ]
+    }
+  },
+  "reason": 522
+}

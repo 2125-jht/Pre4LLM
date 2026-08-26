@@ -1,0 +1,59 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_duration_based_5min_calibrated_vtr_model": false,
+      "explore_duration_based_5min_calibrated_vtr_model": "grpc_explore_duration_based_5min_calibrated_vtr_model",
+      "explore_duration_based_5min_calibrated_vtr_partition_size": 150,
+      "explore_duration_based_5min_calibrated_vtr_thres": 1.0
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "active_days_gt_5min_rate",
+        "uOldMmuClusterId300ListList"
+      ],
+      "item_attrs": [
+        "explore_stat__report_detail__total_report_count",
+        "corr_pctr",
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "fr_score1",
+        "fr_score2",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "fetr",
+        "fountain_eff",
+        "pColossusScore",
+        "score_pctr",
+        "awesome_wtd",
+        "pctr_index",
+        "pltr_index",
+        "pwtr_index",
+        "pftr_index",
+        "pvtr_index",
+        "plvtr_index",
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "duration_based_5min_calibrated_evtr",
+        "duration_based_5min_calibrated_lvtr"
+      ]
+    }
+  }
+}

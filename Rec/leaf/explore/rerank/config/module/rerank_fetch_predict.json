@@ -1,0 +1,76 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_explore_la_rerank_es_score_adjust": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_explore_la_rerank_es_score_adjust",
+          "param_type": "int",
+          "default_value": 0,
+          "report_ab_hit": true
+        },
+        "explore_rerank_la_ensemble_sort_pfr_score2_weight_max": 0.0,
+        "explore_rerank_la_ensemble_sort_pfr_score2_weight_base": 0.0,
+        "explore_rerank_la_ensemble_sort_fulles_weight_max": 0.0,
+        "explore_rerank_la_ensemble_sort_fulles_weight_base": 0.0,
+        "fr_rerank_ensemble_use_proportion": false,
+        "fr_rerank_ensemble_use_power_rank": true,
+        "enable_rerank_ensemble_sort": false,
+        "fr_rerank_ensemble_list_weight": 5.0,
+        "fr_rerank_predict_pxtr_weight": 0.0,
+        "fr_rerank_predict_topk_num": 1,
+        "explore_rerank_ensemble_sort_ensemble_score_weight": 2.0,
+        "explore_rerank_ensemble_sort_pure_fr_score2_weight": 1.0,
+        "explore_rerank_ensemble_sort_corr_pctr_weight": 0.0,
+        "explore_rerank_ensemble_sort_awesome_wtd_weight": 0.0,
+        "explore_rerank_ensemble_sort_corr_pwtr_weight": 0.0,
+        "explore_rerank_ensemble_sort_pltr_weight": 0.0,
+        "enable_use_explore_rerank": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_use_explore_rerank",
+          "param_type": "int",
+          "default_value": 1,
+          "report_ab_hit": true
+        },
+        "fr_rerank_kai_predict_service": "grpc_ExploreKaiRerankPredictServerXwV1",
+        "fr_rerank_predict_service_loss_name": "l2r_pos0;l2r_pos1;l2r_pos2;l2r_pos3;l2r_pos4;l2r_pos5;l2r_pos6;l2r_pos7;l2r_pos8;l2r_pos9;list_ltr0",
+        "explore_rerank_skip_add_label_aware_fea": 1,
+        "enable_ultimate_diversify": false,
+        "ultimate_variety_engineer_slot_num_shuanglie": 20,
+        "ultimate_variety_gen_engineer_limit_thres": 60,
+        "ultimate_variety_shuanglie_enable1": false,
+        "ultimate_variety_shuanglie_winsize1": 20,
+        "ultimate_variety_shuanglie_max1": 1,
+        "ultimate_variety_shuanglie_priority1": 9,
+        "enable_rerank_hetu1_diversify": false,
+        "rerank_hetu1_diversify_winsize": 4,
+        "rerank_hetu1_diversify_max": 1,
+        "enable_explore_rerank_picture_eval_score": false,
+        "explore_rerank_picture_evaluator_score_f1_perf_tag": "f1_default",
+        "explore_rerank_picture_evaluator_first_pos_weight": 2.0,
+        "explore_rerank_picture_evaluator_last_pos_weight": 1.0,
+        "explore_rerank_picture_evaluator_enable_nolinear": false,
+        "explore_rerank_picture_evaluator_pos_tail_factor": 2.0,
+        "enable_explore_rerank_eval_ensemble_score": false,
+        "explore_rerank_picture_evaluator_weight": 0.0,
+        "explore_rerank_picture_evaluator_max_list_weight_limit": 0.3,
+        "enable_explore_rerank_flash_eval_model_predict": false,
+        "explore_rerank_flash_eval_model_kess_service": "grpc_explore_flash_evaluator_v1_infer",
+        "explore_rerank_flash_eval_model_request_type": "kai_predict",
+        "explore_rerank_flash_eval_model_partition_size": 70
+      },
+      "import": {
+        "results": [
+          "rerank_gen_list"
+        ],
+        "common_attrs": [
+          "retrieval_list_keys",
+          "infer_uv_ctr"
+        ]
+      },
+      "export": {
+        "results": [
+          "rerank_fetch_predict__result"
+        ]
+      }
+    }
+  }

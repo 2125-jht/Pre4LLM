@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_friends_retr", false],
+      "enable_browset_filter": ["enable_explore_friends_retr_browset_filter", false],
+      "result_num": ["explore_friends_retr_result_num", 200],
+      "key_prefix": ["explore_friends_retr_redis_key_prefix", ""],
+      "redis_retrieval_num": ["explore_friends_retr_redis_retrieval_num", 500],
+      "enable_rank_neg_filter": ["explore_friends_retr_enable_rank_neg_filter", false]
+    }, 
+    "import": {
+      "common_attrs": [
+        "rank_neg_photo_id_list_str"
+      ]
+    }, 
+    "export": {
+      "item_attrs": [
+        "recommend_friend_list",
+        "is_recommend_by_friend"
+      ],
+      "results" : [
+        "explore_friends_retr__result"
+      ]
+    }
+  },
+  "reason": 811,
+  "pass_browse_set": true,
+  "redis_cluster_name": "relationRecommendLike",
+  "redis_timeout_ms": 20
+}

@@ -1,0 +1,52 @@
+{
+  "modules": [
+    {
+      "name": "fountain_fetch_similar_user_list",
+      "type_name": "FountainFetchSimilarUserListModule"
+    },
+    {
+      "name": "fountain_fetch_duration_group_id",
+      "type_name": "FountainFetchDurationGroupIdModule"
+    },
+    {
+      "name": "fountain_fetch_photo_info",
+      "type_name": "FountainFetchPhotoInfoModule"
+    },
+    {
+      "name": "fountain_ranking_score",
+      "type_name": "FountainRankingScoreModule"
+    },
+    {
+      "name": "fountain_ranking_stage1_truncate",
+      "type_name": "FountainRankingStageOneTruncateModule"
+    },
+    {
+      "name": "fountain_ranking_ensemble_sort",
+      "type_name": "FountainRankingEnsembleSortModule"
+    },
+    {
+      "name": "fountain_cascade_pxtr_index",
+      "type_name": "PxtrIndexModule"
+    },
+    {
+      "name": "fountain_calculate_comment_ltr",
+      "type_name": "FountainCalculateCommentLtrModule"
+    },
+    {
+      "name": "fountain_calc_hate_list_similary_score",
+      "type_name": "FountainCalcHateListSimilaryScoreModule"
+    },
+    {
+      "name": "fountain_cl_ltr_predict",
+      "type_name": "FountainClLtrPredictModule"
+    },
+    {
+      "name": "fountain_splash_slide_predict",
+      "type_name": "FountainSplashSlidePredictModule"
+    },
+    {
+      "name": "fountain_fullrank_deep_ltr",
+      "type_name": "FountainFullRankDeepLtrModule"
+    }
+  ]
+}

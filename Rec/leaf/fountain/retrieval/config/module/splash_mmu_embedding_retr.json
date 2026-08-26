@@ -1,0 +1,24 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_splash_mmu_embedding_retr", true],
+      "skip_fountain_mmu_subdividion_embedding_retrieval": {
+        "param_name": "skip_fountain_mmu_subdividion_embedding_retrieval",
+        "param_type": "int",
+        "default_value": 1
+      }
+    }, 
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "commonRetrievalPhotos"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_mmu_embedding__result"
+      ]
+    }
+  },
+  "reason": 10071
+}

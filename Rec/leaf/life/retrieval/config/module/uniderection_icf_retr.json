@@ -1,0 +1,118 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+          "param_name": "enable_uniderection_index_retr",
+          "param_type": "bool",
+          "default_value": false,
+          "report_ab_hit": true
+      },
+      "index_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "remote_uniderection_retr_index_service",
+        "param_type": "string",
+        "default_value": "grpc_explorePdnIndexV3"
+      },
+      "index_service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "remote_uniderection_retr_index_timeout",
+        "param_type": "int",
+        "default_value": 50
+      },
+      "search_num_per_trigger": {
+        "biz_name": "RECO_RPC",
+        "param_name": "remote_uniderection_retr_num_per_trigger",
+        "param_type": "int",
+        "default_value": 20
+      },
+      "index_cache_expire_time_s": {
+        "biz_name": "RECO_RPC",
+        "param_name": "remote_uniderection_index_cache_expire_time_sec",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "colossus_trigger_max_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "remote_retr_uniderection_colossus_aux_triggers_num",
+        "param_type": "int",
+        "default_value": 500
+      },
+      "enable_knowledge_trigger": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_uniderection_add_knowledge_retr_trigger",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "knowledge_trigger_max_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_uniderection_add_knowledge_retr_trigger_max_num",
+        "param_type": "int",
+        "default_value": 30
+      },
+      "cand_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_uniderection_remote_retr_cand_num",
+        "param_type": "int",
+        "default_value": 3000
+      },
+      "enable_scatter_trigger": ["explore_uniderection_enable_scatter_colossus_trigger", false],
+      "trigger_scatter_each_limit": ["explore_uniderection_scatter_trigger_each_tag_limit", 20],
+      "enable_scatter_play_list": ["explore_uniderection_enable_scatter_playlist", false],
+      "play_list_scatter_each_limit": ["explore_uniderection_scatter_playlist_each_tag_limit", 3],
+      "play_list_trigger_max_num": ["explore_uniderection_playlist_trigger_num", 40],
+      "interest_explore_trigger_expand_cnt": ["uniderection_expand_interest_explore_trigger_cnt", 0],
+      "skip_filter_by_browse_screen": ["skip_explore_uniderection_filter_by_browse_screen", 1],
+      "skip_browse_set": ["skip_explore_uniderection_filter_by_browse_set", 1],
+      "enable_global_trigger": ["explore_uniderection_enable_global_trigger", true],
+      "sample_trigger_num": ["uniderection_sample_trigger_num", 300],
+      "start_idx": ["uniderection_start_idx", 500],
+      "mc_enable_opt_card_trigger": {
+        "biz_name": "MOBILE",
+        "param_name": "uniderection_mc_enable_opt_card_trigger",
+        "param_type": "bool",
+        "default_value": false
+      }
+    },
+    "kconf": {
+      "hetu_low_level_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "low_level_tags"
+      },
+      "hetu_level2_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "level2_tags"
+      }
+    },
+    "import": {
+      "common_attrs": [
+      "user_info_ptr",
+      "colossus_user_info__trigger_id_list",
+      "colossus_user_info__knowledge_trigger_set",
+      "colossus_user_info__trigger_tag_list",
+      "colossus_user_info__interest_explore_trigger_set",
+      "browse_screen__pid_list",
+      "global_normal_trigger_list",
+      "global_high_value_trigger_list",
+      "global_normal_trigger_weight_list",
+      "global_high_value_trigger_weight_list",
+      "optcard_like_trigger_id_list",
+      "optcard_dislike_trigger_id_list",
+      "enable_global_trigger_weight_adjust"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_retr__trigger_pid"
+      ],
+      "results": [
+        "uniderection_icf_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 3097,
+  "retrieve_num": 3000
+}

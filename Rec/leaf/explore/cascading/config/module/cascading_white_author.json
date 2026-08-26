@@ -1,0 +1,26 @@
+
+{
+  "dragon_params": {
+    "abtest": {
+      "support_and_big_v_author_change": {
+        "biz_name": "RECO_RPC",
+        "param_name": "support_and_big_v_author_change",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "item_attrs": [
+        "is_support_author",
+        "is_big_v_white_author_photo"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "is_white_author"
+      ]
+    }
+  }
+}
+  

@@ -1,0 +1,62 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "param_name": "enable_augmented_tt_i2i_retrieval",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "enable_trigger_with_weight": {
+        "param_name": "enable_augmented_tt_i2i_trigger_with_weight",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "service_name": {
+        "param_name": "augmented_tt_i2i_retr_service_name",
+        "default_value": "grpc_exploreLauNNRetrServer",
+        "report_ab_hit": true
+      },
+      "service_timeout_ms": {
+        "param_name": "augmented_tt_i2i_retr_ann_timeout",
+        "default_value": 100,
+        "report_ab_hit": true
+      },
+      "src_data_type": {
+        "param_name": "augmented_tt_i2i_src_bucket",
+        "default_value": "photo",
+        "report_ab_hit": true
+      },
+      "dest_bucket": {
+        "param_name": "augmented_tt_i2i_dest_bucket",
+        "default_value": "index_photo",
+        "report_ab_hit": true
+      }, 
+      "is_confidence_filter": ["augmented_tt_i2i_is_confidence_filter", 0],
+      "confidence_weight": ["augmented_tt_i2i_confidence_weight", 3], 
+      "trigger_limit": ["augmented_tt_i2i_src_num", 30],
+      "click_limit": ["augmented_tt_i2i_click_num", 10],
+      "like_limit": ["augmented_tt_i2i_like_num", 5],
+      "follow_limit": ["augmented_tt_i2i_follow_num", 5],
+      "forward_limit": ["augmented_tt_i2i_forward_num", 5],
+      "profile_enter_limit": ["augmented_tt_i2i_prof_num", 5],
+      "download_limit": ["augmented_tt_i2i_download_num", 5],
+      "collect_limit": ["augmented_tt_i2i_collect_num", 5],
+      "retrieve_num_per_trigger": ["augmented_tt_i2i_retr_num", 20],
+      "ann_dist_threshold": ["augmented_tt_i2i_retr_ann_distance", 0.5],
+      "retrieve_num": ["augmented_tt_i2i_cand_num", 500]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "augmented_tt_i2i_ann__result"
+      ]
+    }
+  },
+  "reason": 10040
+}
+

@@ -1,0 +1,42 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_prefer_xtr_model": false,
+      "explore_prefer_xtr_kess_service": "krp_gpu_mau_prefer_xtr",
+      "explore_prefer_xtr_partition_size": 180
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "item_attrs": [
+        "awesome_wtd",
+        "corr_pctr",
+        "pepstr",
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "fr_score1",
+        "fr_score2",
+        "pcltr",
+        "fetr"
+      ],
+      "common_attrs": [
+        "uMultiDimensionGroupKV",
+        "uMultiDimensionGroupDetailKV"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "prefer_xtr_score"
+      ]
+    }
+  }
+}

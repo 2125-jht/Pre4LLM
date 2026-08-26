@@ -1,0 +1,44 @@
+{
+  "dragon_params":{
+    "abtest": {
+      "explore_enable_fetch_rank_neg_photo": false,
+      "explore_rank_neg_photo_key_prefix": "explore_",
+      "explore_enable_fetch_rerank_neg_photo": false,
+      "explore_rerank_neg_photo_key_prefix": "e_rerank_",
+      "explore_enable_fetch_explore_rerank_pos_photo": false,
+      "explore_rerank_pos_photo_key_prefix": "e_rerank_pos_",
+      "explore_enable_fetch_cascade_neg_photo": false,
+      "explore_cascade_neg_photo_key_prefix": "h_",
+      "life_enable_week_cluster_get_redis": false,
+      "life_enable_intere_cluster_get_redis": true,
+      "life_enable_intere_score_get_redis": false,
+      "life_enable_intere_score_get_redis_v2": true
+    },
+    "export": {
+      "common_attrs": [
+        "support_author_memory_data",
+        "prerank_duration_debias_bucket",
+        "xhs_hetu_memorydata_set",
+        "hetu_v1_id_mapping_ptr",
+        "merchant_live_authors_set__memory_data",
+        "hetu_gender_to_norm_ctr_map_ptr",
+        "rank_neg_photo_id_list_str",
+        "rerank_neg_photo_id_list_str",
+        "explore_pic_fr_pxtr_pcts_ptr",
+        "fountain_rank_pos_photo_id_retrieval_list",
+        "pic_da_user_pref_ptr",
+        "explore_rerank_pos_photo_id_retrieval_list",
+        "pic_fr_rel_score_pct_map",
+        "cascade_neg_photo_id_list",
+        "pic_rerank_pid_realshow_data_map",
+        "high_value_black_author_map_ptr",
+        "negative_aid_set_ptr"
+      ]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list"
+      ]
+    }
+  }
+}

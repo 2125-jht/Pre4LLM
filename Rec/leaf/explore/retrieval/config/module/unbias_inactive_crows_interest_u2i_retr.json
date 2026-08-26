@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["explore_enable_unbias_inactive_crows_interest_u2i_retr", false],
+      "service_name": ["explore_unbias_inactive_crows_interest_u2i_ann_service_name", "kws-kuaishou-hot-com-retr-unbias-la-interest-u2i-retr"],
+      "retrieve_num": ["explore_unbias_inactive_crows_interest_u2i_retr_cand_num", 1000],
+      "final_cand_num": ["explore_unbias_inactive_crows_interest_u2i_retr_final_num", 500],
+      "explore_unbias_interest_u2i_retr_cid_prefix": "",
+      "candidate_num": ["explore_unbias_inactive_crows_interest_u2i_retr_candidate_num", 500],
+      "distance_threshold": ["explore_unbias_inactive_crows_interest_u2i_retr_distance_threshold", 500],
+      "search_num": ["explore_unbias_inactive_crows_interest_u2i_retr_search_num", 500]
+    },
+    "constants": {
+      "service_timeout_ms": 30,
+      "risk_level_min": 0
+    },
+    "import": {
+      "common_attrs": [
+        "user_risk_level",
+        "basic_info_age_segment_v2",
+        "basic_info_gender_v2",
+        "browse_screen__pid_list",
+        "mc_u2i_user_embedding_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "unbias_inactive_crows_intesest_u2i_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 10043
+}

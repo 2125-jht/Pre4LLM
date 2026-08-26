@@ -1,0 +1,28 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["explore_cs_enable_u2i_retr", false],
+      "kess_service_name": ["explore_cs_u2i_ksn", "kws-kuaishou-hot-slide-video-cold-start-end2end-retrieve-kai2-0808-ann-bucket"],
+      "service_request_num": ["explore_cs_u2i_req_num", 100]
+    },
+    "constant": {
+      "service_timeout_ms": 50
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "cold_u2i_retr__result"
+      ]
+    }
+  },
+  "reason": 2071,
+  "service_request_type": "default",
+  "send_browse_set": false,
+  "trimed_user_info": [
+    "browsed_photo_ids"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "graph_embedding_retrieval_num_old_user",
+        "param_type": "int",
+        "default_value": 400
+      },
+      "timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "graph_embedding_common_reco_service_timeout",
+        "param_type": "int",
+        "default_value": 100
+      },
+      "retrieve_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "graph_embedding_retrieval_num_old_user",
+        "param_type": "int",
+        "default_value": 400
+      },
+      "service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "graph_embedding_common_reco_service_name",
+        "param_type": "string",
+        "default_value": "grpc_nuOfflineDataCommonRetrServer"
+      }
+    },
+    "constant": {
+      "bucket_name": {
+        "attr_type": "common_attr",
+        "value_type": "string",
+        "value": "all_user_v2"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__pid_list",
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "graph_emb__result"
+      ]
+    }
+  },
+  "reason": 221
+}

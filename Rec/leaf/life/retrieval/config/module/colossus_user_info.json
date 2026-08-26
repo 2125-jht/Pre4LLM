@@ -1,0 +1,43 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "negative_trigger_num": ["explore_filter_negative_trigger_num", 0],
+      "prefer_trigger_num": ["explore_user_prefer_trigger_num", 0],
+      "enable_use_colossus_old": false,
+      "enable_life_use_colossus_new": false,
+      "life_colossus_new_limit_num": 400,
+      "enable_use_colossus_resp_v2": false,
+      "enable_life_realtime20_action_prepare": false,
+      "enable_life_realtime200_action_prepare": false,
+      "enable_life_realtime_action_sensitive_browse_nums": 30
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "colossus_hetu_one_list",
+        "colossus_cluster_id_list",
+        "remap_cluster_id_632_list",
+        "colossus_photo_id_list",
+        "copy_colossus_photo_id_list",
+        "colossus_play_time_list",
+        "colossus_label_list",
+        "colossus_author_id_list",
+        "colossus_channel_list",
+        "colossus_duration_list",
+        "colossus_timestamp_list",
+        "colossus_resp_old",
+        "colossus_resp_v2",
+        "negative_trigger_ids",
+        "negative_trigger_weights",
+        "prefer_trigger_ids",
+        "prefer_trigger_weights",
+        "realtime_photo_id_list", 
+        "is_realtime_boost"
+      ]
+    }
+  }
+}

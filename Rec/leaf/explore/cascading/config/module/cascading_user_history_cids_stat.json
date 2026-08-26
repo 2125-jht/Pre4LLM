@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_user_history_cids_stat" : false,
+      "explore_user_history_cids_recent_realshow_top_ratio": 1.0,
+      "explore_user_history_cids_recent_realshow_min_count": 0
+    },
+    "import": {
+      "common_attrs": [
+        "explore_realshow_click_common_list"
+      ],
+      "item_attrs": [
+        "hetu_sim_cluster_id"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "user_recent_realshow_cids"
+      ]
+    }
+  }
+}
+  

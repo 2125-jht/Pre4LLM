@@ -1,0 +1,169 @@
+# 日志路径，不建议修改
+--log_dir=../log/
+# 召回相关配置
+--enable_return_item_without_element=true
+--parallel_ann_thread_num=80
+--max_shm_mem_size=200000000000
+--max_log_count=300
+--asynclogtofile=true
+--precision_sample_rate=101
+
+# GRPC worker 线程数量，如果 QPS 比较低或者使用了 sub_flow 建议使用 50 或 80；
+# 如果 QPS 很高建议配置为 CPU 核数的 1.5 或 2 倍
+--grpc_thread_num_per_core=2.0
+
+# GRPC 相关配置，不建议修改
+--grpc_server_port=9082
+--web_thread_num=8
+--web_server_port=9080
+# 运行 graph 使用的线程数，如果是 CPU 运行这个数字需要设置一下
+--mio_tensorflow_intra_op_parallelism_threads=32
+--mio_tensorflow_inter_op_parallelism_threads=32
+
+################# BEGIN REGION DICT #################
+--ip_region_dict_file=../data/ip_region.dat
+--region_searcher_point_file=../data/geography.data
+--region_dict_filename=../data/region_dict.dat
+--dnn_cluster_id_map_file=../data/dnn_cluster_map_file_name.dat
+################# END REGION DICT #################
+
+# perf 开关
+--perfutil_product_env=true
+
+# debug 页面
+--common_reco_request_detail_interval_ts=10000000
+
+# leaf show
+--common_reco_enable_leaf_show=false
+
+# 模型存储路径，不建议修改
+--dnn_local_path=/dev/shm/dnn_model/
+
+# cache response
+--request_cache_kcc_cluster=recoModelUserRequestCache
+--enable_request_cache=true
+--request_cache_user_whitelist_kconf_key=reco.model.exploreCacheWhitelist
+--enable_response_cache=true
+--response_cache_user_whitelist_kconf_key=reco.model.exploreCacheWhitelist
+--response_cache_limit_for_user=30
+
+# boot faster, by load model 10 minutes before
+# 如下设置可以读取 BTQ 中 10 分钟前的模型，加载会更快一些。如果不需要此功能，可以删除。
+--mio_tf_dnn_model_trainer_output_delta_model=false
+--mio_tf_dnn_model_trainer_output_batch_model_period_us=600000000
+
+# 分布式索引相关，不建议修改
+# --item_doc_grpc_service_name=grpc_hotPhotoInfoService
+# --item_doc_cache_realtime_queue_name=exp_realtime_photoinfo
+# --kconf_item_num_limit_path=reco.distributedIndex.hotItemDocNumLimiter
+# --item_doc_cache_size=15000000
+# --item_doc_cache_grpc_timeout_ms=300
+# --item_doc_cache_ttl_sec=600
+# --item_doc_dump_interval_sec=900
+# --item_doc_cache_put_thread_num=4
+# --item_doc_grpc_io_thread_num=16
+# --item_doc_using_f14_lru=true
+#--item_doc_has_important_queue=false
+# --item_doc_dump_file_name=../data/item_doc.binlog
+
+# record traffic for dryrun
+--traffic_record_biz_name=reco
+--traffic_record_prefer_kws_biz_name=false
+
+# less log
+--logging_switch_uid_mod_divisor=2000
+
+# stop faster
+--enable_fast_stop=true
+
+# enable grpc and brpc
+--server_type=grpc
+
+# more event loop
+--kess_client_event_loop_nums=32
+
+--grpc_caller_whitelist_kconf_key=reco.model.exploreCommonLeafWhitelist
+
+# boot faster, by load model 10 minutes before
+# --online_dnn_model_trainer_output_delta_model=false
+--mio_tf_dnn_model_trainer_output_delta_model=false
+# --online_dnn_model_trainer_output_batch_model_period_us=600000000
+--mio_tf_dnn_model_trainer_output_batch_model_period_us=600000000
+# record traffic for dryrun
+--traffic_record_biz_name=reco
+--traffic_record_prefer_kws_biz_name=false
+
+# less log
+--logging_switch_uid_mod_divisor=100
+
+
+# batching executor related
+--mio_tensorflow_batching_system_batch_size=1200
+--mio_tensorflow_batch_timeout_micros=1000
+--mio_tensorflow_batch_prepare_thread_num=10
+--mio_tensorflow_batch_max_enqueued_batches=1000
+--max_item_size_per_req=1200
+--max_concurrency=145
+--reserve_factor=3
+--tensor_meta_max_batch_size=1200
+
+--online_dnn_receive_dnn_model_as_macro_block=true
+--mio_embedding_trained_by_kai=true
+
+# provide kuiba predict api, instead of common leaf
+# src/online_predict_dsl_use_kai_extractor.py: use_kuiba_predict_server=True
+# --server_type=kuiba_predict_service
+
+#local emb table config
+# --need_embedding_table=true
+# --sync_embeddings_from_replica=true
+# --min_embeddings_required=1000000
+# --bt_embd_mq_update_delay_thres=3600000000
+# --message_queue_update_delay_thres=3600000000
+# --shm_embd_dirs=/dev/shm/bt_embd
+# --shm_embd_memory=450971566080
+# --shm_embd_capacity=4294967296
+#--shm_embd_shard_num=64
+# --mio_local_embedding_thread_num=1
+# --perf_interval_log_item_sign_hit=false
+
+# make kuiba to extract signs like mio
+--embedding_warmup_with_mio_model=true
+--parameter_sign_bits=48
+
+--uni_disable_model_update_p1_alert=true
+
+--attr_index_biz_name=grpc_KaiWorksExploreLongSequenceTransformerRetrInfer
+
+# 不要改，主站通用索引 BTQ 
+--attr_index_queue_names=reco_index_transfer_hotPhoto_commonIndex,reco_index_transfer_hotPhoto_commonIndex(important)
+# 千万不要改，改这个完会清理数据，同时影响别的实例同步
+--attr_index_capacity=1073741824
+# 不要改，现在是 1 day ，改了影响别的实例同步
+--attr_index_expire_seconds=86400
+# 不要改， bt sync 的 kess 名
+--attr_index_bt_shm_kv_kess_name=grpc_hotPhotoInfo_CommonIndex_For_ANN
+# 不要改， bt sync 的对应 shard 名
+--attr_index_bt_sync_shard_name=grpc_hotPhotoInfo_CommonIndex_For_ANN_BTSync
+# 不要改，MemKv配置
+--recycle_force_renew=true
+# 不要改 启动时检查 attr index 配置 （可用于启动时清理 attr index 见附录 ）
+--attr_index_shmkv_index_start_kconf=reco.distributedIndex.attrIndexStart
+# 不要改，启动时没有找到相同实例，是否跳过 bt 同步
+--attr_index_bt_sync_skip_no_other_client=true
+
+# 不建议改，调大容易 OOM ，调小容易用满，造成写入失败
+--attr_index_memory=200000000000
+
+# 随意改，是 BTQ 读取时用的名字，看 BTQ 监控时能看到
+--attr_index_btq_reader_name=hot_photo_info_for_ann
+
+ #按需添加，出现btq lag时配置加速读取
+--attr_index_btq_threads_num=2
+# 按需添加， bt sync 的线程数量，能加快 bt 同步速度
+--bt_shm_kv_sync_concurrency=2
+# 按需添加，默认允许 lag 最大30 秒服务才能启动
+--attr_index_start_max_btq_lag=30
+
+--attr_index_trim_attr_kconf=reco.fountain.generativeRetrIndexWhiteList
+--enable_processor_output_attr_cache=True

@@ -1,0 +1,28 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_interact_i2i_common_retr", false],
+      "kess_service_name": ["explore_interact_i2i_common_retr_service_name", "grpc_exploreInteractCommonRetrServer"],
+      "service_request_num": ["explore_interact_i2i_common_retr_request_num", 800]
+    },
+    "constant": {
+      "service_timeout_ms": 60
+    },
+    "import": {
+      "common_attrs": [
+        "profile_v1_interaction_trigger_list",
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "interact_common_retr__result"
+      ]
+    }
+  },
+  "reason": 3118,
+  "service_request_type": "interact_default",
+  "send_common_attrs": [
+    {"name": "profile_v1_interaction_trigger_list", "as": "interact_list"}
+  ]
+}

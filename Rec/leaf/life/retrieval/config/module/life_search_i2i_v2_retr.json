@@ -1,0 +1,64 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_life_search_i2i_v2_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "life_search_embedding_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_search_embedding_service_name",
+        "param_type": "string",
+        "default_value": "grpc_hotMcEmbed",
+        "report_ab_hit": true
+      },
+      "life_search_ann_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_search_ann_service_name",
+        "param_type": "string", 
+        "default_value": "grpc_lifeTabMcI2i_v1",
+        "report_ab_hit": true
+      },
+      "life_search_retrieval_count": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_search_retrieval_count",
+        "param_type": "int",
+        "default_value": 400,
+        "report_ab_hit": true
+      },
+      "life_search_retrieval_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_search_retrieval_bucket",
+        "param_type": "string",
+        "default_value": "photo",
+        "report_ab_hit": true
+      },
+      "life_search_i2i_time_min_thr": 1440,
+      "life_search_i2i_boost_time_min_thr": 30,
+      "life_search_i2i_play_time_s_thr": 7,
+      "life_search_i2i_trigger_size": 20
+    },
+    "import": {
+      "common_attrs": [
+        "search_click_list",
+        "search_click_list_timestamps",
+        "search_play_list",
+        "search_play_list_timestamps",
+        "search_play_list_play_duration",
+        "search_play_list_video_duration"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "is_search_boost"
+      ],
+      "results": [
+        "life_search_i2i_v2_ann__result"
+      ]
+    }
+  },
+  "reason": 2704
+}

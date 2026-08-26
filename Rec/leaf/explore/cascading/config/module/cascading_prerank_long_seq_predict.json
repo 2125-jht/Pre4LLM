@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_prerank_long_seq_predict": 0,
+      "explore_prerank_long_seq_service": "grpc_explore-prerank-ls"
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_photo_id_list",
+        "colossus_author_id_list",
+        "colossus_channel_list",
+        "colossus_play_time_list",
+        "colossus_duration_list",
+        "colossus_label_list"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "prerank_ctr_long_seq"
+      ]
+    }
+  }
+}

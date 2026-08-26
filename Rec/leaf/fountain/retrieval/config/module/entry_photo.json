@@ -1,0 +1,82 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_nn_retrieval_kess_service": {
+        "param_name": "fountain_nn_retrieval_kess_service",
+        "param_type": "string",
+        "default_value": "grpc_fountainNNRetrServer"
+      },
+      "skip_top_subdivision_nn_retrieval_v2": {
+        "param_name": "skip_top_subdivision_nn_retrieval_v2",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "skip_explore_subdivision_nn_retrieval_v2": {
+        "param_name": "skip_explore_subdivision_nn_retrieval_v2",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "skip_fountain_colossus_retr": {
+        "param_name": "skip_fountain_colossus_retr",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "fountain_enable_first_page_skip_u2i_retrieval": {
+        "param_name": "fountain_enable_first_page_skip_u2i_retrieval",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "find_v4_skip_fountain_interact_author_retr": {
+        "biz_name": "MOBILE",
+        "param_name": "find_v4_skip_fountain_interact_author_retr",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "skip_fountain_mid_photo_gnn_i2i_retr": {
+        "param_name": "skip_fountain_mid_photo_gnn_i2i_retr",
+        "attr_name": "skip_fountain_mid_photo_gnn_i2i_retr",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "skip_fountain_colossus_retr_emb_fetch_new": {
+        "param_name": "skip_fountain_colossus_retr_emb_fetch_new",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "fountain_gen_source_label": 0
+    },
+    "import": {
+      "common_attrs": [
+        "featureSourcePId",
+        "source_photo_info",
+        "colossus_photo_id_list",
+        "colossus_play_time_list",
+        "colossus_label_list",
+        "colossus_timestamp_list"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "skip_top_subdivision_nn_retrieval_v2",
+        "skip_explore_subdivision_nn_retrieval_v2",
+        "skip_fountain_colossus_retr",
+        "source_hetu_level_one_v2",
+        "source_hetu_level_two_v2",
+        "source_hetu_level_three_v2",
+        "source_hetu_level_four_v2",
+        "source_hetu_tag_v2",
+        "source_hetu_face_id_v2",
+        "userBrowseSetHetuLevel1",
+        "userBrowseSetHetuLevel2",
+        "userBrowseSetHetuLevel3",
+        "skip_fountain_mid_photo_gnn_i2i_retr",
+        "skip_fountain_colossus_retr_emb_fetch_old",
+        "skip_fountain_colossus_retr_emb_fetch_new",
+        "source_hetu_sim_cluster_id",
+        "source_playtime_s",
+        "source_is_interacted",
+        "source_user_hash_tag_id"
+      ]
+    }
+  }
+}

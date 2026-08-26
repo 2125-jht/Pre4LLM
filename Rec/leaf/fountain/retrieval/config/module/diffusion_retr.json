@@ -1,0 +1,42 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_diffusion_retr", false],
+      "kess_service_name": ["fountain_diffusion_retr_kess_service_name", "grpc_MvkeServerVDMV5"],
+      "service_request_num": ["fountain_diffusion_retr_request_num", 600]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "diffusion_retr__result"
+      ]
+    }
+  },
+  "reason": 508,
+  "trimed_user_info": [
+    "browsed_photo_ids",
+    "risk_level_test",
+    "feature_collection.risk_level",
+    "user_profile_v1.video_playing_stat",
+    "user_profile_v1.real_show_list.photo_id",
+    "user_profile_v1.click_list.photo_id",
+    "user_profile_v1.like_list.photo_id",
+    "user_profile_v1.like_list.author_id",
+    "user_profile_v1.like_list.tag",
+    "user_profile_v1.like_list.time_ms",
+    "user_profile_v1.follow_list.photo_id",
+    "user_profile_v1.follow_list.author_id",
+    "user_profile_v1.follow_list.tag",
+    "user_profile_v1.follow_list.time_ms",
+    "nearby_browsed_photo_ids",
+    "slide_browsed_photo_ids"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_distill_ltr_predict": 0,
+      "mc_distill_ltr_service": "explore-la-cascade-tower-infer-v1",
+      "mc_distill_ltr_request_type": "predict_by_mc_cascade_v1"
+    },
+    "import": {
+      "common_attrs": [
+        "prerank_step3",
+        "userInfo"
+      ],
+      "results": [
+        "cascading_prerank_channel_sort__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "mc_step1"
+      ],
+      "item_attrs": [
+        "cascade_distill_read",
+        "cascade_distill_finish",
+        "cascade_distill_play_7s",
+        "cascade_distill_play_60s"
+      ]
+    }
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "modules": [
+    {
+      "name": "user_act_emb_cache_consume_module",
+      "type_name": "UserActEmbCacheConsumeModule"
+    },
+    {
+      "name": "user_colossus_history",
+      "type_name": "UserInfoColossusModule"
+    },
+    {
+      "name": "fetch_redis_neg_photo",
+      "type_name": "FetchRedisNegPhotoModule"
+    },
+    {
+      "name": "kuiba_user",
+      "type_name": "KuibaUserModule"
+    },
+    {
+      "name": "global_trigger_select",
+      "type_name": "GlobalTriggerSelectModule"
+    },
+    {
+      "name": "source_photo_info",
+      "type_name": "PhotoInfoFetchingModule"
+    },
+    {
+      "name": "retarget_trigger",
+      "type_name": "ReTargetTrigger"
+    },
+    {
+      "name": "entry_photo",
+      "type_name": "EntryPhotoModule"
+    },  
+    {
+      "name": "user_info",
+      "type_name": "UserInfoParsingModule"
+    },
+    {
+      "name": "icf_enlarge",
+      "type_name": "IcfEnlargeModule"
+    },
+    {
+      "name": "fresh_reco_embu2i_retr",
+      "type_name": "FreshRecoEmbu2iRetrievalModule"
+    },
+    {
+      "name": "emb_u2u2i_retr",
+      "type_name": "EmbU2u2iRetrievalModule"
+    },
+    {
+      "name": "gcl_i2i_ann_retr",
+      "type_name": "GclI2IAnnRetrievalModule"
+    },
+    {
+      "name": "total_pdn_retr",
+      "type_name": "TotalPdnRetrievalModule"
+    },
+    {
+      "name": "focal_u2u_retr",
+      "type_name": "FocalU2uRetrievalModule"
+    },
+    {
+      "name": "gcl_u2u_retr",
+      "type_name": "GclU2uRetrievalModule"
+    },
+    {
+      "name": "coretr_a2i_retr",
+      "type_name": "CoretrA2iRetrievalModule"
+    },
+    {
+      "name": "long_view_like_u2i_retr",
+      "type_name": "AnnU2iRetrievalModule"
+    },
+    {
+      "name": "long_view_like_i2i_retr",
+      "type_name": "AnnI2iRetrievalModule"
+    },
+    {
+      "name": "mid_photo_gnn_i2i_retr",
+      "type_name": "MidPhotoGnnI2iRetrievalModule"
+    },
+    {
+      "name": "followed_author_retr",
+      "type_name": "FollowedAuthorRetrievalModule"
+    },
+    {
+      "name": "com_interest_retr",
+      "type_name": "CommonRetrievalWithSkipModule"
+    },
+    {
+      "name": "item_cf_retr",
+      "type_name": "ItemCfRetrievalModule"
+    },
+    {
+      "name": "long_view_jingxuan_icf_retr",
+      "type_name": "LongViewJingxuanIcfRetrievalModule"
+    },
+    {
+      "name": "short_term_interest_retr",
+      "type_name": "CommonRetrievalWithSkipModule"
+    },
+    {
+      "name": "long_view_pdn_retr",
+      "type_name": "LongViewPdnRetrievalModule"
+    },
+    {
+      "name": "colossus_icf_retr",
+      "type_name": "ColossusIcfRetrievalModule"
+    },
+    {
+      "name": "fast_deep_view_gnn_retr",
+      "type_name": "FastDeepViewGnnRetrievalModule"
+    },
+    {
+      "name": "lr_retr",
+      "type_name": "LrRetrievalModule"
+    },
+    {
+      "name": "emb_u2i_retr",
+      "type_name": "EmbU2iRetrievalModule"
+    },
+    {
+      "name": "comi_rec_retr",
+      "type_name": "ComiRecRetrievalModule"
+    },
+    {
+      "name": "pic_ssm_retr",
+      "type_name": "PicSsmRetrievalModule"
+    },
+    {
+      "name": "pic_ssm_i2i_retr",
+      "type_name": "PicSsmI2IRetrievalModule"
+    },
+    {
+      "name": "gcl_u2u_person_retr",
+      "type_name": "GclU2uPersnRetrievalModule"
+    },
+    {
+      "name": "ft_pic_st_retr",
+      "type_name": "PicStRetrievalModule"
+    },
+    {
+      "name": "sine_v1_retr",
+      "type_name": "SineV1RetrievalModule"
+    },
+    {
+      "name": "sine_v2_retr",
+      "type_name": "SineV2RetrievalModule"
+    },
+    {
+      "name": "search_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "rerank_sample_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "multi_target_u2u_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "mc_u2i_life_contenc_retr",
+      "type_name": "MCU2ILifeContentRetrievalModule"
+    },
+    {
+      "name": "multi_target_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "multi_target_u2i_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "pdn_shuffle_retr",
+      "type_name": "PdnShuffleRetrievalModule"
+    },
+    {
+      "name": "sim_lr_retr",
+      "type_name": "SimLrRetrievalModule"
+    },
+    {
+      "name": "memory_u2i_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "fast_high_level_index_retr",
+      "type_name": "FastHighLevelIndexRetrievalModule"
+    },
+    {
+      "name": "fast_node_view_gnn_retr",
+      "type_name": "FastNodeViewGnnRetrievalModule"
+    },
+    {
+      "name": "eyeshot_cert_author_retr",
+      "type_name": "EyeshotCertAuthorRetrievalModule"
+    },
+    {
+      "name": "icf_interact_retr",
+      "type_name": "IcfInteractRetrievalModule"
+    },
+    {
+      "name": "merchant_seq_dev_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "merchant_gnn_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "produce_interest_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "online_swing_retr",
+      "type_name": "OnlineSwingRetrievalModule"
+    },
+    {
+      "name": "gpt_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "comi_rec_runner_retr",
+      "type_name": "ComiRecRunnerRetrievalModule"
+    },
+    {
+      "name": "living_tdm_retr",
+      "type_name": "LivingTdmRetrievalModule"
+    },
+    {
+      "name": "gift_redirect_ua_retr",
+      "type_name": "GiftRedirectUARetrievalModule"
+    },
+    {
+      "name": "memory_rank_retr",
+      "type_name": "MemoryRankRetrievalModule"
+    },
+    {
+      "name": "vertical_content_common_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "memory_u2u_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "diffusion_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "multi_interest_u2i_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "qualified_content_retr",
+      "type_name": "QualifiedContentRetrievalModule"
+    },
+    {
+      "name": "long_term_author_retr",
+      "type_name": "CommonRemoteIndexRetrievalModule"
+    },
+    {
+      "name": "life_mc_i2i_retr",
+      "type_name": "LifeMcI2IRetrievalModule"
+    },
+    {
+      "name": "pic_sim_retr",
+      "type_name": "PicSimRetrievalModule"
+    },
+    {
+      "name": "life_mc_u2i_retr",
+      "type_name": "LifeMcU2iRetrievalModule"
+    },
+    {
+      "name": "pic_mmu_retr",
+      "type_name": "PicMMURetrievalModule"
+    },
+    {
+      "name": "pic_mmu_u2u_retr",
+      "type_name": "PicMmuU2uRetrievalModule"
+    },
+    {
+      "name": "interest_author_retr",
+      "type_name": "InterestAuthorRetrievalModule"
+    },
+    {
+      "name": "recent_top_photo_retr",
+      "type_name": "RecentTopPhotoRetrievalModule"
+    },
+    {
+      "name": "var_a2a_retr",
+      "type_name": "VarA2aRetrievalModule"
+    },
+    {
+      "name": "bid_follow_author_retr",
+      "type_name": "BidFollowAuthorRetrievalModule"
+    },
+    {
+      "name": "swing_sim_neg_i2i_retr",
+      "type_name": "SwingSimNegI2IRetrievalModule"
+    },
+    {
+      "name": "neg_mc_i2i_retr",
+      "type_name": "NegMCI2IRetrievalModule"
+    },
+    {
+      "name": "colossus_parse",
+      "type_name": "ColossusParseModule"
+    },
+    {
+      "name": "colossus_long_sequence_retr",
+      "type_name": "ColossusLongSequenceRetrievalModule"
+    },
+    {
+      "name": "tdm_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "grm_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "sim_retr",
+      "type_name": "SimU2iRetrievalModule"
+    },
+    {
+      "name": "trinity_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "llm_hetu_retr",
+      "type_name": "LLMHetuRetrievalModule"
+    },
+    {
+      "name": "generative_semantic_id_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "long_view_sim_lr_retr",
+      "type_name": "LongViewSimLrRetrievalModule"
+    },
+    {
+      "name": "comi_rec_hour_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "adding_follow_inner_retr",
+      "type_name": "AddingFollowInnerRetrievalModule"
+    },
+    {
+      "name": "fountain_sim_long_sequence_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "audit_topk_pass_retr",
+      "type_name": "AuditTopKPassRetrievalModule"
+    },
+    {
+      "name": "slide_cache_retr",
+      "type_name": "SlideCacheRetrievalModule"
+    } 
+  ],
+  "photo_info_module": "photo_info_default",
+  "pagesize_dedup_module": "pagesize_dedup"
+}

@@ -1,0 +1,8 @@
+{
+  "modules": [
+    {
+      "name": "fountain_splash_filter",
+      "type_name": "FountainSplashFilterModule"
+    }
+  ]
+}

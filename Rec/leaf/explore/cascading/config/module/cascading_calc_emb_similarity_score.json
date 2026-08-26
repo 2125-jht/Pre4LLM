@@ -1,0 +1,43 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_enable_pack_badaudit_item": false,
+      "explore_enable_pack_unaudit_item": false,
+      "explore_enable_get_bad_audit_item_emb": false,
+      "explore_mc_enable_cal_bad_cover_similarity_score": false,
+      "explore_mc_enable_cal_bad_sense_similarity_score": false,
+      "explore_mc_enable_cal_bad_hot_audut_similarity_score": false,
+      "explore_mc_enable_cal_marketing_compensation_positive_trigger_similarity_score": false,
+      "explore_mc_enable_marketing_fix_mmu_embedding_low_hit_rate": false
+    },
+    "import": {
+      "common_attrs": [
+        "retrieval_only_bad_cover_input_item_key_list",
+        "retrieval_only_bad_sense_input_item_key_list",
+        "retrieval_only_bad_hot_audit_input_item_key_list",
+        "user_info_ptr",
+        "explore_marketing_compensation_positive_trigger",
+        "explore_mc_mmu_embedding_marketing_source_pids",
+        "explore_mc_mmu_embeddings",
+        "is_marketing_compensation_photo"
+      ],
+      "item_attrs": [
+        "photo_id",
+        "audit_hot_cover_level",
+        "audit_b_second_tag",
+        "audit_hot_high_tag_level"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "explore_mc_bad_sense_similarity_score",
+        "explore_mc_bad_hot_audit_similarity_score",
+        "explore_mc_bad_cover_similarity_score",
+        "explore_marketing_compensation_positive_trigger_similarity_score"
+      ]
+    }
+  }
+}

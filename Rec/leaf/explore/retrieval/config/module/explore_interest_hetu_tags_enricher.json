@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_interest_hetu_tags_enricher": false,
+      "explore_shortterm_interest_count_limit": 3,
+      "explore_shortterm_interest_score_limit": 4.0,
+      "explore_shortterm_interest_expired_gap_second": 1800,
+      "explore_shortterm_interest_realshow_weight": 1.0,
+      "explore_shortterm_interest_click_weight": 2.0,
+      "explore_shortterm_interest_like_weight": 3.0,
+      "explore_shortterm_interest_follow_weight": 3.0,
+      "explore_shortterm_interest_forward_weight": 3.0,
+      "explore_longterm_interest_count_limit_str": "1,4,6",
+      "explore_longterm_interest_recent_hours": 24,
+      "explore_longterm_interest_finish_rate_threshold": 1.0,
+      "explore_longterm_interest_stat_day_upper": 90,
+      "explore_longterm_interest_stat_day_lower": 1,
+      "explore_longterm_interest_click_weight": 0.0,
+      "explore_longterm_interest_playtime_weight": 1.0
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "colossus_resp_v2"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "interest_explore_shortterm_hetu",
+        "interest_explore_longterm_hetu_one",
+        "interest_explore_longterm_hetu_two",
+        "interest_explore_longterm_hetu_three"
+      ]
+    }
+  }
+}

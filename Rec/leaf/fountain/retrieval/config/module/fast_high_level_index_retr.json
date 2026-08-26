@@ -1,0 +1,32 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_fast_high_level_retr",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "fountain_user_risk_min": 3,
+      "fountain_fast_high_level_index_retr_services": "grpc_recoRegulationsIndexServer",
+      "fountain_fast_high_level_index_search_num": 400
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "user_risk_level",
+        "userInfoPb",
+        "hetu2_select_num"
+      ]
+    },
+    "export": {
+      "results": [
+        "qualified_content_retr__result"
+      ]
+    }
+  },
+  "reason": 434
+}

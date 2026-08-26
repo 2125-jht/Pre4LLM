@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_splash_sim_author_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_sim_author_retr_splash_max_author_num": 500,
+      "fountain_sim_author_retr_splash_key_prefix": "acf_",
+      "skip_fountain_sim_author_retr_splash": 1,
+      "fountain_sim_author_retr_splash_index_service": "grpc_recoHotOrderedIndexServer",
+      "fountain_sim_author_retr_splash_photo_num_per_author": 10
+    }, 
+    "import": {
+      "common_attrs": [
+        "SourcePhotoAuthorId",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_sim_author_retr__result"
+      ]
+    }
+  },
+  "reason": 10340
+}

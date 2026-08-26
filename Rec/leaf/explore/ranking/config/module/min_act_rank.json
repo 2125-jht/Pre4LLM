@@ -1,0 +1,66 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_min_act_rank_score": false,
+      "explore_fr_min_act_rank_fscore2_weight": 0.0,
+      "explore_fr_min_act_rank_wtd_weight": 0.0,
+      "explore_fr_min_act_rank_fscore2_watch_time_weight": 0.0,
+      "explore_fr_min_act_rank_wtd_watch_time_weight": 0.0,
+      "explore_fr_min_act_rank_ctr_weight": 0.0,
+      "explore_fr_min_act_rank_ltr_weight": 0.0,
+      "explore_fr_min_act_rank_wtr_weight": 0.0,
+      "explore_fr_min_act_rank_ftr_weight": 0.0,
+      "explore_fr_min_act_rank_cmtr_weight": 0.0,
+      "explore_fr_min_act_rank_cltr_weight": 0.0,
+      "explore_fr_min_act_rank_vtr_weight": 0.0,
+      "explore_fr_min_act_rank_lvtr_weight": 0.0,
+      "explore_fr_min_act_rank_fvtr_weight": 0.0,
+      "explore_fr_min_act_rank_evtr_weight": 0.0,
+      "explore_fr_min_act_rank_pic_weight": 1.0,
+      "enable_avg_rank": false,
+      "enable_watch_time_rank": 0,
+      "enable_explore_topk_action_rank_score": false,
+      "explore_fr_topk_act_rank_fscore2_weight": 0.0,
+      "explore_fr_topk_act_rank_wtd_weight": 0.0,
+      "explore_fr_topk_act_rank_ctr_weight": 0.0,
+      "explore_fr_topk_act_rank_ltr_weight": 0.0,
+      "explore_fr_topk_act_rank_wtr_weight": 0.0,
+      "explore_fr_topk_act_rank_ftr_weight": 0.0,
+      "explore_fr_topk_act_rank_cmtr_weight": 0.0,
+      "explore_fr_topk_act_rank_cltr_weight": 0.0,
+      "explore_fr_topk_act_rank_vtr_weight": 0.0,
+      "explore_fr_topk_act_rank_lvtr_weight": 0.0,
+      "explore_fr_topk_act_rank_fvtr_weight": 0.0,
+      "explore_fr_topk_act_rank_evtr_weight": 0.0,
+      "explore_fr_topk_act_rank_pic_weight": 1.0,
+      "explore_fr_act_rank_topk": 60,
+      "enable_second_act_rank": false,
+      "enable_watch_time_second_act_rank": false
+    },
+    "import": {
+      "item_attrs": [
+        "fr_score2",
+        "corr_pctr",
+        "awesome_wtd", 
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "pcmtr",
+        "pcltr",
+        "pvtr",
+        "plvtr",
+        "pfvtr",
+        "pevtr",
+        "is_picture"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "min_act_rank_score",
+        "min_watch_time_rank_score",
+        "topk_act_rank_score"
+      ]
+    }
+  }
+}

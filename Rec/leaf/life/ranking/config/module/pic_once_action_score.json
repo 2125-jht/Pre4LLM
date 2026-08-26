@@ -1,0 +1,47 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "pic_fr_act_fusion_score_htr_weight": 0.0,
+      "pic_fr_act_fusion_score_ctr_weight": 0.0,
+      "pic_fr_act_fusion_score_ftr_weight": 1.0,
+      "pic_fr_act_fusion_score_dtr_weight": 1.0,
+      "pic_fr_act_fusion_score_cmtr_weight": 1.0,
+      "pic_fr_act_fusion_score_ltr_weight": 1.0,
+      "pic_fr_act_fusion_score_cltr_weight": 1.0,
+      "pic_fr_act_fusion_score_wtr_weight": 1.0,
+      "pic_fr_act_fusion_score_evtr_weight": 1.0,
+      "pic_fr_act_fusion_score_lvtr_weight": 1.0,
+      "pic_fr_act_fusion_score_fvtr_weight": 0.0,
+      "pic_fr_act_fusion_score_epstr_weight": 0.0,
+      "pic_fr_act_fusion_score_cmef_weight": 0.0,
+      "pic_fr_act_fusion_score_fetr_weight": 0.0,
+      "pic_fr_act_fusion_score_fr_score1_weight": 0.0,
+      "skip_pic_once_action_score": 1,
+      "enable_pic_pure_interact_fusion": 1.0
+    },
+    "import": {
+      "item_attrs": [
+        "phtr",
+        "pctr",
+        "pftr",
+        "pdtr",
+        "pcmtr",
+        "pltr",
+        "pcltr",
+        "pwtr",
+        "pevtr",
+        "plvtr",
+        "pepstr",
+        "pcmef",
+        "fetr",
+        "fr_score1"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pic_interact_fusion_score",
+        "pic_watch_time_fusion_score"
+      ]
+    }
+  }
+}

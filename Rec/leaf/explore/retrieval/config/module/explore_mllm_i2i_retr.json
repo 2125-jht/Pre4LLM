@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_mllm_i2i_retrieval", false],
+      "sample_trigger_num": ["explore_mllm_i2i_sample_trigger_num", 200],
+      "top_k": ["explore_mllm_i2i_top_k", 20],
+      "result_num": ["explore_mllm_i2i_result_total_num", 1000],
+      "service_name": ["explore_mllm_i2i_kess", "kws-kuaishou-hot-retrieve-hot-lIm-emb-ann-v2"],
+      "enable_global_trigger": ["explore_mllm_i2i_enable_global_trigger", true],
+      "ann_dist_threshold": ["explore_mllm_i2i_ann_dist_threshold", 5.0],
+      "start_idx": ["explore_mllm_i2i_ann_start_idx", 0],
+      "trigger_num": ["explore_mllm_i2i_trigger_num", 200]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "mllm_i2i_ann__result"
+      ]
+    }
+  },
+  "reason": 4015
+}

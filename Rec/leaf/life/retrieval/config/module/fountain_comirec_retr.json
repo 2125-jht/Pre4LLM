@@ -1,0 +1,27 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": ["hot_h3119_enabled", false],
+        "retrieval_cache_config": ["hot_h3119_retr_cache_config", ""],
+        "retrieve_num": ["hot_h3119_retrieve_num", 600],
+        "auxiliary_arg": ["hot_h3119_auxiliary", "300,0.01,0,context_tensor,context_tensor"],
+        "increase_quota_factor": ["explore_pandora_retrieve_factor", 1.0],
+        "service_name": ["hot_3119_pandora_common_retr_service", "grpc_exploreComirecMtCommonRetrServer"]
+      },
+      "constant": {
+        "service_timeout_ms": 100
+      },
+      "import": {
+        "common_attrs": [
+          "userInfo",
+          "increase_quota_status"
+        ]
+      },
+      "export": {
+        "results": [
+          "comirec_interact_retr__result"
+        ]
+      }
+    },
+    "reason": 3119
+  }

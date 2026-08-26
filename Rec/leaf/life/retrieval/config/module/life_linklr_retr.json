@@ -1,0 +1,28 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_life_linklr_retr", false],
+      "kess_service_name": ["life_linklr_retr_kess_service_name", "grpc_TDMTreeServerOnlineCaikuoV1"],
+      "service_request_num": ["life_linklr_retr_request_num", 1000],
+      "custom_kconf_key": ["life_linklr_retr_custom_kconf_key", "rinf.rlRunner.IIC_common_config_nebula_v1"],
+      "custom_iic_linklr_kconf_key": ["life_linklr_retr_custom_iic_linklr_kconf_key", "reco.explore.iic_linklr_config_xlife"],
+      "service_timeout_ms": ["life_linklr_retr_timeout_ms", 100]
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "life_linklr__result"
+      ]
+    }
+  },
+  "service_request_type": "default",
+  "reason": 0,
+  "send_common_attrs": [
+    "custom_kconf_key",
+    "custom_iic_linklr_kconf_key"
+  ]
+}

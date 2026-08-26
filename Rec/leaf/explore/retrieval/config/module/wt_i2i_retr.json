@@ -1,0 +1,42 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_wt_i2i_retrieval", false],
+      "click_num": ["wt_i2i_click_num", 0],
+      "like_num": ["wt_i2i_like_num", 80],
+      "follow_num": ["wt_i2i_follow_num", 80],
+      "forward_num": ["wt_i2i_forward_num", 20],
+      "comment_num": ["wt_i2i_comment_num", 20],
+      "profile_enter_num": ["wt_i2i_profile_enter_num", 80],
+      "collect_num": ["wt_i2i_collect_num", 20],
+      "interact_num": ["wt_i2i_interact_num", 300],
+      "colossus_num": ["wt_i2i_colossus_num", 100],
+      "realtime_num": ["wt_i2i_realtime_num", 40],
+      "service_name": ["wt_i2i_retr_service_name", "kws-kuaishou-hot-retrieve-explore-watch-time-retr"],
+      "service_timeout_ms": ["wt_i2i_retr_ann_timeout", 100],
+      "retrieve_num_per_trigger": ["wt_i2i_retr_num", 20],
+      "src_data_type": ["wt_i2i_bucket", "photo"],
+      "dest_bucket": ["wt_i2i_bucket", "photo"],
+      "retrieve_num": ["wt_i2i_cand_num", 1000],
+      "enable_emb_server": ["enable_wt_i2i_emb_server", true],
+      "embedding_service_name": ["wt_i2i_emb_service", "kws-kuaishou-hot-retrieve-explore-watch-time-emb"],
+      "knowledge_trigger_expand_cnt": ["wt_i2i_expand_knowledge_trigger_cnt", 0],
+      "interest_explore_trigger_expand_cnt": ["wt_i2i_expand_interest_explore_trigger_cnt", 0]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__pid_list",
+        "colossus_user_info__trigger_id_list",
+        "colossus_user_info__knowledge_trigger_set",
+        "colossus_user_info__interest_explore_trigger_set"
+      ]
+    },
+    "export": {
+      "results": [
+        "wt_i2i_retr__result"
+      ]
+    }
+  },
+  "reason": 4021
+}

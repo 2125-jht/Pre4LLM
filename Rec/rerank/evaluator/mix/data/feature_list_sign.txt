@@ -1,0 +1,15 @@
+#################### USER
+# 38
+class = ExtractSignUserId
+
+# 26
+class = ExtractSignPhotoId
+
+# 128
+class = ExtractSignAuthorId
+
+# 32
+class = ExtractSignUserClick
+
+# 216
+class = ExtractEmbeddingUserClick2

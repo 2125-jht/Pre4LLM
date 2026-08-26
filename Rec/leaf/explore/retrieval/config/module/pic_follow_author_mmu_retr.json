@@ -1,0 +1,33 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["pic_follow_author_mmu_retr__enable_retr", false],
+      "kess_service_name": ["pic_follow_author_mmu_retr__kess_name", "grpc_followAuthorMmuRetr"],
+      "service_request_num": ["pic_follow_author_mmu_retr__request_num", 500]
+    },
+    "constant": {
+      "service_timeout_ms": 50
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_follow_author_mmu_retr__result"
+      ]
+    }
+  },
+  "service_request_type": "pic_follow_author",
+  "reason": 13013,
+  "trimed_user_info": [
+    "id",
+    "device_id",
+    "gender",
+    "fans_count",
+    "basic_info",
+    "location",
+    "follow_list"
+  ]
+}

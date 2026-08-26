@@ -1,0 +1,64 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_cascade_u2i_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "kess_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_retrieval_cascade_u2i_retr_kess_name",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-hot-subdivision-com-retr-cascade-retr-v1",
+        "report_ab_hit": true
+      },
+      "service_request_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_retrieval_cascade_u2i_retr_request_num",
+        "param_type": "int",
+        "default_value": 500,
+        "report_ab_hit": true
+      },
+      "retrieval_cache_config": ["cascade_u2i_retr_cache_config", ""]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "cascade_u2i__result"
+      ]
+    }
+  },
+  "reason": 10040,
+  "trimed_user_info": [
+    "id",
+    "device_id",
+    "gender",
+    "visit_mod",
+    "location.province_id",
+    "location.city_id",
+    "browsed_photo_ids",
+    "realtime_click_list",
+    "realtime_like_list",
+    "realtime_follow_list",
+    "basic_info.age_segment",
+    "user_profile_v1.click_list",
+    "user_profile_v1.like_list",
+    "user_profile_v1.follow_list",
+    "user_profile_v1.video_playing_stat.photo_id",
+    "user_profile_v1.video_playing_stat.author_id",
+    "user_profile_v1.video_playing_stat.playing_time",
+    "user_profile_v1.video_playing_stat.client_timestamp"
+  ],
+  "send_common_attrs": [
+  ]
+}

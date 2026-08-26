@@ -1,0 +1,27 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_splash_top_subdivision_nn_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_top_subdivision_nn_retrieval_tag_splash_num": 50
+    }, 
+    "import": {
+      "common_attrs": [
+        "topSubdivisionHetuBucket",
+        "skip_fountain_top_subdivision_nn_retrieval_tag_splash",
+        "featureFountainProfileEffViewPidList",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_top_subdivision_nn_retr__result"
+      ]
+    }
+  },
+  "reason": 10082
+}

@@ -1,0 +1,33 @@
+{
+    "dragon_params": {
+        "abtest": {
+        },
+        "import": {
+            "item_attrs": [
+                "reco_photo_info_str",
+                "live_photo_info__is_living",
+                "reason_str",
+                "cascade_pctr_index",
+                "cascade_plvtr_index",
+                "cascade_pvtr_index",
+                "cascade_pltr_index",
+                "cascade_pftr_index",
+                "cascade_pwtr_index"
+            ],
+            "common_attrs": [
+                "request_id",
+                "device_id",
+                "user_info_attr",
+                "virtualTabId",
+                "page_index",
+                "fr_sample_discard"
+            ]
+        },
+        "export": {
+            "item_attrs": [],
+            "common_attrs": [
+                "fs_res"
+            ]
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["hot_h307_c2c_retr_enabled", false],
+      "retrieve_num": ["hot_h307_c2c_retrieve_num", 1000],
+      "similar_cid_num": ["hot_h307_c2c_retr_similar_cluster_id_num", 50],
+      "remote_index_service_name": ["hot_h307_c2c_retr_remote_index_service_name", "grpc_exploreC2CRetrIndex"],
+      "remote_index_search_num": ["hot_h307_c2c_retr_remote_index_search_num", 20]
+    },
+    "import": {
+      "common_attrs": [
+        "uOldMmuClusterId300ListList",
+        "interest_cid_collaborative_score_map"
+      ]
+    },
+    "export": {
+      "results": [
+        "c2c_retr__result"
+      ]
+    }
+  },
+  "reason": 307
+}

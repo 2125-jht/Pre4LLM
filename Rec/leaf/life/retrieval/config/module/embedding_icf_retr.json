@@ -1,0 +1,35 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "embedding_retr_is_on",
+        "param_type": "bool",
+        "default_value": true
+      }, 
+      "kess_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "embedding_retrieval_service",
+        "param_type": "string", 
+        "default_value": "grpc_FMIcfRetrievalTSExp1"
+      },
+      "service_key": {
+        "biz_name": "RECO_RPC",
+        "param_name": "icf_embedding_service_key",
+        "param_type": "string", 
+        "default_value": ""
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "tmp_user_info_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "embedding_icf__result"
+      ]
+    }
+  },
+  "reason": 191
+}

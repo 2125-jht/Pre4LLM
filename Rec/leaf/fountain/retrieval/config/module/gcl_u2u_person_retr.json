@@ -1,0 +1,24 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": ["enable_fountain_gcl_u2u_persn_retr", 0],
+        "fountain_gcl_u2u_persn_retr_emb_service_name": "grpc_ExploreGclModelEmbServer",
+        "fountain_gcl_u2u_persn_retr_ann_service_name": "kws-kuaishou-long-form-retrieve-explore-persn-gcl-u2u-ann",
+        "fountain_gcl_u2u_persn_retr_sim_user_num": 100,
+        "fountain_gcl_u2u_persn_retr_key_prefix": "persn_u2i_",
+        "fountain_gcl_u2u_persn_retr_retrieve_num_per_key": 15,
+        "fountain_gcl_u2u_persn_retr_result_num": 500
+      },
+      "import": {
+        "common_attrs": [
+          "source_photo_info"
+        ]
+      },
+      "export": {
+        "results": [
+          "gcl_u2u_persn_retr__result"
+        ]
+      }
+    },
+    "reason": 348
+  }

@@ -1,0 +1,20 @@
+{
+  "modules": [
+    {
+      "name": "rerank_gen_list",
+      "type_name": "RerankGenList"
+    },
+    {
+      "name": "rerank_fetch_predict",
+      "type_name": "RerankFetchPredict"
+    },
+    {
+      "name": "mc_distill_sample",
+      "type_name": "McDistillSampleModule"
+    },
+    {
+      "name": "force_insert",
+      "type_name": "ForceInsertModule"
+    }
+  ]
+}

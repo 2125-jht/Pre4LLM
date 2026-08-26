@@ -1,0 +1,27 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_splash_relevance_mmu_category_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "reco_relevance_photo_mmu_content_tag_retrieval_version": "v0",
+      "fountain_photo_mmu_content_tag_retrieval_total_limit": 100,
+      "fountain_retrieval_skip_relevance_photo_mmu_content_tag": 1
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "featureSourcePId"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_relevance_mmu_category_retr__result"
+      ]
+    }
+  },
+  "reason": 11207
+}

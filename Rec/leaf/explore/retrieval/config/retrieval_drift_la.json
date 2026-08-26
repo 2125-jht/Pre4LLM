@@ -1,0 +1,16 @@
+{
+  "modules": [
+    {
+      "name": "user_info",
+      "type_name": "UserInfoParsingModule"
+    },
+    {
+      "name": "explore_slide_multi_target_u2u_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "hetu_memory_rank_retr",
+      "type_name": "HetuMemoryRankRetrievalModule"
+    }
+  ]
+}

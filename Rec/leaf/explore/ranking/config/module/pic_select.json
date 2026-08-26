@@ -1,0 +1,38 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_generate_item_key_for_pic_interest_expand": false,
+      "explore_pic_interest_expand_replace_ratio": 0.0,
+      "explore_pic_interest_expand_enable_limit_page_index": false,
+      "explore_pic_interest_expand_max_page_index": 10,
+      "explore_pic_interest_expand_enable_limit_refresh_times": false,
+      "explore_pic_interest_expand_max_refresh_times": 5,
+      "enable_explore_pic_valid_interest_cluster_replace": 0,
+      "enable_explore_pic_long_interest_cluster_replace": 0,
+      "enable_explore_pic_recent_search_replace": 0,
+      "explore_pic_interest_cluster_replace_pctr_thresh": 0.0,
+      "explore_pic_interest_cluster_replace_candicate_topk": 0
+    },
+    "import": {
+      "common_attrs": [
+        "refreshTimes",
+        "page_index"
+      ],
+      "item_attrs": [
+        "is_picture",
+        "corr_pctr",
+        "is_pic_valid_interest_cluster",
+        "is_pic_long_interest_cluster",
+        "is_pic_recent_search"
+      ],
+      "results": [
+        "pic_rerank__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "item_key_for_pic_interest_expand"
+      ]
+    }
+  }
+}

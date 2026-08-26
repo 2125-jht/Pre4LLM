@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_splash_icf_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_splash_icf_retr_key_prefix": "coRetr_",
+      "fountain_splash_icf_retr_num": 500,
+      "skip_fountain_icf_splash_retr": 1,
+      "fountain_splash_icf_retr_num_per_key": 10000
+    }, 
+    "import": {
+      "common_attrs": [
+        "featureFountainProfileEffViewPidList",
+        "source_photo_info",
+        "hetu1_filtered_play_photo_id_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_icf_retr__result"
+      ]
+    }
+  },
+  "reason": 10310
+}

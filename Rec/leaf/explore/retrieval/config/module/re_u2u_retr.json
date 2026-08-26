@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_re_u2u_retrieval", false],
+      "enable_emb_server": ["enable_re_u2u_emb_server", false],
+      "embedding_service": ["re_u2u_embedding_service", ""],
+      "ann_service": ["re_u2u_retr_ann_service", "kws-kuaishou-hot-subdivision-retrieve-explore-la-u2u"],
+      "sim_user_num": ["re_u2u_user_num", 400],
+      "photo_num_per_user": ["re_u2u_photo_num_per_user", 10],
+      "user_photo_redis_cluster_name": ["re_u2u_user_photos_redis_cluster", "recoColossusTriggers"],
+      "user_photo_redis_key_prefix": ["re_u2u_user_photos_redis_prefix", "clicks_"],
+      "retrieve_num": ["re_u2u_cand_num", 1000],
+      "ann_dest_bucket": ["re_u2u_ann_dest_bucket", "user"]
+    },
+    "import": {
+      "common_attrs": [
+        "mc_u2i_user_embedding_list",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "re_u2u_retr__result"
+      ]
+    }
+  },
+  "slot": 100,
+  "reason": 10042
+}

@@ -1,0 +1,59 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_interest_author_ppage_retr",
+        "param_type": "bool",
+        "default_value": true
+      }, 
+      "remote_index_service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "interest_author_ppage_retr_timeout_ms", 
+        "param_type": "int", 
+        "default_value": 150
+      }, 
+      "result_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "interest_author_result_num", 
+        "param_type": "int", 
+        "default_value": 400
+      },
+      "remote_index_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "interest_author_ppage_remote_index_service_name", 
+        "param_type": "string", 
+        "default_value": "grpc_recoHotOrderedIndexServer"
+      },
+      "remote_index_query_term": ["interest_author_ppage_remote_index_query_term", "authorId2PhotoIdOrderByUploadTime"],
+      "redis_retrieval_num": [ "double_author_retr_max_seed_author", 1000 ],
+      "skip_filter_by_browse_screen": ["skip_explore_filter_by_browse_screen", 1],
+      "skip_browse_set": ["skip_explore_filter_by_browse_set", 1]
+    }, 
+    "constant": {
+      "redis_key_prefix": {
+        "attr_type": "common_attr",
+        "value_type": "string",
+        "value": "User_Prefer_Author_"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+      ],
+      "results": [
+        "interest_author_ppage__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 674, 
+  "redis_cluster_name": "recoUserPreference",
+  "redis_timeout_ms": 20,
+  "save_to_common_attr_name": "interest_auhtor_ppage__author_list",
+  "remote_index_query_trigger_attr_name": "interest_auhtor_ppage__author_list"
+}

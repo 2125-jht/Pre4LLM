@@ -1,0 +1,37 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_life_st_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_st_retr_service_name",
+        "param_type": "string",
+        "default_value": "grpc_lifeStRetrAnnServer",
+        "report_ab_hit": true
+      },
+      "limit_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_st_retr_limit_size",
+        "param_type": "int",
+        "default_value": 1000,
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+      ]
+    },
+    "export": {
+      "results": [
+        "life_st_retr__result"
+      ]
+    }
+  },
+  "reason": 2701
+}

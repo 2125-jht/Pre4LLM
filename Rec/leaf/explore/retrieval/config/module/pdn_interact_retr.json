@@ -1,0 +1,95 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_pdn_interact_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "index_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_interact_retr_index_service",
+        "param_type": "string",
+        "default_value": "grpc_explorePdnSimIndex"
+      },
+      "index_service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_interact_retr_index_timeout",
+        "param_type": "int",
+        "default_value": 50
+      },
+      "index_term_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_interact_retr_index_term_name",
+        "param_type": "string",
+        "default_value": "sim"
+      },
+      "search_num_per_trigger": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_interact_retr_num_per_trigger",
+        "param_type": "int",
+        "default_value": 30
+      },
+      "index_cache_expire_time_s": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_interact_index_cache_expire_time_sec",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "infer_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_interact_retr_trignet_service",
+        "param_type": "string",
+        "default_value": "grpc_krpTfExplorePdnPredictServerInfer"
+      },
+      "infer_layer_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_interact_retr_trignet_layer",
+        "param_type": "string",
+        "default_value": "trigger_net_out"
+      },
+      "cand_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pdn_interact_retr_cand_num",
+        "param_type": "int",
+        "default_value": 3000
+      },
+      "enable_extra_user_attr": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_pdn_interact_extra_user_attr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "skip_filter_by_browse_screen": ["skip_explore_filter_by_browse_screen", 1],
+      "skip_browse_set": ["skip_explore_filter_by_browse_set", 1],
+      "enable_global_trigger": ["explore_pdn_interact_enable_global_trigger", false],
+      "sample_trigger_num": ["pdn_interact_sample_trigger_num", 200],
+      "start_idx": ["pdn_interact_start_idx", 400],
+      "skip_personal_quota": ["explore_pdn_interact_skip_personal_quota", 1]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__pid_list",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list",
+        "enable_global_trigger_weight_adjust",
+        "reason_ratio_map_attr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_retr__trigger_pid"
+      ],
+      "results": [
+        "pdn_interact__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 3073,
+  "retrieve_num": 3000
+}

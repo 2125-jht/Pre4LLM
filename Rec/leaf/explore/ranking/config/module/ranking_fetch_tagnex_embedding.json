@@ -1,0 +1,22 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_get_tagnex_embedding_map_ranking": 0
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "tagnex_embeddings_ranking",
+        "tagnex_embeddings_source_pids"
+      ]
+    }
+  }
+}
+    

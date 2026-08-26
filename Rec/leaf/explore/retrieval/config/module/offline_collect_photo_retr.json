@@ -1,0 +1,35 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_offline_collect_photo_retrieval",
+        "param_type": "bool",
+        "default_value": false
+      }, 
+      "trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "offline_collect_photo_action_list_size",
+        "param_type": "int", 
+        "default_value": 100
+      },
+      "redis_retrieval_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "offline_collect_photo_result_num",
+        "param_type": "int", 
+        "default_value": 1000
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "offline_collect_photo__result"
+      ]
+    }
+  },
+  "reason": 3069
+}

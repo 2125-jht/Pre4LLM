@@ -1,0 +1,31 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_fountain_longview_pdn_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_icf_retr_key_prefix": "coRetr_",
+      "fountain_icf_retr_num": 500,
+      "fountain_icf_retr_num_per_key": 50,
+      "skip_fountain_icf_retr": 1
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "userInfoPb",
+        "featureFountainProfileEffViewPidList"
+      ]
+    },
+    "export": {
+      "results": [
+        "icf_retr__result"
+      ]
+    }
+  },
+  "reason": 310
+}

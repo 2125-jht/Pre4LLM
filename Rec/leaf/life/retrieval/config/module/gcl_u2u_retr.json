@@ -1,0 +1,42 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_gcl_u2u_retr", false],
+      "ann_service_name": ["gcl_u2u_retr_ann_service_name", "grpc_exploreGclU2uAnnServer"],
+      "ann_timeout_ms": ["gcl_u2u_retr_ann_timeout_ms", 50],
+      "ann_user_top_k": ["gcl_u2u_retr_user_topk", 50],
+      "ann_src_data_type": ["gcl_u2u_retr_ann_src_data_type", "user"],
+      "ann_dest_bucket": ["gcl_u2u_retr_ann_dest_bucket", "user_bucket"],
+      "user_photo_redis_cluster_name": ["mc_u2u_redis_cluster", "recoColossusTriggers"],
+      "user_photo_redis_timeout_ms": ["mc_u2u_redis_timeout_ms", 20],
+      "user_photo_redis_key_prefix": ["mc_u2u_user_photos_redis_prefix", "clicks_"],
+      "retrieve_num": ["gcl_u2u_cand_num", 1000],
+      "embedding_service_name": ["gcl_u2u_embed_service_name", "grpc_ExploreGclModelEmbServer"],
+      "enable_sim_user_shuffle": ["gcl_u2u_retr_enable_sim_user_shuffle", false],
+      "enable_result_shuffle": ["gcl_u2u_retr_enable_result_shuffle", false],
+      "sim_user_limit_num": ["gcl_u2u_retr_sim_user_limit_num", 50],
+      "enable_u2i_list_v2": ["gcl_u2u_retr_enable_u2i_list_v2", false],
+      "gcl_u2u_use_new_index" : ["explore_gcl_use_new_remote_index_service", 0],
+      "explore_gcl_u2i_index_service" : ["explore_gcl_u2u_u2i_index_service", "grpc_exploreU2IPureIndex"],
+      "user_photo_redis_key_prefix_v2": ["gcl_u2u_retr_u2i_list_prefix_v2", "uActions_"],
+      "user_photo_retrieve_num": ["gcl_u2u_retr_u2i_total_num", 3000],
+      "user_photo_retrieve_num_per_key": ["gcl_u2u_retr_u2i_each_num", 100],
+      "skip_browse_set": ["skip_explore_filter_by_browse_set", 1]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "sim_user_list_gcl_u2u"
+      ],
+      "results": [
+        "gcl_u2u_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 3116
+}

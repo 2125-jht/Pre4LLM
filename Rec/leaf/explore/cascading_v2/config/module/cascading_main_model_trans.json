@@ -1,0 +1,190 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_cascade_pxtr_calibration": 0,
+      "explore_cascade_pctr_calibration_upload_time": "",
+      "hot_fountain_eftr_pctr_weight": 0.5,
+      "hot_fountain_eftr_weight": 1.0,
+      "hot_fountain_efctr_pctr_weight": 0.5,
+      "hot_fountain_efctr_weight": 1.0,
+      "hot_mc_cp_ctr_weight": 0.0,
+      "hot_mc_pfptr_pctr_weight": 1.0,
+      "hot_mc_pic_wtd_pctr_weight": 1.0,
+      "hot_mc_pic_lvtr_pctr_weight": 1.0,
+      "hot_mc_pic_cpr_pctr_weight": 1.0,
+      "hot_mc_pic_cpr_max_pic_cnt": 20,
+      "hot_mc_wtd_ctr_weight": 0.0,
+      "mc_ensemble_score_smooth": 10.0,
+      "hot_mc_ordinal_wtd_pctr_weight": 0.0,
+      "hot_mc_ordinal_prob_pctr_weight": 0.0,
+      "mc_enable_multiply_pctr": 1.0,
+      "cascading_score_factor_power": 1.0,
+      "explore_mc_enable_xtr_debias": 0,
+      "explore_mc_enable_picture_xtr_debias": false,
+      "explore_mc_xtr_debias_dura_bucket_width": 5,
+      "explore_mc_pcmtr_debias_type": 1,
+      "explore_mc_pcltr_debias_type": 1,
+      "explore_mc_pctr_debias_type": 1,
+      "explore_mc_pltr_debias_type": 1,
+      "explore_mc_pwtr_debias_type": 1,
+      "explore_mc_plvtr_debias_type": 1,
+      "explore_mc_plvtr2_debias_type": 1,
+      "explore_mc_pwtd_debias_type": 1,
+      "explore_mc_pwatch_time_debias_type": 1,
+      "explore_mc_ensemble_smooth_age_score_type": 2,
+      "enable_hot_fc_replace_interface_interact": false
+    },
+    "kconf": {
+      "cascade_wtd_table_0": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "0"
+      },
+      "cascade_wtd_table_9": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "9"
+      },
+      "cascade_wtd_table_13": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "13"
+      },
+      "cascade_wtd_table_20": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "20"
+      },
+      "cascade_wtd_table_38": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "38"
+      },
+      "cascade_wtd_table_71": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "71"
+      },
+      "cascade_wtd_table_118": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "118"
+      },
+      "cascade_wtd_table_195": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "195"
+      },
+      "cascade_wtd_table_inf": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "inf"
+      },
+      "pwtd_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_pwtd",
+        "default_value": []
+      },
+      "pwatch_time_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_pwatch_time",
+        "default_value": []
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "mc_step2",
+        "explore_mc_hourly_xtr_debias_map_ptr"
+      ],
+      "item_attrs": [
+        "cascade_pcptr",
+        "duration_ms",
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr",
+        "empirical_lvtr",
+        "empirical_svtr",
+        "empirical_ptr",
+        "empirical_htr",
+        "empirical_cmtr",
+        "empirical_watch_time",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_pftr",
+        "cascade_ptr",
+        "cascade_phtr",
+        "cascade_pcmtr",
+        "cascade_pctr",
+        "cascade_plvtr",
+        "cascade_psvtr",
+
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_pftr",
+        "cascade_plvtr",
+        "cascade_plvtr2",
+        "cascade_psvtr",
+        "cascade_ptr",
+        "cascade_pwatch_time",
+        "cascade_pepstr",
+        "cascade_pcestr",
+        "cascade_pcmtr",
+        "cascade_pcltr",
+        "cascade_peftr",
+        "cascade_pefctr",
+        "cascade_fc_pevr",
+        "cascade_pic_wtd",
+        "cascade_pic_lvtr",
+        "cascade_pic_cpr",
+        "avg_watch_time",
+        "upload_time",
+        "explore_stat__real_show_count",
+        "cascade_pwtd",
+        "duration_ms",
+        "photo_picture_count",
+        "empirical_watch_time",
+        "empirical_ctr",
+        "cascade_ordinal_wtd",
+        "cascade_ordinal_prob",
+        "is_picture"
+      ],
+      "results": [
+        "cascading_prerank_channel_sort__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "mc_step3"
+      ],
+      "item_attrs": [
+        "cascade_pwtd_inverse",
+        "mc_ensemble_pctr",
+        "mc_ensemble_pltr",
+        "mc_ensemble_pwtr",
+        "mc_ensemble_pftr",
+        "mc_ensemble_pptime",
+        "mc_ensemble_plvtr",
+        "mc_ensemble_plvtr2",
+        "mc_ensemble_psvtr",
+        "mc_ensemble_ptr",
+        "mc_ensemble_pwatch_time",
+        "mc_ensemble_pepstr",
+        "mc_ensemble_pcestr",
+        "mc_ensemble_pcmtr",
+        "mc_ensemble_pcltr",
+        "mc_ensemble_peftr",
+        "mc_ensemble_pefctr",
+        "mc_ensemble_pwtd",
+        "mc_ensemble_pfptr",
+        "mc_ensemble_pic_wtd",
+        "mc_ensemble_pic_lvtr",
+        "mc_ensemble_pic_cpr",
+        "mc_ensemble_pwtd_inverse",
+        "mc_ensemble_smooth_age_score",
+        "mc_ensemble_prerank_wtd",
+        "cascade_corr_pctr"
+      ]
+    }
+  }
+}

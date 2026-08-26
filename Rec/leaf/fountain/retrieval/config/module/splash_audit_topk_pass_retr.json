@@ -1,0 +1,20 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_splash_audit_topk_pass_retr", true],
+      "trigger_num": ["splash_audit_topk_pass_retr_trigger_num", 50],
+      "retrieve_num": ["splash_audit_topk_pass_retr_result_num", 4000]
+    },
+    "import": {
+      "common_attrs": [
+        "enable_retr_filter_downgrade"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_audit_topk_pass_retr__result"
+      ]
+    }
+  },
+  "reason": 10999
+}

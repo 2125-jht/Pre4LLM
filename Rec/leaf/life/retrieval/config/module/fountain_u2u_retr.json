@@ -1,0 +1,82 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_xlife_fountain_u2u_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "fountain_multi_target_u2u_retr_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_multi_target_u2u_retr_service_name",
+        "param_type": "string",
+        "default_value": "grpc_FountainMultiTargetU2uV2"
+      },
+      "fountain_multi_target_u2u_retr_retrieve_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_multi_target_u2u_retr_retrieve_num",
+        "param_type": "int",
+        "default_value": 1500
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "featureUId",
+        "upload_count",
+        "follow_count",
+        "fans_count",
+        "featureAgeSegment",
+        "location_city_level_v2",
+        "upload_rate",
+        "featureUserRequestProvinceId",
+        "featureUserRequestCityId",
+        "gender",
+        "true_gender",
+        "infer_gender",
+        "true_year",
+        "infer_year",
+        "featureVisitNet",
+        "is_douyin",
+        "videoPlayingPid",
+        "profile_v1_click_trigger_aids",
+        "playstat_playtimes",
+        "playstat_durations",
+        "playstat_hetu1s",
+        "playstat_hetu2s",
+        "playstat_hetu3s",
+        "playstat_hetu4s",
+        "userRecentViewTimeListRaw",
+        "userRecentViewPageListRaw",
+        "user_fountain_play_id_list",
+        "user_fountain_play_aid_list",
+        "user_fountain_play_time_list",
+        "user_fountain_play_duration_list",
+        "user_fountain_play_timestamp_list",
+        "user_fountain_play_page_list",
+        "user_fountain_play_hetu_l1_top1_list",
+        "user_fountain_play_hetu_l2_top1_list",
+        "user_fountain_play_hetu_l3_top1_list",
+        "user_fountain_play_hetu_l4_top1_list",
+        "click_list",
+        "featrueUserLongTermHetu1Id",
+        "featrueUserLongTermHetu1Score",
+        "featrueUserLongTermHetu2Id",
+        "featrueUserLongTermHetu2Score",
+        "featrueUserLongTermHetu3Id",
+        "featrueUserLongTermHetu3Score",
+        "uLikePidsFountain",
+        "uFollowAidsFountain",
+        "browse_screen__pid_list",
+        "request_type"
+      ]
+    }, 
+    "export": {
+      "results": [
+        "fountain_u2u__result"
+      ]
+    }
+  },
+  "reason": 9366
+}

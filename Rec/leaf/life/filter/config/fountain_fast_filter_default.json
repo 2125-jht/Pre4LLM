@@ -1,0 +1,8 @@
+{
+  "modules": [
+    {
+      "name": "fountain_fast_filter",
+      "type_name": "FountainFastFilterModule"
+    }
+  ]
+}

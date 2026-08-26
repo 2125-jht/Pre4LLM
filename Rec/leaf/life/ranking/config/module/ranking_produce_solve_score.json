@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_rank_produce_video_predict": 0
+    },
+    "import": {
+      "item_attrs": [
+        "produce_uploadw",
+        "produce_uploads",
+        "produce_consuv",
+        "produce_consuv_v2",
+        "produce_consuv_public"
+      ],
+      "common_attrs": [
+        "ranking_need_produce_model_flag"
+      ]
+    },
+    "export": {
+    "item_attrs": [
+        "produce_upload_sum_score",
+        "produce_consuv_sum_score"
+    ]
+    }
+  }
+}

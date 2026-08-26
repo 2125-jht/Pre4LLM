@@ -1,0 +1,52 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_multi_interest_u2i_retrieval", false],
+      "kess_service_name": ["fountain_sine_v3_retr_server_name", "grpc_fountainPopularContentSineCommonRetrServer"],
+      "service_request_num": ["fountain_sine_v3_retr_request_num", 1000],
+      "search_num": ["fountain_sine_v3_search_num", 1000],
+      "interest_depth": ["fountain_sine_v3_interest_depth", 400],
+      "diversity_boost": ["fountain_sine_v3_diversity_boost", 0.1],
+      "photo_score_boost": ["fountain_sine_v3_photo_score_boost", 0.0],
+      "ann_src": ["fountain_sine_v3_ann_src", "user"],
+      "ann_dst": ["fountain_sine_v3_ann_dst", "item"]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "featureUId",
+        "featureDeviceId",
+        "featureUserProfileV1LikePidList",
+        "featureUserProfileV1Play18SPidList",
+        "featureUserProfileV1ForwardPidList",
+        "featureFountainProfileEffViewPidList",
+        "featureUserProfileV1Play18SAidList",
+        "featureUserProfileV1FollowAidList"
+      ]
+    },
+    "export": {
+      "results": [
+        "multi_interest_u2i_retr__result"
+      ]
+    }
+  },
+  "reason": 375,
+  "send_common_attrs": [
+    "search_num",
+    "interest_depth",
+    "diversity_boost",
+    "photo_score_boost",
+    "ann_src",
+    "ann_dst",
+    {"name": "featureUId", "as": "uId"},
+    {"name": "featureDeviceId", "as": "featureDeviceId"},
+    {"name": "featureUserProfileV1LikePidList", "as": "featureUserProfileV1LikePidList"},
+    {"name": "featureUserProfileV1Play18SPidList", "as": "featureUserProfileV1Play18SPidList"},
+    {"name": "featureUserProfileV1ForwardPidList", "as": "featureUserProfileV1ForwardPidList"},
+    {"name": "featureFountainProfileEffViewPidList", "as": "featureFountainProfileEffViewPidList"},
+    {"name": "featureUserProfileV1Play18SAidList", "as": "featureUserProfileV1Play18SAidList"},
+    {"name": "featureUserProfileV1FollowAidList", "as": "featureUserProfileV1FollowAidList"}
+  ]
+}

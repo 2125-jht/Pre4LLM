@@ -1,0 +1,28 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_reco_similar_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_retrieval_total_limit_explore_h88_retrieval": 100,
+      "fountain_retrieval_skip_similar_explore_h88": 1
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "explore_reco_similar_retr__result"
+      ]
+    }
+  },
+  "reason": 10790
+}

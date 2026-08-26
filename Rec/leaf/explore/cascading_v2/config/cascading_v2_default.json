@@ -1,0 +1,91 @@
+{
+  "modules": [
+    "prerank_step1: prerank 阶段 infer 调用",
+    {
+      "name": "cascading_prerank_main_predict",
+      "type_name": "CascadingPrerankMainPredictModule"
+    },
+    {
+      "name": "cascading_prerank_pic_quota_predict",
+      "type_name": "CascadingPrerankPicQuotaPredictModule"
+    },
+
+    "prerank_step2: 不依赖 infer 返回，可与 infer 调用并行",
+    {
+      "name": "cascading_prerank_common_score",
+      "type_name": "CascadingPrerankCommonScoreModule"
+    },
+    {
+      "name": "cascading_prerank_photo_label",
+      "type_name": "CascadingPrerankPhotoLabelModule"
+    },
+    {
+      "name": "cascading_prerank_photo_score",
+      "type_name": "CascadingPrerankPhotoScoreModule"
+    },
+
+    "prerank_step3: 依赖 infer 结果",
+    {
+      "name": "cascading_prerank_channel_sort",
+      "type_name": "CascadingPrerankChannelSortModule"
+    },
+
+    "mc_step1: 粗排一阶段 infer 调用",
+    {
+      "name": "cascading_fc_predict",
+      "type_name": "CascadingFcPredictModule"
+    },
+    {
+      "name": "cascading_main_predict",
+      "type_name": "CascadingMainPredictModule"
+    },
+    {
+      "name": "cascading_distill_ltr_predict",
+      "type_name": "CascadingDistillLtrPredictModule"
+    },
+    {
+      "name": "cascading_gamora_interest_predict",
+      "type_name": "CascadingGamoraInterestPredictModule"
+    },
+    {
+      "name": "cascading_short_window_index",
+      "type_name": "CascadingShortWindowIndexModule"
+    },
+    {
+      "name": "cascading_picture_embedding",
+      "type_name": "CascadingPictureEmbeddingModule"
+    },
+
+    "mc_step2: 不依赖 infer 返回，可与 infer 调用并行", 
+    {
+      "name": "cascading_common_score",
+      "type_name": "CascadingCommonScoreModule"
+    },
+    {
+      "name": "cascading_photo_label",
+      "type_name": "CascadingPhotoLabelModule"
+    },
+    {
+      "name": "cascading_photo_score",
+      "type_name": "CascadingPhotoScoreModule"
+    },
+
+    "mc_step3: 依赖 infer 结果", 
+    {
+      "name": "cascading_main_model_trans",
+      "type_name": "CascadingMainModelTransModule"
+    },
+    {
+      "name": "cascading_htr_filter",
+      "type_name": "CascadingHtrFilterModule"
+    },
+    {
+      "name": "cascading_waited_photo_score",
+      "type_name": "CascadingWaitedPhotoScoreModule"
+    },
+    {
+      "name": "cascading_channel_sort",
+      "type_name": "CascadingChannelSortModule"
+    }
+  ]
+}

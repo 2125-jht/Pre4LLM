@@ -1,0 +1,41 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_pic_llm_q2i_retr", false],
+      "kess_service_name": ["explore_pic_llm_q2i_retr_kess_service_name", "kws-kuaishou-long-form-uni-cpu-predict-pic-llm-q2i-retr"],
+      "service_request_num": ["explore_pic_llm_q2i_retr_num", 200]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "is_pic_search",
+        "is_pic_recent_search"
+      ],
+      "results": [
+        "pic_llm_q2i__result"
+      ]
+    }
+  },
+  "service_request_type": "explore_request",
+  "reason": 13038,
+  "trimed_user_info": [
+    "id",
+    "device_id",
+    "user_profile_v1.search_query_list",
+    "user_profile_v1.search_list",
+    "user_profile_v1.search_photo_play_list",
+    "user_profile_v1.search_click_photo_list",
+    "user_profile_v1.search_click_author_list"
+  ],
+  "recv_item_attrs": [
+    "is_pic_search",
+    "is_pic_recent_search"
+  ]
+}

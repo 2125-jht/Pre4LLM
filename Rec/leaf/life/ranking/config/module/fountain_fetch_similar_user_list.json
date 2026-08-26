@@ -1,0 +1,17 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_similar_user_list_redis_prefix": "ucf_"
+    },
+    "import": {
+      "common_attrs": [
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "featureSimilarUserList",
+        "featureSimilarUserScoreList"
+      ]
+    }
+  }
+}

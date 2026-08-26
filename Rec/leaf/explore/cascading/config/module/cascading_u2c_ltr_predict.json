@@ -1,0 +1,22 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_u2c_ltr_predict": 0,
+      "explore_u2c_ltr_service": "grpc_exploreU2cInferKai2",
+      "explore_u2c_ltr_kai_partition_size": 500
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+         "explore_u2c"
+       ]
+    }
+  }
+}

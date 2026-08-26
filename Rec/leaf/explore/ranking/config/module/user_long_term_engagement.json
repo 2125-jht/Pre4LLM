@@ -1,0 +1,35 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_lte_rank_model_global_click_max_len" : 100,
+      "explore_lte_rank_model_hot_click_max_len" : 100,
+      "explore_lte_rank_model": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_lte_rank_model",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "explore_lte_rank_kess_service":{
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_lte_rank_kess_service",
+        "param_type": "string",
+        "default_value": "grpc_interact-ltr-gpu-fast-infer"
+      },
+      "lte_rank_predict_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "lte_rank_predict_partition_size",
+        "param_type": "int",
+        "default_value": 10
+      }
+    },
+    "import": {
+    },
+    "export": {
+      "item_attrs": [
+        "lte_ctr",
+        "lte_ltr"
+      ]
+    }
+  }
+}

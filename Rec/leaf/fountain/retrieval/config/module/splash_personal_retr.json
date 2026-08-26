@@ -1,0 +1,63 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["fountain_enable_splash_personal_retr", false],
+      "fountain_splash_personal_retr_service_name": "grpc_FountainSplashPersonalRetr",
+      "fountain_splash_personal_retr_retrieve_num": 500
+    },
+    "import": {
+      "common_attrs": [
+        "userInfoPb",
+        "featureUId",
+        "featureSourcePId",
+        "sourcePidAuthorId",
+        "sourcePidMmuImgClusterV3",
+        "sourcePidMmuImgClusterV4",
+        "sourcePidDuration",
+        "source_hetu_level_two",
+        "source_hetu_level_three",
+        "source_hetu_level_four",
+        "source_hetu_level_five",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_personal_retr__result"
+      ]
+    }
+  },
+  "fountain_splash_personal_feature": [
+    {"name": "featureUId", "as": "uId"},
+    "featureSourcePId",
+    "sourcePidAuthorId",
+    "sourcePidMmuImgClusterV3",
+    "sourcePidMmuImgClusterV4",
+    "sourcePidDuration",
+    {"name": "source_hetu_level_two",   "as": "SourcePidHetuTagLevel2"},
+    {"name": "source_hetu_level_three", "as": "SourcePidHetuTagLevel3"},
+    {"name": "source_hetu_level_four", "as": "SourcePidHetuTagLevel4"},
+    {"name": "source_hetu_level_five",  "as": "SourcePidHetuTagLevel5"},
+    {"name": "video_playing_stat_pid_list", "as": "playstat_pids"},
+    {"name": "video_playing_stat_aid_list", "as": "playstat_aids"},
+    {"name": "video_playing_stat_play_time_list", "as": "playstat_playtimes"},
+    {"name": "video_playing_stat_duration_list", "as": "playstat_durations"},
+    {"name": "video_playing_stat_hetu_list", "as": "playstat_hetu1s"},
+    {"name": "video_playing_stat_hetu2_list", "as": "playstat_hetu2s"},
+    {"name": "video_playing_stat_hetu3_list", "as": "playstat_hetu3s"},
+    {"name": "video_playing_stat_hetu4_list", "as": "playstat_hetu4s"},
+    {"name": "video_playing_stat_timestamp_list", "as": "playstat_timestamps"},
+    {"name": "video_playing_stat_page_list", "as": "playstat_pages"},
+    {"name": "user_fountain_play_id_list", "as": "user_fountain_play_id_list"},
+    {"name": "user_fountain_play_aid_list", "as": "user_fountain_play_aid_list"},
+    {"name": "user_fountain_play_time_list", "as": "user_fountain_play_time_list"},
+    {"name": "user_fountain_play_duration_list", "as": "user_fountain_play_duration_list"},
+    {"name": "user_fountain_play_timestamp_list", "as": "user_fountain_play_timestamp_list"},
+    {"name": "user_fountain_play_page_list", "as": "user_fountain_play_page_list"},
+    {"name": "user_fountain_play_hetu_list", "as": "user_fountain_play_hetu_l1_top1_list"},
+    {"name": "user_fountain_play_hetu2_list", "as": "user_fountain_play_hetu_l2_top1_list"},
+    {"name": "user_fountain_play_hetu3_list", "as": "user_fountain_play_hetu_l3_top1_list"},
+    {"name": "user_fountain_play_hetu4_list", "as": "user_fountain_play_hetu_l4_top1_list"}
+  ],
+  "reason": 10409
+}

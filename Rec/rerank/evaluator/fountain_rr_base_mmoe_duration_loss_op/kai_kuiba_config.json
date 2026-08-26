@@ -1,0 +1,4034 @@
+{
+  "sign_feature_is_common": {
+    "uMidCommentPids": false,
+    "pMmuImgClusterV3_idx0": false,
+    "pPwtr_idx5": false,
+    "pEmpPtr_idx4": false,
+    "slide_wtd_label_idx1": false,
+    "pContentLevel_idx0": false,
+    "pCityId_idx4": false,
+    "pPwtd_idx3": false,
+    "pEmpFtr_idx1": false,
+    "pMmuImgClusterV1_idx1": false,
+    "pPftr_idx5": false,
+    "pMusicComboId_idx9": false,
+    "pHetuTagLevel2Id_idx9": false,
+    "pMmuContentId_idx2": false,
+    "pContentLevel_idx3": false,
+    "pMmuImgClusterV3_idx3": false,
+    "slide_wtd_label_idx4": false,
+    "pMmuContentId_idx3": false,
+    "pContentLevel_idx4": false,
+    "pEmpPtr_idx8": false,
+    "pMmuImgClusterV3_idx4": false,
+    "slide_wtd_label_idx5": false,
+    "aId_idx1": false,
+    "pAgeHour_idx3": false,
+    "pMmuImgClusterV1_idx3": false,
+    "pAuthorGender_idx4": false,
+    "pHetuTagLevel1Id_idx8": false,
+    "pHetuTagLevel2Id_idx6": false,
+    "pPepstr_idx0": false,
+    "uBasicAge": false,
+    "avg_watchtime_idx5": false,
+    "slide_next_weight_idx5": false,
+    "pTag_idx6": false,
+    "slide_play_weight_idx3": false,
+    "pProvinceId_idx6": false,
+    "slide_play_rate_idx3": false,
+    "slide_next_weight_idx4": false,
+    "avg_watchtime_idx4": false,
+    "uMidPlayViewHetu1": false,
+    "slide_neg_weight_idx5": false,
+    "pAgeHour_idx5": false,
+    "pEmpFtr_idx5": false,
+    "pPftr_idx3": false,
+    "pCityId_idx2": false,
+    "pPwtd_idx1": false,
+    "pMusicComboId_idx7": false,
+    "aId_idx5": false,
+    "fountainLongviewPids": false,
+    "aId_idx3": false,
+    "pPltr_idx3": false,
+    "slide_next_weight_idx1": false,
+    "avg_watchtime_idx1": false,
+    "pEmpLtr_idx9": false,
+    "slide_neg_weight_idx2": false,
+    "pAgeHour_idx2": false,
+    "pMmuImgClusterV1_idx2": false,
+    "pAuthorGender_idx3": false,
+    "pHetuTagLevel1Id_idx7": false,
+    "pPltr_idx1": false,
+    "pEmpLtr_idx7": false,
+    "slide_neg_weight_idx0": false,
+    "pMmuImgClusterV1_idx0": false,
+    "pPftr_idx4": false,
+    "pCityId_idx3": false,
+    "pPwtd_idx2": false,
+    "pMusicComboId_idx8": false,
+    "pEmpFtr_idx0": false,
+    "aId_idx9": false,
+    "pAgeHour_idx0": false,
+    "pHetuTagLevel2Id_idx3": false,
+    "avg_watchtime_idx2": false,
+    "slide_next_weight_idx2": false,
+    "pPctr_idx2": false,
+    "pMmuContentId_idx9": false,
+    "pDurationMs_idx0": false,
+    "pPptr_idx2": false,
+    "pMmuImgClusterV3_idx7": false,
+    "pCityId_idx9": false,
+    "slide_play_rate_idx0": false,
+    "pMusic_idx8": false,
+    "pOcrCoverTextWordCount_idx8": false,
+    "pHetuTagLevel2Id_idx7": false,
+    "pMmuContentId_idx0": false,
+    "pContentLevel_idx1": false,
+    "slide_wtd_label_idx2": false,
+    "pEmpCtr_idx0": false,
+    "pDurationMs_idx8": false,
+    "pMcPsvtr_idx5": false,
+    "pvtr_idx4": false,
+    "pMmuContentId_idx1": false,
+    "pMusic_idx9": false,
+    "pOcrCoverTextWordCount_idx9": false,
+    "avg_watchtime_idx9": false,
+    "pPwtr_idx4": false,
+    "pEmpPtr_idx3": false,
+    "slide_wtd_label_idx0": false,
+    "pDurationMs_idx2": false,
+    "pTag_idx8": false,
+    "pProvinceId_idx8": false,
+    "slide_play_weight_idx5": false,
+    "pMmuImgClusterV1_idx5": false,
+    "pAuthorGender_idx6": false,
+    "pPwtd_idx5": false,
+    "pCityId_idx6": false,
+    "pEmpPtr_idx1": false,
+    "pPwtr_idx2": false,
+    "uMidPlayViewHetu2": false,
+    "slide_next_label_idx3": false,
+    "pContentLevel_idx2": false,
+    "pEmpPtr_idx6": false,
+    "pMmuImgClusterV3_idx2": false,
+    "slide_wtd_label_idx3": false,
+    "slide_next_label_idx1": false,
+    "pMcPwtr_idx4": false,
+    "pUploadType_idx9": false,
+    "pMusicComboId_idx4": false,
+    "pPftr_idx0": false,
+    "pPwtd_idx0": false,
+    "pCityId_idx1": false,
+    "pUploadType_idx1": false,
+    "avg_watchtime_idx8": false,
+    "pAuthorGender_idx2": false,
+    "pPcmtr_idx5": false,
+    "pHetuTagLevel1Id_idx6": false,
+    "pAgeHour_idx1": false,
+    "pHetuTagLevel2Id_idx4": false,
+    "avg_watchtime_idx3": false,
+    "slide_next_weight_idx3": false,
+    "slide_play_rate_idx1": false,
+    "slide_play_rate_idx2": false,
+    "pMcPctr_idx0": false,
+    "pEmpWtr_idx3": false,
+    "uId": false,
+    "pAuthorGender_idx0": false,
+    "pPcmtr_idx3": false,
+    "pHetuTagLevel1Id_idx4": false,
+    "pMcPlvtr_idx5": false,
+    "pHetuTagLevel2Id_idx2": false,
+    "pProvinceId_idx5": false,
+    "uRealClickPids": false,
+    "pTag_idx5": false,
+    "slide_play_weight_idx2": false,
+    "pAuthorGender_idx7": false,
+    "pMmuImgClusterV1_idx6": false,
+    "pMcPltr_idx5": false,
+    "slide_next_weight_idx0": false,
+    "avg_watchtime_idx0": false,
+    "pOcrCoverTextWordCount_idx7": false,
+    "pMusic_idx7": false,
+    "slide_neg_weight_idx3": false,
+    "pPltr_idx4": false,
+    "pOcrCoverTextWordCount_idx6": false,
+    "pMusic_idx6": false,
+    "pMmuContentId_idx6": false,
+    "pMmuContentId_idx4": false,
+    "pMmuContentId_idx5": false,
+    "pHetuTagLevel2Id_idx5": false,
+    "pAgeHour_idx7": false,
+    "pEmpFtr_idx6": false,
+    "pvtr_idx5": false,
+    "pDurationMs_idx9": false,
+    "pEmpCtr_idx1": false,
+    "pAgeHour_idx6": false,
+    "pPcmtr_idx2": false,
+    "pHetuTagLevel1Id_idx3": false,
+    "aId_idx7": false,
+    "pMcPlvtr_idx4": false,
+    "pHetuTagLevel2Id_idx1": false,
+    "pHetuTagLevel1Id_idx0": false,
+    "pMcPltr_idx3": false,
+    "pAgeHour_idx4": false,
+    "pProvinceId_idx4": false,
+    "slide_play_weight_idx1": false,
+    "pTag_idx4": false,
+    "pEmpLtr_idx5": false,
+    "pPlvtr_idx2": false,
+    "pMusic_idx2": false,
+    "slide_play_weight_idx0": false,
+    "fountainLikePids": false,
+    "pOcrCoverTextWordCount_idx2": false,
+    "pPepstr_idx4": false,
+    "pProvinceId_idx1": false,
+    "pTag_idx1": false,
+    "slide_play_rate_idx4": false,
+    "pPsvtr_idx0": false,
+    "pPvtr_idx1": false,
+    "avg_watchtime_idx7": false,
+    "pContentLevel_idx5": false,
+    "pPlvtr_idx3": false,
+    "pMusic_idx3": false,
+    "pOcrCoverTextWordCount_idx3": false,
+    "pCityId_idx7": false,
+    "pEmpPtr_idx2": false,
+    "pPwtr_idx3": false,
+    "slide_neg_weight_idx1": false,
+    "pEmpLtr_idx8": false,
+    "pEmpLtr_idx0": false,
+    "slide_next_label_idx4": false,
+    "slide_play_weight_idx4": false,
+    "pProvinceId_idx7": false,
+    "pTag_idx7": false,
+    "pPwtr_idx0": false,
+    "pUploadType_idx3": false,
+    "pPsvtr_idx5": false,
+    "pPlvtr_idx0": false,
+    "pMusic_idx0": false,
+    "pEmpFtr_idx9": false,
+    "pOcrCoverTextWordCount_idx0": false,
+    "pEmpWtr_idx8": false,
+    "pMcPctr_idx5": false,
+    "pEmpHtr_idx8": false,
+    "aId_idx6": false,
+    "pId_idx3": false,
+    "aId_idx0": false,
+    "pPlvtr_idx4": false,
+    "pMusic_idx4": false,
+    "pOcrCoverTextWordCount_idx4": false,
+    "pOcrCoverTextWordCount_idx5": false,
+    "pPlvtr_idx5": false,
+    "pMusic_idx5": false,
+    "pHetuTagLevel1Id_idx9": false,
+    "pAuthorGender_idx5": false,
+    "pMmuImgClusterV1_idx4": false,
+    "pCityId_idx8": false,
+    "pEmpWtr_idx0": false,
+    "pMusicComboId_idx3": false,
+    "pUploadType_idx8": false,
+    "pMcPlvtr_idx1": false,
+    "fountainClickPids": false,
+    "pMcPctr_idx4": false,
+    "pEmpWtr_idx7": false,
+    "slide_next_label_idx0": false,
+    "pMcPwtr_idx3": false,
+    "uMidPlayEffectivePids": false,
+    "pPctr_idx1": false,
+    "pMmuContentId_idx8": false,
+    "pMcPltr_idx4": false,
+    "pEmpFtr_idx8": false,
+    "pMcPlvtr_idx3": false,
+    "pHetuTagLevel2Id_idx0": false,
+    "pHetuTagLevel1Id_idx5": false,
+    "pPcmtr_idx4": false,
+    "pEmpPtr_idx0": false,
+    "pPwtr_idx1": false,
+    "pPwtd_idx4": false,
+    "pCityId_idx5": false,
+    "uRealForwardPids": false,
+    "pId_idx8": false,
+    "pTag_idx0": false,
+    "pPepstr_idx3": false,
+    "pProvinceId_idx0": false,
+    "pMusicComboId_idx2": false,
+    "pUploadType_idx7": false,
+    "pPcmef_idx1": false,
+    "pId_idx0": false,
+    "pAuthorGender_idx1": false,
+    "pMcPwtr_idx1": false,
+    "pEmpCmtr_idx9": false,
+    "pContentLevel_idx9": false,
+    "pEmpCmtr_idx8": false,
+    "pMcPwtr_idx0": false,
+    "pUploadType_idx5": false,
+    "pMusicComboId_idx0": false,
+    "pEmpFtr_idx2": false,
+    "fountainFollowPids": false,
+    "pUploadType_idx6": false,
+    "pMusicComboId_idx1": false,
+    "pCityId_idx0": false,
+    "pPcmef_idx4": false,
+    "pAgeHour_idx9": false,
+    "pMcPltr_idx1": false,
+    "pvtr_idx1": false,
+    "pMcPsvtr_idx2": false,
+    "pDurationMs_idx5": false,
+    "pPhtr_idx4": false,
+    "pEmpHtr_idx0": false,
+    "pEmpFtr_idx3": false,
+    "pEmpCmtr_idx6": false,
+    "uMidClickPids": false,
+    "pPcmtr_idx0": false,
+    "pHetuTagLevel1Id_idx1": false,
+    "pEmpHtr_idx7": false,
+    "pMmuImgClusterV1_idx9": false,
+    "pMcPltr_idx2": false,
+    "pPvtr_idx4": false,
+    "pPsvtr_idx3": false,
+    "pPvtr_idx0": false,
+    "pProvinceId_idx9": false,
+    "pDurationMs_idx4": false,
+    "pMcPsvtr_idx1": false,
+    "pvtr_idx0": false,
+    "pTag_idx9": false,
+    "pPptr_idx4": false,
+    "pPftr_idx2": false,
+    "pMusicComboId_idx6": false,
+    "pPepstr_idx1": false,
+    "pEmpHtr_idx3": false,
+    "pPptr_idx1": false,
+    "pMmuImgClusterV3_idx6": false,
+    "pMusicComboId_idx5": false,
+    "pPftr_idx1": false,
+    "slide_next_label_idx2": false,
+    "pMcPwtr_idx5": false,
+    "pMusic_idx1": false,
+    "pPlvtr_idx1": false,
+    "uMidPlayShortPids": false,
+    "uMidFollowPids": false,
+    "pMcPsvtr_idx4": false,
+    "pvtr_idx3": false,
+    "pDurationMs_idx7": false,
+    "pPvtr_idx5": false,
+    "pPsvtr_idx4": false,
+    "pEmpCmtr_idx4": false,
+    "pMmuImgClusterV1_idx7": false,
+    "pAuthorGender_idx8": false,
+    "pPhtr_idx1": false,
+    "pContentLevel_idx7": false,
+    "pEmpCtr_idx9": false,
+    "pMmuContentId_idx7": false,
+    "pPctr_idx0": false,
+    "pPcmef_idx2": false,
+    "pPvtr_idx2": false,
+    "slide_play_rate_idx5": false,
+    "pPsvtr_idx1": false,
+    "pContentLevel_idx8": false,
+    "pPhtr_idx2": false,
+    "aId_idx8": false,
+    "pEmpCtr_idx8": false,
+    "pPltr_idx5": false,
+    "aId_idx2": false,
+    "dId": false,
+    "pPltr_idx0": false,
+    "pEmpLtr_idx2": false,
+    "pPhtr_idx0": false,
+    "pPvtr_idx3": false,
+    "pPsvtr_idx2": false,
+    "uMidLikePids": false,
+    "pOcrCoverTextWordCount_idx1": false,
+    "pEmpHtr_idx9": false,
+    "pMcPsvtr_idx0": false,
+    "pDurationMs_idx3": false,
+    "pEmpLtr_idx1": false,
+    "slide_next_label_idx5": false,
+    "pEmpWtr_idx9": false,
+    "pMcPlvtr_idx0": false,
+    "pId_idx9": false,
+    "pId_idx6": false,
+    "pId_idx7": false,
+    "pEmpHtr_idx6": false,
+    "pEmpWtr_idx6": false,
+    "pMcPctr_idx3": false,
+    "pPctr_idx4": false,
+    "pPcmef_idx0": false,
+    "aId_idx4": false,
+    "pEmpCtr_idx5": false,
+    "pUploadType_idx4": false,
+    "uRealFollowPids": false,
+    "pEmpHtr_idx5": false,
+    "pEmpWtr_idx5": false,
+    "pMcPctr_idx2": false,
+    "uGender": false,
+    "pMmuImgClusterV3_idx8": false,
+    "pPptr_idx3": false,
+    "pEmpWtr_idx4": false,
+    "pMcPctr_idx1": false,
+    "pEmpHtr_idx4": false,
+    "pPcmtr_idx1": false,
+    "pHetuTagLevel1Id_idx2": false,
+    "pMmuImgClusterV3_idx5": false,
+    "pEmpPtr_idx9": false,
+    "pPptr_idx0": false,
+    "avg_watchtime_idx6": false,
+    "pHetuTagLevel2Id_idx8": false,
+    "pTag_idx3": false,
+    "pProvinceId_idx3": false,
+    "pId_idx4": false,
+    "pEmpCtr_idx4": false,
+    "uRealLikePids": false,
+    "uMidPlayLongPids": false,
+    "pUploadType_idx2": false,
+    "fountainEffviewPids": false,
+    "pEmpLtr_idx4": false,
+    "pPptr_idx5": false,
+    "pMcPwtr_idx2": false,
+    "pAuthorGender_idx9": false,
+    "pUploadType_idx0": false,
+    "pPcmef_idx5": false,
+    "pPctr_idx3": false,
+    "pPctr_idx5": false,
+    "pEmpLtr_idx6": false,
+    "pEmpFtr_idx7": false,
+    "pEmpHtr_idx1": false,
+    "pPhtr_idx5": false,
+    "pDurationMs_idx1": false,
+    "pAgeHour_idx8": false,
+    "pMcPltr_idx0": false,
+    "pPcmef_idx3": false,
+    "pEmpCtr_idx6": false,
+    "pEmpCtr_idx7": false,
+    "pPepstr_idx2": false,
+    "pProvinceId_idx2": false,
+    "pPepstr_idx5": false,
+    "pvtr_idx2": false,
+    "pDurationMs_idx6": false,
+    "pMcPsvtr_idx3": false,
+    "uRealHatePids": false,
+    "pMmuImgClusterV1_idx8": false,
+    "pMcPlvtr_idx2": false,
+    "uCityId": false,
+    "pId_idx1": false,
+    "pId_idx2": false,
+    "pEmpCtr_idx2": false,
+    "slide_neg_weight_idx4": false,
+    "pEmpCtr_idx3": false,
+    "pEmpWtr_idx1": false,
+    "pEmpLtr_idx3": false,
+    "pEmpWtr_idx2": false,
+    "pMmuImgClusterV3_idx9": false,
+    "pEmpFtr_idx4": false,
+    "pEmpCmtr_idx1": false,
+    "pContentLevel_idx6": false,
+    "pEmpCmtr_idx0": false,
+    "pPltr_idx2": false,
+    "pPhtr_idx3": false,
+    "pEmpCmtr_idx2": false,
+    "pEmpCmtr_idx3": false,
+    "pEmpCmtr_idx5": false,
+    "pMmuImgClusterV3_idx1": false,
+    "pEmpCmtr_idx7": false,
+    "pEmpHtr_idx2": false,
+    "pId_idx5": false,
+    "pTag_idx2": false,
+    "pEmpPtr_idx5": false,
+    "pEmpPtr_idx7": false
+  },
+  "sign_feature_slot": {
+    "pMmuContentId_idx2": 11,
+    "pHetuTagLevel2Id_idx9": 32,
+    "pTag_idx8": 49,
+    "pProvinceId_idx8": 73,
+    "pHetuTagLevel1Id_idx0": 38,
+    "pEmpFtr_idx8": 95,
+    "pMcPltr_idx5": 129,
+    "pPltr_idx2": 381,
+    "avg_watchtime_idx0": 4,
+    "pPctr_idx2": 80,
+    "pMmuContentId_idx9": 96,
+    "pDurationMs_idx0": 61,
+    "pMmuImgClusterV1_idx0": 109,
+    "pPftr_idx4": 107,
+    "pCityId_idx3": 171,
+    "pPwtd_idx2": 71,
+    "pMusicComboId_idx8": 6,
+    "pEmpFtr_idx0": 137,
+    "pAgeHour_idx0": 21,
+    "aId_idx9": 50,
+    "pCityId_idx7": 197,
+    "pEmpPtr_idx2": 182,
+    "pPwtr_idx3": 93,
+    "pMmuImgClusterV1_idx6": 22,
+    "pAuthorGender_idx7": 67,
+    "pEmpLtr_idx8": 90,
+    "pPcmtr_idx3": 115,
+    "pHetuTagLevel1Id_idx4": 153,
+    "uId": 111,
+    "pAuthorGender_idx0": 98,
+    "pMcPctr_idx5": 152,
+    "pEmpWtr_idx8": 211,
+    "fountainClickPids": 88,
+    "pMmuContentId_idx4": 9,
+    "uMidCommentPids": 135,
+    "pContentLevel_idx0": 42,
+    "pCityId_idx4": 99,
+    "pPwtd_idx3": 251,
+    "pEmpFtr_idx1": 242,
+    "pMmuImgClusterV1_idx1": 250,
+    "pPftr_idx5": 160,
+    "pMusicComboId_idx9": 5,
+    "pTag_idx7": 43,
+    "pProvinceId_idx7": 189,
+    "aId_idx3": 53,
+    "aId_idx5": 223,
+    "fountainLongviewPids": 85,
+    "pAgeHour_idx4": 18,
+    "pMmuContentId_idx1": 12,
+    "pMusic_idx9": 24,
+    "pOcrCoverTextWordCount_idx9": 26,
+    "avg_watchtime_idx9": 1,
+    "pMmuContentId_idx3": 10,
+    "pMcPwtr_idx4": 277,
+    "pUploadType_idx9": 289,
+    "pMusicComboId_idx4": 187,
+    "pPftr_idx0": 118,
+    "pPwtd_idx0": 230,
+    "pCityId_idx1": 72,
+    "pAgeHour_idx3": 66,
+    "pMmuImgClusterV1_idx3": 298,
+    "pAuthorGender_idx4": 35,
+    "pHetuTagLevel1Id_idx8": 36,
+    "pHetuTagLevel2Id_idx7": 33,
+    "pMmuContentId_idx0": 14,
+    "pMusic_idx8": 156,
+    "pOcrCoverTextWordCount_idx8": 27,
+    "pUploadType_idx1": 47,
+    "avg_watchtime_idx8": 2,
+    "pPlvtr_idx5": 167,
+    "pMusic_idx5": 157,
+    "pOcrCoverTextWordCount_idx5": 188,
+    "pHetuTagLevel2Id_idx4": 34,
+    "pMcPctr_idx4": 149,
+    "pEmpWtr_idx7": 222,
+    "pMcPwtr_idx3": 126,
+    "uMidPlayEffectivePids": 120,
+    "pPctr_idx1": 353,
+    "pMmuContentId_idx8": 91,
+    "pPvtr_idx5": 194,
+    "pPsvtr_idx4": 186,
+    "pContentLevel_idx3": 40,
+    "uMidPlayViewHetu2": 276,
+    "avg_watchtime_idx5": 3,
+    "pPcmtr_idx2": 145,
+    "pHetuTagLevel1Id_idx3": 132,
+    "aId_idx7": 51,
+    "pPwtr_idx0": 294,
+    "pUploadType_idx3": 46,
+    "pAgeHour_idx5": 17,
+    "pEmpFtr_idx5": 65,
+    "pPftr_idx3": 297,
+    "pCityId_idx2": 245,
+    "pPwtd_idx1": 296,
+    "pMusicComboId_idx7": 7,
+    "uMidPlayShortPids": 178,
+    "pOcrCoverTextWordCount_idx7": 28,
+    "pMusic_idx7": 29,
+    "pPltr_idx4": 125,
+    "avg_watchtime_idx2": 25,
+    "pOcrCoverTextWordCount_idx6": 30,
+    "pMusic_idx6": 31,
+    "pMmuContentId_idx6": 8,
+    "pPlvtr_idx0": 252,
+    "pMusic_idx0": 209,
+    "pEmpFtr_idx9": 180,
+    "pOcrCoverTextWordCount_idx0": 198,
+    "pEmpHtr_idx8": 143,
+    "aId_idx6": 52,
+    "pEmpLtr_idx5": 92,
+    "pMmuContentId_idx5": 13,
+    "pPsvtr_idx5": 74,
+    "pPhtr_idx1": 322,
+    "pContentLevel_idx7": 192,
+    "pPlvtr_idx2": 316,
+    "pMusic_idx2": 214,
+    "pOcrCoverTextWordCount_idx2": 79,
+    "fountainLikePids": 81,
+    "pHetuTagLevel2Id_idx5": 121,
+    "pPcmtr_idx5": 84,
+    "pHetuTagLevel1Id_idx6": 77,
+    "pAuthorGender_idx2": 87,
+    "pAgeHour_idx7": 15,
+    "pOcrCoverTextWordCount_idx3": 68,
+    "pPlvtr_idx3": 336,
+    "pMusic_idx3": 185,
+    "pMcPltr_idx4": 94,
+    "pMcPlvtr_idx1": 86,
+    "pEmpFtr_idx6": 122,
+    "pDurationMs_idx9": 361,
+    "pEmpCtr_idx1": 100,
+    "pAgeHour_idx6": 16,
+    "pMcPltr_idx3": 69,
+    "pEmpCtr_idx9": 234,
+    "pMmuContentId_idx7": 217,
+    "pPctr_idx0": 193,
+    "pMmuImgClusterV1_idx5": 309,
+    "pAuthorGender_idx6": 23,
+    "pPwtd_idx5": 141,
+    "pCityId_idx6": 161,
+    "pEmpPtr_idx1": 175,
+    "pPwtr_idx2": 70,
+    "pMmuImgClusterV1_idx2": 312,
+    "pAuthorGender_idx3": 176,
+    "pHetuTagLevel1Id_idx7": 37,
+    "pAgeHour_idx2": 19,
+    "pProvinceId_idx4": 205,
+    "pTag_idx4": 45,
+    "pAgeHour_idx1": 20,
+    "pDurationMs_idx2": 48,
+    "pMcPlvtr_idx4": 327,
+    "pHetuTagLevel2Id_idx1": 168,
+    "pPepstr_idx4": 351,
+    "pProvinceId_idx1": 89,
+    "pTag_idx1": 147,
+    "pMmuImgClusterV3_idx4": 57,
+    "pEmpPtr_idx8": 59,
+    "pPsvtr_idx0": 150,
+    "pPvtr_idx1": 75,
+    "avg_watchtime_idx7": 58,
+    "pContentLevel_idx5": 39,
+    "pPepstr_idx0": 119,
+    "uBasicAge": 136,
+    "pHetuTagLevel2Id_idx6": 101,
+    "pMcPlvtr_idx5": 346,
+    "pHetuTagLevel2Id_idx2": 83,
+    "pContentLevel_idx1": 41,
+    "pTag_idx6": 140,
+    "pProvinceId_idx6": 44,
+    "pEmpWtr_idx3": 78,
+    "pMcPctr_idx0": 240,
+    "pEmpHtr_idx3": 169,
+    "aId_idx1": 54,
+    "pId_idx3": 56,
+    "aId_idx0": 55,
+    "pMmuImgClusterV3_idx3": 60,
+    "pContentLevel_idx2": 64,
+    "pPlvtr_idx4": 258,
+    "pMusic_idx4": 333,
+    "pOcrCoverTextWordCount_idx4": 62,
+    "pPltr_idx3": 323,
+    "avg_watchtime_idx1": 63,
+    "pMcPlvtr_idx3": 128,
+    "pHetuTagLevel2Id_idx0": 328,
+    "pHetuTagLevel1Id_idx5": 311,
+    "pPcmtr_idx4": 97,
+    "pHetuTagLevel1Id_idx9": 303,
+    "pAuthorGender_idx5": 207,
+    "pMmuImgClusterV1_idx4": 76,
+    "pCityId_idx8": 218,
+    "pEmpWtr_idx0": 181,
+    "pEmpPtr_idx3": 199,
+    "pPwtr_idx4": 133,
+    "pMusicComboId_idx3": 170,
+    "pUploadType_idx8": 82,
+    "pProvinceId_idx5": 283,
+    "uRealClickPids": 117,
+    "pTag_idx5": 102,
+    "pEmpPtr_idx0": 325,
+    "pPwtr_idx1": 235,
+    "pPwtd_idx4": 179,
+    "pCityId_idx5": 103,
+    "uRealForwardPids": 166,
+    "pId_idx8": 104,
+    "pTag_idx0": 348,
+    "pPepstr_idx3": 350,
+    "pProvinceId_idx0": 105,
+    "pMusicComboId_idx2": 345,
+    "pUploadType_idx7": 127,
+    "pPcmef_idx1": 106,
+    "pId_idx0": 108,
+    "pMusicComboId_idx5": 329,
+    "pPftr_idx1": 196,
+    "pMcPwtr_idx5": 174,
+    "pAuthorGender_idx1": 310,
+    "pMcPwtr_idx1": 236,
+    "pEmpCmtr_idx9": 130,
+    "pEmpLtr_idx0": 110,
+    "pPhtr_idx3": 382,
+    "pContentLevel_idx9": 112,
+    "pEmpCmtr_idx8": 317,
+    "pMcPwtr_idx0": 318,
+    "pUploadType_idx5": 219,
+    "pMusicComboId_idx0": 259,
+    "pEmpFtr_idx2": 315,
+    "fountainFollowPids": 138,
+    "pUploadType_idx6": 231,
+    "pMusicComboId_idx1": 113,
+    "pEmpCtr_idx0": 220,
+    "pDurationMs_idx8": 139,
+    "pMcPsvtr_idx5": 114,
+    "pPptr_idx2": 305,
+    "pMmuImgClusterV3_idx7": 116,
+    "pCityId_idx0": 224,
+    "pPcmef_idx4": 148,
+    "pAgeHour_idx9": 239,
+    "pMcPltr_idx1": 123,
+    "pMcPsvtr_idx2": 173,
+    "pDurationMs_idx5": 124,
+    "uRealHatePids": 357,
+    "pContentLevel_idx4": 131,
+    "pPhtr_idx4": 210,
+    "pEmpHtr_idx0": 134,
+    "pEmpFtr_idx3": 302,
+    "pPptr_idx1": 261,
+    "pMmuImgClusterV3_idx6": 172,
+    "pEmpCmtr_idx6": 155,
+    "uMidClickPids": 142,
+    "pPcmtr_idx0": 191,
+    "pHetuTagLevel1Id_idx1": 151,
+    "pEmpHtr_idx7": 144,
+    "pMmuImgClusterV1_idx9": 344,
+    "pMcPltr_idx2": 146,
+    "pMusic_idx1": 263,
+    "pPlvtr_idx1": 177,
+    "pPvtr_idx4": 253,
+    "pPsvtr_idx3": 154,
+    "pPvtr_idx0": 158,
+    "pProvinceId_idx9": 287,
+    "pTag_idx9": 159,
+    "pMmuImgClusterV3_idx9": 375,
+    "pPptr_idx4": 162,
+    "pEmpWtr_idx1": 370,
+    "pCityId_idx9": 227,
+    "pEmpPtr_idx4": 184,
+    "pPwtr_idx5": 163,
+    "pPftr_idx2": 241,
+    "pMusicComboId_idx6": 164,
+    "pPepstr_idx1": 165,
+    "uMidFollowPids": 280,
+    "pMcPsvtr_idx4": 373,
+    "pDurationMs_idx7": 183,
+    "pMmuImgClusterV3_idx0": 306,
+    "pEmpCmtr_idx4": 190,
+    "pMmuImgClusterV1_idx7": 267,
+    "pAuthorGender_idx8": 226,
+    "pPcmef_idx2": 195,
+    "pPvtr_idx2": 341,
+    "pPsvtr_idx1": 200,
+    "pContentLevel_idx8": 282,
+    "pPhtr_idx2": 201,
+    "aId_idx8": 202,
+    "pEmpCtr_idx8": 203,
+    "pPltr_idx5": 300,
+    "avg_watchtime_idx3": 204,
+    "avg_watchtime_idx4": 246,
+    "uMidPlayViewHetu1": 206,
+    "aId_idx2": 208,
+    "dId": 212,
+    "pEmpLtr_idx9": 221,
+    "pPltr_idx0": 213,
+    "pEmpLtr_idx2": 215,
+    "pContentLevel_idx6": 379,
+    "pPhtr_idx0": 216,
+    "uCityId": 362,
+    "pPvtr_idx3": 248,
+    "pPsvtr_idx2": 225,
+    "pEmpLtr_idx7": 249,
+    "uMidLikePids": 228,
+    "pOcrCoverTextWordCount_idx1": 255,
+    "pEmpHtr_idx9": 229,
+    "pMcPsvtr_idx0": 363,
+    "pDurationMs_idx3": 232,
+    "pEmpPtr_idx6": 238,
+    "pMmuImgClusterV3_idx2": 233,
+    "pEmpWtr_idx9": 237,
+    "pMcPlvtr_idx0": 288,
+    "pId_idx9": 243,
+    "pId_idx6": 244,
+    "pId_idx7": 247,
+    "pEmpHtr_idx6": 313,
+    "pEmpWtr_idx6": 299,
+    "pMcPctr_idx3": 254,
+    "pPctr_idx4": 256,
+    "pPcmef_idx0": 257,
+    "aId_idx4": 260,
+    "pEmpCtr_idx5": 262,
+    "pUploadType_idx4": 266,
+    "uRealFollowPids": 264,
+    "pEmpHtr_idx5": 292,
+    "pEmpWtr_idx5": 378,
+    "pMcPctr_idx2": 265,
+    "uGender": 268,
+    "pMmuImgClusterV3_idx8": 349,
+    "pPptr_idx3": 269,
+    "pEmpWtr_idx4": 355,
+    "pMcPctr_idx1": 285,
+    "pEmpHtr_idx4": 270,
+    "pPcmtr_idx1": 326,
+    "pHetuTagLevel1Id_idx2": 271,
+    "pEmpLtr_idx4": 304,
+    "fountainEffviewPids": 371,
+    "pMmuImgClusterV3_idx5": 274,
+    "pEmpPtr_idx9": 273,
+    "pPptr_idx0": 272,
+    "avg_watchtime_idx6": 275,
+    "pHetuTagLevel2Id_idx8": 278,
+    "pHetuTagLevel2Id_idx3": 279,
+    "pEmpLtr_idx1": 281,
+    "pTag_idx3": 286,
+    "pProvinceId_idx3": 284,
+    "pId_idx4": 295,
+    "pEmpCtr_idx4": 291,
+    "uRealLikePids": 290,
+    "uMidPlayLongPids": 293,
+    "pUploadType_idx2": 301,
+    "pPptr_idx5": 307,
+    "pMcPwtr_idx2": 308,
+    "pMmuImgClusterV1_idx8": 359,
+    "pAuthorGender_idx9": 314,
+    "pUploadType_idx0": 339,
+    "pPcmef_idx5": 319,
+    "pPctr_idx3": 320,
+    "pPctr_idx5": 321,
+    "pEmpLtr_idx6": 324,
+    "pEmpFtr_idx7": 330,
+    "pEmpHtr_idx1": 332,
+    "pPhtr_idx5": 331,
+    "pDurationMs_idx1": 334,
+    "pAgeHour_idx8": 337,
+    "pMcPltr_idx0": 335,
+    "pPcmef_idx3": 338,
+    "pEmpCtr_idx6": 340,
+    "pEmpCtr_idx7": 342,
+    "pPltr_idx1": 343,
+    "pPepstr_idx2": 347,
+    "pProvinceId_idx2": 354,
+    "pPepstr_idx5": 352,
+    "pDurationMs_idx6": 358,
+    "pMcPsvtr_idx3": 356,
+    "pMcPlvtr_idx2": 360,
+    "pDurationMs_idx4": 366,
+    "pMcPsvtr_idx1": 364,
+    "pId_idx1": 365,
+    "pId_idx2": 367,
+    "pEmpCtr_idx2": 368,
+    "pEmpCtr_idx3": 369,
+    "pEmpLtr_idx3": 372,
+    "pEmpWtr_idx2": 374,
+    "pEmpFtr_idx4": 376,
+    "pEmpCmtr_idx1": 377,
+    "pEmpCmtr_idx0": 380,
+    "pEmpCmtr_idx2": 383,
+    "pEmpCmtr_idx3": 384,
+    "pEmpCmtr_idx5": 385,
+    "pMmuImgClusterV3_idx1": 386,
+    "pEmpCmtr_idx7": 387,
+    "pEmpHtr_idx2": 388,
+    "pId_idx5": 389,
+    "pTag_idx2": 390,
+    "pEmpPtr_idx5": 391,
+    "pEmpPtr_idx7": 392
+  },
+  "sign_feature_dim": {
+    "uMidCommentPids": 32,
+    "pMmuImgClusterV3_idx0": 4,
+    "pPwtr_idx5": 8,
+    "pEmpPtr_idx4": 8,
+    "slide_wtd_label_idx1": 1,
+    "pContentLevel_idx0": 2,
+    "pCityId_idx4": 8,
+    "pPwtd_idx3": 8,
+    "pEmpFtr_idx1": 8,
+    "pMmuImgClusterV1_idx1": 8,
+    "pPftr_idx5": 8,
+    "pMusicComboId_idx9": 8,
+    "pHetuTagLevel2Id_idx9": 8,
+    "pMmuContentId_idx2": 8,
+    "pContentLevel_idx3": 2,
+    "pMmuImgClusterV3_idx3": 4,
+    "slide_wtd_label_idx4": 1,
+    "pMmuContentId_idx3": 8,
+    "pContentLevel_idx4": 2,
+    "pEmpPtr_idx8": 8,
+    "pMmuImgClusterV3_idx4": 4,
+    "slide_wtd_label_idx5": 1,
+    "aId_idx1": 32,
+    "pAgeHour_idx3": 8,
+    "pMmuImgClusterV1_idx3": 8,
+    "pAuthorGender_idx4": 8,
+    "pHetuTagLevel1Id_idx8": 8,
+    "pHetuTagLevel2Id_idx6": 8,
+    "pPepstr_idx0": 8,
+    "uBasicAge": 4,
+    "avg_watchtime_idx5": 8,
+    "slide_next_weight_idx5": 1,
+    "pTag_idx6": 8,
+    "slide_play_weight_idx3": 1,
+    "pProvinceId_idx6": 8,
+    "slide_play_rate_idx3": 1,
+    "slide_next_weight_idx4": 1,
+    "avg_watchtime_idx4": 8,
+    "uMidPlayViewHetu1": 8,
+    "slide_neg_weight_idx5": 1,
+    "pAgeHour_idx5": 8,
+    "pEmpFtr_idx5": 8,
+    "pPftr_idx3": 8,
+    "pCityId_idx2": 8,
+    "pPwtd_idx1": 8,
+    "pMusicComboId_idx7": 8,
+    "aId_idx5": 32,
+    "fountainLongviewPids": 32,
+    "aId_idx3": 32,
+    "pPltr_idx3": 8,
+    "slide_next_weight_idx1": 1,
+    "avg_watchtime_idx1": 8,
+    "pEmpLtr_idx9": 8,
+    "slide_neg_weight_idx2": 1,
+    "pAgeHour_idx2": 8,
+    "pMmuImgClusterV1_idx2": 8,
+    "pAuthorGender_idx3": 8,
+    "pHetuTagLevel1Id_idx7": 8,
+    "pPltr_idx1": 8,
+    "pEmpLtr_idx7": 8,
+    "slide_neg_weight_idx0": 1,
+    "pMmuImgClusterV1_idx0": 8,
+    "pPftr_idx4": 8,
+    "pCityId_idx3": 8,
+    "pPwtd_idx2": 8,
+    "pMusicComboId_idx8": 8,
+    "pEmpFtr_idx0": 8,
+    "aId_idx9": 32,
+    "pAgeHour_idx0": 8,
+    "pHetuTagLevel2Id_idx3": 8,
+    "avg_watchtime_idx2": 8,
+    "slide_next_weight_idx2": 1,
+    "pPctr_idx2": 16,
+    "pMmuContentId_idx9": 8,
+    "pDurationMs_idx0": 4,
+    "pPptr_idx2": 8,
+    "pMmuImgClusterV3_idx7": 4,
+    "pCityId_idx9": 8,
+    "slide_play_rate_idx0": 1,
+    "pMusic_idx8": 8,
+    "pOcrCoverTextWordCount_idx8": 8,
+    "pHetuTagLevel2Id_idx7": 8,
+    "pMmuContentId_idx0": 8,
+    "pContentLevel_idx1": 2,
+    "slide_wtd_label_idx2": 1,
+    "pEmpCtr_idx0": 8,
+    "pDurationMs_idx8": 4,
+    "pMcPsvtr_idx5": 8,
+    "pvtr_idx4": 1,
+    "pMmuContentId_idx1": 8,
+    "pMusic_idx9": 8,
+    "pOcrCoverTextWordCount_idx9": 8,
+    "avg_watchtime_idx9": 8,
+    "pPwtr_idx4": 8,
+    "pEmpPtr_idx3": 8,
+    "slide_wtd_label_idx0": 1,
+    "pDurationMs_idx2": 4,
+    "pTag_idx8": 8,
+    "pProvinceId_idx8": 8,
+    "slide_play_weight_idx5": 1,
+    "pMmuImgClusterV1_idx5": 8,
+    "pAuthorGender_idx6": 8,
+    "pPwtd_idx5": 8,
+    "pCityId_idx6": 8,
+    "pEmpPtr_idx1": 8,
+    "pPwtr_idx2": 8,
+    "uMidPlayViewHetu2": 8,
+    "slide_next_label_idx3": 1,
+    "pContentLevel_idx2": 2,
+    "pEmpPtr_idx6": 8,
+    "pMmuImgClusterV3_idx2": 4,
+    "slide_wtd_label_idx3": 1,
+    "slide_next_label_idx1": 1,
+    "pMcPwtr_idx4": 8,
+    "pUploadType_idx9": 8,
+    "pMusicComboId_idx4": 8,
+    "pPftr_idx0": 8,
+    "pPwtd_idx0": 8,
+    "pCityId_idx1": 8,
+    "pUploadType_idx1": 8,
+    "avg_watchtime_idx8": 8,
+    "pAuthorGender_idx2": 8,
+    "pPcmtr_idx5": 8,
+    "pHetuTagLevel1Id_idx6": 8,
+    "pAgeHour_idx1": 8,
+    "pHetuTagLevel2Id_idx4": 8,
+    "avg_watchtime_idx3": 8,
+    "slide_next_weight_idx3": 1,
+    "slide_play_rate_idx1": 1,
+    "slide_play_rate_idx2": 1,
+    "pMcPctr_idx0": 16,
+    "pEmpWtr_idx3": 8,
+    "uId": 64,
+    "pAuthorGender_idx0": 8,
+    "pPcmtr_idx3": 8,
+    "pHetuTagLevel1Id_idx4": 8,
+    "pMcPlvtr_idx5": 8,
+    "pHetuTagLevel2Id_idx2": 8,
+    "pProvinceId_idx5": 8,
+    "uRealClickPids": 32,
+    "pTag_idx5": 8,
+    "slide_play_weight_idx2": 1,
+    "pAuthorGender_idx7": 8,
+    "pMmuImgClusterV1_idx6": 8,
+    "pMcPltr_idx5": 8,
+    "slide_next_weight_idx0": 1,
+    "avg_watchtime_idx0": 8,
+    "pOcrCoverTextWordCount_idx7": 8,
+    "pMusic_idx7": 8,
+    "slide_neg_weight_idx3": 1,
+    "pPltr_idx4": 8,
+    "pOcrCoverTextWordCount_idx6": 8,
+    "pMusic_idx6": 8,
+    "pMmuContentId_idx6": 8,
+    "pMmuContentId_idx4": 8,
+    "pMmuContentId_idx5": 8,
+    "pHetuTagLevel2Id_idx5": 8,
+    "pAgeHour_idx7": 8,
+    "pEmpFtr_idx6": 8,
+    "pvtr_idx5": 1,
+    "pDurationMs_idx9": 4,
+    "pEmpCtr_idx1": 8,
+    "pAgeHour_idx6": 8,
+    "pPcmtr_idx2": 8,
+    "pHetuTagLevel1Id_idx3": 8,
+    "aId_idx7": 32,
+    "pMcPlvtr_idx4": 8,
+    "pHetuTagLevel2Id_idx1": 8,
+    "pHetuTagLevel1Id_idx0": 8,
+    "pMcPltr_idx3": 8,
+    "pAgeHour_idx4": 8,
+    "pProvinceId_idx4": 8,
+    "slide_play_weight_idx1": 1,
+    "pTag_idx4": 8,
+    "pEmpLtr_idx5": 8,
+    "pPlvtr_idx2": 8,
+    "pMusic_idx2": 8,
+    "slide_play_weight_idx0": 1,
+    "fountainLikePids": 32,
+    "pOcrCoverTextWordCount_idx2": 8,
+    "pPepstr_idx4": 8,
+    "pProvinceId_idx1": 8,
+    "pTag_idx1": 8,
+    "slide_play_rate_idx4": 1,
+    "pPsvtr_idx0": 8,
+    "pPvtr_idx1": 8,
+    "avg_watchtime_idx7": 8,
+    "pContentLevel_idx5": 2,
+    "pPlvtr_idx3": 8,
+    "pMusic_idx3": 8,
+    "pOcrCoverTextWordCount_idx3": 8,
+    "pCityId_idx7": 8,
+    "pEmpPtr_idx2": 8,
+    "pPwtr_idx3": 8,
+    "slide_neg_weight_idx1": 1,
+    "pEmpLtr_idx8": 8,
+    "pEmpLtr_idx0": 8,
+    "slide_next_label_idx4": 1,
+    "slide_play_weight_idx4": 1,
+    "pProvinceId_idx7": 8,
+    "pTag_idx7": 8,
+    "pPwtr_idx0": 8,
+    "pUploadType_idx3": 8,
+    "pPsvtr_idx5": 8,
+    "pPlvtr_idx0": 8,
+    "pMusic_idx0": 8,
+    "pEmpFtr_idx9": 8,
+    "pOcrCoverTextWordCount_idx0": 8,
+    "pEmpWtr_idx8": 8,
+    "pMcPctr_idx5": 16,
+    "pEmpHtr_idx8": 8,
+    "aId_idx6": 32,
+    "pId_idx3": 32,
+    "aId_idx0": 32,
+    "pPlvtr_idx4": 8,
+    "pMusic_idx4": 8,
+    "pOcrCoverTextWordCount_idx4": 8,
+    "pOcrCoverTextWordCount_idx5": 8,
+    "pPlvtr_idx5": 8,
+    "pMusic_idx5": 8,
+    "pHetuTagLevel1Id_idx9": 8,
+    "pAuthorGender_idx5": 8,
+    "pMmuImgClusterV1_idx4": 8,
+    "pCityId_idx8": 8,
+    "pEmpWtr_idx0": 8,
+    "pMusicComboId_idx3": 8,
+    "pUploadType_idx8": 8,
+    "pMcPlvtr_idx1": 8,
+    "fountainClickPids": 32,
+    "pMcPctr_idx4": 16,
+    "pEmpWtr_idx7": 8,
+    "slide_next_label_idx0": 1,
+    "pMcPwtr_idx3": 8,
+    "uMidPlayEffectivePids": 32,
+    "pPctr_idx1": 16,
+    "pMmuContentId_idx8": 8,
+    "pMcPltr_idx4": 8,
+    "pEmpFtr_idx8": 8,
+    "pMcPlvtr_idx3": 8,
+    "pHetuTagLevel2Id_idx0": 8,
+    "pHetuTagLevel1Id_idx5": 8,
+    "pPcmtr_idx4": 8,
+    "pEmpPtr_idx0": 8,
+    "pPwtr_idx1": 8,
+    "pPwtd_idx4": 8,
+    "pCityId_idx5": 8,
+    "uRealForwardPids": 32,
+    "pId_idx8": 32,
+    "pTag_idx0": 8,
+    "pPepstr_idx3": 8,
+    "pProvinceId_idx0": 8,
+    "pMusicComboId_idx2": 8,
+    "pUploadType_idx7": 8,
+    "pPcmef_idx1": 8,
+    "pId_idx0": 32,
+    "pAuthorGender_idx1": 8,
+    "pMcPwtr_idx1": 8,
+    "pEmpCmtr_idx9": 8,
+    "pContentLevel_idx9": 2,
+    "pEmpCmtr_idx8": 8,
+    "pMcPwtr_idx0": 8,
+    "pUploadType_idx5": 8,
+    "pMusicComboId_idx0": 8,
+    "pEmpFtr_idx2": 8,
+    "fountainFollowPids": 32,
+    "pUploadType_idx6": 8,
+    "pMusicComboId_idx1": 8,
+    "pCityId_idx0": 8,
+    "pPcmef_idx4": 8,
+    "pAgeHour_idx9": 8,
+    "pMcPltr_idx1": 8,
+    "pvtr_idx1": 1,
+    "pMcPsvtr_idx2": 8,
+    "pDurationMs_idx5": 4,
+    "pPhtr_idx4": 8,
+    "pEmpHtr_idx0": 8,
+    "pEmpFtr_idx3": 8,
+    "pEmpCmtr_idx6": 8,
+    "uMidClickPids": 32,
+    "pPcmtr_idx0": 8,
+    "pHetuTagLevel1Id_idx1": 8,
+    "pEmpHtr_idx7": 8,
+    "pMmuImgClusterV1_idx9": 8,
+    "pMcPltr_idx2": 8,
+    "pPvtr_idx4": 8,
+    "pPsvtr_idx3": 8,
+    "pPvtr_idx0": 8,
+    "pProvinceId_idx9": 8,
+    "pDurationMs_idx4": 4,
+    "pMcPsvtr_idx1": 8,
+    "pvtr_idx0": 1,
+    "pTag_idx9": 8,
+    "pPptr_idx4": 8,
+    "pPftr_idx2": 8,
+    "pMusicComboId_idx6": 8,
+    "pPepstr_idx1": 8,
+    "pEmpHtr_idx3": 8,
+    "pPptr_idx1": 8,
+    "pMmuImgClusterV3_idx6": 4,
+    "pMusicComboId_idx5": 8,
+    "pPftr_idx1": 8,
+    "slide_next_label_idx2": 1,
+    "pMcPwtr_idx5": 8,
+    "pMusic_idx1": 8,
+    "pPlvtr_idx1": 8,
+    "uMidPlayShortPids": 32,
+    "uMidFollowPids": 32,
+    "pMcPsvtr_idx4": 8,
+    "pvtr_idx3": 1,
+    "pDurationMs_idx7": 4,
+    "pPvtr_idx5": 8,
+    "pPsvtr_idx4": 8,
+    "pEmpCmtr_idx4": 8,
+    "pMmuImgClusterV1_idx7": 8,
+    "pAuthorGender_idx8": 8,
+    "pPhtr_idx1": 8,
+    "pContentLevel_idx7": 2,
+    "pEmpCtr_idx9": 8,
+    "pMmuContentId_idx7": 8,
+    "pPctr_idx0": 16,
+    "pPcmef_idx2": 8,
+    "pPvtr_idx2": 8,
+    "slide_play_rate_idx5": 1,
+    "pPsvtr_idx1": 8,
+    "pContentLevel_idx8": 2,
+    "pPhtr_idx2": 8,
+    "aId_idx8": 32,
+    "pEmpCtr_idx8": 8,
+    "pPltr_idx5": 8,
+    "aId_idx2": 32,
+    "dId": 64,
+    "pPltr_idx0": 8,
+    "pEmpLtr_idx2": 8,
+    "pPhtr_idx0": 8,
+    "pPvtr_idx3": 8,
+    "pPsvtr_idx2": 8,
+    "uMidLikePids": 32,
+    "pOcrCoverTextWordCount_idx1": 8,
+    "pEmpHtr_idx9": 8,
+    "pMcPsvtr_idx0": 8,
+    "pDurationMs_idx3": 4,
+    "pEmpLtr_idx1": 8,
+    "slide_next_label_idx5": 1,
+    "pEmpWtr_idx9": 8,
+    "pMcPlvtr_idx0": 8,
+    "pId_idx9": 32,
+    "pId_idx6": 32,
+    "pId_idx7": 32,
+    "pEmpHtr_idx6": 8,
+    "pEmpWtr_idx6": 8,
+    "pMcPctr_idx3": 16,
+    "pPctr_idx4": 16,
+    "pPcmef_idx0": 8,
+    "aId_idx4": 32,
+    "pEmpCtr_idx5": 8,
+    "pUploadType_idx4": 8,
+    "uRealFollowPids": 32,
+    "pEmpHtr_idx5": 8,
+    "pEmpWtr_idx5": 8,
+    "pMcPctr_idx2": 16,
+    "uGender": 4,
+    "pMmuImgClusterV3_idx8": 4,
+    "pPptr_idx3": 8,
+    "pEmpWtr_idx4": 8,
+    "pMcPctr_idx1": 16,
+    "pEmpHtr_idx4": 8,
+    "pPcmtr_idx1": 8,
+    "pHetuTagLevel1Id_idx2": 8,
+    "pMmuImgClusterV3_idx5": 4,
+    "pEmpPtr_idx9": 8,
+    "pPptr_idx0": 8,
+    "avg_watchtime_idx6": 8,
+    "pHetuTagLevel2Id_idx8": 8,
+    "pTag_idx3": 8,
+    "pProvinceId_idx3": 8,
+    "pId_idx4": 32,
+    "pEmpCtr_idx4": 8,
+    "uRealLikePids": 32,
+    "uMidPlayLongPids": 32,
+    "pUploadType_idx2": 8,
+    "fountainEffviewPids": 32,
+    "pEmpLtr_idx4": 8,
+    "pPptr_idx5": 8,
+    "pMcPwtr_idx2": 8,
+    "pAuthorGender_idx9": 8,
+    "pUploadType_idx0": 8,
+    "pPcmef_idx5": 8,
+    "pPctr_idx3": 16,
+    "pPctr_idx5": 16,
+    "pEmpLtr_idx6": 8,
+    "pEmpFtr_idx7": 8,
+    "pEmpHtr_idx1": 8,
+    "pPhtr_idx5": 8,
+    "pDurationMs_idx1": 4,
+    "pAgeHour_idx8": 8,
+    "pMcPltr_idx0": 8,
+    "pPcmef_idx3": 8,
+    "pEmpCtr_idx6": 8,
+    "pEmpCtr_idx7": 8,
+    "pPepstr_idx2": 8,
+    "pProvinceId_idx2": 8,
+    "pPepstr_idx5": 8,
+    "pvtr_idx2": 1,
+    "pDurationMs_idx6": 4,
+    "pMcPsvtr_idx3": 8,
+    "uRealHatePids": 32,
+    "pMmuImgClusterV1_idx8": 8,
+    "pMcPlvtr_idx2": 8,
+    "uCityId": 4,
+    "pId_idx1": 32,
+    "pId_idx2": 32,
+    "pEmpCtr_idx2": 8,
+    "slide_neg_weight_idx4": 1,
+    "pEmpCtr_idx3": 8,
+    "pEmpWtr_idx1": 8,
+    "pEmpLtr_idx3": 8,
+    "pEmpWtr_idx2": 8,
+    "pMmuImgClusterV3_idx9": 4,
+    "pEmpFtr_idx4": 8,
+    "pEmpCmtr_idx1": 8,
+    "pContentLevel_idx6": 2,
+    "pEmpCmtr_idx0": 8,
+    "pPltr_idx2": 8,
+    "pPhtr_idx3": 8,
+    "pEmpCmtr_idx2": 8,
+    "pEmpCmtr_idx3": 8,
+    "pEmpCmtr_idx5": 8,
+    "pMmuImgClusterV3_idx1": 4,
+    "pEmpCmtr_idx7": 8,
+    "pEmpHtr_idx2": 8,
+    "pId_idx5": 32,
+    "pTag_idx2": 8,
+    "pEmpPtr_idx5": 8,
+    "pEmpPtr_idx7": 8
+  },
+  "loss_functions": {
+    "slide_l2r_6": {
+      "auc_uid_attr": "uId",
+      "auc_item_attr": "",
+      "sparse_inputs": [
+        "uId",
+        "dId",
+        "uBasicAge",
+        "uGender",
+        "uCityId",
+        "uRealHatePids",
+        "uRealClickPids",
+        "uRealLikePids",
+        "uRealFollowPids",
+        "uRealForwardPids",
+        "uMidClickPids",
+        "uMidLikePids",
+        "uMidFollowPids",
+        "uMidCommentPids",
+        "uMidPlayEffectivePids",
+        "uMidPlayLongPids",
+        "uMidPlayShortPids",
+        "uMidPlayViewHetu1",
+        "uMidPlayViewHetu2",
+        "fountainClickPids",
+        "fountainLikePids",
+        "fountainFollowPids",
+        "fountainLongviewPids",
+        "fountainEffviewPids",
+        "pPltr_idx0",
+        "pPwtr_idx0",
+        "pPftr_idx0",
+        "pPhtr_idx0",
+        "pPptr_idx0",
+        "pPcmtr_idx0",
+        "pPctr_idx0",
+        "pMcPctr_idx0",
+        "pMcPwtr_idx0",
+        "pMcPltr_idx0",
+        "pPlvtr_idx0",
+        "pPsvtr_idx0",
+        "pPvtr_idx0",
+        "pPwtd_idx0",
+        "pMcPlvtr_idx0",
+        "pMcPsvtr_idx0",
+        "pPcmef_idx0",
+        "pPepstr_idx0",
+        "pId_idx0",
+        "aId_idx0",
+        "pDurationMs_idx0",
+        "pUploadType_idx0",
+        "pCityId_idx0",
+        "pProvinceId_idx0",
+        "pTag_idx0",
+        "pMusic_idx0",
+        "pAuthorGender_idx0",
+        "pAgeHour_idx0",
+        "pMmuImgClusterV1_idx0",
+        "pMmuImgClusterV3_idx0",
+        "pMmuContentId_idx0",
+        "pOcrCoverTextWordCount_idx0",
+        "pMusicComboId_idx0",
+        "pEmpCtr_idx0",
+        "pEmpLtr_idx0",
+        "pEmpWtr_idx0",
+        "pEmpFtr_idx0",
+        "pEmpCmtr_idx0",
+        "pEmpHtr_idx0",
+        "pEmpPtr_idx0",
+        "avg_watchtime_idx0",
+        "pContentLevel_idx0",
+        "pHetuTagLevel1Id_idx0",
+        "pHetuTagLevel2Id_idx0",
+        "pPltr_idx1",
+        "pPwtr_idx1",
+        "pPftr_idx1",
+        "pPhtr_idx1",
+        "pPptr_idx1",
+        "pPcmtr_idx1",
+        "pPctr_idx1",
+        "pMcPctr_idx1",
+        "pMcPwtr_idx1",
+        "pMcPltr_idx1",
+        "pPlvtr_idx1",
+        "pPsvtr_idx1",
+        "pPvtr_idx1",
+        "pPwtd_idx1",
+        "pMcPlvtr_idx1",
+        "pMcPsvtr_idx1",
+        "pPcmef_idx1",
+        "pPepstr_idx1",
+        "pId_idx1",
+        "aId_idx1",
+        "pDurationMs_idx1",
+        "pUploadType_idx1",
+        "pCityId_idx1",
+        "pProvinceId_idx1",
+        "pTag_idx1",
+        "pMusic_idx1",
+        "pAuthorGender_idx1",
+        "pAgeHour_idx1",
+        "pMmuImgClusterV1_idx1",
+        "pMmuImgClusterV3_idx1",
+        "pMmuContentId_idx1",
+        "pOcrCoverTextWordCount_idx1",
+        "pMusicComboId_idx1",
+        "pEmpCtr_idx1",
+        "pEmpLtr_idx1",
+        "pEmpWtr_idx1",
+        "pEmpFtr_idx1",
+        "pEmpCmtr_idx1",
+        "pEmpHtr_idx1",
+        "pEmpPtr_idx1",
+        "avg_watchtime_idx1",
+        "pContentLevel_idx1",
+        "pHetuTagLevel1Id_idx1",
+        "pHetuTagLevel2Id_idx1",
+        "pPltr_idx2",
+        "pPwtr_idx2",
+        "pPftr_idx2",
+        "pPhtr_idx2",
+        "pPptr_idx2",
+        "pPcmtr_idx2",
+        "pPctr_idx2",
+        "pMcPctr_idx2",
+        "pMcPwtr_idx2",
+        "pMcPltr_idx2",
+        "pPlvtr_idx2",
+        "pPsvtr_idx2",
+        "pPvtr_idx2",
+        "pPwtd_idx2",
+        "pMcPlvtr_idx2",
+        "pMcPsvtr_idx2",
+        "pPcmef_idx2",
+        "pPepstr_idx2",
+        "pId_idx2",
+        "aId_idx2",
+        "pDurationMs_idx2",
+        "pUploadType_idx2",
+        "pCityId_idx2",
+        "pProvinceId_idx2",
+        "pTag_idx2",
+        "pMusic_idx2",
+        "pAuthorGender_idx2",
+        "pAgeHour_idx2",
+        "pMmuImgClusterV1_idx2",
+        "pMmuImgClusterV3_idx2",
+        "pMmuContentId_idx2",
+        "pOcrCoverTextWordCount_idx2",
+        "pMusicComboId_idx2",
+        "pEmpCtr_idx2",
+        "pEmpLtr_idx2",
+        "pEmpWtr_idx2",
+        "pEmpFtr_idx2",
+        "pEmpCmtr_idx2",
+        "pEmpHtr_idx2",
+        "pEmpPtr_idx2",
+        "avg_watchtime_idx2",
+        "pContentLevel_idx2",
+        "pHetuTagLevel1Id_idx2",
+        "pHetuTagLevel2Id_idx2",
+        "pPltr_idx3",
+        "pPwtr_idx3",
+        "pPftr_idx3",
+        "pPhtr_idx3",
+        "pPptr_idx3",
+        "pPcmtr_idx3",
+        "pPctr_idx3",
+        "pMcPctr_idx3",
+        "pMcPwtr_idx3",
+        "pMcPltr_idx3",
+        "pPlvtr_idx3",
+        "pPsvtr_idx3",
+        "pPvtr_idx3",
+        "pPwtd_idx3",
+        "pMcPlvtr_idx3",
+        "pMcPsvtr_idx3",
+        "pPcmef_idx3",
+        "pPepstr_idx3",
+        "pId_idx3",
+        "aId_idx3",
+        "pDurationMs_idx3",
+        "pUploadType_idx3",
+        "pCityId_idx3",
+        "pProvinceId_idx3",
+        "pTag_idx3",
+        "pMusic_idx3",
+        "pAuthorGender_idx3",
+        "pAgeHour_idx3",
+        "pMmuImgClusterV1_idx3",
+        "pMmuImgClusterV3_idx3",
+        "pMmuContentId_idx3",
+        "pOcrCoverTextWordCount_idx3",
+        "pMusicComboId_idx3",
+        "pEmpCtr_idx3",
+        "pEmpLtr_idx3",
+        "pEmpWtr_idx3",
+        "pEmpFtr_idx3",
+        "pEmpCmtr_idx3",
+        "pEmpHtr_idx3",
+        "pEmpPtr_idx3",
+        "avg_watchtime_idx3",
+        "pContentLevel_idx3",
+        "pHetuTagLevel1Id_idx3",
+        "pHetuTagLevel2Id_idx3",
+        "pPltr_idx4",
+        "pPwtr_idx4",
+        "pPftr_idx4",
+        "pPhtr_idx4",
+        "pPptr_idx4",
+        "pPcmtr_idx4",
+        "pPctr_idx4",
+        "pMcPctr_idx4",
+        "pMcPwtr_idx4",
+        "pMcPltr_idx4",
+        "pPlvtr_idx4",
+        "pPsvtr_idx4",
+        "pPvtr_idx4",
+        "pPwtd_idx4",
+        "pMcPlvtr_idx4",
+        "pMcPsvtr_idx4",
+        "pPcmef_idx4",
+        "pPepstr_idx4",
+        "pId_idx4",
+        "aId_idx4",
+        "pDurationMs_idx4",
+        "pUploadType_idx4",
+        "pCityId_idx4",
+        "pProvinceId_idx4",
+        "pTag_idx4",
+        "pMusic_idx4",
+        "pAuthorGender_idx4",
+        "pAgeHour_idx4",
+        "pMmuImgClusterV1_idx4",
+        "pMmuImgClusterV3_idx4",
+        "pMmuContentId_idx4",
+        "pOcrCoverTextWordCount_idx4",
+        "pMusicComboId_idx4",
+        "pEmpCtr_idx4",
+        "pEmpLtr_idx4",
+        "pEmpWtr_idx4",
+        "pEmpFtr_idx4",
+        "pEmpCmtr_idx4",
+        "pEmpHtr_idx4",
+        "pEmpPtr_idx4",
+        "avg_watchtime_idx4",
+        "pContentLevel_idx4",
+        "pHetuTagLevel1Id_idx4",
+        "pHetuTagLevel2Id_idx4",
+        "pPltr_idx5",
+        "pPwtr_idx5",
+        "pPftr_idx5",
+        "pPhtr_idx5",
+        "pPptr_idx5",
+        "pPcmtr_idx5",
+        "pPctr_idx5",
+        "pMcPctr_idx5",
+        "pMcPwtr_idx5",
+        "pMcPltr_idx5",
+        "pPlvtr_idx5",
+        "pPsvtr_idx5",
+        "pPvtr_idx5",
+        "pPwtd_idx5",
+        "pMcPlvtr_idx5",
+        "pMcPsvtr_idx5",
+        "pPcmef_idx5",
+        "pPepstr_idx5",
+        "pId_idx5",
+        "aId_idx5",
+        "pDurationMs_idx5",
+        "pUploadType_idx5",
+        "pCityId_idx5",
+        "pProvinceId_idx5",
+        "pTag_idx5",
+        "pMusic_idx5",
+        "pAuthorGender_idx5",
+        "pAgeHour_idx5",
+        "pMmuImgClusterV1_idx5",
+        "pMmuImgClusterV3_idx5",
+        "pMmuContentId_idx5",
+        "pOcrCoverTextWordCount_idx5",
+        "pMusicComboId_idx5",
+        "pEmpCtr_idx5",
+        "pEmpLtr_idx5",
+        "pEmpWtr_idx5",
+        "pEmpFtr_idx5",
+        "pEmpCmtr_idx5",
+        "pEmpHtr_idx5",
+        "pEmpPtr_idx5",
+        "avg_watchtime_idx5",
+        "pContentLevel_idx5",
+        "pHetuTagLevel1Id_idx5",
+        "pHetuTagLevel2Id_idx5"
+      ],
+      "dense_inputs": [
+        "pvtr_idx0",
+        "slide_neg_weight_idx0",
+        "slide_wtd_label_idx0",
+        "slide_play_weight_idx0",
+        "slide_play_rate_idx0",
+        "slide_next_weight_idx0",
+        "slide_next_label_idx0",
+        "pvtr_idx1",
+        "slide_neg_weight_idx1",
+        "slide_wtd_label_idx1",
+        "slide_play_weight_idx1",
+        "slide_play_rate_idx1",
+        "slide_next_weight_idx1",
+        "slide_next_label_idx1",
+        "pvtr_idx2",
+        "slide_neg_weight_idx2",
+        "slide_wtd_label_idx2",
+        "slide_play_weight_idx2",
+        "slide_play_rate_idx2",
+        "slide_next_weight_idx2",
+        "slide_next_label_idx2",
+        "pvtr_idx3",
+        "slide_neg_weight_idx3",
+        "slide_wtd_label_idx3",
+        "slide_play_weight_idx3",
+        "slide_play_rate_idx3",
+        "slide_next_weight_idx3",
+        "slide_next_label_idx3",
+        "pvtr_idx4",
+        "slide_neg_weight_idx4",
+        "slide_wtd_label_idx4",
+        "slide_play_weight_idx4",
+        "slide_play_rate_idx4",
+        "slide_next_weight_idx4",
+        "slide_next_label_idx4",
+        "pvtr_idx5",
+        "slide_neg_weight_idx5",
+        "slide_wtd_label_idx5",
+        "slide_play_weight_idx5",
+        "slide_play_rate_idx5",
+        "slide_next_weight_idx5",
+        "slide_next_label_idx5"
+      ],
+      "all_inputs": [
+        "uId",
+        "dId",
+        "uBasicAge",
+        "uGender",
+        "uCityId",
+        "uRealHatePids",
+        "uRealClickPids",
+        "uRealLikePids",
+        "uRealFollowPids",
+        "uRealForwardPids",
+        "uMidClickPids",
+        "uMidLikePids",
+        "uMidFollowPids",
+        "uMidCommentPids",
+        "uMidPlayEffectivePids",
+        "uMidPlayLongPids",
+        "uMidPlayShortPids",
+        "uMidPlayViewHetu1",
+        "uMidPlayViewHetu2",
+        "fountainClickPids",
+        "fountainLikePids",
+        "fountainFollowPids",
+        "fountainLongviewPids",
+        "fountainEffviewPids",
+        "pvtr_idx0",
+        "pPltr_idx0",
+        "pPwtr_idx0",
+        "pPftr_idx0",
+        "pPhtr_idx0",
+        "pPptr_idx0",
+        "pPcmtr_idx0",
+        "pPctr_idx0",
+        "pMcPctr_idx0",
+        "pMcPwtr_idx0",
+        "pMcPltr_idx0",
+        "pPlvtr_idx0",
+        "pPsvtr_idx0",
+        "pPvtr_idx0",
+        "pPwtd_idx0",
+        "pMcPlvtr_idx0",
+        "pMcPsvtr_idx0",
+        "pPcmef_idx0",
+        "pPepstr_idx0",
+        "pId_idx0",
+        "aId_idx0",
+        "pDurationMs_idx0",
+        "pUploadType_idx0",
+        "pCityId_idx0",
+        "pProvinceId_idx0",
+        "pTag_idx0",
+        "pMusic_idx0",
+        "pAuthorGender_idx0",
+        "pAgeHour_idx0",
+        "pMmuImgClusterV1_idx0",
+        "pMmuImgClusterV3_idx0",
+        "pMmuContentId_idx0",
+        "pOcrCoverTextWordCount_idx0",
+        "pMusicComboId_idx0",
+        "pEmpCtr_idx0",
+        "pEmpLtr_idx0",
+        "pEmpWtr_idx0",
+        "pEmpFtr_idx0",
+        "pEmpCmtr_idx0",
+        "pEmpHtr_idx0",
+        "pEmpPtr_idx0",
+        "avg_watchtime_idx0",
+        "pContentLevel_idx0",
+        "pHetuTagLevel1Id_idx0",
+        "pHetuTagLevel2Id_idx0",
+        "slide_neg_weight_idx0",
+        "slide_wtd_label_idx0",
+        "slide_play_weight_idx0",
+        "slide_play_rate_idx0",
+        "slide_next_weight_idx0",
+        "slide_next_label_idx0",
+        "pvtr_idx1",
+        "pPltr_idx1",
+        "pPwtr_idx1",
+        "pPftr_idx1",
+        "pPhtr_idx1",
+        "pPptr_idx1",
+        "pPcmtr_idx1",
+        "pPctr_idx1",
+        "pMcPctr_idx1",
+        "pMcPwtr_idx1",
+        "pMcPltr_idx1",
+        "pPlvtr_idx1",
+        "pPsvtr_idx1",
+        "pPvtr_idx1",
+        "pPwtd_idx1",
+        "pMcPlvtr_idx1",
+        "pMcPsvtr_idx1",
+        "pPcmef_idx1",
+        "pPepstr_idx1",
+        "pId_idx1",
+        "aId_idx1",
+        "pDurationMs_idx1",
+        "pUploadType_idx1",
+        "pCityId_idx1",
+        "pProvinceId_idx1",
+        "pTag_idx1",
+        "pMusic_idx1",
+        "pAuthorGender_idx1",
+        "pAgeHour_idx1",
+        "pMmuImgClusterV1_idx1",
+        "pMmuImgClusterV3_idx1",
+        "pMmuContentId_idx1",
+        "pOcrCoverTextWordCount_idx1",
+        "pMusicComboId_idx1",
+        "pEmpCtr_idx1",
+        "pEmpLtr_idx1",
+        "pEmpWtr_idx1",
+        "pEmpFtr_idx1",
+        "pEmpCmtr_idx1",
+        "pEmpHtr_idx1",
+        "pEmpPtr_idx1",
+        "avg_watchtime_idx1",
+        "pContentLevel_idx1",
+        "pHetuTagLevel1Id_idx1",
+        "pHetuTagLevel2Id_idx1",
+        "slide_neg_weight_idx1",
+        "slide_wtd_label_idx1",
+        "slide_play_weight_idx1",
+        "slide_play_rate_idx1",
+        "slide_next_weight_idx1",
+        "slide_next_label_idx1",
+        "pvtr_idx2",
+        "pPltr_idx2",
+        "pPwtr_idx2",
+        "pPftr_idx2",
+        "pPhtr_idx2",
+        "pPptr_idx2",
+        "pPcmtr_idx2",
+        "pPctr_idx2",
+        "pMcPctr_idx2",
+        "pMcPwtr_idx2",
+        "pMcPltr_idx2",
+        "pPlvtr_idx2",
+        "pPsvtr_idx2",
+        "pPvtr_idx2",
+        "pPwtd_idx2",
+        "pMcPlvtr_idx2",
+        "pMcPsvtr_idx2",
+        "pPcmef_idx2",
+        "pPepstr_idx2",
+        "pId_idx2",
+        "aId_idx2",
+        "pDurationMs_idx2",
+        "pUploadType_idx2",
+        "pCityId_idx2",
+        "pProvinceId_idx2",
+        "pTag_idx2",
+        "pMusic_idx2",
+        "pAuthorGender_idx2",
+        "pAgeHour_idx2",
+        "pMmuImgClusterV1_idx2",
+        "pMmuImgClusterV3_idx2",
+        "pMmuContentId_idx2",
+        "pOcrCoverTextWordCount_idx2",
+        "pMusicComboId_idx2",
+        "pEmpCtr_idx2",
+        "pEmpLtr_idx2",
+        "pEmpWtr_idx2",
+        "pEmpFtr_idx2",
+        "pEmpCmtr_idx2",
+        "pEmpHtr_idx2",
+        "pEmpPtr_idx2",
+        "avg_watchtime_idx2",
+        "pContentLevel_idx2",
+        "pHetuTagLevel1Id_idx2",
+        "pHetuTagLevel2Id_idx2",
+        "slide_neg_weight_idx2",
+        "slide_wtd_label_idx2",
+        "slide_play_weight_idx2",
+        "slide_play_rate_idx2",
+        "slide_next_weight_idx2",
+        "slide_next_label_idx2",
+        "pvtr_idx3",
+        "pPltr_idx3",
+        "pPwtr_idx3",
+        "pPftr_idx3",
+        "pPhtr_idx3",
+        "pPptr_idx3",
+        "pPcmtr_idx3",
+        "pPctr_idx3",
+        "pMcPctr_idx3",
+        "pMcPwtr_idx3",
+        "pMcPltr_idx3",
+        "pPlvtr_idx3",
+        "pPsvtr_idx3",
+        "pPvtr_idx3",
+        "pPwtd_idx3",
+        "pMcPlvtr_idx3",
+        "pMcPsvtr_idx3",
+        "pPcmef_idx3",
+        "pPepstr_idx3",
+        "pId_idx3",
+        "aId_idx3",
+        "pDurationMs_idx3",
+        "pUploadType_idx3",
+        "pCityId_idx3",
+        "pProvinceId_idx3",
+        "pTag_idx3",
+        "pMusic_idx3",
+        "pAuthorGender_idx3",
+        "pAgeHour_idx3",
+        "pMmuImgClusterV1_idx3",
+        "pMmuImgClusterV3_idx3",
+        "pMmuContentId_idx3",
+        "pOcrCoverTextWordCount_idx3",
+        "pMusicComboId_idx3",
+        "pEmpCtr_idx3",
+        "pEmpLtr_idx3",
+        "pEmpWtr_idx3",
+        "pEmpFtr_idx3",
+        "pEmpCmtr_idx3",
+        "pEmpHtr_idx3",
+        "pEmpPtr_idx3",
+        "avg_watchtime_idx3",
+        "pContentLevel_idx3",
+        "pHetuTagLevel1Id_idx3",
+        "pHetuTagLevel2Id_idx3",
+        "slide_neg_weight_idx3",
+        "slide_wtd_label_idx3",
+        "slide_play_weight_idx3",
+        "slide_play_rate_idx3",
+        "slide_next_weight_idx3",
+        "slide_next_label_idx3",
+        "pvtr_idx4",
+        "pPltr_idx4",
+        "pPwtr_idx4",
+        "pPftr_idx4",
+        "pPhtr_idx4",
+        "pPptr_idx4",
+        "pPcmtr_idx4",
+        "pPctr_idx4",
+        "pMcPctr_idx4",
+        "pMcPwtr_idx4",
+        "pMcPltr_idx4",
+        "pPlvtr_idx4",
+        "pPsvtr_idx4",
+        "pPvtr_idx4",
+        "pPwtd_idx4",
+        "pMcPlvtr_idx4",
+        "pMcPsvtr_idx4",
+        "pPcmef_idx4",
+        "pPepstr_idx4",
+        "pId_idx4",
+        "aId_idx4",
+        "pDurationMs_idx4",
+        "pUploadType_idx4",
+        "pCityId_idx4",
+        "pProvinceId_idx4",
+        "pTag_idx4",
+        "pMusic_idx4",
+        "pAuthorGender_idx4",
+        "pAgeHour_idx4",
+        "pMmuImgClusterV1_idx4",
+        "pMmuImgClusterV3_idx4",
+        "pMmuContentId_idx4",
+        "pOcrCoverTextWordCount_idx4",
+        "pMusicComboId_idx4",
+        "pEmpCtr_idx4",
+        "pEmpLtr_idx4",
+        "pEmpWtr_idx4",
+        "pEmpFtr_idx4",
+        "pEmpCmtr_idx4",
+        "pEmpHtr_idx4",
+        "pEmpPtr_idx4",
+        "avg_watchtime_idx4",
+        "pContentLevel_idx4",
+        "pHetuTagLevel1Id_idx4",
+        "pHetuTagLevel2Id_idx4",
+        "slide_neg_weight_idx4",
+        "slide_wtd_label_idx4",
+        "slide_play_weight_idx4",
+        "slide_play_rate_idx4",
+        "slide_next_weight_idx4",
+        "slide_next_label_idx4",
+        "pvtr_idx5",
+        "pPltr_idx5",
+        "pPwtr_idx5",
+        "pPftr_idx5",
+        "pPhtr_idx5",
+        "pPptr_idx5",
+        "pPcmtr_idx5",
+        "pPctr_idx5",
+        "pMcPctr_idx5",
+        "pMcPwtr_idx5",
+        "pMcPltr_idx5",
+        "pPlvtr_idx5",
+        "pPsvtr_idx5",
+        "pPvtr_idx5",
+        "pPwtd_idx5",
+        "pMcPlvtr_idx5",
+        "pMcPsvtr_idx5",
+        "pPcmef_idx5",
+        "pPepstr_idx5",
+        "pId_idx5",
+        "aId_idx5",
+        "pDurationMs_idx5",
+        "pUploadType_idx5",
+        "pCityId_idx5",
+        "pProvinceId_idx5",
+        "pTag_idx5",
+        "pMusic_idx5",
+        "pAuthorGender_idx5",
+        "pAgeHour_idx5",
+        "pMmuImgClusterV1_idx5",
+        "pMmuImgClusterV3_idx5",
+        "pMmuContentId_idx5",
+        "pOcrCoverTextWordCount_idx5",
+        "pMusicComboId_idx5",
+        "pEmpCtr_idx5",
+        "pEmpLtr_idx5",
+        "pEmpWtr_idx5",
+        "pEmpFtr_idx5",
+        "pEmpCmtr_idx5",
+        "pEmpHtr_idx5",
+        "pEmpPtr_idx5",
+        "avg_watchtime_idx5",
+        "pContentLevel_idx5",
+        "pHetuTagLevel1Id_idx5",
+        "pHetuTagLevel2Id_idx5",
+        "slide_neg_weight_idx5",
+        "slide_wtd_label_idx5",
+        "slide_play_weight_idx5",
+        "slide_play_rate_idx5",
+        "slide_next_weight_idx5",
+        "slide_next_label_idx5"
+      ],
+      "weight_attr": "",
+      "output_dim": 1
+    }
+  },
+  "sign_feature_expand": {
+    "pMmuContentId_idx2": 1,
+    "pHetuTagLevel2Id_idx9": 1,
+    "pTag_idx8": 1,
+    "pProvinceId_idx8": 1,
+    "pHetuTagLevel1Id_idx0": 1,
+    "pEmpFtr_idx8": 1,
+    "pMcPltr_idx5": 1,
+    "pPltr_idx2": 1,
+    "avg_watchtime_idx0": 1,
+    "pPctr_idx2": 1,
+    "pMmuContentId_idx9": 1,
+    "pDurationMs_idx0": 1,
+    "pMmuImgClusterV1_idx0": 1,
+    "pPftr_idx4": 1,
+    "pCityId_idx3": 1,
+    "pPwtd_idx2": 1,
+    "pMusicComboId_idx8": 1,
+    "pEmpFtr_idx0": 1,
+    "pAgeHour_idx0": 1,
+    "aId_idx9": 1,
+    "pCityId_idx7": 1,
+    "pEmpPtr_idx2": 1,
+    "pPwtr_idx3": 1,
+    "pMmuImgClusterV1_idx6": 1,
+    "pAuthorGender_idx7": 1,
+    "pEmpLtr_idx8": 1,
+    "pPcmtr_idx3": 1,
+    "pHetuTagLevel1Id_idx4": 1,
+    "uId": 1,
+    "pAuthorGender_idx0": 1,
+    "pMcPctr_idx5": 1,
+    "pEmpWtr_idx8": 1,
+    "fountainClickPids": 1,
+    "pMmuContentId_idx4": 1,
+    "uMidCommentPids": 1,
+    "pContentLevel_idx0": 1,
+    "pCityId_idx4": 1,
+    "pPwtd_idx3": 1,
+    "pEmpFtr_idx1": 1,
+    "pMmuImgClusterV1_idx1": 1,
+    "pPftr_idx5": 1,
+    "pMusicComboId_idx9": 1,
+    "pTag_idx7": 1,
+    "pProvinceId_idx7": 1,
+    "aId_idx3": 1,
+    "aId_idx5": 1,
+    "fountainLongviewPids": 1,
+    "pAgeHour_idx4": 1,
+    "pMmuContentId_idx1": 1,
+    "pMusic_idx9": 1,
+    "pOcrCoverTextWordCount_idx9": 1,
+    "avg_watchtime_idx9": 1,
+    "pMmuContentId_idx3": 1,
+    "pMcPwtr_idx4": 1,
+    "pUploadType_idx9": 1,
+    "pMusicComboId_idx4": 1,
+    "pPftr_idx0": 1,
+    "pPwtd_idx0": 1,
+    "pCityId_idx1": 1,
+    "pAgeHour_idx3": 1,
+    "pMmuImgClusterV1_idx3": 1,
+    "pAuthorGender_idx4": 1,
+    "pHetuTagLevel1Id_idx8": 1,
+    "pHetuTagLevel2Id_idx7": 1,
+    "pMmuContentId_idx0": 1,
+    "pMusic_idx8": 1,
+    "pOcrCoverTextWordCount_idx8": 1,
+    "pUploadType_idx1": 1,
+    "avg_watchtime_idx8": 1,
+    "pPlvtr_idx5": 1,
+    "pMusic_idx5": 1,
+    "pOcrCoverTextWordCount_idx5": 1,
+    "pHetuTagLevel2Id_idx4": 1,
+    "pMcPctr_idx4": 1,
+    "pEmpWtr_idx7": 1,
+    "pMcPwtr_idx3": 1,
+    "uMidPlayEffectivePids": 1,
+    "pPctr_idx1": 1,
+    "pMmuContentId_idx8": 1,
+    "pPvtr_idx5": 1,
+    "pPsvtr_idx4": 1,
+    "pContentLevel_idx3": 1,
+    "uMidPlayViewHetu2": 50,
+    "avg_watchtime_idx5": 1,
+    "pPcmtr_idx2": 1,
+    "pHetuTagLevel1Id_idx3": 1,
+    "aId_idx7": 1,
+    "pPwtr_idx0": 1,
+    "pUploadType_idx3": 1,
+    "pAgeHour_idx5": 1,
+    "pEmpFtr_idx5": 1,
+    "pPftr_idx3": 1,
+    "pCityId_idx2": 1,
+    "pPwtd_idx1": 1,
+    "pMusicComboId_idx7": 1,
+    "uMidPlayShortPids": 1,
+    "pOcrCoverTextWordCount_idx7": 1,
+    "pMusic_idx7": 1,
+    "pPltr_idx4": 1,
+    "avg_watchtime_idx2": 1,
+    "pOcrCoverTextWordCount_idx6": 1,
+    "pMusic_idx6": 1,
+    "pMmuContentId_idx6": 1,
+    "pPlvtr_idx0": 1,
+    "pMusic_idx0": 1,
+    "pEmpFtr_idx9": 1,
+    "pOcrCoverTextWordCount_idx0": 1,
+    "pEmpHtr_idx8": 1,
+    "aId_idx6": 1,
+    "pEmpLtr_idx5": 1,
+    "pMmuContentId_idx5": 1,
+    "pPsvtr_idx5": 1,
+    "pPhtr_idx1": 1,
+    "pContentLevel_idx7": 1,
+    "pPlvtr_idx2": 1,
+    "pMusic_idx2": 1,
+    "pOcrCoverTextWordCount_idx2": 1,
+    "fountainLikePids": 1,
+    "pHetuTagLevel2Id_idx5": 1,
+    "pPcmtr_idx5": 1,
+    "pHetuTagLevel1Id_idx6": 1,
+    "pAuthorGender_idx2": 1,
+    "pAgeHour_idx7": 1,
+    "pOcrCoverTextWordCount_idx3": 1,
+    "pPlvtr_idx3": 1,
+    "pMusic_idx3": 1,
+    "pMcPltr_idx4": 1,
+    "pMcPlvtr_idx1": 1,
+    "pEmpFtr_idx6": 1,
+    "pDurationMs_idx9": 1,
+    "pEmpCtr_idx1": 1,
+    "pAgeHour_idx6": 1,
+    "pMcPltr_idx3": 1,
+    "pEmpCtr_idx9": 1,
+    "pMmuContentId_idx7": 1,
+    "pPctr_idx0": 1,
+    "pMmuImgClusterV1_idx5": 1,
+    "pAuthorGender_idx6": 1,
+    "pPwtd_idx5": 1,
+    "pCityId_idx6": 1,
+    "pEmpPtr_idx1": 1,
+    "pPwtr_idx2": 1,
+    "pMmuImgClusterV1_idx2": 1,
+    "pAuthorGender_idx3": 1,
+    "pHetuTagLevel1Id_idx7": 1,
+    "pAgeHour_idx2": 1,
+    "pProvinceId_idx4": 1,
+    "pTag_idx4": 1,
+    "pAgeHour_idx1": 1,
+    "pDurationMs_idx2": 1,
+    "pMcPlvtr_idx4": 1,
+    "pHetuTagLevel2Id_idx1": 1,
+    "pPepstr_idx4": 1,
+    "pProvinceId_idx1": 1,
+    "pTag_idx1": 1,
+    "pMmuImgClusterV3_idx4": 1,
+    "pEmpPtr_idx8": 1,
+    "pPsvtr_idx0": 1,
+    "pPvtr_idx1": 1,
+    "avg_watchtime_idx7": 1,
+    "pContentLevel_idx5": 1,
+    "pPepstr_idx0": 1,
+    "uBasicAge": 1,
+    "pHetuTagLevel2Id_idx6": 1,
+    "pMcPlvtr_idx5": 1,
+    "pHetuTagLevel2Id_idx2": 1,
+    "pContentLevel_idx1": 1,
+    "pTag_idx6": 1,
+    "pProvinceId_idx6": 1,
+    "pEmpWtr_idx3": 1,
+    "pMcPctr_idx0": 1,
+    "pEmpHtr_idx3": 1,
+    "aId_idx1": 1,
+    "pId_idx3": 1,
+    "aId_idx0": 1,
+    "pMmuImgClusterV3_idx3": 1,
+    "pContentLevel_idx2": 1,
+    "pPlvtr_idx4": 1,
+    "pMusic_idx4": 1,
+    "pOcrCoverTextWordCount_idx4": 1,
+    "pPltr_idx3": 1,
+    "avg_watchtime_idx1": 1,
+    "pMcPlvtr_idx3": 1,
+    "pHetuTagLevel2Id_idx0": 1,
+    "pHetuTagLevel1Id_idx5": 1,
+    "pPcmtr_idx4": 1,
+    "pHetuTagLevel1Id_idx9": 1,
+    "pAuthorGender_idx5": 1,
+    "pMmuImgClusterV1_idx4": 1,
+    "pCityId_idx8": 1,
+    "pEmpWtr_idx0": 1,
+    "pEmpPtr_idx3": 1,
+    "pPwtr_idx4": 1,
+    "pMusicComboId_idx3": 1,
+    "pUploadType_idx8": 1,
+    "pProvinceId_idx5": 1,
+    "uRealClickPids": 1,
+    "pTag_idx5": 1,
+    "pEmpPtr_idx0": 1,
+    "pPwtr_idx1": 1,
+    "pPwtd_idx4": 1,
+    "pCityId_idx5": 1,
+    "uRealForwardPids": 1,
+    "pId_idx8": 1,
+    "pTag_idx0": 1,
+    "pPepstr_idx3": 1,
+    "pProvinceId_idx0": 1,
+    "pMusicComboId_idx2": 1,
+    "pUploadType_idx7": 1,
+    "pPcmef_idx1": 1,
+    "pId_idx0": 1,
+    "pMusicComboId_idx5": 1,
+    "pPftr_idx1": 1,
+    "pMcPwtr_idx5": 1,
+    "pAuthorGender_idx1": 1,
+    "pMcPwtr_idx1": 1,
+    "pEmpCmtr_idx9": 1,
+    "pEmpLtr_idx0": 1,
+    "pPhtr_idx3": 1,
+    "pContentLevel_idx9": 1,
+    "pEmpCmtr_idx8": 1,
+    "pMcPwtr_idx0": 1,
+    "pUploadType_idx5": 1,
+    "pMusicComboId_idx0": 1,
+    "pEmpFtr_idx2": 1,
+    "fountainFollowPids": 1,
+    "pUploadType_idx6": 1,
+    "pMusicComboId_idx1": 1,
+    "pEmpCtr_idx0": 1,
+    "pDurationMs_idx8": 1,
+    "pMcPsvtr_idx5": 1,
+    "pPptr_idx2": 1,
+    "pMmuImgClusterV3_idx7": 1,
+    "pCityId_idx0": 1,
+    "pPcmef_idx4": 1,
+    "pAgeHour_idx9": 1,
+    "pMcPltr_idx1": 1,
+    "pMcPsvtr_idx2": 1,
+    "pDurationMs_idx5": 1,
+    "uRealHatePids": 1,
+    "pContentLevel_idx4": 1,
+    "pPhtr_idx4": 1,
+    "pEmpHtr_idx0": 1,
+    "pEmpFtr_idx3": 1,
+    "pPptr_idx1": 1,
+    "pMmuImgClusterV3_idx6": 1,
+    "pEmpCmtr_idx6": 1,
+    "uMidClickPids": 1,
+    "pPcmtr_idx0": 1,
+    "pHetuTagLevel1Id_idx1": 1,
+    "pEmpHtr_idx7": 1,
+    "pMmuImgClusterV1_idx9": 1,
+    "pMcPltr_idx2": 1,
+    "pMusic_idx1": 1,
+    "pPlvtr_idx1": 1,
+    "pPvtr_idx4": 1,
+    "pPsvtr_idx3": 1,
+    "pPvtr_idx0": 1,
+    "pProvinceId_idx9": 1,
+    "pTag_idx9": 1,
+    "pMmuImgClusterV3_idx9": 1,
+    "pPptr_idx4": 1,
+    "pEmpWtr_idx1": 1,
+    "pCityId_idx9": 1,
+    "pEmpPtr_idx4": 1,
+    "pPwtr_idx5": 1,
+    "pPftr_idx2": 1,
+    "pMusicComboId_idx6": 1,
+    "pPepstr_idx1": 1,
+    "uMidFollowPids": 1,
+    "pMcPsvtr_idx4": 1,
+    "pDurationMs_idx7": 1,
+    "pMmuImgClusterV3_idx0": 1,
+    "pEmpCmtr_idx4": 1,
+    "pMmuImgClusterV1_idx7": 1,
+    "pAuthorGender_idx8": 1,
+    "pPcmef_idx2": 1,
+    "pPvtr_idx2": 1,
+    "pPsvtr_idx1": 1,
+    "pContentLevel_idx8": 1,
+    "pPhtr_idx2": 1,
+    "aId_idx8": 1,
+    "pEmpCtr_idx8": 1,
+    "pPltr_idx5": 1,
+    "avg_watchtime_idx3": 1,
+    "avg_watchtime_idx4": 1,
+    "uMidPlayViewHetu1": 50,
+    "aId_idx2": 1,
+    "dId": 1,
+    "pEmpLtr_idx9": 1,
+    "pPltr_idx0": 1,
+    "pEmpLtr_idx2": 1,
+    "pContentLevel_idx6": 1,
+    "pPhtr_idx0": 1,
+    "uCityId": 1,
+    "pPvtr_idx3": 1,
+    "pPsvtr_idx2": 1,
+    "pEmpLtr_idx7": 1,
+    "uMidLikePids": 1,
+    "pOcrCoverTextWordCount_idx1": 1,
+    "pEmpHtr_idx9": 1,
+    "pMcPsvtr_idx0": 1,
+    "pDurationMs_idx3": 1,
+    "pEmpPtr_idx6": 1,
+    "pMmuImgClusterV3_idx2": 1,
+    "pEmpWtr_idx9": 1,
+    "pMcPlvtr_idx0": 1,
+    "pId_idx9": 1,
+    "pId_idx6": 1,
+    "pId_idx7": 1,
+    "pEmpHtr_idx6": 1,
+    "pEmpWtr_idx6": 1,
+    "pMcPctr_idx3": 1,
+    "pPctr_idx4": 1,
+    "pPcmef_idx0": 1,
+    "aId_idx4": 1,
+    "pEmpCtr_idx5": 1,
+    "pUploadType_idx4": 1,
+    "uRealFollowPids": 1,
+    "pEmpHtr_idx5": 1,
+    "pEmpWtr_idx5": 1,
+    "pMcPctr_idx2": 1,
+    "uGender": 1,
+    "pMmuImgClusterV3_idx8": 1,
+    "pPptr_idx3": 1,
+    "pEmpWtr_idx4": 1,
+    "pMcPctr_idx1": 1,
+    "pEmpHtr_idx4": 1,
+    "pPcmtr_idx1": 1,
+    "pHetuTagLevel1Id_idx2": 1,
+    "pEmpLtr_idx4": 1,
+    "fountainEffviewPids": 1,
+    "pMmuImgClusterV3_idx5": 1,
+    "pEmpPtr_idx9": 1,
+    "pPptr_idx0": 1,
+    "avg_watchtime_idx6": 1,
+    "pHetuTagLevel2Id_idx8": 1,
+    "pHetuTagLevel2Id_idx3": 1,
+    "pEmpLtr_idx1": 1,
+    "pTag_idx3": 1,
+    "pProvinceId_idx3": 1,
+    "pId_idx4": 1,
+    "pEmpCtr_idx4": 1,
+    "uRealLikePids": 1,
+    "uMidPlayLongPids": 1,
+    "pUploadType_idx2": 1,
+    "pPptr_idx5": 1,
+    "pMcPwtr_idx2": 1,
+    "pMmuImgClusterV1_idx8": 1,
+    "pAuthorGender_idx9": 1,
+    "pUploadType_idx0": 1,
+    "pPcmef_idx5": 1,
+    "pPctr_idx3": 1,
+    "pPctr_idx5": 1,
+    "pEmpLtr_idx6": 1,
+    "pEmpFtr_idx7": 1,
+    "pEmpHtr_idx1": 1,
+    "pPhtr_idx5": 1,
+    "pDurationMs_idx1": 1,
+    "pAgeHour_idx8": 1,
+    "pMcPltr_idx0": 1,
+    "pPcmef_idx3": 1,
+    "pEmpCtr_idx6": 1,
+    "pEmpCtr_idx7": 1,
+    "pPltr_idx1": 1,
+    "pPepstr_idx2": 1,
+    "pProvinceId_idx2": 1,
+    "pPepstr_idx5": 1,
+    "pDurationMs_idx6": 1,
+    "pMcPsvtr_idx3": 1,
+    "pMcPlvtr_idx2": 1,
+    "pDurationMs_idx4": 1,
+    "pMcPsvtr_idx1": 1,
+    "pId_idx1": 1,
+    "pId_idx2": 1,
+    "pEmpCtr_idx2": 1,
+    "pEmpCtr_idx3": 1,
+    "pEmpLtr_idx3": 1,
+    "pEmpWtr_idx2": 1,
+    "pEmpFtr_idx4": 1,
+    "pEmpCmtr_idx1": 1,
+    "pEmpCmtr_idx0": 1,
+    "pEmpCmtr_idx2": 1,
+    "pEmpCmtr_idx3": 1,
+    "pEmpCmtr_idx5": 1,
+    "pMmuImgClusterV3_idx1": 1,
+    "pEmpCmtr_idx7": 1,
+    "pEmpHtr_idx2": 1,
+    "pId_idx5": 1,
+    "pTag_idx2": 1,
+    "pEmpPtr_idx5": 1,
+    "pEmpPtr_idx7": 1
+  },
+  "sign_feature_key_type": {
+    "uMidCommentPids": [
+      53
+    ],
+    "pMmuImgClusterV3_idx0": [
+      202
+    ],
+    "pPwtr_idx5": [
+      503
+    ],
+    "pEmpPtr_idx4": [
+      533
+    ],
+    "slide_wtd_label_idx1": [
+      561
+    ],
+    "pContentLevel_idx0": [
+      540
+    ],
+    "pCityId_idx4": [
+      537
+    ],
+    "pPwtd_idx3": [
+      513
+    ],
+    "pEmpFtr_idx1": [
+      530
+    ],
+    "pMmuImgClusterV1_idx1": [
+      544
+    ],
+    "pPftr_idx5": [
+      505
+    ],
+    "pMusicComboId_idx9": [
+      547
+    ],
+    "pHetuTagLevel2Id_idx9": [
+      36
+    ],
+    "pMmuContentId_idx2": [
+      545
+    ],
+    "pContentLevel_idx3": [
+      540
+    ],
+    "pMmuImgClusterV3_idx3": [
+      202
+    ],
+    "slide_wtd_label_idx4": [
+      561
+    ],
+    "pMmuContentId_idx3": [
+      545
+    ],
+    "pContentLevel_idx4": [
+      540
+    ],
+    "pEmpPtr_idx8": [
+      533
+    ],
+    "pMmuImgClusterV3_idx4": [
+      202
+    ],
+    "slide_wtd_label_idx5": [
+      561
+    ],
+    "aId_idx1": [
+      31
+    ],
+    "pAgeHour_idx3": [
+      543
+    ],
+    "pMmuImgClusterV1_idx3": [
+      544
+    ],
+    "pAuthorGender_idx4": [
+      542
+    ],
+    "pHetuTagLevel1Id_idx8": [
+      35
+    ],
+    "pHetuTagLevel2Id_idx6": [
+      36
+    ],
+    "pPepstr_idx0": [
+      514
+    ],
+    "uBasicAge": [
+      8
+    ],
+    "avg_watchtime_idx5": [
+      560
+    ],
+    "slide_next_weight_idx5": [
+      566
+    ],
+    "pTag_idx6": [
+      539
+    ],
+    "slide_play_weight_idx3": [
+      563
+    ],
+    "pProvinceId_idx6": [
+      538
+    ],
+    "slide_play_rate_idx3": [
+      564
+    ],
+    "slide_next_weight_idx4": [
+      566
+    ],
+    "avg_watchtime_idx4": [
+      560
+    ],
+    "uMidPlayViewHetu1": [
+      35
+    ],
+    "slide_neg_weight_idx5": [
+      562
+    ],
+    "pAgeHour_idx5": [
+      543
+    ],
+    "pEmpFtr_idx5": [
+      530
+    ],
+    "pPftr_idx3": [
+      505
+    ],
+    "pCityId_idx2": [
+      537
+    ],
+    "pPwtd_idx1": [
+      513
+    ],
+    "pMusicComboId_idx7": [
+      547
+    ],
+    "aId_idx5": [
+      31
+    ],
+    "fountainLongviewPids": [
+      64
+    ],
+    "aId_idx3": [
+      31
+    ],
+    "pPltr_idx3": [
+      501
+    ],
+    "slide_next_weight_idx1": [
+      566
+    ],
+    "avg_watchtime_idx1": [
+      560
+    ],
+    "pEmpLtr_idx9": [
+      528
+    ],
+    "slide_neg_weight_idx2": [
+      562
+    ],
+    "pAgeHour_idx2": [
+      543
+    ],
+    "pMmuImgClusterV1_idx2": [
+      544
+    ],
+    "pAuthorGender_idx3": [
+      542
+    ],
+    "pHetuTagLevel1Id_idx7": [
+      35
+    ],
+    "pPltr_idx1": [
+      501
+    ],
+    "pEmpLtr_idx7": [
+      528
+    ],
+    "slide_neg_weight_idx0": [
+      562
+    ],
+    "pMmuImgClusterV1_idx0": [
+      544
+    ],
+    "pPftr_idx4": [
+      505
+    ],
+    "pCityId_idx3": [
+      537
+    ],
+    "pPwtd_idx2": [
+      513
+    ],
+    "pMusicComboId_idx8": [
+      547
+    ],
+    "pEmpFtr_idx0": [
+      530
+    ],
+    "aId_idx9": [
+      31
+    ],
+    "pAgeHour_idx0": [
+      543
+    ],
+    "pHetuTagLevel2Id_idx3": [
+      36
+    ],
+    "avg_watchtime_idx2": [
+      560
+    ],
+    "slide_next_weight_idx2": [
+      566
+    ],
+    "pPctr_idx2": [
+      500
+    ],
+    "pMmuContentId_idx9": [
+      545
+    ],
+    "pDurationMs_idx0": [
+      201
+    ],
+    "pPptr_idx2": [
+      502
+    ],
+    "pMmuImgClusterV3_idx7": [
+      202
+    ],
+    "pCityId_idx9": [
+      537
+    ],
+    "slide_play_rate_idx0": [
+      564
+    ],
+    "pMusic_idx8": [
+      541
+    ],
+    "pOcrCoverTextWordCount_idx8": [
+      546
+    ],
+    "pHetuTagLevel2Id_idx7": [
+      36
+    ],
+    "pMmuContentId_idx0": [
+      545
+    ],
+    "pContentLevel_idx1": [
+      540
+    ],
+    "slide_wtd_label_idx2": [
+      561
+    ],
+    "pEmpCtr_idx0": [
+      527
+    ],
+    "pDurationMs_idx8": [
+      201
+    ],
+    "pMcPsvtr_idx5": [
+      523
+    ],
+    "pvtr_idx4": [
+      574
+    ],
+    "pMmuContentId_idx1": [
+      545
+    ],
+    "pMusic_idx9": [
+      541
+    ],
+    "pOcrCoverTextWordCount_idx9": [
+      546
+    ],
+    "avg_watchtime_idx9": [
+      560
+    ],
+    "pPwtr_idx4": [
+      503
+    ],
+    "pEmpPtr_idx3": [
+      533
+    ],
+    "slide_wtd_label_idx0": [
+      561
+    ],
+    "pDurationMs_idx2": [
+      201
+    ],
+    "pTag_idx8": [
+      539
+    ],
+    "pProvinceId_idx8": [
+      538
+    ],
+    "slide_play_weight_idx5": [
+      563
+    ],
+    "pMmuImgClusterV1_idx5": [
+      544
+    ],
+    "pAuthorGender_idx6": [
+      542
+    ],
+    "pPwtd_idx5": [
+      513
+    ],
+    "pCityId_idx6": [
+      537
+    ],
+    "pEmpPtr_idx1": [
+      533
+    ],
+    "pPwtr_idx2": [
+      503
+    ],
+    "uMidPlayViewHetu2": [
+      36
+    ],
+    "slide_next_label_idx3": [
+      565
+    ],
+    "pContentLevel_idx2": [
+      540
+    ],
+    "pEmpPtr_idx6": [
+      533
+    ],
+    "pMmuImgClusterV3_idx2": [
+      202
+    ],
+    "slide_wtd_label_idx3": [
+      561
+    ],
+    "slide_next_label_idx1": [
+      565
+    ],
+    "pMcPwtr_idx4": [
+      518
+    ],
+    "pUploadType_idx9": [
+      536
+    ],
+    "pMusicComboId_idx4": [
+      547
+    ],
+    "pPftr_idx0": [
+      505
+    ],
+    "pPwtd_idx0": [
+      513
+    ],
+    "pCityId_idx1": [
+      537
+    ],
+    "pUploadType_idx1": [
+      536
+    ],
+    "avg_watchtime_idx8": [
+      560
+    ],
+    "pAuthorGender_idx2": [
+      542
+    ],
+    "pPcmtr_idx5": [
+      504
+    ],
+    "pHetuTagLevel1Id_idx6": [
+      35
+    ],
+    "pAgeHour_idx1": [
+      543
+    ],
+    "pHetuTagLevel2Id_idx4": [
+      36
+    ],
+    "avg_watchtime_idx3": [
+      560
+    ],
+    "slide_next_weight_idx3": [
+      566
+    ],
+    "slide_play_rate_idx1": [
+      564
+    ],
+    "slide_play_rate_idx2": [
+      564
+    ],
+    "pMcPctr_idx0": [
+      515
+    ],
+    "pEmpWtr_idx3": [
+      529
+    ],
+    "uId": [
+      1
+    ],
+    "pAuthorGender_idx0": [
+      542
+    ],
+    "pPcmtr_idx3": [
+      504
+    ],
+    "pHetuTagLevel1Id_idx4": [
+      35
+    ],
+    "pMcPlvtr_idx5": [
+      522
+    ],
+    "pHetuTagLevel2Id_idx2": [
+      36
+    ],
+    "pProvinceId_idx5": [
+      538
+    ],
+    "uRealClickPids": [
+      10
+    ],
+    "pTag_idx5": [
+      539
+    ],
+    "slide_play_weight_idx2": [
+      563
+    ],
+    "pAuthorGender_idx7": [
+      542
+    ],
+    "pMmuImgClusterV1_idx6": [
+      544
+    ],
+    "pMcPltr_idx5": [
+      516
+    ],
+    "slide_next_weight_idx0": [
+      566
+    ],
+    "avg_watchtime_idx0": [
+      560
+    ],
+    "pOcrCoverTextWordCount_idx7": [
+      546
+    ],
+    "pMusic_idx7": [
+      541
+    ],
+    "slide_neg_weight_idx3": [
+      562
+    ],
+    "pPltr_idx4": [
+      501
+    ],
+    "pOcrCoverTextWordCount_idx6": [
+      546
+    ],
+    "pMusic_idx6": [
+      541
+    ],
+    "pMmuContentId_idx6": [
+      545
+    ],
+    "pMmuContentId_idx4": [
+      545
+    ],
+    "pMmuContentId_idx5": [
+      545
+    ],
+    "pHetuTagLevel2Id_idx5": [
+      36
+    ],
+    "pAgeHour_idx7": [
+      543
+    ],
+    "pEmpFtr_idx6": [
+      530
+    ],
+    "pvtr_idx5": [
+      574
+    ],
+    "pDurationMs_idx9": [
+      201
+    ],
+    "pEmpCtr_idx1": [
+      527
+    ],
+    "pAgeHour_idx6": [
+      543
+    ],
+    "pPcmtr_idx2": [
+      504
+    ],
+    "pHetuTagLevel1Id_idx3": [
+      35
+    ],
+    "aId_idx7": [
+      31
+    ],
+    "pMcPlvtr_idx4": [
+      522
+    ],
+    "pHetuTagLevel2Id_idx1": [
+      36
+    ],
+    "pHetuTagLevel1Id_idx0": [
+      35
+    ],
+    "pMcPltr_idx3": [
+      516
+    ],
+    "pAgeHour_idx4": [
+      543
+    ],
+    "pProvinceId_idx4": [
+      538
+    ],
+    "slide_play_weight_idx1": [
+      563
+    ],
+    "pTag_idx4": [
+      539
+    ],
+    "pEmpLtr_idx5": [
+      528
+    ],
+    "pPlvtr_idx2": [
+      509
+    ],
+    "pMusic_idx2": [
+      541
+    ],
+    "slide_play_weight_idx0": [
+      563
+    ],
+    "fountainLikePids": [
+      61
+    ],
+    "pOcrCoverTextWordCount_idx2": [
+      546
+    ],
+    "pPepstr_idx4": [
+      514
+    ],
+    "pProvinceId_idx1": [
+      538
+    ],
+    "pTag_idx1": [
+      539
+    ],
+    "slide_play_rate_idx4": [
+      564
+    ],
+    "pPsvtr_idx0": [
+      510
+    ],
+    "pPvtr_idx1": [
+      507
+    ],
+    "avg_watchtime_idx7": [
+      560
+    ],
+    "pContentLevel_idx5": [
+      540
+    ],
+    "pPlvtr_idx3": [
+      509
+    ],
+    "pMusic_idx3": [
+      541
+    ],
+    "pOcrCoverTextWordCount_idx3": [
+      546
+    ],
+    "pCityId_idx7": [
+      537
+    ],
+    "pEmpPtr_idx2": [
+      533
+    ],
+    "pPwtr_idx3": [
+      503
+    ],
+    "slide_neg_weight_idx1": [
+      562
+    ],
+    "pEmpLtr_idx8": [
+      528
+    ],
+    "pEmpLtr_idx0": [
+      528
+    ],
+    "slide_next_label_idx4": [
+      565
+    ],
+    "slide_play_weight_idx4": [
+      563
+    ],
+    "pProvinceId_idx7": [
+      538
+    ],
+    "pTag_idx7": [
+      539
+    ],
+    "pPwtr_idx0": [
+      503
+    ],
+    "pUploadType_idx3": [
+      536
+    ],
+    "pPsvtr_idx5": [
+      510
+    ],
+    "pPlvtr_idx0": [
+      509
+    ],
+    "pMusic_idx0": [
+      541
+    ],
+    "pEmpFtr_idx9": [
+      530
+    ],
+    "pOcrCoverTextWordCount_idx0": [
+      546
+    ],
+    "pEmpWtr_idx8": [
+      529
+    ],
+    "pMcPctr_idx5": [
+      515
+    ],
+    "pEmpHtr_idx8": [
+      532
+    ],
+    "aId_idx6": [
+      31
+    ],
+    "pId_idx3": [
+      30
+    ],
+    "aId_idx0": [
+      31
+    ],
+    "pPlvtr_idx4": [
+      509
+    ],
+    "pMusic_idx4": [
+      541
+    ],
+    "pOcrCoverTextWordCount_idx4": [
+      546
+    ],
+    "pOcrCoverTextWordCount_idx5": [
+      546
+    ],
+    "pPlvtr_idx5": [
+      509
+    ],
+    "pMusic_idx5": [
+      541
+    ],
+    "pHetuTagLevel1Id_idx9": [
+      35
+    ],
+    "pAuthorGender_idx5": [
+      542
+    ],
+    "pMmuImgClusterV1_idx4": [
+      544
+    ],
+    "pCityId_idx8": [
+      537
+    ],
+    "pEmpWtr_idx0": [
+      529
+    ],
+    "pMusicComboId_idx3": [
+      547
+    ],
+    "pUploadType_idx8": [
+      536
+    ],
+    "pMcPlvtr_idx1": [
+      522
+    ],
+    "fountainClickPids": [
+      60
+    ],
+    "pMcPctr_idx4": [
+      515
+    ],
+    "pEmpWtr_idx7": [
+      529
+    ],
+    "slide_next_label_idx0": [
+      565
+    ],
+    "pMcPwtr_idx3": [
+      518
+    ],
+    "uMidPlayEffectivePids": [
+      37
+    ],
+    "pPctr_idx1": [
+      500
+    ],
+    "pMmuContentId_idx8": [
+      545
+    ],
+    "pMcPltr_idx4": [
+      516
+    ],
+    "pEmpFtr_idx8": [
+      530
+    ],
+    "pMcPlvtr_idx3": [
+      522
+    ],
+    "pHetuTagLevel2Id_idx0": [
+      36
+    ],
+    "pHetuTagLevel1Id_idx5": [
+      35
+    ],
+    "pPcmtr_idx4": [
+      504
+    ],
+    "pEmpPtr_idx0": [
+      533
+    ],
+    "pPwtr_idx1": [
+      503
+    ],
+    "pPwtd_idx4": [
+      513
+    ],
+    "pCityId_idx5": [
+      537
+    ],
+    "uRealForwardPids": [
+      13
+    ],
+    "pId_idx8": [
+      30
+    ],
+    "pTag_idx0": [
+      539
+    ],
+    "pPepstr_idx3": [
+      514
+    ],
+    "pProvinceId_idx0": [
+      538
+    ],
+    "pMusicComboId_idx2": [
+      547
+    ],
+    "pUploadType_idx7": [
+      536
+    ],
+    "pPcmef_idx1": [
+      508
+    ],
+    "pId_idx0": [
+      30
+    ],
+    "pAuthorGender_idx1": [
+      542
+    ],
+    "pMcPwtr_idx1": [
+      518
+    ],
+    "pEmpCmtr_idx9": [
+      531
+    ],
+    "pContentLevel_idx9": [
+      540
+    ],
+    "pEmpCmtr_idx8": [
+      531
+    ],
+    "pMcPwtr_idx0": [
+      518
+    ],
+    "pUploadType_idx5": [
+      536
+    ],
+    "pMusicComboId_idx0": [
+      547
+    ],
+    "pEmpFtr_idx2": [
+      530
+    ],
+    "fountainFollowPids": [
+      62
+    ],
+    "pUploadType_idx6": [
+      536
+    ],
+    "pMusicComboId_idx1": [
+      547
+    ],
+    "pCityId_idx0": [
+      537
+    ],
+    "pPcmef_idx4": [
+      508
+    ],
+    "pAgeHour_idx9": [
+      543
+    ],
+    "pMcPltr_idx1": [
+      516
+    ],
+    "pvtr_idx1": [
+      574
+    ],
+    "pMcPsvtr_idx2": [
+      523
+    ],
+    "pDurationMs_idx5": [
+      201
+    ],
+    "pPhtr_idx4": [
+      506
+    ],
+    "pEmpHtr_idx0": [
+      532
+    ],
+    "pEmpFtr_idx3": [
+      530
+    ],
+    "pEmpCmtr_idx6": [
+      531
+    ],
+    "uMidClickPids": [
+      50
+    ],
+    "pPcmtr_idx0": [
+      504
+    ],
+    "pHetuTagLevel1Id_idx1": [
+      35
+    ],
+    "pEmpHtr_idx7": [
+      532
+    ],
+    "pMmuImgClusterV1_idx9": [
+      544
+    ],
+    "pMcPltr_idx2": [
+      516
+    ],
+    "pPvtr_idx4": [
+      507
+    ],
+    "pPsvtr_idx3": [
+      510
+    ],
+    "pPvtr_idx0": [
+      507
+    ],
+    "pProvinceId_idx9": [
+      538
+    ],
+    "pDurationMs_idx4": [
+      201
+    ],
+    "pMcPsvtr_idx1": [
+      523
+    ],
+    "pvtr_idx0": [
+      574
+    ],
+    "pTag_idx9": [
+      539
+    ],
+    "pPptr_idx4": [
+      502
+    ],
+    "pPftr_idx2": [
+      505
+    ],
+    "pMusicComboId_idx6": [
+      547
+    ],
+    "pPepstr_idx1": [
+      514
+    ],
+    "pEmpHtr_idx3": [
+      532
+    ],
+    "pPptr_idx1": [
+      502
+    ],
+    "pMmuImgClusterV3_idx6": [
+      202
+    ],
+    "pMusicComboId_idx5": [
+      547
+    ],
+    "pPftr_idx1": [
+      505
+    ],
+    "slide_next_label_idx2": [
+      565
+    ],
+    "pMcPwtr_idx5": [
+      518
+    ],
+    "pMusic_idx1": [
+      541
+    ],
+    "pPlvtr_idx1": [
+      509
+    ],
+    "uMidPlayShortPids": [
+      39
+    ],
+    "uMidFollowPids": [
+      52
+    ],
+    "pMcPsvtr_idx4": [
+      523
+    ],
+    "pvtr_idx3": [
+      574
+    ],
+    "pDurationMs_idx7": [
+      201
+    ],
+    "pPvtr_idx5": [
+      507
+    ],
+    "pPsvtr_idx4": [
+      510
+    ],
+    "pEmpCmtr_idx4": [
+      531
+    ],
+    "pMmuImgClusterV1_idx7": [
+      544
+    ],
+    "pAuthorGender_idx8": [
+      542
+    ],
+    "pPhtr_idx1": [
+      506
+    ],
+    "pContentLevel_idx7": [
+      540
+    ],
+    "pEmpCtr_idx9": [
+      527
+    ],
+    "pMmuContentId_idx7": [
+      545
+    ],
+    "pPctr_idx0": [
+      500
+    ],
+    "pPcmef_idx2": [
+      508
+    ],
+    "pPvtr_idx2": [
+      507
+    ],
+    "slide_play_rate_idx5": [
+      564
+    ],
+    "pPsvtr_idx1": [
+      510
+    ],
+    "pContentLevel_idx8": [
+      540
+    ],
+    "pPhtr_idx2": [
+      506
+    ],
+    "aId_idx8": [
+      31
+    ],
+    "pEmpCtr_idx8": [
+      527
+    ],
+    "pPltr_idx5": [
+      501
+    ],
+    "aId_idx2": [
+      31
+    ],
+    "dId": [
+      2
+    ],
+    "pPltr_idx0": [
+      501
+    ],
+    "pEmpLtr_idx2": [
+      528
+    ],
+    "pPhtr_idx0": [
+      506
+    ],
+    "pPvtr_idx3": [
+      507
+    ],
+    "pPsvtr_idx2": [
+      510
+    ],
+    "uMidLikePids": [
+      51
+    ],
+    "pOcrCoverTextWordCount_idx1": [
+      546
+    ],
+    "pEmpHtr_idx9": [
+      532
+    ],
+    "pMcPsvtr_idx0": [
+      523
+    ],
+    "pDurationMs_idx3": [
+      201
+    ],
+    "pEmpLtr_idx1": [
+      528
+    ],
+    "slide_next_label_idx5": [
+      565
+    ],
+    "pEmpWtr_idx9": [
+      529
+    ],
+    "pMcPlvtr_idx0": [
+      522
+    ],
+    "pId_idx9": [
+      30
+    ],
+    "pId_idx6": [
+      30
+    ],
+    "pId_idx7": [
+      30
+    ],
+    "pEmpHtr_idx6": [
+      532
+    ],
+    "pEmpWtr_idx6": [
+      529
+    ],
+    "pMcPctr_idx3": [
+      515
+    ],
+    "pPctr_idx4": [
+      500
+    ],
+    "pPcmef_idx0": [
+      508
+    ],
+    "aId_idx4": [
+      31
+    ],
+    "pEmpCtr_idx5": [
+      527
+    ],
+    "pUploadType_idx4": [
+      536
+    ],
+    "uRealFollowPids": [
+      12
+    ],
+    "pEmpHtr_idx5": [
+      532
+    ],
+    "pEmpWtr_idx5": [
+      529
+    ],
+    "pMcPctr_idx2": [
+      515
+    ],
+    "uGender": [
+      9
+    ],
+    "pMmuImgClusterV3_idx8": [
+      202
+    ],
+    "pPptr_idx3": [
+      502
+    ],
+    "pEmpWtr_idx4": [
+      529
+    ],
+    "pMcPctr_idx1": [
+      515
+    ],
+    "pEmpHtr_idx4": [
+      532
+    ],
+    "pPcmtr_idx1": [
+      504
+    ],
+    "pHetuTagLevel1Id_idx2": [
+      35
+    ],
+    "pMmuImgClusterV3_idx5": [
+      202
+    ],
+    "pEmpPtr_idx9": [
+      533
+    ],
+    "pPptr_idx0": [
+      502
+    ],
+    "avg_watchtime_idx6": [
+      560
+    ],
+    "pHetuTagLevel2Id_idx8": [
+      36
+    ],
+    "pTag_idx3": [
+      539
+    ],
+    "pProvinceId_idx3": [
+      538
+    ],
+    "pId_idx4": [
+      30
+    ],
+    "pEmpCtr_idx4": [
+      527
+    ],
+    "uRealLikePids": [
+      11
+    ],
+    "uMidPlayLongPids": [
+      38
+    ],
+    "pUploadType_idx2": [
+      536
+    ],
+    "fountainEffviewPids": [
+      65
+    ],
+    "pEmpLtr_idx4": [
+      528
+    ],
+    "pPptr_idx5": [
+      502
+    ],
+    "pMcPwtr_idx2": [
+      518
+    ],
+    "pAuthorGender_idx9": [
+      542
+    ],
+    "pUploadType_idx0": [
+      536
+    ],
+    "pPcmef_idx5": [
+      508
+    ],
+    "pPctr_idx3": [
+      500
+    ],
+    "pPctr_idx5": [
+      500
+    ],
+    "pEmpLtr_idx6": [
+      528
+    ],
+    "pEmpFtr_idx7": [
+      530
+    ],
+    "pEmpHtr_idx1": [
+      532
+    ],
+    "pPhtr_idx5": [
+      506
+    ],
+    "pDurationMs_idx1": [
+      201
+    ],
+    "pAgeHour_idx8": [
+      543
+    ],
+    "pMcPltr_idx0": [
+      516
+    ],
+    "pPcmef_idx3": [
+      508
+    ],
+    "pEmpCtr_idx6": [
+      527
+    ],
+    "pEmpCtr_idx7": [
+      527
+    ],
+    "pPepstr_idx2": [
+      514
+    ],
+    "pProvinceId_idx2": [
+      538
+    ],
+    "pPepstr_idx5": [
+      514
+    ],
+    "pvtr_idx2": [
+      574
+    ],
+    "pDurationMs_idx6": [
+      201
+    ],
+    "pMcPsvtr_idx3": [
+      523
+    ],
+    "uRealHatePids": [
+      14
+    ],
+    "pMmuImgClusterV1_idx8": [
+      544
+    ],
+    "pMcPlvtr_idx2": [
+      522
+    ],
+    "uCityId": [
+      3
+    ],
+    "pId_idx1": [
+      30
+    ],
+    "pId_idx2": [
+      30
+    ],
+    "pEmpCtr_idx2": [
+      527
+    ],
+    "slide_neg_weight_idx4": [
+      562
+    ],
+    "pEmpCtr_idx3": [
+      527
+    ],
+    "pEmpWtr_idx1": [
+      529
+    ],
+    "pEmpLtr_idx3": [
+      528
+    ],
+    "pEmpWtr_idx2": [
+      529
+    ],
+    "pMmuImgClusterV3_idx9": [
+      202
+    ],
+    "pEmpFtr_idx4": [
+      530
+    ],
+    "pEmpCmtr_idx1": [
+      531
+    ],
+    "pContentLevel_idx6": [
+      540
+    ],
+    "pEmpCmtr_idx0": [
+      531
+    ],
+    "pPltr_idx2": [
+      501
+    ],
+    "pPhtr_idx3": [
+      506
+    ],
+    "pEmpCmtr_idx2": [
+      531
+    ],
+    "pEmpCmtr_idx3": [
+      531
+    ],
+    "pEmpCmtr_idx5": [
+      531
+    ],
+    "pMmuImgClusterV3_idx1": [
+      202
+    ],
+    "pEmpCmtr_idx7": [
+      531
+    ],
+    "pEmpHtr_idx2": [
+      532
+    ],
+    "pId_idx5": [
+      30
+    ],
+    "pTag_idx2": [
+      539
+    ],
+    "pEmpPtr_idx5": [
+      533
+    ],
+    "pEmpPtr_idx7": [
+      533
+    ]
+  },
+  "sign_feature_pooling": {
+    "pMmuContentId_idx2": 1,
+    "pHetuTagLevel2Id_idx9": 1,
+    "pTag_idx8": 1,
+    "pProvinceId_idx8": 1,
+    "pHetuTagLevel1Id_idx0": 1,
+    "pEmpFtr_idx8": 1,
+    "pMcPltr_idx5": 1,
+    "pPltr_idx2": 1,
+    "avg_watchtime_idx0": 1,
+    "pPctr_idx2": 1,
+    "pMmuContentId_idx9": 1,
+    "pDurationMs_idx0": 1,
+    "pMmuImgClusterV1_idx0": 1,
+    "pPftr_idx4": 1,
+    "pCityId_idx3": 1,
+    "pPwtd_idx2": 1,
+    "pMusicComboId_idx8": 1,
+    "pEmpFtr_idx0": 1,
+    "pAgeHour_idx0": 1,
+    "aId_idx9": 1,
+    "pCityId_idx7": 1,
+    "pEmpPtr_idx2": 1,
+    "pPwtr_idx3": 1,
+    "pMmuImgClusterV1_idx6": 1,
+    "pAuthorGender_idx7": 1,
+    "pEmpLtr_idx8": 1,
+    "pPcmtr_idx3": 1,
+    "pHetuTagLevel1Id_idx4": 1,
+    "uId": 1,
+    "pAuthorGender_idx0": 1,
+    "pMcPctr_idx5": 1,
+    "pEmpWtr_idx8": 1,
+    "fountainClickPids": 1,
+    "pMmuContentId_idx4": 1,
+    "uMidCommentPids": 1,
+    "pContentLevel_idx0": 1,
+    "pCityId_idx4": 1,
+    "pPwtd_idx3": 1,
+    "pEmpFtr_idx1": 1,
+    "pMmuImgClusterV1_idx1": 1,
+    "pPftr_idx5": 1,
+    "pMusicComboId_idx9": 1,
+    "pTag_idx7": 1,
+    "pProvinceId_idx7": 1,
+    "aId_idx3": 1,
+    "aId_idx5": 1,
+    "fountainLongviewPids": 1,
+    "pAgeHour_idx4": 1,
+    "pMmuContentId_idx1": 1,
+    "pMusic_idx9": 1,
+    "pOcrCoverTextWordCount_idx9": 1,
+    "avg_watchtime_idx9": 1,
+    "pMmuContentId_idx3": 1,
+    "pMcPwtr_idx4": 1,
+    "pUploadType_idx9": 1,
+    "pMusicComboId_idx4": 1,
+    "pPftr_idx0": 1,
+    "pPwtd_idx0": 1,
+    "pCityId_idx1": 1,
+    "pAgeHour_idx3": 1,
+    "pMmuImgClusterV1_idx3": 1,
+    "pAuthorGender_idx4": 1,
+    "pHetuTagLevel1Id_idx8": 1,
+    "pHetuTagLevel2Id_idx7": 1,
+    "pMmuContentId_idx0": 1,
+    "pMusic_idx8": 1,
+    "pOcrCoverTextWordCount_idx8": 1,
+    "pUploadType_idx1": 1,
+    "avg_watchtime_idx8": 1,
+    "pPlvtr_idx5": 1,
+    "pMusic_idx5": 1,
+    "pOcrCoverTextWordCount_idx5": 1,
+    "pHetuTagLevel2Id_idx4": 1,
+    "pMcPctr_idx4": 1,
+    "pEmpWtr_idx7": 1,
+    "pMcPwtr_idx3": 1,
+    "uMidPlayEffectivePids": 1,
+    "pPctr_idx1": 1,
+    "pMmuContentId_idx8": 1,
+    "pPvtr_idx5": 1,
+    "pPsvtr_idx4": 1,
+    "pContentLevel_idx3": 1,
+    "uMidPlayViewHetu2": 5,
+    "avg_watchtime_idx5": 1,
+    "pPcmtr_idx2": 1,
+    "pHetuTagLevel1Id_idx3": 1,
+    "aId_idx7": 1,
+    "pPwtr_idx0": 1,
+    "pUploadType_idx3": 1,
+    "pAgeHour_idx5": 1,
+    "pEmpFtr_idx5": 1,
+    "pPftr_idx3": 1,
+    "pCityId_idx2": 1,
+    "pPwtd_idx1": 1,
+    "pMusicComboId_idx7": 1,
+    "uMidPlayShortPids": 1,
+    "pOcrCoverTextWordCount_idx7": 1,
+    "pMusic_idx7": 1,
+    "pPltr_idx4": 1,
+    "avg_watchtime_idx2": 1,
+    "pOcrCoverTextWordCount_idx6": 1,
+    "pMusic_idx6": 1,
+    "pMmuContentId_idx6": 1,
+    "pPlvtr_idx0": 1,
+    "pMusic_idx0": 1,
+    "pEmpFtr_idx9": 1,
+    "pOcrCoverTextWordCount_idx0": 1,
+    "pEmpHtr_idx8": 1,
+    "aId_idx6": 1,
+    "pEmpLtr_idx5": 1,
+    "pMmuContentId_idx5": 1,
+    "pPsvtr_idx5": 1,
+    "pPhtr_idx1": 1,
+    "pContentLevel_idx7": 1,
+    "pPlvtr_idx2": 1,
+    "pMusic_idx2": 1,
+    "pOcrCoverTextWordCount_idx2": 1,
+    "fountainLikePids": 1,
+    "pHetuTagLevel2Id_idx5": 1,
+    "pPcmtr_idx5": 1,
+    "pHetuTagLevel1Id_idx6": 1,
+    "pAuthorGender_idx2": 1,
+    "pAgeHour_idx7": 1,
+    "pOcrCoverTextWordCount_idx3": 1,
+    "pPlvtr_idx3": 1,
+    "pMusic_idx3": 1,
+    "pMcPltr_idx4": 1,
+    "pMcPlvtr_idx1": 1,
+    "pEmpFtr_idx6": 1,
+    "pDurationMs_idx9": 1,
+    "pEmpCtr_idx1": 1,
+    "pAgeHour_idx6": 1,
+    "pMcPltr_idx3": 1,
+    "pEmpCtr_idx9": 1,
+    "pMmuContentId_idx7": 1,
+    "pPctr_idx0": 1,
+    "pMmuImgClusterV1_idx5": 1,
+    "pAuthorGender_idx6": 1,
+    "pPwtd_idx5": 1,
+    "pCityId_idx6": 1,
+    "pEmpPtr_idx1": 1,
+    "pPwtr_idx2": 1,
+    "pMmuImgClusterV1_idx2": 1,
+    "pAuthorGender_idx3": 1,
+    "pHetuTagLevel1Id_idx7": 1,
+    "pAgeHour_idx2": 1,
+    "pProvinceId_idx4": 1,
+    "pTag_idx4": 1,
+    "pAgeHour_idx1": 1,
+    "pDurationMs_idx2": 1,
+    "pMcPlvtr_idx4": 1,
+    "pHetuTagLevel2Id_idx1": 1,
+    "pPepstr_idx4": 1,
+    "pProvinceId_idx1": 1,
+    "pTag_idx1": 1,
+    "pMmuImgClusterV3_idx4": 1,
+    "pEmpPtr_idx8": 1,
+    "pPsvtr_idx0": 1,
+    "pPvtr_idx1": 1,
+    "avg_watchtime_idx7": 1,
+    "pContentLevel_idx5": 1,
+    "pPepstr_idx0": 1,
+    "uBasicAge": 1,
+    "pHetuTagLevel2Id_idx6": 1,
+    "pMcPlvtr_idx5": 1,
+    "pHetuTagLevel2Id_idx2": 1,
+    "pContentLevel_idx1": 1,
+    "pTag_idx6": 1,
+    "pProvinceId_idx6": 1,
+    "pEmpWtr_idx3": 1,
+    "pMcPctr_idx0": 1,
+    "pEmpHtr_idx3": 1,
+    "aId_idx1": 1,
+    "pId_idx3": 1,
+    "aId_idx0": 1,
+    "pMmuImgClusterV3_idx3": 1,
+    "pContentLevel_idx2": 1,
+    "pPlvtr_idx4": 1,
+    "pMusic_idx4": 1,
+    "pOcrCoverTextWordCount_idx4": 1,
+    "pPltr_idx3": 1,
+    "avg_watchtime_idx1": 1,
+    "pMcPlvtr_idx3": 1,
+    "pHetuTagLevel2Id_idx0": 1,
+    "pHetuTagLevel1Id_idx5": 1,
+    "pPcmtr_idx4": 1,
+    "pHetuTagLevel1Id_idx9": 1,
+    "pAuthorGender_idx5": 1,
+    "pMmuImgClusterV1_idx4": 1,
+    "pCityId_idx8": 1,
+    "pEmpWtr_idx0": 1,
+    "pEmpPtr_idx3": 1,
+    "pPwtr_idx4": 1,
+    "pMusicComboId_idx3": 1,
+    "pUploadType_idx8": 1,
+    "pProvinceId_idx5": 1,
+    "uRealClickPids": 1,
+    "pTag_idx5": 1,
+    "pEmpPtr_idx0": 1,
+    "pPwtr_idx1": 1,
+    "pPwtd_idx4": 1,
+    "pCityId_idx5": 1,
+    "uRealForwardPids": 1,
+    "pId_idx8": 1,
+    "pTag_idx0": 1,
+    "pPepstr_idx3": 1,
+    "pProvinceId_idx0": 1,
+    "pMusicComboId_idx2": 1,
+    "pUploadType_idx7": 1,
+    "pPcmef_idx1": 1,
+    "pId_idx0": 1,
+    "pMusicComboId_idx5": 1,
+    "pPftr_idx1": 1,
+    "pMcPwtr_idx5": 1,
+    "pAuthorGender_idx1": 1,
+    "pMcPwtr_idx1": 1,
+    "pEmpCmtr_idx9": 1,
+    "pEmpLtr_idx0": 1,
+    "pPhtr_idx3": 1,
+    "pContentLevel_idx9": 1,
+    "pEmpCmtr_idx8": 1,
+    "pMcPwtr_idx0": 1,
+    "pUploadType_idx5": 1,
+    "pMusicComboId_idx0": 1,
+    "pEmpFtr_idx2": 1,
+    "fountainFollowPids": 1,
+    "pUploadType_idx6": 1,
+    "pMusicComboId_idx1": 1,
+    "pEmpCtr_idx0": 1,
+    "pDurationMs_idx8": 1,
+    "pMcPsvtr_idx5": 1,
+    "pPptr_idx2": 1,
+    "pMmuImgClusterV3_idx7": 1,
+    "pCityId_idx0": 1,
+    "pPcmef_idx4": 1,
+    "pAgeHour_idx9": 1,
+    "pMcPltr_idx1": 1,
+    "pMcPsvtr_idx2": 1,
+    "pDurationMs_idx5": 1,
+    "uRealHatePids": 1,
+    "pContentLevel_idx4": 1,
+    "pPhtr_idx4": 1,
+    "pEmpHtr_idx0": 1,
+    "pEmpFtr_idx3": 1,
+    "pPptr_idx1": 1,
+    "pMmuImgClusterV3_idx6": 1,
+    "pEmpCmtr_idx6": 1,
+    "uMidClickPids": 1,
+    "pPcmtr_idx0": 1,
+    "pHetuTagLevel1Id_idx1": 1,
+    "pEmpHtr_idx7": 1,
+    "pMmuImgClusterV1_idx9": 1,
+    "pMcPltr_idx2": 1,
+    "pMusic_idx1": 1,
+    "pPlvtr_idx1": 1,
+    "pPvtr_idx4": 1,
+    "pPsvtr_idx3": 1,
+    "pPvtr_idx0": 1,
+    "pProvinceId_idx9": 1,
+    "pTag_idx9": 1,
+    "pMmuImgClusterV3_idx9": 1,
+    "pPptr_idx4": 1,
+    "pEmpWtr_idx1": 1,
+    "pCityId_idx9": 1,
+    "pEmpPtr_idx4": 1,
+    "pPwtr_idx5": 1,
+    "pPftr_idx2": 1,
+    "pMusicComboId_idx6": 1,
+    "pPepstr_idx1": 1,
+    "uMidFollowPids": 1,
+    "pMcPsvtr_idx4": 1,
+    "pDurationMs_idx7": 1,
+    "pMmuImgClusterV3_idx0": 1,
+    "pEmpCmtr_idx4": 1,
+    "pMmuImgClusterV1_idx7": 1,
+    "pAuthorGender_idx8": 1,
+    "pPcmef_idx2": 1,
+    "pPvtr_idx2": 1,
+    "pPsvtr_idx1": 1,
+    "pContentLevel_idx8": 1,
+    "pPhtr_idx2": 1,
+    "aId_idx8": 1,
+    "pEmpCtr_idx8": 1,
+    "pPltr_idx5": 1,
+    "avg_watchtime_idx3": 1,
+    "avg_watchtime_idx4": 1,
+    "uMidPlayViewHetu1": 5,
+    "aId_idx2": 1,
+    "dId": 1,
+    "pEmpLtr_idx9": 1,
+    "pPltr_idx0": 1,
+    "pEmpLtr_idx2": 1,
+    "pContentLevel_idx6": 1,
+    "pPhtr_idx0": 1,
+    "uCityId": 1,
+    "pPvtr_idx3": 1,
+    "pPsvtr_idx2": 1,
+    "pEmpLtr_idx7": 1,
+    "uMidLikePids": 1,
+    "pOcrCoverTextWordCount_idx1": 1,
+    "pEmpHtr_idx9": 1,
+    "pMcPsvtr_idx0": 1,
+    "pDurationMs_idx3": 1,
+    "pEmpPtr_idx6": 1,
+    "pMmuImgClusterV3_idx2": 1,
+    "pEmpWtr_idx9": 1,
+    "pMcPlvtr_idx0": 1,
+    "pId_idx9": 1,
+    "pId_idx6": 1,
+    "pId_idx7": 1,
+    "pEmpHtr_idx6": 1,
+    "pEmpWtr_idx6": 1,
+    "pMcPctr_idx3": 1,
+    "pPctr_idx4": 1,
+    "pPcmef_idx0": 1,
+    "aId_idx4": 1,
+    "pEmpCtr_idx5": 1,
+    "pUploadType_idx4": 1,
+    "uRealFollowPids": 1,
+    "pEmpHtr_idx5": 1,
+    "pEmpWtr_idx5": 1,
+    "pMcPctr_idx2": 1,
+    "uGender": 1,
+    "pMmuImgClusterV3_idx8": 1,
+    "pPptr_idx3": 1,
+    "pEmpWtr_idx4": 1,
+    "pMcPctr_idx1": 1,
+    "pEmpHtr_idx4": 1,
+    "pPcmtr_idx1": 1,
+    "pHetuTagLevel1Id_idx2": 1,
+    "pEmpLtr_idx4": 1,
+    "fountainEffviewPids": 1,
+    "pMmuImgClusterV3_idx5": 1,
+    "pEmpPtr_idx9": 1,
+    "pPptr_idx0": 1,
+    "avg_watchtime_idx6": 1,
+    "pHetuTagLevel2Id_idx8": 1,
+    "pHetuTagLevel2Id_idx3": 1,
+    "pEmpLtr_idx1": 1,
+    "pTag_idx3": 1,
+    "pProvinceId_idx3": 1,
+    "pId_idx4": 1,
+    "pEmpCtr_idx4": 1,
+    "uRealLikePids": 1,
+    "uMidPlayLongPids": 1,
+    "pUploadType_idx2": 1,
+    "pPptr_idx5": 1,
+    "pMcPwtr_idx2": 1,
+    "pMmuImgClusterV1_idx8": 1,
+    "pAuthorGender_idx9": 1,
+    "pUploadType_idx0": 1,
+    "pPcmef_idx5": 1,
+    "pPctr_idx3": 1,
+    "pPctr_idx5": 1,
+    "pEmpLtr_idx6": 1,
+    "pEmpFtr_idx7": 1,
+    "pEmpHtr_idx1": 1,
+    "pPhtr_idx5": 1,
+    "pDurationMs_idx1": 1,
+    "pAgeHour_idx8": 1,
+    "pMcPltr_idx0": 1,
+    "pPcmef_idx3": 1,
+    "pEmpCtr_idx6": 1,
+    "pEmpCtr_idx7": 1,
+    "pPltr_idx1": 1,
+    "pPepstr_idx2": 1,
+    "pProvinceId_idx2": 1,
+    "pPepstr_idx5": 1,
+    "pDurationMs_idx6": 1,
+    "pMcPsvtr_idx3": 1,
+    "pMcPlvtr_idx2": 1,
+    "pDurationMs_idx4": 1,
+    "pMcPsvtr_idx1": 1,
+    "pId_idx1": 1,
+    "pId_idx2": 1,
+    "pEmpCtr_idx2": 1,
+    "pEmpCtr_idx3": 1,
+    "pEmpLtr_idx3": 1,
+    "pEmpWtr_idx2": 1,
+    "pEmpFtr_idx4": 1,
+    "pEmpCmtr_idx1": 1,
+    "pEmpCmtr_idx0": 1,
+    "pEmpCmtr_idx2": 1,
+    "pEmpCmtr_idx3": 1,
+    "pEmpCmtr_idx5": 1,
+    "pMmuImgClusterV3_idx1": 1,
+    "pEmpCmtr_idx7": 1,
+    "pEmpHtr_idx2": 1,
+    "pId_idx5": 1,
+    "pTag_idx2": 1,
+    "pEmpPtr_idx5": 1,
+    "pEmpPtr_idx7": 1
+  }
+}

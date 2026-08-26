@@ -1,0 +1,33 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_ua_tracking_model": 0,
+      "explore_ua_tracking_model_kess_service_name": "grpc_ExploreUATrackingInfer",
+      "explore_ua_tracking_model_request_type": "ua_tracking_ltr",
+      "explore_ua_tracking_model_partition_size": 150
+    },
+    "import": {
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "pftr",
+        "pwtr",
+        "plvtr",
+        "pvtr",
+        "pptr",
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pftr",
+        "cascade_pwtr",
+        "cascade_plvtr",
+        "cascade_psvr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "ua_active_tracking_score",
+        "ua_tracking_score"
+      ]
+    }
+  }
+}

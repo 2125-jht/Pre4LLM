@@ -1,0 +1,37 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_gcl_u2u_retr", false],
+      "ann_service_name": ["gcl_u2u_retr_ann_service_name", "grpc_exploreGclU2uAnnServer"],
+      "ann_timeout_ms": ["gcl_u2u_retr_ann_timeout_ms", 50],
+      "ann_user_top_k": ["gcl_u2u_retr_user_topk", 50],
+      "ann_src_data_type": ["gcl_u2u_retr_ann_src_data_type", "user"],
+      "ann_dest_bucket": ["gcl_u2u_retr_ann_dest_bucket", "user_bucket"],
+      "retrieve_num": ["gcl_u2u_cand_num", 1000],
+      "embedding_service_name": ["gcl_u2u_embed_service_name", "grpc_ExploreGclModelEmbServer"],
+      "enable_sim_user_shuffle": ["gcl_u2u_retr_enable_sim_user_shuffle", false],
+      "enable_result_shuffle": ["gcl_u2u_retr_enable_result_shuffle", false],
+      "sim_user_limit_num": ["gcl_u2u_retr_sim_user_limit_num", 50],
+      "user_photo_redis_key_prefix_v2": ["gcl_u2u_retr_u2i_list_prefix_v2", "uActions_"],
+      "user_photo_retrieve_num": ["gcl_u2u_retr_u2i_total_num", 3000],
+      "user_photo_retrieve_num_per_key": ["gcl_u2u_retr_u2i_each_num", 100],
+      "skip_browse_set": ["skip_explore_filter_by_browse_set", 1],
+      "enable_snake_merge": ["gcl_u2u_retr_enable_snake_merge", false]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "sim_user_list_gcl_u2u"
+      ],
+      "results": [
+        "gcl_u2u_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 3116
+}

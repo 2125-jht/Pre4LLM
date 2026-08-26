@@ -1,0 +1,24 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_skip_cal_enrich_comment_ltr_item_attr_from_redis": 1,
+      "fountain_skip_cal_enrich_comment_ltr_common_attr_from_redis": 1,
+      "fountain_skip_cal_kml_comment_ltr": 1,
+      "fountain_kml_comment_ltr_model_name": "comment-ltr",
+      "fountain_kml_comment_ltr_kml_service_name": "grpc-fountain-comment-ltr-v2",
+      "fountain_comment_ltr_common_attr_order": "reco.comment.commentLtrComonAttrsOrder",
+      "fountain_comment_ltr_item_attr_order": "reco.comment.commentLtrItemAttrsOrder"
+    },
+    "import": {
+      "common_attrs": [
+      ],
+      "item_attrs": [
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "comment_ltr"
+      ]
+    }
+  }
+}

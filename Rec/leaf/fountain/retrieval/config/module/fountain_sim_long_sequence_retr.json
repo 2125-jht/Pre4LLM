@@ -1,0 +1,45 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["fountain_h281_enabled", false],
+      "service_request_num": ["fountain_h281_retrieve_num", 1000],
+      "kess_service_name": ["fountain_h281_sim_long_sequence_service", "grpc_KaiWorksFountainLongSeqV1"]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "colossus_photo_id_list",
+        "colossus_author_id_list",
+        "colossus_tag_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "sim_long_seq_fountain__result"
+      ]
+    }
+  },
+  "trim_user_info": [
+    "id",
+    "device_id",
+    "gender",
+    "infer_gender",
+    "true_gender",
+    "basic_info.age_segment",
+    "location.city_id",
+    "apps.app.package",
+    "realtime_click_list",
+    "realtime_like_list",
+    "realtime_follow_list",
+    "user_profile_v1.click_list"
+  ],
+  "send_common_attrs": [
+    "colossus_photo_id_list",
+    "colossus_author_id_list",
+    "colossus_tag_list"
+  ],
+  "reason": 281
+}

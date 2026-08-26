@@ -1,0 +1,26 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": [
+        "enable_fountain_splash_focal_life_content",
+        0
+      ],
+      "fountain_splash_focal_life_ann_service": "grpc_fountainSplashFocalLifeContent",
+      "fountain_splash_focal_life_retr_num": 200,
+      "fountain_splash_focal_life_dest_bucket": "explore_life_tab_ann_pids",
+      "fountain_splash_focal_life_community_hetu_l1_list_str": "1,4,5,7,8,10,11,12,14,15,16,17,18,21,22,24,25,26,27,36,38,42,54,60,62"
+    },
+    "import": {
+      "common_attrs": [
+        "source_hetu_level_one",
+        "featureSourcePId"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_focal_life_ann_retr__result"
+      ]
+    }
+  },
+  "reason": 10410
+}

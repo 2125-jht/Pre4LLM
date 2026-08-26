@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_get_high_value_author": 0
+    },
+    "kconf": {
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_follow_author__trigger_list",
+        "uFollowHighValueAuthorList",
+        "explore_la_long_view_author_list"
+      ],
+      "item_attrs": [
+        "author__id",
+        "reason",
+        "collect_count",
+        "follow_count"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "is_follow_author",
+        "is_high_value_author",
+        "is_long_view_author"
+      ]
+    }
+  }
+}

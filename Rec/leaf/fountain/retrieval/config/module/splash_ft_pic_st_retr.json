@@ -1,0 +1,76 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "param_name": "enable_ft_pic_st_retr_splash",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "ft_pic_st_retr_use_cache_emb": {
+        "param_name": "ft_pic_st_retr_use_cache_emb_splash",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "ft_pic_st_retr_emb_service_name": {
+        "param_name": "ft_pic_st_retr_emb_service_name_splash",
+        "param_type": "string",
+        "default_value": "grpc_explorePicStRetrPsV1a"
+      },
+      "ft_pic_st_retr_colossus_hisotry_num": {
+        "param_name": "ft_pic_st_retr_colossus_hisotry_num_splash",
+        "param_type": "int",
+        "default_value": 1000
+      },
+      "ft_pic_st_retr_predict_service_name": {
+        "param_name": "ft_pic_st_retr_predict_service_name_splash",
+        "param_type": "string",
+        "default_value": "grpc_explorePicStUniPredictV1a"
+      },
+      "ft_pic_st_retr_ann_service_name": {
+        "param_name": "ft_pic_st_retr_ann_service_name_splash",
+        "param_type": "string",
+        "default_value": "grpc_explorePicStAnnV1a"
+      },
+      "ft_pic_st_retr_ann_top_k": {
+        "param_name":"ft_pic_st_retr_ann_top_k_splash",
+        "param_type": "int",
+        "default_value": 100
+      },
+      "ft_pic_st_retr_ann_dest_bucket": {
+        "param_name": "ft_pic_st_retr_ann_dest_bucket_splash",
+        "param_type": "string",
+        "default_value": "pic_dest_show"
+      },
+      "ft_pic_st_retr_ann_dist_threshold": {
+        "param_name": "ft_pic_st_retr_ann_dist_threshold_splash",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "enable_ft_pic_st_retr_infer": {
+        "param_name": "enable_ft_pic_st_retr_infer",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "ft_pic_st_retr_emb_server_mode": {
+        "param_name": "ft_pic_st_retr_emb_server_mode",
+        "param_type": "int",
+        "default_value": 0
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "user_colossus_pic_play_pids",
+        "user_colossus_pic_play_aids",
+        "user_colossus_pic_play_rewards",
+        "user_colossus_pic_play_hetu_level1s"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_ft_pic_st_retr__result"
+      ]
+    }
+  },
+  "reason": 13028
+}

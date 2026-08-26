@@ -1,0 +1,58 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_calc_xhs_type_picture": false,
+      "enable_calc_xhs_target_qualified_photo": false,
+      "enable_calc_xhs_target_photo_new_category": false,
+      "xhs_target_photo_remove_author_bucket": -1,
+      "calc_xhs_type_mode": ["explore_calc_xhs_type_mode", 0]
+    },
+    "kconf": {
+      "xhs_hetu_set": {
+        "kconf_key": "reco.offline.xhsTypeList",
+        "value_type": "set_int64",
+        "default_value": []
+      },
+      "xhs_target_hetu_set": {
+        "kconf_key": "reco.hot.exploreKnowledgeHetuSetExp",
+        "value_type": "set_int64",
+        "default_value": [4,5,25]
+      },
+      "xhs_target_hetu_set_new": {
+        "kconf_key": "reco.hot.exploreKnowledgeHetuSetExpNew",
+        "value_type": "set_int64",
+        "default_value": [4,5,25]
+      },
+      "xhs_target_audit_b_set": {
+        "kconf_key": "reco.hot.exploreXhsTargetContentAuditBResultSet",
+        "value_type": "set_int64",
+        "default_value": [2000866,2019671,2019672,2022202,2022203]
+      }
+    },
+    "import": {
+      "item_attrs": [
+        "is_picture",
+        "hetu_tag_level_info__hetu_level_one",
+        "hetu_tag_level_info__hetu_level_two",
+        "hetu_tag_level_info__hetu_level_three",
+        "hetu_tag_level_info__hetu_level_four",
+        "audit_b_second_tag",
+        "author__id"
+      ],
+      "common_attrs": [
+        "xhs_hetu_memorydata_set"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "is_xhs_type_photo",
+        "is_xhs_target_qualified_photo"
+      ],
+      "common_attrs": [
+      ]
+    }
+  }
+}

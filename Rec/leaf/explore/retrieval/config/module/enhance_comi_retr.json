@@ -1,0 +1,75 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["hot_enhance_comi_enabled", false],
+      "retrieval_cache_config": ["hot_enhance_comi_retr_cache_config", ""],
+      "retrieve_num": ["hot_enhance_comi_retrieve_num", 1000],
+      "auxiliary_arg": ["hot_enhance_comi_auxiliary", ""],
+      "increase_quota_factor": ["explore_pandora_enhance_comi_retrieve_factor", 1.0],
+      "service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "hot_enhance_comi_pandora_common_retr_service",
+        "param_type": "string",
+        "default_value": "grpc_exploreMultiInterestCommonRetrServer",
+        "report_ab_hit": true
+      },
+      "skip_personal_quota": ["hot_enhance_comi_skip_personal_quota", 1]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "increase_quota_status",
+        "reason_ratio_map_attr"
+      ]
+    },
+    "export": {
+      "results": [
+        "enhance_comi_retr__result"
+      ]
+    }
+  },
+  "trim_user_info": [
+    "id",
+    "device_id",
+    "gender",
+    "fans_count",
+    "follow_count",
+    "infer_gender",
+    "infer_year",
+    "true_gender",
+    "true_year",
+    "is_douyin",
+    "visit_net",
+    "upload_count",
+    "upload_rate",
+    "basic_info.age_segment",
+    "request_location",
+    "location",
+    "realtime_click_list",
+    "realtime_like_list",
+    "realtime_follow_list",
+    "browsed_photo_ids", 
+    "slide_browsed_photo_ids",
+    "user_profile_v1.click_list",
+    "user_profile_v1.like_list",
+    "user_profile_v1.follow_list",
+    "user_profile_v1.forward_list",
+    "user_profile_v1.collect_list",
+    "user_profile_v1.comment_list",
+    "user_profile_v1.profile_enter_list",
+    "user_profile_v1.video_playing_stat",
+    "fountain_reco_user_profile.forward_list",
+    "fountain_reco_user_profile.follow_list",
+    "fountain_reco_user_profile.like_list",
+    "fountain_reco_user_profile.comment_list",
+    "fountain_reco_user_profile.video_play_stat",
+    "user_interest_profile",
+    "basic_info.age_segment",
+    "active_days",
+    "request_location.city_id"
+  ],
+  "reason": 4900
+}

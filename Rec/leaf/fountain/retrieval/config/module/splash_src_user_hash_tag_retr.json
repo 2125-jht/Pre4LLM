@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["fountain_splash_src_user_hash_tag_retr", false],
+      "cand_num": ["fountain_splash_src_user_hash_tag_cand_num", 1000],
+      "redis_key_prefix": ["fountain_splash_src_user_hash_tag_redis_key_prefix", "uht_id_"],
+      "redis_value_delimiter": ["fountain_splash_src_user_hash_tag_redis_value_delimiter", ","],
+      "redis_value_max_size": ["fountain_splash_src_user_hash_tag_redis_value_max_size", 4000]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list",
+        "source_user_hash_tag_id"
+      ]
+    },
+    "export": {
+      "results": [
+        "src_user_hash_tag_retr__result"
+      ]
+    }
+  },
+  "reason": 10412
+}

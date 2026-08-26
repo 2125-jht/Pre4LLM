@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_life_nice_photo_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "life_target_hetu_version": "v1",
+      "life_nice_photo_retr_key_prefix": "life_nice_photo_",
+      "life_nice_photo_retr_num": 60000,
+      "life_nice_photo_retr_num_per_key": 600,
+      "life_nice_photo_retr_num_final": 6000
+    },
+    "abtest_retrieval_num_attr": "life_nice_photo_retr_max_num",
+    "import": {
+      "common_attrs": [
+        "uIsTnuCrowdUser"
+      ]
+    }, 
+    "export": {
+      "results": [
+        "life_nice_photo_retr__result"
+      ]
+    }
+  },
+  "reason": 2800
+}

@@ -1,0 +1,139 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_cascade_downgrade": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_mc_emp_xtr_fill_pxtr_downgrade",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "mc_new_arch_tower_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mc_new_arch_tower_service",
+        "param_type": "string",
+        "default_value": "grpc_newArchHotMcTowerExp2"
+      },
+      "mc_new_arch_tower_request_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mc_new_arch_tower_request_type",
+        "param_type": "string",
+        "default_value": "predict_by_hot_mc_tower"
+      },
+      "pic_tower_model_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_tower_model_partition_size",
+        "param_type": "int",
+        "default_value": 30
+      },
+      "explore_pic_tower_model_infer_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_tower_model_infer_service",
+        "param_type": "string",
+        "default_value": "grpc_picCascadeUserTowerInferVb"
+      },
+      "enable_hot_fc_extract_photo_signs": false,
+      "enable_mc_fc_predict": false,
+      "enable_hot_fc_replace_interface_interact": false,
+      "enable_hot_fc_replace_pvtr2": false,
+      "mc_fc_predict_service": "grpc_newArchHotMcInfer",
+      "mc_fc_request_type": "predict_by_mc_fc",
+      "explore_pic_tower_model_infer_v3_skip": 1,
+      "skip_cascade_enrich_pic_play_cnt": 1,
+      "user_effect_playtime_thresh_s": 3,
+      "enable_explore_gen_diversity_vol_realshow": false,
+      "explore_diversity_vol_max_num_realshow": 10,
+      "enable_explore_life_prerank_tower_model_infer": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_life_prerank_tower_model_infer",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "enable_explore_life_mc_tower_model_infer": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_life_mc_tower_model_infer",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "explore_life_mc_tower_model_infer_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_life_mc_tower_model_infer_service",
+        "param_type": "string",
+        "default_value": "grpc_exploreLifeMcUserInfer",
+        "report_ab_hit": true
+      },
+      "explore_life_mc_request_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_life_mc_request_type",
+        "param_type": "string",
+        "default_value": "predict_by_lifetab_mc",
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "pic_play_list",
+        "pic_like_list",
+        "pic_follow_list",
+        "pic_comment_list",
+        "pic_comment_aid_list",
+        "pic_hetu_l1_cnt"
+      ],
+      "item_attrs": [
+        "is_picture",
+        "prerank_life_ctr"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_pftr",
+        "cascade_plvtr",
+        "cascade_plvtr2",
+        "cascade_psvtr",
+        "cascade_ptr",
+        "cascade_pwatch_time",
+        "cascade_pepstr",
+        "cascade_pcestr",
+        "cascade_pcmtr",
+        "cascade_plivingtr",
+        "cascade_pcltr",
+        "cascade_pdtr",
+        "cascade_phtr",
+        "cascade_fc_pctr",
+        "cascade_peftr",
+        "cascade_pefctr",
+        "cascade_pcptr",
+        "cascade_pwtd",
+        "pic_hot_click",
+        "pic_hot_long_view",
+        "pic_hot_finish_view",
+        "pic_hot_pos_wtd",
+        "pic_hot_action",
+        "pic_hot_collect",
+        "pic_hot_scroll",
+        "cascade_pic_wtd",
+        "cascade_pic_lvtr",
+        "cascade_pic_cpr",
+        "user_pic_play_count",
+        "user_photo_play_count",
+        "user_pic_eff_play_count",
+        "user_photo_eff_play_count",
+        "cascase_life_ctr"
+      ],
+      "common_attrs":[
+        "photo_count_cascading_begin",
+        "cascade_input_item_key_list",
+        "embedding_source_pids",
+        "mmu_embeddings",
+        "diversity_vol_score_realshow"
+      ]
+    }
+  }
+}

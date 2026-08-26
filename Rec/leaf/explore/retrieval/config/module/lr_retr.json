@@ -1,0 +1,37 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_lr_retr", true],
+      "kess_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "lr_retrieval_service",
+        "param_type": "string", 
+        "default_value": "grpc_LRIcfRetrievalExpV2Filter"
+      },
+      "config_key": {
+        "biz_name": "RECO_RPC",
+        "param_name": "model_retrieval_config_key_with_trigger",
+        "param_type": "string", 
+        "default_value": "retrieval_config_trigger"
+      },
+      "enable_use_simple_interface": {
+        "biz_name": "RECO_RPC",
+        "param_name": "lr_retr_use_simple_interface",
+        "param_type": "bool", 
+        "default_value": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "tmp_user_info_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "lr__result"
+      ]
+    }
+  },
+  "reason": 88,
+  "retrieval_tag": "predict-model"
+}

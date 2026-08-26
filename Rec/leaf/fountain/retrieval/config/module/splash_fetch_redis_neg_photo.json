@@ -1,0 +1,13 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_enable_fetch_rank_neg_photo": ["fountain_enable_fetch_rank_neg_photo_splash", false],
+      "fountain_rank_neg_photo_key_prefix": ["fountain_rank_neg_photo_key_prefix_splash", "fountain_"]
+    },
+    "export": {
+      "common_attrs": [
+        "rank_neg_photo_id_list_str"
+      ]
+    }
+  }
+}

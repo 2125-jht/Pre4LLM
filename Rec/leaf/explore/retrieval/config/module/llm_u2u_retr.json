@@ -1,0 +1,17 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_llm_u2u_retr", false],
+      "u2u_service_name": ["explore_llm_u2u_service_name", "grpc_LLMU2URetrAndFixedMiddleLowUserActionList"],
+      "index_service_name": ["explore_llm_u2u_index_service_name", "grpc_exploreU2IPureIndex"],
+      "similar_user_num": ["explore_llm_u2u_similar_user_num", 100],
+      "service_request_num": ["explore_llm_u2u_retr_request_num", 800]
+    },
+    "export": {
+      "results": [
+        "llm_u2u_retr__result"
+      ]
+    }
+  },
+  "reason": 3199
+}

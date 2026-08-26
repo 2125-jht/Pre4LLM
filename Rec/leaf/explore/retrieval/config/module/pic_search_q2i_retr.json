@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_pic_search_q2i_retr", false],
+      "explore_pic_search_q2i_trigger_time_window_min": 10080,
+      "explore_pic_search_q2i_trigger_recent_time_window_min": 60,
+      "explore_pic_search_q2i_trigger_size": 20,
+      "explore_pic_search_q2i_retr_num": 1000,
+      "explore_pic_search_q2i_retr_num_per_key": 50,
+      "explore_pic_search_q2i_retr_num_final": 200,
+      "explore_pic_search_q2i_redis_key_prefix": "pic_query_"
+    },
+    "import": {
+      "common_attrs": [
+        "search_query_list_keyword",
+        "search_query_list_timestamp"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_search_q2i_retr__result"
+      ],
+      "item_attrs": [
+        "is_pic_search",
+        "is_pic_recent_search"
+      ]
+    }
+  },
+  "reason": 13037
+}

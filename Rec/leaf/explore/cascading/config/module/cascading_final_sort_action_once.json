@@ -1,0 +1,67 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_interact_fusion_score_cascade": 0,
+      "mc_act_fusion_score_htr_weight": 0.0,
+      "mc_act_fusion_score_ctr_weight": 0.0,
+      "mc_act_fusion_score_interact_ctr_weight": 0.0,
+      "mc_act_fusion_score_ftr_weight": 0.0,
+      "mc_act_fusion_score_dtr_weight": 0.0,
+      "mc_act_fusion_score_cmtr_weight": 0.0,
+      "mc_act_fusion_score_ltr_weight": 0.0,
+      "mc_act_fusion_score_cltr_weight": 0.0,
+      "mc_act_fusion_score_wtr_weight": 0.0,
+      "mc_act_fusion_score_evtr_weight": 0.0,
+      "mc_act_fusion_score_lvtr_ctr_weight": 0.0,
+      "mc_act_fusion_score_lvtr_weight": 0.0,
+      "mc_act_fusion_score_lvtr2_ctr_weight": 0.0,
+      "mc_act_fusion_score_lvtr2_weight": 0.0,
+      "mc_act_fusion_score_fvtr_weight": 0.0,
+      "mc_act_fusion_score_epstr_weight": 0.0,
+      "mc_act_fusion_score_cmef_weight": 0.0,
+      "mc_act_fusion_score_fetr_weight": 0.0,
+      "mc_act_fusion_score_fr_score1_ctr_weight": 0.0,
+      "mc_act_fusion_score_fr_score1_weight": 0.0,
+      "mc_act_fusion_score_fr_score2_ctr_weight": 0.0,
+      "mc_act_fusion_score_fr_score2_weight": 0.0,
+      "mc_act_fusion_score_awesome_wtd_weight": 0.0,
+      "mc_act_fusion_score_wtd_weight": 0.0,
+      "mc_act_fusion_score_pvtr_weight": 0.0,
+      "mc_act_max_watchtime_threshold": 180.0,
+      "mc_enable_pure_interact_fusion": 0.0
+    },
+    "import": {
+      "item_attrs": [
+        "cascade_phtr",
+        "cascade_pctr",
+        "cascade_pftr",
+        "cascade_pdtr",
+        "cascade_pcmtr",
+        "cascade_pltr",
+        "cascade_pcltr",
+        "cascade_pwtr",
+        "cascade_plvtr",
+        "cascade_plvr2",
+        "cascade_pefctr",
+        "cascade_pepstr",
+        "cascade_pcestr",
+        "cascade_peftr",
+        "cascade_plvtr2",
+        "pptime",
+        "cascade_pwatch_time",
+        "cascade_plivingtr",
+        "cascade_pwtd"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "mc_interact_fusion_score",
+        "mc_watch_time_fusion_score"
+      ]
+    }
+  }
+}
+  

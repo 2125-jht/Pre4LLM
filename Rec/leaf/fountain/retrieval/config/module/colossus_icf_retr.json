@@ -1,0 +1,32 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_fresh_reco_embu2i_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_colossus_icf_retr_key_prefix": "coRetr_",
+      "fountain_colossus_icf_retr_num": 1200,
+      "fountain_colossus_icf_retr_num_per_key": 50,
+      "skip_fountain_colossus_icf_retr": 1
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "colossusRetrievalTrigger"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+      ],
+      "results": [
+        "colossus_icf_retr__result"
+      ]
+    }
+  },
+  "reason": 330
+}

@@ -1,0 +1,26 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_optimal_vlog_content_common_retrieval", false],
+      "kess_service_name": ["optimal_vlog_content_common_retrieval_service_name", "grpc_fountainKnowledgeContentV2CommonRetrServer"],
+      "service_request_num": ["optimal_vlog_content_common_retrieval_request_num", 500]
+    },
+    "constant": {
+      "service_timeout_ms": 50,
+      "enable_trim_user_info": 1
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "optimal_vlog_content_retr__result"
+      ]
+    }
+  },
+  "reason": 3455,
+  "service_request_type": "optimal_vlog_content_common_retrieval",
+  "trim_user_info": ["browsed_photo_ids"]
+}

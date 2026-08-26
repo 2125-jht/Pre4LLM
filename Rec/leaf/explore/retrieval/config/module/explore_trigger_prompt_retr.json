@@ -1,0 +1,32 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_trigger_prompt_retrieval", false],
+      "retr_kess_name": [ "explore_trigger_prompt_retr_kess_name", "kws-kuaishou-hot-com-retr-grpc-explore-trigger-prompt"],
+      "retr_total_num": ["explore_trigger_prompt_retr_total_num", 800]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "click_list",
+        "videoPlayingPid",
+        "profile_v1_click_trigger_aids",
+        "playstat_playtimes",
+        "playstat_durations",
+        "playstat_hetu1s",
+        "playstat_hetu2s",
+        "like_list",
+        "follow_list",
+        "forward_list",
+        "comment_list",
+        "collect_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "explore_trigger_prompt__result"
+      ]
+    }
+  },
+  "reason": 4024
+}

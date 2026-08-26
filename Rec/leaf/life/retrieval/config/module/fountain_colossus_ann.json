@@ -1,0 +1,127 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_colossus_ann_retrieval",
+          "param_type": "bool",
+          "default_value": false
+        },
+        "embedding_service_name": {
+          "biz_name": "RECO_RPC",
+          "param_name": "colossus_ann_retrieval_embedding_service_name",
+          "param_type": "string",
+          "default_value": "grpc_hotMcEmbed"
+        },
+        "ann_service_name": {
+          "biz_name": "RECO_RPC",
+          "param_name": "colossus_ann_retrieval_ann_service_name",
+          "param_type": "string",
+          "default_value": "grpc_exploreColossusMcI2i"
+        },
+        "ann_dist_threshold": {
+          "biz_name": "RECO_RPC",
+          "param_name": "colossus_ann_retrieval_ann_distance",
+          "param_type": "double",
+          "default_value": 0.5
+        },
+        "retrieve_num": {
+          "biz_name": "RECO_RPC",
+          "param_name": "colossus_ann_retrieval_ann_limit_num",
+          "param_type": "int",
+          "default_value": 500
+        },
+        "enable_knowledge_trigger": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_explore_add_knowledge_retr_trigger",
+          "param_type": "bool",
+          "default_value": false
+        },
+        "knowledge_trigger_max_num": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_add_knowledge_retr_trigger_max_num",
+          "param_type": "int",
+          "default_value": 30
+        },
+        "enable_interaction_trigger": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_colossus_ann_retrieval_interact_triggers",
+          "param_type": "bool",
+          "default_value": false
+        },
+        "interaction_trigger_max_num": {
+          "biz_name": "RECO_RPC",
+          "param_name": "colosssus_ann_interact_trigger_cand_num",
+          "param_type": "int",
+          "default_value": 40
+        },
+        "colossus_trigger_max_num": {
+          "biz_name": "RECO_RPC",
+          "param_name": "colossus_ann_retrieval_total_select_num",
+          "param_type": "int",
+          "default_value": 200
+        },
+        "enable_interaction_trigger_shuffle": ["colossus_ann_enable_interaction_trigger_shuffle", false],
+        "enable_scatter_trigger": ["colossus_ann_enable_scatter_colossus_trigger", false],
+        "trigger_scatter_each_limit": ["colossus_ann_scatter_trigger_each_tag_limit", 10],
+        "enable_scatter_play_list": ["colossus_ann_enable_scatter_playlist", false],
+        "enable_shuffle_play_list": ["colossus_ann_enable_shuffle_playlist", false],
+        "play_list_scatter_each_limit": ["colossus_ann_scatter_playlist_each_tag_limit", 5],
+        "play_list_trigger_max_num": ["colossus_ann_playlist_trigger_num", 80],
+        "ann_topk": ["colossus_ann_topk", 20],
+        "interest_explore_trigger_expand_cnt": ["colossus_ann_expand_interest_explore_trigger_cnt", 0],
+        "skip_browse_set": ["skip_explore_filter_by_browse_set", 1],
+        "enable_global_trigger": ["colossus_ann_enable_global_trigger", false],
+        "sample_trigger_num": ["colossus_ann_sample_trigger_num", 200],
+        "start_idx": ["colossus_ann_start_idx", 0],
+        "mc_enable_opt_card_trigger": {
+          "biz_name": "MOBILE",
+          "param_name": "mc_enable_opt_card_trigger",
+          "param_type": "bool",
+          "default_value": false
+        }
+      },
+      "kconf": {
+        "hetu_low_level_tags": {
+          "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+          "value_type": "json",
+          "json_path": "low_level_tags"
+        },
+        "hetu_level2_tags": {
+          "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+          "value_type": "json",
+          "json_path": "level2_tags"
+        }
+      },
+      "import": {
+        "common_attrs": [
+          "colossus_user_info__trigger_id_list",
+          "colossus_user_info__trigger_weight_list",
+          "colossus_user_info__knowledge_trigger_set",
+          "colossus_user_info__trigger_tag_list",
+          "browse_screen__pid_list",
+          "user_info_ptr",
+          "profile_v1_interaction_trigger_list",
+          "colossus_user_info__interest_explore_trigger_set",
+          "global_normal_trigger_list",
+          "global_high_value_trigger_list",
+          "global_normal_trigger_weight_list",
+          "global_high_value_trigger_weight_list",
+          "optcard_like_trigger_id_list",
+          "optcard_dislike_trigger_id_list",
+          "enable_global_trigger_weight_adjust"
+        ]
+      },
+      "export": {
+        "item_attrs": [
+          "i2i_retr__trigger_pid"
+        ],
+        "results": [
+          "colossus_ann__result"
+        ]
+      }
+    },
+    "pass_browse_set": true,
+    "reason": 3061
+  }
+  

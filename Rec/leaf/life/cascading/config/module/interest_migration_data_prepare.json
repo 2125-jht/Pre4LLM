@@ -1,0 +1,50 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "interest_migration_score_threshold": 10.0,
+      "interest_migration_migration_threshold": 0.0,
+      "interest_migration_migration_coef": 1.0,
+      "interest_migration_ignore_cluster_lv1_classes_str": "1,4,5",
+      "interest_migration_colossus_num_limit": 1000,
+      "interest_migration_realshow_num_limit": 100,
+      "interest_migration_ignore_channel_list_str": "",
+      "interest_migration_hot_cnt_threshold": 100,
+      "interest_migration_hot_rate_threshold": 1.0,
+      "interest_migration_playtime_weight": 1.0,
+      "interest_migration_not_effective_view_weight": 0.7,
+      "interest_migration_like_weight": 3.0,
+      "interest_migration_follow_weight": 7.0,
+      "interest_migration_forward_weight": 3.0,
+      "interest_migration_comment_weight": 3.0,
+      "interest_migration_profile_weight": 3.0,
+      "interest_migration_collection_weight": 3.0,
+      "interest_migration_long_rate_vv_threshold": 100,
+      "interest_migration_vv_rate_weight": 1.0,
+      "interest_migration_play_time_rate_weight_attr": 0.0,
+      "interest_migration_active_rate_weight_attr": 0.0,
+      "interest_migration_enable_collection_list": 0,
+      "interest_migration_time_second_upper": 600000,
+      "life_enable_single_interest_migration_data": 1
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_resp_v2",
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "interest_migration_pids",
+        "interest_migration_scores",
+        "explore_realshow_pids",
+        "bs_short_view_pids",
+        "interest_migration_is_degraded",
+        "user_page_prefer_score",
+        "partial_time_based_selected_pids"
+      ],
+      "item_attrs": [
+        "interest_migration_photo_coef"
+      ]
+    }
+  }
+}

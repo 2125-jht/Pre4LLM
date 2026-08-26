@@ -1,0 +1,39 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_uninterest_ctr": 0,
+      "enable_explore_ranking_get_history_attr_stats_count": 0,
+      "explore_uninterest_ctr_infer_name": "grpc_UninterestCtrInfer",
+      "explore_uninterest_ctr_partition_size": 150,
+      "explore_ranking_history_attr_stats_timestamp_threshold": 720,
+      "explore_ranking_history_attr_stats_realshow_num_threshold": 200,
+      "explore_ranking_history_attr_stats_enable_cluster_id": 0,
+      "explore_ranking_history_attr_stats_enable_hetu_level_five": 0,
+      "explore_ranking_history_attr_stats_enable_hetu_level_two": 0,
+      "explore_ranking_history_attr_stats_enable_tagnex": 0
+    },
+    "import": {
+      "item_attrs": [
+        "cluster_id_632",
+        "hetu_tag_level_info__hetu_level_five",
+        "hetu_tag_level_info__hetu_level_two",
+        "hetu_tag_level_info__hetu_tag"
+      ],
+      "common_attrs": [
+        "standard_explore_realshow_pid_list",
+        "uStandardExploreRealshowTimestampList",
+        "uStandardExploreRealshowLabelList"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "explore_uninterest_ctr_score",
+        "cluster_id_packed_count",
+        "hetu5_packed_count",
+        "hetu2_packed_count",
+        "tagnex_packed_count",
+        "zero_exposure_flag"
+      ]
+    }
+  }
+}

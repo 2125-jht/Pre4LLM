@@ -1,0 +1,61 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_mmu_search_retrieval",
+          "param_type": "bool",
+          "default_value": false
+        }, 
+        "kess_service_name": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mmu_search_common_reco_retrieval_service",
+          "param_type": "string", 
+          "default_value": "grpc_mmuSearchAnnRetrieve"
+        },
+        "service_request_num": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mmu_search_result_num",
+          "param_type": "int", 
+          "default_value": 400
+        },
+        "service_timeout_ms": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mmu_search_retr_knn_timeout",
+          "param_type": "int",
+          "default_value": 150
+        }
+      },
+      "constant": {
+        "enable_trim_user_info": {
+          "attr_type": "common_attr",
+          "value_type": "int",
+          "value": 1
+        }
+      },
+      "import": {
+        "common_attrs": [
+          "user_info_ptr",
+          "tmpUserInfo"
+        ]
+      },
+      "export": {
+        "results": [
+          "reco_emb_i2i__result"
+        ]
+      }
+    },
+    "reason": 677,
+    "user_info_type": "tmpUserInfo",
+    "trim_user_info": [
+      "device_id",
+      "risk_level_test",
+      "active_days",
+      "browsed_photo_ids",
+      "user_profile_v1.video_playing_stat",
+      "user_profile_v1.click_list",
+      "user_profile_v1.like_list",
+      "user_profile_v1.follow_list",
+      "user_profile_v1.profile_enter_list"
+    ]
+  }

@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fresh_reco_embu2i_retr_fountain", true],
+      "fountain_fresh_reco_embu2i_retrieval_kess_service": {
+        "default_value": "grpc_FountainFreshU2iRetrServer"
+      },
+      "fountain_fresh_reco_embu2i_retrieval_total_limit": {
+        "default_value": 1000
+      },
+      "fountain_fresh_reco_embu2i_retrieval_bucket": {
+        "default_value": "fountain_extend_candidates_combo"
+      },
+      "fountain_fresh_reco_embu2i_retrieval_skip": {
+        "default_value": 1
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "fresh_reco_embu2i_retr__result"
+      ]
+    }
+  },
+  "reason": 406
+}

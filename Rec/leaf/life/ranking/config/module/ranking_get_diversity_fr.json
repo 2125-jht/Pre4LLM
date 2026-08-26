@@ -1,0 +1,27 @@
+{
+  "dragon_params": {
+    "abtest": {
+        "enable_skip_explore_diversity_update_ranking": 1,
+        "explore_embedding_dim_size_ranking": 64,
+        "diversity_history_size_ranking": 30,
+        "explore_diversity_mgs_topk_ranking": 5
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "user_info_ptr",
+        "pid_mmu_embedding_map_ranking"
+      ],
+      "item_attrs": [
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "diversity_fr_ranking"
+      ]
+    }
+  }
+}
+  

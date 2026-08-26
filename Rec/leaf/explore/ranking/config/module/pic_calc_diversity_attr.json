@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_calc_pic_top_category": false,
+      "explore_pic_top_category_hetu_str": "34,8,19",
+      "enable_explore_calc_pic_is_not_long_interest_hetu": false,
+      "explore_pic_top_category_pctr_thd": 100.0,
+      "explore_pic_top_category_pltr_thd": 100.0,
+      "explore_pic_is_not_long_interest_hetu_pctr_thd": 100.0,
+      "explore_pic_is_not_long_interest_hetu_pltr_thd": 100.0
+    },
+    "import": {
+      "common_attrs": [
+        "pic_user_long_interest_hetu_list"
+      ],
+      "item_attrs": [
+        "is_picture",
+        "hetu_tag_level_info__hetu_level_one",
+        "corr_pctr",
+        "pltr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "is_pic_top_category",
+        "is_not_pic_long_interest_hetu"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_offline_user_collect_photo_icf_retr", false]
+    }, 
+    "constant": {
+      "redis_key_prefix": "collect_photo_icf_uid_",
+      "redis_retrieval_num": 1000
+    },
+    "export": {
+      "results" : [
+        "collect_photo_icf__result"
+      ]
+    }
+  },
+  "reason": 921, 
+  "redis_cluster_name": "recoAuthorInfo",
+  "redis_timeout_ms": 10
+}

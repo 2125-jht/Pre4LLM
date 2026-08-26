@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_similar_users_hetu_tags_enricher": false,
+      "explore_similar_users_explore_use_retrieval_result": false,
+      "explore_similar_users_num_limit": 100,
+      "explore_similar_users_explore_cluster_count_limit": 10,
+      "explore_similar_users_explore_play_count_limit": 1,
+      "explore_similar_users_explore_min_play_time": 7
+    },
+    "import": {
+      "common_attrs": [
+        "sim_user_list",
+        "colossus_explore_hetu_tags"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "explore_hetu_tags"
+      ]
+    }
+  }
+}

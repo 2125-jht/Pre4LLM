@@ -1,0 +1,43 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_vertical_photo_mc_i2i_retrieval",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "kess_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "vertical_photo_mc_i2i_retrieval_service_name",
+        "param_type": "string",
+        "default_value": "grpc_ver1McI2iCommRetr"
+      },
+      "service_request_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "vertical_photo_mc_i2i_retrieval_request_num",
+        "param_type": "int",
+        "default_value": 500
+      }
+    },
+    "constant": {
+      "service_timeout_ms": {
+        "attr_type": "common_attr",
+        "value_type": "int",
+        "value": 50
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "vertical_photo_mc_i2i__result"
+      ]
+    }
+  },
+  "reason": 10001
+}

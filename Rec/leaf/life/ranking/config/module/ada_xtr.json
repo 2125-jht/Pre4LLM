@@ -1,0 +1,42 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "hot_ada_ltr_predict_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "hot_ada_ltr_predict_service",
+        "param_type": "string",
+        "default_value": "grpc_ExploreAdaXtrWeightInferV1"
+      },
+      "enable_hot_ada_ltr": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_hot_ada_ltr",
+        "param_type": "bool",
+        "default_value": false 
+      },
+      "explore_user_ada_weights_version": 0,
+      "explore_user_ada_weights_reverse_score": 1.0
+    },
+    "import": {
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "fr_score1",
+        "fr_score2",
+        "pepstr",
+        "pcltr",
+        "fetr",
+        "fountain_eff"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "ada_xtr_score"
+      ]
+    }
+  }
+}

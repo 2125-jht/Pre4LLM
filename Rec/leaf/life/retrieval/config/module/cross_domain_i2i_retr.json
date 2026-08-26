@@ -1,0 +1,27 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": ["enable_cross_domain_gnn_retr", false],
+        "life_cross_domain_i2i_kgnn_server_kess": ["life_cross_domain_i2i_kgnn_server_kess", "grpc_kgnn_nebula_voyage_gnn_i2i-I2I"],
+        "life_cross_domain_i2i_kgnn_sample_num": ["life_cross_domain_i2i_kgnn_sample_num", 40],
+        "life_cross_domain_i2i_kgnn_timeout": ["life_cross_domain_i2i_kgnn_timeout", 40],
+        "result_num": ["life_cross_domain_i2i_kgnn_result_num", 1000],
+        "skip_filter_by_browse_screen": ["skip_explore_filter_by_browse_screen", 1],
+        "skip_browse_set": ["skip_explore_filter_by_browse_set", 1]
+      },
+      "import": {
+        "common_attrs": [
+          "browse_screen__pid_list",
+          "colossus_photo_id_list_new_positive"
+        ]
+      }, 
+      "export": {
+        "results": [
+          "cross_domain__result"
+        ]
+      }
+    },
+    "pass_browse_set": true,
+    "reason": 4080,
+    "retrieve_num": 1500
+  }

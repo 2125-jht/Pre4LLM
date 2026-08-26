@@ -1,0 +1,60 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_related_score_filter_cancel_num": -1,
+      "enable_fountain_related_score_calc_v3": {
+        "param_name": "enable_fountain_related_score_calc_v3_life",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "fountain_skip_trans_hetu_tag_item_attr_new": {
+        "param_name": "fountain_skip_trans_hetu_tag_item_attr_new_splash_life",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "enable_fountain_related_score_calc_v2_use_author": {
+        "param_name": "enable_fountain_related_score_calc_v2_use_author_life",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "fountain_enable_source_aid_filter": {
+        "param_name": "fountain_enable_source_aid_filter_splash_life",
+        "default_value": 1,
+        "report_ab_hit": true
+      },
+      "fountain_enable_source_content_filter": {
+        "param_name": "fountain_enable_source_content_filter_splash_life",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "fountain_source_content_filter_ids_str": {
+        "param_name": "fountain_source_content_filter_ids_str_splash_life",
+        "default_value": "3,8,10,15,16,17",
+        "report_ab_hit": true
+      },
+      "source_related_dim_weight_v3": {
+        "param_name": "source_related_dim_weight_v3_splash_life",
+        "default_value": "0.02:0.07:0.005:0.005:0.04:0.001:0.005:0.01:0.01:0.001:0.01:0.02:0.03:0.05:0.03:0.07",
+        "report_ab_hit": true
+      }
+    },
+    "kconf": {
+    },
+    "constant": {
+    },
+    "import": {
+      "common_attrs": [
+        "llsid"
+      ],
+      "item_attrs": [
+      ]
+    },
+    "export": {
+      "common_attrs": [
+      ],
+      "item_attrs": [
+        "source_related_score"
+      ]
+    }
+  }
+}

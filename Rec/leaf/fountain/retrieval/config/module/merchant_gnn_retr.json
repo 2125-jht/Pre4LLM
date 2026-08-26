@@ -1,0 +1,37 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "disable_merchant": ["disable_merchant_explore_all_photo_optimize", 0],
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_fountain_merchant_gnn_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "fountain_merchant_gnn_buyer_type": 2,
+      "kess_service_name": ["fountain_merchant_gnn_retr_service_name", "grpc_MerchantPhotoGnnRetrieveV2"],
+      "service_request_num": ["fountain_merchant_gnn_retr_retrieve_num_new", 600]
+    }, 
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "merchant_buyer_type"
+      ]
+    },
+    "export": {
+      "results": [
+        "merchant_gnn__result"
+      ]
+    }
+  },
+  "reason": 352,
+  "service_request_type": "default",
+  "send_common_attrs": [
+    "disable_merchant",
+    {"name": "_USER_ID_", "as": "uId"}
+  ],
+  "extra_skip_condition": "disable_merchant == 1 or merchant_buyer_type == nil or merchant_buyer_type < fountain_merchant_gnn_buyer_type"
+}

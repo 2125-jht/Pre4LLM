@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_memory_rank_retr", false],
+      "enable_browset_filter": ["enable_browset_filter", false],
+      "result_num": ["memory_rank_retr_result_num", 800],
+      "redis_retrieval_num": ["memory_rank_retr_redis_retrieval_num", 1000],
+      "enable_rank_neg_filter": ["memory_rank_retr_enable_rank_neg_filter", false]
+    }, 
+    "constant": {
+      "redis_key_prefix": "user_top_photo_key_"
+    },
+    "import": {
+      "common_attrs": [
+        "rank_neg_photo_id_list_str"
+      ]
+    }, 
+    "export": {
+      "results" : [
+        "memory_rank_retr__result"
+      ]
+    }
+  },
+  "item_attrs": [
+    {"name": "memory_score", "type": "double"}
+  ],
+  "reason": 3098,
+  "pass_browse_set": true,
+  "redis_cluster_name": "SubdivisionPersonalBackUp",
+  "redis_timeout_ms": 10,
+  "unused_item_attrs": [
+    "memory_score"
+  ]
+}

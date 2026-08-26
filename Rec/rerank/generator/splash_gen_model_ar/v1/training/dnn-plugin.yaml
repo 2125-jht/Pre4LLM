@@ -1,0 +1,518 @@
+ada_decay_rate: 0.99999
+ada_epsilon: 1e-8
+avg_decay_rate: 0.999993
+back_propagate_input: true
+dense_grad: dense_grad_for_fetch:0
+dense_init_val: dense_init_val_for_fetch:0
+embedding:
+  create_threshold: 0
+  initial_g2sum: 3
+  initial_range: 1e-4
+  learning_rate: 0.05
+  slots_config:
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: photo_duration_ms
+    slots: '1023'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_pctr
+    slots: '3017'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_pltr
+    slots: '3019'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_pwtr
+    slots: '3025'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_pftr
+    slots: '3018'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_plvtr
+    slots: '3020'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_pvtr
+    slots: '3023'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_pptr
+    slots: '3021'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_pcmtr
+    slots: '3016'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_cascade_pctr
+    slots: '3029'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_cascade_pltr
+    slots: '3030'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_cascade_pwtr
+    slots: '3033'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_cascade_plvtr
+    slots: '3031'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_cascade_pftr
+    slots: '3035'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_cascade_pptr
+    slots: '3036'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 30
+    input_name: context_cascade_pcmtr
+    slots: '3037'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: context_source_hetu_tag_level1_top1
+    slots: '3042'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: context_source_hetu_tag_level2_top1
+    slots: '3043'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: context_source_duration_ms
+    slots: '3041'
+    update_type: gradient
+  version_aware: true
+  weight_bounds:
+  - -10
+  - 10
+extra_params: []
+feed_slots:
+- offsets: slot_1023_offsets:0
+  signs: slot_1023_signs:0
+  slot: 1023
+- offsets: slot_3017_offsets:0
+  signs: slot_3017_signs:0
+  slot: 3017
+- offsets: slot_3019_offsets:0
+  signs: slot_3019_signs:0
+  slot: 3019
+- offsets: slot_3025_offsets:0
+  signs: slot_3025_signs:0
+  slot: 3025
+- offsets: slot_3018_offsets:0
+  signs: slot_3018_signs:0
+  slot: 3018
+- offsets: slot_3020_offsets:0
+  signs: slot_3020_signs:0
+  slot: 3020
+- offsets: slot_3023_offsets:0
+  signs: slot_3023_signs:0
+  slot: 3023
+- offsets: slot_3021_offsets:0
+  signs: slot_3021_signs:0
+  slot: 3021
+- offsets: slot_3016_offsets:0
+  signs: slot_3016_signs:0
+  slot: 3016
+- offsets: slot_3029_offsets:0
+  signs: slot_3029_signs:0
+  slot: 3029
+- offsets: slot_3030_offsets:0
+  signs: slot_3030_signs:0
+  slot: 3030
+- offsets: slot_3033_offsets:0
+  signs: slot_3033_signs:0
+  slot: 3033
+- offsets: slot_3031_offsets:0
+  signs: slot_3031_signs:0
+  slot: 3031
+- offsets: slot_3035_offsets:0
+  signs: slot_3035_signs:0
+  slot: 3035
+- offsets: slot_3036_offsets:0
+  signs: slot_3036_signs:0
+  slot: 3036
+- offsets: slot_3037_offsets:0
+  signs: slot_3037_signs:0
+  slot: 3037
+- offsets: slot_3042_offsets:0
+  signs: slot_3042_signs:0
+  slot: 3042
+- offsets: slot_3043_offsets:0
+  signs: slot_3043_signs:0
+  slot: 3043
+- offsets: slot_3041_offsets:0
+  signs: slot_3041_signs:0
+  slot: 3041
+global_init_range: 0.2
+grad_scale: truediv_1:0
+graph: ./training/graph.pb
+graph_extra_outputs: {}
+graph_output_labels:
+- ExpandDims_3:0
+- ExpandDims_6:0
+- ExpandDims_9:0
+- zeros_like:0
+graph_q_valid:
+  ltr_0: ones_like_1:0
+  ltr_1: ones_like_2:0
+  ltr_2: ones_like_3:0
+  recall: ones_like:0
+graph_summary: Merge/MergeSummary:0
+graph_targets:
+- opt
+graph_tensor_mapping:
+  ltr_0: ExpandDims_2:0
+  ltr_1: ExpandDims_5:0
+  ltr_2: ExpandDims_8:0
+  recall: ExpandDims_1:0
+hyperparameter_kconf: null
+is_train_placeholder: is_train:0
+learning_rate: 5.0e-06
+local_init_op: ''
+loss_scale_placeholder: loss_scale:0
+mom_decay_rate: 0.999
+output_hidden_units: update_input continue_normlized_input slide_embedding slide_wide
+  watch_time_wide position_weight_input
+param:
+- coln: 32
+  name: position_embeddings
+  rown: 6
+  scale_by_rown: true
+- coln: 32
+  name: sos_embedding
+  rown: 1
+  scale_by_rown: true
+- coln: 32
+  name: eos_embedding
+  rown: 1
+  scale_by_rown: true
+- coln: 32
+  name: pad_embedding
+  rown: 1
+  scale_by_rown: true
+- coln: 32
+  name: prepare/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: prepare/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 64
+  name: prepare/mlp_layer_1_mlp_layer/dense/kernel
+  rown: 152
+  scale_by_rown: true
+- coln: 1
+  name: prepare/mlp_layer_1_mlp_layer/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  name: prepare/mlp_layer_1_mlp_layer/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: prepare/mlp_layer_1_mlp_layer/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/Inducing_Points
+  rown: 30
+  scale_by_rown: true
+- coln: 32
+  name: generator/Seed_vectors
+  rown: 30
+  scale_by_rown: true
+- coln: 32
+  name: generator/isab_0/mab_0/multi_head_attention/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/isab_0/mab_0/multi_head_attention/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/isab_0/mab_0/multi_head_attention/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/isab_0/mab_0/multi_head_attention/dense_3/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/isab_0/mab_0/multi_head_attention/dense_3/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/isab_0/mab_0/layer_norm/gamma
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/isab_0/mab_0/layer_norm/beta
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  name: generator/isab_0/mab_0/feed_forward_network/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/isab_0/mab_0/feed_forward_network/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 32
+  name: generator/isab_0/mab_0/feed_forward_network/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: generator/isab_0/mab_0/feed_forward_network/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/isab_0/mab_1/multi_head_attention/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/isab_0/mab_1/multi_head_attention/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/isab_0/mab_1/multi_head_attention/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/isab_0/mab_1/multi_head_attention/dense_3/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/isab_0/mab_1/multi_head_attention/dense_3/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/isab_0/mab_1/layer_norm/gamma
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/isab_0/mab_1/layer_norm/beta
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  name: generator/isab_0/mab_1/feed_forward_network/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/isab_0/mab_1/feed_forward_network/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 32
+  name: generator/isab_0/mab_1/feed_forward_network/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: generator/isab_0/mab_1/feed_forward_network/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/decoder_layer_0/multi_head_attention/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/decoder_layer_0/multi_head_attention/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/decoder_layer_0/multi_head_attention/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/decoder_layer_0/multi_head_attention/dense_3/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/decoder_layer_0/multi_head_attention/dense_3/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/decoder_layer_0/layer_norm/gamma
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/decoder_layer_0/layer_norm/beta
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/decoder_layer_0/feed_forward_network/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/decoder_layer_0/feed_forward_network/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/decoder_layer_0/feed_forward_network/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/decoder_layer_0/feed_forward_network/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  name: generator/predict_nn/mlp_layer_mlp_layer/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: generator/predict_nn/mlp_layer_mlp_layer/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  name: generator/predict_nn/mlp_layer_mlp_layer/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: generator/predict_nn/mlp_layer_mlp_layer/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: generator/predict_nn/prob_layer/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: generator/predict_nn/prob_layer/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+q_label:
+- auc_set: linear_regression
+  label: zeros_like:0
+  name: recall
+- auc_set: auc
+  label: ExpandDims_3:0
+  name: ltr_0
+- auc_set: auc
+  label: ExpandDims_6:0
+  name: ltr_1
+- auc_set: auc
+  label: ExpandDims_9:0
+  name: ltr_2
+q_names: recall ltr_0 ltr_1 ltr_2
+sparse_grad: sparse_grad_for_fetch:0
+sparse_grad_scale: truediv_2:0
+step_placeholder: step:0
+summary:
+- len: 1912
+  name: base_summary
+- len: 2072
+  name: stub_summary
+summary_decay_rate: 0.999999
+summary_init_n: 1e4
+summary_init_squared_sum: 1e4
+summary_squared_sum_epsilon: 1e-4
+test_layers_at_joining: join join_forward update update_forward
+test_layers_at_updating: update update_forward
+test_mode: false
+train_layers_at_joining: join
+train_layers_at_updating: update
+use_sparse_indice: false
+vec_input:
+- common: false
+  dim: 1
+  name: fountain_fulllink_rerank_realshow_label_weight_list
+- common: false
+  dim: 1
+  name: fountain_click_label_list
+- common: false
+  dim: 1
+  name: fountain_wtd_label_list
+- common: false
+  dim: 1
+  name: fountain_ltr_label_list
+- common: false
+  dim: 1
+  name: fountain_ltr_weight_list
+- common: false
+  dim: 30
+  name: context_info__real_show_index_list
+- common: false
+  dim: 30
+  name: context_info__real_show_list
+- common: false
+  dim: 30
+  name: context_info__pctr
+- common: false
+  dim: 30
+  name: context_info__pltr
+- common: false
+  dim: 30
+  name: context_info__plvtr
+- common: false
+  dim: 30
+  name: context_info__pwtr
+- common: false
+  dim: 30
+  name: context_info__pvtr
+- common: false
+  dim: 30
+  name: context_info__psvtr
+with_kai: true

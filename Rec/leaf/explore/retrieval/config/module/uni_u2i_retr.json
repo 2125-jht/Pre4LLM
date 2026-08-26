@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_uni_u2i_retrieval", false],
+      "enable_emb_server": ["uni_u2i_enable_emb_server", false],
+      "ann_service": ["uni_u2i_ann_service", "grpc_UniRetrModelU2i"],
+      "retrieve_num": ["uni_u2i_cand_num", 1000]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "uni_u2i_retr__result"
+      ]
+    }
+  },
+  "reason": 4040,
+  "slot": 100,
+  "space": "cosine"
+}

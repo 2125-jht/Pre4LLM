@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["explore_enable_cold_p2u_retrieval", false],
+      "model_name": ["explore_cold_p2u_kgnn_model_name", "explore_cold_photo_runner"],
+      "table_name": ["explore_cold_p2u_kgnn_table_name", "vcs_explore_u2p_101"],
+      "skip_browse_set": ["skip_explore_cold_p2u_filter_by_browse_set", 1],
+      "retrieve_num": ["explore_cold_p2u_retrieve_num", 300],
+      "sample_num": ["explore_cold_p2u_sample_num", 300],
+      "sample_type": ["explore_cold_p2u_sample_type", "most_recent"],
+      "padding_type": ["explore_cold_p2u_padding_type", "no_padding"]
+    },
+    "import": {
+      "common_attrs": [
+        "featureUId",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "is_cold_recall"
+      ],
+      "results": [
+        "cold_p2u_retr__result"
+      ]
+    }
+  },
+  "custom_label_attrs": [
+    "is_cold_recall"
+  ],
+  "service_request_type": "default",
+  "pass_browse_set": true,
+  "reason": 2049
+}

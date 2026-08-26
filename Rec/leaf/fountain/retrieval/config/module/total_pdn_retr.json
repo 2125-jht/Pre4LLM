@@ -1,0 +1,47 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_total_pdn_retr_fountain", true],
+      "fountain_total_pdn_retr_key_prefix": {
+        "default_value": "coRetr_"
+      },
+      "fountain_total_pdn_retr_num": {
+        "default_value": 5000
+      },
+      "fountain_total_pdn_retr_num_per_key": {
+        "default_value": 50
+      },
+      "skip_fountain_shuffle_pdn_total_triggers": {
+        "param_name": "skip_fountain_shuffle_pdn_total_triggers",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "skip_fountain_total_pdn_retr": {
+        "default_value": 1
+      },
+      "enable_global_trigger": ["fountain_pdn_enable_global_trigger", 0],
+      "sample_trigger_num": ["fountain_pdn_sample_trigger_num", 250],
+      "start_idx": ["fountain_pdn_start_idx", 0],
+      "enable_snake_merge": ["fountain_total_pdn_retr_enable_snake_merge", false],
+      "result_num": ["fountain_total_pdn_retr_result_num", 600]
+    }, 
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_trigger_id"
+      ],
+      "results": [
+        "total_pdn_retr__result"
+      ]
+    }
+  },
+  "reason": 419
+}

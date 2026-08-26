@@ -1,0 +1,109 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["explore_pic_location_retr", false],
+      "retr_mode": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_location_retr_mode",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "retr_total_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_location_retr_total_num",
+        "param_type": "int",
+        "default_value": 600
+      },
+      "emb_server_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_location_emb_server_name",
+        "param_type": "string",
+        "default_value": "grpc_exploreLocationSSMEmbServer"
+      },
+      "retr_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_location_ann_service",
+        "param_type": "string",
+        "default_value": "grpc_exploreLocationAnnRetr"
+      },
+      "trigger_video_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_location_trigger_video_size",
+        "param_type": "int",
+        "default_value": 20
+      },
+      "trigger_pic_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_location_trigger_pic_size",
+        "param_type": "int",
+        "default_value": 20
+      },
+      "dest_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_location_dest_bucket",
+        "param_type": "string",
+        "default_value": "explore_global_pictures"
+      },
+      "picture_trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_location_retr_picture_trigger_num",
+        "param_type": "int",
+        "default_value": 100,
+        "report_ab_hit": true
+      },
+      "picture_trigger_interact_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_location_retr_picture_trigger_interact_num",
+        "param_type": "int",
+        "default_value": 50,
+        "report_ab_hit": true
+      },
+      "colossus_channel_select_str": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_location_retr_colossus_channel_select_str",
+        "param_type": "string",
+        "default_value": "",
+        "report_ab_hit": true
+      },
+      "enable_exclude_single_pic": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_location_retr_enable_exclude_single_pic",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "seleted_eff_play_thd_sec": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_location_retr_seleted_eff_play_thd_sec",
+        "param_type": "int",
+        "default_value": -1,
+        "report_ab_hit": true
+      },
+      "colossus_range_days": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_location_retr_colossus_range_days",
+        "param_type": "int",
+        "default_value": 1000,
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "colossus_resp_v2",
+        "browse_screen__pid_list",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list",
+        "explore_selected_trigger_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_location_retr__result"
+      ]
+    }
+  },
+  "reason": 13009
+}

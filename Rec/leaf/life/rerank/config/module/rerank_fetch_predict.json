@@ -1,0 +1,180 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "fr_rerank_predict_service": {
+          "biz_name": "RECO_RPC",
+          "param_name": "fr_rerank_predict_service",
+          "param_type": "string",
+          "default_value": "grpc_krpTfHotRerankModelPredictServerV3Infer"
+        },
+        "fr_rerank_predict_service_timeout_ms": {
+          "biz_name": "RECO_RPC",
+          "param_name": "fr_rerank_predict_service_timeout_ms",
+          "param_type": "int",
+          "default_value": 100
+        },
+        "fr_rerank_predict_tensoer_layer": {
+          "biz_name": "RECO_RPC",
+          "param_name": "fr_rerank_predict_tensoer_layer",
+          "param_type": "string",
+          "default_value": "scores_n"
+        },
+        "fr_rerank_predict_use_odd_score": {
+          "biz_name": "RECO_RPC",
+          "param_name": "fr_rerank_predict_use_odd_score",
+          "param_type": "int",
+          "default_value": 0
+        },
+        "fr_rerank_origin_reason": {
+          "biz_name": "RECO_RPC",
+          "param_name": "fr_rerank_origin_reason",
+          "param_type": "int",
+          "default_value": 4
+        },
+        "fr_rerank_predict_shard_num": {
+          "biz_name": "RECO_RPC",
+          "param_name": "fr_rerank_predict_shard_num",
+          "param_type": "int",
+          "default_value": 1
+        },
+        "enable_explore_la_rerank_es_score_adjust": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_explore_la_rerank_es_score_adjust",
+          "param_type": "int",
+          "default_value": 0,
+          "report_ab_hit": true
+        },
+        "explore_rerank_la_ensemble_sort_pfr_score2_weight_max": 0.0,
+        "explore_rerank_la_ensemble_sort_pfr_score2_weight_base": 0.0,
+        "explore_rerank_la_ensemble_sort_fulles_weight_max": 0.0,
+        "explore_rerank_la_ensemble_sort_fulles_weight_base": 0.0,
+        "fr_rerank_ensemble_use_proportion": false,
+        "fr_rerank_ensemble_use_power_rank": true,
+        "enable_rerank_ensemble_sort": false,
+        "fr_rerank_ensemble_list_weight": 5.0,
+        "fr_rerank_predict_pxtr_weight": 0.0,
+        "fr_rerank_predict_topk_num": 1,
+        "explore_rerank_ensemble_sort_ensemble_score_weight": 2.0,
+        "explore_rerank_ensemble_sort_pure_fr_score2_weight": 1.0,
+        "explore_rerank_ensemble_sort_corr_pctr_weight": 0.0,
+        "explore_rerank_ensemble_sort_awesome_wtd_weight": 0.0,
+        "explore_rerank_ensemble_sort_fetr_weight": 0.0,
+        "explore_rerank_ensemble_sort_feff_weight": 0.0,
+        "enable_use_explore_rerank": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_use_explore_rerank",
+          "param_type": "int",
+          "default_value": 1,
+          "report_ab_hit": true
+        },
+        "explore_rerank_delegate_kai_kess_service": "grpc_ExploreKaiRerankPredictServerUniXwV1",
+        "fr_rerank_delegate_kai_service_loss_name": "l2r_pos0;l2r_pos1;l2r_pos2;l2r_pos3;l2r_pos4;l2r_pos5;l2r_pos6;l2r_pos7;l2r_pos8;l2r_pos9",
+        "explore_rerank_predict_use_common_predict": 0,
+        "fr_rerank_kai_predict_service": "grpc_ExploreKaiRerankPredictServerXwV1",
+        "fr_rerank_predict_service_loss_name": "l2r_pos0;l2r_pos1;l2r_pos2;l2r_pos3;l2r_pos4;l2r_pos5;l2r_pos6;l2r_pos7;l2r_pos8;l2r_pos9;list_ltr0",
+        "explore_rerank_skip_add_label_aware_fea": 1,
+        "ultimate_variety_engineer_slot_num_shuanglie": 10,
+        "ultimate_variety_gen_engineer_limit_thres": 60,
+        "ultimate_variety_shuanglie_priority1": 9,
+        "enable_rerank_hetu1_diversify": false,
+        "rerank_hetu1_diversify_winsize": 4,
+        "rerank_hetu1_diversify_max": 1,
+        "xlife_enable_target_content_control": false,
+        "enable_life_target_hetu_new": false,
+        "life_target_hetu_version": "v1",
+        "xlife_content_control_limit_thres": 200,
+        "enable_xlife_target_control": false,
+        "xlife_target_control_window": 5,
+        "xlife_target_control_max": 1,
+        "xlife_target_control_priority": 3,
+        "enable_xlife_gray_control": false,
+        "xlife_gray_control_window": 5,
+        "xlife_gray_control_max": 2,
+        "xlife_gray_control_priority": 2,
+        "enable_xlife_rerank_hetu_cluster_diversity": false,
+        "xlife_rerank_hetu_cluster_diversity_winsize": 5,
+        "xlife_rerank_hetu_cluster_diversity_maxnum": 1,
+        "xlife_rerank_hetu_cluster_diversity_priority": 2,
+        "explore_xlife_rerank_quota_perf_num": 520,
+        "enable_xlife_rerank_beauty_diversity": false,
+        "xlife_rerank_beauty_diversity_winsize": 6,
+        "xlife_rerank_beauty_diversity_maxnum": 1,
+        "xlife_rerank_beauty_diversity_priority": 1,
+        "enable_xlife_rerank_hetu5_beauty_diversity": false,
+        "xlife_rerank_hetu5_beauty_diversity_winsize": 10,
+        "xlife_rerank_hetu5_beauty_diversity_maxnum": 4,
+        "xlife_rerank_hetu5_beauty_diversity_priority": 4,
+        "enable_life_direct_tab_force_insert": 0,
+        "enable_life_active_interest_force_insert": 0,
+        "enable_life_active_interest_force_insert_rerank": 0,
+        "enable_life_active_interest_force_insert_passby": 0,
+        "life_active_interest_force_insert_limit_low_active": 0,
+        "life_active_interest_force_insert_position": 2,
+        "enable_life_active_interest_insert_judge": false,
+        "enable_life_hotfire_yellow_force_insert": 0,
+        "life_hotfire_yellow_force_insert_position": 3,
+        "life_hotfire_yellow_force_insert_limit_low_active": 0,
+        "enable_xlife_rerank_author_diversity": false,
+        "xlife_rerank_author_divstsity_winszie": 10,
+        "xlife_rerank_author_diversity_maxnum": 1,
+        "xlife_rerank_author_diversity_priority": 1,
+        "enable_xlife_rerank_hetu_cluster862_diversity": false,
+        "xlife_rerank_hetu_cluster862_diversity_winsize": 10,
+        "xlife_rerank_hetu_cluster862_diversity_maxnum": 1,
+        "xlife_rerank_hetu_cluster862_diversity_priority": 1,
+        "xlife_enable_gray_target_hetu_diver": 0,
+        "enable_xlife_rerank_second_tag_quality_level1_diversity": false,
+        "xlife_rerank_second_tag_quality_level1_winsize": 10,
+        "xlife_rerank_second_tag_quality_level1_maxnum": 1,
+        "xlife_rerank_second_tag_quality_level1_priority": 0,
+        "enable_xlife_rerank_second_tag_quality_level2_diversity": false,
+        "xlife_rerank_second_tag_quality_level2_winsize": 5,
+        "xlife_rerank_second_tag_quality_level2_maxnum": 1,
+        "xlife_rerank_second_tag_quality_level2_priority": 0,
+        "enable_xlife_rerank_merchant_cart_diversity": false,
+        "xlife_rerank_merchant_cart_winsize": 4,
+        "xlife_rerank_merchant_cart_maxnum": 1,
+        "xlife_rerank_merchant_cart_priority": 0,
+        "enable_olympic_latest_diversity": ["enable_life_rerank_olympic_latest_diversity", false],
+        "olympic_latest_diversity_winsize": ["life_rerank_olympic_latest_diversity_winsize", 10],
+        "olympic_latest_diversity_min_num": ["life_rerank_olympic_latest_diversity_min_num", 1],
+        "olympic_latest_diversity_max_num": ["life_rerank_olympic_latest_diversity_max_num", 10000],
+        "olympic_latest_diversity_priority": ["life_rerank_olympic_latest_diversity_priority", 9],
+        "enable_olympic_diversity": ["enable_life_rerank_olympic_diversity", false],
+        "olympic_diversity_winsize": ["life_rerank_olympic_diversity_winsize", 10],
+        "olympic_diversity_min_num": ["life_rerank_olympic_diversity_min_num", 0],
+        "olympic_diversity_max_num": ["life_rerank_olympic_diversity_max_num", 3],
+        "olympic_diversity_priority": ["life_rerank_olympic_diversity_priority", 9],
+        "enable_life_search_latest_force_insert": false,
+        "life_search_latest_force_insert_prob": 1.0,
+        "life_search_latest_force_insert_position": 3,
+        "life_search_latest_force_insert_coeff": 1.0
+      },
+      "import": {
+        "results": [
+          "rerank_gen_list"
+        ],
+        "common_attrs": [
+          "retrieval_list_keys",
+          "infer_uv_ctr",
+          "is_good_looking",
+          "author__id",
+          "page",
+          "uIsLifeHighActive",
+          "follow_author_insert_num",
+          "uIsNotLifePassBy"
+        ],
+        "item_attrs": [
+          "photo_id",
+          "hetu_tag_level_info__hetu_level_one",
+          "hetu_tag_level_info__hetu_level_two",
+          "hetu_sim_cluster_id862"
+        ]
+      },
+      "export": {
+        "results": [
+          "rerank_fetch_predict__result"
+        ]
+      }
+    }
+  }

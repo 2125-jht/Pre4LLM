@@ -1,0 +1,23 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_change_cpr_value": 0,
+        "explore_cpr_corr_alpha": 1.0,
+        "explore_cpr_corr_beta": 0.0,
+        "explore_cpr_corr_pctr_weight": 0.0,
+        "explore_cpr_corr_cpr_weight": 1.0
+      },
+      "import": {
+        "item_attrs": [
+          "duration_ms",
+          "cpr",
+          "corr_pctr"
+        ]
+      },
+      "export": {
+        "item_attrs": [
+          "corr_cpr"
+        ]
+      }
+    }
+  }

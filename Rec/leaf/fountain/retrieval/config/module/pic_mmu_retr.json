@@ -1,0 +1,40 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_pic_mmu_retr", false],
+      "fountain_pic_mmu_retr_mode": {
+        "param_name": "fountain_pic_mmu_retr_mode",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "fountain_pic_mmu_retr_service": {
+        "param_name": "fountain_pic_mmu_retr_service",
+        "param_type": "string",
+        "default_value": "grpc_exploreMMUPicI2IRetr"
+      },
+      "fountain_pic_mmu_retr_num": {
+        "param_name": "fountain_pic_mmu_retr_num",
+        "param_type": "int",
+        "default_value": 800
+      },
+      "fountain_pic_mmu_retr_dest": {
+        "param_name": "fountain_pic_mmu_retr_dest",
+        "param_type": "string",
+        "default_value": "explore_nice_pictures"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "featureFountainProfileLongViewPidListSub",
+        "colossusRetrievalTrigger"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_mmu_retr__result"
+      ]
+    }
+  },
+  "reason": 364
+}

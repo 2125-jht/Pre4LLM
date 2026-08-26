@@ -1,0 +1,42 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_rank_produce_video_predict": 0,
+      "enable_explore_rank_produce_need_divuser": 0,
+      "enable_explore_rank_produce_need_divuser_v2": 0,
+      "explore_ranking_produce_real_show_photo_recent_hours": 1,
+      "explore_ranking_produce_his_zhongcao_threholds": 5,
+      "explore_ranking_produce_his_magic_face_threholds": 5,
+      "explore_rank_produce_video_predict_timeout_ms": 100,
+      "explore_rank_produce_video_partition_size": 300,
+      "explore_rank_produce_video_service": "pmodel_cas_fr_0410_base",
+      "explore_rank_produce_video_request_type": "explore_outter"
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "produce_mtctr", 
+        "produce_twhtr", 
+        "produce_mfctr",
+        "produce_mtcotr", 
+        "produce_mtjtr", 
+        "produce_mtm1",
+        "produce_uploadw",
+        "produce_uploads",
+        "produce_consuv",
+        "produce_consuv_v2",
+        "produce_consuv_public"
+      ],
+      "common_attrs": [
+        "ranking_need_produce_model_flag"
+      ]
+    }
+  }
+}

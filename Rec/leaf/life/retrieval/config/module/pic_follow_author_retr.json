@@ -1,0 +1,24 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_pic_follow_author_retr", false],
+      "remote_index_service_name": ["pic_follow_author_retr_index_service_name", "grpc_explorePictureCommonQueryServer"],
+      "remote_index_service_timeout_ms": ["pic_follow_author_retr_index_timeout_ms", 100],
+      "remote_index_search_num": ["pic_follow_author_retr_search_num", 50],
+      "author_max_num": ["pic_follow_retr_max_follow_author", 500],
+      "result_num": ["pic_follow_author_photos_retr_candidates_num", 500]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_follow_author__result"
+      ]
+    }
+  },
+  "reason": 13006
+}

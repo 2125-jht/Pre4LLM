@@ -1,0 +1,27 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_long_view_sim_lr_retr", false],
+      "trigger_num": ["fountain_long_view_sim_lr_retr_trigger_num", 50],
+      "kgnn_service_name": ["fountain_long_view_sim_lr_retr_kgnn_service_name", "grpc_kgnn_simlr_fr_1w-I2I"],
+      "kgnn_sample_num": ["fountain_long_view_sim_lr_retr_kgnn_sample_num", 10],
+      "kgnn_shard_num": ["fountain_long_view_sim_lr_retr_kgnn_shard_num", 4],
+      "retrieve_num": ["fountain_long_view_sim_lr_retr_retrieve_num", 200],
+      "use_same_hour_seq": ["fountain_long_view_sim_lr_use_same_hour_seq", false],
+      "time_before_user_present_time": ["fountain_long_view_sim_lr_time_before_user_present_time", 3600],
+      "time_after_user_present_time": ["fountain_long_view_sim_lr_time_after_user_present_time", 3600]
+    },
+    "import": {
+      "common_attrs": [
+        "user_long_view_pid_list",
+        "userInfoPb"
+      ]
+    },
+    "export": {
+      "results": [
+        "long_view_sim_lr_retr__result"
+      ]
+    }
+  },
+  "reason": 300
+}

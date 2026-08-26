@@ -1,0 +1,43 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_enable_get_pxtr_index": 0
+    },
+    "import": {
+      "item_attrs": [
+        "cascade_pctr",
+        "cascade_plvtr",
+        "cascade_pwatch_time",
+        "cascade_pltr",
+        "cascade_pftr",
+        "cascade_pwtr",
+        "cascade_pepstr",
+        "cascade_psvtr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "cascade_pctr_index",
+        "cascade_plvtr_index",
+        "cascade_pvtr_index",
+        "cascade_pltr_index",
+        "cascade_pftr_index",
+        "cascade_pwtr_index",
+        "cascade_pesptr_index",
+        "cascade_psvr_index"
+      ]
+    }
+  },
+  "ab_enable": "fountain_enable_get_pxtr_index",
+  "index_dict": {
+    "cascade_pctr": "cascade_pctr_index",
+    "cascade_plvtr": "cascade_plvtr_index",
+    "cascade_pwatch_time": "cascade_pvtr_index",
+    "cascade_pltr": "cascade_pltr_index",
+    "cascade_pftr": "cascade_pftr_index",
+    "cascade_pwtr": "cascade_pwtr_index",
+    "cascade_pepstr": "cascade_pesptr_index",
+    "cascade_psvtr": "cascade_psvr_index"
+  }
+}
+  

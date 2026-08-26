@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_fr_cal_pairwise_rank_score": false,
+      "enable_fr_cal_ctr_pairwise_rank_score": false,
+      "explore_fr_cal_pairwise_rank_score_smooth": 10.0,
+      "explore_fr_cal_ctr_pairwise_rank_score_smooth": 10.0,
+      "explore_fr_cal_ctr_pairwise_rank_score_alpha": 100.0 
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "item_attrs": [
+        "awesome_wtd",
+        "score_pctr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pairwise_rank_score",
+        "pairwise_rank_raw_score",
+        "ctr_pairwise_rank_score",
+        "ctr_pairwise_rank_raw_score" 
+      ]
+    }
+  }
+}
+  

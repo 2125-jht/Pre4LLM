@@ -1,0 +1,41 @@
+
+{
+  "dragon_params": {
+    "abtest": { 
+      "enable_retrieval": ["enable_explore_hate_photo_i2i_retrieval", false],
+      "enable_hate_list_trigger_retrieval": ["explore_enable_hate_list_trigger_retrieval", true],
+      "enable_short_view_trigger_retrieval": ["explore_enable_short_view_trigger_retrieval", true],
+      "enable_realshow_no_click_trigger_retrieval": ["explore_enable_realshow_no_click_trigger_retrieval", true],
+      "short_view_trigger_num": ["explore_hate_emb_i2i_short_view_trigger_num", 50],
+      "latest_play_minute": ["explore_hate_emb_i2i_short_view_latest_play_minute", 10],
+      "latest_showtime_minute": ["explore_hate_emb_i2i_short_view_latest_showtime_minute", 10],
+      "realshow_no_click_trigger_num": ["explore_hate_emb_i2i_realshow_no_click_trigger_num", 50],
+      "short_view_play_time_ms_threshold": ["explore_hate_pr_i2i_short_view_play_time_ms_threshold", 3000],
+      "ann_service_name": ["explore_hate_pr_i2i_ann_kess_name", "kws-kuaishou-hot-retrieve-hate-pr-emb-ann"],
+      "trigger_num": ["explore_hate_pr_i2i_seed_photo_size", 150],
+      "retrieve_num_per_trigger": ["explore_hate_pr_i2i_retrieve_num_per_trigger", 100],
+      "ann_dist_threshold": ["explore_hate_pr_i2i_ann_dist_threshold", 0.0],
+      "enable_emb_sever": ["explore_hate_pr_i2i_enable_emb_sever", false]
+    },
+    "import": {
+      "common_attrs": [
+        "hate_list",
+        "hate_list_timestamps",
+        "user_info_ptr",
+        "videoPlayingPid",
+        "playstat_playtimes",
+        "playstat_durations",
+        "userRecentViewTimeListRaw"
+      ]
+    },
+    "export": {
+      "results": [
+        "explore_hate_photo_i2i_retr_results"
+      ],
+      "common_attrs": [
+        "hate_photo_i2i_neg_pid_list"
+      ]
+    }
+  },
+  "reason": 13035
+}

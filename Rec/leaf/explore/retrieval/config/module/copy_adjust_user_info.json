@@ -1,0 +1,15 @@
+{
+  "dragon_params": {
+    "import": {
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "tmp_user_info_ptr",
+        "tmpUserInfo"
+      ]
+    }
+  }
+}

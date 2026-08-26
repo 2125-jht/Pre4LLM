@@ -1,0 +1,33 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_jingxuan_icf_retr", false],
+      "enable_shuffle_retr_result": ["enable_shuffle_explore_jingxuan_icf_retr_result", false],
+      "result_num": ["explore_jingxuan_icf_retr_result_num", 800],
+      "redis_retrieval_num": ["explore_jingxuan_icf_retr_redis_retrieval_num", 1000],
+      "redis_key_prefix": ["explore_jingxuan_icf_redis_key_prefix", "jingxuan_"]
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_user_info__trigger_id_list"
+      ]
+    },
+    "export": {
+      "results" : [
+        "jingxuan_icf_retr__result"
+      ]
+    }
+  },
+  "item_attrs": [
+    {"name": "redis_score"}
+  ],
+  "reason": 3122,
+  "redis_cluster_name": "recoUserPreference",
+  "redis_timeout_ms": 20,
+  "redis_key_from_attr": "colossus_user_info__trigger_id_list",
+  "unused_item_attrs": [
+    "redis_score"
+  ],
+  "redis_item_separator": ";",
+  "redis_attr_separator": ":"
+}

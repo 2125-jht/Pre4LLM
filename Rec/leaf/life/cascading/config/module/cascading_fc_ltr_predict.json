@@ -1,0 +1,65 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_fc_ltr_predict": 0,
+      "mc_fc_ltr_service": "kws-kuaishou-hot-infer-mc-ctr-fc-infer",
+      "mc_fc_ltr_request_type": "default",
+      "mc_fc_ltr_partition_size": 500
+    },
+    "import": {
+      "item_attrs": [
+        "photo_id",
+        "author__id",
+        "photo_age_hour",
+        "duration_ms",
+        "upload_type",
+        "location__poi",
+        "location__city_id",
+        "location__province_id",
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr",
+        "empirical_cmtr",
+        "empirical_htr",
+        "explore_stat__real_show_count",
+        "explore_stat__click_count",
+        "empirical_watch_time",
+        "hetu_tag_level_info__hetu_cluster_id",
+        "user_hash_tag_id",
+        "ocr_cover_text_word_count",
+        "content_safety_level_with_namespace__level_hot_online",
+        "audit_hot_high_tag_level",
+        "hetu_tag_level_info__hetu_face_id",
+        "hetu_tag_level_info__hetu_level_one",
+        "hetu_tag_level_info__hetu_level_two",
+        "hetu_tag_level_info__hetu_level_three",
+        "hetu_tag_level_info__hetu_level_five",
+        "hetu_tag_level_info__hetu_tag",
+        "author__hetu_author_tag__hetu_level_one",
+        "author__hetu_author_tag__hetu_level_two",
+        "author__hetu_author_tag__hetu_level_three",
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_plvtr",
+        "cascade_psvtr",
+        "cascade_pftr",
+        "cascade_pcmtr",
+        "cascade_plvtr2",
+        "cascade_pepstr",
+        "cascade_pcltr",
+        "cascade_phtr",
+        "cascade_pwatch_time"
+      ],
+      "results": [
+        "cascading_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "cascade_pctr_fc"
+      ]
+    }
+  }
+}

@@ -1,0 +1,73 @@
+--grpc_server_port=9082
+--web_server_port=9080
+--log_dir=../log/
+
+--grpc_thread_num_per_core=2.0
+--dragon_grpc_use_multi_eventloop=true
+--kess_client_event_loop_nums=64
+--enable_pthread_affinity=true
+
+--common_reco_enable_leaf_show=false
+--leaf_show_use_id=true
+
+################# BEGIN 本地索引相关配置 #################
+# 开关， true 表示启用本地索引
+# config svn
+--use_local_index=false
+# queue name (类似 kafka topic), 生产方将数据打入这个队列
+--index_queue=common_reco_index_fountain
+--base_bt_queue_client_default_group=infra_mem_common_index
+
+--common_index_doc_bits=24
+
+# 是否处理 sample 流量
+--use_bt_queue_sample=false
+
+# client 配置
+--base_bt_queue_client_port=11778
+--bt_queue_client_port=11991
+--bt_queue_max_idle_second=5
+## common_index_btqueue_backward_second 用于重启后追回bt_queue中的历史数据
+--common_index_btqueue_backward_second=1800
+--common_index_available_second=300
+--common_index_available_version_second=7200
+### 索引相关配置 ###
+# ads::indexing 中会用到这两个 static_dict_filename
+# 一般软链接到 ../../../../ads_index/api/data/static_dict.dat
+--dynamic_index_static_dict_filename=../data/static_dict.dat
+--index_builder_static_dict_filename=../data/static_dict.dat
+################# END 本地索引相关配置 #################
+
+--abtestbiz_seq_num=5
+
+--enable_response_cache=false
+--response_cache_limit_for_user=100
+--response_cache_expire_seconds=604800
+--response_cache_user_whitelist_kconf_key=reco.offline.subdivisionDebugWhitelist
+--request_cache_kcc_cluster=recoAnalysis
+
+--enable_attr_overwrite_logging=false
+--logging_switch_uid_mod_divisor_kconf_key=reco.offline.leafLoggingSwitchUidModDivisor
+--enable_fast_stop=true
+--traceback_config_kconf_key=qa.prophet.recoCfg_fountain
+--default_traceback_config_value=false
+--slow_list_length_limit_kconf_key=reco.fountain.fountainRecoLeafSlowListLimit
+
+--common_leaf_use_dynamic_photo_store=true
+# 抽特征相关配置
+--ip_region_dict_file=../data/ip_region.dat
+--app_list_name_file=../data/app_name.dat
+
+# colossus 相关
+--colossus_client_timeout_ms=50
+--colossus_common_item_timeout_ms=50
+
+--attr_perf_sample_rate=0.01
+--enable_flat_attr_null_value=false
+--abort_stress_test_request_send_kafka=true
+
+# memory_data
+--reco_memory_data_map_kconf_path=reco.hot.fountainLeafMemoryData
+
+# cpu耗时统计
+--pipeline_cpu_cost_sample_rate=1.0

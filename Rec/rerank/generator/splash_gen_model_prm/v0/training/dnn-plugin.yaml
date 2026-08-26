@@ -1,0 +1,1042 @@
+ada_decay_rate: 0.99999
+ada_epsilon: 1e-8
+avg_decay_rate: 0.999993
+back_propagate_input: true
+dense_grad: dense_grad_for_fetch:0
+dense_init_val: dense_init_val_for_fetch:0
+embedding:
+  create_threshold: 0
+  initial_g2sum: 3
+  initial_range: 1e-4
+  learning_rate: 0.05
+  slots_config:
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: user_id
+    slots: '16'
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: user_device_id
+    slots: '21'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_age_segment
+    slots: '18'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_gender
+    slots: '22'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_city_id
+    slots: '19'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_client_id
+    slots: '20'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_visit_mod
+    slots: '26'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_level
+    slots: '27'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_emp_ctr
+    slots: '28'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_emp_ltr
+    slots: '30'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_emp_wtr
+    slots: '29'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_emp_lvtr
+    slots: '31'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_request_province_id
+    slots: '24'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_request_city_id
+    slots: '25'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_request_poi_type
+    slots: '23'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: user_region_type
+    slots: '32'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 50
+    input_name: user_realtime_click_list
+    slots: '61'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 50
+    input_name: user_realtime_like_list
+    slots: '64'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 50
+    input_name: user_realtime_follow_list
+    slots: '62'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 50
+    input_name: user_realtime_forward_list
+    slots: '63'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 50
+    input_name: user_fountain_profile_like_pid_list
+    slots: '40'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 50
+    input_name: user_fountain_profile_like_aid_list
+    slots: '39'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 50
+    input_name: user_fountain_profile_effective_view_pid_list
+    slots: '59'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 50
+    input_name: user_fountain_profile_effective_view_aid_list
+    slots: '60'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 50
+    input_name: user_fountain_profile_long_view_pid_list
+    slots: '55'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 50
+    input_name: user_fountain_profile_long_view_aid_list
+    slots: '56'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: photo_id
+    slots: '1016'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: photo_id_v2
+    slots: '4000'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: photo_author_id
+    slots: '1026'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: photo_author_gender
+    slots: '1024'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: photo_upload_type
+    slots: '1017'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: photo_hetu_tag_level1_list
+    slots: '1027'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: photo_hetu_tag_level2_list
+    slots: '1028'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: photo_hetu_tag_level5_list
+    slots: '1031'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: photo_duration_ms
+    slots: '1023'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_pctr
+    slots: '3017'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_pltr
+    slots: '3019'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_pwtr
+    slots: '3025'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_pftr
+    slots: '3018'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_plvtr
+    slots: '3020'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_pvtr
+    slots: '3023'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_pptr
+    slots: '3021'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_pcmtr
+    slots: '3016'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_cascade_pctr
+    slots: '3029'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_cascade_pltr
+    slots: '3030'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_cascade_pwtr
+    slots: '3033'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_cascade_plvtr
+    slots: '3031'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_cascade_pftr
+    slots: '3035'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_cascade_pptr
+    slots: '3036'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_cascade_pcmtr
+    slots: '3037'
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: context_source_pid
+    slots: '3026'
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: context_source_aid
+    slots: '3040'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_source_hetu_tag_level1_top1
+    slots: '3042'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_source_hetu_tag_level2_top1
+    slots: '3043'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_source_tag
+    slots: '3044'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_source_duration_ms
+    slots: '3041'
+    update_type: gradient
+  version_aware: true
+  weight_bounds:
+  - -10
+  - 10
+extra_params: []
+feed_slots:
+- offsets: slot_16_offsets:0
+  signs: slot_16_signs:0
+  slot: 16
+- offsets: slot_21_offsets:0
+  signs: slot_21_signs:0
+  slot: 21
+- offsets: slot_18_offsets:0
+  signs: slot_18_signs:0
+  slot: 18
+- offsets: slot_22_offsets:0
+  signs: slot_22_signs:0
+  slot: 22
+- offsets: slot_19_offsets:0
+  signs: slot_19_signs:0
+  slot: 19
+- offsets: slot_20_offsets:0
+  signs: slot_20_signs:0
+  slot: 20
+- offsets: slot_26_offsets:0
+  signs: slot_26_signs:0
+  slot: 26
+- offsets: slot_27_offsets:0
+  signs: slot_27_signs:0
+  slot: 27
+- offsets: slot_28_offsets:0
+  signs: slot_28_signs:0
+  slot: 28
+- offsets: slot_30_offsets:0
+  signs: slot_30_signs:0
+  slot: 30
+- offsets: slot_29_offsets:0
+  signs: slot_29_signs:0
+  slot: 29
+- offsets: slot_31_offsets:0
+  signs: slot_31_signs:0
+  slot: 31
+- offsets: slot_24_offsets:0
+  signs: slot_24_signs:0
+  slot: 24
+- offsets: slot_25_offsets:0
+  signs: slot_25_signs:0
+  slot: 25
+- offsets: slot_23_offsets:0
+  signs: slot_23_signs:0
+  slot: 23
+- offsets: slot_32_offsets:0
+  signs: slot_32_signs:0
+  slot: 32
+- offsets: slot_61_offsets:0
+  signs: slot_61_signs:0
+  slot: 61
+- offsets: slot_64_offsets:0
+  signs: slot_64_signs:0
+  slot: 64
+- offsets: slot_62_offsets:0
+  signs: slot_62_signs:0
+  slot: 62
+- offsets: slot_63_offsets:0
+  signs: slot_63_signs:0
+  slot: 63
+- offsets: slot_40_offsets:0
+  signs: slot_40_signs:0
+  slot: 40
+- offsets: slot_39_offsets:0
+  signs: slot_39_signs:0
+  slot: 39
+- offsets: slot_59_offsets:0
+  signs: slot_59_signs:0
+  slot: 59
+- offsets: slot_60_offsets:0
+  signs: slot_60_signs:0
+  slot: 60
+- offsets: slot_55_offsets:0
+  signs: slot_55_signs:0
+  slot: 55
+- offsets: slot_56_offsets:0
+  signs: slot_56_signs:0
+  slot: 56
+- offsets: slot_1016_offsets:0
+  signs: slot_1016_signs:0
+  slot: 1016
+- offsets: slot_4000_offsets:0
+  signs: slot_4000_signs:0
+  slot: 4000
+- offsets: slot_1026_offsets:0
+  signs: slot_1026_signs:0
+  slot: 1026
+- offsets: slot_1024_offsets:0
+  signs: slot_1024_signs:0
+  slot: 1024
+- offsets: slot_1017_offsets:0
+  signs: slot_1017_signs:0
+  slot: 1017
+- offsets: slot_1027_offsets:0
+  signs: slot_1027_signs:0
+  slot: 1027
+- offsets: slot_1028_offsets:0
+  signs: slot_1028_signs:0
+  slot: 1028
+- offsets: slot_1031_offsets:0
+  signs: slot_1031_signs:0
+  slot: 1031
+- offsets: slot_1023_offsets:0
+  signs: slot_1023_signs:0
+  slot: 1023
+- offsets: slot_3017_offsets:0
+  signs: slot_3017_signs:0
+  slot: 3017
+- offsets: slot_3019_offsets:0
+  signs: slot_3019_signs:0
+  slot: 3019
+- offsets: slot_3025_offsets:0
+  signs: slot_3025_signs:0
+  slot: 3025
+- offsets: slot_3018_offsets:0
+  signs: slot_3018_signs:0
+  slot: 3018
+- offsets: slot_3020_offsets:0
+  signs: slot_3020_signs:0
+  slot: 3020
+- offsets: slot_3023_offsets:0
+  signs: slot_3023_signs:0
+  slot: 3023
+- offsets: slot_3021_offsets:0
+  signs: slot_3021_signs:0
+  slot: 3021
+- offsets: slot_3016_offsets:0
+  signs: slot_3016_signs:0
+  slot: 3016
+- offsets: slot_3029_offsets:0
+  signs: slot_3029_signs:0
+  slot: 3029
+- offsets: slot_3030_offsets:0
+  signs: slot_3030_signs:0
+  slot: 3030
+- offsets: slot_3033_offsets:0
+  signs: slot_3033_signs:0
+  slot: 3033
+- offsets: slot_3031_offsets:0
+  signs: slot_3031_signs:0
+  slot: 3031
+- offsets: slot_3035_offsets:0
+  signs: slot_3035_signs:0
+  slot: 3035
+- offsets: slot_3036_offsets:0
+  signs: slot_3036_signs:0
+  slot: 3036
+- offsets: slot_3037_offsets:0
+  signs: slot_3037_signs:0
+  slot: 3037
+- offsets: slot_3026_offsets:0
+  signs: slot_3026_signs:0
+  slot: 3026
+- offsets: slot_3040_offsets:0
+  signs: slot_3040_signs:0
+  slot: 3040
+- offsets: slot_3042_offsets:0
+  signs: slot_3042_signs:0
+  slot: 3042
+- offsets: slot_3043_offsets:0
+  signs: slot_3043_signs:0
+  slot: 3043
+- offsets: slot_3044_offsets:0
+  signs: slot_3044_signs:0
+  slot: 3044
+- offsets: slot_3041_offsets:0
+  signs: slot_3041_signs:0
+  slot: 3041
+global_init_range: 0.2
+grad_scale: truediv_1:0
+graph: ./training/graph.pb
+graph_extra_outputs: {}
+graph_output_labels:
+- Reshape_150:0
+- Reshape_152:0
+- Reshape_156:0
+graph_q_valid:
+  click: Reshape_146:0
+  ltr: Reshape_146:0
+  vtr: Reshape_146:0
+graph_summary: Merge/MergeSummary:0
+graph_targets:
+- opt
+graph_tensor_mapping:
+  click: Reshape_162:0
+  ltr: Reshape_160:0
+  vtr: Reshape_161:0
+hyperparameter_kconf: null
+is_train_placeholder: is_train:0
+learning_rate: 5.0e-06
+local_init_op: ''
+loss_scale_placeholder: loss_scale:0
+mom_decay_rate: 0.999
+output_hidden_units: update_input continue_normlized_input slide_embedding slide_wide
+  watch_time_wide position_weight_input
+param:
+- coln: 64
+  name: position_embeddings
+  rown: 61
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/share_bottom/dense/kernel
+  rown: 608
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/share_bottom/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 512
+  name: act_ltr_model/share_bottom/dense_1/kernel
+  rown: 912
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/share_bottom/dense_1/bias
+  rank: 1
+  rown: 512
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/share_bottom/dense_2/kernel
+  rown: 512
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/share_bottom/dense_2/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/share_bottom/dense_3/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/share_bottom/dense_3/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 512
+  name: act_ltr_model/share_bottom/mmoe_expert_unit/dense/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/share_bottom/mmoe_expert_unit/dense/bias
+  rank: 1
+  rown: 512
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/dense/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/prm_enc_layer_0/encoder_mha/dense/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/prm_enc_layer_0/encoder_mha/dense_1/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/prm_enc_layer_0/encoder_mha/dense_2/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/prm_enc_layer_0/encoder_mha/dense_3/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_0/encoder_mha/dense_3/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_0/encoder_ln1_layer_norm/gamma
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_0/encoder_ln1_layer_norm/beta
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/prm_enc_layer_0/encoder_ffn/dense/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_0/encoder_ffn/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/prm_enc_layer_0/encoder_ffn/dense_1/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_0/encoder_ffn/dense_1/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_0/encoder_ln2_layer_norm/gamma
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_0/encoder_ln2_layer_norm/beta
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/prm_enc_layer_1/encoder_mha/dense/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/prm_enc_layer_1/encoder_mha/dense_1/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/prm_enc_layer_1/encoder_mha/dense_2/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/prm_enc_layer_1/encoder_mha/dense_3/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_1/encoder_mha/dense_3/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_1/encoder_ln1_layer_norm/gamma
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_1/encoder_ln1_layer_norm/beta
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/prm_enc_layer_1/encoder_ffn/dense/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_1/encoder_ffn/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/prm_enc_layer_1/encoder_ffn/dense_1/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_1/encoder_ffn/dense_1/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_1/encoder_ln2_layer_norm/gamma
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/prm_enc_layer_1/encoder_ln2_layer_norm/beta
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/ple/layer0/shared_experts/expert_layer_0/dense/kernel
+  rown: 512
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/shared_experts/expert_layer_0/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: act_ltr_model/ple/layer0/shared_experts/expert_layer_1/dense/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/shared_experts/expert_layer_1/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/ple/layer0/ltr_expert/expert_layer_0/dense/kernel
+  rown: 512
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/ltr_expert/expert_layer_0/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: act_ltr_model/ple/layer0/ltr_expert/expert_layer_1/dense/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/ltr_expert/expert_layer_1/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/ple/layer0/ltr_gate/dense/kernel
+  rown: 512
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/ltr_gate/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: act_ltr_model/ple/layer0/ltr_gate/dense_1/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/ltr_gate/dense_1/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 5
+  name: act_ltr_model/ple/layer0/ltr_gate/dense_2/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/ltr_gate/dense_2/bias
+  rank: 1
+  rown: 5
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/ple/layer0/vtr_expert/expert_layer_0/dense/kernel
+  rown: 512
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/vtr_expert/expert_layer_0/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: act_ltr_model/ple/layer0/vtr_expert/expert_layer_1/dense/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/vtr_expert/expert_layer_1/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/ple/layer0/vtr_gate/dense/kernel
+  rown: 512
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/vtr_gate/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: act_ltr_model/ple/layer0/vtr_gate/dense_1/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/vtr_gate/dense_1/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 5
+  name: act_ltr_model/ple/layer0/vtr_gate/dense_2/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/vtr_gate/dense_2/bias
+  rank: 1
+  rown: 5
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/ple/layer0/click_expert/expert_layer_0/dense/kernel
+  rown: 512
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/click_expert/expert_layer_0/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: act_ltr_model/ple/layer0/click_expert/expert_layer_1/dense/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/click_expert/expert_layer_1/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 256
+  name: act_ltr_model/ple/layer0/click_gate/dense/kernel
+  rown: 512
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/click_gate/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: act_ltr_model/ple/layer0/click_gate/dense_1/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/click_gate/dense_1/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 5
+  name: act_ltr_model/ple/layer0/click_gate/dense_2/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/ple/layer0/click_gate/dense_2/bias
+  rank: 1
+  rown: 5
+  scale_by_rown: true
+- coln: 64
+  name: act_ltr_model/output_cross_attention_self_attention/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_cross_attention_self_attention/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  name: act_ltr_model/output_cross_attention_self_attention/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_cross_attention_self_attention/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  name: act_ltr_model/output_cross_attention_self_attention/dense_2/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_cross_attention_self_attention/dense_2/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 128
+  name: act_ltr_model/output_mlp_ltr/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_mlp_ltr/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  name: act_ltr_model/output_mlp_ltr/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_mlp_ltr/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_mlp_ltr/dense_2/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_mlp_ltr/dense_2/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+- coln: 128
+  name: act_ltr_model/output_mlp_vtr/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_mlp_vtr/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  name: act_ltr_model/output_mlp_vtr/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_mlp_vtr/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_mlp_vtr/dense_2/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_mlp_vtr/dense_2/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+- coln: 128
+  name: act_ltr_model/output_mlp_click/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_mlp_click/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  name: act_ltr_model/output_mlp_click/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_mlp_click/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_mlp_click/dense_2/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: act_ltr_model/output_mlp_click/dense_2/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+q_label:
+- auc_set: auc
+  label: Reshape_156:0
+  name: ltr
+- auc_set: linear_regression
+  label: Reshape_152:0
+  name: vtr
+- auc_set: auc
+  label: Reshape_150:0
+  name: click
+q_names: ltr vtr click
+sparse_grad: sparse_grad_for_fetch:0
+sparse_grad_scale: truediv_2:0
+step_placeholder: step:0
+summary:
+- len: 1912
+  name: base_summary
+- len: 2072
+  name: stub_summary
+summary_decay_rate: 0.999999
+summary_init_n: 1e4
+summary_init_squared_sum: 1e4
+summary_squared_sum_epsilon: 1e-4
+test_layers_at_joining: join join_forward update update_forward
+test_layers_at_updating: update update_forward
+test_mode: false
+train_layers_at_joining: join
+train_layers_at_updating: update
+use_sparse_indice: false
+vec_input:
+- common: false
+  dim: 1
+  name: fountain_fulllink_rerank_index_list
+- common: false
+  dim: 60
+  name: context_info__real_show_list
+- common: false
+  dim: 60
+  name: fountain_fulllink_rerank_realshow_label_weight_list
+- common: false
+  dim: 1
+  name: fountain_click_label_list
+- common: false
+  dim: 1
+  name: fountain_wtd_label_list
+- common: false
+  dim: 1
+  name: fountain_finish_label_list
+- common: false
+  dim: 1
+  name: fountain_ltr_label_list
+- common: false
+  dim: 60
+  name: fountain_ltr_weight_list
+with_kai: true

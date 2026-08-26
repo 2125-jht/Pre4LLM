@@ -1,0 +1,41 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_mc_u2u_retrieval", false],
+      "enable_emb_server": ["enable_mc_u2u_user_emb_server", false],
+      "embedding_service_name": ["mc_u2u_embedding_service_name", "grpc_hotU2uEmb"],
+      "enable_ucf_user": ["enable_mc_u2u_ucf", false],
+      "ucf_user_top_k": ["mc_u2u_user_num", 50],
+      "ucf_redis_key_prefix": ["mc_u2u_ucf_redis_prefix", "ucf_"],
+      "ann_service_name": ["mc_u2u_retr_service_name", "grpc_exploreMcU2u"],
+      "ann_timeout_ms": ["mc_u2u_retr_ann_timeout", 100],
+      "ann_user_top_k": ["mc_u2u_user_num", 50],
+      "ann_src_data_type": ["mc_u2u_ann_bucket", "user"],
+      "ann_dest_bucket": ["mc_u2u_ann_bucket", "user"],
+      "user_photo_redis_cluster_name": ["mc_u2u_redis_cluster", "recoColossusTriggers"],
+      "explore_mc_u2i_index_service" : ["explore_mc_u2u_u2i_index_service", "grpc_exploreU2IPureIndex"],
+      "mc_u2u_use_new_index" : ["explore_mc_u2u_use_new_index", 0],
+      "user_photo_redis_timeout_ms": ["mc_u2u_redis_timeout_ms", 20],
+      "user_photo_redis_key_prefix": ["mc_u2u_user_photos_redis_prefix", "clicks_"],
+      "retrieve_num": ["mc_u2u_cand_num", 1200],
+      "skip_browse_set": ["skip_explore_filter_by_browse_set", 1]
+    },
+    "import": {
+      "common_attrs": [
+        "mc_u2i_user_embedding_list",
+        "user_info_ptr",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "sim_user_list_mc_u2u"
+      ],
+      "results": [
+        "mc_u2u_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 3072
+}

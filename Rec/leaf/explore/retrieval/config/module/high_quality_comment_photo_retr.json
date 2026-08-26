@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["high_quality_comment_photo_retr__enable_retr", false],
+      "service_request_num": ["high_quality_comment_photo_retr__retrieve_num", 500],
+      "kess_service_name": ["high_quality_comment_photo_retr__service_name", "grpc_highQualityCommRetr"]
+    },
+    "constant": {
+      "service_timeout_ms": 50
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "high_quality_comment_photo_retr__result"
+      ]
+    }
+  },
+  "reason": 3121,
+  "trimed_user_info": [
+    "id",
+    "device_id",
+    "gender",
+    "fans_count",
+    "basic_info",
+    "location",
+    "follow_list"
+  ],
+  "send_common_attrs": [
+  ]
+}

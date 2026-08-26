@@ -1,0 +1,69 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_st_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "retr_mode": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_st_retr_mode",
+        "param_type": "int",
+        "default_value": 1,
+        "report_ab_hit": true
+      },
+      "embedding_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_st_retr_embedding_service_name",
+        "param_type": "string",
+        "default_value": "grpc_stPicUserEmbServerV1",
+        "report_ab_hit": true
+      },
+      "ann_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_st_retr_ann_service_name",
+        "param_type": "string",
+        "default_value": "grpc_stPicRecoRetr_v1",
+        "report_ab_hit": true
+      },
+      "ann_dest_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_st_retr_ann_dest_bucket",
+        "param_type": "string",
+        "default_value": "high_action_pics",
+        "report_ab_hit": true
+      },
+      "retrieve_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_st_retr_num",
+        "param_type": "int",
+        "default_value": 600,
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_colossus_play_pids",
+        "user_colossus_play_aids",
+        "user_colossus_play_rewards",
+        "user_colossus_play_hetu_level1s"
+      ]
+    },
+    "export": {
+      "results": [
+        "explore_st_retr__result"
+      ]
+    }
+  },
+  "reason": 13027,
+  "send_common_attrs": [
+    "user_colossus_play_pids",
+    "user_colossus_play_aids",
+    "user_colossus_play_rewards",
+    "user_colossus_play_hetu_level1s"
+  ],
+  "emb_size": 256
+}

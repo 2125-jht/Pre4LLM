@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "param_name": "enable_fountain_living_tdm_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "tdm_live_click_abtest_kconf_key_explore_leaf": ["tdm_live_click_abtest_kconf_key_explore_leaf", "reco.tdm.CommonRecoTDMTreeServerFrThreeV2P2"],
+      "common_living_head_tdm_service_name_explore_leaf": ["common_living_head_tdm_service_name_explore_leaf", "grpc_CommonRecoTDMTreeServerOnlineFrTwo"],
+      "explore_leaf_living_head_tdm_tree_name": ["explore_leaf_living_head_tdm_tree_name", "tdm_fr_one"],
+      "living_tdm_final_result_num_explore_leaf": ["living_tdm_final_result_num_explore_leaf", 800],
+      "explore_leaf_living_head_tdm_result_num": ["explore_leaf_living_head_tdm_result_num", 800]
+      
+    }, 
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "featureUId",
+        "featureDeviceId"
+      ]
+    },
+    "export": {
+      "results": [
+        "living_tdm_retr__result"
+      ]
+    }
+  },
+  "reason": 488
+}

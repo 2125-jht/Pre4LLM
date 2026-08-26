@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_splash_transfer_prob_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "reco_relevance_transfer_prob_retrieval_version": {
+        "param_name": "reco_relevance_transfer_prob_retrieval_version",
+        "param_type": "string",
+        "default_value": "v0"
+      },
+      "fountain_retrieval_skip_transfer_prob": {
+        "param_name": "fountain_retrieval_skip_transfer_prob",
+        "param_type": "int",
+        "default_value": 1
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "featureSourcePId"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_transfer_prob_retr__result"
+      ]
+    }
+  },
+  "reason": 11201
+}

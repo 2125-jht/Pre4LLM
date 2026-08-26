@@ -1,0 +1,123 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_pic_st_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "embedding_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_st_retr_embedding_service_name",
+        "param_type": "string",
+        "default_value": "grpc_explorePicStRetrPs",
+        "report_ab_hit": true
+      },
+      "predict_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_st_retr_predict_service_name",
+        "param_type": "string",
+        "default_value": "grpc_explorePicStUniPredict",
+        "report_ab_hit": true
+      },
+      "ann_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_st_retr_ann_service_name",
+        "param_type": "string",
+        "default_value": "grpc_explorePicStAnn",
+        "report_ab_hit": true
+      },
+      "ann_dest_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_st_retr_ann_dest_bucket",
+        "param_type": "string",
+        "default_value": "pic_dest_index",
+        "report_ab_hit": true
+      },
+      "retrieve_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_st_retr_num",
+        "param_type": "int",
+        "default_value": 200,
+        "report_ab_hit": true
+      },
+      "colossus_hisotry_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_st_retr_colossus_hisotry_num",
+        "param_type": "int",
+        "default_value": 1000,
+        "report_ab_hit": true
+      },
+      "use_cached_user_emb": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_st_retr_use_cached_user_emb",
+        "param_type": "int",
+        "default_value": 1,
+        "report_ab_hit": true
+      },
+      "enable_infer_user_emb": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_st_retr_enable_infer_user_emb",
+        "param_type": "int",
+        "default_value": 1,
+        "report_ab_hit": true
+      },
+      "ann_dist_threshold": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_st_retr_ann_dist_threshold",
+        "param_type": "double",
+        "default_value": 0.0,
+        "report_ab_hit": true
+      },
+      "enable_extract_common_user_feature": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_st_retr_extract_common_user_feature",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "user_colossus_pic_play_pids",
+        "user_colossus_pic_play_aids",
+        "user_colossus_pic_play_rewards",
+        "user_colossus_pic_play_hetu_level1s",
+        "uPicValidInterestClusterIdList",
+        "uPicLongInterestClusterIdList",
+        "uPicSearchInterestClusterIdList",
+        "uPicSearchInterestClusterScoreList",
+        "uHetuCategoryInterestlv1IdList",
+        "uHetuCategoryInterestlv1ScoreList"
+      ]
+    },
+    "export": {
+      "results": [
+        "explore_pic_st_retr__result"
+      ]
+    }
+  },
+  "reason": 13028,
+  "send_common_attrs": [
+    {"name": "user_colossus_pic_play_pids_packed",         "as": "featPlayPicPidLongTerm"},
+    {"name": "user_colossus_pic_play_aids_packed",         "as": "featPlayPicAidLongTerm"},
+    {"name": "user_colossus_pic_play_rewards_packed",      "as": "featPlayPicRewardLongTerm"},
+    {"name": "user_colossus_pic_play_hetu_level1s_packed", "as": "featPlayPicHetu1LongTerm"},
+    "uPicValidInterestClusterIdList",
+    "uPicLongInterestClusterIdList",
+    "uPicSearchInterestClusterIdList",
+    "uPicSearchInterestClusterScoreList",
+    "uHetuCategoryInterestlv1IdList",
+    "uHetuCategoryInterestlv1ScoreList"
+  ],
+  "pack_common_attr_from_list": [
+    "user_colossus_pic_play_pids",
+    "user_colossus_pic_play_aids",
+    "user_colossus_pic_play_rewards",
+    "user_colossus_pic_play_hetu_level1s"
+  ],
+  "emb_size": 256
+}

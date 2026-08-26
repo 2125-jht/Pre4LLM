@@ -1,0 +1,35 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_pic_quota_model_infer_service": "grpc_explorePicQuotaInferV1"
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "pic_like_list",
+        "pic_follow_list",
+        "pic_comment_list",
+        "pic_comment_aid_list",
+        "pic_hetu_l1_cnt",
+        "pic_play_list",
+        "featureVisitMod",
+        "location_city_level_v2",
+        "pic_stat_pic_play_cnt",
+        "pic_stat_video_play_cnt",
+        "short_term_pic_cnt",
+        "short_term_video_cnt",
+        "uStandardLikePicAllIdList",
+        "uStandardFollowPicAllIdList",
+        "uStandardLongviewPicAllIdList", 
+        "uStandardCollectPicAllIdList",
+        "uStandardCollectPicAllIdList"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "prerank_step1",
+        "dynamic_pic_quota"
+      ]
+    }
+  }
+}

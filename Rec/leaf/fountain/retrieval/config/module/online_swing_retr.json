@@ -1,0 +1,87 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_fountain_online_swing_retr_server",
+        "param_type": "bool",
+        "default_value": true
+      },
+
+      "skip_fountain_sim_lr_user_info": 1,
+      "fountain_effective_view_limit_num": 20,
+      "fountain_longview_limit_num": 40,
+      "fountain_colossus_trigger_limit_num": 40,
+      "skip_fountain_effective_view_limit_num": 1,
+      "skip_fountain_longview_limit_num": 1,
+      "skip_fountain_colossus_limit_num": 1,
+      "skip_fountain_online_swing_retr": 1,
+      "fountain_online_swing_trigger_limit": 100,
+      "fountain_online_swing_trigger_seperator": ",",
+      "fountain_online_swing_retr_kess_service_name": "grpc_slideI2ICenterServer",
+      "fountain_online_swing_retr_request_num": 800,
+      "fountain_online_swing_retr_custom_kconf_key": "rinf.rlRunner.i2i_center_config_onlineswing_v0"
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "featureFountainProfileEffViewPidList",
+        "featureFountainProfileLongViewPidList",
+        "colossusRetrievalTrigger",
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "online_swing_retr__result"
+      ]
+    }
+  },
+  "reason": 351,
+  "trimed_user_info": [
+    "is_nebula_user",
+    "is_gamora",
+    "id",
+    "device_id",
+    "risk_level_test",
+    "active_days",
+    "visit_mod",
+    "gender",
+    "true_gender",
+    "infer_gender",
+    "follow_count",
+    "like_count",
+    "clientlog_heart_beat_count",
+    "upload_count",
+    "location.ip",
+    "location.province_id",
+    "location.city_id",
+    "true_year",
+    "infer_year",
+    "browsed_photo_ids",
+    "nearby_browsed_photo_ids",
+    "slide_browsed_photo_ids",
+    "user_profile_v1.video_playing_stat",
+    "user_profile_v1.real_show_list.photo_id",
+    "user_profile_v1.click_list.photo_id",
+    "user_profile_v1.click_list.page_type",
+    "user_profile_v1.like_list.photo_id",
+    "user_profile_v1.like_list.page_type",
+    "user_profile_v1.follow_list.photo_id",
+    "user_profile_v1.follow_list.page_type",
+    "user_profile_v1.follow_list.author_id",
+    "user_profile_v1.forward_list.photo_id",
+    "user_profile_v1.hate_list.photo_id",
+    "user_profile_v1.comment_list.photo_id",
+    "user_profile_v1.profile_enter_list.photo_id",
+    "user_profile_v1.profile_enter_list.page_type",
+    "user_profile_v1.click_live_list.photo_id",
+    "user_profile_v1.click_live_list.photo_id",
+    "realtime_click_list",
+    "feature_collection.gamora_hetu_adjust_history",
+    "feature_collection.nebula_hetu_adjust_history"
+  ]
+}

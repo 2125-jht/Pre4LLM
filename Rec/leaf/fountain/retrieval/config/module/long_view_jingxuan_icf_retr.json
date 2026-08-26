@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_fountain_longview_jingxuan_icf_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_longview_jingxuan_icf_retr_key_prefix": "jingxuan_",
+      "fountain_longview_jingxuan_icf_retr_num": 1200,
+      "fountain_longview_jingxuan_icf_retr_num_per_key": 50,
+      "skip_fountain_longview_jingxuan_icf_retr": 1
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "featureFountainProfileLongViewPidListSub"
+      ]
+    },
+    "export": {
+      "results": [
+        "long_view_jingxuan_icf_retr__result"
+      ]
+    }
+  },
+  "reason": 436
+}

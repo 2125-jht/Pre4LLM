@@ -1,0 +1,28 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_mc_bucket_u2i_retr", false],
+      "ann_service": ["mc_bucket_u2i_retr_service_name", "grpc_exploreMcBucketU2i"],
+      "ann_src_bucket": ["mc_bucket_u2i_src_bucket", "user"],
+      "ann_dest_bucket0": ["mc_bucket_u2i_dest_bucket0", "photo0"],
+      "ann_dest_bucket1": ["mc_bucket_u2i_dest_bucket1", "photo1"],
+      "ann_dest_bucket2": ["mc_bucket_u2i_dest_bucket2", "photo2"],
+      "ann_dest_bucket3": ["mc_bucket_u2i_dest_bucket3", "photo3"],
+      "retr_num_bucket0": ["mc_bucket_u2i_retr_num_bucket0", 100],
+      "retr_num_bucket1": ["mc_bucket_u2i_retr_num_bucket1", 300],
+      "retr_num_bucket2": ["mc_bucket_u2i_retr_num_bucket2", 300],
+      "retr_num_bucket3": ["mc_bucket_u2i_retr_num_bucket3", 300]
+    },
+    "import": {
+      "common_attrs": [
+        "mc_u2i_user_embedding_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "mc_bucket_u2i_action_ann__result"
+      ]
+    }
+  },
+  "reason": 4036
+}

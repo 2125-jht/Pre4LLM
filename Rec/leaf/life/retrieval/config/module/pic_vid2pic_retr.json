@@ -1,0 +1,73 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_pic_vid2pic_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "trigger_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_pic_vid2pic_trigger_limit",
+        "param_type": "int",
+        "default_value": 50,
+        "report_ab_hit": true
+      },
+      "redis_cluster_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "vid2pic_redis_cluster_name",
+        "param_type": "string",
+        "default_value": "recoEyeshotFollow",
+        "report_ab_hit": true
+      },
+      "redis_key_prefix": {
+        "biz_name": "RECO_RPC",
+        "param_name": "vid2pic_redis_key_prefix",
+        "param_type": "string",
+        "default_value": "lifetab_",
+        "report_ab_hit": true
+      },
+      "retrieve_num_per_key": {
+        "biz_name": "RECO_RPC",
+        "param_name": "vid2pic_retrieve_num_per_key",
+        "param_type": "int",
+        "default_value": 20,
+        "report_ab_hit": true
+      },
+      "redis_retrieve_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "vid2pic_redis_retrieve_num",
+        "param_type": "int",
+        "default_value": 500,
+        "report_ab_hit": true
+      },
+      "retr_total_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "vid2pic_retr_total_limit",
+        "param_type": "int",
+        "default_value": 300,
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__pid_list",
+        "click_list",
+        "collect_list",
+        "follow_list",
+        "like_list",
+        "forward_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_vid2pic_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 13007
+}

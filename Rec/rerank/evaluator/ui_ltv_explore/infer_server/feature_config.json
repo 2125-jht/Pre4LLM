@@ -1,0 +1,150 @@
+{
+  "labels": [
+    "pltr0",
+    "pltr1",
+    "pltr2",
+    "pltr3",
+    "pltr4",
+    "pltr5",
+    "pltr6",
+    "pltr7",
+    "pltr8",
+    "pltr9",
+    "pinner",
+    "previsit"
+  ],
+  "common_features": {
+    "device_id": {
+      "dim": 32,
+      "attrs": [
+        {
+          "attr": [
+            "device_id"
+          ],
+          "key_type": 100,
+          "converter": "id"
+        }
+      ],
+      "use_common_attr_only": true
+    },
+    "user_id": {
+      "dim": 32,
+      "attrs": [
+        {
+          "attr": [
+            "user_id"
+          ],
+          "key_type": 101,
+          "converter": "id"
+        }
+      ],
+      "use_common_attr_only": true
+    },
+    "user_gender": {
+      "dim": 4,
+      "attrs": [
+        {
+          "attr": [
+            "user_gender"
+          ],
+          "key_type": 102,
+          "converter": "id"
+        }
+      ],
+      "use_common_attr_only": true
+    },
+    "user_age_segment": {
+      "dim": 4,
+      "attrs": [
+        {
+          "attr": [
+            "user_age_segment"
+          ],
+          "key_type": 103,
+          "converter": "id"
+        }
+      ],
+      "use_common_attr_only": true
+    }
+  },
+  "item_features": {
+    "photo_id_list": {
+      "dim": 8,
+      "attrs": [
+        {
+          "attr": [
+            "photo_id_list"
+          ],
+          "key_type": 201,
+          "converter": "list"
+        }
+      ],
+      "expand": 10
+    },
+    "author_id_list": {
+      "dim": 16,
+      "attrs": [
+        {
+          "attr": [
+            "author_id_list"
+          ],
+          "key_type": 202,
+          "converter": "list"
+        }
+      ],
+      "expand": 10
+    },
+    "hetu_cluster_id_list": {
+      "dim": 4,
+      "attrs": [
+        {
+          "attr": [
+            "hetu_cluster_id_list"
+          ],
+          "key_type": 203,
+          "converter": "list"
+        }
+      ],
+      "expand": 10
+    },
+    "hetu_level_one_tag_list": {
+      "dim": 4,
+      "attrs": [
+        {
+          "attr": [
+            "hetu_level_one_tag_list"
+          ],
+          "key_type": 204,
+          "converter": "list"
+        }
+      ],
+      "expand": 10
+    },
+    "hetu_level_two_tag_list": {
+      "dim": 4,
+      "attrs": [
+        {
+          "attr": [
+            "hetu_level_two_tag_list"
+          ],
+          "key_type": 205,
+          "converter": "list"
+        }
+      ],
+      "expand": 10
+    },
+    "hetu_level_three_tag_list": {
+      "dim": 4,
+      "attrs": [
+        {
+          "attr": [
+            "hetu_level_three_tag_list"
+          ],
+          "key_type": 206,
+          "converter": "list"
+        }
+      ],
+      "expand": 10
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_qualified_content_common_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "kess_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "qualified_content_common_retr_service_name",
+        "param_type": "string",
+        "default_value": "grpc_userClusterI2iRetrServer"
+      },
+      "service_request_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "qualified_content_common_retr_request_num",
+        "param_type": "int",
+        "default_value": 500
+      }
+    },
+    "constant": {
+      "service_timeout_ms": {
+        "attr_type": "common_attr",
+        "value_type": "int",
+        "value": 50
+      },
+      "enable_trim_user_info": {
+        "attr_type": "common_attr",
+        "value_type": "int",
+        "value": 1
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "qualified_content_common__result"
+      ]
+    }
+  },
+  "reason": 678,
+  "trim_user_info": ["browsed_photo_ids"]
+}

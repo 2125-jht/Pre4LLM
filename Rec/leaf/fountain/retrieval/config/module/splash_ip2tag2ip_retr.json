@@ -1,0 +1,35 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_splash_ip2tag2ip_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_ip2tag2ip_retr_kess_name": {
+        "param_name": "fountain_ip2tag2ip_retr_kess_name",
+        "param_type": "string",
+        "default_value": "grpc_recoRelevanceTagOrderedIndexServer"
+      },
+      "fountain_ip2tag2ip_retr_kg_tag_priority_level": 2,
+      "fountain_ip2tag2ip_retr_search_num_splash": 150,
+      "fountain_ip2tag2ip_retr_search_seed_num_splash": 100
+    }, 
+    "import": {
+      "common_attrs": [
+        "fountain_skip_ip2tag2ip_retr_splash",
+        "source_movie_related_ips_key",
+        "fountain_enable_ip2tag2ip_retr_opt",
+        "source_movie_ip_extends_key",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_ip2tag2ip_retr__result"
+      ]
+    }
+  },
+  "reason": 10311
+}

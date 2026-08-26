@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_cl_rank_predict_kess_service": "grpc_kaiExploreClPredictServer",
+      "skip_fountain_cl_rank_predict_kess_service": 1,
+      "fountain_cl_rank_predict_partition_size": 80,
+      "skip_fullrank_cl_score_with_duration": 1.0,
+      "fullrank_cl_score_finish_threshold_kconf": "reco.fountain.recoFountainFinishThreshold",
+      "fountain_fullrank_cl_time_score_weight": 1.0,
+      "fountain_fullrank_cl_duration_weight": 0.0,
+      "fountain_fullrank_cl_duration_seg": 1000,
+      "fountain_fullrank_cl_duration_max": 120,
+      "fountain_fullrank_cl_enable_threshold_bias": 0,
+      "fountain_fullrank_cl_enable_threshold_bias_v2": 0,
+      "fountain_fullrank_cl_enable_duration": 1.0,
+      "fountain_fullrank_cl_click_weight": 0.0,
+      "fountain_fullrank_cl_threshold_weight": 0.5
+    },
+    "import": {
+      "common_attrs": [
+      ],
+      "item_attrs": [
+        "fullrank_sim_pevtr",
+        "featurePAAvgWatchTime"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "fullrank_cl_score",
+        "fullrank_cl_tran_score"
+      ]
+    }
+  }
+}

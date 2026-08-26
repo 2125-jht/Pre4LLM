@@ -1,0 +1,74 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_pantheon_model": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_enable_pantheon_model",
+          "param_type": "int",
+          "default_value": 0
+        },
+        "pantheon_model_service": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_pantheon_model_service",
+          "param_type": "string",
+          "default_value": "grpc_xlife_pantheon_model_v3_infer"
+        },
+        "pantheon_model_partition_size": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_pantheon_model_partition_size",
+          "param_type": "int",
+          "default_value": 600
+        }
+      },
+      "import": {
+        "results": [
+          "ranking_stage1_truncate__result"
+        ],
+        "common_attrs": [
+          "userInfo",
+          "virtualTabId",
+          "currentTimeMs" 
+        ],
+        "item_attrs": [
+          "reason",
+          "photo_id",
+          "author__id",
+          "hetu_tag_level_info__hetu_cluster_id",
+          "picture_type",
+          "hetu_tag_level_info__hetu_level_one",
+          "hetu_tag_level_info__hetu_level_two",
+          "pctr",
+          "pltr",
+          "pftr",
+          "pwtr",
+          "plvtr",
+          "psvr",
+          "pcmtr",
+          "pvtr",
+          "pptr",
+          "pevtr",
+          "pcltr",
+          "empirical_ctr",
+          "empirical_ltr",
+          "empirical_ftr",
+          "empirical_ptr",
+          "empirical_cmtr",
+          "cascade_pctr",
+          "cascade_plvtr",
+          "cascade_psvtr",
+          "cascade_pltr",
+          "cascade_pwtr",
+          "width",
+          "height",
+          "author__fans_count",
+          "author__gender",
+          "duration_ms"
+        ]
+      },
+      "export": {
+        "item_attrs": [
+          "xlife_pantheon_model_score"
+        ]
+      }
+    }
+  }

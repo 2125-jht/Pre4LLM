@@ -1,0 +1,27 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_lbs_retr", false],
+      "city_search_num": ["explore_lbs_retr_city_search_num", 1000],
+      "request_num": ["explore_lbs_request_num", 1000]
+    },
+    "import": {
+      "common_attrs": [
+        "current_location_ad_code",
+        "hometown_ad_code",
+        "freq_ad_code",
+        "migrate_ad_code",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "lbs_item"
+      ],
+      "results": [
+        "lbs_retr__result"
+      ]
+    }
+  },
+  "reason": 1399
+}

@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_realtime_user_item": 0,
+      "enable_explore_fountain_browse_set": false,
+      "enable_explore_explore_browse_set": false,
+      "explore_realtime_explore_browse_set_size": 10,
+      "explore_realtime_fountain_browse_set_size": 10,
+      "explore_profile_time_threshold": 600,
+      "enable_explore_fix_real_show_list": true,
+      "enable_explore_get_realshow_click_item": 0,
+      "enable_explore_fountain_realshow_click_browse_set": false,
+      "enable_explore_explore_realshow_click_browse_set": false,
+      "enable_explore_explore_realshow_click_click_set": false,
+      "explore_realtime_explore_realshow_click_browse_set_size": 10,
+      "explore_realtime_fountain_realshow_click_browse_set_size": 10,
+      "explore_profile_time_realshow_click_threshold": 7200,
+      "enable_explore_fix_real_show_click_list": true
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "explore_recent_play_list",
+        "explore_realshow_click_common_list",
+        "explore_realshow_click_timestamp_common_list",
+        "explore_realshow_hetu_five_common_list",
+        "explore_click_common_list"
+      ]
+    }
+  }
+}
+  

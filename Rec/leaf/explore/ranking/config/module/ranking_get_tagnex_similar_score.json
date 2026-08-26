@@ -1,0 +1,24 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_fr_cal_tagnex_embedding_similar_score": 0,
+      "explore_tagnex_embedding_similiar_score_average_ratio": 1.0
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "user_info_ptr",
+        "tagnex_embeddings_ranking",
+        "tagnex_embeddings_source_pids"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "hate_cover_similar_score"
+      ]
+    }
+  }
+}
+  

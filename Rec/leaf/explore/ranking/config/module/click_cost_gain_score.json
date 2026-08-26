@@ -1,0 +1,44 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_use_click_cost_gain_score": false,
+      "click_cost_score_use_kelly_function": 1,
+      "click_cost_fr_score2_version": 1,
+      "fr_click_cost_score_cltr_weight": 1.0,
+      "fr_click_cost_score_ctr_weight": 1.0,
+      "fr_click_cost_score_ltr_weight": 1.0,
+      "fr_click_cost_score_wtr_weight": 1.0,
+      "fr_click_cost_score_ftr_weight": 1.0,
+      "fr_click_cost_score_cmtr_weight": 1.0,
+      "fr_click_cost_score_cmef_weight": 1.0,
+      "fr_click_cost_score_pptr_weight": 1.0,
+      "fr_click_cost_score_pepstr_weight": 1.0,
+      "fr_click_cost_score_fetr_weight": 1.0,
+      "fr_click_cost_score_feff_weight": 1.0,
+      "fr_click_cost_score_fr_score1_weight": 1.0,
+      "fr_click_cost_score_fr_score2_weight": 1.0
+    },
+    "import": {
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "fr_score1",
+        "fr_score2",
+        "pepstr",
+        "pcltr",
+        "fetr",
+        "fountain_eff"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "click_cost_score"
+      ]
+    }
+  }
+}

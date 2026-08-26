@@ -1,0 +1,19 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_reach_content_channel": 0,
+      "explore_reach_content_label_count_threshold": 0,
+      "explore_reach_content_time_window_minutes": 1440
+    },
+    "import": {
+      "item_attrs": [
+        "lbs_item"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "reach_content"
+      ]
+    }
+  }
+}

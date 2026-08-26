@@ -1,0 +1,25 @@
+# 讨论元数据
+topic: "OneRec-V2 Lazy Decoder-Only 架构实施"
+created: 2026-07-15
+current_round: 2
+
+# 过期检测配置
+max_stale_rounds: 5
+
+# 决策追踪
+decisions:
+  - id: D1
+    title: "采用 Lazy Decoder-Only 架构替代现有 Encoder-Decoder"
+    status: confirmed
+    confirmed_at: 1
+    doc_path: decisions/D01-architecture-choice.md
+  - id: D2
+    title: "保持2层decoder + LayerNorm + Self→Cross→FFN顺序"
+    status: confirmed
+    confirmed_at: 2
+    doc_path: null
+  - id: D3
+    title: "新旧模块并存，配置切换"
+    status: confirmed
+    confirmed_at: 2
+    doc_path: null

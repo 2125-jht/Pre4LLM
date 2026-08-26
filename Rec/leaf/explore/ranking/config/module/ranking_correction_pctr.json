@@ -1,0 +1,40 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_ranking_correction_pctr": 0,
+      "explore_correction_pctr_infer_name": "grpc_CorrectionCtrInferKai2",
+      "explore_correction_pctr_partition_size": 150
+    },
+    "import": {
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "psvr",
+        "pctr_index",
+        "pltr_index",
+        "psvr_index",
+        "cascade_pctr",
+        "cascade_pctr_index"
+      ],
+      "common_attrs": [
+        "uMultiDimensionGroupKV",
+        "uMultiDimensionGroupDetailKV",
+        "uStandardExploreRealshowAuthorIdList",
+        "uStandardExploreRealshowPhotoIdList",
+        "uStandardExploreRealshowHetuTag1List",
+        "uStandardExploreRealshowHetuTag2List",
+        "uStandardExploreRealshowHetuTag5List",
+        "uStandardExploreRealshowLabelList",
+        "uStandardExploreRealshowTimestampList"
+      ],
+      "results": [
+        "ranking_stage1_truncate__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "explore_correction_pctr_score"
+      ]
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_gpt_retr", false],
+      "kess_service_name": ["fountain_gpt_retr_service_name", "grpc_MvkeServerV_GPT_Retrieve_V2"],
+      "service_request_num": ["fountain_gpt_retr_request_num", 600]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [ 
+        "userInfo",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "gpt_retr__result"
+      ]
+    }
+  },
+  "reason": 440,
+  "trimed_user_info": [
+    "is_nebula_user",
+    "is_gamora",
+    "device_id",
+    "user_class.user_live_paying_type",
+    "risk_level_test",
+    "active_days",
+    "visit_mod",
+    "gender",
+    "true_gender",
+    "infer_gender",
+    "follow_count",
+    "like_count",
+    "clientlog_heart_beat_count",
+    "upload_count",
+    "location.ip",
+    "location.province_id",
+    "location.city_id",
+    "true_year",
+    "infer_year",
+    "browsed_photo_ids",
+    "nearby_browsed_photo_ids",
+    "slide_browsed_photo_ids",
+    "user_profile_v1.video_playing_stat",
+    "user_profile_v1.real_show_list.photo_id",
+    "user_profile_v1.click_list",
+    "user_profile_v1.like_list",
+    "user_profile_v1.follow_list",
+    "user_profile_v1.forward_list.photo_id",
+    "user_profile_v1.hate_list.photo_id",
+    "user_profile_v1.comment_list.photo_id",
+    "user_profile_v1.profile_enter_list",
+    "user_profile_v1.click_live_list.photo_id",
+    "user_profile_v1.search_list",
+    "realtime_click_list",
+    "user_profile.exp_stat",
+    "request_location.city_id",
+    "request_location_new.city_id",
+    "request_location_new.lon",
+    "request_location_new.lat",
+    "request_location_new.lat_lon_time",
+    "feature_collection.fre_poi_longitude",
+    "feature_collection.fre_poi_latitude",
+    "basic_info.age_segment"
+  ],
+  "send_common_attrs": [
+    {"name": "trimed_user_info", "as": "user_info_str"}
+  ]
+}

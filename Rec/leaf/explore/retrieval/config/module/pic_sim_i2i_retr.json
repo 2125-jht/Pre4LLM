@@ -1,0 +1,232 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_pic_sim_i2i_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "enable_cluster_trigger": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_sim_i2i_cluster_trigger",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "enable_click_list": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_sim_i2i_cluster_trigger_click_list",
+        "param_type": "bool",
+        "default_value": true,
+        "report_ab_hit": true
+      },
+      "cluster_trigger_max_trigger_len": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_cluster_trigger_max_trigger_len",
+        "param_type": "int",
+        "default_value": 300,
+        "report_ab_hit": true
+      },
+      "cluster_trigger_max_candidate_len": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_cluster_trigger_max_candidate_len",
+        "param_type": "int",
+        "default_value": 1600,
+        "report_ab_hit": true
+      },
+      "click_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_click_num",
+        "param_type": "int",
+        "default_value": 25,
+        "report_ab_hit": true
+      },
+      "like_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_like_num",
+        "param_type": "int",
+        "default_value": 10,
+        "report_ab_hit": true
+      },
+      "follow_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_follow_num",
+        "param_type": "int",
+        "default_value": 10,
+        "report_ab_hit": true
+      },
+      "forward_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_forward_num",
+        "param_type": "int",
+        "default_value": 5,
+        "report_ab_hit": true
+      },
+      "comment_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_comment_num",
+        "param_type": "int",
+        "default_value": 5,
+        "report_ab_hit": true
+      },
+      "profile_enter_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_profile_enter_num",
+        "param_type": "int",
+        "default_value": 10,
+        "report_ab_hit": true
+      },
+      "collect_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_collect_num",
+        "param_type": "int",
+        "default_value": 10,
+        "report_ab_hit": true
+      },
+      "interact_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_interact_num",
+        "param_type": "int",
+        "default_value": 25,
+        "report_ab_hit": true
+      },
+      "colossus_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_colossus_num",
+        "param_type": "int",
+        "default_value": 20,
+        "report_ab_hit": true
+      },
+      "realtime_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_realtime_num",
+        "param_type": "int",
+        "default_value": 5,
+        "report_ab_hit": true
+      },
+      "service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_retr_service_name",
+        "param_type": "string",
+        "default_value": "grpc_ExploreSimAnn",
+        "report_ab_hit": true
+      },
+      "service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_retr_ann_timeout",
+        "param_type": "int",
+        "default_value": 100,
+        "report_ab_hit": true
+      },
+      "retrieve_num_per_trigger": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_retr_num",
+        "param_type": "int",
+        "default_value": 20,
+        "report_ab_hit": true
+      },
+      "src_data_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_src_bucket",
+        "param_type": "string",
+        "default_value": "photo_src",
+        "report_ab_hit": true
+      },
+      "dest_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_dest_bucket",
+        "param_type": "string",
+        "default_value": "photo_dest_show_200",
+        "report_ab_hit": true
+      },
+      "retrieve_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_cand_num",
+        "param_type": "int",
+        "default_value": 300,
+        "report_ab_hit": true
+      },
+      "enable_emb_server": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_sim_i2i_emb_server",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "embedding_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_emb_service",
+        "param_type": "string",
+        "default_value": "grpc_ExploreSimEmb",
+        "report_ab_hit": true
+      },
+      "knowledge_trigger_expand_cnt": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_expand_knowledge_trigger_cnt",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "interest_explore_trigger_expand_cnt": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_expand_interest_explore_trigger_cnt",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "skip_browse_set": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_skip_explore_filter_by_browse_set",
+        "param_type": "int",
+        "default_value": 1,
+        "report_ab_hit": true
+      },
+      "enable_global_trigger": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_enable_global_trigger",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "sample_trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_sample_trigger_num",
+        "param_type": "int",
+        "default_value": 200,
+        "report_ab_hit": true
+      },
+      "start_idx": {
+        "biz_name": "RECO_RPC",
+        "param_name": "sim_i2i_start_idx",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__pid_list",
+        "colossus_user_info__trigger_id_list",
+        "colossus_user_info__knowledge_trigger_set",
+        "colossus_user_info__interest_explore_trigger_set",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_retr__trigger_pid"
+      ],
+      "results": [
+        "sim_i2i_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 13021
+}

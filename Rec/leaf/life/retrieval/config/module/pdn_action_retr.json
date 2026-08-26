@@ -1,0 +1,54 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_pdn_action_retr", false],
+      "trigger_num": ["pdn_action_retr_trigger_cand_num", 200],
+      "action_weight_str": ["pdn_action_weights_str", "1,1,1,1,1,1,1"],
+      "index_service_name": ["pdn_action_retr_index_service", "grpc_recoHotPdnV2SimIndex"],
+      "index_service_timeout_ms": ["pdn_action_retr_index_timeout", 50],
+      "index_term_name": ["pdn_action_retr_index_term_name", "sim"],
+      "search_num_per_trigger": ["pdn_action_retr_num_per_trigger", 40],
+      "index_cache_expire_time_s": ["pdn_action_index_cache_expire_time_sec", 5],
+      "index_random_search": ["enable_pdn_action_retr_index_random_search", false],
+      "increase_quota_factor": ["explore_pdn_action_retrieve_factor", 1.0],
+      "explore_fountain_like_limit": ["explore_fountain_like_limit", 50],
+      "explore_fountain_follow_limit": ["explore_fountain_follow_limit", 40],
+      "explore_fountain_forward_limit": ["explore_fountain_forward_limit", 30],
+      "explore_fountain_comment_limit": ["explore_fountain_comment_limit", 30],
+      "explore_pdn_action_like_limit": ["explore_pdn_action_like_limit", 100],
+      "explore_pdn_action_follow_limit": ["explore_pdn_action_follow_limit", 90],
+      "explore_pdn_action_forward_limit": ["explore_pdn_action_forward_limit", 80],
+      "explore_pdn_action_comment_limit": ["explore_pdn_action_comment_limit", 80],
+      "enable_pdn_action_fountain_trigger": ["enable_pdn_action_fountain_trigger", 0],
+      "skip_filter_by_browse_screen": ["skip_explore_filter_by_browse_screen", 1],
+      "skip_browse_set": ["skip_explore_filter_by_browse_set", 1],
+      "enable_global_trigger": ["pdn_action_enable_global_trigger", false],
+      "sample_trigger_num": ["pdn_action_sample_trigger_num", 200],
+      "start_idx": ["pdn_action_start_idx", 200],
+      "cand_num": ["explore_pdn_action_retr_cand_num", 1000]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__pid_list",
+        "increase_quota_status",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list",
+        "enable_global_trigger_weight_adjust"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_retr__trigger_pid"
+      ],
+      "results": [
+        "pdn_action_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 3104,
+  "retrieve_num": 1000
+}

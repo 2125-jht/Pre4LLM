@@ -1,0 +1,39 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_coretr_a2i_retrieval", false],
+      "enable_rand_source": ["enable_explore_coretr_a2i_rand_source", false],
+      "redis_prefix": ["explore_coretr_a2i_sim_redis_prefix", "coRetr_a2i"],
+      "max_interact_aids_num": ["explore_coretr_a2i_retr_max_interact_aids_num", 100],
+      "playtime_ths": ["explore_coretr_a2i_retr_playtime_ths", 18000],
+      "duration_ths": ["explore_coretr_a2i_retr_duration_ths", 7000],
+      "max_source_aids_num": ["explore_coretr_a2i_retr_max_source_aids_num", 200],
+      "retr_num_each": ["explore_coretr_a2i_retr_num_each", 15],
+      "max_long_view_aid_num": ["explore_coretr_a2i_max_long_view_aid_num", 200],
+      "max_interest_auhtor_ppage__author_num": ["exploremax_interest_auhtor_ppage__author_num", 0],
+      "max_interest_auhtor_hpage__author_num": ["explore_max_interest_auhtor_hpage__author_num", 0],
+      "retr_num_limit": ["explore_coretr_a2i_retr_num_limit", 1000],
+      "retrieve_num": ["explore_coretr_a2i_retr_cand_limit_num", 1000],
+      "enable_trigger_shuffle": ["explore_coretr_a2i_retr_enable_trigger_shuffle", false]
+    },
+    "import": {
+      "common_attrs": [
+        "like_aids",
+        "follow_aids",
+        "forward_aids",
+        "comment_aids",
+        "collect_aids",
+        "playstat_durations",
+        "playstat_playtimes",
+        "profile_v1_click_trigger_aids",
+        "a2i_interact_aids"
+      ]
+    },
+    "export": {
+      "results": [
+        "explore_coretr_a2i_retr__result"
+      ]
+    }
+  },
+  "reason": 4030
+}

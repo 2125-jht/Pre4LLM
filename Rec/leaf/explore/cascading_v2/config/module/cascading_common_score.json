@@ -1,0 +1,40 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_enable_mc_cal_ef_view_weight": 0,
+      "explore_min_explore_view_cnt": 0,
+      "explore_min_fountain_view_cnt": 0,
+      "explore_ef_weight_alpha": 1.0,
+      "explore_ef_weight_beta": 1.0,
+      "explore_ef_weight_min": 1.0,
+      "explore_ef_weight_max": 1.0,
+      "explore_pic_quota_enable_recent_realshow_decay": 0,
+      "expl_pic_recent_realshow_time_gap_min": 30,
+      "expl_pic_recent_realshow_not_click_max": 20,
+      "expl_pic_recent_realshow_not_click_min": 3,
+      "expl_pic_recent_realshow_ctr_base": 0.175
+    },
+    "import": {
+      "common_attrs": [
+        "mc_step1",
+        "colossus_channel_list",
+        "user_info_ptr",
+        "uStandardRealShowPicAllIdList",
+        "uStandardClickPicAllIdList",
+        "uIsPicDeep",
+        "basic_info_age_segment_v2",
+        "pic_da_user_pref_ptr"
+      ],
+      "results": [
+        "cascading_prerank_channel_sort__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "mc_step2",
+        "explore_fountain_view_weight",
+        "user_pic_recent_ctr_score"
+      ]
+    }
+  }
+}

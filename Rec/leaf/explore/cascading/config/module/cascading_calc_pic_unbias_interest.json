@@ -1,0 +1,38 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_calc_pic_unbias_interest": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_mc_calc_pic_unbias_interest",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "enable_explore_pic_unbias_interest_key_use_status": 0,
+      "explore_unbias_interest_cluster_prefix": "",
+      "explore_mc_pic_unbias_interest_kconf_key": "reco.eyeshot.explore_unbias_interest_hetu2_map"
+    },
+    "import": {
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ],
+      "item_attrs": [
+        "hetu_tag_level_info_v2__hetu_level_two"
+      ],
+      "common_attrs": [
+        "basic_info_age_segment_v2",
+        "basic_info_gender_v2",
+        "uMarriageLabelKV",
+        "uBirthLabelKV",
+        "uEduLabelKV",
+        "uMinorLabelKV",
+        "uStudentLabelKV"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pic_unbias_interset_score"
+      ]
+    }
+  }
+}

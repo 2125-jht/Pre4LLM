@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_bid_follow_author_retr_fountain", false],
+      "fountain_bid_follow_author_retrieval_query_server": "grpc_recoHotOrderedIndexServer",
+      "fountain_bid_follow_author_retrieval_query": "authorId2PhotoIdOrderByExploreStatScore",
+      "fountain_bid_follow_author_search_num": 500,
+      "fountain_bid_follow_author_search_total_num": 500
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "friendAids"
+      ]
+    },
+    "export": {
+      "results": [
+        "bid_follow_author_retr__result"
+      ]
+    }
+  },
+  "reason": 435
+}

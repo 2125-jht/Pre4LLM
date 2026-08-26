@@ -1,0 +1,20 @@
+{
+  "kess_config": {
+    "grpc_krpTfHotRerankModelPredictServerWtdv2": {},
+    "service_name": "grpc_krpTfHotRerankModelPredictServerWtdv2",
+    "shard_num": 6
+  },
+  "model_queue": {
+    "queue_handler": "infra_btq",
+    "queue_group": "reco_mem_common_model",
+    "queue_name": "kuiba_tf_hot_rerank_model_v1",
+    "shard_num": 12,
+    "cache_ps_type": "TFCachePs",
+    "predictor_type": "TFPredictor",
+    "warmup": true
+  },
+  "ps_memory": 214748364800,
+  "ps_capacity": 2147483648,
+  "empirical_key_num": 100000,
+  "empirical_wait_seconds": 300
+}

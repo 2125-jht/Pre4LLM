@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_cascading_gamora_interest_model": 0,
+      "explore_cascading_gamora_interest_kess_service": "grpc_exploreCascadingGamoraInterest"
+    },
+    "import": {
+      "common_attrs": [
+        "prerank_step3",
+        "uMultiDimensionGroupKV",
+        "uMultiDimensionGroupDetailKV"
+      ],
+      "item_attrs": [
+      ],
+      "results": [
+        "cascading_prerank_channel_sort__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "mc_step1"
+      ],
+      "item_attrs": [
+        "cascading_explore_gamora_interest_ptr",
+        "cascading_explore_gamora_interest_ltr"
+      ]
+    }
+  }
+}

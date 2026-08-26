@@ -1,0 +1,75 @@
+#!/bin/bash
+--log_dir=../log/
+
+--grpc_server_port=9082
+--grpc_thread_num=80
+--web_thread_num=8
+--web_server_port=9080
+
+################# BEGIN REGION DICT #################
+--ip_region_dict_file=../data/ip_region.dat
+--region_searcher_point_file=../data/geography.data
+--region_dict_filename=../data/region_dict.dat
+################# END REGION DICT #################
+
+# sample
+--use_bt_queue_sample=true
+
+# perf 开关
+--perfutil_product_env=true
+
+# debug 页面
+--common_reco_request_detail_interval_ts=10000000
+
+# leaf show
+--common_reco_enable_leaf_show=false
+
+# kuiba predict item index
+--item_index_sync_from_replica=true
+--bt_shm_kv_sync_concurrency=10
+
+# for mio predict
+#--mio_tensorflow_executor_session_per_device=4
+--mio_tensorflow_gpu_device_memory_mb=2048
+--dnn_local_path=/dev/shm/dnn_model/
+--mio_tensorflow_intra_op_parallelism_threads=32
+--mio_tensorflow_inter_op_parallelism_threads=32
+--mio_tensorflow_use_per_session_threads=false
+
+# cache response
+--request_cache_kcc_cluster=recoModelUserRequestCache
+--enable_response_cache=true
+--enable_request_cache=true
+--response_cache_user_whitelist_kconf_key=reco.model.nearbyPhotoCacheWhitelist
+--request_cache_user_whitelist_kconf_key=reco.model.nearbyPhotoCacheWhitelist
+--response_cache_limit_for_user=30
+
+# boot faster, by load model 10 minutes before
+--online_dnn_model_trainer_output_delta_model=false
+--online_dnn_model_trainer_output_batch_model_period_us=600000000
+
+# record traffic for dryrun
+--traffic_record_biz_name=reco
+--traffic_record_prefer_kws_biz_name=false
+
+# less log
+--logging_switch_uid_mod_divisor=100
+
+# stop faster
+--enable_fast_stop=true
+
+# batching executor related
+--mio_tensorflow_batching_system_batch_size=1200
+--mio_tensorflow_batch_timeout_micros=1000
+--mio_tensorflow_batch_prepare_thread_num=10
+--mio_tensorflow_batch_max_enqueued_batches=1000
+--max_item_size_per_req=1200
+--max_concurrency=145
+--reserve_factor=3
+--tensor_meta_max_batch_size=1200
+
+--online_dnn_receive_dnn_model_as_macro_block=true
+--mio_embedding_trained_by_kai=true
+
+# --server_type=kuiba_predict_service 切换为mio形式
+--uni_disable_model_update_p1_alert=true

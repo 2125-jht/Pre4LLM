@@ -1,0 +1,60 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_parse": ["enable_explore_colossus_parse", 0],
+      "max_len": ["explore_colossus_parse_max_len", 1000],
+      "enable_explore_marketing_compensation_positive_trigger": false,
+      "enable_explore_default_select_marketing_compensation_positive_triggers": false,
+      "enable_explore_different_signals_marketing_compensation_positive_triggers": false,
+      "explore_different_signals_marketing_compensation_positive_triggers_select_num": 100,
+      "explore_different_signals_marketing_compensation_positive_triggers_min_play_time": 7,
+      "explore_different_signals_marketing_compensation_positive_triggers_play_time_ratio": 0.1,
+      "explore_different_signals_marketing_compensation_positive_triggers_min_days_ago": 0,
+      "explore_different_signals_marketing_compensation_positive_triggers_max_days_ago": 30,
+      "enable_explore_different_signals_marketing_compensation_positive_triggers_action_completion_list": false,
+      "enable_explore_different_signals_marketing_compensation_positive_triggers_action_interact_list": false,
+      "enable_explore_marketing_compensation_positive_triggers_not_select_bottom_selection_page": false,
+      "enable_explore_marketing_compensation_positive_triggers_only_select_explore_colossus_list": false,
+      "enable_explore_marketing_compensation_positive_triggers_only_select_high_interest_tab": false,
+      "enable_explore_marketing_compensation_positive_triggers_select_high_interest_and_profile_tab": false,
+      "enable_explore_marketing_compensation_positive_triggers_only_select_fountain_colossus_list": false,
+      "enable_explore_marketing_compensation_positive_triggers_only_unselect_explore_colossus_list": false,
+      "enable_explore_marketing_compensation_positive_triggers_only_unselect_fountain_colossus_list": false,
+      "enable_explore_get_longview_marketing_compensation_positive_trigger": false,
+      "enable_explore_get_recent_interest_trigger": false,
+      "explore_recent_interest_trigger_min_minutes_ago": 0,
+      "explore_recent_interest_trigger_max_minutes_ago": 10,
+      "explore_recent_interest_trigger_max_history_size": 1000,
+      "enable_explore_recent_interest_trigger_select_explore_colossus_list": false,
+      "enable_explore_recent_interest_trigger_select_fountain_colossus_list": false,
+      "enable_explore_recent_interest_trigger_select_bottom_colossus_list": false,
+      "enable_explore_recent_interest_trigger_select_outer_colossus_list": false,
+      "enable_explore_recent_interest_trigger_filter_shortview": false,
+      "enable_explore_recent_interest_trigger_filter_hate": false,
+      "enable_explore_recent_interest_trigger_only_select_picture": false,
+      "explore_recent_interest_trigger_trigger_select_num": 10,
+      "explore_recent_interest_trigger_label_weights_str": "0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0"
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_resp_v2"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "colossus_photo_id_list",
+        "colossus_play_time_list",
+        "colossus_label_list",
+        "colossus_author_id_list",
+        "colossus_channel_list",
+        "colossus_duration_list",
+        "colossus_timestamp_list",
+        "colossus_tag_list",
+        "explore_marketing_compensation_positive_trigger",
+        "explore_marketing_compensation_positive_trigger_size",
+        "explore_recent_interest_colossus_trigger_list",
+        "explore_recent_interest_colossus_trigger_weight_list"
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_diversity_interest_lma": 0,
+      "enable_explore_diversity_interest_lma_divide_active_degree": 0,
+      "explore_diversity_interest_lma_infer_name": "grpc_interestlowactiveInfer",
+      "explore_diversity_interest_lma_ctr_partition_size": 150
+    },
+    "import": {
+      "item_attrs": [
+        "reason",
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "phtr",
+        "plvtr",
+        "psvr",
+        "pvtr",
+        "awesome_wtd",
+        "pptr",
+        "pcmtr",
+        "pcmef",
+        "fr_score1",
+        "fr_score2",
+        "pdtr",
+        "fetr",
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_plvtr",
+        "fetr",
+        "fountain_eff",
+        "pepstr",
+        "pctr_index",
+        "plvtr_index",
+        "pvtr_index",
+        "pltr_index",
+        "pftr_index",
+        "pwtr_index",
+        "pesptr_index",
+        "psvr_index"
+      ],
+      "common_attrs": [
+        "uMultiDimensionGroupKV",
+        "uMultiDimensionGroupDetailKV"
+      ],
+      "results": [
+        "ranking_stage1_truncate__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "explore_diversity_interest_lma_score",
+        "explore_diversity_interest_group_ctr_score"
+      ]
+    }
+  }
+}

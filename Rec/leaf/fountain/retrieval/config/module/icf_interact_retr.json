@@ -1,0 +1,32 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_icf_interact_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_icf_interact_retr_key_prefix": "coRetr_",
+      "fountain_icf_interact_retr_num": 500,
+      "fountain_icf_interact_retr_num_per_key": 50,
+      "skip_fountain_icf_interact_retr": 1
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "shuffle_interaction_photo_list"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+      ],
+      "results": [
+        "icf_interact_retr__result"
+      ]
+    }
+  },
+  "reason": 336
+}

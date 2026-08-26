@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_node_view_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_fast_node_view_gnn": "grpc_splashSrcSageV2AnnService",
+      "fast_node_view_topk_num": 10,
+      "skip_fast_node_view_gnn_retrieval": 1
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "featureFountainProfileEffViewPidList"
+      ]
+    },
+    "export": {
+      "results": [
+        "fast_node_view_gnn_retr__result"
+      ]
+    }
+  },
+  "reason": 428
+}

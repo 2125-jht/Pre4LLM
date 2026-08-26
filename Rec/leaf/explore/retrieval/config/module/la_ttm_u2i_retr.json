@@ -1,0 +1,71 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_ttm_u2i_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "kess_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_ttm_u2i_retr_kess_name",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-hot-subdivision-com-retr-la-comirec-retr-v3",
+        "report_ab_hit": true
+      },
+      "service_request_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_ttm_u2i_retr_request_num",
+        "param_type": "int",
+        "default_value": 500,
+        "report_ab_hit": true
+      },
+      "service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_ttm_u2i_retr_service_timeout_ms",
+        "param_type": "int",
+        "default_value": 50,
+        "report_ab_hit": true
+      },
+      "diversity_boost": ["explore_ttm_u2i_retr_diversity_boost", 0.1],
+      "retrieval_cache_config": ["ttm_u2i_retr_cache_config", ""]
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "ttm_u2i__result"
+      ]
+    }
+  },
+  "reason": 10047,
+  "trimed_user_info": [
+    "id",
+    "device_id",
+    "gender",
+    "location.province_id",
+    "location.city_id",
+    "request_location.province_id",
+    "request_location.city_id",
+    "browsed_photo_ids",
+    "realtime_click_list",
+    "realtime_like_list",
+    "realtime_follow_list",
+    "basic_info.age_segment",
+    "user_profile_v1.click_list",
+    "user_profile_v1.like_list",
+    "user_profile_v1.follow_list",
+    "user_profile_v1.video_playing_stat.photo_id",
+    "user_profile_v1.video_playing_stat.author_id",
+    "user_profile_v1.video_playing_stat.playing_time",
+    "user_profile_v1.video_playing_stat.client_timestamp"
+  ],
+  "send_common_attrs": [
+    {"name": "diversity_boost", "as": "diversity_boost"}
+  ]
+}

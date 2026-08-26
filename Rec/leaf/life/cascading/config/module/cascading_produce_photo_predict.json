@@ -1,0 +1,32 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_cascading_produce_photo_predict": 0,
+      "enable_explore_cascade_produce_need_divuser": 0,
+      "enable_explore_cascade_produce_need_divuser_v2": 0,
+      "explore_cascade_produce_real_show_photo_recent_hours": 1,
+      "explore_cascade_produce_his_zhongcao_threholds": 5,
+      "explore_cascade_produce_his_magic_face_threholds": 5,
+      "explore_cascading_produce_photo_double_tower_service": "cas_pmodel_cas_fr_0410_base_infer",
+      "explore_cascading_produce_photo_predict_timeout_ms": 100,
+      "explore_cascading_produce_photo_double_tower_request_type": "explore_outter",
+      "explore_cascading_produce_photo_double_tower_partition_size": 3000
+    },
+    "import": {
+      "common_attrs": [
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "produce_cascade_mtctr", 
+        "produce_cascade_twhtr", 
+        "produce_cascade_mtcotr", 
+        "produce_cascade_mtjtr", 
+        "produce_cascade_kym", 
+        "produce_cascade_csti", 
+        "produce_cascade_sjctr"
+      ]
+    }
+  }
+}
+  

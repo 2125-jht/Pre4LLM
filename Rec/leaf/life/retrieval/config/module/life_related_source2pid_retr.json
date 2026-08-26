@@ -1,0 +1,53 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_life_related_source2pid_retr",
+          "param_type": "bool",
+          "default_value": false
+        },
+        "life_related_s2p_retr_service_name": "grpc_FountainSplashPersonalRetrV2",
+        "life_related_s2p_retr_retrieve_num": 1000,
+        "enable_life_related_source2pid_retr_real": false
+      }, 
+      "import": {
+        "common_attrs": [
+          "realtime_photo_id_list",
+          "featureUId",
+          "videoPlayingPid",
+          "profile_v1_click_trigger_aids",
+          "playstat_playtimes",
+          "playstat_durations",
+          "playstat_hetu1s",
+          "playstat_hetu2s",
+          "playstat_hetu3s",
+          "playstat_hetu4s"
+        ]
+      },
+      "export": {
+        "common_attrs": [
+          "sensi_hetu_sim_cluster_id", 
+          "sensi_hetu_cluster_id_v2",
+          "sensiPidMmuImgClusterV3", 
+          "sensiPidMmuTextCluster", 
+          "sensiPidAuthorId", 
+          "sensiPidFirstLevelCategory",
+          "sensiPidSecondLevelCategory", 
+          "sensiPidThirdLevelCategory",
+          "sensiPidTagId", 
+          "sensiPidUploadType",
+          "sensi_hetu_level_one_v2", 
+          "sensi_hetu_level_two_v2",
+          "sensi_hetu_level_three_v2", 
+          "sensi_hetu_level_four_v2",
+          "sensi_hetu_tag_v2", 
+          "sensi_hetu_face_id_v2"
+        ],
+        "results": [
+          "life_related_source2pid__result"
+        ]
+      }
+    },
+    "reason": 4090
+  }

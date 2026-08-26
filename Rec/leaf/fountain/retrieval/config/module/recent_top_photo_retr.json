@@ -1,0 +1,39 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["fountain_enable_recent_top_photo_retr_fast", false],
+      "u2u_cand_num": ["fountain_recent_top_photo_retr_u2u_cand_num_fast", 2000],
+      "cand_num": ["fountain_recent_top_photo_retr_cand_num_fast", 1000],
+      "fountain_recent_top_photo_retr_u2u_num_per_key_fast": 50,
+      "fountain_recent_top_photo_retr_enable_bottom_select": false,
+      "bottom_select_server_show_key_prefix": "rhis:g:",
+      "fountain_recent_top_photo_retr_enable_u2u_select_fast": false,
+      "fountain_recent_top_photo_retr_enable_gcl_u2u_fast": false,
+      "fountain_recent_top_photo_retr_enable_mc_u2u_fast": false,
+      "fountain_recent_top_photo_retr_enable_multi_target_fast": false,
+      "fountain_recent_top_photo_retr_u2u_key_prefix": "f_rank_pos_",
+      "fountain_recent_top_photo_retr_enable_user_recent_fast": false,
+      "fountain_recent_top_photo_retr_enable_user_rank_pos_fast": false
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list",
+        "explore_rank_pos_photo_id_retrieval_list",
+        "fountain_rank_pos_photo_id_retrieval_list",
+        "fountain_rerank_pos_photo_id_retrieval_list",
+        "focal_user_list",
+        "gcl_sim_user_list",
+        "sim_user_list_multi_target"
+      ],
+      "results": [
+        "fetch_redis__result"
+      ]
+    },
+    "export": {
+      "results": [
+        "recent_top_photo_retr__result"
+      ]
+    }
+  },
+  "reason": 500
+}

@@ -1,0 +1,51 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_life_user_profile_u2i_retr", false],
+      "kess_service_name": ["life_user_profile_u2i_retr_service_name", "grpc_lifeUserProfileU2IInfer"],
+      "service_request_num": ["life_user_profile_u2i_retr_num", 1000],
+      "enable_all": ["life_user_profile_u2i_enable_all_user", false],
+      "enable_tnu": ["life_user_profile_u2i_enable_tnu_user", false],
+      "enable_low": ["life_user_profile_u2i_enable_low_active_user", false]
+    },
+    "constant": {
+      "service_timeout_ms": 50,
+      "uTab": 100
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "uIsTnuCrowdUser",
+        "device_active_degree"
+      ]
+    },
+    "export": {
+      "results": [
+        "life_user_profile_u2i_retr__result"
+      ]
+    }
+  },
+  "service_request_type": "life",
+  "reason": 2703,
+  "trimed_user_info": [
+    "id",
+    "device_id",
+    "gender",
+    "infer_gender",
+    "true_gender",
+    "basic_info.age_segment",
+    "client_id",
+    "request_location.poi_type",
+    "request_location.province_id",
+    "request_location.city_id",
+    "visit_mod",
+    "location.region_type",
+    "location.city_id",
+    "location.city_level",
+    "is_douyin"
+  ],
+  "send_common_attrs": [
+    "uTab"
+  ],
+  "extra_skip_condition": "enable_all ~= 1 and (enable_tnu ~= 1 or uIsTnuCrowdUser ~= 1) and (enable_low ~= 1 or device_active_degree ~= 1)"
+}

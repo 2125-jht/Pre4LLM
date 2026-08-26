@@ -1,0 +1,32 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_offline_user_collect_photo_icf_retr",
+        "param_type": "bool",
+        "default_value": false
+      }
+    }, 
+    "constant": {
+      "redis_key_prefix": {
+        "attr_type": "common_attr",
+        "value_type": "string",
+        "value": "userCommentsSwing_"
+      }, 
+      "redis_retrieval_num": {
+        "attr_type": "common_attr",
+        "value_type": "int",
+        "value": 1000
+      }
+    },
+    "export": {
+      "results": [
+        "user_comment_swing__result"
+      ]
+    }
+  },
+  "reason": 945, 
+  "redis_cluster_name": "recoDataMiningCommentsData",
+  "redis_timeout_ms": 10
+}

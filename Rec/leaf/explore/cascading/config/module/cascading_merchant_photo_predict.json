@@ -1,0 +1,32 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_merchant_vedio_predict": 0,
+      "explore_mc_merchant_photo_double_tower_partition_size": 300,
+      "explore_mc_merchant_photo_double_tower_service": "grpc_cart_mc_mio_infer_v11",
+      "explore_mc_merchant_photo_double_tower_request_type": "explore",
+      "enable_explore_mc_merchant_living_predict": 0,
+      "explore_mc_merchant_living_double_tower_partition_size": 300,
+      "explore_mc_merchant_living_double_tower_service": "grpc_eshopMcGmvInferV7",
+      "explore_mc_merchant_living_double_tower_request_type": "explore"
+    },
+    "import": {
+      "item_attrs": [
+        "is_merchant_living",
+        "is_merchant_cart"
+      ],
+      "common_attrs": [
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "merchant_tower_ctr", 
+        "merchant_tower_cvr", 
+        "merchant_tower_gmv", 
+        "merchant_elive_tower_ctr", 
+        "merchant_elive_tower_cvr", 
+        "merchant_elive_tower_gmv"
+      ]
+    }
+  }
+}

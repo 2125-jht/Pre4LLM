@@ -1,0 +1,65 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_hot_content_mc_i2i_retrieval", false],
+      "service_name": ["hot_content_mc_i2i_retr_service_name", "grpc_explorePopularMcI2iAnnServer"],
+      "retrieve_num_per_trigger": ["hot_content_mc_i2i_retr_num_per_trigger", 20],
+      "src_data_type": ["hot_content_mc_i2i_src_bucket", "photo"],
+      "dest_bucket": ["hot_content_mc_i2i_dest_bucket", "mc_i2i_index"],
+      "retrieve_num": ["hot_content_mc_i2i_cand_num", 1000],
+      "enable_emb_server": ["enable_hot_content_mc_i2i_emb_server", false],
+      "embedding_service_name": ["hot_content_mc_i2i_emb_service", "grpc_hotMcEmbed"],
+      "skip_browse_set": ["skip_explore_filter_by_browse_set", 1],
+      "enable_global_trigger": ["hot_content_mc_i2i_enable_global_trigger", true],
+      "sample_trigger_num": ["hot_content_mc_i2i_sample_trigger_num", 100],
+      "start_idx": ["hot_content_mc_i2i_start_idx", 400],
+      "enable_ann_result_sort": ["hot_content_mc_i2i_retr_enable_ann_result_sort", false]
+    },
+    "constant": {
+      "enable_cluster_trigger": false,
+      "enable_click_list": false,
+      "cluster_trigger_max_trigger_len": 300,
+      "cluster_trigger_max_candidate_len": 1600,
+      "click_num": 100,
+      "like_num": 80,
+      "follow_num": 80,
+      "forward_num": 20,
+      "comment_num": 20,
+      "profile_enter_num": 80,
+      "collect_num": 20,
+      "interact_num": 100,
+      "colossus_num": 100,
+      "realtime_num": 20,
+      "service_timeout_ms": 50,
+      "knowledge_trigger_expand_cnt": 0,
+      "interest_explore_trigger_expand_cnt": 0,
+      "mc_enable_opt_card_trigger": false
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__pid_list",
+        "colossus_user_info__trigger_id_list",
+        "colossus_user_info__knowledge_trigger_set",
+        "colossus_user_info__interest_explore_trigger_set",
+        "optcard_like_trigger_id_list",
+        "optcard_dislike_trigger_id_list",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list",
+        "enable_global_trigger_weight_adjust"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_retr__trigger_pid"
+      ],
+      "results": [
+        "hot_content_mc_i2i_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 10031
+}

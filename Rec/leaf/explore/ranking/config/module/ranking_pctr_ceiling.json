@@ -1,0 +1,20 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_ranking_pctr_upper_bound_bias": 0.0
+    },
+    "import": {
+      "common_attrs": [
+        "user_emp_ctr"
+      ],
+      "item_attrs": [
+        "corr_pctr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "ceiled_pctr_score"
+      ]
+    }
+  }
+}

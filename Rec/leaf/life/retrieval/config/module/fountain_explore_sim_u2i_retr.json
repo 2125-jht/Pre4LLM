@@ -1,0 +1,78 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_explore_sim_u2i_retrieval",
+          "param_type": "bool",
+          "default_value": false,
+          "report_ab_hit": true
+        },
+        "retrieval_cache_config": ["explore_sim_u2i_retr_cache_config", ""],
+        "explore_sim_u2i_retr_kess_name": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_sim_u2i_retr_kess_name",
+          "param_type": "string",
+          "default_value": "grpc_exploreSimRetrAsync",
+          "report_ab_hit": true
+        },
+        "explore_sim_u2i_retr_total_num": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_sim_u2i_retr_total_num",
+          "param_type": "int",
+          "default_value": 500,
+          "report_ab_hit": true
+        },
+        "enable_explore_sim_u2i_retrieval": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_explore_sim_u2i_retrieval",
+          "param_type": "bool",
+          "default_value": false,
+          "report_ab_hit": true
+        },
+        "explore_sim_u2i_action_weight_str": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_sim_u2i_action_weight_str",
+          "param_type": "string",
+          "default_value": "",
+          "report_ab_hit": true
+        },
+        "explore_sim_u2i_hetu_count": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_sim_u2i_hetu_count",
+          "param_type": "int",
+          "default_value": 4,
+          "report_ab_hit": true
+        },
+        "explore_sim_u2i_exploit_hetu_count": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_sim_u2i_exploit_hetu_count",
+          "param_type": "int",
+          "default_value": 3,
+          "report_ab_hit": true
+        },
+        "explore_sim_u2i_hetu_l1_white_list": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_sim_u2i_hetu_l1_white_list",
+          "param_type": "string",
+          "default_value": "",
+          "report_ab_hit": true
+        },
+        "skip_personal_quota": ["explore_sim_u2i_skip_personal_quota", 1]
+      },
+      "import": {
+        "common_attrs": [
+          "user_info_ptr",
+          "colossus_resp_v2",
+          "reason_ratio_map_attr"
+        ]
+      },
+      "export": {
+        "results": [
+          "explore_sim_u2i__result"
+        ]
+      }
+    },
+    "reason": 13020
+  }
+  

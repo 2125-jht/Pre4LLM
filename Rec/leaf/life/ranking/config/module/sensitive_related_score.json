@@ -1,0 +1,52 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_life_realtime_action_sensitive": false,
+      "enable_life_realtime_related_score_calc": true,
+      "life_sensitive_related_dim_weight": "0.02:0.07:0.005:0.005:0.04:0.001:0.005:0.01:0.01:0.001:0.01:0.02:0.03:0.05:0.01:0.07"
+    },
+    "import": {
+      "common_attrs": [
+        "sensi_hetu_sim_cluster_id", 
+        "sensi_hetu_cluster_id_v2",
+        "sensiPidMmuImgClusterV3", 
+        "sensiPidMmuTextCluster", 
+        "sensiPidAuthorId", 
+        "sensiPidFirstLevelCategory",
+        "sensiPidSecondLevelCategory", 
+        "sensiPidThirdLevelCategory",
+        "sensiPidTagId", 
+        "sensiPidUploadType",
+        "sensi_hetu_level_one_v2", 
+        "sensi_hetu_level_two_v2",
+        "sensi_hetu_level_three_v2", 
+        "sensi_hetu_level_four_v2",
+        "sensi_hetu_tag_v2", 
+        "sensi_hetu_face_id_v2"
+      ],
+      "item_attrs": [
+        "hetu_tag_level_info_v2__hetu_level_one", 
+        "hetu_tag_level_info_v2__hetu_level_two",
+        "hetu_tag_level_info_v2__hetu_level_three", 
+        "hetu_tag_level_info_v2__hetu_level_four",
+        "hetu_tag_level_info_v2__hetu_tag", 
+        "hetu_tag_level_info_v2__hetu_face_id",
+        "hetu_sim_cluster_id", 
+        "hetu_tag_level_info_v2__hetu_cluster_id",
+        "mmu_img_cluster_v3", 
+        "mmu_text_cluster",
+        "author__id", 
+        "author__category_detail__first_level_id",
+        "author__category_detail__second_level_id", 
+        "author__category_detail__third_level_id",
+        "tag", 
+        "upload_type"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "sensitive_related_score"
+      ]
+    }
+  }
+}

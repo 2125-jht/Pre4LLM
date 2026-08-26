@@ -1,0 +1,53 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "hot_deep_ltr_kai_predict_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "hot_deep_ltr_kai_predict_service",
+        "param_type": "string",
+        "default_value": "grpc_deepLtrKaiPredictServerInfer"
+      },
+      "enable_hot_deep_ltr_predict": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_hot_deep_ltr_predict",
+        "param_type": "bool",
+        "default_value": false 
+      },
+      "deep_ltr_predict_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "deep_ltr_predict_partition_size",
+        "param_type": "int",
+        "default_value": 48 
+      }
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "fr_score1",
+        "fr_score2",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "fetr",
+        "fountain_eff"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "deep_ltr_score"
+      ]
+    }
+  }
+}

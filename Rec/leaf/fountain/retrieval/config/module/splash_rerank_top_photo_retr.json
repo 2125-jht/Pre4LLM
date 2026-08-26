@@ -1,0 +1,20 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["fountain_splash_rerank_top_photo_retr", false],
+      "cand_num": ["fountain_rerank_top_photo_rcand_num_splash", 600]
+    },
+    "import": {
+      "common_attrs": [
+        "fountain_rerank_top_photo_id_retrieval_list",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "rerank_top_photo_retr__result"
+      ]
+    }
+  },
+  "reason": 10411
+}

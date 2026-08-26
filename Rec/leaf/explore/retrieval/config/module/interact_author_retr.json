@@ -1,0 +1,55 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_interact_author_retr", true],
+      "remote_index_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "double_interact_author_retr_index_service_name",
+        "param_type": "string",
+        "default_value": "grpc_recoHotOrderedIndexServer"
+      },
+      "remote_index_query_term": {
+        "biz_name": "RECO_RPC",
+        "param_name": "double_interact_author_retr_remote_index_query_term",
+        "param_type": "string",
+        "default_value": "authorId2PhotoIdOrderByUploadTime"
+      },
+      "remote_index_service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "double_interact_author_retr_index_timeout_ms",
+        "param_type": "int",
+        "default_value": 150
+      },
+      "remote_index_search_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "each_author_num_limit",
+        "param_type": "int",
+        "default_value": 3
+      },
+      "result_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "interact_author_photos_request_num",
+        "param_type": "int",
+        "default_value": 500
+      },
+      "skip_filter_by_browse_screen": ["skip_explore_filter_by_browse_screen", 1],
+      "skip_browse_set": ["skip_explore_filter_by_browse_set", 1],
+      "enable_trigger_shuffle": ["explore_interact_author_enable_trigger_shuffle", false]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__aid_list",
+        "browse_screen__pid_list",
+        "commonTriggerAids"
+      ]
+    },
+    "export": {
+      "results": [
+        "interact_author__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 3052
+}

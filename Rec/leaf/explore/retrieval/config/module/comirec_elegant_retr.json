@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["comirec_elegant_enabled", false],
+      "retrieval_cache_config": ["comirec_elegant_retr_cache_config", ""],
+      "retrieve_num": ["comirec_elegant_retrieve_num", 1000],
+      "auxiliary_arg": ["comirec_elegant_auxiliary", ""],
+      "increase_quota_factor": ["explore_pandora_retrieve_factor", 1.0],
+      "service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "comirec_elegant_pandora_common_retr_service",
+        "param_type": "string",
+        "default_value": "grpc_KaiWorksComirecElegantRetr",
+        "report_ab_hit": true
+      },
+      "skip_personal_quota": ["comirec_elegant_skip_personal_quota", 1]
+    },
+    "abtest_retrieval_num_attr": "comirec_elegant_final_result_num",
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "increase_quota_status",
+        "reason_ratio_map_attr"
+      ]
+    },
+    "export": {
+      "results": [
+        "comirec_elegant_retr__result"
+      ]
+    }
+  },
+  "reason": 10040
+}

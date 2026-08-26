@@ -1,0 +1,12 @@
+{
+  "modules": [
+    {
+      "name": "fountain_splash_cascading_predict",
+      "type_name": "FountainSplashCascadingPredictModule"
+    },
+    {
+      "name": "fountain_splash_cascading_score",
+      "type_name": "FountainSplashCascadingScoreModule"
+    }
+  ]
+}

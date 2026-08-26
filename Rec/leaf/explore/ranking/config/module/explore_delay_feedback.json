@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_fr_delay_feedback_model": false,
+      "explore_fr_delay_feedback_model": "grpc_explore-ui-delay-feedback-infer",
+      "explore_fr_delay_feedback_model_predict_partition_size": 150
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "item_attrs": [
+        "pctr_index",
+        "pltr_index",
+        "pwtr_index",
+        "pftr_index",
+        "pvtr_index",
+        "plvtr_index",
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr"
+      ],
+      "common_attr": [
+        "uExploreActiveDays"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "click_and_future_revisit_value",
+        "future_revisit_value",
+        "click_and_future_open_app_rate",
+        "future_open_app_rate"
+      ]
+    }
+  }
+}

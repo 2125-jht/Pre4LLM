@@ -1,0 +1,71 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_calc_pic_diversity": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_mc_calc_pic_diversity",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "explore_pic_mc_diversity_embedding_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_mc_diversity_embedding_service_name",
+        "param_type": "string",
+        "default_value": "grpc_MMUHetuSimContentEmbedding",
+        "report_ab_hit": true
+      },
+      "explore_pic_mc_diversity_history_mgs_topk": 3,
+      "explore_pic_mc_diversity_enable_mgs_ratio": false,
+      "explore_pic_mc_diversity_mgs_ratio": 0.2,
+      "explore_pic_mc_diversity_calc_diversity_method": 0,
+      "explore_pic_mc_diversity_enable_mgs_his_cnt_less_topk": false,
+      "explore_pic_mc_diversity_time_gap_min": 1440,
+      "explore_pic_mc_diversity_history_num": 30,
+      "explore_pic_mc_diversity_enable_action": 0,
+      "explore_pic_mc_diversity_enable_hot_mc_emb": false,
+      "explore_pic_mc_diversity_need_normalize_embed": false,
+      "explore_pic_mc_calc_negative_history_pic_ids_by_ddp": 0,
+      "enable_explore_mc_calc_vid2pic_sim": false,
+      "explore_vid2pic_sim_enable_target_hetu": 1,
+      "explore_vid2pic_sim_target_hetu_str": "3,4,5,6,7,10,12,13,14,15,18,20,25,26,27,36",
+      "explore_vid2pic_sim_play_cnt": 10,
+      "explore_vid2pic_sim_interact_cnt": 20,
+      "explore_vid2pic_sim_like_cnt": 10,
+      "explore_vid2pic_sim_follow_cnt": 10,
+      "explore_vid2pic_sim_comment_cnt": 10,
+      "explore_vid2pic_sim_collect_cnt": 10,
+      "explore_vid2pic_sim_forward_cnt": 10,
+      "explore_vid2pic_sim_download_cnt": 10,
+      "explore_vid2pic_sim_search_click_cnt": 10,
+      "explore_vid2pic_embedding_service_name": "grpc_hotRerankMmuEmbServerV3",
+      "explore_vid2pic_sim_topk": 5,
+      "explore_vid2pic_sim_enable_top_ratio": false,
+      "explore_vid2pic_sim_top_ratio": 0.2,
+      "explore_vid2pic_sim_need_normalize_embed": false,
+      "explore_vid2pic_sim_enable_pic": 0,
+      "explore_vid2pic_sim_time_window": 60
+    },
+    "import": {
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ],
+      "item_attrs": [
+        "is_picture"
+      ],
+      "common_attrs": [
+        "user_info_ptr",
+        "uStandardRealShowPicAllIdList",
+        "uStandardExploreRealshowPhotoIdList",
+        "uStandardExploreRealshowTimestampList",
+        "uStandardExploreRealshowLabelList"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pic_diversity_mgs_score",
+        "vid2pic_sim_score"
+      ]
+    }
+  }
+}

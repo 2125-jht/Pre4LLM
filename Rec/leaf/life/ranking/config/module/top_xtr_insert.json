@@ -1,0 +1,20 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_rank_top_pwatchtime_photo_insert": false,
+      "explore_rank_top_pwatchtime_score_switch": 1,
+      "explore_rank_top_pwatchtime_photo_insert_limit": ["dpp_diversity_candidate_size", 60],
+      "explore_rank_top_pwatchtime_photo_insert_photo_ratio": 0.15
+    },
+    "import": {
+      "results": [
+        "final_variant_diversity__result"
+      ],
+      "item_attrs": [
+        "fr_score2",
+        "awesome_wtd",
+        "pctr"
+      ]
+    }
+  }
+}

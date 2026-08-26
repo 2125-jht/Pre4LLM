@@ -1,0 +1,52 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_fountain_long_term_authors_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "redis_retrieval_num": [ "fountain_long_term_author_seed_num", 1000 ],
+      "remote_index_service_name": ["fountain_long_term_author_term_service", "grpc_recoHotOrderedIndexServer"],
+      "remote_index_query_term": ["fountain_long_term_author_term", "authorId2PhotoIdOrderByUploadTime"],
+      "remote_index_service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_long_term_authors_retr_index_time_out", 
+        "param_type": "int", 
+        "default_value": 60
+      }, 
+      "result_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_long_term_author_term_final_result_num", 
+        "param_type": "int", 
+        "default_value": 1000
+      }
+    }, 
+    "constant": {
+      "redis_key_prefix": {
+        "attr_type": "common_attr",
+        "value_type": "string",
+        "value": "efirst_"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+      ],
+      "results": [
+        "long_term_author_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 404, 
+  "redis_cluster_name": "recoEyeshotFollow",
+  "redis_timeout_ms": 20,
+  "save_to_common_attr_name": "long_term_auhtor_hpage__list",
+  "remote_index_query_trigger_attr_name": "long_term_auhtor_hpage__list"
+}

@@ -1,0 +1,26 @@
+{
+  "dragon_params": {
+    "abtest": {
+        "enable_explore_calculate_hetu_lt_score": 0,
+        "explore_hetu_lt_score_user_age_threshold": 7
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "user_info_ptr",
+        "user_age_segment"
+      ],
+      "item_attrs": [
+        "hetu_tag_level_info_v2__hetu_level_two"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "hetu_lt_score"
+      ]
+    }
+  }
+}
+  

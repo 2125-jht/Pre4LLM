@@ -1,0 +1,31 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_calc_pic_fr_comment_quality_score": false,
+      "explore_pic_fr_comment_quality_refactor_f1_perf_tag": "f1_default"
+    },
+    "import": {
+      "item_attrs": [
+        "is_picture",
+        "pic_good_comment_score",
+        "pic_ltr_for_good_comment",
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pcltr",
+        "pcmtr",
+        "pftr",
+        "pcmef",
+        "pic_ltr_lvtr"
+      ],
+      "results": [
+        "ranking_stage1_truncate__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pic_fr_comment_quality_score"
+      ]
+    }
+  }
+}

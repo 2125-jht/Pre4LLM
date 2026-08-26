@@ -1,0 +1,44 @@
+
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_life_calc_cluster_interest_attr" : true,
+      "enable_cluster_interest_score_combine": true,
+      "xlife_cascading_cluster_interest_score_compile_version": 0
+    },
+    "import": {
+      "common_attrs": [
+          "colossus_cluster_id_list",
+          "remap_cluster_id_632_list",
+          "colossus_photo_id_list",
+          "copy_colossus_photo_id_list",
+          "colossus_play_time_list",
+          "colossus_label_list",
+          "colossus_author_id_list",
+          "colossus_channel_list",
+          "colossus_duration_list",
+          "colossus_timestamp_list",
+          "colossus_tag_list"
+      ],
+      "item_attrs": [
+        "cascade_plvtr2",
+        "hetu_sim_cluster_id",
+        "sirius_distribution_info__mark_cod",
+        "author__id",
+        "upload_time",
+        "hetu_tag_level_info__hetu_tag",
+        "data_set_tags_bit"
+      ]
+    }, 
+    "export": {
+      "item_attrs": [
+        "cluster_interest_vv",
+        "is_eff_interest",
+        "is_longterm_interest",
+        "cluster_interest_score",
+        "nonneg_intere_score"
+      ]
+    }
+  }
+}
+  

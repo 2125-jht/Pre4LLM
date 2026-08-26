@@ -1,0 +1,22 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_splash_emb_i2i_retr", true],
+      "fountain_emb_i2i_retr_kess_name_splash": "grpc_fountainEmbANNI2IServer",
+      "fountain_reco_emb_i2i_retr_num_splash": 2000,
+      "fountain_skip_reco_emb_i2i_retr_splash": 1
+    }, 
+    "import": {
+      "common_attrs": [
+        "commonRetrievalPhotos",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_emb_i2i_retr__result"
+      ]
+    }
+  },
+  "reason": 10300
+}

@@ -1,0 +1,20 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_request_explore_xhs_install_item": 1,
+        "explore_xhs_hive_index_kess_service": ["explore_xhs_hive_index_kess_service", "grpc_explorePictureHiveAttrCommonQueryServer"]
+      },
+      "import": {
+        "common_attrs": [
+          "is_la_correct_user"
+        ]
+      },
+      "export": {
+        "item_attrs": [
+          "xhs_install_find_click_value",
+          "xhs_install_find_outflow_click_value"
+        ]
+      }
+    }
+  }
+  

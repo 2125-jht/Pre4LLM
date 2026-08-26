@@ -1,0 +1,44 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_full_rank_exclusive_score": 0,
+      "explore_full_rank_exclusive_score_infer_name": "grpc_doubleExploreRankServer",
+      "explore_full_rank_exclusive_score_partition_size": 150
+    },
+    "import": {
+      "common_attrs": [
+        "uStandardExploreRealshowLabelList",
+        "uStandardExploreRealshowHetuTag1List",
+        "uStandardExploreRealshowHetuTag2List",
+        "uStandardExploreRealshowHetuTag5List",
+        "uStandardExploreRealshowTimestampList",
+        "uOldMmuClusterId300ListList"
+      ],
+      "item_attrs": [
+        "cascade_psvtr",
+        "cascade_pctr",
+        "cascade_plvtr",
+        "cascade_pwtr",
+        "cascade_pltr",
+        "cascade_pftr",
+        "cascade_ptr",
+        "cascade_pcmtr",
+        "cascade_pctr_index",
+        "cascade_plvtr_index",
+        "cascade_pvtr_index",
+        "cascade_pltr_index",
+        "cascade_pftr_index",
+        "cascade_pwtr_index",
+        "cascade_pesptr_index",
+        "cascade_psvr_index"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "exclusive_ctr",
+        "exclusive_vtr",
+        "exclusive_wtd"
+      ]
+    }
+  }
+}

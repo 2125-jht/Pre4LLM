@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_pic_fm_u2i_retr", false],
+      "ann_service_name": ["pic_fm_u2i_ann_service_name", "grpc_explorePicFmAnn"],
+      "ann_user_top_k": ["pic_fm_u2i_retr_user_topk", 300],
+      "ann_timeout_ms": ["pic_fm_u2i_retr_ann_timeout_ms", 50],
+      "ann_src_data_type": ["pic_fm_u2i_retr_ann_src_data_type", "user_src"],
+      "ann_dest_bucket": ["pic_fm_u2i_retr_ann_dest_bucket", "xhs_pic_all_photos_white_list"]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_fm_u2i_retr__result"
+      ]
+    }
+  },
+  "service_request_type": "default",
+  "reason": 13002
+}

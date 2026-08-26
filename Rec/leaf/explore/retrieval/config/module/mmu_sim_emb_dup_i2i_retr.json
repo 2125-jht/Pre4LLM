@@ -1,0 +1,95 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_enable_mmu_sim_emb_dup_i2i_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "mmu_sim_emb_dup_i2i_embedding_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mmu_sim_emb_dup_i2i_embedding_service_name",
+        "param_type": "string",
+        "default_value": "grpc_MMUHetuSimContentEmbedding",
+        "report_ab_hit": true
+      },
+      "mmu_sim_emb_dup_i2i_ann_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mmu_sim_emb_dup_i2i_ann_service_name",
+        "param_type": "string", 
+        "default_value": "grpc_mmuSimEmbDupAnnServer",
+        "report_ab_hit": true
+      },
+      "browse_trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mmu_sim_emb_dup_i2i_browse_trigger_num",
+        "param_type": "int",
+        "default_value": 30,
+        "report_ab_hit": true
+      },
+      "hate_trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mmu_sim_emb_dup_i2i_hate_trigger_num",
+        "param_type": "int",
+        "default_value": 30,
+        "report_ab_hit": true
+      },
+      "short_view_trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mmu_sim_emb_dup_i2i_short_view_trigger_num",
+        "param_type": "int",
+        "default_value": 30,
+        "report_ab_hit": true
+      },
+      "latest_play_minute": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mmu_sim_emb_dup_i2i_latest_play_minute",
+        "param_type": "int",
+        "default_value": 30,
+        "report_ab_hit": true
+      },
+      "retrieve_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mmu_sim_emb_dup_i2i_retrieve_num",
+        "param_type": "int",
+        "default_value": 2000,
+        "report_ab_hit": true
+      },
+      "mmu_sim_emb_dup_i2i_retr_dest_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mmu_sim_emb_dup_i2i_retr_dest_bucket",
+        "param_type": "string",
+        "default_value": "ordinary_photo",
+        "report_ab_hit": true
+      },
+      "ann_dist_threshold": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mmu_sim_emb_dup_i2i_ann_dist_threshold",
+        "param_type": "double",
+        "default_value": 0.9,
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list",
+        "hate_list",
+        "videoPlayingPid",
+        "playstat_playtimes",
+        "playstat_durations",
+        "userRecentViewTimeListRaw"
+      ]
+    },
+    "export": {
+      "results": [
+        "mmu_sim_emb_dup_i2i_ann__result"
+      ],
+      "common_attrs": [
+        "mmu_sim_emb_dup_pid_list"
+      ]
+    }
+  },
+  "reason": 10060
+}

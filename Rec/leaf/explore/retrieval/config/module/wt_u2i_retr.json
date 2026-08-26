@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_wt_u2i_retrieval", false],
+      "embedding_service": ["wt_u2i_emb_service", "kws-kuaishou-hot-retrieve-explore-watch-time-emb"],
+      "ann_service": ["wt_u2i_ann_service", "kws-kuaishou-hot-retrieve-explore-watch-time-retr"],
+      "retrieve_num": ["wt_u2i_cand_num", 1000]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "wt_u2i_retr__result"
+      ]
+    }
+  },
+  "reason": 4023,
+  "slot": 100,
+  "space": "cosine"
+}

@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["hot_h13011_enabled", false],
+      "retrieve_num": ["hot_h13011_retrieve_num", 200],
+      "auxiliary_arg": ["hot_h13011_auxiliary", ""],
+      "service_name": ["hot_h13011_service_name", "grpc_explorePicXHSMcU2ICommRetr"]
+    },
+    "constant": {
+      
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "comirec_retr__result"
+      ]
+    }
+  },
+  "reason": 13011
+}

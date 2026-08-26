@@ -1,0 +1,52 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_skip_xlife_get_embedding_map": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_skip_xlife_get_embedding_map",
+          "param_type": "int",
+          "default_value": 1,
+          "report_ab_hit": true
+        },
+        "enable_skip_xlife_diversity_update": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_skip_xlife_diversity_update",
+          "param_type": "int",
+          "default_value": 1,
+          "report_ab_hit": true
+        },
+        "xlife_history_list_set_mode": 0,
+        "xlife_topk_select_mod": 0,
+        "xlife_embedding_dim_size": 64,
+        "xlife_diversity_history_size": 20,
+        "xlife_diversity_enable_use_explore_history": false,
+        "enable_skip_xlife_get_embedding_map_for_mgs_hate": 1,
+        "enable_xlife_dpp_diversity_mgs_ratio": true,
+        "xlife_dpp_diversity_mgs_ratio": 1.0,
+        "xlife_diversity_mgs_topk": 5,
+        "enable_skip_xlife_topkmsg_hate_score": 1,
+        "xlife_topk_mgs_max_hate_interval_second": 3600,
+        "xlife_topk_msg_hate_history_size": 5,
+        "xlife_hate_mgs_topk": 1,
+        "enable_only_user_xlife_hate": false,
+        "enable_only_user_xlife_cover_hate": false 
+      },
+      "import": {
+        "common_attrs": [
+          "mmu_embeddings",
+          "user_info_ptr",
+          "embedding_source_pids"
+        ],
+        "results": [
+          "cascading_cluster_sort__result"
+        ]
+      },
+      "export": {
+        "item_attrs": [
+          "diversity_fr",
+          "hate_fr"
+        ]
+      }
+    }
+  }
+  

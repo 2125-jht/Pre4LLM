@@ -1,0 +1,40 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_pfptr_predict": 0,
+      "mc_tower_pftr_service": "grpc_TowerExploreMcWtdInfer",
+      "mc_tower_pftr_request_type": "predict_by_explore_mc_wtd",
+      "enable_explore_mc_pftr_predict_v2":0,
+      "mc_tower_pftr_service_v2": "grpc_ExploreCascadePftrInfer",
+      "mc_tower_pftr_request_type_v2": "predict_by_explore_mc_pftr",
+      "enable_request_hot_fountain_model":0,
+      "explore_mc_enable_get_fintr_quantile_mode":0,
+      "explore_ftr_redis_key_prefix":"pftrRatio_",
+      "explore_cascade_pftr_debias_map": "explore_cascade_pftr_debias_map",
+      "ftr_short_photo_cluster_dist":5,
+      "ftr_long_photo_threshold":120,
+      "ftr_long_photo_cluster_dist":10,
+      "max_mc_ftr_limit":300,
+      "explore_mc_ftr_dist_reciprocal":100,
+      "enable_multi_duration":0,
+      "explore_ftr_duration_max_value":300,
+      "ftr_duration_power_weight":1.0,
+      "ftr_duration_offset":0.0,
+      "enable_transfer_sigmoid": 0,
+      "enable_map_ftr_positive": 0
+    },
+    "import": {
+      "item_attrs": [
+        "photo_id"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "cascade_pfptr"
+      ]
+    }
+  }
+}

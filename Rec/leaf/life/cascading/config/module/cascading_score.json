@@ -1,0 +1,534 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_mc_enable_xtr_debias": 0,
+      "explore_mc_enable_picture_xtr_debias": false,
+      "explore_mc_pcmtr_debias_type": 1,
+      "explore_mc_pcltr_debias_type": 1,
+      "explore_mc_pctr_debias_type": 1,
+      "explore_mc_pltr_debias_type": 1,
+      "explore_mc_pwtr_debias_type": 1,
+      "explore_mc_plvtr_debias_type": 1,
+      "explore_mc_plvtr2_debias_type": 1,
+      "explore_mc_pwtd_debias_type": 1,
+      "explore_mc_pwatch_time_debias_type": 1,
+      "explore_mc_phtr_debias_type": 1,
+      "explore_mc_psvtr_debias_type": 1,
+      "explore_mc_pftr_debias_type": 1,
+      "explore_mc_xtr_debias_dura_bucket_width": 5,
+      "explore_mc_emp_debias_pcmtr_alpha": 1000.0,
+      "explore_mc_emp_debias_pcmtr_beta": 1000.0,
+      "explore_mc_emp_debias_pcltr_alpha": 1000.0,
+      "explore_mc_emp_debias_pcltr_beta": 1000.0,
+      "explore_mc_emp_debias_pctr_alpha": 1000.0,
+      "explore_mc_emp_debias_pctr_beta": 1000.0,
+      "explore_mc_emp_debias_pltr_alpha": 1000.0,
+      "explore_mc_emp_debias_pltr_beta": 1000.0,
+      "explore_mc_emp_debias_pwtr_alpha": 1000.0,
+      "explore_mc_emp_debias_pwtr_beta": 1000.0,
+      "explore_mc_emp_debias_plvtr_alpha": 1000.0,
+      "explore_mc_emp_debias_plvtr_beta": 1000.0,
+      "explore_mc_emp_debias_plvtr2_alpha": 1000.0,
+      "explore_mc_emp_debias_plvtr2_beta": 1000.0,
+      "explore_mc_emp_debias_pwtd_alpha": 1000.0,
+      "explore_mc_emp_debias_pwtd_beta": 1000.0,
+      "explore_mc_emp_debias_pwatch_time_alpha": 1000.0,
+      "explore_mc_emp_debias_pwatch_time_beta": 1000.0,
+      "explore_mc_emp_debias_phtr_alpha": 1000.0,
+      "explore_mc_emp_debias_phtr_beta": 1000.0,
+      "explore_mc_emp_debias_psvtr_alpha": 1000.0,
+      "explore_mc_emp_debias_psvtr_beta": 1000.0,
+      "explore_mc_emp_debias_pftr_alpha": 1000.0,
+      "explore_mc_emp_debias_pftr_beta": 1000.0,
+      "mille_avg_watch_time_upper_bound": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_avg_watch_time_upper_bound",
+        "param_type": "double",
+        "default_value": 40.0
+      },
+      "mille_l0_ctr_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_ctr_param",
+        "param_type": "double",
+        "default_value": 0.0,
+        "report_ab_hit": true
+      },
+      "mille_l0_ltr_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_ltr_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mille_l0_wtr_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_wtr_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mille_l0_ftr_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_ftr_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mille_l0_lvtr_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_lvtr_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mille_l0_lvtr2_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_lvtr2_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mille_l0_svtr_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_svtr_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mille_l0_ptr_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_ptr_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mille_l0_watchtime_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_watchtime_param",
+        "param_type": "double",
+        "default_value": 0.0,
+        "report_ab_hit": true
+      },
+      "mille_l0_epstr_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_epstr_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mille_l0_cestr_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_cestr_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mille_l0_cmtr_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_cmtr_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mille_l0_svtr_power_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_svtr_power_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mille_l0_cas_xtr_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_cas_xtr_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mille_l0_cas_final_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_cas_final_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "mc_picture_discount_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mc_picture_discount_param",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "pptime_memory_data_key": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pptime_memory_data_key",
+        "param_type": "string",
+        "default_value": "mc_plvtr_duration_playtime_map"
+      },
+      "explore_cascade_skip_mmu_embedding_score": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_cascade_skip_mmu_embedding_score",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "hot_mc_pic_cpr_max_pic_cnt": 20,
+      "hot_fountain_eftr_pctr_weight": 0.5,
+      "hot_fountain_eftr_weight": 1.0,
+      "hot_fountain_efctr_pctr_weight": 0.5,
+      "hot_fountain_efctr_weight": 1.0,
+      "mille_l0_wtd_param": 0.0,
+      "hot_mc_cp_ctr_weight": 0.0,
+      "hot_mc_wtd_ctr_weight": 0.0,
+      "explore_cascade_skip_opportunity_cost_score": 1,
+      "mc_opportunity_cost_queue_cost_weight": 1.0,
+      "mc_opportunity_cost_queue_reward_weight": 1.0,
+      "mc_opportunity_cost_queue_pltr_weight": 1.0,
+      "mc_opportunity_cost_queue_pwtr_weight": 1.0,
+      "mc_opportunity_cost_queue_pftr_weight": 1.0,
+      "mc_opportunity_cost_queue_pcmtr_weight": 1.0,
+      "mc_opportunity_cost_queue_pepstr_weight": 2.0,
+      "mc_opportunity_cost_queue_pcltr_weight": 1.0,
+      "mc_opportunity_cost_queue_peftr_weight": 1.0,
+      "mc_opportunity_cost_queue_pefctr_weight": 1.0,
+      "mc_opportunity_cost_queue_ctr_power_weight": 1.0,
+      "hot_mc_pfptr_pctr_weight": 1.0,
+      "hot_mc_ordinal_wtd_pctr_weight": 0.0,
+      "hot_mc_ordinal_prob_pctr_weight": 0.0,
+      "hot_mc_pic_wtd_pctr_weight": 1.0,
+      "hot_mc_pic_lvtr_pctr_weight": 1.0,
+      "hot_mc_pic_cpr_pctr_weight": 1.0,
+      "mc_enable_fill_action_count": false,
+      "enable_fill_pcltr_adjust_by_gender_age": false,
+      "explore_mc_debias_score": 0,
+      "mc_ensemble_score_smooth": 10.0,
+      "mc_mid_photo_boost_param": 1.0,
+      "enable_mc_htr_cost_queue": false,
+      "htr_cost_queue_cost_weight": 1.0,
+      "htr_cost_queue_reward_weight": 1.0,
+      "htr_cost_queue_pctr_power_weight": 1.0,
+      "htr_cost_queue_pltr_weight": 1.0,
+      "htr_cost_queue_pwtr_weight": 1.0,
+      "htr_cost_queue_pftr_weight": 1.0,
+      "htr_cost_queue_pcmtr_weight": 1.0,
+      "htr_cost_queue_pcltr_weight": 1.0,
+      "htr_cost_queue_peftr_weight": 1.0,
+      "htr_cost_queue_plvtr_weight": 0.0,
+      "htr_cost_queue_psvtr_weight": 0.0,
+      "mille_l0_phtr_param": 0.0,
+      "mille_l0_phtr_power_param": 0.5,
+      "htr_cost_queue_pefctr_weight": 1.0,
+      "htr_cost_queue_wtd_weight": 1.0,
+      "mille_l0_cltr_param": 0.0,
+      "mille_l0_pfptr_param": 0.0,
+      "mille_l0_prerank_ctr_param": 0.0,
+      "mille_l0_prerank_ltr_param": 0.0,
+      "mille_l0_prerank_wtd_param": 0.0,
+      "mc_enable_multiply_pctr": 1.0,
+      "enable_calc_cascade_wtd_inverse": 0,
+      "wtd_factor_type": 0,
+      "prerank_wtd_power_weight": 1.0,
+      "mille_l0_cascase_life_ctr_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mille_l0_cascase_life_ctr_param",
+        "param_type": "double",
+        "default_value": 0.0,
+        "report_ab_hit": true
+      },
+      "wtd_in_s1_factor_type": 0,
+      "wtd_in_s1_power_weight": 1.0,
+      "cascading_score_factor_power": 1.0,
+      "enable_calc_prerank_wtd_in_s1_score": 0,
+      "enable_mc_pctr_corr_replace_pctr": 0,
+      "mc_pctr_corr_replace_pctr_weight": 0.0,
+      "enable_mc_pctr_corr_replace_pctr_in_factor": 0,
+      "mc_pctr_corr_replace_pctr_weight_in_factor": 0.0,
+      "enable_calc_mc_pctr_adjust": 0,
+      "prerank_wtd_in_s1_min_score": 0.0,
+      "prerank_wtd_in_s1_max_score": 0.9999,
+      "prerank_wtd_in_s1_finish_pow_weight": 0.0,
+      "prerank_wtd_in_s1_finish_max": 1.5,
+      "prerank_wtd_in_s1_finish_min": 0.5,
+      "enable_hot_fractile_abs_queue_after_debias": 0,
+      "hot_mc_pxtr_fractile_boost_threshold": 1.0,
+      "hot_mc_pxtr_fractile_boost_weight": 1.0,
+      "enable_hot_mc_pxtr_fractile_cliff": 0,
+      "enable_hot_mc_time_cost_optimal": false,
+      "mc_ensemble_plvtr_need_fractile": 0,
+      "mc_ensemble_pltr_need_fractile": 0,
+      "mc_ensemble_peftr_need_fractile": 0,
+      "mc_ensemble_pcmtr_need_fractile": 0,
+      "mc_ensemble_pefctr_need_fractile": 0,
+      "mc_ensemble_pctr_need_fractile": 0,
+      "mc_ensemble_pftr_need_fractile": 0,
+      "mc_ensemble_pwtr_need_fractile": 0,
+      "mc_ensemble_pcltr_need_fractile": 0,
+      "mc_ensemble_plvtr2_need_fractile": 0,
+      "mc_ensemble_pwatch_time_need_fractile": 0,
+      "mc_ensemble_pepstr_need_fractile": 0,
+      "cascade_pwtd_inverse_need_fractile": 0,
+      "hot_mc_pxtr_fractile_ensemble_plvtr_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_pltr_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_peftr_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_psvtr_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_pcmtr_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_pefctr_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_pctr_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_pftr_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_pwtr_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_pcltr_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_plvtr2_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_pwatch_time_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_ptr_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_pepstr_wgt": 0.0,
+      "hot_mc_pxtr_fractile_ensemble_pwtd_inverse_wgt": 0.0
+    },
+    "kconf": {
+      "cascade_wtd_table_0": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "0"
+      },
+      "cascade_wtd_table_9": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "9"
+      },
+      "cascade_wtd_table_13": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "13"
+      },
+      "cascade_wtd_table_20": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "20"
+      },
+      "cascade_wtd_table_38": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "38"
+      },
+      "cascade_wtd_table_71": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "71"
+      },
+      "cascade_wtd_table_118": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "118"
+      },
+      "cascade_wtd_table_195": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "195"
+      },
+      "cascade_wtd_table_inf": {
+        "kconf_key": "reco.model.McWtdTableV2",
+        "value_type": "json",
+        "json_path": "inf"
+      },
+      "pcltr_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_pcltr",
+        "default_value": []
+      },
+      "pcmtr_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_pcmtr",
+        "default_value": []
+      },
+      "pctr_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_pctr",
+        "default_value": []
+      },
+      "pwtr_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_pwtr",
+        "default_value": []
+      },
+      "pltr_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_pltr",
+        "default_value": []
+      },
+      "plvtr_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_plvtr",
+        "default_value": []
+      },
+      "plvtr2_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_plvtr2",
+        "default_value": []
+      },
+      "pwtd_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_pwtd",
+        "default_value": []
+      },
+      "pwatch_time_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_pwatch_time",
+        "default_value": []
+      },
+      "phtr_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_phtr",
+        "default_value": []
+      },
+      "psvtr_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_psvtr",
+        "default_value": []
+      },
+      "pftr_dura_debias_factor_list": {
+        "kconf_key": "reco.offline.exploreMcDuraDebiasConfig",
+        "json_path": "mc_ensemble_pftr",
+        "default_value": []
+      },
+      "prerank_wtd_in_s1_table_seg": {
+        "kconf_key": "reco.offline.explorePrerankWtdConfigMap",
+        "value_type": "json",
+        "json_path": "durationSeg"
+      },
+      "prerank_wtd_in_s1_table_0": {
+        "kconf_key": "reco.offline.explorePrerankWtdConfigMap",
+        "value_type": "json",
+        "json_path": "duration_id_0"
+      },
+      "prerank_wtd_in_s1_table_1": {
+        "kconf_key": "reco.offline.explorePrerankWtdConfigMap",
+        "value_type": "json",
+        "json_path": "duration_id_1"
+      },
+      "prerank_wtd_in_s1_table_2": {
+        "kconf_key": "reco.offline.explorePrerankWtdConfigMap",
+        "value_type": "json",
+        "json_path": "duration_id_2"
+      },
+      "prerank_wtd_in_s1_table_3": {
+        "kconf_key": "reco.offline.explorePrerankWtdConfigMap",
+        "value_type": "json",
+        "json_path": "duration_id_3"
+      },
+      "prerank_wtd_in_s1_table_4": {
+        "kconf_key": "reco.offline.explorePrerankWtdConfigMap",
+        "value_type": "json",
+        "json_path": "duration_id_4"
+      },
+      "prerank_wtd_in_s1_table_5": {
+        "kconf_key": "reco.offline.explorePrerankWtdConfigMap",
+        "value_type": "json",
+        "json_path": "duration_id_5"
+      },
+      "prerank_wtd_in_s1_table_6": {
+        "kconf_key": "reco.offline.explorePrerankWtdConfigMap",
+        "value_type": "json",
+        "json_path": "duration_id_6"
+      },
+      "prerank_wtd_in_s1_table_7": {
+        "kconf_key": "reco.offline.explorePrerankWtdConfigMap",
+        "value_type": "json",
+        "json_path": "duration_id_7"
+      },
+      "prerank_wtd_in_s1_table_8": {
+        "kconf_key": "reco.offline.explorePrerankWtdConfigMap",
+        "value_type": "json",
+        "json_path": "duration_id_8"
+      }
+    },
+    "import": {
+      "item_attrs": [
+        "cascade_prerank_pctr",
+        "cascade_prerank_pltr",
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_pftr",
+        "cascade_plvtr",
+        "cascade_plvtr2",
+        "cascade_psvtr",
+        "cascade_ptr",
+        "cascade_pwatch_time",
+        "cascade_pepstr",
+        "cascade_pcestr",
+        "cascade_pcmtr",
+        "cascade_plivingtr",
+        "cascade_fc_pctr",
+        "cascade_pic_wtd",
+        "cascade_pic_lvtr",
+        "cascade_pic_cpr",
+        "mmu_embeddings",
+        "cascade_peftr",
+        "cascade_pefctr",
+        "duration_ms",
+        "is_picture",
+        "cascade_pwtd",
+        "cascade_pcptr",
+        "cascade_pfptr",
+        "hetu_tag_level_info__hetu_level_one",
+        "prerank_ltr",
+        "prerank_ctr",
+        "prerank_wtd",
+        "prerank_ltr_in_s1",
+        "prerank_ctr_in_s1",
+        "prerank_wtd_in_s1",
+        "empirical_watch_time",
+        "cascade_phtr",
+        "cascade_ordinal_wtd",
+        "cascade_ordinal_prob",
+        "cascade_pcltr",
+        "cascase_life_ctr"
+      ],
+      "common_attrs": [
+        "embedding_source_pids",
+        "user_gender",
+        "user_age_segment"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "cascade_score",
+        "mc_ensemble_pctr",
+        "mc_ensemble_pltr",
+        "mc_ensemble_pwtr",
+        "mc_ensemble_pftr",
+        "mc_ensemble_plvtr",
+        "mc_ensemble_plvtr2",
+        "mc_ensemble_psvtr",
+        "mc_ensemble_ptr",
+        "mc_ensemble_pwatch_time",
+        "mc_ensemble_pepstr",
+        "mc_ensemble_pcestr",
+        "mc_ensemble_pcmtr",
+        "mc_ensemble_pptime",
+        "cascade_mmu_embedding_score",
+        "mc_ensemble_peftr",
+        "mc_ensemble_pefctr",
+        "mc_ensemble_ewatch",
+        "mc_ensemble_pwtd",
+        "cascade_pwtd_inverse",
+        "mc_ensemble_pwtd_inverse",
+        "mc_ensemble_opportunity_cost_score",
+        "mc_ensemble_pfptr",
+        "mc_ensemble_ordinal_wtd",
+        "mc_ensemble_ordinal_prob",
+        "mc_ensemble_pic_wtd",
+        "mc_ensemble_pic_lvtr",
+        "mc_ensemble_pic_cpr",
+        "mc_ensemble_prerank_er",
+        "mc_ensemble_smooth_age_score",
+        "mc_ensemble_emp_pop_score",
+        "mc_htr_cost_score",
+        "mc_interact_fusion_score",
+        "mc_watch_time_fusion_score",
+        "mc_ensemble_psvtr2",
+        "mc_ensemble_prerank_wtd",
+        "mc_ensemble_prerank_wtd_in_s1",
+        "cascade_pctr_corr",
+        "mc_ensemble_plvtr_fractile",
+        "mc_ensemble_pltr_fractile",
+        "mc_ensemble_peftr_fractile",
+        "mc_ensemble_pcmtr_fractile",
+        "mc_ensemble_pefctr_fractile",
+        "mc_ensemble_pctr_fractile",
+        "mc_ensemble_pftr_fractile",
+        "mc_ensemble_pwtr_fractile",
+        "mc_ensemble_pcltr_fractile",
+        "mc_ensemble_plvtr2_fractile",
+        "mc_ensemble_pwatch_time_fractile",
+        "mc_ensemble_pepstr_fractile",
+        "cascade_pwtd_inverse_fractile",
+        "cascade_pxtr_fractile_score"
+      ]
+    }
+  }
+}

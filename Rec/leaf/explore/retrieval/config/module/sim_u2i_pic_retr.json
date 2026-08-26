@@ -1,0 +1,38 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["explore_sim_u2i_pic_retr_enabled", false],
+      "retrieval_cache_config": ["explore_sim_u2i_pic_retr_cache_config", ""],
+      "explore_sim_u2i_retr_kess_name": ["explore_sim_u2i_pic_retr_kess_name", "grpc_exploreSimPicRetr"],
+      "explore_sim_u2i_retr_total_num": ["explore_sim_u2i_pic_retr_total_num", 500],
+      "enable_explore_sim_u2i_retrieval": ["enable_explore_sim_u2i_pic_retrieval", false],
+      "explore_only_hot_tab": ["explore_sim_u2i_pic_retr_only_hot_tab", true],
+      "explore_sim_u2i_action_weight_str": ["explore_sim_u2i_pic_action_weight_str", ""],
+      "explore_sim_u2i_hetu_count": ["explore_sim_u2i_pic_hetu_count", 4],
+      "explore_sim_u2i_exploit_hetu_count": ["explore_sim_u2i_pic_exploit_hetu_count", 3], 
+      "explore_sim_u2i_hetu_l1_white_list": ["explore_sim_u2i_pic_hetu_l1_white_list", ""],
+      "skip_personal_quota": ["explore_sim_u2i_pic_skip_personal_quota", 1],
+      "explore_sim_u2i_reward_window_size": 0,
+      "enable_explore_sim_u2i_hetu_blacklist": 0,
+      "explore_sim_u2i_short_view_rate_thd": 0.35,
+      "explore_sim_u2i_blacklist_min_play_cnt": 10,
+      "enable_explore_sim_u2i_reward_channel_filter": 0,
+      "explore_sim_u2i_reward_channel_whitelist": ""
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "colossus_resp_v2",
+        "reason_ratio_map_attr",
+        "uIsExploreTnuCrowdUser"
+      ]
+    },
+    "export": {
+      "results": [
+        "sim_u2i_pic__result"
+      ]
+    }
+  },
+  "reason": 5049
+}
+  

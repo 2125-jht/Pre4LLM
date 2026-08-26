@@ -1,0 +1,58 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_user_colossus_history": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_user_colossus_history",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "colossus_hisotry_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_colossus_hisotry_num",
+        "param_type": "int",
+        "default_value": 1000,
+        "report_ab_hit": true
+      },
+      "colossus_mix_pic_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_colossus_mix_pic_num",
+        "param_type": "int",
+        "default_value": 900,
+        "report_ab_hit": true
+      },
+      "colossus_mix_vid_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_colossus_mix_video_num",
+        "param_type": "int",
+        "default_value": 200,
+        "report_ab_hit": true
+      }
+    },
+    "kconf": {
+      "user_colossus_playtime_thresh": {
+        "kconf_key": "reco.eyeshot.exploreStRetrLongtermPlaytimeThresh",
+        "value_type": "int",
+        "default_value": 3
+      }
+    },
+    "export": {
+      "common_attrs": [
+        "user_colossus_play_pids",
+        "user_colossus_play_aids",
+        "user_colossus_play_rewards",
+        "user_colossus_play_hetu_level1s",
+        "user_colossus_pic_play_pids",
+        "user_colossus_pic_play_aids",
+        "user_colossus_pic_play_rewards",
+        "user_colossus_pic_play_hetu_level1s",
+        "user_colossus_mix_play_pids",
+        "user_colossus_mix_play_aids",
+        "user_colossus_mix_play_reward",
+        "user_colossus_mix_play_action",
+        "user_colossus_mix_play_ts"
+      ]
+    }
+  }
+}

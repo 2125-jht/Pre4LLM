@@ -1,0 +1,89 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fullrank_enable_jarvis_param": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_fullrank_enable_jarvis_param",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "fullrank_param_jarvis_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_fullrank_param_jarvis_service",
+        "param_type": "string",
+        "default_value": ""
+      },
+      "fullrank_param_jarvis_model_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_fullrank_param_jarvis_model_name",
+        "param_type": "string",
+        "default_value": "" 
+      },
+      "fullrank_param_jarvis_action_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_fullrank_param_jarvis_action_type",
+        "param_type": "string",
+        "default_value": "base_disturb" 
+      }
+    },
+    "import": {
+      "item_attrs": [
+        "corr_pctr",
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "fr_score1",
+        "fr_score2",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "fetr",
+        "fountain_eff"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+            "fullrank_ctr_adjust_ratio_attr",
+            "fullrank_ltr_adjust_ratio_attr",
+            "fullrank_wtr_adjust_ratio_attr",
+            "fullrank_ftr_adjust_ratio_attr",
+            "fullrank_cltr_adjust_ratio_attr",
+            "fullrank_ptr_adjust_ratio_attr",
+            "fullrank_cmtr_adjust_ratio_attr",
+            "fullrank_cmef_adjust_ratio_attr",
+            "fullrank_epstr_adjust_ratio_attr",
+            "fullrank_svtr_adjust_ratio_attr",
+            "fullrank_fr_score1_adjust_ratio_attr",
+            "fullrank_fr_score2_adjust_ratio_attr",
+            "fullrank_fetr_adjust_ratio_attr",
+            "fullrank_fountain_eff_adjust_ratio_attr",
+            "fullrank_duration_adjust_ratio_attr",
+            "fullrank_l2r_score_adjust_ratio_attr",
+            "fullrank_unexpected_score_adjust_ratio_attr",
+            "rerank_ctr_adjust_ratio_attr",
+            "rerank_ltr_adjust_ratio_attr",
+            "rerank_wtr_adjust_ratio_attr",
+            "rerank_ftr_adjust_ratio_attr",
+            "rerank_cltr_adjust_ratio_attr",
+            "rerank_ptr_adjust_ratio_attr",
+            "rerank_cmtr_adjust_ratio_attr",
+            "rerank_cmef_adjust_ratio_attr",
+            "rerank_epstr_adjust_ratio_attr",
+            "rerank_fr_score1_adjust_ratio_attr",
+            "rerank_fr_score2_adjust_ratio_attr",
+            "rerank_fetr_adjust_ratio_attr",
+            "rerank_fountain_eff_adjust_ratio_attr",
+            "rerank_duration_adjust_ratio_attr",
+            "rerank_l2r_score_adjust_ratio_attr",
+            "rerank_ensemble_score_adjust_ratio_attr"
+      ]
+    }
+  }
+}

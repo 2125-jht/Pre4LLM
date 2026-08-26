@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "disable_merchant": ["disable_merchant_explore_all_photo_optimize", 0],
+      "enable_retrieval": ["enable_merchant_explore_seq_dev_retr", false],
+      "kess_service_name": ["merchant_explore_seq_dev_service", "kws-merchant-hot-video-com-retr-merchant-retr-cart-ann-cvr"],
+      "service_request_num": ["merchant_explore_seq_dev_request_nums", 400],
+      "user_type_threshold": ["merchant_explore_seq_dev_user_type_threshold", 2]
+    }, 
+    "constant": {
+      "service_timeout_ms": 50
+    },
+    "import": {
+      "common_attrs": [
+        "merchant_buyer_type"
+      ]
+    },
+    "export": {
+      "results": [
+        "merchant_explore_seq_dev__result"
+      ]
+    }
+  },
+  "reason": 3127,
+  "service_request_type": "default",
+  "send_browse_set": false,
+  "send_common_attrs": [
+    "disable_merchant",
+    "merchant_buyer_type",
+    "user_type_threshold"
+  ],
+  "trimed_user_info": [],
+  "extra_skip_condition": "disable_merchant == 1 or merchant_buyer_type == nil or merchant_buyer_type < user_type_threshold"
+}

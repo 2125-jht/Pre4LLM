@@ -1,0 +1,41 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_merchant_vedio_predict": 0,
+      "enable_explore_mc_merchant_living_predict": 0
+    },
+    "kconf": {
+      "explore_mc_ordinal_duration_list": {
+        "kconf_key": "reco.offline.ordinalDurationClusterList",
+        "value_type": "list_double",
+        "default_value": []
+      },
+      "explore_mc_ordinal_playtime_dist_list": {
+        "kconf_key": "reco.offline.ordinalPlayTimeDistList",
+        "value_type": "list_double",
+        "default_value": []
+      }
+    },
+    "import": {
+      "item_attrs": [
+        "cascade_pctr",
+        "merchant_tower_ctr", 
+        "merchant_tower_cvr", 
+        "merchant_tower_gmv", 
+        "merchant_elive_tower_ctr", 
+        "merchant_elive_tower_cvr", 
+        "merchant_elive_tower_gmv"
+      ],
+      "common_attrs": [
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "mc_ctcvr_score",
+        "mc_ctcvr_gmv_score",
+        "mc_elive_ctcvr_score",
+        "mc_elive_ctcvr_gmv_score" 
+      ]
+    }
+  }
+}

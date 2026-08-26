@@ -1,0 +1,62 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_augmented_tt_u2i_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "embedding_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "augmented_tt_u2i_embedding_service_name",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-hot-subdivision-embedding-explore-la-dssm-v2-emb",
+        "report_ab_hit": true
+      },
+      "ann_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "augmented_tt_u2i_retr_service_name",
+        "param_type": "string",
+        "default_value": "grpc_exploreLauNNRetrServer"
+      },
+      "ann_service_timeout": {
+        "biz_name": "RECO_RPC",
+        "param_name": "augmented_tt_u2i_retr_ann_timeout",
+        "param_type": "int",
+        "default_value": 100
+      },
+      "ann_service_retr_count": {
+        "biz_name": "RECO_RPC",
+        "param_name": "augmented_tt_u2i_cand_num",
+        "param_type": "int",
+        "default_value": 500
+      },
+      "ann_service_data_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "augmented_tt_u2i_src_bucket",
+        "param_type": "string",
+        "default_value": "user"
+      },
+      "ann_service_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "augmented_tt_u2i_dest_bucket",
+        "param_type": "string",
+        "default_value": "index_photo"
+      },
+      "ann_dist_threshold": {
+        "biz_name": "RECO_RPC",
+        "param_name": "augmented_tt_u2i_retr_ann_distance",
+        "param_type": "double",
+        "default_value": 0.0
+      }
+    },
+    "export": {
+      "results": [
+        "augmented_tt_u2i_ann__result"
+      ]
+    }
+  },
+  "reason": 10041
+}  

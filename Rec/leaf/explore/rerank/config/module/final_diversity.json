@@ -1,0 +1,49 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_rerank_enable_final_diversity": false,
+      "explore_rerank_final_variety_engineer_max_pick_num": 60,
+      "explore_rerank_final_variety_engineer_limit_thres": 60,
+      "enable_minority_photo_diversity": ["enable_explore_rerank_final_minority_photo_diversity", false],
+      "minority_photo_diversity_winsize": ["explore_rerank_final_minority_photo_diversity_winsize", 30],
+      "minority_photo_diversity_max_num": ["explore_rerank_final_minority_photo_diversity_max_num", 1],
+      "minority_photo_diversity_min_num": ["explore_rerank_final_minority_photo_diversity_min_num", 0],
+      "minority_photo_diversity_priority": ["explore_rerank_final_minority_photo_diversity_priority", 9],
+      "enable_minority_photo_diversity_consider_prev_items": ["explore_rerank_final_enable_minority_photo_diversity_consider_prev_items", false],
+      "explore_rerank_personalization_or_original_submission_author_diversify_winsize": 30,
+      "explore_rerank_personalization_or_original_submission_author_diversify_min_num": 1,
+      "explore_rerank_personalization_or_original_submission_author_diversify_diversity_priority": 0,
+      "explore_rerank_enable_gen_is_emotion_pic": false,
+      "enable_is_emotion_pic_diversity": ["enable_explore_rerank_is_emotion_pic_diversity", false],
+      "emotion_pic_diversity_winsize": ["explore_rerank_final_is_emotion_pic_diversity_winsize", 30],
+      "emotion_pic_diversity_max_num": ["explore_rerank_final_is_emotion_pic_diversity_max_num", 1],
+      "emotion_pic_diversity_min_num": ["explore_rerank_final_is_emotion_pic_diversity_min_num", 0],
+      "emotion_pic_diversity_priority": ["explore_rerank_final_is_emotion_pic_diversity_priority", 9],
+      "enable_emotion_pic_diversity_consider_prev_items": ["explore_rerank_final_enable_is_emotion_pic_diversity_consider_prev_items", false]
+    },
+    "import": {
+      "common_attrs": [
+        "explore_recent_play_list",
+        "enable_explore_first_page_personalization_or_original_submission_author_diversity",
+        "user_valid_interest_cid_list",
+        "is_traceback_request"
+      ],
+      "item_attrs": [
+        "is_minority_photo",
+        "is_personalization_or_original_submission_tag",
+        "cluster_id_632"
+      ],
+      "results": [
+        "pic_rerank__result"
+      ]
+    },
+    "export": {
+      "results": [
+        "final_diversity__result"
+      ],
+      "item_attrs": [
+        "is_valid_interest_explore"
+      ]
+    }
+  }
+}

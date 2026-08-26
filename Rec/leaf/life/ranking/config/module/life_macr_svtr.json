@@ -1,0 +1,59 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_svtr_macr_model_v2": false,
+        "score_psvr_version": 1,
+        "svtr_macr_model_service": "grpc_xlife_svtr_model_v1_infer",
+        "macr_mt_model_partition_size": 600
+      },
+      "import": {
+        "results": [
+          "ranking_stage1_truncate__result"
+        ],
+        "common_attrs": [
+          "userInfo",
+          "virtualTabId" 
+        ],
+        "item_attrs": [
+          "score_psvr",
+          "empirical_svtr",
+          "reason",
+          "photo_id",
+          "author__id",
+          "hetu_tag_level_info__hetu_cluster_id",
+          "picture_type",
+          "hetu_tag_level_info__hetu_level_one",
+          "hetu_tag_level_info__hetu_level_two",
+          "pctr",
+          "pltr",
+          "pftr",
+          "pwtr",
+          "plvtr",
+          "psvr",
+          "pcmtr",
+          "pvtr",
+          "pptr",
+          "pevtr",
+          "pcltr",
+          "empirical_ctr",
+          "empirical_ltr",
+          "empirical_ftr",
+          "empirical_ptr",
+          "empirical_cmtr",
+          "cascade_pctr",
+          "cascade_plvtr",
+          "cascade_psvtr",
+          "cascade_pltr",
+          "cascade_pwtr"
+        ]
+      },
+      "export": {
+        "item_attrs": [
+          "macr_svtr",
+          "life_dnn_svtr",
+          "life_dnn_lvtr",
+          "life_dnn_evtr"
+        ]
+      }
+    }
+  }

@@ -1,0 +1,2729 @@
+#!/usr/bin/env python3
+# coding=utf-8
+from dragonfly.ext.tdm.tdm_api_mixin import TDMApiMixin
+from dragonfly.ext.explore.explore_api_mixin import ExploreApiMixin
+from dragonfly.ext.subdivision.subdivision_api_mixin import subdivisionApiMixin
+from rerank.ab_params import gen_rerank_abtest, abtest_is_or_not_rerank, gen_rerank_ab_hit_abtest
+from rerank.rerank_base import gen_variant_config2, gen_variant_config
+from rerank.rerank_base import gen_photo_features_for_all_position_new, gen_list_predict_common_attrs
+from rerank.rerank_base import gen_list_ensemble_filter_queues, gen_seed_ensemble_queues_dpp_v2
+from rerank.rerank_base import rerank_ensemble_queues, pos_features
+from rerank.rerank_base import before_rerank_diversity_rules, pxtr_matrix_combo_queues, model_greedy_extra_queues,rerank_hetu_ensemble_queues, rerank_expected_value_queues, rerank_cid_ensemble_queues
+from rerank.rerank_base import rerank_item_features, rerank_user_features, rerank_duration_xtr_queues, rerank_vv_xtr_queues, rerank_cid_xtr_queues
+from rerank.rerank_base import rerank_features, rerank_feature_map_all, rerank_feature_map, rerank_feature_map_new, rerank_extra_common_attr, rr_wtd_table_common_attr, rr_duration_item_attr
+from rerank.rerank_base import get_dpp_rule_dict
+from full_rank.fullrank_base_features import item_features, item_features_rerank, user_features, rerank_listwise_distill_item_features,rr_photo_features,rr_user_feature, rerank_features_fulllink, user_features_fulllink
+from util import enrich_ab_param
+
+class ReRankV2Mixin(subdivisionApiMixin, ExploreApiMixin, TDMApiMixin):
+  def rerank_v2(self):
+    self \
+    .get_abtest_params(
+      biz_name="RECO_RPC",
+      ab_params=enrich_ab_param(gen_rerank_abtest()),
+      prioritized_suffix = "{{_ABTEST_SUFFIX_LIST_}}"
+    ) \
+    .get_abtest_params(
+      biz_name = "RECO_RPC",
+      ab_params = gen_rerank_ab_hit_abtest() + abtest_is_or_not_rerank,
+      prioritized_suffix = "{{_ABTEST_SUFFIX_LIST_}}"
+    ) \
+    .if_("enable_insert_fountain_fullrank_similar_photo == 1") \
+      .pack_item_attr(
+        item_source = {
+          "reco_results": True
+        },
+        mappings = [{
+          "from_item_attr": "photo_id",
+          "to_common_attr": "fullrank_total_photo_id_list",
+          "aggregator": "concat"
+        }],
+      ) \
+    .end_if_() \
+    .if_("enable_use_fountain_rerank == 1") \
+    .if_("skip_fountain_rerank_limit == 0") \
+      .rerank_truncate() \
+    .end_if_() \
+    .if_("fountain_enable_cascade_distill_sample == 1") \
+      .copy_item_meta_info(
+        save_item_seq_to_attr="item_seq"
+      ) \
+    .end_() \
+    .enrich_attr_by_light_function(
+      import_item_attr = [
+        "explore_stat__real_show_count",
+        "explore_stat__click_count",
+        "explore_stat__like_count",
+        "explore_stat__follow_count",
+        "explore_stat__forward_count",
+        "explore_stat__long_play_count",
+        "explore_stat__short_play_count",
+        "explore_stat__profile_enter_count",
+        "explore_stat__negative_count",
+        "explore_stat__comment_count",
+        "explore_stat__view_length_sum",
+        "is_picture",
+      ],
+      export_item_attr = [
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr",
+        "empirical_ptr",
+        "empirical_htr",
+        "empirical_cmtr",
+        {"name": "empirical_watch_time", "as": "empirical_watchtime"}
+      ],
+      function_name = "McCalEmpiricalXtr",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+    .if_("fountain_rerank_enable_gen_model_sum == 1 or fountain_rerank_enable_gen_model_beam == 1") \
+       .enrich_fulllink_kai2_feature() \
+    .end_() \
+    .if_("fountain_rerank_enable_gen_model_sum == 1") \
+       .rerank_gen_model_sum() \
+    .end_() \
+    .if_("fountain_rerank_enable_gen_model_beam == 1", to_be_delete = "date=2024-05-29;committer=renyuxin") \
+       .rerank_gen_model_beam() \
+    .end_() \
+    .if_("fountain_rerank_enable_jarvis_param > 0", to_be_delete = "date=2024-05-29;committer=huzengyi") \
+      .jarvis_handle() \
+    .end_if_() \
+    .if_("enable_cal_user_group_emp_xtr_in_rerank == 1") \
+      .cal_user_group_emp_xtr_all_rerank() \
+    .end_if_() \
+    .if_("enable_cal_user_group_dynamic_weight_in_rerank == 1", to_be_delete = "date=2024-05-29;committer=xuwei09") \
+      .cal_user_group_dynamic_weight() \
+    .end_if_() \
+    .if_("enable_fountain_cal_share_pull_ftr_rerank == 1") \
+      .cal_share_pull_ftr_rerank() \
+    .end_if_() \
+    .if_("fountain_rerank_use_emp_xtr_adaptive_weight == 1") \
+      .emp_xtr_ada() \
+    .end_if_() \
+    .if_("fountain_rerank_use_request_xtr_dev_adaptive_range == 1", to_be_delete = "date=2024-05-29;committer=xuwei09") \
+      .request_xtr_dev() \
+    .end_if_() \
+    .if_("fountain_enable_rerank_user_dynamic_play_ratio_weights == 1") \
+      .cal_rerank_user_dynamic_play_ratio_weights() \
+    .end_if_() \
+    .if_("fountain_enable_sim_matrix_combo == 1") \
+      .if_("fountain_sim_matrix_combo_enable_get_mmu_emb == 0") \
+        .get_remote_embedding_lite(
+          kess_service="{{fullrank_emb_kess_name_for_dpp_emb}}",
+          shard_num=8,
+          id_converter={"type_name": "kuibaEmbeddingIdConverter"},
+          output_attr_name="dpp_emb",
+          size=128,
+          client_side_shard=True
+        ) \
+      .else_() \
+        .get_remote_embedding_lite(
+          kess_service = "{{fullrank_mmu_emb_kess_name_for_dpp_emb}}",
+          shard_num = 4,
+          id_converter = {"type_name": "kuibaEmbeddingIdConverter"},
+          output_attr_name = "dpp_emb",
+          size = 64,
+          client_side_shard = True
+        ) \
+      .end_if_() \
+    .end_if_() \
+    .if_("fountain_rerank_enable_session_ssd == 1", to_be_delete = "date=2024-05-29;committer=xuwei09") \
+      .get_remote_embedding_lite(
+        kess_service = "grpc_hotMcEmbed",
+        shard_num = 8,
+        id_converter = {"type_name": "kuibaEmbeddingIdConverter"},
+        input_attr_name = "topk_mgs_embedding_source_pids",
+        output_attr_name = "session_ssd_mc_embeddings",
+        query_source_type = "common_attr",
+        size = 128,
+        client_side_shard = True
+      ) \
+    .end_if_() \
+    .if_("enable_fullrank_pfintr_norm_score == 1", to_be_delete = "date=2024-05-29;committer=huzengyi") \
+      .enrich_attr_by_light_function(
+        import_common_attr=[
+          "fullrank_pfintr_norm_watchtime_max",
+        ],
+        import_item_attr=[
+          "fullrank_sim_pfintr"
+        ],
+        export_item_attr=[
+          "fullrank_pfintr_norm_score"
+        ],
+        function_name="CalTransWatchtime",
+        class_name="ExploreLightFunctionSetV2",
+      ) \
+    .end_if_() \
+    .if_("fountain_dpp_enable_gen_next_model == 1 or fountain_dpp_enable_point_model_ltr_score == 1", to_be_delete = "date=2024-05-29;committer=caoying03") \
+      .next_model() \
+    .end_if_() \
+    .if_("fountain_enable_use_more_user_attr == 1") \
+      .explore_rerank_attr(
+        user_info_attr="userInfoPb"
+      ) \
+      .explore_common_user_feature_enricher(
+        user_info_attr="userInfoPb",
+        user_realshow_action_attr="realshow_",
+        user_action_list_long_version_attr="uActionListLongVersion",
+        user_view_pids_attr="uViewPidListV1",
+        user_view_aids_attr="uViewAidListV1",
+        user_effective_view_label_attr="uEffectiveViewLabelListV1",
+        user_long_view_label_attr="uLongViewLabelListV1",
+        user_short_view_label_attr="uShortViewLabelListV1",
+        user_view_hetu1_attr="uViewHetu1ListV1",
+        user_view_hetu2_attr="uViewHetu2ListV1",
+        ft_ev_pids_attr="uViewEffectivePidListV1",
+        ft_lv_pids_attr="uViewLongPidListV1",
+        ft_sv_pids_attr="uViewShortPidListV1",
+      ) \
+    .end_if_() \
+    .if_("fountain_dpp_enable_gen_next_model == 1 or fountain_dpp_enable_point_model_ltr_score == 1", to_be_delete = "date=2024-05-29;committer=caoying03") \
+      .next_model_handle() \
+    .end_if_() \
+    .if_("fountain_dpp_enable_es_queue == 1") \
+      .gen_duration_xtr_score() \
+    .end_if_() \
+    .if_("fountain_dpp_enable_vv_es_queue == 1") \
+      .gen_vv_xtr_score() \
+    .end_if_() \
+    .if_("fountain_dpp_enable_cid_es_queue == 1") \
+      .gen_cid_xtr_score() \
+    .end_if_() \
+    .fullrank_attr_score() \
+    .if_("fountain_dpp_enable_es_score_hetu_cal == 1 or fountain_dpp_enable_es_score_cid_cal == 1") \
+      .gen_avg_xtr_score() \
+    .end_() \
+    .if_("fountain_dpp_enable_gen_unexpected_queue == 1", to_be_delete = "date=2024-05-29;committer=caoying03") \
+      .gen_unexpected_queue() \
+    .end_() \
+    .if_("fountain_dpp_enable_gen_quality_queue == 1") \
+      .gen_quality_queue() \
+    .end_() \
+    .if_("fountain_dpp_enable_gen_cluster_id_rate == 1", to_be_delete = "date=2024-05-29;committer=caoying03") \
+      .gen_cluster_id_rate() \
+    .end_() \
+    .if_("fountain_rr_enable_cluster_to_cluster862 == 1", to_be_delete = "date=2024-05-29;committer=caoying03") \
+      .explore_trans_sim_cluster_id_enricher(
+        cluster_id_input_attr = "hetu_sim_cluster_id",
+        cluster_id862_attr = "hetu_sim_cluster_id862" # mmu hetu sim cluster id 862版
+      ) \
+    .end_() \
+    .dpp_process() \
+    .if_("fountain_enable_model_mdp_gen_list == 1", to_be_delete = "date=2024-05-29;committer=xuwei09") \
+      .cal_expected_value_gen_list() \
+    .end_() \
+    .if_("fountain_enable_gen_original_sequence == 1") \
+      .gen_original_sequence(
+        item_type=3,
+        reason=4,
+        sequence_length=6,
+        random_reason=666,
+        random_gen_list_topk = "{{fountain_random_gen_list_topk}}",
+        random_gen_list_nums = "{{fountain_random_gen_list_nums}}",
+        enable_random_gen_list="{{fountain_enable_random_gen_list}}",
+        output_sequence_attr_name="generated_diversity_lists"
+      ) \
+    .end_() \
+    .pack_common_attr(
+      input_common_attrs=["retrieval_list_keys_6", "retrieval_list_keys_4", "retrieval_list_keys_666", "retrieval_list_keys_9"],
+      output_common_attr='retrieval_list_keys',
+      deduplicate=True
+    ) \
+    .enrich_attr_by_light_function(
+      export_item_attr=["reason"] + ["generated_diversity_lists"],
+      function_name="EmptyFunction",
+      class_name="ExploreLightFunctionSetV2",
+      item_list_from_attr="retrieval_list_keys"
+    ) \
+    .if_("fountain_enable_list_skip_dpp_rerank_distill == 1", to_be_delete = "date=2024-05-29;committer=huzengyi") \
+      .gen_list_rerank_distill() \
+    .end_() \
+    .if_("fountain_dpp_enable_invalid_dpp_gen_list == 1", to_be_delete = "date=2024-05-29;committer=huzengyi") \
+      .gen_list_rerank_point() \
+    .end_() \
+    .list_wise_seq_attr(
+      upload_time_attr="upload_time",
+      duration_ms_attr="duration_ms",
+      hetu_level_one_attr="hetu_tag_level_info__hetu_level_one",
+      hetu_level_two_attr="hetu_tag_level_info__hetu_level_two",
+      hetu_level_three_attr="hetu_tag_level_info__hetu_level_three",
+      hetu_level_four_attr="hetu_tag_level_info__hetu_level_four",
+      hetu_level_five_attr="hetu_tag_level_info__hetu_level_five",
+      item_attrs_transform_map=rerank_features,
+      seq_item_attr_name="generated_diversity_lists",
+      output_attrs=gen_photo_features_for_all_position_new(6),
+      item_list_from_attr="retrieval_list_keys",
+    ) \
+    .if_("fountain_enable_use_model_gen_list == 1", to_be_delete = "date=2024-05-29;committer=huzengyi") \
+      .model_gen_list() \
+    .end_() \
+    .request_evaluator_model() \
+    .if_("fountain_enable_rerank_ensemble_sort == 1", to_be_delete = "date=2024-05-29;committer=huzengyi") \
+      .list_ensemble_sort(
+        output_attr="rerank_context",
+        seq_item_attr_name="generated_diversity_lists",
+        use_proportion="{{fountain_fr_rerank_ensemble_use_proportion}}",
+        use_pow_rank="{{fountain_fr_rerank_ensemble_use_power_rank}}",
+        fountain_enable_list_ensemble_sort=True,
+        enable_use_debias_score="{{fountain_enable_use_debias_score}}",
+        fountain_rerank_ensemble_list_weight="{{fountain_fr_rerank_ensemble_list_weight}}",
+        queues=[
+          {
+            "name": "fullrank_sim_pfintr",
+            "weight_base": "{{fountain_rerank_ensemble_sort_fintr_weight}}"
+          },
+          {
+            "name": "fullrank_act_wtd",
+            "weight_base": "{{fountain_rerank_ensemble_sort_wtd_weight}}"
+          },
+          {
+            "name": "fullrank_ensemble_score",
+            "weight_base": "{{fountain_rerank_ensemble_sort_ensemble_score_weight}}"
+          },
+          {
+            "name": "fullrank_click_score",
+            "weight_base": "{{fountain_rerank_ensemble_sort_click_weight}}"
+          },
+          {
+            "name": "fullrank_like_score",
+            "weight_base": "{{fountain_rerank_ensemble_sort_like_weight}}",
+          },
+          {
+            "name": "fullrank_follow_score",
+            "weight_base": "{{fountain_rerank_ensemble_sort_follow_weight}}",
+          }
+        ],
+        item_list_from_attr="retrieval_list_keys"
+      ) \
+    .end_() \
+    .sort(
+      score_from_attr="rerank_context",
+      item_list_from_attr="retrieval_list_keys",
+    ) \
+    .set_attr_value(
+      no_overwrite=True,
+      common_attrs=[
+        {
+          "name": "reason_set",
+          "type": "int_list",
+          "value": [0,1,2,3,4,5,10]
+        }
+      ]
+    ) \
+    .list_wise_item_attr(
+      seq_item_attr_name="generated_diversity_lists",
+      seq_score_attr_name="rerank_context",
+      item_list_from_attr="retrieval_list_keys",
+      list_reason="list_reason",
+      input_seq_predict_name="eval_pred_list",
+      output_item_predict_name="eval_pred_itemkey",
+      reason_set="reason_set"
+    ) \
+    .set_attr_value(
+      no_overwrite=True,
+      item_attrs=[
+        {
+          "name": "virtual_rerank_score",
+          "type": "double",
+          "value": 0.0
+        }, 
+        {
+          "name": "eval_pred_itemkey",
+          "type": "double_list",
+          "value": []
+        },
+      ],
+      common_attrs=[
+        {
+          "name": "list_reason",
+          "type": "int",
+          "value": -1
+        }
+      ]
+    ) \
+    .sort(
+      name = "fountain_rr",
+      traceback = True,
+      stable_sort=True,
+      score_from_attr="virtual_rerank_score",
+    ) \
+    .if_("fountain_enable_final_es_sort_point == 1", to_be_delete = "date=2024-05-29;committer=huzengyi") \
+      .final_es_sort() \
+    .end_() \
+    .if_("fountain_enable_cascade_distill_sample == 1") \
+      .distill_sample() \
+    .end_if_() \
+    .if_("fountain_enable_cascade_distill_full_link_sample == 1") \
+      .full_link_distill_sample() \
+    .end_if_() \
+    .end_if_() \
+    .copy_item_meta_info(
+      save_item_seq_to_attr = "rerank_final_index",
+    ) \
+    .if_("fountain_enable_rerank_write_rerank_neg_result_to_redis == 1", to_be_delete = "date=2024-05-29;committer=liuhao07") \
+      .write_rerank_neg_result_to_redis() \
+    .end_() \
+    .if_("fountain_enable_rerank_write_rerank_pos_result_to_redis == 1") \
+      .write_rerank_pos_result_to_redis() \
+    .end_() \
+    .perflog_reason_count(
+      check_point="rerank_finish",
+      range_end="{{request_num}}"
+    ) \
+    .post_process() \
+    .truncate(size_limit = "{{return page_size * 5}}") \
+    .if_("enable_insert_fountain_fullrank_similar_photo == 1") \
+      .explore_similar_photo_enricher(
+        hetu_attr_list = ["hetu_tag_level_info_v2__hetu_level_one", "hetu_tag_level_info_v2__hetu_level_two", 
+                          "hetu_tag_level_info_v2__hetu_level_three", "hetu_tag_level_info_v2__hetu_level_four"],
+        author_str_list = ["author__category_detail__fourth_level_id", "author__category_detail__third_level_id"],
+        face_id_attr = "hetu_tag_level_info_v2__hetu_face_id",
+        hetu_tag_attr ="hetu_tag_level_info_v2__hetu_tag",
+        cluster_id_attr = "hetu_tag_level_info_v2__hetu_cluster_id",
+        fullrank_pid_list_attr = "fullrank_total_photo_id_list",
+        enable_filter_invalid_hetu_id = "{{enable_filter_fountain_fullrank_invalid_hetu_id}}",
+        skip_match_hetu_level_one = "{{skip_fountain_fullrank_match_hetu_level_one}}",
+        related_score_threshold = "{{fountain_fullrank_related_score_threshold}}",
+        save_total_similar_pid_list_to_attr = "similar_pid_list",
+        save_similar_pid_mark_to_attr = "relative_photo_original_id",
+      ) \
+      .retrieve_by_common_attr(attr="similar_pid_list", reason=729563, reset_existing_item_attrs = False) \
+      .count_reco_result(save_count_to = "similar_pid_retr_count", target_reason = 729563) \
+      .perflog_attr_value(
+        check_point="relative_photo",
+        common_attrs=[
+          "similar_pid_retr_count",
+        ],
+      ) \
+    .end_if_() \
+    
+    return self
+
+  def request_evaluator_model(self):
+    self \
+    .if_("fountain_skip_rerank_predict_v2 == 0") \
+      .list_item_predict(
+        kess_service = "{{fountain_rerank_kess_service_v2_produce_v4}}",
+        service_group = "PRODUCTION",
+        origin_seq_reason = "{{fountain_rerank_origin_reason}}",
+        timeout_ms = "{{fountain_rerank_predict_timeout_ms}}",
+        layer_name = "{{fountain_rerank_predict_layer_name}}",
+        loss_name = "{{fountain_rerank_predict_loss_name}}",
+        shard_num = "{{fountain_rerank_predict_shard_num}}",
+        output_attr = "rerank_context",
+        output_list_attr = "rerank_item_score",
+        disable_common_attr_missing_warning = True,
+        use_odd_score = "{{fountain_rerank_predict_use_odd_score}}",
+        enable_use_kai = "{{fountain_rerank_predict_use_kai}}",
+        use_dev_score = "{{fountain_rerank_predict_use_dev_score}}",
+        dev_alpha = "{{fountain_rerank_predict_dev_alpha}}",
+        dev_beta = "{{fountain_rerank_predict_dev_beta}}",
+        use_product_score = "{{fountain_rerank_predict_use_product_score}}",
+        use_pos_discount = "{{fountain_rerank_predict_use_pos_discount}}",
+        pos_reward_str = "{{fountain_rerank_predict_pos_reward_str}}",
+        rerank_list_next_weight = "{{fountain_rerank_list_next_weight_new}}",
+        rerank_list_ltr_weight = "{{fountain_predict_rerank_list_ltr_weight}}",
+        enable_use_list_score = "{{fountain_rerank_enable_use_list_score}}",
+        item_next_attr = "{{fountain_rerank_item_next_score_attr}}",
+        enable_use_pos_context_score = "{{fountain_rerank_fast_enable_pos_context}}",
+        last_coeff = "{{fountain_rerank_fast_last_coeff}}",
+        enable_use_pos_next_multiply = "{{fountain_rerank_fast_enable_pos_next}}",
+        enable_use_pos_next_add = "{{fountain_rerank_fast_enable_pos_next_add}}",
+        pos_next_cut = "{{fountain_rerank_fast_pos_next_cut}}",
+        pos_next_weight = "{{fountain_rerank_fast_pos_next_weight}}",
+        enable_use_bellman_equation = "{{fountain_rerank_enable_use_bellman_equation}}",
+        enable_use_mul_target = "{{fountain_rerank_enable_use_mul_target}}",
+        mul_target_weight_pos = "{{fountain_rerank_mul_target_weight_one}}",
+        mul_target_weight_next = "{{fountain_rerank_mul_target_weight_two}}",
+        mul_target_weight_play = "{{fountain_rerank_mul_target_weight_three}}",
+        mul_target_weight_raw_pos = "{{fountain_rerank_mul_target_weight_raw_pos}}",
+        mul_target_weight_raw_next = "{{fountain_rerank_mul_target_weight_raw_next}}",
+        mul_target_weight_raw_play = "{{fountain_rerank_mul_target_weight_raw_play}}",
+        mul_target_weight_raw_pow_pos = "{{fountain_rerank_mul_target_weight_raw_pow_pos}}",
+        mul_target_weight_raw_pow_next = "{{fountain_rerank_mul_target_weight_raw_pow_next}}",
+        mul_target_weight_raw_pow_play = "{{fountain_rerank_mul_target_weight_raw_pow_play}}",
+        enable_user_list_score = "{{fountain_rerank_enable_user_list_score}}",
+        list_score_weight_pos = "{{fountain_rerank_list_score_weight_pos}}",
+        list_score_weight_next = "{{fountain_rerank_list_score_weight_next}}",
+        list_score_weight_play = "{{fountain_rerank_list_score_weight_play}}",
+        enable_use_ensemble_sort = "{{fountain_rerank_use_ensemble_sort}}",
+        item_list_from_attr="retrieval_list_keys",
+        attr_name_transform_map = rerank_feature_map,
+        item_attrs = gen_photo_features_for_all_position_new(6),
+        output_pred_val_attr = "eval_pred_list",
+      ) \
+    .else_() \
+      .if_("fountain_skip_rerank_predict_with_new_attr == 1", to_be_delete = "date=2024-05-29;committer=huzengyi") \
+        .common_predict(
+          loss_function_name = ["pos" + str(i) for i in range(6)] + ["next" + str(i) for i in range(6)] + ["wtd" + str(i) for i in range(6)],
+          loss_default_value = 0.0,
+          kess_service = "{{fountain_rerank_kess_service_v2_produce_v4}}",
+          service_group = "PRODUCTION",
+          timeout_ms = 100,
+          item_attrs = gen_photo_features_for_all_position_new(6),
+          attr_name_transform_map = rerank_feature_map_all,
+          item_list_from_attr = "retrieval_list_keys"
+        ) \
+        .explore_listwise_score_enricher(
+          item_attrs = ["pos" + str(i) for i in range(6)] + ["next" + str(i) for i in range(6)] + ["wtd" + str(i) for i in range(6)],
+          seq_item_attr_name = "generated_diversity_lists",
+          loss_name = "{{fountain_rerank_predict_loss_name}}",
+          output_attr = "rerank_context",
+          item_list_from_attr = "retrieval_list_keys"
+        ) \
+      .else_() \
+        .if_("fountain_rerank_eval_add_extra_attr_predict == 1") \
+          .get_kconf_params(
+            kconf_configs = [
+            {
+              "kconf_key": "{{fountain_rr_play_watch_table_kconf}}",
+              "value_type": "json",
+              "json_path": "durationQuantile",
+              "export_common_attr": "fountain_rr_wtd_table_seg"
+            },
+            {
+              "kconf_key": "{{fountain_rr_play_watch_table_kconf}}",
+              "value_type": "json",
+              "json_path": "playQ0",
+              "export_common_attr": "fountain_rr_wtd_table_0"
+            },
+            {
+              "kconf_key": "{{fountain_rr_play_watch_table_kconf}}",
+              "value_type": "json",
+              "json_path": "playQ1",
+              "export_common_attr": "fountain_rr_wtd_table_1"
+            },
+            {
+              "kconf_key": "{{fountain_rr_play_watch_table_kconf}}",
+              "value_type": "json",
+              "json_path": "playQ2",
+              "export_common_attr": "fountain_rr_wtd_table_2"
+            },
+            {
+              "kconf_key": "{{fountain_rr_play_watch_table_kconf}}",
+              "value_type": "json",
+              "json_path": "playQ3",
+              "export_common_attr": "fountain_rr_wtd_table_3"
+            },
+            {
+              "kconf_key": "{{fountain_rr_play_watch_table_kconf}}",
+              "value_type": "json",
+              "json_path": "playQ4",
+              "export_common_attr": "fountain_rr_wtd_table_4"
+            },
+            {
+              "kconf_key": "{{fountain_rr_play_watch_table_kconf}}",
+              "value_type": "json",
+              "json_path": "playQ5",
+              "export_common_attr": "fountain_rr_wtd_table_5"
+            },
+            {
+              "kconf_key": "{{fountain_rr_play_watch_table_kconf}}",
+              "value_type": "json",
+              "json_path": "playQ6",
+              "export_common_attr": "fountain_rr_wtd_table_6"
+            },
+            {
+              "kconf_key": "{{fountain_rr_play_watch_table_kconf}}",
+              "value_type": "json",
+              "json_path": "playQ7",
+              "export_common_attr": "fountain_rr_wtd_table_7"
+            },
+            {
+              "kconf_key": "{{fountain_rr_play_watch_table_kconf}}",
+              "value_type": "json",
+              "json_path": "playQ8",
+              "export_common_attr": "fountain_rr_wtd_table_8"
+            }
+            ]
+          ) \
+          .list_item_predict(
+            kess_service = "{{fountain_rerank_kess_service_v2_produce_v4}}",
+            service_group = "PRODUCTION",
+            origin_seq_reason = "{{fountain_rerank_origin_reason}}",
+            timeout_ms = "{{fountain_rerank_predict_timeout_ms}}",
+            layer_name = "{{fountain_rerank_predict_layer_name}}",
+            loss_name = "{{fountain_rerank_predict_loss_name}}",
+            shard_num = "{{fountain_rerank_predict_shard_num}}",
+            output_attr = "rerank_context",
+            output_list_attr = "rerank_item_score",
+            disable_common_attr_missing_warning = True,
+            use_odd_score = "{{fountain_rerank_predict_use_odd_score}}",
+            enable_use_kai = "{{fountain_rerank_predict_use_kai}}",
+            use_dev_score = "{{fountain_rerank_predict_use_dev_score}}",
+            dev_alpha = "{{fountain_rerank_predict_dev_alpha}}",
+            dev_beta = "{{fountain_rerank_predict_dev_beta}}",
+            use_product_score = "{{fountain_rerank_predict_use_product_score}}",
+            use_pos_discount = "{{fountain_rerank_predict_use_pos_discount}}",
+            pos_reward_str = "{{fountain_rerank_predict_pos_reward_str}}",
+            rerank_list_next_weight = "{{fountain_rerank_list_next_weight_new}}",
+            rerank_list_ltr_weight = "{{fountain_predict_rerank_list_ltr_weight}}",
+            enable_use_list_score = "{{fountain_rerank_enable_use_list_score}}",
+            item_next_attr = "{{fountain_rerank_item_next_score_attr}}",
+            enable_use_pos_context_score = "{{fountain_rerank_fast_enable_pos_context}}",
+            last_coeff = "{{fountain_rerank_fast_last_coeff}}",
+            enable_use_pos_next_multiply = "{{fountain_rerank_fast_enable_pos_next}}",
+            enable_use_pos_next_add = "{{fountain_rerank_fast_enable_pos_next_add}}",
+            pos_next_cut = "{{fountain_rerank_fast_pos_next_cut}}",
+            pos_next_weight = "{{fountain_rerank_fast_pos_next_weight}}",
+            enable_use_bellman_equation = "{{fountain_rerank_enable_use_bellman_equation}}",
+            enable_use_mul_target = "{{fountain_rerank_enable_use_mul_target}}",
+            mul_target_weight_pos = "{{fountain_rerank_mul_target_weight_one}}",
+            mul_target_weight_next = "{{fountain_rerank_mul_target_weight_two}}",
+            mul_target_weight_play = "{{fountain_rerank_mul_target_weight_three}}",
+            mul_target_weight_raw_pos = "{{fountain_rerank_mul_target_weight_raw_pos}}",
+            mul_target_weight_raw_next = "{{fountain_rerank_mul_target_weight_raw_next}}",
+            mul_target_weight_raw_play = "{{fountain_rerank_mul_target_weight_raw_play}}",
+            mul_target_weight_raw_pow_pos = "{{fountain_rerank_mul_target_weight_raw_pow_pos}}",
+            mul_target_weight_raw_pow_next = "{{fountain_rerank_mul_target_weight_raw_pow_next}}",
+            mul_target_weight_raw_pow_play = "{{fountain_rerank_mul_target_weight_raw_pow_play}}",
+            enable_user_list_score = "{{fountain_rerank_enable_user_list_score}}",
+            list_score_weight_pos = "{{fountain_rerank_list_score_weight_pos}}",
+            list_score_weight_next = "{{fountain_rerank_list_score_weight_next}}",
+            list_score_weight_play = "{{fountain_rerank_list_score_weight_play}}",
+            enable_use_ensemble_sort = "{{fountain_rerank_use_ensemble_sort}}",
+            enable_play_time_reverse = "{{fountain_enable_play_time_reverse}}",
+            rr_wtd_attrs = rr_wtd_table_common_attr(),
+            rr_duration_attrs = rr_duration_item_attr(),
+            item_list_from_attr="retrieval_list_keys",
+            attr_name_transform_map = rerank_feature_map_new,
+            item_attrs = gen_photo_features_for_all_position_new(6),
+            extra_common_attrs = rerank_extra_common_attr(),
+            output_pred_val_attr = "eval_pred_list",
+          ) \
+        .end_if_() \
+      .end_if_() \
+    .end_if_() \
+    .if_("fountain_rerank_enable_shuffle_gen_list == 1", to_be_delete = "date=2024-05-29;committer=huzengyi") \
+      .shuffle_list_attr(
+        common_attr = "retrieval_list_keys"
+      ) \
+    .end_()
+    
+    return self
+    
+  def dpp_process(self):
+    self \
+    .if_("fountain_rerank_enable_diversity_page_enhance == 1") \
+      .if_("page ~= nil and page > fountain_rerank_diversity_page_enhance_start") \
+        .gen_common_attr_by_lua(
+          attr_map={
+            "fountain_rerank_dpp_diversity_rank_theta": "fountain_rerank_dpp_diversity_rank_theta * fountain_rerank_diversity_page_enhance_coeff",
+            "fountain_ssd_rank_score_weight": "fountain_ssd_rank_score_weight * fountain_rerank_diversity_page_enhance_coeff",
+        }) \
+      .end_() \
+    .end_() \
+    .dpp_gen_sequence(
+      fix_diversity_score="{{enable_fountain_rerank_fix_diversity_score}}",
+      max_sequence_num="{{fountain_rerank_dpp_diversity_max_sequence_num}}",
+      return_item_type=3,
+      queues=gen_seed_ensemble_queues_dpp_v2(),
+      embedding_service_name="{{fountain_rerank_dpp_diversity_embedding_service_name}}",
+      dpp_diversity_shard_num="{{fountain_rerank_dpp_diversity_shard_num}}",
+      embedding_slot_id="{{fountain_rerank_dpp_diversity_embedding_slot_id}}",
+      embedding_sign_format="{{fountain_rerank_dpp_diversity_embedding_sign_format}}",
+      embedding_timeout_ms="{{fountain_rerank_dpp_diversity_embedding_timeout_ms}}",
+      embedding_format="{{fountain_rerank_dpp_diversity_embedding_format}}",
+      keep_pre_size="{{fountain_rerank_keep_pre_size}}",
+      the_temperature="{{fountain_rerank_dpp_proportion_temperature}}",
+      use_power_rank="{{fountain_rerank_dpp_use_power_rank}}",
+      use_proportion="{{fountain_rerank_dpp_use_proportion}}",
+      the_temperature_addAndMul="{{fountain_rerank_dpp_proportion_temperature_addAndMul}}",
+      use_power_rank_addAndMul="{{fountain_rerank_dpp_use_power_rank_addAndMul}}",
+      use_proportion_addAndMul="{{fountain_rerank_dpp_use_proportion_addAndMul}}",
+      use_sigmoid = "{{fountain_rerank_enable_es_use_sigmoid}}",
+      sigmoid_beta = "{{fountain_rerank_es_sigmoid_beta}}",
+      sigmoid_gamma = "{{fountain_rerank_es_sigmoid_gamma}}",
+      use_combine = "{{fountain_rerank_enable_es_use_combine}}",
+      combine_smooth = "{{fountain_rerank_es_combine_smooth}}",
+      combine_alpha = "{{fountain_rerank_es_combine_alpha}}",
+      sequence_num_multiple="{{fountain_rerank_dpp_sequence_num_multiple}}",
+      diversity_list_size="{{fountain_rerank_dpp_diversity_list_size}}",
+      rank_theta="{{fountain_rerank_dpp_diversity_rank_theta}}",
+      dm_epsilon="{{fountain_rerank_dpp_diversity_dm_epsilon}}",
+      enable_dpp="{{fountain_rerank_enable_dpp}}",
+      filter_red_vertical_num="{{fountain_rerank_filter_red_vertical_num}}",
+      enable_dpp_use_ssd="{{fountain_enable_dpp_use_ssd}}",
+      final_cnt="{{fountain_ssd_filter_final_cnt}}",
+      enable_dpp_variant="{{fountain_enable_dpp_variant}}",
+      enable_slot_num_minus_offset="{{fountain_enable_slot_num_minus_offset}}",
+      enable_ssd_filter_skip_sin="{{fountain_enable_ssd_filter_skip_sin}}",
+      enable_skip_sin_que="{{fountain_enable_skip_sin_que}}",
+      enable_relate_score_org="{{fountain_dpp_enable_relate_score_org}}",
+      enable_relate_score_ensemble="{{fountain_dpp_enable_relate_score_ensemble}}",
+      enable_relate_score_ltr="{{fountain_dpp_enable_relate_score_ltr}}",
+      enable_ensemble_hetu_score="{{fountain_dpp_enable_ensemble_hetu_score}}",
+      enable_point_model_cy_score="{{fountain_dpp_enable_point_model_ltr_score}}",
+      ensemble_hetu_score_method="{{fountain_dpp_ensemble_hetu_score_method}}",
+      top_rank_threshold="{{fountain_dpp_top_rank_threshold}}",
+      duration_threshold="{{fountain_dpp_duration_threshold}}",
+      enable_gen_distill_model="{{fountain_dpp_enable_gen_distill_model}}",
+      enable_gen_next_model="{{fountain_dpp_enable_gen_next_model}}",
+      enable_plus_cal_method="{{fountain_dpp_enable_plus_cal_method}}",
+      enable_switch_method="{{fountain_dpp_enable_switch_method}}",
+      next_model_param_a="{{fountain_dpp_next_model_param_a}}",
+      next_model_param_b="{{fountain_dpp_next_model_param_b}}",
+      ltr_model_param_a="{{fountain_dpp_ltr_model_param_a}}",
+      ltr_model_param_b="{{fountain_dpp_ltr_model_param_b}}",
+      weight_adjust_param_a="{{fountain_dpp_weight_adjust_param_a}}",
+      weight_adjust_param_b="{{fountain_dpp_weight_adjust_param_b}}",
+      weight_adjust_param_c="{{fountain_dpp_weight_adjust_param_c}}",
+      enable_ensemble_hetu_cal="{{fountain_dpp_enable_ensemble_hetu_cal}}",
+      enable_es_score_hetu_cal="{{fountain_dpp_enable_es_score_hetu_cal}}",
+      enable_es_score_hetu_not_pow_cal="{{fountain_dpp_enable_es_score_hetu_not_pow_cal}}",
+      hetu_emsemble_attr=rerank_hetu_ensemble_queues,
+      user_info_ptr_attr="userInfoPb",
+      action_day="{{fountain_rerank_pcltr_active_day_num}}",
+      beamsearch_num_prefix="{{fountain_rerank_beamsearch_num_prefix}}",
+      enable_use_beamsearch="{{fountain_rerank_enable_use_beamsearch}}",
+      beamsearch_list_size="{{fountain_rerank_beamsearch_list_size}}",
+      cluster_id_attr="hetu_tag_level_info__hetu_level_one",
+      use_div_prefer="{{fountain_dpp_use_div_prefer_cal}}",
+      div_lower_bound="{{fountain_dpp_div_lower_bound}}",
+      div_upper_bound="{{fountain_dpp_div_upper_bound}}",
+      div_bias="{{fountain_dpp_div_bias}}",
+      smooth_num="{{fountain_dpp_smooth_num}}",
+      related_score_power_weight="{{fountain_dpp_related_score_power_weight}}",
+      relevant_score_type="{{fountain_dpp_relevant_score_type}}",
+      raw_score_pow_type="{{fountain_dpp_raw_score_pow_type}}",
+      raw_fractile_score_pow_type="{{fountain_dpp_raw_fractile_score_pow_type}}",
+      # cid bias
+      enable_es_score_cid_cal="{{fountain_dpp_enable_es_score_cid_cal}}",
+      cid_emsemble_attr=rerank_cid_ensemble_queues,
+      actual_cid_stat_attr="uOldMmuClusterId300ListList",
+      cluster_id862_attr="hetu_sim_cluster_id862",
+      # fpsa
+      cluster_idsource_attr="hetu_sim_cluster_id",
+      fpsa_next_score_attr="fullrank_next_score",
+      fpsa_fintr_score_attr="fullrank_pfintr_score",
+      enable_fpsa_recall="{{fountain_enable_fpsa_recall}}",
+      fpsa_diversity_wt="{{fountain_fpsa_diversity_wt}}",
+      fpsa_beam_size="{{fountain_fpsa_beam_size}}",
+      enable_single_recall_list="{{fountain_enable_single_recall_list}}",
+      enable_fpsa_diversity="{{fountain_enable_fpsa_diversity}}",
+      fpsa_diversity_num="{{fountain_fpsa_diversity_num}}",
+      fpsa_result_size="{{fountain_fpsa_result_size}}",
+      fpsa_fintr_wt="{{fountain_fpsa_fintr_wt}}",
+      fpsa_next_wt="{{fountain_fpsa_next_wt}}",
+      enable_diversity_recall="{{fountain_rerank_enable_diversity_recall}}",
+      div_recall_wt="{{fountain_rerank_diversity_wt}}",
+      div_mode_type="{{fountain_rerank_div_mode_type}}",
+      div_rel_cnt="{{fountain_rerank_div_rel_cnt}}",
+      div_relate_score_attr="fullrank_ensemble_score",
+      # filter set
+      use_set_filter="{{fountain_dpp_use_set_filter}}",
+      set_max_filter_cnt="{{fountain_dpp_set_max_filter_cnt}}",
+      dpp_beam_size="{{fountain_dpp_beam_size}}",
+      enable_only_max_dpp_score_list="{{fountain_enable_only_max_dpp_score_list}}",
+      # rr origin
+      enable_ee_list="{{fountain_enable_ee_list}}",
+      rr_origin_num="{{fountain_rr_origin_num}}",
+      # theta bias
+      enable_theta_random="{{fountain_enable_theta_random}}",
+      theta_bias_range="{{fountain_theta_bias_range}}",
+      # theta personalized
+      personalized_param_type="{{fountain_rerank_personalized_param_type}}",
+      personalized_base="{{fountain_rerank_personalized_base}}",
+      personalized_min="{{fountain_rerank_personalized_min}}",
+      personalized_max="{{fountain_rerank_personalized_max}}",
+      personalized_score_attr="fountain_colossus_hetu_personalized_score",
+      # dbrs
+      enable_cal_diversity_dprs="{{fountain_enable_cal_diversity_dbrs}}",
+      user_hetu1_distribution_attr="fountain_save_user_hetu1_distribution_map",
+      dbrs_rank_score_weight="{{fountain_dbrs_rank_score_weight}}",
+      dbrs_random_param="{{fountain_dbrs_random_param}}",
+      # matrix exp
+      enable_sim_matrix_exp = "{{fountain_dpp_enable_sim_matrix_exp}}",
+      matrix_exp_param = "{{fountain_dpp_matrix_exp_param}}",
+      is_explore = "{{fountain_dynamic_weight_is_explore}}",
+      enable_sim_matrix_sigmoid="{{fountain_enable_sim_matrix_sigmoid}}",
+      sim_matrix_sigmoid_scale_param="{{fountain_sim_matrix_sigmoid_scale_param}}",
+      sim_matrix_sigmoid_move_param="{{fountain_sim_matrix_sigmoid_move_param}}",
+      # ssd gen list
+      enable_ssd_gen_list = "{{fountain_enable_ssd_gen_list}}",
+      enable_dpp_gen_list = "{{fountain_enable_dpp_gen_list}}",
+      enable_ori_gen_list = "{{fountain_enable_ori_gen_list}}",
+      ssd_diversity_factor = "{{fountain_ssd_diversity_factor}}",
+      ssd_score_fusion_type = "{{fountain_ssd_score_fusion_type}}",
+      ssd_rank_score_weight = "{{fountain_ssd_rank_score_weight}}",
+      enable_big_circle_method = "{{fountain_enable_big_circle_method}}",
+      enable_increasing_mmu_emb = "{{fountain_enable_increasing_mmu_emb}}",
+      multiple_emb_weight = "{{fountain_multiple_emb_weight}}",
+      # que_tail_discount
+      enable_que_tail_discount="{{fountain_enable_que_tail_discount}}",
+      que_tail_discount_threshold="{{fountain_que_tail_discount_threshold}}",
+      que_tail_discount_coef="{{fountain_que_tail_discount_coef}}",
+      que_tail_discount_min="{{fountain_que_tail_discount_min}}",
+      que_tail_boost_threshold="{{fountain_que_tail_boost_threshold}}",
+      enable_que_tail_adaptive_discount="{{fountain_enable_que_tail_adaptive_discount}}",
+      enable_que_tail_adaptive_boost="{{fountain_enable_que_tail_adaptive_boost}}",
+      # relate score
+      use_rank_div="{{fountain_relate_score_use_rank_div}}",
+      related_score_smooth="{{fountain_relate_score_rank_div_smooth}}",
+      duration_attr="duration_ms",
+      predict_play_time_attr="fullrank_pfintr_score",
+      predict_vv_attr="fullrank_click_score",
+      predict_action_once_attr="fullrank_action_once_interact_score",
+      gen_distill_model_score_attr="fullrank_rerank_distill_score",
+      gen_pos_score_attr="rerank_gen_point_pos",
+      gen_next_score_attr="rerank_gen_point_next",
+      # discrete_space
+      dpp_dynamic_action_space="{{fountain_rerank_dpp_dynamic_action_space}}",
+      dpp_dynamic_noise_weight="{{fountain_rerank_dpp_dynamic_noise_weight}}",
+      enable_discrete_action_space="{{fountain_rerank_enable_discrete_action_space}}",
+      # rerank distill
+      rerank_distill_attr="fullrank_rerank_distill_score",
+      enable_use_rerank_distill_ori="{{fountain_enable_use_rerank_distill_ori}}",
+      enable_use_rerank_distill="{{fountain_enable_use_rerank_distill}}",
+      rerank_distill_weight="{{fountain_rerank_distill_weight}}",
+      # rerank generation model
+      rerank_gen_model_attr= "rerank_gen_score",
+      rerank_gen_model_beam_size = "{{fountain_rerank_gen_model_beam_size}}",
+      enable_dpp_gen_model="{{fountain_enable_dpp_gen_model}}",
+      # hetu1 limit
+      enable_max_hetu1_dpp_regular="{{fountain_enable_max_hetu1_dpp_regular}}",
+      max_hetu1_dpp_regular_num="{{fountain_max_hetu1_dpp_regular_num}}",
+      # multiply score
+      sequence_num_for_multiply = "{{fountain_rerank_sequence_num_for_multiply}}",
+      multiply_use_power_rank = "{{fountain_rerank_multiply_enable_use_power_rank}}",
+      enable_raw_weight_random = "{{fountain_rerank_multiply_enable_raw_weight_random}}",
+      enable_raw_pow_weight_random = "{{fountain_rerank_multiply_enable_raw_pow_weight_random}}",
+      # session hetu1 limit
+      hetu_history_size="{{fountain_session_hetu_history_size}}",
+      enable_session_hetu1_dpp_regular="{{fountain_enable_session_hetu1_dpp_regular}}",
+      session_hetu1_dpp_regular_num="{{fountain_session_hetu1_dpp_regular_num}}",
+      time_gap_limit="{{fountain_session_hetu1_time_gap_limit}}",
+      realshow_page_type=666,
+      # matrix_combo
+      enale_dpp_sim_matrix_norm="{{fountain_enale_dpp_sim_matrix_norm}}",
+      enable_sim_matrix_combo="{{fountain_enable_sim_matrix_combo}}",
+      sim_matrix_alpha="{{fountain_rerank_dpp_sim_matrix_alpha}}",
+      dpp_emb_attr_name="dpp_emb",
+      dpp_emb_dim=128,
+      # session ssd
+      pid_embedding_common_attr = "session_ssd_mc_embeddings",
+      enable_get_session_item = "{{fountain_rerank_enable_get_session_item}}",
+      enable_use_session_ssd = "{{fountain_rerank_enable_use_session_ssd}}",
+      # random replace
+      enable_random_replace_topk="{{fountain_enable_random_replace_topk}}",
+      random_replace_topk="{{fountain_random_replace_topk}}",
+      # random es score
+      actual_hetu_stat_attr = "colossus_actual_reward_hetu_stat",
+      enable_use_actual_reward = "{{fountain_rerank_dpp_enable_use_actual_reward}}",
+      enable_actual_interest_in_es = "{{fountain_rerank_enable_actual_interest_in_es}}",
+      enable_hetu_adjust_in_rank = "{{fountain_rerank_enable_hetu_adjust_in_rank}}",
+      hetu_adjust_coef = "{{fountain_rerank_dpp_hetu_adjust_coef}}",
+      hetu_adjust_min_value = "{{fountain_rerank_dpp_hetu_adjust_min_value}}",
+      hetu_adjust_max_value = "{{fountain_rerank_dpp_hetu_adjust_max_value}}",
+      # adaptive theta
+      enable_sim_matrix_changed_by_hetu = "{{fountain_enable_sim_matrix_changed_by_hetu}}",
+      interest_discount_type = "{{fountain_rerank_interest_discount_type}}",
+      interest_hetu1_alpha = "{{fountain_rerank_interest_hetu1_alpha}}",
+      interest_hetu1_smooth = "{{fountain_rerank_interest_hetu1_smooth}}",
+      # kl score 融合
+      enable_get_user_longterm_interest="{{fountain_enable_get_user_longterm_interest}}",
+      enable_get_user_shortterm_interest="{{fountain_enable_get_user_shortterm_interest}}",
+      enable_get_session_hetu1="{{fountain_enable_get_session_hetu1}}",
+      enable_cal_kl_score="{{fountain_enable_cal_kl_score}}",
+      kl_max_threshold="{{fountain_rerank_kl_max_threshold}}",
+      enable_kl_fusion_real_show_hetu_cnt="{{fountain_enable_kl_fusion_real_show_hetu_cnt}}",
+      hetu_rate_min_threshold="{{fountain_hetu_rate_min_threshold}}",
+      kl_score_smooth_alpha="{{fountain_kl_score_smooth_alpha}}",
+      real_show_history_size_min_threshold="{{fountain_real_show_history_size_min_threshold}}",
+      real_show_unique_hetu_min_threshold="{{fountain_real_show_unique_hetu_min_threshold}}",
+      kl_score_power_weight="{{fountain_kl_score_power_weight}}",
+      enabl_kl_fusion_add_sigmod="{{fountain_enabl_kl_fusion_add_sigmod}}",
+      user_hetu_stat_attr="colossus_hetu_distribution_hetu_stat",
+      # pxtr matrix combo
+      enable_pxtr_based_sim_matrix="{{fountain_enable_pxtr_based_sim_matrix}}",
+      enable_pxtr_matrix_cliff="{{fountain_enable_pxtr_matrix_cliff}}",
+      pxtr_sim_matrix_alpha="{{fountain_pxtr_sim_matrix_alpha}}",
+      pxtr_matrix_row_norm="{{fountain_pxtr_matrix_row_norm}}",
+      pxtr_matrix_col_norm="{{fountain_pxtr_matrix_col_norm}}",
+      pxtr_matrix_col_zero_centered="{{fountain_pxtr_matrix_col_zero_centered}}",
+      sim_matrix_pxtr_emb=pxtr_matrix_combo_queues,
+      rank_score_type="{{fountain_dpp_rank_score_type}}",
+      enable_new_variety_engineer="{{fountain_rerank_enable_new_variety_engineer}}",
+      max_satisfied_pick="{{fountain_rerank_variety_engineer_satisfied_num}}",
+      rules = get_dpp_rule_dict(),
+      dpp_core_attr_except_embedding=[
+        {
+          "name_attr": "duration_ms",
+          "weight_attr": "dpp_core_duration_ms_weight",
+          "max_value_attr": "dpp_core_duration_ms_max_value",
+          "min_value_attr": "dpp_core_duration_ms_min_value"
+        }
+      ],
+      enable_marketing_compensation_photo_discount = "{{fountain_enable_rerank_marketing_compensation_photo_discount}}",
+      marketing_compensation_photo_discount_coeff = "{{fountain_rerank_marketing_compensation_photo_discount_coeff}}",
+      marketing_compensation_photo_attr = "is_marketing_compensation_photo",
+      marketing_compensation_photo_adjust_version = "{{fountain_enable_rerank_marketing_compensation_photo_adjust_version}}",
+      marketing_compensation_photo_scale_factor = "{{fountain_enable_rerank_marketing_compensation_photo_scale_factor}}",
+      marketing_compensation_photo_reward_coeff_attr = "rank_marketing_compensation_coeff"
+    )
+    return self
+
+  def rerank_truncate(self):
+    self \
+    .switch_("fountain_rerank_truncate_switch_method") \
+      .case_(1, to_be_delete = "date=2024-05-29;committer=huzengyi") \
+        .sort(
+          score_from_attr = "fullrank_distill_rerank_score",
+        ) \
+      .case_(2, to_be_delete = "date=2024-05-29;committer=huzengyi") \
+        .sort(
+          score_from_attr = "fullrank_distill_fusion_score",
+          range_end = "{{fountain_re_sort_by_distill_fusion_num}}",
+        ) \
+      .case_(3, to_be_delete = "date=2024-05-29;committer=huzengyi") \
+        .sort(
+          score_from_attr = "fullrank_rrwtd_score",
+          range_end = "{{fountain_re_sort_by_distill_fusion_num}}",
+        ) \
+    .end_() \
+    .enrich_attr_by_lua(
+      import_item_attr=[
+        "duration_ms"
+      ],
+      export_item_attr=[
+        "duration_0_7s",
+        "duration_7_9s",
+        "duration_9_12s",
+        "duration_12_17s",
+        "duration_17_20s",
+        "duration_20_58s",
+        "duration_58_120s",
+        "duration_gt_120s",
+        "score_before_rerank"
+      ],
+      function_for_item="duration_change",
+      lua_script_file="fountain/rerank/lua/all_lua.lua",
+    ) \
+    .copy_attr(
+      attrs=[{
+        "from_item": "score_before_rerank",
+        "to_item": "fullrank_rank_before_rerank_score"
+      }]
+    ) \
+    .if_("fountain_rerank_cut_skip_diversity == 0", to_be_delete = "date=2024-05-29;committer=huzengyi") \
+      .diversify_by_rules(
+        max_satisfied_pick="{{fountain_rerank_limit_size_produce_v4}}",
+        rules=before_rerank_diversity_rules,
+        range_start="{{fountain_rerank_cut_range_start}}"
+      ) \
+    .end_() \
+    .if_("fountain_fullrank_enable_dpp_control == 1", to_be_delete = "date=2024-05-29;committer=xuwei09") \
+      .get_remote_embedding_lite(
+        kess_service = "grpc_MMUHetuSimContentEmbedding",
+        shard_num = 4,
+        id_converter = {"type_name": "kuibaEmbeddingIdConverter"},
+        output_attr_name = "fullrank_mmu_emb",
+        size = 64,
+        client_side_shard = True,
+        range_end = "{{fountain_fullrank_dpp_control_range_end}}"
+      ) \
+      .get_remote_embedding_lite(
+        kess_service = "grpc_hotMcEmbed",
+        shard_num = 8,
+        id_converter = {"type_name": "kuibaEmbeddingIdConverter"},
+        output_attr_name = "fullrank_mc_emb",
+        size = 128,
+        client_side_shard = True,
+        range_end = "{{fountain_fullrank_dpp_control_range_end}}"
+      ) \
+      .explore_dpp_set_arranger(
+        beam_size = 1,
+        dpp_max_num = 60,
+        mmu_emb_attr_name = "fullrank_mmu_emb",
+        mc_emb_attr_name = "fullrank_mc_emb",
+        rank_theta = "{{fountain_fullrank_dpp_rank_theta}}",
+        enable_only_max_dpp_score_list = "{{fountain_fullrank_dpp_enable_only_max_dpp_score_list}}",
+        enable_norm_sim_matrix = "{{fountain_fullrank_dpp_enable_norm_sim_matrix}}",
+        sim_matrix_combo_alpha = "{{fountain_fullrank_dpp_sim_matrix_combo_alpha}}",
+        sim_matrix_norm_type = "{{fountain_fullrank_dpp_sim_matrix_norm_type}}",
+        range_end = "{{fountain_fullrank_dpp_control_range_end}}"
+      ) \
+    .end_()
+
+    return self
+
+  def jarvis_handle(self):
+    self \
+    .gen_common_attr_by_lua(
+      attr_map={
+        "user_stat_redis_key": "' ' .. tostring(_USER_ID_)",
+        "user_app_redis_key": "'UserAppCart_' .. tostring(_USER_ID_)"
+      }
+    ) \
+    .get_common_attr_from_redis(
+      cluster_name="recoHotUserStatForLtr",
+      redis_params=[
+        {
+          "redis_key": "{{user_stat_redis_key}}",
+          "output_attr_name": "user_stat_xtr_attr_from_redis"
+        }
+      ]
+    ) \
+    .get_common_attr_from_redis(
+      cluster_name="recoExploreDegradeLeaf",
+      redis_params=[
+        {
+          "redis_key": "{{user_app_redis_key}}",
+          "output_attr_name": "user_app_attr_from_redis"
+        }
+      ]
+    ) \
+    .set_default_value(
+      no_overwrite=True,
+      common_attrs=[
+        {
+          "name": "rerank_ctr_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_ltr_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_wtr_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_ftr_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_cmtr_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_cmef_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_ptr_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_epstr_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_vtr_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_l2r_score_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_watchtime_ori_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_evtr_v2_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_lvtr_ori_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_lstr_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_fintr_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_ensemble_score_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_finish_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "name": "rerank_opportunity_cost_adjust_ratio_attr",
+          "type": "float",
+          "value": 1.0
+        }
+      ]
+    ) \
+    .explore_sphinx_param_enrich(
+      user_info_pb_name="userInfoPb",
+      session_id_attr="sessionId",
+      user_stat_attr="user_stat_xtr_attr_from_redis",
+      user_app_attr="user_app_attr_from_redis",
+      request_based_jarvis_enabled="{{fountain_rerank_param_jarvis_request_based_enabled}}",
+      jarvis_kess_service="{{fountain_rerank_param_jarvis_service}}",
+      jarvis_model_name="{{fountain_rerank_param_jarvis_model_name}}",
+      app_name="{{fountain_rerank_param_jarvis_app_name}}",
+      action_type="{{fountain_rerank_param_jarvis_action_type}}",
+      jarvis_time_out=100,
+      use_app_cat="{{fountain_rerank_param_jarvis_use_app_cat}}",
+      use_expxtr="{{fountain_rerank_param_jarvis_use_expxtr}}",
+      use_emp_play="{{fountain_rerank_param_jarvis_use_emp_play}}",
+      item_attrs={
+        "author_id": "author__id",
+        "pevtr": "fullrank_sim_pevtr",
+        "plvtr": "fullrank_sim_plvtr",
+        "psvr": "fullrank_sim_psvr",
+        "pvtr": "fullrank_sim_pvtr",
+        "pltr": "fullrank_sim_pltr",
+        "phtr": "fullrank_sim_phtr",
+        "pwtr": "fullrank_sim_pwtr",
+        "pftr": "fullrank_sim_pftr",
+        "pptr": "fullrank_sim_pptr",
+        "pcmtr": "fullrank_sim_pcmtr",
+        "pcmef": "fullrank_sim_pcmef",
+        "pepstr": "fullrank_sim_pepstr",
+        "plsr": "fullrank_sim_lstr",
+        "pcltr": "fullrank_sim_pcltr",
+        "pfr_score1": "fullrank_sim_pfintr",
+        "duration_ms": "duration_ms",
+        "hetu_level_one": "hetu_tag_level_info__hetu_level_one",
+        "hetu_level_two": "hetu_tag_level_info__hetu_level_two",
+        "hetu_level_three": "hetu_tag_level_info__hetu_level_three"
+      },
+      queues=[
+        {
+          "name": "adjust:rl_rerank_vtr",
+          "param_attr": "rerank_vtr_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_ctr",
+          "param_attr": "rerank_ctr_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_ltr",
+          "param_attr": "rerank_ltr_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_wtr",
+          "param_attr": "rerank_wtr_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_ftr",
+          "param_attr": "rerank_ftr_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_cmtr",
+          "param_attr": "rerank_cmtr_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_ptr",
+          "param_attr": "rerank_ptr_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_cmef",
+          "param_attr": "rerank_cmef_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_epstr",
+          "param_attr": "rerank_epstr_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_l2r_score",
+          "param_attr": "rerank_l2r_score_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_lstr",
+          "param_attr": "rerank_lstr_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_evtr_v2",
+          "param_attr": "rerank_evtr_v2_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_lvtr_ori",
+          "param_attr": "rerank_lvtr_ori_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_watchtime_ori",
+          "param_attr": "rerank_watchtime_ori_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_fintr",
+          "param_attr": "rerank_fintr_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_ensemble_score",
+          "param_attr": "rerank_ensemble_score_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_finish",
+          "param_attr": "rerank_finish_adjust_ratio_attr"
+        },
+        {
+          "name": "adjust:rl_rerank_opportunity_cost",
+          "param_attr": "rerank_opportunity_cost_adjust_ratio_attr"
+        },
+      ]
+    ) \
+    .gen_common_attr_by_lua(
+      attr_map={
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_watchtime_ori_score": "rerank_watchtime_ori_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_watchtime_ori_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_evtr_v2_score": "rerank_evtr_v2_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_evtr_v2_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_lstr_score": "rerank_lstr_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_lstr_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_score": "rerank_ctr_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score": "rerank_ltr_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score": "rerank_wtr_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score": "rerank_ftr_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score": "rerank_cmtr_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_profile_score": "rerank_ptr_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_profile_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_cmef_score": "rerank_cmef_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_cmef_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pepstr_score": "rerank_epstr_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pepstr_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_watchtime_score": "rerank_vtr_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_watchtime_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_score": "rerank_lvtr_ori_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_l2r_score": "rerank_l2r_score_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_l2r_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_score": "rerank_fintr_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_neg_feedback_discount_score": "rerank_ensemble_score_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_neg_feedback_discount_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_finish_score": "rerank_finish_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_finish_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_opportunity_cost_score": "rerank_opportunity_cost_adjust_ratio_attr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_opportunity_cost_score"
+    })
+
+    return self
+  
+  def gen_duration_xtr_score(self):
+    self \
+    .explore_duration_xtr_debias_enricher(
+      duration_xtr_debias_user_add = "{{rerank_gen_duration_pxtr_cal_add}}",
+      duration_xtr_debias_window_size = "{{rerank_gen_duration_pxtr_window_size}}",
+      enable_use_bidirectional_window = "{{rerank_gen_duration_pxtr_use_bidirectional_window}}",
+      duration_xtr_debias_score_que_attr = "rerank_gen_duration_pxtrs_bias_score",
+      duration_ms_attr = "duration_ms",
+      enable_sort_by_duration = "{{rerank_gen_duration_pxtr_enable_sort_by_duration}}",
+      queues = rerank_duration_xtr_queues
+    ) \
+
+    return self
+
+  def gen_vv_xtr_score(self):
+    self \
+    .explore_duration_xtr_debias_enricher(
+      duration_xtr_debias_user_add = "{{rerank_gen_vv_pxtr_cal_add}}",
+      duration_xtr_debias_window_size = "{{rerank_gen_vv_pxtr_window_size}}",
+      enable_use_bidirectional_window = "{{rerank_gen_vv_pxtr_use_bidirectional_window}}",
+      duration_xtr_debias_score_que_attr = "rerank_gen_vv_pxtrs_bias_score",
+      duration_ms_attr = "fountain_stats__real_show_count",
+      enable_sort_by_duration = "{{rerank_gen_vv_pxtr_enable_sort_by_vv}}",
+      queues = rerank_vv_xtr_queues
+    ) \
+
+    return self
+
+  def gen_cid_xtr_score(self):
+    #每个cid下的均值，pxtr-均值，作为新的队列
+    self \
+    .explore_duration_xtr_debias_enricher(
+      duration_xtr_debias_user_add = "{{rerank_gen_cid_pxtr_cal_add}}",
+      duration_xtr_debias_window_size = "{{rerank_gen_cid_pxtr_window_size}}",
+      enable_use_bidirectional_window = "{{rerank_gen_cid_pxtr_use_bidirectional_window}}",
+      duration_xtr_debias_score_que_attr = "rerank_gen_cid_pxtrs_bias_score",
+      duration_ms_attr = "hetu_sim_cluster_id",
+      enable_sort_by_duration = "{{rerank_gen_cid_pxtr_enable_sort_by_cid}}",
+      queues = rerank_cid_xtr_queues,
+      enable_cid_bias = "{{rerank_gen_cid_pxtr_enable_cid_bias}}"
+    ) \
+
+    return self
+
+  def gen_avg_xtr_score(self):
+    self \
+    .enrich_attr_by_light_function(
+      import_item_attr = [
+       "view_length_sum", "click_count"
+      ],
+      export_item_attr = [
+        "fullrank_emp_avg_play_score",
+      ],
+      function_name = "CalAvgPlayScore",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+    .pack_item_attr(
+      item_source={
+        "reco_results": True,
+      },
+      mappings=[
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_click_score",
+          "to_common_attr": "avg_click_dev"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_like_score",
+          "to_common_attr": "avg_like_dev"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_follow_score",
+          "to_common_attr": "avg_follow_dev"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_forward_score",
+          "to_common_attr": "avg_forward_dev"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_collect_score",
+          "to_common_attr": "avg_collect_dev"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_comment_score",
+          "to_common_attr": "avg_comment_dev"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_pfintr_score",
+          "to_common_attr": "avg_pfintr_dev"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_emp_avg_play_score",
+          "to_common_attr": "avg_play_dev"
+        },
+      ]
+    ) \
+
+    return self
+
+  def gen_unexpected_queue(self):
+    self \
+    .explore_rerank_attr(
+      user_info_attr = "userInfoPb"
+    ) \
+    .explore_common_user_feature_enricher(
+      user_info_attr = "userInfoPb",
+      user_effective_view_pids_attr = "explore_effective_pids",
+      ft_ev_pids_attr = "fountain_effective_pids",
+    ) \
+    .concat_attr(
+      input_common_attrs = [
+        "explore_effective_pids", "fountain_effective_pids"
+      ],
+      output_common_attr = "effective_pids",
+    ) \
+    .get_remote_embedding_lite(
+      kess_service = "grpc_MMUHetuSimContentEmbedding",
+      shard_num = 4,
+      id_converter = {"type_name": "kuibaEmbeddingIdConverter"},
+      output_attr_name = "pids_emb",
+      size = 64,
+      client_side_shard = True
+    ) \
+    .get_remote_embedding_lite(
+      kess_service = "grpc_MMUHetuSimContentEmbedding",
+      shard_num = 4,
+      id_converter = {"type_name": "kuibaEmbeddingIdConverter"},
+      input_attr_name = "effective_pids",
+      output_attr_name = "effective_embedding_pids",
+      query_source_type = "common_attr",
+      size = 64,
+      client_side_shard = True
+    ) \
+    .kmeans_cluster_action_list(
+      cluster_center_size = 5,
+      kmeans_verbose = False,
+      embedding_dim = 64,
+      action_list_id_common_attr_name = "effective_pids",
+      action_list_emb_common_attr_name = "effective_embedding_pids",
+      cluster_center_size_common_attr_name = "cluster_num_list",
+      cluster_center_list_emb_common_attr_name = "cluster_embedding_list",
+      output_truncate = False)  \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        "cluster_num_list",
+        "cluster_embedding_list",
+        "fountain_unexpected_emb_dim",
+      ],
+      import_item_attr = [
+        "pids_emb"
+      ],
+      export_item_attr = [
+        "fullrank_unexpected_score"
+      ],
+      function_name = "CalEmbScore",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+
+    return self
+
+  def gen_cluster_id_rate(self):
+    self \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        "uOldMmuClusterId300ListList",
+        {"name": "fountain_rerank_dpp_cid_upper_bound", "as": "cluster_id_cid_rate_upper_bound"},
+        {"name": "fountain_rerank_dpp_cid_lower_bound", "as": "cluster_id_cid_rate_lower_bound"},
+        {"name": "fountain_rerank_dpp_cid_avg_bound", "as": "cluster_id_cid_rate_avg_bound"},
+      ],
+      export_common_attr = [
+        {"name": "cid_rate", "as": "fountain_colossus_hetu_personalized_score"}, #取值范围为0.03，使用的时候可以加权
+      ],
+      function_name = "DynamicClusterIdRate",
+      class_name = "ExploreLightFunctionSetV2"
+    ) \
+
+    return self
+
+  def gen_quality_queue(self):
+    self \
+    .pack_item_attr(
+      item_source={
+        "reco_results": True,
+      },
+      mappings=[
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_sim_phtr",
+          "to_common_attr": "rerank_avg_phtr"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_sim_psvr",
+          "to_common_attr": "rerank_avg_psvtr"
+        },
+      ]
+    ) \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        "rerank_avg_phtr",
+        "rerank_avg_psvtr",
+        "fountain_rr_enable_use_neginfo_as_posinfo"
+      ],
+      import_item_attr = [
+        "fullrank_sim_plvtr",
+        "fullrank_sim_pevtr",
+        "fullrank_sim_psvr",
+        "fullrank_sim_pltr",
+        "fullrank_sim_pwtr",
+        "fullrank_sim_pftr",
+        "fullrank_sim_pcltr",
+        "fullrank_sim_phtr",
+        "fullrank_pfintr_score"
+      ],
+      export_item_attr = [
+        "fullrank_quality_time_score",
+        "fullrank_quality_action_score",
+        "fullrank_quality_play_score"
+      ],
+      function_name = "CalQualityScore",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+
+    return self
+
+  def request_xtr_dev(self):
+    self \
+    .pack_item_attr(
+      item_source={
+        "reco_results": True,
+      },
+      total_limit="{{fountain_rerank_limit_size_produce_v4}}",
+      mappings=[
+        {
+          "aggregator": "dev",
+          "from_item_attr": "fullrank_sim_pevtr",
+          "to_common_attr": "pevtr_dev"
+        },
+        {
+          "aggregator": "dev",
+          "from_item_attr": "fullrank_sim_pltr",
+          "to_common_attr": "pltr_dev"
+        },
+        {
+          "aggregator": "dev",
+          "from_item_attr": "fullrank_sim_pwtr",
+          "to_common_attr": "pwtr_dev"
+        },
+        {
+          "aggregator": "dev",
+          "from_item_attr": "fullrank_sim_pftr",
+          "to_common_attr": "pftr_dev"
+        },
+        {
+          "aggregator": "dev",
+          "from_item_attr": "fullrank_sim_pcmtr",
+          "to_common_attr": "pcmtr_dev"
+        },
+        {
+          "aggregator": "dev",
+          "from_item_attr": "fullrank_sim_pptr",
+          "to_common_attr": "pptr_dev"
+        },
+        {
+          "aggregator": "dev",
+          "from_item_attr": "fullrank_sim_pepstr",
+          "to_common_attr": "pepstr_dev"
+        },
+        {
+          "aggregator": "dev",
+          "from_item_attr": "fullrank_sim_plvtr",
+          "to_common_attr": "plvtr_dev"
+        },
+        {
+          "aggregator": "dev",
+          "from_item_attr": "fullrank_sim_pfintr",
+          "to_common_attr": "pfintr_dev"
+        },
+      ]
+    ) \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        {"name": "pevtr_dev", "as": "request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_pevtr_dev_avg", "as": "all_request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_adjust_max", "as": "range_adjust_max"},
+        {"name": "fountain_rerank_dpp_range_adjust_min", "as": "range_adjust_min"},
+        {"name": "fountain_rerank_dpp_range_range_reverse", "as" : "range_reverse"}
+      ],
+      export_common_attr = [
+        {"name": "range_adjut_factor", "as": "pevtr_range_adjut_factor"}
+      ],
+      function_name = "UserRequestRangeJudge",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        {"name": "pltr_dev", "as": "request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_pltr_dev_avg", "as": "all_request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_adjust_max", "as": "range_adjust_max"},
+        {"name": "fountain_rerank_dpp_range_adjust_min", "as": "range_adjust_min"},
+        {"name": "fountain_rerank_dpp_range_range_reverse", "as" : "range_reverse"}
+      ],
+      export_common_attr = [
+        {"name": "range_adjut_factor", "as": "pltr_range_adjut_factor"}
+      ],
+      function_name = "UserRequestRangeJudge",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        {"name": "pwtr_dev", "as": "request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_pwtr_dev_avg", "as": "all_request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_adjust_max", "as": "range_adjust_max"},
+        {"name": "fountain_rerank_dpp_range_adjust_min", "as": "range_adjust_min"},
+        {"name": "fountain_rerank_dpp_range_range_reverse", "as" : "range_reverse"}
+      ],
+      export_common_attr = [
+        {"name": "range_adjut_factor", "as": "pwtr_range_adjut_factor"}
+      ],
+      function_name = "UserRequestRangeJudge",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        {"name": "pftr_dev", "as": "request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_pftr_dev_avg", "as": "all_request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_adjust_max", "as": "range_adjust_max"},
+        {"name": "fountain_rerank_dpp_range_adjust_min", "as": "range_adjust_min"},
+        {"name": "fountain_rerank_dpp_range_range_reverse", "as" : "range_reverse"}
+      ],
+      export_common_attr = [
+        {"name": "range_adjut_factor", "as": "pftr_range_adjut_factor"}
+      ],
+      function_name = "UserRequestRangeJudge",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        {"name": "pcmtr_dev", "as": "request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_pcmtr_dev_avg", "as": "all_request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_adjust_max", "as": "range_adjust_max"},
+        {"name": "fountain_rerank_dpp_range_adjust_min", "as": "range_adjust_min"},
+        {"name": "fountain_rerank_dpp_range_range_reverse", "as" : "range_reverse"}
+      ],
+      export_common_attr = [
+        {"name": "range_adjut_factor", "as": "pcmtr_range_adjut_factor"}
+      ],
+      function_name = "UserRequestRangeJudge",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        {"name": "pptr_dev", "as": "request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_pptr_dev_avg", "as": "all_request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_adjust_max", "as": "range_adjust_max"},
+        {"name": "fountain_rerank_dpp_range_adjust_min", "as": "range_adjust_min"},
+        {"name": "fountain_rerank_dpp_range_range_reverse", "as" : "range_reverse"}
+      ],
+      export_common_attr = [
+        {"name": "range_adjut_factor", "as": "pptr_range_adjut_factor"}
+      ],
+      function_name = "UserRequestRangeJudge",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        {"name": "pepstr_dev", "as": "request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_pepstr_dev_avg", "as": "all_request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_adjust_max", "as": "range_adjust_max"},
+        {"name": "fountain_rerank_dpp_range_adjust_min", "as": "range_adjust_min"},
+        {"name": "fountain_rerank_dpp_range_range_reverse", "as" : "range_reverse"}
+      ],
+      export_common_attr = [
+        {"name": "range_adjut_factor", "as": "pepstr_range_adjut_factor"}
+      ],
+      function_name = "UserRequestRangeJudge",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        {"name": "plvtr_dev", "as": "request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_plvtr_dev_avg", "as": "all_request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_adjust_max", "as": "range_adjust_max"},
+        {"name": "fountain_rerank_dpp_range_adjust_min", "as": "range_adjust_min"},
+        {"name": "fountain_rerank_dpp_range_range_reverse", "as" : "range_reverse"}
+      ],
+      export_common_attr = [
+        {"name": "range_adjut_factor", "as": "plvtr_range_adjut_factor"}
+      ],
+      function_name = "UserRequestRangeJudge",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        {"name": "pfintr_dev", "as": "request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_pfintr_dev_avg", "as": "all_request_pxtr_dev"},
+        {"name": "fountain_rerank_dpp_range_adjust_max", "as": "range_adjust_max"},
+        {"name": "fountain_rerank_dpp_range_adjust_min", "as": "range_adjust_min"},
+        {"name": "fountain_rerank_dpp_range_range_reverse", "as" : "range_reverse"}
+      ],
+      export_common_attr = [
+        {"name": "range_adjut_factor", "as": "pfintr_range_adjut_factor"}
+      ],
+      function_name = "UserRequestRangeJudge",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+    .gen_common_attr_by_lua(
+      attr_map={
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_range": "pltr_range_adjut_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_range",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_range": "pwtr_range_adjut_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_range",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_range": "pcmtr_range_adjut_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_range",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_profile_range": "pptr_range_adjut_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_profile_range",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_range": "pftr_range_adjut_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_range",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pepstr_range": "pepstr_range_adjut_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pepstr_range",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_range": "pevtr_range_adjut_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_range",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_range": "plvtr_range_adjut_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_range",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_range": "pfintr_range_adjut_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_range",
+      }
+    )
+
+    return self
+  
+  def cal_user_group_dynamic_weight(self):
+    self \
+    .gen_common_attr_by_lua(
+      attr_map={
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score": "dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score * user_group_emp_ltr",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score": "dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score * user_group_emp_wtr",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score": "dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score * user_group_emp_cmtr",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score": "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score * user_group_emp_ftr",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score_addAndMul": "dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score_addAndMul * user_group_emp_ltr",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score_addAndMul": "dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score_addAndMul * user_group_emp_wtr",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score_addAndMul": "dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score_addAndMul * user_group_emp_cmtr",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score_addAndMul": "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score_addAndMul * user_group_emp_ftr",
+      }
+    )
+    return self
+  
+  def cal_rerank_user_dynamic_play_ratio_weights(self):
+    self \
+    .gen_common_attr_by_lua(
+      attr_map={
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_score": "emp_dynamic_pevtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_score": "emp_dynamic_plvtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_score": "emp_dynamic_watchtime * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_shortview_score": "user_emp_svtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_shortview_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_score_addAndMul": "emp_dynamic_pevtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_score_addAndMul": "emp_dynamic_plvtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_score_addAndMul",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_score_addAndMul": "emp_dynamic_watchtime * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_score_addAndMul",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_shortview_score_addAndMul": "user_emp_svtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_shortview_score_addAndMul" 
+      }
+    )
+    return self
+  
+  def cal_user_group_emp_xtr_all_rerank(self):
+    self \
+    .gen_common_attr_by_lua(
+      attr_map={
+        "fountain_rerank_ensemble_power_weight_fullrank_ltr_emp": "fountain_rerank_ensemble_power_weight_fullrank_ltr_emp * user_group_emp_ltr",
+        "fountain_rerank_ensemble_power_weight_fullrank_wtr_emp": "fountain_rerank_ensemble_power_weight_fullrank_wtr_emp * user_group_emp_wtr",
+        "fountain_rerank_ensemble_power_weight_fullrank_ftr_emp": "fountain_rerank_ensemble_power_weight_fullrank_ftr_emp * user_group_emp_ftr",
+        "fountain_rerank_ensemble_power_weight_fullrank_cmtr_emp": "fountain_rerank_ensemble_power_weight_fullrank_cmtr_emp * user_group_emp_cmtr",
+        "fountain_rerank_ensemble_power_weight_fullrank_ptr_emp": "fountain_rerank_ensemble_power_weight_fullrank_ptr_emp * user_group_emp_ptr",
+      }
+    )
+    return self
+  
+  def cal_share_pull_ftr_rerank(self):
+    self \
+      .gen_common_attr_by_lua(
+        attr_map={
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score": "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score * share_pull_ftr_adjust_coef",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score_addAndMul": "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score_addAndMul * share_pull_ftr_adjust_coef",
+        }
+      )
+    return self
+
+  def emp_xtr_ada(self):
+    self \
+    .pack_item_attr(
+      item_source={
+        "reco_results": True,
+      },
+      total_limit="{{fountain_rerank_limit_size_produce_v4}}",
+      mappings=[
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_sim_pevtr",
+          "to_common_attr": "pevtr_avg"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_sim_pltr",
+          "to_common_attr": "pltr_avg"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_sim_pwtr",
+          "to_common_attr": "pwtr_avg"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_sim_pftr",
+          "to_common_attr": "pftr_avg"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_sim_pcmtr",
+          "to_common_attr": "pcmtr_avg"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_sim_pptr",
+          "to_common_attr": "pptr_avg"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_sim_pepstr",
+          "to_common_attr": "pepstr_avg"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_sim_plvtr",
+          "to_common_attr": "plvtr_avg"
+        },
+        {
+          "aggregator": "avg",
+          "from_item_attr": "fullrank_sim_pfintr",
+          "to_common_attr": "pfintr_avg"
+        },
+      ]
+    ) \
+    .enrich_attr_by_lua(
+      import_common_attr=[
+        "fountain_rerank_ensemble_power_weight_adjust_ratio_min",
+        "fountain_rerank_ensemble_power_weight_adjust_ratio_max",
+        "fountain_rerank_ensemble_power_weight_adjust_request_ratio",
+        "fountain_rerank_ensemble_power_weight_fullrank_ltr_emp",
+        "fountain_rerank_ensemble_power_weight_fullrank_wtr_emp",
+        "fountain_rerank_ensemble_power_weight_fullrank_cmtr_emp",
+        "fountain_rerank_ensemble_power_weight_fullrank_ptr_emp",
+        "fountain_rerank_ensemble_power_weight_fullrank_ftr_emp",
+        "fountain_rerank_ensemble_power_weight_fullrank_epstr_emp",
+        "fountain_rerank_ensemble_power_weight_fullrank_evtr_emp",
+        "fountain_rerank_ensemble_power_weight_fullrank_lvtr_emp",
+        "fountain_rerank_ensemble_power_weight_fullrank_fintr_emp",
+        "userExpLtr",
+        "userExpWtr",
+        "userExpCmtr",
+        "userExpPtr",
+        "userExpFtr",
+        "userExpEptr",
+        "user_emp_evtr",
+        "user_emp_lvtr",
+        "user_emp_watch_time",
+        "pltr_avg",
+        "pwtr_avg",
+        "pftr_avg",
+        "pcmtr_avg",
+        "pptr_avg",
+        "pepstr_avg",
+        "pevtr_avg",
+        "plvtr_avg",
+        "pfintr_avg",
+      ],
+      export_common_attr=[
+        "emp_ltr_factor",
+        "emp_wtr_factor",
+        "emp_cmtr_factor",
+        "emp_ptr_factor",
+        "emp_ftr_factor",
+        "emp_epstr_factor",
+        "emp_evtr_factor",
+        "emp_lvtr_factor",
+        "emp_watchtime_factor",
+      ],
+      function_for_common="cal_user_emp_ada_weight_factor",
+      lua_script_file="fountain/rerank/lua/all_lua.lua",
+    ) \
+    .perflog_attr_value(
+      check_point="rerank_emp_xtr",
+      common_attrs=[
+        "userExpLtr",
+        "userExpWtr",
+        "userExpCmtr",
+        "userExpPtr",
+        "userExpFtr",
+        "userExpEptr",
+        "user_emp_evtr",
+        "user_emp_lvtr",
+        "user_emp_watch_time",
+        "pltr_avg",
+        "pwtr_avg",
+        "pftr_avg",
+        "pcmtr_avg",
+        "pptr_avg",
+        "pepstr_avg",
+        "pevtr_avg",
+        "plvtr_avg",
+        "pfintr_avg",
+        "emp_ltr_factor",
+        "emp_wtr_factor",
+        "emp_cmtr_factor",
+        "emp_ptr_factor",
+        "emp_ftr_factor",
+        "emp_epstr_factor",
+        "emp_evtr_factor",
+        "emp_lvtr_factor",
+        "emp_watchtime_factor",
+      ],
+    ) \
+    .gen_common_attr_by_lua(
+      attr_map={
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score": "emp_ltr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score": "emp_wtr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score": "emp_cmtr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_profile_score": "emp_ptr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_profile_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score": "emp_ftr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pepstr_score": "emp_epstr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pepstr_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_score": "emp_evtr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_score": "emp_lvtr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_score": "emp_watchtime_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_score",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score_addAndMul": "emp_ltr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score_addAndMul",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score_addAndMul": "emp_wtr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score_addAndMul",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score_addAndMul": "emp_cmtr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score_addAndMul",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_profile_score_addAndMul": "emp_ptr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_profile_score_addAndMul",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score_addAndMul": "emp_ftr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score_addAndMul",
+        "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pepstr_score_addAndMul": "emp_epstr_factor * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pepstr_score_addAndMul",
+      }
+    ) \
+    .if_("fountain_rerank_enable_request_pxtr_adjust == 1") \
+      .gen_common_attr_by_lua(
+        attr_map={
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score": "rank_boost_pltr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score": "rank_boost_pwtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score": "rank_boost_pcmtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_profile_score": "rank_boost_pptr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_profile_score",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score": "rank_boost_pftr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pepstr_score": "rank_boost_pepstr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pepstr_score",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_score": "rank_boost_pevtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_score",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_score": "rank_boost_plvtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_score",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_score": "rank_boost_pfintr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_score",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score_addAndMul": "rank_boost_pltr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_like_score_addAndMul",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score_addAndMul": "rank_boost_pwtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_follow_score_addAndMul",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score_addAndMul": "rank_boost_pcmtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_comment_score_addAndMul",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_profile_score_addAndMul": "rank_boost_pptr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_profile_score_addAndMul",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score_addAndMul": "rank_boost_pftr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_forward_score_addAndMul",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pepstr_score_addAndMul": "rank_boost_pepstr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pepstr_score_addAndMul",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_score_addAndMul": "rank_boost_pevtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_click_score_addAndMul",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_score_addAndMul": "rank_boost_plvtr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_lvtr_ori_score_addAndMul",
+          "dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_score_addAndMul": "rank_boost_pfintr * dpp_fountain_rerank_gen_seed_ensemble_fullrank_pfintr_score_addAndMul",
+        }
+      ) \
+    .end_()
+
+    return self
+
+  def next_model(self):
+    self \
+    .delegate_enrich(
+      kess_service = "{{fountain_rerank_gen_next_service}}",
+      recv_item_attrs = [
+        {"name": "point_pos", "as": "rerank_gen_point_pos"},
+        {"name": "point_next", "as": "rerank_gen_point_next"},
+      ],
+      timeout_ms = 100,
+      send_item_attrs = rr_photo_features,
+      send_common_attrs = rr_user_feature,
+      request_type = "{{fountain_rerank_deep_next_request_type}}",
+      partition_size = "{{fountain_rerank_deep_next_partition_size}}",
+    ) \
+
+    return self
+
+  def next_model_handle(self):
+    self \
+    .enrich_attr_by_light_function(
+      import_common_attr=[
+        "fountain_rerank_duration_adjust_param",
+        "fountain_rerank_duration_adjust_level",
+      ],
+      import_item_attr=[
+        "rerank_gen_point_pos",
+        "rerank_gen_point_next",
+        "duration_ms",
+      ],
+      export_item_attr=[
+        "fullrank_rerank_gen_point_pos_score",
+        "fullrank_rerank_gen_point_next_score"
+      ],
+      function_name="ModelQueueTrans",
+      class_name="ExploreLightFunctionSetV2",
+    )
+
+    return self
+
+  def enrich_fulllink_kai2_feature(self):
+    self \
+    .explore_custom_trim_user_info(
+        user_info_attr = "userInfo",
+        save_trimed_user_info_to_attr = "rerank_deep_ltr_trimmed_user_info",
+        trim_user_info = [
+          "active_days",
+          "basic_info.age_segment",
+          "location.city_id",
+          "location.region_type",
+          "client_id",
+          "device_id",
+          "gender",
+          "infer_gender",
+          "true_gender",
+          "request_location.poi_type",
+          "request_location.province_id",
+          "request_location.city_id",
+          "visit_mod",
+          "user_profile.exp_stat.exp_click",
+          "user_profile.exp_stat.exp_like",
+          "user_profile.exp_stat.exp_follow",
+          "user_profile.exp_stat.exp_realshow",
+          "user_profile.exp_stat.exp_long_view",
+          "user_profile.user_level",
+          "realtime_click_list",
+          "realtime_follow_list",
+          "realtime_forward_list",
+          "realtime_like_list",
+        ],
+      )
+    return self
+  
+  def rerank_gen_model_sum(self):
+    self \
+      .delegate_enrich(
+        kess_service = "{{fountain_rerank_gen_model_sum_kess_service}}",
+        recv_item_attrs = [
+          {"name": "rerank_gen", "as": "fullrank_rerank_distill_score"}
+        ],
+        timeout_ms = 100,
+        send_item_attrs = [
+          "cascade_pctr",
+          "cascade_pltr",
+          "cascade_pwtr",
+          "cascade_plvtr",
+          "cascade_psvtr",
+          "fullrank_detail_pctr",
+          "fullrank_detail_pltr",
+          "fullrank_detail_pwtr",
+          "fullrank_detail_pftr",
+          "fullrank_detail_plvtr",
+          "fullrank_detail_pvtr",
+          "fullrank_detail_psvr",
+          "fullrank_detail_pcmtr",
+          "fullrank_detail_pptr",
+          "fullrank_detail_pwtd",
+        ],
+        send_common_attrs = [
+          { "name": "rerank_deep_ltr_trimmed_user_info", "as": "user_info_str" },
+        ],
+        request_type = "{{fountain_rerank_gen_model_request_type}}",
+        partition_size = "{{fountain_rerank_gen_model_partition_size}}",
+      ) 
+    return self
+  
+  def rerank_gen_model_beam(self):
+    self \
+      .delegate_enrich(
+        kess_service = "{{fountain_rerank_gen_model_beam_kess_service}}",
+        recv_item_attrs = [
+          "rerank_gen_score"
+        ],
+        timeout_ms = 100,
+        send_item_attrs = [
+          "cascade_pctr",
+          "cascade_pltr",
+          "cascade_pwtr",
+          "cascade_plvtr",
+          "cascade_psvtr",
+          "fullrank_detail_pctr",
+          "fullrank_detail_pltr",
+          "fullrank_detail_pwtr",
+          "fullrank_detail_pftr",
+          "fullrank_detail_plvtr",
+          "fullrank_detail_pvtr",
+          "fullrank_detail_psvr",
+          "fullrank_detail_pcmtr",
+          "fullrank_detail_pptr",
+          "fullrank_detail_pwtd",
+        ],
+        send_common_attrs = [
+          { "name": "rerank_deep_ltr_trimmed_user_info", "as": "user_info_str" },
+        ],
+        request_type = "{{fountain_rerank_gen_model_request_type}}",
+        partition_size = "{{fountain_rerank_gen_model_partition_size}}",
+      ) 
+    return self
+
+  def model_gen_list(self):
+    self \
+    .split_string(
+      input_common_attr="fountain_rerank_predict_service_loss_name_prefix",
+      output_common_attr="fountain_rerank_predict_service_loss_name_prefix_strs",
+      delimiters=";",
+    ) \
+    .common_predict(
+      loss_function_name=["pos" + str(i) for i in range(6)] + ["next" + str(i) for i in range(6)],
+      loss_default_value=0.0,
+      kess_service="{{fountain_rerank_kai_set_evaluator_service}}",
+      service_group="PRODUCTION",
+      timeout_ms=100,
+      attr_name_transform_map=rerank_feature_map_new,
+      extra_common_attrs=rerank_extra_common_attr(),
+      item_attrs=gen_photo_features_for_all_position_new(6),
+      item_list_from_attr="retrieval_list_keys"
+    ) \
+    .enrich_attr_by_light_function(
+      export_item_attr=["fullrank_sim_pevtr", "fullrank_sim_pfintr", "fullrank_sim_pvtr", "fullrank_pfintr_norm_score",
+                        "fullrank_action_once_interact_score"],
+      function_name="EmptyFunction",
+      class_name="ExploreLightFunctionSetV2",
+      item_list_from_attr="retrieval_list_keys"
+    ) \
+    .explore_model_greedy_gen_list_enricher(
+      item_attrs=["pos" + str(i) for i in range(6)] + ["next" + str(i) for i in range(6)],
+      loss_name="fountain_rerank_predict_service_loss_name_prefix_strs",
+      seq_item_attr_name="generated_diversity_lists",
+      output_attr="retrieval_list_keys_8",
+      output_score_attr="rerank_context",
+      use_beamsearch="{{fountain_model_gen_list_use_beamsearch}}",
+      pnext_alpha="{{fountain_model_gen_list_pnext_alpha}}",
+      pnext_beta="{{fountain_model_gen_list_pnext_beta}}",
+      beam_size="{{fountain_model_gen_list_beam_size}}",
+      use_watchtime_predict="{{fountain_model_gen_list_use_watchtime_predict}}",
+      use_watchtime_duration_trans="{{fountain_model_gen_list_use_watchtime_duration_trans}}",
+      value_weight="fountain_model_gen_list_value_weight",
+      next_weight="fountain_model_gen_list_next_weight",
+      watchtime_weight="fountain_model_gen_list_watchtime_weight",
+      duration_ms_attr="duration_ms",
+      watchtime_attr="watchtime",
+      extra_pxtr_attr=model_greedy_extra_queues,
+      return_item_type=4,
+      item_list_from_attr="retrieval_list_keys"
+    ) \
+    .pack_common_attr(
+      input_common_attrs=["retrieval_list_keys", "retrieval_list_keys_8"],
+      output_common_attr='retrieval_list_keys',
+      deduplicate=True
+    ) \
+    .if_("fountain_skip_rerank_predict_v2 == 0 or fountain_skip_rerank_predict_with_new_attr == 1", to_be_delete = "date=2024-05-29;committer=huzengyi") \
+      .list_wise_seq_attr(
+        upload_time_attr="upload_time",
+        duration_ms_attr="duration_ms",
+        hetu_level_one_attr="hetu_tag_level_info__hetu_level_one",
+        hetu_level_two_attr="hetu_tag_level_info__hetu_level_two",
+        hetu_level_three_attr="hetu_tag_level_info__hetu_level_three",
+        hetu_level_four_attr="hetu_tag_level_info__hetu_level_four",
+        hetu_level_five_attr="hetu_tag_level_info__hetu_level_five",
+        item_attrs_transform_map=rerank_features,
+        seq_item_attr_name="generated_diversity_lists",
+        output_attrs=gen_photo_features_for_all_position_new(6),
+        item_list_from_attr="retrieval_list_keys_8",
+      ) \
+    .end_()
+
+    return self
+
+  
+  def full_link_distill_sample(self):
+    self \
+    .get_kconf_params(
+      kconf_configs=[
+        {
+          "kconf_key": "reco.offline.fountainFulllinkDistillRankParam",
+          "value_type": "json",
+          "json_path": "rerank_full_link_distill_sample_begin",
+          "export_common_attr": "fountain_rerank_full_link_distill_sample_begin"
+        },
+        {
+          "kconf_key": "reco.offline.fountainFulllinkDistillRankParam",
+          "value_type": "json",
+          "json_path": "rerank_full_link_distill_sample_end",
+          "export_common_attr": "fountain_rerank_full_link_distill_sample_end"
+        },
+        {
+          "kconf_key": "reco.offline.fountainFulllinkDistillRankParam",
+          "value_type": "json",
+          "json_path": "rerank_full_link_distill_sample_num",
+          "export_common_attr": "fountain_rerank_full_link_distill_sample_num"
+        },
+        {
+          "kconf_key": "reco.offline.fountainFulllinkDistillRankParam",
+          "value_type": "json",
+          "json_path": "rerank_full_link_distill_sample_ratio",
+          "export_common_attr": "fountain_rerank_full_link_distill_sample_ratio"
+        },
+      ]
+    ) \
+    .explore_full_link_context_sample_reco_log_enricher(
+      sample_config = [
+        {
+          "sample_begin": "fountain_rerank_full_link_distill_sample_begin",
+          "sample_end": "fountain_rerank_full_link_distill_sample_end",
+          "sample_num": "fountain_rerank_full_link_distill_sample_num",
+          "label_name": "final_pos",
+        },
+      ],
+      sample_ratio = "fountain_rerank_full_link_distill_sample_ratio",
+      user_info_attr = "userInfoPb",
+      load_attr = "fountain_full_link_reco_log_message",
+      save_result_to = "fountain_full_link_reco_log_message_final",
+      rank_index = "rank_index_after_es",
+      final_index = "item_seq",
+      cascade_pctr = "cascade_pctr",
+      cascade_pltr = "cascade_pltr",
+      cascade_pwtr = "cascade_pwtr",
+      cascade_pftr = "cascade_pftr",
+      cascade_pptr = "cascade_ptr",
+      cascade_pcmtr = "cascade_pcmtr",
+      cascade_plvtr = "cascade_plvtr",
+      cascade_pvtr = "cascade_pwatch_time",
+      pctr = "fullrank_sim_pevtr",
+      pltr = "fullrank_sim_pltr",
+      pwtr = "fullrank_sim_pwtr",
+      pftr = "fullrank_sim_pftr",
+      pptr = "fullrank_sim_pptr",
+      pcmtr = "fullrank_sim_pcmtr",
+      plvtr = "fullrank_sim_plvtr",
+      pvtr = "fullrank_sim_pvtr",
+      size_limit = 60,
+    ) \
+    .send_with_kafka(
+      common_attr = "fountain_full_link_reco_log_message_final",
+      topic_name = "full_link_samples",
+    ) \
+
+    return self
+
+  def cal_expected_value_gen_list(self):
+    self \
+    .fountain_calc_ensemble_score(
+      save_score_to_attr = "rerank_expected_value_score",
+      user_power_calc_v2 = "{{fountain_rerank_expected_value_enable_power_calc_v2}}",
+      use_rank_with_absolute_score = 0,
+      use_xtr_weight_raw_score = "{{fountain_rerank_expected_value_use_xtr_weight_raw_score}}",
+      queues = rerank_expected_value_queues,
+    ) \
+    .explore_mdp_gen_list_enricher(
+      candidate_size = "{{fountain_mdp_gen_list_candidate_size}}",
+      output_len = "{{fountain_mdp_gen_list_output_len}}",
+      item_value_attr_name = "rerank_expected_value_score",
+      item_next_attr_name = "fullrank_ltr_v4_fountain_next",
+      output_attr = "retrieval_list_keys_9",
+      pnext_alpha = "{{fountain_mdp_gen_list_pnext_alpha}}",
+      pnext_beta = "{{fountain_mdp_gen_list_pnext_beta}}",
+      beam_size = "{{fountain_mdp_gen_list_beam_size}}",
+      value_mean = "{{fountain_mdp_gen_list_value_mean}}",
+      seq_item_attr_name = "generated_diversity_lists",
+      return_item_type = 3,
+    ) \
+    
+    return self
+    
+  def final_es_sort(self):
+    self \
+    .enrich_attr_by_light_function(
+      export_item_attr=['fullrank_act_ctr', 'fullrank_act_wtd', 'fullrank_action_once_interact_score',
+                        'fullrank_action_once_watchtime_score', 'fullrank_ada_xtr_score', 'fullrank_detail_new_pevtr_v2',
+                        'fullrank_ensemble_score', 'fullrank_ltr_v4_fountain_finish_rate', 'fullrank_sim_lstr',
+                        'fullrank_sim_pcltr', 'fullrank_sim_pcmef', 'fullrank_sim_pcmtr', 'fullrank_sim_pcpr',
+                        'fullrank_sim_pepstr', 'fullrank_sim_pevtr', 'fullrank_sim_pfintr', 'fullrank_sim_pftr',
+                        'fullrank_sim_pltr', 'fullrank_sim_plvtr', 'fullrank_sim_pptr', 'fullrank_sim_pwtr',
+                        'fullrank_trans_pvtr_score'],
+      function_name="EmptyFunction",
+      class_name="ExploreLightFunctionSetV2",
+    ) \
+    .fountain_calc_ensemble_score(
+      save_score_to_attr="rerank_point_final_score",
+      user_new_proportion="{{fountain_rerank_ensemble_score_user_new_proportion}}",
+      user_power_calc="{{fountain_rerank_ensemble_score_enable_power_calc}}",
+      rank_smooth="{{fountain_rerank_ensemble_score_rank_smooth}}",
+      use_reciprocal="{{fountain_rerank_ensemble_score_use_reciprocal}}",
+      user_info_ptr_attr="userInfoPb",
+      action_day="{{fountain_rerank_ensemble_score_action_day_num}}",
+      queues=rerank_ensemble_queues,
+    ) \
+    .sort(
+      stable_sort=True,
+      score_from_attr="rerank_point_final_score",
+      range_end=6
+    )
+
+    return self
+
+  def post_process(self):
+    self.calc_result_count_to_ab_metric()
+    self \
+    .log_debug_info(
+      item_attrs = [
+        "fullrank_pfintr_norm_score"
+      ],
+      for_debug_request_only = True
+    ) \
+    .log_debug_info(
+      item_attrs = [
+        "virtual_rerank_score"
+      ],
+      for_debug_request_only = True,
+      item_list_from_attr="retrieval_list_keys"
+    ) \
+    .log_debug_info(
+      item_attrs = gen_photo_features_for_all_position_new(6),
+      for_debug_request_only = True,
+      item_list_from_attr="retrieval_list_keys_8"
+    )
+
+    return self
+
+  def fullrank_attr_score(self):
+    self \
+    .copy_attr(
+      attrs=[
+        {
+          "from_item": "fullrank_sim_out_pctr",
+          "to_item": "fullrank_outctr_score"
+        },
+        {
+          "from_item": "fullrank_sim_pevtr",
+          "to_item": "fullrank_click_score"
+        },
+        {
+          "from_item": "fullrank_sim_pltr",
+          "to_item": "fullrank_like_score"
+        },
+        {
+          "from_item": "fullrank_sim_pwtr",
+          "to_item": "fullrank_follow_score"
+        },
+        {
+          "from_item": "fullrank_sim_pftr",
+          "to_item": "fullrank_forward_score"
+        },
+        {
+          "from_item": "fullrank_sim_longview_score_no_bias",
+          "to_item": "fullrank_longview_score"
+        },
+        {
+          "from_item": "fullrank_sim_psvr",
+          "to_item": "fullrank_shortview_score"
+        },
+        {
+          "from_item": "fullrank_sim_psvr",
+          "to_item": "fullrank_shortviewinorder_score"
+        },
+        {
+          "from_item": "fullrank_sim_phtr",
+          "to_item": "fullrank_shortview_phtr_score"
+        },
+        {
+          "from_item": "fullrank_sim_pptr",
+          "to_item": "fullrank_profile_score"
+        },
+        {
+          "from_item": "fullrank_sim_pptr",
+          "to_item": "fullrank_profile_score"
+        },
+        {
+          "from_item": "fullrank_sim_pcmtr",
+          "to_item": "fullrank_comment_score"
+        },
+        {
+          "from_item": "fullrank_sim_pcmef",
+          "to_item": "fullrank_cmef_score"
+        },
+        {
+          "from_item": "fullrank_sim_pwatchtime_no_bias",
+          "to_item": "fullrank_watchtime_score"
+        },
+        {
+          "from_item": "fullrank_sim_pvtr",
+          "to_item": "fullrank_watchtime_ori_score"
+        },
+        {
+          "from_item": "fullrank_sim_pepstr",
+          "to_item": "fullrank_pepstr_score"
+        },
+        {
+          "from_item": "fullrank_ltr_score",
+          "to_item": "fullrank_l2r_score"
+        },
+        {
+          "from_item": "fullrank_ensemble_score",
+          "to_item": "fullrank_neg_feedback_discount_score"
+        },
+        {
+          "from_item": "fullrank_detail_new_pevtr_v2",
+          "to_item": "fullrank_evtr_v2_score"
+        },
+        {
+          "from_item": "fullrank_sim_lstr",
+          "to_item": "fullrank_lstr_score"
+        },
+        {
+          "from_item": "fullrank_sim_pcltr",
+          "to_item": "fullrank_collect_score"
+        },
+        {
+          "from_item": "fullrank_sim_plvtr",
+          "to_item": "fullrank_lvtr_ori_score"
+        },
+        {
+          "from_item": "fullrank_sim_pfintr",
+          "to_item": "fullrank_pfintr_score"
+        },
+        {
+          "from_item": "fullrank_ltr_v4_fountain_finish_rate",
+          "to_item": "fullrank_finish_score"
+        },
+        {
+          "from_item": "fullrank_ltr_v4_fountain_next",
+          "to_item": "fullrank_next_score"
+        },
+        {
+          "from_item": "fountain_splash_slide",
+          "to_item": "fullrank_slide_score"
+        },
+        {
+          "from_item": "fullrank_act_ctr",
+          "to_item": "fullrank_act_ctr_score"
+        },
+        {
+          "from_item": "topk_mgs_expected_score",
+          "to_item": "fullrank_topk_mgs_expected_score"
+        },
+        {
+          "from_item": "fullrank_sim_pcpr",
+          "to_item": "fullrank_pcpr_score"
+        },
+        {
+          "from_item": "fullrank_act_wtd",
+          "to_item": "fullrank_act_wtd_score"
+        },
+        {
+          "from_item": "fullrank_cl_play_time",
+          "to_item": "fullrank_cl_play_time_score"
+        },
+        {
+          "from_item": "fullrank_min_act_rank_reci",
+          "to_item": "fullrank_min_act_rank_reci_score"
+        },
+        {
+          "from_item": "fullrank_ori_pswptr",
+          "to_item": "fullrank_ori_pswptr_score"
+        },
+        {
+          "from_item": "long_term_interest_ee_score",
+          "to_item": "fullrank_lt_interest_score"
+        },
+        {
+          "from_item": "comment_ltr",
+          "to_item": "fullrank_comment_ltr_score"
+        },
+        {
+          "from_item": "xgb_ltr",
+          "to_item": "fullrank_xgb_ltr_score"
+        },
+        {
+          "from_item": "xgb_ltr",
+          "to_item": "fullrank_xgb_ltr_score"
+        },
+        {
+          "from_item": "fullrank_sim_click_score_debias_hetu",
+          "to_item": "fullrank_pctr_hetu_score"
+        },
+        {
+          "from_item": "fullrank_sim_pltr_debias_hetu",
+          "to_item": "fullrank_pltr_hetu_score"
+        },
+        {
+          "from_item": "fullrank_sim_pwtr_debias_hetu",
+          "to_item": "fullrank_pwtr_hetu_score"
+        },
+        {
+          "from_item": "fullrank_sim_pftr_debias_hetu",
+          "to_item": "fullrank_pftr_hetu_score"
+        },
+        {
+          "from_item": "fullrank_sim_pcmtr_debias_hetu",
+          "to_item": "fullrank_pcmtr_hetu_score"
+        },
+        {
+          "from_item": "fullrank_sim_pptr_debias_hetu",
+          "to_item": "fullrank_pptr_hetu_score"
+        },
+        {
+          "from_item": "fullrank_sim_pptr_debias_hetu",
+          "to_item": "fullrank_pptr_hetu_score"
+        },
+        {
+          "from_item": "fullrank_sim_pevtr",
+          "to_item": "fullrank_fusion_pctr_score"
+        },
+        {
+          "from_item": "fullrank_sim_pcltr",
+          "to_item": "fullrank_fusion_pcltr_score"
+        },
+        {
+          "from_item": "merchant_fr_photo_ctcvr_score",
+          "to_item": "fullrank_merchant_photo_ctcvr_score"
+        },
+        {
+          "from_item": "merchant_fr_photo_gmv_score",
+          "to_item": "fullrank_merchant_photo_gmv_score"
+        },
+        {
+          "from_item": "merchant_fr_living_ctcvr_score",
+          "to_item": "fullrank_merchant_live_ctcvr_score"
+        },
+        {
+          "from_item": "merchant_fr_living_ctcvr_gmv_score",
+          "to_item": "fullrank_merchant_live_gmv_score"
+        },
+        {
+          "from_item": "fountain_produce_rank_new_user_clk_score",
+          "to_item": "fullrank_produce_new_user_clk_score"
+        },
+        {
+          "from_item": "fountain_produce_rank_new_user_ups_score",
+          "to_item": "fullrank_produce_new_user_ups_score"
+        },
+        {
+          "from_item": "fountain_produce_rank_month_user_clk_score",
+          "to_item": "fullrank_produce_month_user_clk_score"
+        },
+        {
+          "from_item": "fountain_produce_rank_month_user_ups_score",
+          "to_item": "fullrank_produce_month_user_ups_score"
+        },
+        {
+          "from_item": "fountain_produce_rank_weeks_user_clk_score",
+          "to_item": "fullrank_produce_weeks_user_clk_score"
+        },
+        {
+          "from_item": "fountain_produce_rank_weeks_user_ups_score",
+          "to_item": "fullrank_produce_weeks_user_ups_score"
+        },
+        {
+          "from_item": "fountain_produce_rank_week_user_clk_score",
+          "to_item": "fullrank_produce_week_user_clk_score"
+        },
+        {
+          "from_item": "fountain_produce_rank_week_user_ups_score",
+          "to_item": "fullrank_produce_week_user_ups_score"
+        },
+        {
+          "from_item": "fullrank_sim_pfintr_fractile_score",
+          "to_item": "fullrank_pfintr_fractile_score"
+        },
+        {
+          "from_item": "fullrank_sim_pltr_fractile_score",
+          "to_item": "fullrank_like_fractile_score"
+        },
+        {
+          "from_item": "fullrank_sim_click_score_fractile_score",
+          "to_item": "fullrank_click_fractile_score"
+        },
+        {
+          "from_item": "fullrank_sim_pwtr_fractile_score",
+          "to_item": "fullrank_follow_fractile_score"
+        },
+        {
+          "from_item": "fullrank_sim_pftr_fractile_score",
+          "to_item": "fullrank_forward_fractile_score"
+        },
+        {
+          "from_item": "fullrank_sim_pcmtr_fractile_score",
+          "to_item": "fullrank_comment_fractile_score"
+        },
+        {
+          "from_item": "fullrank_sim_pcltr_fractile_score",
+          "to_item": "fullrank_collect_fractile_score"
+        },
+        {
+          "from_item": "fullrank_sim_pevtr_fractile_score",
+          "to_item": "fullrank_outctr_fractile_score"
+        },
+        {
+          "from_item": "fullrank_sim_evtr_playtime_fractile_score",
+          "to_item": "fullrank_evtr_v2_fractile_score"
+        },
+        {
+          "from_item": "rerank_gen_duration_pxtrs_bias_score",
+          "to_item": "fullrank_duration_pxtrs_score"
+        },
+        {
+          "from_item": "rerank_gen_vv_pxtrs_bias_score",
+          "to_item": "fullrank_vv_pxtrs_score"
+        },
+        {
+          "from_item": "rerank_gen_cid_pxtrs_bias_score",
+          "to_item": "fullrank_cid_pxtrs_score"
+        },
+        {
+          "from_item": "user_author_ltv",
+          "to_item": "fullrank_user_author_ltv_score"
+        },
+        {
+          "from_item": "user_author_ltv_time",
+          "to_item": "fullrank_user_author_ltv_time_score"
+        },
+        {
+          "from_item": "effective_follow_rate_score",
+          "to_item": "fullrank_effective_follow_rate_score"
+        },
+        {
+          "from_item": "effective_follow_value_score",
+          "to_item": "fullrank_effective_follow_value_score"
+        },
+      ]
+    ) \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        {"name": "fountain_rerank_cal_quality_score_sub_coeff", "as": "sub_coeff"},
+      ],
+      import_item_attr = [
+        {"name": "fountain_fullrank_bad_item_similary_score", "as": "score"},
+      ],
+      export_item_attr = [
+        {"name": "score", "as": "fullrank_good_item_similary_score"}
+      ],
+      function_name = "CalExploreDoubleMinusDouble",
+      class_name = "ExploreLightFunctionSetV2"  
+    )
+    return self
+
+  def gen_list_rerank_distill(self):
+    self \
+    .sort(
+      score_from_attr = "fullrank_rerank_distill_score",
+    ) \
+    .gen_original_sequence(
+      item_type = 3,
+      reason = 10,
+      sequence_length = 6,
+      output_sequence_attr_name = "generated_diversity_lists",
+    ) \
+    .pack_common_attr(
+      input_common_attrs = ["retrieval_list_keys", "retrieval_list_keys_10"],
+      output_common_attr = 'retrieval_list_keys',
+      deduplicate = True
+    ) \
+    .sort(
+      score_from_attr = "item_seq",
+      desc = False
+    )
+
+    return self
+    
+  def gen_list_rerank_point(self):
+    self \
+    .sort(
+      score_from_attr = "fullrank_rerank_gen_point_pos_score",
+    ) \
+    .gen_original_sequence(
+      item_type = 3,
+      reason = 11,
+      sequence_length = 6,
+      output_sequence_attr_name = "generated_diversity_lists",
+    ) \
+    .pack_common_attr(
+      input_common_attrs = ["retrieval_list_keys", "retrieval_list_keys_11"],
+      output_common_attr = 'retrieval_list_keys',
+      deduplicate = True
+    ) \
+    .sort(
+      score_from_attr = "item_seq",
+      desc = False
+    )
+    return self
+
+  def write_rerank_pos_result_to_redis(self):
+    self \
+    .if_("fountain_enable_rerank_select_rerank_pos_result == 1", to_be_delete = "date=2024-05-29;committer=liuhao07") \
+      .enrich_attr_by_light_function(
+        import_common_attr = [
+          {"name": "fountain_select_rerank_pos_result_target_count", "as": "target_count"},
+        ],
+        import_item_attr = [
+          "photo_id",
+          {"name": "fullrank_sim_pfintr", "as": "pwatch_time"}
+        ],
+        export_common_attr = [
+          {"name": "target_pids", "as": "rerank_pos_photo_id_list"}
+        ],
+        function_name = "FountainSelectRerankPosPids",
+        class_name = "ExploreLightFunctionSetV2",
+        range_start = "{{fountain_rerank_pos_photo_start_index}}",
+        range_end = "{{fountain_rerank_pos_photo_end_index}}"
+      ) \
+    .else_() \
+      .pack_item_attr(
+        item_source = {
+          "reco_results": True
+        },
+        mappings = [{
+          "from_item_attr": "photo_id",
+          "to_common_attr": "rerank_pos_photo_id_list",
+          "aggregator": "concat"
+        }],
+        range_start = "{{fountain_rerank_pos_photo_start_index}}",
+        range_end = "{{fountain_rerank_pos_photo_end_index}}"
+      ) \
+    .end_() \
+    .enrich_attr_by_light_function(
+      import_common_attr = [
+        {"name": "rerank_pos_photo_id_list", "as": "universal_set_list"},
+        {"name": "fountain_rerank_pos_photo_id_retrieval_list", "as": "sub_set_list"}
+      ],
+      export_common_attr = [
+        {"name": "difference_list", "as": "rerank_pos_photo_id_list"}
+      ],
+      function_name = "GetDifferenceSet",
+      class_name = "ExploreLightFunctionSetV2",
+    ) \
+    .pack_common_attr(
+      input_common_attrs = [
+        "rerank_pos_photo_id_list",
+        "fountain_rerank_pos_photo_id_retrieval_list"
+      ],
+      output_common_attr = "rerank_pos_photo_id_list",
+      deduplicate = True,
+      limit_num = "{{fountain_rerank_pos_photo_size}}",
+    ) \
+    .write_to_redis(
+      kcc_cluster = "recoExploreNegPhoto",
+      timeout = 10,
+      expire_second = "{{fountain_rerank_pos_photo_redis_expire_seconds}}",
+      key_prefix = "{{fountain_rerank_pos_photo_key_prefix}}",
+      key = "{{_USER_ID_}}",
+      value = "{{rerank_pos_photo_id_list}}"
+    )
+    return self
+
+  def write_rerank_neg_result_to_redis(self):
+    self \
+    .if_("fountain_enable_rerank_select_rerank_neg_result == 1", to_be_delete = "date=2024-05-29;committer=liuhao07") \
+      .enrich_attr_by_light_function(
+        import_common_attr = [
+          {"name": "fountain_rerank_neg_photo_target_ratio", "as": "target_ratio"},
+        ],
+        import_item_attr = [
+          {"name": "rank_final_index", "as": "before_index"},
+          {"name": "rerank_final_index", "as": "after_index"},
+          "photo_id"
+        ],
+        export_common_attr = [
+          {"name": "target_pids", "as": "rerank_neg_photo_id_list"},
+        ],
+        function_name = "SelectRecoNegPids",
+        class_name = "ExploreLightFunctionSetV2",
+        range_start = "{{fountain_rerank_neg_photo_start_index}}"
+      ) \
+    .else_() \
+      .pack_item_attr(
+        item_source = {
+          "reco_results": True
+        },
+        mappings = [{
+          "from_item_attr": "photo_id",
+          "to_common_attr": "rerank_neg_photo_id_list",
+          "aggregator": "concat"
+        }],
+        range_start = "{{fountain_rerank_neg_photo_start_index}}",
+        range_end = "{{fountain_rerank_neg_photo_end_index}}"
+      ) \
+    .end_() \
+    .pack_common_attr(
+      input_common_attrs = [
+        "rerank_neg_photo_id_list",
+        "rerank_neg_photo_id_filter_list"
+      ],
+      output_common_attr = "rerank_neg_photo_id_list",
+      deduplicate = True,
+      limit_num = "{{fountain_rerank_neg_photo_size}}",
+    ) \
+    .write_to_redis(
+      kcc_cluster = "recoExploreNegPhoto",
+      timeout = 10,
+      expire_second = "{{fountain_rerank_neg_photo_redis_expire_seconds}}",
+      key_prefix = "{{fountain_rerank_neg_photo_key_prefix}}",
+      key = "{{_DEVICE_ID_}}",
+      value = "{{rerank_neg_photo_id_list}}"
+    )
+    return self
+
+  def calc_result_count_to_ab_metric(self):
+    return self \
+      .cast_attr_type(
+        attr_type_cast_configs=[
+          {
+            "to_type": "double",
+            "from_item_attr": "rank_final_index",
+            "to_item_attr": "rank_final_index_double"
+          }
+        ]
+      ) \
+      .pack_item_attr(
+        item_source = {
+          "reco_results": True,
+          "total_limit": 10,
+        },
+        mappings = [
+          {
+            "aggregator": "avg",
+            "from_item_attr": "rank_final_index_double",
+            "to_common_attr": "fountain_rerank_top10_rank_index_avg"
+          },
+        ]
+      )

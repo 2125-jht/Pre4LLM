@@ -1,0 +1,31 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "xlife_fountain_skip_dedup_content_ids_in_pagesize": 1,
+      "fountain_hot_high_photo_skip_filter_types_str": "9,8,10,14,15,3,17,16",
+      "fountain_enable_skip_filter_hot_high_photo_in_bs_fast_v1": false,
+      "fountain_enable_skip_filter_hot_high_photo_in_pagesize": false,
+      "fountain_mmu_content_filter_item_type": -1,
+      "fountain_mmu_content_filter_use_old_id": true,
+      "fountain_need_filter_content_types": "3,8,9",
+      "fountain_cid_browse_set_hetu_list_str": ""
+    },
+    "kconf": {
+    },
+    "constant": {
+    },
+    "import": {
+      "common_attrs": [
+      ],
+      "item_attrs": [
+      ]
+    },
+    "export": {
+      "common_attrs": [
+      ],
+      "item_attrs": [
+        "source_related_score"
+      ]
+    }
+  }
+}

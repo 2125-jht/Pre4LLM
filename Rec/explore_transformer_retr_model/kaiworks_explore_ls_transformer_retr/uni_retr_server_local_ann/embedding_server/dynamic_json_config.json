@@ -1,0 +1,20 @@
+{
+  "emb_data_len": 0,
+  "force_expire_timet": 2592000,
+  "kess_cluster_config": {
+    "default": "PRODUCTION"
+  },
+  "kess_service_config": {
+    "default": "grpc_KaiWorksExploreMultiTargetEmbedding"
+  },
+  "kess_weight": {
+    "default": 1000
+  },
+  "queue_prefix": "kaiworks_explore_multi_target_retr_model",
+  "queue_shard_num": 1,
+  "queue_suffixes": {},
+  "read_slots": "",
+  "shard_offset": 0,
+  "sign_format": "mio",
+  "thread_num": 65
+}

@@ -1,0 +1,74 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_tag_click_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "infer_request_layer": {
+        "biz_name": "RECO_RPC",
+        "param_name": "tag_click_retrieval_tensor_request_layer",
+        "param_type": "string",
+        "default_value": "ltr_user_embedding"
+      },
+      "infer_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "tag_click_retrieval_predict_tensor_service_name",
+        "param_type": "string",
+        "default_value": "grpc_krpProduceTimeL2rPredictServerInfer"
+      },
+      "retr_space": {
+        "biz_name": "RECO_RPC",
+        "param_name": "tag_click_retrieval_ann_space",
+        "param_type": "string",
+        "default_value": "cosine"
+      },
+      "retr_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "tag_click_retrieval_service_name",
+        "param_type": "string",
+        "default_value": "grpc_krpProduceTimeL2rRetrievalServer"
+      },
+      "retr_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "tag_click_retrieval_timeout_ms",
+        "param_type": "int",
+        "default_value": 100
+      },
+      "retr_total_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "tag_click_retrieval_ann_search_num",
+        "param_type": "int",
+        "default_value": 2000
+      },
+      "retr_src_data_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "tag_click_retrieval_bucket_name",
+        "param_type": "string",
+        "default_value": "photo_bucket"
+      },
+      "retr_dest_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "tag_click_retrieval_bucket_name",
+        "param_type": "string",
+        "default_value": "photo_bucket"
+      },
+      "tag_click_retrieval_use_kai" : 0,
+      "tower_ltr_u2i_retr_kess_name" : "grpc_krpKaiTowerU2iRetrievalServer",
+      "tower_ltr_u2i_retr_request_num" : 800
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "longview_ltr_u2i__result"
+      ]
+    }
+  },
+  "reason": 676
+}

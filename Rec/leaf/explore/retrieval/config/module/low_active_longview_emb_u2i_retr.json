@@ -1,0 +1,71 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "la_enable_tag_click_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "infer_request_layer": {
+        "biz_name": "RECO_RPC",
+        "param_name": "la_tag_click_retrieval_tensor_request_layer",
+        "param_type": "string",
+        "default_value": "ltr_user_embedding"
+      },
+      "infer_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "la_tag_click_retrieval_predict_tensor_service_name_la",
+        "param_type": "string",
+        "default_value": "grpc_krpProduceTimeL2rPredictServerInfer"
+      },
+      "retr_space": {
+        "biz_name": "RECO_RPC",
+        "param_name": "la_tag_click_retrieval_ann_space",
+        "param_type": "string",
+        "default_value": "cosine"
+      },
+      "retr_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "la_tag_click_retrieval_service_name",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-hot-subdivision-retrieve-explore-la-dssm-v11"
+      },
+      "retr_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "la_tag_click_retrieval_timeout_ms",
+        "param_type": "int",
+        "default_value": 100
+      },
+      "retr_total_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "la_tag_click_retrieval_ann_search_num",
+        "param_type": "int",
+        "default_value": 2000
+      },
+      "retr_src_data_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "la_tag_click_retrieval_bucket_name",
+        "param_type": "string",
+        "default_value": "photo"
+      },
+      "retr_dest_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "la_tag_click_retrieval_bucket_name",
+        "param_type": "string",
+        "default_value": "photo"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "low_active_longview_emb_u2i__result"
+      ]
+    }
+  },
+  "reason": 10044
+}

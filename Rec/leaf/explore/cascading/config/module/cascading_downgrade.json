@@ -1,0 +1,38 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_cascade_downgrade": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_mc_emp_xtr_fill_pxtr_downgrade",
+        "param_type": "bool",
+        "default_value": false
+      }
+    },
+    "import": {
+      "item_attrs": [
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr",
+        "empirical_lvtr",
+        "empirical_svtr",
+        "empirical_ptr",
+        "empirical_htr",
+        "empirical_cmtr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_pftr",
+        "cascade_plvtr",
+        "cascade_psvtr",
+        "cascade_ptr",
+        "cascade_phtr",
+        "cascade_pcmtr"
+      ]
+    }
+  }
+}

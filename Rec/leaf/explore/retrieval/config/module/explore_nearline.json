@@ -1,0 +1,28 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "cache_nearline_update_info": {
+        "biz_name" : "RECO_RPC",
+        "param_name": "explore_nearline_cache_nearline_update_info",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "nearline_prefix": {
+        "biz_name" : "RECO_RPC",
+        "param_name": "explore_nearline_user_update_second_prefix",
+        "param_type": "string",
+        "default_value": "rrretuid_"
+      },
+      "nearline_max_gap_second": {
+        "biz_name" : "RECO_RPC",
+        "param_name": "explore_nearline_user_update_max_gap_second",
+        "param_type": "int",
+        "default_value": 40
+      }
+    },
+    "export": {
+      "common_attrs": []
+    }
+  }
+}
+  

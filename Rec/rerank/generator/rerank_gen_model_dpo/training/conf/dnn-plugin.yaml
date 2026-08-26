@@ -1,0 +1,880 @@
+ada_decay_rate: 0.99999
+ada_epsilon: 1e-8
+avg_decay_rate: 0.999993
+back_propagate_input: true
+dense_grad: dense_grad_for_fetch:0
+dense_init_val: dense_init_val_for_fetch:0
+embedding:
+  create_threshold: 0
+  initial_g2sum: 3
+  initial_range: 1e-4
+  learning_rate: 0.05
+  slots_config:
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: user_id
+    slots: '16'
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: user_device_id
+    slots: '21'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_age_segment
+    slots: '18'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_gender
+    slots: '22'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_city_id
+    slots: '19'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_client_id
+    slots: '20'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_level
+    slots: '27'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_active_days
+    slots: '17'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_emp_ctr
+    slots: '28'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_emp_ltr
+    slots: '30'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_emp_wtr
+    slots: '29'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_emp_lvtr
+    slots: '31'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_request_province_id
+    slots: '24'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_request_city_id
+    slots: '25'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_request_poi_type
+    slots: '23'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_region_type
+    slots: '32'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 50
+    input_name: user_realtime_click_list
+    slots: '61'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 50
+    input_name: user_realtime_like_list
+    slots: '64'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 50
+    input_name: user_realtime_follow_list
+    slots: '62'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 50
+    input_name: user_realtime_forward_list
+    slots: '63'
+    update_type: gradient
+  - dim: 64
+    dtype: float32
+    expand: 60
+    input_name: photo_id
+    slots: '1016'
+    update_type: gradient
+  - dim: 64
+    dtype: float32
+    expand: 60
+    input_name: photo_author_id
+    slots: '1026'
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 60
+    input_name: photo_author_gender
+    slots: '1024'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_author_age_segment
+    slots: '1025'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_province_id
+    slots: '1018'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_city_id
+    slots: '1019'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_mod
+    slots: '1020'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_upload_type
+    slots: '1017'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_hetu_tag_level1_list
+    slots: '1027'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_hetu_tag_level2_list
+    slots: '1028'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_hetu_tag_level5_list
+    slots: '1031'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_duration_ms
+    slots: '1023'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_emp_ctr
+    slots: '1033'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_emp_ltr
+    slots: '1034'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_emp_wtr
+    slots: '1037'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_emp_lvtr
+    slots: '1035'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: photo_emp_svtr
+    slots: '1036'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_pctr
+    slots: '3017'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_pltr
+    slots: '3019'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_pwtr
+    slots: '3025'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_pftr
+    slots: '3018'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_plvtr
+    slots: '3020'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_psvtr
+    slots: '3022'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_pvtr
+    slots: '3023'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_pptr
+    slots: '3021'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_pcmtr
+    slots: '3016'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_pwtd
+    slots: '3024'
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 60
+    input_name: context_cascade_pctr
+    slots: '3029'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_cascade_pltr
+    slots: '3030'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_cascade_pwtr
+    slots: '3033'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_cascade_plvtr
+    slots: '3031'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 60
+    input_name: context_cascade_psvtr
+    slots: '3032'
+    update_type: gradient
+  version_aware: true
+  weight_bounds:
+  - -10
+  - 10
+extra_params: []
+feed_slots:
+- offsets: slot_16_offsets:0
+  signs: slot_16_signs:0
+  slot: 16
+- offsets: slot_21_offsets:0
+  signs: slot_21_signs:0
+  slot: 21
+- offsets: slot_18_offsets:0
+  signs: slot_18_signs:0
+  slot: 18
+- offsets: slot_22_offsets:0
+  signs: slot_22_signs:0
+  slot: 22
+- offsets: slot_19_offsets:0
+  signs: slot_19_signs:0
+  slot: 19
+- offsets: slot_20_offsets:0
+  signs: slot_20_signs:0
+  slot: 20
+- offsets: slot_27_offsets:0
+  signs: slot_27_signs:0
+  slot: 27
+- offsets: slot_17_offsets:0
+  signs: slot_17_signs:0
+  slot: 17
+- offsets: slot_28_offsets:0
+  signs: slot_28_signs:0
+  slot: 28
+- offsets: slot_30_offsets:0
+  signs: slot_30_signs:0
+  slot: 30
+- offsets: slot_29_offsets:0
+  signs: slot_29_signs:0
+  slot: 29
+- offsets: slot_31_offsets:0
+  signs: slot_31_signs:0
+  slot: 31
+- offsets: slot_24_offsets:0
+  signs: slot_24_signs:0
+  slot: 24
+- offsets: slot_25_offsets:0
+  signs: slot_25_signs:0
+  slot: 25
+- offsets: slot_23_offsets:0
+  signs: slot_23_signs:0
+  slot: 23
+- offsets: slot_32_offsets:0
+  signs: slot_32_signs:0
+  slot: 32
+- offsets: slot_61_offsets:0
+  signs: slot_61_signs:0
+  slot: 61
+- offsets: slot_64_offsets:0
+  signs: slot_64_signs:0
+  slot: 64
+- offsets: slot_62_offsets:0
+  signs: slot_62_signs:0
+  slot: 62
+- offsets: slot_63_offsets:0
+  signs: slot_63_signs:0
+  slot: 63
+- offsets: slot_1016_offsets:0
+  signs: slot_1016_signs:0
+  slot: 1016
+- offsets: slot_1026_offsets:0
+  signs: slot_1026_signs:0
+  slot: 1026
+- offsets: slot_1024_offsets:0
+  signs: slot_1024_signs:0
+  slot: 1024
+- offsets: slot_1025_offsets:0
+  signs: slot_1025_signs:0
+  slot: 1025
+- offsets: slot_1018_offsets:0
+  signs: slot_1018_signs:0
+  slot: 1018
+- offsets: slot_1019_offsets:0
+  signs: slot_1019_signs:0
+  slot: 1019
+- offsets: slot_1020_offsets:0
+  signs: slot_1020_signs:0
+  slot: 1020
+- offsets: slot_1017_offsets:0
+  signs: slot_1017_signs:0
+  slot: 1017
+- offsets: slot_1027_offsets:0
+  signs: slot_1027_signs:0
+  slot: 1027
+- offsets: slot_1028_offsets:0
+  signs: slot_1028_signs:0
+  slot: 1028
+- offsets: slot_1031_offsets:0
+  signs: slot_1031_signs:0
+  slot: 1031
+- offsets: slot_1023_offsets:0
+  signs: slot_1023_signs:0
+  slot: 1023
+- offsets: slot_1033_offsets:0
+  signs: slot_1033_signs:0
+  slot: 1033
+- offsets: slot_1034_offsets:0
+  signs: slot_1034_signs:0
+  slot: 1034
+- offsets: slot_1037_offsets:0
+  signs: slot_1037_signs:0
+  slot: 1037
+- offsets: slot_1035_offsets:0
+  signs: slot_1035_signs:0
+  slot: 1035
+- offsets: slot_1036_offsets:0
+  signs: slot_1036_signs:0
+  slot: 1036
+- offsets: slot_3017_offsets:0
+  signs: slot_3017_signs:0
+  slot: 3017
+- offsets: slot_3019_offsets:0
+  signs: slot_3019_signs:0
+  slot: 3019
+- offsets: slot_3025_offsets:0
+  signs: slot_3025_signs:0
+  slot: 3025
+- offsets: slot_3018_offsets:0
+  signs: slot_3018_signs:0
+  slot: 3018
+- offsets: slot_3020_offsets:0
+  signs: slot_3020_signs:0
+  slot: 3020
+- offsets: slot_3022_offsets:0
+  signs: slot_3022_signs:0
+  slot: 3022
+- offsets: slot_3023_offsets:0
+  signs: slot_3023_signs:0
+  slot: 3023
+- offsets: slot_3021_offsets:0
+  signs: slot_3021_signs:0
+  slot: 3021
+- offsets: slot_3016_offsets:0
+  signs: slot_3016_signs:0
+  slot: 3016
+- offsets: slot_3024_offsets:0
+  signs: slot_3024_signs:0
+  slot: 3024
+- offsets: slot_3029_offsets:0
+  signs: slot_3029_signs:0
+  slot: 3029
+- offsets: slot_3030_offsets:0
+  signs: slot_3030_signs:0
+  slot: 3030
+- offsets: slot_3033_offsets:0
+  signs: slot_3033_signs:0
+  slot: 3033
+- offsets: slot_3031_offsets:0
+  signs: slot_3031_signs:0
+  slot: 3031
+- offsets: slot_3032_offsets:0
+  signs: slot_3032_signs:0
+  slot: 3032
+global_init_range: 0.2
+grad_scale: truediv_6:0
+graph: ./conf/graph.pb
+graph_extra_outputs: {}
+graph_output_labels:
+- zeros_like:0
+- zeros_like_1:0
+graph_q_valid:
+  recall_10th: ones_like_1:0
+  recall_6th: ones_like:0
+graph_summary: Merge/MergeSummary:0
+graph_targets:
+- opt
+graph_tensor_mapping:
+  recall_10th: ExpandDims_2:0
+  recall_6th: ExpandDims_2:0
+hyperparameter_kconf: null
+is_train_placeholder: is_train:0
+learning_rate: 5.0e-06
+local_init_op: ''
+loss_scale_placeholder: loss_scale:0
+mom_decay_rate: 0.999
+output_hidden_units: update_input continue_normlized_input slide_embedding slide_wide
+  watch_time_wide position_weight_input
+param:
+- coln: 32
+  name: position_embeddings
+  rown: 6
+  scale_by_rown: true
+- coln: 64
+  name: generator/mlp_layer_1_mlp_layer/dense/kernel
+  rown: 532
+  scale_by_rown: true
+- coln: 1
+  name: generator/mlp_layer_1_mlp_layer/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  name: generator/mlp_layer_1_mlp_layer/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: generator/mlp_layer_1_mlp_layer/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/s
+  rown: 6
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_0/multi_head_attention/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_0/multi_head_attention/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_0/multi_head_attention/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_0/multi_head_attention/dense_3/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_0/multi_head_attention/dense_3/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_0/layer_norm/gamma
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_0/layer_norm/beta
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  name: generator/transformer_layer_0/feed_forward_network/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_0/feed_forward_network/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_0/feed_forward_network/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_0/feed_forward_network/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_0/multi_head_attention/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_0/multi_head_attention/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_0/multi_head_attention/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_0/multi_head_attention/dense_3/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_0/multi_head_attention/dense_3/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_0/layer_norm/gamma
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_0/layer_norm/beta
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  name: generator/position_layer_0/feed_forward_network/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_0/feed_forward_network/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_0/feed_forward_network/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_0/feed_forward_network/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_1/multi_head_attention/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_1/multi_head_attention/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_1/multi_head_attention/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_1/multi_head_attention/dense_3/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_1/multi_head_attention/dense_3/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_1/layer_norm/gamma
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_1/layer_norm/beta
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  name: generator/transformer_layer_1/feed_forward_network/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_1/feed_forward_network/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_1/feed_forward_network/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_1/feed_forward_network/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_1/multi_head_attention/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_1/multi_head_attention/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_1/multi_head_attention/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_1/multi_head_attention/dense_3/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_1/multi_head_attention/dense_3/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_1/layer_norm/gamma
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_1/layer_norm/beta
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  name: generator/position_layer_1/feed_forward_network/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_1/feed_forward_network/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_1/feed_forward_network/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_1/feed_forward_network/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_2/multi_head_attention/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_2/multi_head_attention/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_2/multi_head_attention/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_2/multi_head_attention/dense_3/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_2/multi_head_attention/dense_3/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_2/layer_norm/gamma
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_2/layer_norm/beta
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  name: generator/transformer_layer_2/feed_forward_network/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_2/feed_forward_network/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 32
+  name: generator/transformer_layer_2/feed_forward_network/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: generator/transformer_layer_2/feed_forward_network/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_2/multi_head_attention/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_2/multi_head_attention/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_2/multi_head_attention/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_2/multi_head_attention/dense_3/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_2/multi_head_attention/dense_3/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_2/layer_norm/gamma
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_2/layer_norm/beta
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  name: generator/position_layer_2/feed_forward_network/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_2/feed_forward_network/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 32
+  name: generator/position_layer_2/feed_forward_network/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: generator/position_layer_2/feed_forward_network/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+q_label:
+- auc_set: linear_regression
+  label: zeros_like:0
+  name: recall_6th
+- auc_set: linear_regression
+  label: zeros_like_1:0
+  name: recall_10th
+q_names: recall_6th recall_10th
+sparse_grad: sparse_grad_for_fetch:0
+sparse_grad_scale: truediv_7:0
+step_placeholder: step:0
+summary:
+- len: 1912
+  name: base_summary
+- len: 2072
+  name: stub_summary
+summary_decay_rate: 0.999999
+summary_init_n: 1e4
+summary_init_squared_sum: 1e4
+summary_squared_sum_epsilon: 1e-4
+test_layers_at_joining: join join_forward update update_forward
+test_layers_at_updating: update update_forward
+test_mode: false
+train_layers_at_joining: join
+train_layers_at_updating: update
+use_sparse_indice: false
+vec_input:
+- common: false
+  dim: 1
+  name: fountain_fulllink_rerank_index_list
+- common: false
+  dim: 1
+  name: fountain_fulllink_rerank_index_weight_list
+- common: false
+  dim: 1
+  name: fountain_fulllink_rerank_realshow_label_weight_list
+- common: false
+  dim: 1
+  name: fountain_click_label_list
+- common: false
+  dim: 1
+  name: fountain_finish_label_list
+- common: false
+  dim: 60
+  name: context_info__real_show_index_list
+- common: false
+  dim: 60
+  name: context_info__real_show_list
+with_kai: true

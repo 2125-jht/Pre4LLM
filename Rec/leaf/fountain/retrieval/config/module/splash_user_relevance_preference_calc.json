@@ -1,0 +1,31 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_fountain_splash_cacl_long_term_relevance_preference_weight": 0,
+      "fountain_splash_cacl_long_term_relevance_preference_seq_size": 2000,
+      "fountain_splash_cacl_long_term_relevance_preference_play_cnt_threshold": 10,
+      "fountain_splash_cacl_long_term_relevance_preference_fusion_type": 0,
+      "fountain_splash_cacl_long_term_relevance_preference_alpha": 0.5,
+      "fountain_splash_cacl_long_term_relevance_preference_beta": 15.0,
+      "fountain_splash_relevance_preference_adjust_weight_lower_bound": 0.5,
+      "fountain_splash_relevance_preference_adjust_weight_upper_bound": 2.0
+    },
+    "import": {
+      "common_attrs": [
+        "source_hetu_level_one",
+        "colossus_photo_id_list",
+        "colossus_tag_list",
+        "colossus_play_time_list",
+        "colossus_label_list",
+        "colossus_channel_list",
+        "colossus_duration_list",
+        "colossus_timestamp_list"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "user_long_term_relevance_preference_weight"
+      ]
+    }
+  }
+}

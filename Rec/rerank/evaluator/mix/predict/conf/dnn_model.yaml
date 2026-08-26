@@ -1,0 +1,3506 @@
+ada_decay_rate: 0.99999
+ada_epsilon: 1e-8
+avg_decay_rate: 0.999993
+back_propagate_input: true
+embedding:
+  create_threshold: 0
+  initial_g2sum: 3
+  initial_range: 1e-4
+  learning_rate: 0.05
+  slots_config:
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uId
+    sized: true
+    slots: '114'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_dId
+    sized: true
+    slots: '286'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uClickPids
+    sized: true
+    slots: '187'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uLikePids
+    sized: true
+    slots: '194'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uHatePids
+    sized: true
+    slots: '168'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uFollowAids
+    sized: true
+    slots: '291'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uLikeAids
+    sized: true
+    slots: '252'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_uExpClick
+    sized: true
+    slots: '318'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_uExpLike
+    sized: true
+    slots: '195'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_uExpFollow
+    sized: true
+    slots: '134'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_uExpLongView
+    sized: true
+    slots: '36'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_uBasicAge
+    sized: true
+    slots: '198'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_uGender
+    sized: true
+    slots: '176'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_uCityId
+    sized: true
+    slots: '122'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_uProvinceId
+    sized: true
+    slots: '283'
+  - common: false
+    dim: 24
+    dtype: float32
+    expand: 1
+    input_name: KAI_fountainLongviewPids
+    sized: true
+    slots: '146'
+  - common: false
+    dim: 24
+    dtype: float32
+    expand: 1
+    input_name: KAI_fountainEffviewPids
+    sized: true
+    slots: '242'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx0
+    sized: true
+    slots: '116'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx0
+    sized: true
+    slots: '289'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx0
+    sized: true
+    slots: '29'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx0
+    sized: true
+    slots: '305'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx0
+    sized: true
+    slots: '227'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx0
+    sized: true
+    slots: '76'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx0
+    sized: true
+    slots: '209'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx0
+    sized: true
+    slots: '110'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx0
+    sized: true
+    slots: '344'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx0
+    sized: true
+    slots: '16'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx0
+    sized: true
+    slots: '83'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx0
+    sized: true
+    slots: '115'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx0
+    sized: true
+    slots: '22'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx0
+    sized: true
+    slots: '24'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx0
+    sized: true
+    slots: '254'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx0
+    sized: true
+    slots: '282'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx0
+    sized: true
+    slots: '44'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx0
+    sized: true
+    slots: '220'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx0
+    sized: true
+    slots: '130'
+  - common: false
+    dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx0
+    sized: true
+    slots: '341'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx0
+    sized: true
+    slots: '156'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx1
+    sized: true
+    slots: '123'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx1
+    sized: true
+    slots: '160'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx1
+    sized: true
+    slots: '10'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx1
+    sized: true
+    slots: '71'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx1
+    sized: true
+    slots: '79'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx1
+    sized: true
+    slots: '235'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx1
+    sized: true
+    slots: '32'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx1
+    sized: true
+    slots: '63'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx1
+    sized: true
+    slots: '314'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx1
+    sized: true
+    slots: '9'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx1
+    sized: true
+    slots: '144'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx1
+    sized: true
+    slots: '99'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx1
+    sized: true
+    slots: '241'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx1
+    sized: true
+    slots: '284'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx1
+    sized: true
+    slots: '255'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx1
+    sized: true
+    slots: '257'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx1
+    sized: true
+    slots: '50'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx1
+    sized: true
+    slots: '336'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx1
+    sized: true
+    slots: '170'
+  - common: false
+    dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx1
+    sized: true
+    slots: '339'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx1
+    sized: true
+    slots: '277'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx2
+    sized: true
+    slots: '139'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx2
+    sized: true
+    slots: '210'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx2
+    sized: true
+    slots: '180'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx2
+    sized: true
+    slots: '200'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx2
+    sized: true
+    slots: '162'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx2
+    sized: true
+    slots: '346'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx2
+    sized: true
+    slots: '166'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx2
+    sized: true
+    slots: '105'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx2
+    sized: true
+    slots: '288'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx2
+    sized: true
+    slots: '7'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx2
+    sized: true
+    slots: '131'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx2
+    sized: true
+    slots: '126'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx2
+    sized: true
+    slots: '236'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx2
+    sized: true
+    slots: '322'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx2
+    sized: true
+    slots: '33'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx2
+    sized: true
+    slots: '245'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx2
+    sized: true
+    slots: '51'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx2
+    sized: true
+    slots: '265'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx2
+    sized: true
+    slots: '202'
+  - common: false
+    dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx2
+    sized: true
+    slots: '278'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx2
+    sized: true
+    slots: '214'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx3
+    sized: true
+    slots: '225'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx3
+    sized: true
+    slots: '309'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx3
+    sized: true
+    slots: '54'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx3
+    sized: true
+    slots: '68'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx3
+    sized: true
+    slots: '239'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx3
+    sized: true
+    slots: '84'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx3
+    sized: true
+    slots: '30'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx3
+    sized: true
+    slots: '189'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx3
+    sized: true
+    slots: '163'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx3
+    sized: true
+    slots: '8'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx3
+    sized: true
+    slots: '196'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx3
+    sized: true
+    slots: '243'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx3
+    sized: true
+    slots: '21'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx3
+    sized: true
+    slots: '199'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx3
+    sized: true
+    slots: '34'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx3
+    sized: true
+    slots: '86'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx3
+    sized: true
+    slots: '52'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx3
+    sized: true
+    slots: '270'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx3
+    sized: true
+    slots: '248'
+  - common: false
+    dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx3
+    sized: true
+    slots: '345'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx3
+    sized: true
+    slots: '56'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx4
+    sized: true
+    slots: '274'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx4
+    sized: true
+    slots: '85'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx4
+    sized: true
+    slots: '124'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx4
+    sized: true
+    slots: '70'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx4
+    sized: true
+    slots: '312'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx4
+    sized: true
+    slots: '55'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx4
+    sized: true
+    slots: '127'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx4
+    sized: true
+    slots: '273'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx4
+    sized: true
+    slots: '233'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx4
+    sized: true
+    slots: '15'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx4
+    sized: true
+    slots: '142'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx4
+    sized: true
+    slots: '95'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx4
+    sized: true
+    slots: '98'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx4
+    sized: true
+    slots: '39'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx4
+    sized: true
+    slots: '174'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx4
+    sized: true
+    slots: '264'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx4
+    sized: true
+    slots: '343'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx4
+    sized: true
+    slots: '224'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx4
+    sized: true
+    slots: '14'
+  - common: false
+    dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx4
+    sized: true
+    slots: '271'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx4
+    sized: true
+    slots: '183'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx5
+    sized: true
+    slots: '165'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx5
+    sized: true
+    slots: '226'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx5
+    sized: true
+    slots: '306'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx5
+    sized: true
+    slots: '329'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx5
+    sized: true
+    slots: '77'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx5
+    sized: true
+    slots: '300'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx5
+    sized: true
+    slots: '28'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx5
+    sized: true
+    slots: '118'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx5
+    sized: true
+    slots: '42'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx5
+    sized: true
+    slots: '17'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx5
+    sized: true
+    slots: '319'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx5
+    sized: true
+    slots: '251'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx5
+    sized: true
+    slots: '253'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx5
+    sized: true
+    slots: '276'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx5
+    sized: true
+    slots: '19'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx5
+    sized: true
+    slots: '272'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx5
+    sized: true
+    slots: '164'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx5
+    sized: true
+    slots: '219'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx5
+    sized: true
+    slots: '13'
+  - common: false
+    dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx5
+    sized: true
+    slots: '217'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx5
+    sized: true
+    slots: '57'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx6
+    sized: true
+    slots: '161'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx6
+    sized: true
+    slots: '261'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx6
+    sized: true
+    slots: '46'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx6
+    sized: true
+    slots: '69'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx6
+    sized: true
+    slots: '310'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx6
+    sized: true
+    slots: '89'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx6
+    sized: true
+    slots: '27'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx6
+    sized: true
+    slots: '334'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx6
+    sized: true
+    slots: '107'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx6
+    sized: true
+    slots: '5'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx6
+    sized: true
+    slots: '78'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx6
+    sized: true
+    slots: '332'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx6
+    sized: true
+    slots: '188'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx6
+    sized: true
+    slots: '294'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx6
+    sized: true
+    slots: '35'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx6
+    sized: true
+    slots: '106'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx6
+    sized: true
+    slots: '324'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx6
+    sized: true
+    slots: '64'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx6
+    sized: true
+    slots: '12'
+  - common: false
+    dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx6
+    sized: true
+    slots: '256'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx6
+    sized: true
+    slots: '62'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx7
+    sized: true
+    slots: '87'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx7
+    sized: true
+    slots: '326'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx7
+    sized: true
+    slots: '125'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx7
+    sized: true
+    slots: '221'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx7
+    sized: true
+    slots: '317'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx7
+    sized: true
+    slots: '175'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx7
+    sized: true
+    slots: '213'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx7
+    sized: true
+    slots: '323'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx7
+    sized: true
+    slots: '45'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx7
+    sized: true
+    slots: '6'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx7
+    sized: true
+    slots: '321'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx7
+    sized: true
+    slots: '129'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx7
+    sized: true
+    slots: '20'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx7
+    sized: true
+    slots: '25'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx7
+    sized: true
+    slots: '313'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx7
+    sized: true
+    slots: '88'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx7
+    sized: true
+    slots: '47'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx7
+    sized: true
+    slots: '65'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx7
+    sized: true
+    slots: '11'
+  - common: false
+    dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx7
+    sized: true
+    slots: '72'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx7
+    sized: true
+    slots: '59'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx8
+    sized: true
+    slots: '75'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx8
+    sized: true
+    slots: '193'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx8
+    sized: true
+    slots: '232'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx8
+    sized: true
+    slots: '66'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx8
+    sized: true
+    slots: '331'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx8
+    sized: true
+    slots: '133'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx8
+    sized: true
+    slots: '186'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx8
+    sized: true
+    slots: '249'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx8
+    sized: true
+    slots: '41'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx8
+    sized: true
+    slots: '37'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx8
+    sized: true
+    slots: '192'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx8
+    sized: true
+    slots: '109'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx8
+    sized: true
+    slots: '23'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx8
+    sized: true
+    slots: '26'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx8
+    sized: true
+    slots: '211'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx8
+    sized: true
+    slots: '135'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx8
+    sized: true
+    slots: '58'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx8
+    sized: true
+    slots: '158'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx8
+    sized: true
+    slots: '247'
+  - common: false
+    dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx8
+    sized: true
+    slots: '301'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx8
+    sized: true
+    slots: '230'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx9
+    sized: true
+    slots: '299'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx9
+    sized: true
+    slots: '190'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx9
+    sized: true
+    slots: '229'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx9
+    sized: true
+    slots: '67'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx9
+    sized: true
+    slots: '205'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx9
+    sized: true
+    slots: '91'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx9
+    sized: true
+    slots: '237'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx9
+    sized: true
+    slots: '281'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx9
+    sized: true
+    slots: '40'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx9
+    sized: true
+    slots: '18'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx9
+    sized: true
+    slots: '240'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx9
+    sized: true
+    slots: '308'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx9
+    sized: true
+    slots: '119'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx9
+    sized: true
+    slots: '43'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx9
+    sized: true
+    slots: '61'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx9
+    sized: true
+    slots: '216'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx9
+    sized: true
+    slots: '328'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx9
+    sized: true
+    slots: '96'
+  - common: false
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx9
+    sized: true
+    slots: '53'
+  - common: false
+    dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx9
+    sized: true
+    slots: '73'
+  - common: false
+    dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx9
+    sized: true
+    slots: '60'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_0
+    sized: true
+    slots: '92'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_1
+    sized: true
+    slots: '128'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_2
+    sized: true
+    slots: '222'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_3
+    sized: true
+    slots: '145'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_4
+    sized: true
+    slots: '223'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_5
+    sized: true
+    slots: '132'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_6
+    sized: true
+    slots: '94'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_7
+    sized: true
+    slots: '152'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_8
+    sized: true
+    slots: '201'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_9
+    sized: true
+    slots: '148'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_10
+    sized: true
+    slots: '113'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_11
+    sized: true
+    slots: '191'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_12
+    sized: true
+    slots: '81'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_13
+    sized: true
+    slots: '157'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_14
+    sized: true
+    slots: '246'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_15
+    sized: true
+    slots: '296'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_16
+    sized: true
+    slots: '169'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_17
+    sized: true
+    slots: '182'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_18
+    sized: true
+    slots: '307'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_19
+    sized: true
+    slots: '80'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_20
+    sized: true
+    slots: '203'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_21
+    sized: true
+    slots: '102'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_22
+    sized: true
+    slots: '315'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_23
+    sized: true
+    slots: '154'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_24
+    sized: true
+    slots: '238'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_25
+    sized: true
+    slots: '173'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_26
+    sized: true
+    slots: '218'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_27
+    sized: true
+    slots: '263'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_28
+    sized: true
+    slots: '269'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_29
+    sized: true
+    slots: '311'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_0
+    sized: true
+    slots: '136'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_1
+    sized: true
+    slots: '207'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_2
+    sized: true
+    slots: '74'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_3
+    sized: true
+    slots: '342'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_4
+    sized: true
+    slots: '320'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_5
+    sized: true
+    slots: '295'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_6
+    sized: true
+    slots: '48'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_7
+    sized: true
+    slots: '49'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_8
+    sized: true
+    slots: '327'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_9
+    sized: true
+    slots: '260'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_10
+    sized: true
+    slots: '268'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_11
+    sized: true
+    slots: '117'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_12
+    sized: true
+    slots: '172'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_13
+    sized: true
+    slots: '178'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_14
+    sized: true
+    slots: '259'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_15
+    sized: true
+    slots: '121'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_16
+    sized: true
+    slots: '285'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_17
+    sized: true
+    slots: '279'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_18
+    sized: true
+    slots: '204'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_19
+    sized: true
+    slots: '287'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_20
+    sized: true
+    slots: '103'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_21
+    sized: true
+    slots: '101'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_22
+    sized: true
+    slots: '111'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_23
+    sized: true
+    slots: '234'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_24
+    sized: true
+    slots: '104'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_25
+    sized: true
+    slots: '38'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_26
+    sized: true
+    slots: '304'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_27
+    sized: true
+    slots: '179'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_28
+    sized: true
+    slots: '184'
+  - common: false
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_aid_29
+    sized: true
+    slots: '212'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_0
+    sized: true
+    slots: '266'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_1
+    sized: true
+    slots: '280'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_2
+    sized: true
+    slots: '185'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_3
+    sized: true
+    slots: '112'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_4
+    sized: true
+    slots: '147'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_5
+    sized: true
+    slots: '108'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_6
+    sized: true
+    slots: '197'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_7
+    sized: true
+    slots: '82'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_8
+    sized: true
+    slots: '177'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_9
+    sized: true
+    slots: '267'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_10
+    sized: true
+    slots: '275'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_11
+    sized: true
+    slots: '141'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_12
+    sized: true
+    slots: '137'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_13
+    sized: true
+    slots: '298'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_14
+    sized: true
+    slots: '337'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_15
+    sized: true
+    slots: '338'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_16
+    sized: true
+    slots: '97'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_17
+    sized: true
+    slots: '149'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_18
+    sized: true
+    slots: '153'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_19
+    sized: true
+    slots: '262'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_20
+    sized: true
+    slots: '335'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_21
+    sized: true
+    slots: '244'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_22
+    sized: true
+    slots: '231'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_23
+    sized: true
+    slots: '316'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_24
+    sized: true
+    slots: '181'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_25
+    sized: true
+    slots: '333'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_26
+    sized: true
+    slots: '140'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_27
+    sized: true
+    slots: '325'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_28
+    sized: true
+    slots: '120'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_tag_29
+    sized: true
+    slots: '208'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_0
+    sized: true
+    slots: '302'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_1
+    sized: true
+    slots: '330'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_2
+    sized: true
+    slots: '293'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_3
+    sized: true
+    slots: '215'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_4
+    sized: true
+    slots: '155'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_5
+    sized: true
+    slots: '171'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_6
+    sized: true
+    slots: '93'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_7
+    sized: true
+    slots: '151'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_8
+    sized: true
+    slots: '292'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_9
+    sized: true
+    slots: '167'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_10
+    sized: true
+    slots: '297'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_11
+    sized: true
+    slots: '138'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_12
+    sized: true
+    slots: '100'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_13
+    sized: true
+    slots: '258'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_14
+    sized: true
+    slots: '90'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_15
+    sized: true
+    slots: '340'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_16
+    sized: true
+    slots: '347'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_17
+    sized: true
+    slots: '228'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_18
+    sized: true
+    slots: '143'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_19
+    sized: true
+    slots: '150'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_20
+    sized: true
+    slots: '31'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_21
+    sized: true
+    slots: '159'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_22
+    sized: true
+    slots: '1'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_23
+    sized: true
+    slots: '290'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_24
+    sized: true
+    slots: '3'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_25
+    sized: true
+    slots: '4'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_26
+    sized: true
+    slots: '303'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_27
+    sized: true
+    slots: '2'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_28
+    sized: true
+    slots: '206'
+  - common: false
+    dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_realshow_play_29
+    sized: true
+    slots: '250'
+  version_aware: true
+  weight_bounds:
+  - -10
+  - 10
+extra_params: []
+extra_preds: pos0 pos1 pos2 pos3 pos4 pos5 splash_pos0 splash_pos1
+global_init_range: 0.2
+graph: ../conf/graph.pb
+graph_output_labels:
+- Identity_9:0
+- Identity_29:0
+- Identity_4:0
+- Identity_24:0
+- Identity_5:0
+- Identity_6:0
+- Identity_17:0
+- Select_4:0
+- Identity_11:0
+- Identity_14:0
+- Identity_2:0
+- Select_11:0
+- Identity_18:0
+- Identity_25:0
+- Identity_8:0
+- Identity:0
+- Identity_21:0
+- Identity_7:0
+- Identity_26:0
+- Identity_13:0
+- Identity_10:0
+- Identity_12:0
+- Identity_20:0
+- Identity_15:0
+- Identity_23:0
+- Identity_27:0
+- Identity_3:0
+- Identity_22:0
+- Identity_1:0
+- Identity_16:0
+graph_q_valid:
+  all_evtr: Select_5:0
+  all_lvtr: Select_5:0
+  all_svr: Select_5:0
+  cmef: Maximum_1:0
+  cmtr: Select_15:0
+  coltr: Select_17:0
+  dtr: Select_16:0
+  epst: Maximum_1:0
+  ftr: Select_13:0
+  ftr_os: Select_14:0
+  hot_lvtr: Minimum:0
+  htr: Select_18:0
+  live: Identity_19:0
+  ltr: Maximum_1:0
+  mcp_match: Select_1:0
+  ptr: Maximum_1:0
+  scale_vtr: Maximum:0
+  setr: Maximum:0
+  setr2: Identity_28:0
+  thanos_cmef: Select_1:0
+  thanos_dfvtr: mul_2:0
+  thanos_etcm: Select_1:0
+  thanos_evtr: mul:0
+  thanos_ftr: Select_1:0
+  thanos_ltr: Select_1:0
+  thanos_lvtr: mul_1:0
+  thanos_svr: Select_1:0
+  thanos_wtr: Select_1:0
+  vtr: Identity_30:0
+  wtr: Select_12:0
+graph_targets:
+- opt
+graph_tensor_mapping:
+  pos0: pos0:0
+  pos1: pos1:0
+  pos2: pos2:0
+  pos3: pos3:0
+  pos4: pos4:0
+  pos5: pos5:0
+  splash_pos0: splash_pos0:0
+  splash_pos1: splash_pos1:0
+hyperparameter_kconf: McHotL2RTower
+input_type: 3
+learning_rate: 5.0e-06
+mom_decay_rate: 0.999
+output_hidden_units: update_input continue_normlized_input slide_embedding slide_wide
+  watch_time_wide position_weight_input
+param:
+- coln: 256
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/hot_ctr_item_dnn1_param
+  rown: 627
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/hot_ctr_item_dnn2_param
+  rown: 257
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/hot_ctr_item_dnn3_param
+  rown: 129
+  scale_by_rown: true
+- coln: 32
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/hot_ctr_item_proj1_param
+  rown: 65
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/hot_ctr_output_logit
+  rown: 33
+  scale_by_rown: true
+- coln: 80
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/ctr_user_user_tower/ctr_user_user_tower_self_attention/dense/kernel
+  rown: 320
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: slide_model/ctr_user_user_tower/ctr_user_user_tower_self_attention/dense/bias
+  rank: 1
+  rown: 80
+  scale_by_rown: true
+- coln: 80
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/ctr_user_user_tower/ctr_user_user_tower_self_attention/dense_1/kernel
+  rown: 80
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: slide_model/ctr_user_user_tower/ctr_user_user_tower_self_attention/dense_1/bias
+  rank: 1
+  rown: 80
+  scale_by_rown: true
+- coln: 80
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/ctr_user_user_tower/ctr_user_user_tower_self_attention/dense_2/kernel
+  rown: 80
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: slide_model/ctr_user_user_tower/ctr_user_user_tower_self_attention/dense_2/bias
+  rank: 1
+  rown: 80
+  scale_by_rown: true
+- coln: 80
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/ctr_user_user_tower/dense/kernel
+  rown: 80
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: slide_model/ctr_user_user_tower/dense/bias
+  rank: 1
+  rown: 80
+  scale_by_rown: true
+- coln: 256
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_item_dnn1_param
+  rown: 709
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_item_dnn2_param
+  rown: 257
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_dnn1_gate_tower/l2r_vtr_dnn10_layer_gate_layer/l2r_vtr_dnn10_layer_fc
+  rown: 139
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_dnn1_gate_tower/l2r_vtr_dnn10_layer_gate_layer/l2r_vtr_dnn10_layer_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_dnn1_gate_tower/l2r_vtr_dnn1_0
+  rown: 129
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_dnn2_gate_tower/l2r_vtr_dnn20_layer_gate_layer/l2r_vtr_dnn20_layer_fc
+  rown: 134
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_dnn2_gate_tower/l2r_vtr_dnn20_layer_gate_layer/l2r_vtr_dnn20_layer_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_dnn2_gate_tower/l2r_vtr_dnn2_0
+  rown: 129
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_gate0_gate_layer/l2r_vtr_gate0_fc
+  rown: 401
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_gate0_gate_layer/l2r_vtr_gate0_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_gate1_gate_layer/l2r_vtr_gate1_fc
+  rown: 401
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_gate1_gate_layer/l2r_vtr_gate1_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_gate2_gate_layer/l2r_vtr_gate2_fc
+  rown: 401
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_gate2_gate_layer/l2r_vtr_gate2_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_gate3_gate_layer/l2r_vtr_gate3_fc
+  rown: 401
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_gate3_gate_layer/l2r_vtr_gate3_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_gate4_gate_layer/l2r_vtr_gate4_fc
+  rown: 401
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_gate4_gate_layer/l2r_vtr_gate4_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_gate5_gate_layer/l2r_vtr_gate5_fc
+  rown: 401
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_vtr_gate5_gate_layer/l2r_vtr_gate5_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_transformer/l2r_transformer_self_attention/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: slide_model/l2r_transformer/l2r_transformer_self_attention/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_transformer/l2r_transformer_self_attention/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: slide_model/l2r_transformer/l2r_transformer_self_attention/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_transformer/l2r_transformer_self_attention/dense_2/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: slide_model/l2r_transformer/l2r_transformer_self_attention/dense_2/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_transformer/l2r_transformer_proj
+  rown: 65
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_transformer/l2r_transformer_ln_1/g
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_transformer/l2r_transformer_ln_1/b
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 256
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_transformer/l2r_transformer_mlp/l2r_transformer_mlp_c_fc
+  rown: 65
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_transformer/l2r_transformer_mlp/l2r_transformer_mlp_c_fc2
+  rown: 257
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_transformer/l2r_transformer_ln_2/g
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_transformer/l2r_transformer_ln_2/b
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_item_proj1_param
+  rown: 65
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/l2r_output_logit
+  rown: 33
+  scale_by_rown: true
+- coln: 256
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_item_dnn1_param
+  rown: 709
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_item_dnn2_param
+  rown: 257
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_vtr_dnn1_gate_tower/splash_l2r_vtr_dnn10_layer_gate_layer/splash_l2r_vtr_dnn10_layer_fc
+  rown: 139
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_vtr_dnn1_gate_tower/splash_l2r_vtr_dnn10_layer_gate_layer/splash_l2r_vtr_dnn10_layer_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_vtr_dnn1_gate_tower/splash_l2r_vtr_dnn1_0
+  rown: 129
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_vtr_dnn2_gate_tower/splash_l2r_vtr_dnn20_layer_gate_layer/splash_l2r_vtr_dnn20_layer_fc
+  rown: 134
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_vtr_dnn2_gate_tower/splash_l2r_vtr_dnn20_layer_gate_layer/splash_l2r_vtr_dnn20_layer_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_vtr_dnn2_gate_tower/splash_l2r_vtr_dnn2_0
+  rown: 129
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_vtr_gate0_gate_layer/splash_l2r_vtr_gate0_fc
+  rown: 401
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_vtr_gate0_gate_layer/splash_l2r_vtr_gate0_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_vtr_gate1_gate_layer/splash_l2r_vtr_gate1_fc
+  rown: 401
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_vtr_gate1_gate_layer/splash_l2r_vtr_gate1_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_self_attention/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_self_attention/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_self_attention/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_self_attention/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_self_attention/dense_2/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_self_attention/dense_2/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_proj
+  rown: 65
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_ln_1/g
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_ln_1/b
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 256
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_mlp/splash_l2r_transformer_mlp_c_fc
+  rown: 65
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_mlp/splash_l2r_transformer_mlp_c_fc2
+  rown: 257
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_ln_2/g
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_transformer/splash_l2r_transformer_ln_2/b
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_item_proj1_param
+  rown: 65
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: slide_model/splash_l2r_output_logit
+  rown: 33
+  scale_by_rown: true
+q_names: pos0 pos1 pos2 pos3 pos4 pos5 splash_pos0 splash_pos1
+summary:
+- len: 1912
+  name: base_summary
+- len: 2072
+  name: stub_summary
+summary_decay_rate: 0.999999
+summary_init_n: 1e4
+summary_init_squared_sum: 1e4
+summary_squared_sum_epsilon: 1e-4
+test_layers_at_joining: join join_forward update update_forward
+test_layers_at_updating: update update_forward
+test_mode: false
+train_layers_at_joining: join
+train_layers_at_updating: update
+vec_input:
+- common: false
+  dim: 1
+  name: KAI_l2r_label_idx0
+- common: false
+  dim: 1
+  name: KAI_l2r_weight_idx0
+- common: false
+  dim: 1
+  name: KAI_l2r_label_idx1
+- common: false
+  dim: 1
+  name: KAI_l2r_weight_idx1
+- common: false
+  dim: 1
+  name: KAI_l2r_label_idx2
+- common: false
+  dim: 1
+  name: KAI_l2r_weight_idx2
+- common: false
+  dim: 1
+  name: KAI_l2r_label_idx3
+- common: false
+  dim: 1
+  name: KAI_l2r_weight_idx3
+- common: false
+  dim: 1
+  name: KAI_l2r_label_idx4
+- common: false
+  dim: 1
+  name: KAI_l2r_weight_idx4
+- common: false
+  dim: 1
+  name: KAI_l2r_label_idx5
+- common: false
+  dim: 1
+  name: KAI_l2r_weight_idx5
+- common: false
+  dim: 1
+  name: KAI_l2r_label_idx6
+- common: false
+  dim: 1
+  name: KAI_l2r_weight_idx6
+- common: false
+  dim: 1
+  name: KAI_l2r_label_idx7
+- common: false
+  dim: 1
+  name: KAI_l2r_weight_idx7
+- common: false
+  dim: 1
+  name: KAI_l2r_label_idx8
+- common: false
+  dim: 1
+  name: KAI_l2r_weight_idx8
+- common: false
+  dim: 1
+  name: KAI_l2r_label_idx9
+- common: false
+  dim: 1
+  name: KAI_l2r_weight_idx9
+- common: false
+  dim: 1
+  name: KAI_pctr_idx0
+- common: false
+  dim: 1
+  name: KAI_mcPctr_idx0
+- common: false
+  dim: 1
+  name: KAI_pltr_idx0
+- common: false
+  dim: 1
+  name: KAI_pwtr_idx0
+- common: false
+  dim: 1
+  name: KAI_pftr_idx0
+- common: false
+  dim: 1
+  name: KAI_phtr_idx0
+- common: false
+  dim: 1
+  name: KAI_pptr_idx0
+- common: false
+  dim: 1
+  name: KAI_pcmtr_idx0
+- common: false
+  dim: 1
+  name: KAI_mcPwtr_idx0
+- common: false
+  dim: 1
+  name: KAI_mcPltr_idx0
+- common: false
+  dim: 1
+  name: KAI_pcmef_idx0
+- common: false
+  dim: 1
+  name: KAI_pepstr_idx0
+- common: false
+  dim: 1
+  name: KAI_pvtr_idx0
+- common: false
+  dim: 1
+  name: KAI_plvtr_idx0
+- common: false
+  dim: 1
+  name: KAI_psvtr_idx0
+- common: false
+  dim: 1
+  name: KAI_mcPlvtr_idx0
+- common: false
+  dim: 1
+  name: KAI_mcPsvtr_idx0
+- common: false
+  dim: 1
+  name: KAI_slide_neg_weight_idx0
+- common: false
+  dim: 1
+  name: KAI_slide_wtd_label_idx0
+- common: false
+  dim: 1
+  name: KAI_slide_mix_label_idx0
+- common: false
+  dim: 1
+  name: KAI_pctr_idx1
+- common: false
+  dim: 1
+  name: KAI_mcPctr_idx1
+- common: false
+  dim: 1
+  name: KAI_pltr_idx1
+- common: false
+  dim: 1
+  name: KAI_pwtr_idx1
+- common: false
+  dim: 1
+  name: KAI_pftr_idx1
+- common: false
+  dim: 1
+  name: KAI_phtr_idx1
+- common: false
+  dim: 1
+  name: KAI_pptr_idx1
+- common: false
+  dim: 1
+  name: KAI_pcmtr_idx1
+- common: false
+  dim: 1
+  name: KAI_mcPwtr_idx1
+- common: false
+  dim: 1
+  name: KAI_mcPltr_idx1
+- common: false
+  dim: 1
+  name: KAI_pcmef_idx1
+- common: false
+  dim: 1
+  name: KAI_pepstr_idx1
+- common: false
+  dim: 1
+  name: KAI_pvtr_idx1
+- common: false
+  dim: 1
+  name: KAI_plvtr_idx1
+- common: false
+  dim: 1
+  name: KAI_psvtr_idx1
+- common: false
+  dim: 1
+  name: KAI_mcPlvtr_idx1
+- common: false
+  dim: 1
+  name: KAI_mcPsvtr_idx1
+- common: false
+  dim: 1
+  name: KAI_slide_neg_weight_idx1
+- common: false
+  dim: 1
+  name: KAI_slide_wtd_label_idx1
+- common: false
+  dim: 1
+  name: KAI_slide_mix_label_idx1
+- common: false
+  dim: 1
+  name: KAI_pctr_idx2
+- common: false
+  dim: 1
+  name: KAI_mcPctr_idx2
+- common: false
+  dim: 1
+  name: KAI_pltr_idx2
+- common: false
+  dim: 1
+  name: KAI_pwtr_idx2
+- common: false
+  dim: 1
+  name: KAI_pftr_idx2
+- common: false
+  dim: 1
+  name: KAI_phtr_idx2
+- common: false
+  dim: 1
+  name: KAI_pptr_idx2
+- common: false
+  dim: 1
+  name: KAI_pcmtr_idx2
+- common: false
+  dim: 1
+  name: KAI_mcPwtr_idx2
+- common: false
+  dim: 1
+  name: KAI_mcPltr_idx2
+- common: false
+  dim: 1
+  name: KAI_pcmef_idx2
+- common: false
+  dim: 1
+  name: KAI_pepstr_idx2
+- common: false
+  dim: 1
+  name: KAI_pvtr_idx2
+- common: false
+  dim: 1
+  name: KAI_plvtr_idx2
+- common: false
+  dim: 1
+  name: KAI_psvtr_idx2
+- common: false
+  dim: 1
+  name: KAI_mcPlvtr_idx2
+- common: false
+  dim: 1
+  name: KAI_mcPsvtr_idx2
+- common: false
+  dim: 1
+  name: KAI_slide_neg_weight_idx2
+- common: false
+  dim: 1
+  name: KAI_slide_wtd_label_idx2
+- common: false
+  dim: 1
+  name: KAI_slide_mix_label_idx2
+- common: false
+  dim: 1
+  name: KAI_pctr_idx3
+- common: false
+  dim: 1
+  name: KAI_mcPctr_idx3
+- common: false
+  dim: 1
+  name: KAI_pltr_idx3
+- common: false
+  dim: 1
+  name: KAI_pwtr_idx3
+- common: false
+  dim: 1
+  name: KAI_pftr_idx3
+- common: false
+  dim: 1
+  name: KAI_phtr_idx3
+- common: false
+  dim: 1
+  name: KAI_pptr_idx3
+- common: false
+  dim: 1
+  name: KAI_pcmtr_idx3
+- common: false
+  dim: 1
+  name: KAI_mcPwtr_idx3
+- common: false
+  dim: 1
+  name: KAI_mcPltr_idx3
+- common: false
+  dim: 1
+  name: KAI_pcmef_idx3
+- common: false
+  dim: 1
+  name: KAI_pepstr_idx3
+- common: false
+  dim: 1
+  name: KAI_pvtr_idx3
+- common: false
+  dim: 1
+  name: KAI_plvtr_idx3
+- common: false
+  dim: 1
+  name: KAI_psvtr_idx3
+- common: false
+  dim: 1
+  name: KAI_mcPlvtr_idx3
+- common: false
+  dim: 1
+  name: KAI_mcPsvtr_idx3
+- common: false
+  dim: 1
+  name: KAI_slide_neg_weight_idx3
+- common: false
+  dim: 1
+  name: KAI_slide_wtd_label_idx3
+- common: false
+  dim: 1
+  name: KAI_slide_mix_label_idx3
+- common: false
+  dim: 1
+  name: KAI_pctr_idx4
+- common: false
+  dim: 1
+  name: KAI_mcPctr_idx4
+- common: false
+  dim: 1
+  name: KAI_pltr_idx4
+- common: false
+  dim: 1
+  name: KAI_pwtr_idx4
+- common: false
+  dim: 1
+  name: KAI_pftr_idx4
+- common: false
+  dim: 1
+  name: KAI_phtr_idx4
+- common: false
+  dim: 1
+  name: KAI_pptr_idx4
+- common: false
+  dim: 1
+  name: KAI_pcmtr_idx4
+- common: false
+  dim: 1
+  name: KAI_mcPwtr_idx4
+- common: false
+  dim: 1
+  name: KAI_mcPltr_idx4
+- common: false
+  dim: 1
+  name: KAI_pcmef_idx4
+- common: false
+  dim: 1
+  name: KAI_pepstr_idx4
+- common: false
+  dim: 1
+  name: KAI_pvtr_idx4
+- common: false
+  dim: 1
+  name: KAI_plvtr_idx4
+- common: false
+  dim: 1
+  name: KAI_psvtr_idx4
+- common: false
+  dim: 1
+  name: KAI_mcPlvtr_idx4
+- common: false
+  dim: 1
+  name: KAI_mcPsvtr_idx4
+- common: false
+  dim: 1
+  name: KAI_slide_neg_weight_idx4
+- common: false
+  dim: 1
+  name: KAI_slide_wtd_label_idx4
+- common: false
+  dim: 1
+  name: KAI_slide_mix_label_idx4
+- common: false
+  dim: 1
+  name: KAI_pctr_idx5
+- common: false
+  dim: 1
+  name: KAI_mcPctr_idx5
+- common: false
+  dim: 1
+  name: KAI_pltr_idx5
+- common: false
+  dim: 1
+  name: KAI_pwtr_idx5
+- common: false
+  dim: 1
+  name: KAI_pftr_idx5
+- common: false
+  dim: 1
+  name: KAI_phtr_idx5
+- common: false
+  dim: 1
+  name: KAI_pptr_idx5
+- common: false
+  dim: 1
+  name: KAI_pcmtr_idx5
+- common: false
+  dim: 1
+  name: KAI_mcPwtr_idx5
+- common: false
+  dim: 1
+  name: KAI_mcPltr_idx5
+- common: false
+  dim: 1
+  name: KAI_pcmef_idx5
+- common: false
+  dim: 1
+  name: KAI_pepstr_idx5
+- common: false
+  dim: 1
+  name: KAI_pvtr_idx5
+- common: false
+  dim: 1
+  name: KAI_plvtr_idx5
+- common: false
+  dim: 1
+  name: KAI_psvtr_idx5
+- common: false
+  dim: 1
+  name: KAI_mcPlvtr_idx5
+- common: false
+  dim: 1
+  name: KAI_mcPsvtr_idx5
+- common: false
+  dim: 1
+  name: KAI_slide_neg_weight_idx5
+- common: false
+  dim: 1
+  name: KAI_slide_wtd_label_idx5
+- common: false
+  dim: 1
+  name: KAI_slide_mix_label_idx5

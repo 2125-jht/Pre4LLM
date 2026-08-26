@@ -1,0 +1,35 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_effective_follow_model": 0,
+      "enable_explore_effective_interact_model": 0,
+      "explore_effective_follow_kess_service": "grpc_exploreEffectiveFollowInfer",
+      "explore_effective_interact_kess_service": "grpc_exploreEffectiveInteractInfer",
+      "explore_effective_follow_partition_size": 150,
+      "explore_effective_interact_partition_size": 150
+    },
+    "import": {
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "pftr",
+        "pwtr",
+        "plvtr",
+        "pvtr",
+        "pptr",
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pftr",
+        "cascade_pwtr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "effective_follow_rate_score",
+        "effective_follow_value_score",
+        "effective_interact_rate_score",
+        "effective_interact_value_score"
+      ]
+    }
+  }
+}

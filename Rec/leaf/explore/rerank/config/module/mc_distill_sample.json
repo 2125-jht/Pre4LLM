@@ -1,0 +1,102 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "skip_mc_distill_sample": {
+          "biz_name": "RECO_RPC",
+          "param_name": "skip_explore_mc_distill_sample",
+          "param_type": "int",
+          "default_value": 1
+        },
+        "max_rpc_fr_result_num" : 120,
+        "explore_enable_full_link_set_user_info": true,
+        "enable_full_link_sample_package": 0,
+        "explore_full_link_retrieval_bad_cover_distill_sample_num": 10,
+        "explore_full_link_mc_distill_sample_num": 10,
+        "explore_full_link_rank_distill_sample_num": 10,
+        "explore_enable_rerank_write_rerank_neg_result_to_redis": false,
+        "explore_rerank_neg_photo_index": 6,
+        "explore_rerank_neg_photo_end_index": 60,
+        "explore_rerank_neg_photo_size": 300,
+        "explore_rerank_neg_photo_redis_expire_seconds": 600,
+        "explore_rerank_neg_photo_key_prefix": "e_rerank_",
+        "explore_enable_rerank_write_rerank_pos_result_to_redis": false,
+        "explore_rerank_pos_photo_start_index": 0,
+        "explore_rerank_pos_photo_end_index": 60,
+        "explore_rerank_pos_photo_size": 300,
+        "explore_rerank_pos_photo_redis_expire_seconds": 600,
+        "explore_rerank_pos_photo_key_prefix": "e_rerank_pos_",
+        "explore_enable_rerank_select_rerank_pos_result": false,
+        "explore_select_rerank_pos_result_throw_thres": 0.0,
+        "explore_select_rerank_pos_result_enable_sort": 0,
+        "explore_select_rerank_pos_result_ctr_power_weight": 1.0,
+        "explore_select_rerank_pos_result_target_count": 10,
+        "explore_enable_rerank_select_rerank_neg_result": false,
+        "explore_rerank_neg_photo_target_ratio": 1.0,
+        "explore_select_rerank_pos_result_filter_map_str": "",
+        "explore_select_rerank_pos_result_cover_view_thres": 0.0,
+        "explore_full_link_prerank_neg_sample_num": 10,
+        "explore_full_link_cas_s2_neg_sample_num": 10,
+        "explore_full_link_cas_s2_rank_neg_sample_num": 10
+      },
+      "kconf": {
+        "mc_distill_sample_num": {
+          "kconf_key": "reco.hot.mcdSampleNum",
+          "export_common_attr": "mc_distill_sample_num",
+          "default_value": 10
+        },
+        "explore_full_link_rank_distill_chunk_size": {
+          "kconf_key": "reco.hot.mcdSampleChunkSize",
+          "export_common_attr": "explore_full_link_rank_distill_chunk_size",
+          "default_value": 30
+        },
+        "explore_fr_carm_pid_sample_count": {
+          "kconf_key": "reco.hot.frCarmPidListSampleCount",
+          "json_path": "explore",
+          "default_value": 0,
+          "export_common_attr": "explore_fr_carm_pid_sample_count"
+        },
+        "explore_fl_send_rerank_eval_list": {
+          "kconf_key": "reco.hot.exploreFullLinkSampleParams",
+          "json_path": "enable_send_rerank_eval_list",
+          "default_value": 0,
+          "export_common_attr": "explore_fl_send_rerank_eval_list"
+        }
+      },
+      "import": {
+        "results": [
+          "final_diversity__result"
+        ],
+        "item_attrs": [
+            "pctr",
+            "pltr",
+            "pwtr",
+            "pftr",
+            "psvr",
+            "pcmtr",
+            "pptr",
+            "pcmef",
+            "phtr",
+            "pevtr",
+            "fr_score1",
+            "fr_score2",
+            "pepstr",
+            "pdtr",
+            "pcltr",
+            "fetr",
+            "fountain_eff"
+        ],
+        "common_attrs": [
+            "filter_output_item_key_list",
+            "retrieval_bad_cover_input_item_key_list",
+            "cascade_input_item_key_list",
+            "cascade_output_item_key_list",
+            "cascade_final_output_item_key_list",
+            "ranking_output_item_key_list_top10",
+            "ranking_output_item_key_list",
+            "rerank_neg_photo_id_filter_list",
+            "explore_rerank_pos_photo_id_retrieval_list",
+            "_IS_ABTEST_METRICS_SAMPLING_REQUEST_"
+        ]
+      }
+    }
+  }

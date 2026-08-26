@@ -1,0 +1,40 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+          "biz_name" : "RECO_RPC",
+          "param_name": "open_user_persona_retrieval",
+          "default_value": false,
+          "report_ab_hit": true
+      },
+      "open_user_person_subject_retrieval": 0,
+      "user_persona_ip_search_num": 0,
+      "user_persona_tag_search_num": 0,
+      "user_persona_subject_lv1_search_num": 1000,
+      "user_persona_subject_lv2_search_num": 1000,
+      "user_persona_subject_lv3_search_num": 1000,
+      "user_persona_return_size": 1000,
+      "open_user_persona_14009_retrieve_reason": 0,
+      "user_persona_photo_embedding_service_name": "grpc_hotMcEmbed",
+      "open_user_persona_sort": 0,
+      "close_user_persona_random_retrivel": 0
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "user_persona_tag_id_list",
+        "user_persona_tag_score_list",
+        "user_persona_ip_id_list",
+        "user_persona_ip_score_list",
+        "mc_u2i_user_embedding_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "user_persona__result"
+      ]
+    }
+  },
+  "reason": 14009,
+  "retrieve_num": 1000
+}

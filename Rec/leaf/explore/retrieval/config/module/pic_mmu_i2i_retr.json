@@ -1,0 +1,31 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_mmu_pic_i2i_retrieval", false],   
+      "embedding_service_name": ["mmu_pic_i2i_retr_embedding_service_name", "grpc_MMUHetuSimContentEmbedding"],
+      "ann_service_name": ["mmu_pic_i2i_retr_service_name", "grpc_exploreMmuPhotoEmbI2iServer"],
+      "result_num": ["mmu_pic_i2i_cand_num", 1000],
+      "src_bucket": ["mmu_pic_i2i_src_bucket", "photo"],
+      "dest_bucket": ["mmu_pic_i2i_dest_bucket", "all_pic_ann"],
+      "sample_trigger_num": ["pic_mmu_i2i_sample_trigger_num", 200],
+      "start_idx": ["pic_mmu_i2i_action_start_idx", 200],
+      "retrieve_num_per_trigger": ["mmu_pic_i2i_retrieve_num_per_trigger", 10],
+      "ann_dist_threshold": ["mmu_pic_i2i_ann_dist_threshold", 0.5]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "pic_global_normal_trigger_list",
+        "pic_global_high_value_trigger_list",
+        "pic_global_normal_trigger_weight_list",
+        "pic_global_high_value_trigger_weight_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_mmu_i2i__result"
+      ]
+    }
+  },
+  "reason": 13032
+}

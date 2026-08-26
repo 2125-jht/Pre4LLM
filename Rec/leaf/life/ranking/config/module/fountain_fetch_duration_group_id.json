@@ -1,0 +1,19 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "skip_fountain_fetch_duration_group_id": "1",
+      "fountain_duration_s_id_max": 200
+    },
+    "import": {
+      "item_attrs": [
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "faActionL2rV4DurationId",
+        "featureDurationSId",
+        "fountain_act_vtr_max"
+      ]
+    }
+  }
+}

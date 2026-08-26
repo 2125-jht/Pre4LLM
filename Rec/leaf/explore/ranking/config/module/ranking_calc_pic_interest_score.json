@@ -1,0 +1,44 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_calc_fr_pic_search_score": false,
+      "explore_fr_pic_search_cluster_score_thresh": 1.0,
+      "explore_fr_pic_search_cluster_score_max": 20.0,
+      "explore_fr_pic_search_cluster_score_weight": 1.0,
+      "explore_fr_pic_search_score_pxtr_score_max": 4.0,
+      "explore_fr_pic_search_score_pctr_thresh": 0.1,
+      "explore_fr_pic_search_score_pctr_alpha": 1.0,
+      "explore_fr_pic_search_score_pltr_alpha": 1.0,
+      "explore_fr_pic_search_score_pwtr_alpha": 1.0,
+      "explore_fr_pic_search_score_pcltr_alpha": 1.0,
+      "explore_fr_pic_search_score_pcmtr_alpha": 1.0,
+      "explore_fr_pic_search_score_pftr_alpha": 1.0,
+      "explore_fr_pic_search_score_pctr_beta": 1.0,
+      "explore_fr_pic_search_score_pltr_beta": 1.0,
+      "explore_fr_pic_search_score_pwtr_beta": 1.0,
+      "explore_fr_pic_search_score_pcltr_beta": 1.0,
+      "explore_fr_pic_search_score_pcmtr_beta": 1.0,
+      "explore_fr_pic_search_score_pftr_beta": 1.0
+    },
+    "import": {
+      "item_attrs": [
+        "is_picture",
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pcltr",
+        "pcmtr",
+        "pftr",
+        "pic_search_interest_cluster_score"
+      ],
+      "results": [
+        "ranking_stage1_truncate__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "fr_pic_search_score"
+      ]
+    }
+  }
+}

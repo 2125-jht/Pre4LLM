@@ -1,0 +1,33 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["hot_h3110_enabled", false],
+      "retrieval_cache_config": ["hot_3110_retr_cache_config", ""],
+      "retrieve_num": ["hot_h3110_retrieve_num", 1000],
+      "auxiliary_arg": ["hot_h3110_auxiliary", ""],
+      "service_name": ["hot_h3110_pandora_common_retr_service", "grpc_exploreSineCommonRetrServer"],
+      "increase_quota_factor": ["explore_pandora_retrieve_factor", 1.0],
+      "skip_personal_quota": ["hot_h3110_skip_personal_quota", 1]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "increase_quota_status",
+        "reason_ratio_map_attr",
+        "uIsExploreTnuCrowdUser"
+      ]
+    },
+    "export": {
+      "results": [
+        "sine_retr__result"
+      ]
+    }
+  },
+  "send_extra_common_attrs": [
+    "uIsExploreTnuCrowdUser"
+  ],
+  "reason": 3110
+}

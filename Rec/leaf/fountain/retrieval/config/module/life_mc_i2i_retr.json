@@ -1,0 +1,76 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_life_mc_i2i_retrievel", true],
+      "enable_life_fountain_global_trigger_selected": {
+        "param_name": "enable_life_fountain_global_trigger_selected",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "use_fountain_hetu_restrict": {
+        "param_name": "use_fountain_hetu_restrict",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "enable_fountain_life_mc_i2i_retrievel": {
+        "param_name": "enable_fountain_life_mc_i2i_retrievel",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "fountain_life_mc_i2i_seed_photo_size": {
+        "param_name": "fountain_life_mc_i2i_seed_photo_size",
+        "param_type": "int",
+        "default_value": 100
+      },
+      "fountain_life_mc_i2i_embedding_service_name": {
+        "param_name": "fountain_life_mc_i2i_embedding_service_name",
+        "param_type": "string",
+        "default_value": "grpc_hotMcEmbed"
+      },
+      "fountain_life_mc_i2i_ann_service_name": {
+        "param_name": "fountain_life_mc_i2i_ann_service_name",
+        "param_type": "string",
+        "default_value": "grpc_lifeTabMcI2i_v1"
+      },
+      "fountain_life_mc_i2i_result_num": {
+        "param_name": "fountain_life_mc_i2i_result_num",
+        "param_type": "int",
+        "default_value": 1000
+      },
+      "fountain_life_mc_i2i_src_bucket": {
+        "param_name": "fountain_life_mc_i2i_src_bucket",
+        "param_type": "string",
+        "default_value": "photo"
+      },
+      "fountain_life_mc_i2i_dest_bucket": {
+        "param_name": "fountain_life_mc_i2i_dest_bucket",
+        "param_type": "string",
+        "default_value": "photo"
+      }
+    },
+    "kconf": {
+      "fountain_life_restrict_hetu_level1": {
+        "kconf_key": "reco.offline.life_restrict_hetu_level1",
+        "value_type": "list_int64"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "userInfoPb",
+        "colossus_resp_v2",
+        "featureFountainProfileEffViewPidList",
+        "commonRetrievalPhotos",
+        "featureFountainProfileLikePidList",
+        "featureFountainProfileCommentPidList",
+        "featureFountainProfileFollowPidList"
+      ]
+    },
+    "export": {
+      "common_attrs": [],
+      "results": [
+        "life_mc_i2i_retr__result"
+      ]
+    }
+  },
+  "reason": 610
+}

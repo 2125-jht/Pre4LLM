@@ -1,0 +1,51 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_rerank_sample_u2i_retr", false],
+      "kess_service_name": ["explore_rerank_sample_u2i_retr_service_name", "grpc_rerankSampleU2IReV1"],
+      "service_request_num": ["explore_rerank_sample_u2i_retrieve_num", 800]
+    }, 
+    "constant": {
+      "service_timeout_ms": 50
+    },
+    "import": {
+      "common_attrs": [
+        "featureUId",
+        "did",
+        "user_gender",
+        "user_age_segment",
+        "follow_count",
+        "like_list",
+        "click_list",
+        "user_fountain_play_id_list",
+        "user_fountain_play_aid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "rerank_sample_u2i_retr__result"
+      ]
+    }
+  },
+  "reason": 3129,
+  "service_request_type": "default",
+  "send_common_attrs": [
+    "featureUId",
+    "did",
+    "user_gender",
+    "user_age_segment",
+    "follow_count",
+    "like_list",
+    "click_list",
+    "user_fountain_play_id_list",
+    "user_fountain_play_aid_list"
+  ],
+  "send_browse_set": false,
+  "trimed_user_info": [
+    "user_profile_v1.follow_list.author_id",
+    "user_profile_v1.click_list.photo_id",
+    "user_profile_v1.click_list.author_id",
+    "user_profile_v1.like_list.photo_id",
+    "user_profile_v1.like_list.author_id"
+  ]
+}

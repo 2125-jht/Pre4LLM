@@ -1,0 +1,27 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_fullrank_sess_model": 0,
+      "explore_fullrank_sess_model_kess_service": "grpc_krpExploreLtrPosoNaCtrSessInfer",
+      "explore_fullrank_sess_model_partition_size": 180
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "item_attrs": [
+        "pcmtr",
+        "pctr",
+        "pltr",
+        "awesome_wtd",
+        "pwtr",
+        "pcltr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "fullrank_sess_reward_score"
+      ]
+    }
+  }
+}

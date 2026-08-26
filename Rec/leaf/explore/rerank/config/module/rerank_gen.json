@@ -1,0 +1,18 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_rerank_enable_gen_model": 0,
+      "explore_rerank_gen_model_limit_num": 60,
+
+      "explore_rerank_gen_model_kess_service": "grpc_explore_rerank_gen",
+      "explore_rerank_gen_model_partition_size": 60,
+      "explore_rerank_gen_model_request_type": "kai_predict"
+    },
+
+    "export": {
+      "item_attrs": [
+        "explore_rerank_gen_score"
+      ]
+    }
+  }
+}

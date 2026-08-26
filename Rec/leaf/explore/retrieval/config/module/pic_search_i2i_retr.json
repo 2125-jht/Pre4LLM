@@ -1,0 +1,62 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_enable_pic_search_i2i_retr",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "pic_search_i2i_trigger_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_search_i2i_trigger_size",
+        "param_type": "int",
+        "default_value": 20,
+        "report_ab_hit": true
+      },
+      "pic_search_i2i_time_min_thres": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_search_i2i_time_min_thres",
+        "param_type": "int",
+        "default_value": 10080,
+        "report_ab_hit": true
+      },
+      "service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_search_i2i_service_name",
+        "param_type": "string",
+        "default_value": "grpc_explorePicSearchI2IRetrieval",
+        "report_ab_hit": true
+      },
+      "retrieve_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_search_i2i_retrieve_num",
+        "param_type": "int",
+        "default_value": 500,
+        "report_ab_hit": true
+      },
+      "explore_pic_search_i2i_play_time_thresh": 7000,
+      "enable_explore_pic_search_i2i_add_search_play_trigger": 0
+    },
+    "import": {
+      "common_attrs": [
+        "search_click_list",
+        "search_click_list_timestamps",
+        "search_play_pid_list",
+        "search_play_timestamp_list",
+        "search_play_video_duration_list",
+        "search_play_time_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_search_i2i_ann__result"
+      ],
+      "item_attrs": [
+        "is_pic_search"
+      ]
+    }
+  },
+  "reason": 10070
+}

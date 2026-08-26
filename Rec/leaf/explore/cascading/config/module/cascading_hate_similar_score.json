@@ -1,0 +1,26 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_mc_calc_hate_similar_score": 0,
+      "enable_mc_calc_hate_history_limit": 20
+    },
+    "import": {
+      "common_attrs": [
+        "mmu_embeddings",
+        "embedding_source_pids",
+        "user_info_ptr"
+      ],
+      "item_attrs": [
+        "photo_id"
+      ],
+      "results": [
+        "cascading_channel_sort_prepare__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "hate_similar_score_by_mc_embedding"
+      ]
+    }
+  }
+}

@@ -1,0 +1,70 @@
+##################### USER
+# user true year && user infer year
+class = ExtractUserGenderDense, category = user, offset = 0, max_feature_num = 5
+
+# user true gender && user infer gender
+class = ExtractUserYearDense, category = user, offset = 5, max_feature_num = 5
+
+# user plsa tag weight
+class = ExtractUserPlsaDense, category = user, offset = 10, max_feature_num = 128
+
+# user plsa click rate
+class = ExtractUserPlsaRateDense, category = user, offset = 138, max_feature_num = 128
+
+# user province 
+# class = ExtractUserRegionFromIpDense, category = user, offset = 266, max_feature_num = 34
+
+# user click model slot features
+# class = ExtractUserClickModelSlotFeaDense, category = user, offset = 300, max_feature_num = 20
+
+# user exp rate 
+# 这里 show 和 click 量也都先不要
+class = ExtractUserExpRateDense, category = user, offset = 320, max_feature_num = 10
+
+# user list size
+# class = ExtractUserListSizeDense, category = user, offset = 335, max_feature_num = 10
+
+# user plsa show
+# class = ExtractUserPlsaShowDense, category = user, offset = 345, max_feature_num = 128
+
+##################### PHOTO
+# dense photo explore stat
+# 量类型的特征先都不要 ！！！
+class = ExtractPhotoExploreStatDense, category = photo, offset = 500, max_feature_num = 10
+
+# dense photo explore rate
+class = ExtractPhotoExploreStatRateDense, category = photo, offset = 510, max_feature_num = 10
+
+# dense photo global rate 
+class = ExtractPhotoGlobalStatRateDense, category = photo, offset = 520, max_feature_num = 10
+
+# dense photo from client
+class = ExtractPhotoFromClientDense, category = photo, offset = 530, max_feature_num = 5
+
+# dense photo gender
+class = ExtractPhotoGenderDense, category = photo, offset = 535, max_feature_num = 5
+
+# dense photo year
+class = ExtractPhotoYearDense, category = photo, offset = 540, max_feature_num = 5
+
+# photo plsa tag weight
+class = ExtractPhotoPlsaDense, category = photo, offset = 545, max_feature_num = 128
+
+# photo pred ctr 凑个整...
+# class = ExtractPhotoPredCtrDense, category = photo, offset = 673, max_feature_num = 1
+
+# photo pred ltr 凑个整...
+# class = ExtractPhotoPredLtrDense, category = photo, offset = 674, max_feature_num = 1
+
+# photo province 
+# class = ExtractPhotoRegionFromIpDense, category = photo, offset = 675, max_feature_num = 35
+
+# photo click model slot features
+# class = ExtractPhotoClickModelSlotFeaDense, category = photo, offset = 710, max_feature_num = 30
+
+# photo upload time
+class = ExtractPhotoUploadTime, category = photo, offset = 740, max_feature_num = 5
+
+################### COMBINE
+# user photo distance
+# class = ExtractPhotoDistanceDense, category = combine, offset = 1000, max_feature_num = 1

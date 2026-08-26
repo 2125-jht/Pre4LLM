@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["explore_enable_fri2i_retrieval", false],
+      "service_name": ["explore_fri2i_kgnn_service_name", "grpc_kgnn_explore_fri2i_graph-I2I"],
+      "retrieve_num_per_trigger": ["explore_fri2i_retrieve_num_per_trigger", 20],
+      "skip_browse_set": ["skip_explore_fri2i_filter_by_browse_set", 1],
+      "retrieve_num": ["explore_fri2i_cand_num", 1000],
+      "sample_trigger_num": ["explore_fri2i_sample_trigger_num", 200],
+      "start_idx": ["explore_fri2i_start_idx", 900],
+      "shuffle_triggers": ["explore_fri2i_shuffle_triggers", false]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "fr_i2i_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 4031
+}

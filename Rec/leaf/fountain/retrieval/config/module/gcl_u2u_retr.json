@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_gcl_u2u_retr_fountain", true],
+      "fountain_gcl_u2u_retr_emb_service_name": "grpc_ExploreGclModelEmbServer",
+      "skip_fountain_gcl_u2u_retr": {
+        "default_value": 1
+      },
+      "fountain_gcl_u2u_retr_ann_service_name": "grpc_exploreGclU2uAnnServer",
+      "fountain_gcl_u2u_retr_sim_user_num": 100,
+      "fountain_gcl_u2u_retr_result_num": 500,
+      "fountain_gcl_u2u_retr_key_prefix": "uInActions_",
+      "fountain_gcl_u2u_retr_retrieve_num_per_key": 30
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "gcl_sim_user_list"
+      ],
+      "results": [
+        "gcl_u2u_retr__result"
+      ]
+    }
+  },
+  "reason": 343
+}

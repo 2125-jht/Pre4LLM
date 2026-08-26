@@ -1,0 +1,71 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "fountain_new_arch_cascade_skip_predict": 1,
+        "fountain_cascade_new_arch_predict_kess_service": "",
+        "fountain_cascade_new_arch_tower_request_type": "",
+        "skip_fountain_cascade_new_interface_predict": 1,
+        "fountain_new_arch_longterm_skip_predict": 1,
+        "fountain_new_arch_longterm_kess_service": "",
+        "fountain_new_arch_longterm_request_type": "",
+        "enable_fc_fountain_interface": 0,
+        "enable_new_fc_feature": 0,
+        "enable_fc_feature_kconf": 0,
+        "fountain_cascade_fc_predict_service": "",
+        "enable_fountain_fc_extract_photo_signs": 0,
+        "fountain_cascade_fc_request_type": "",
+        "fountain_cascade_phtr_filter_limit": 0.9,
+        "skip_fountain_cascade_phtr_filter": 1,
+        "enable_fc_after_prerank_fast": 0,
+        "fountain_cascade_svtr_coeff": 1.0,
+        "fountain_cascade_svtr_power": 0.5,
+        "fountain_cascade_short_play_discount_value": 1.0,
+        "fountain_cascade_ensemble_lvtr_use_predict_watch_time": 0,
+        "fountain_cascade_mid_photo_boost_coeff": 1.0,
+        "fountain_mc_integrated_tower_predict_kess_service": "",
+        "fountain_mc_distill_model_service": "",
+        "enable_fountain_life_mc_distill_model": 0
+      },
+      "import": {
+        "item_attrs": [
+          "picture_variant_attr"
+        ],
+        "common_attrs": [
+          "user_info_ptr",
+          "userInfo"
+        ]
+      },
+      "export": {
+        "item_attrs": [
+        "cascade_pctr",
+        "cascade_plvtr",
+        "cascade_psvtr",
+        "cascade_ptr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_pftr",
+        "cascade_pwatch_time",
+        "cascade_pwtd",
+        "cascade_pcmtr",
+        "cascade_pcestr",
+        "cascade_pepstr",
+        "cascade_pcltr",
+        "cascade_phtr",
+        "cascade_pcotr",
+        "cascade_fc_pctr",
+        "cascade_fc_plvtr",
+        "cascade_fc_psvtr",
+        "cascade_fc_pvtr",
+        "cascade_fc_pvtr2",
+        "cascade_wtd_kai",
+        "cascade_act_kai",
+        "cascade_click_comment_button",
+        "cascade_slide_kai",
+        "cascade_ftr_kai"
+        ],
+        "common_attrs": [
+          
+        ]
+      }
+    }
+  }

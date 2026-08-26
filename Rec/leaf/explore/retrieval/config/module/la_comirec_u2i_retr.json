@@ -1,0 +1,33 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_la_comirec_u2i_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },      
+      "embedding_service": ["la_comirec_u2i_emb_service", "kws-kuaishou-hot-subdivision-embedding-hot-la-comirec-emb"],
+      "ann_service": ["la_comirec_u2i_ann_service", "kws-kuaishou-hot-subdivision-retrieve-hot-ttm-comirec-v1"],
+      "retrieve_num": ["la_comirec_u2i_cand_num", 1000],
+      "interest_num": ["la_comirec_u2i_interest_num", 8],
+      "shfit_num": ["la_comirec_u2i_interest_num", 6],
+      "src_bucket": ["la_comirec_u2i_src_bucket", "user"],
+      "dest_bucket": ["la_comirec_u2i_dest_bucket", "index_photo"]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "la_comirec_u2i_retr__result"
+      ]
+    }
+  },
+  "reason": 10046,
+  "slot": 903,
+  "space": "cosine"
+}

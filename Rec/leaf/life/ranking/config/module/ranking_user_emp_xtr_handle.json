@@ -1,0 +1,24 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "explore_fr_user_emp_xtr_coeff": 0.5,
+        "explore_fr_skip_user_emp_xtr_handle": 1
+      },
+      "import": {
+        "common_attrs": [
+          "user_emp_ltr",
+          "user_emp_wtr",
+          "user_emp_ftr",
+          "user_emp_cmtr"
+        ]
+      },
+      "export": {
+        "common_attrs": [
+          "user_emp_ltr_fr_threshold",
+          "user_emp_wtr_fr_threshold",
+          "user_emp_ftr_fr_threshold",
+          "user_emp_cmtr_fr_threshold"
+        ]
+      }
+    }
+  }

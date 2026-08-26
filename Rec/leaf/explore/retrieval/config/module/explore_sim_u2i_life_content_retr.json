@@ -1,0 +1,83 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_sim_u2i_life_content_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "retrieval_cache_config": ["explore_sim_u2i_life_content_retr_cache_config", ""],
+      "explore_sim_u2i_retr_kess_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_sim_u2i_life_content_retr_kess_name",
+        "param_type": "string",
+        "default_value": "grpc_exploreSimRetrAsyncLifeContent",
+        "report_ab_hit": true
+      },
+      "explore_sim_u2i_retr_total_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_sim_u2i_life_content_retr_total_num",
+        "param_type": "int",
+        "default_value": 300,
+        "report_ab_hit": true
+      },
+      "enable_explore_sim_u2i_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_sim_u2i_life_content_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "explore_only_hot_tab": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_life_content_only_hot_tab",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "explore_sim_u2i_action_weight_str": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_sim_u2i_life_content_action_weight_str",
+        "param_type": "string",
+        "default_value": "click:1.0;like:0.5;play_time:0.23;follow:0.3",
+        "report_ab_hit": true
+      },
+      "explore_sim_u2i_hetu_count": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_sim_u2i_life_content_hetu_count",
+        "param_type": "int",
+        "default_value": 4,
+        "report_ab_hit": true
+      },
+      "explore_sim_u2i_exploit_hetu_count": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_sim_u2i_life_content_exploit_hetu_count",
+        "param_type": "int",
+        "default_value": 3,
+        "report_ab_hit": true
+      },
+      "explore_sim_u2i_hetu_l1_white_list": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_sim_u2i_life_content_hetu_l1_white_list",
+        "param_type": "string",
+        "default_value": "1,4,5,7,8,10,11,12,14,15,16,17,18,21,22,24,25,26,27,36,38,42,54,60,62",
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "colossus_resp_v2",
+        "uIsExploreTnuCrowdUser"
+      ]
+    },
+    "export": {
+      "results": [
+        "explore_sim_u2i_life_content_result"
+      ]
+    }
+  },
+  "reason": 13023
+}

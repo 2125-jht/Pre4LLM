@@ -1,0 +1,8 @@
+{
+  "modules": [
+    {
+      "name": "filter",
+      "type_name": "FilterModule"
+    }
+  ]
+}

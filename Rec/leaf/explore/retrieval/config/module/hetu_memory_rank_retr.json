@@ -1,0 +1,37 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_hetu_memory_rank_retr", false],
+      "enable_shuffle_retr_result": ["enable_shuffle_hetu_memory_rank_retr_result", false],
+      "enable_browset_filter": ["enable_hetu_browset_filter", false],
+      "enable_reserve_retr_result": ["enable_reserve_hetu_memory_rank_retr_result", false],
+      "result_num": ["hetu_memory_rank_retr_result_num", 500],
+      "redis_retrieval_num": ["hetu_memory_rank_retr_redis_retrieval_num", 800],
+      "reserve_result_num": ["hetu_memory_rank_retr_reserve_result_num", 1000],
+      "reserve_retrieve_num": ["hetu_memory_rank_retr_reserve_retrieve_num", 6000],
+      "reserve_retrieve_num_per_key": ["hetu_memory_rank_retr_reserve_retrieve_num_per_key", 50]
+    },
+    "abtest_retrieval_num_attr": "hetu_memory_rank_final_result_num",
+    "constant": {
+      "redis_key_prefix": "la_user_key_"
+    },
+    "export": {
+      "results" : [
+        "hetu_retr_result"
+      ],
+      "item_attrs": [
+        "is_hetu_memory_rank_retrieval"
+      ]
+    }
+  },
+  "item_attrs": [
+    {"name": "memory_score", "type": "double"}
+  ],
+  "reason": 800,
+  "pass_browse_set": true,
+  "redis_cluster_name": "recoHotLauRank",
+  "redis_timeout_ms": 30,
+  "unused_item_attrs": [
+    "memory_score"
+  ]
+}

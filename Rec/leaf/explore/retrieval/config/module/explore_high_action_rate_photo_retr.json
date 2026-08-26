@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_high_action_rate_photo_retr", false],
+      "filter_future_seconds": ["explore_high_action_rate_photo_retr_filter_future_s", 2592000],
+      "play_time_s_ths": ["explore_high_action_rate_photo_retr_playtime_s_ths", 7],
+      "enable_channel_filter": ["explore_high_action_rate_photo_retr_enable_channel_filter", false],
+      "reserve_channel_id": ["explore_high_action_rate_photo_retr_reserve_channel_id", 37],
+      "enable_request_ann_common_retr_server": ["explore_high_action_retr_enable_ann_retr_server", false],
+      "ann_common_retr_server": ["explore_high_action_rate_photo_retr_ann_common_retr_server", "kws-kuaishou-hot-com-retr-expla-highact-i2i-retr"],
+      "remote_index_search_num": ["explore_high_action_rate_photo_retr_topk", 3],
+      "enable_author_shuffle": ["explore_high_action_rate_photo_retr_enable_author_shuffle", false],
+      "enable_result_shuffle": ["explore_high_action_rate_photo_retr_enable_result_shuffle", false],
+      "index_service_name": ["explore_high_action_retr_index_service", "grpc_explorePdnSimIndex"],
+      "index_term_name": ["explore_high_action_retr_index_term_name", "sim"],
+      "search_num_per_trigger": ["explore_high_action_retr_num_per_trigger", 30],
+      "max_trigger_num": ["explore_high_action_retr_max_author_num", 500],
+      "index_cache_expire_time_s": ["explore_high_action_rate_index_cache_expire_time_sec", 1],
+      "retrieve_num": ["explore_high_action_rate_photo_retr_num", 500]
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_resp_v2"
+      ]
+    }, 
+    "export": {
+      "results": [
+        "explore_high_action_rate_photo__result"
+      ]
+    }
+  },
+  "reason": 325
+}
+  

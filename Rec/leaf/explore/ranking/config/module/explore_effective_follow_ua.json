@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_effective_follow_ua_model": 0,
+      "explore_effective_follow_ua_kess_service_name": "grpc_ExploreEffectiveFollowUA",
+      "explore_effective_follow_ua_model_request_type": "effective_follow_u2a_v2",
+      "explore_effective_follow_ua_partition_size": 150
+    },
+    "import": {
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "pftr",
+        "pwtr",
+        "plvtr",
+        "pvtr",
+        "pptr",
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pftr",
+        "cascade_pwtr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "effective_follow_ua_score"
+      ]
+    }
+  }
+}

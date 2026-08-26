@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_emb_u2u2i_retr_fountain", true],
+      "fountain_reco_emb_u2u2i_v2_stage1_kess_name": "grpc_fountainEmbU2URetrServer",
+      "fountain_reco_emb_u2u2i_v2_retr_stage1_total_limit": 40,
+      "fountain_reco_emb_u2u2i_v2_retr_stage1_src_bucket": "user",
+      "fountain_reco_emb_u2u2i_v2_retr_stage1_dest_bucket": "user",
+      "skip_fountain_reco_emb_stage1_u2u2i_v2_retr": {
+        "default_value": 1
+      },
+      "skip_fountain_reco_emb_u2u2i_v2_retr": {
+        "default_value": 1
+      },
+      "fountain_reco_emb_u2u2i_v2_retr_stage2_total_limit": 800,
+      "fountain_reco_emb_u2u2i_v2_retr_stage2_per_key": 20
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "emb_u2u2i_retr__result"
+      ]
+    }
+  },
+  "reason": 322
+}

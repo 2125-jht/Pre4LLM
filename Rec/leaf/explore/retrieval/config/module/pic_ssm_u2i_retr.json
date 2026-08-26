@@ -1,0 +1,53 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_pic_ssm_u2i_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "explore_pic_ssm_u2i_retr_kess_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_ssm_u2i_retr_kess_name",
+        "param_type": "string",
+        "default_value": "grpc_picSsmU2iRetrV3",
+        "report_ab_hit": true
+      },
+      "explore_pic_ssm_u2i_retr_request_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_ssm_u2i_retr_request_num",
+        "param_type": "int",
+        "default_value": 500,
+        "report_ab_hit": true
+      },
+      "explore_pic_ssm_u2i_enable_sim_hetu": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_ssm_u2i_enable_sim_hetu",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "explore_pic_ssm_u2i_pic_sim_hetu_count": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_ssm_u2i_pic_sim_hetu_count",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "colossus_resp_v2"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_ssm_u2i__result"
+      ]
+    }
+  },
+  "reason": 13017
+}

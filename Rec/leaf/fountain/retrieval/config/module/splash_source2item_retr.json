@@ -1,0 +1,26 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_splash_source2item_retr",
+          "param_type": "bool",
+          "default_value": true
+        },
+        "fountain_splash_source_to_item_retr_index_service": "grpc_fountainSplashIndex",
+        "skip_fountain_splash_source_to_item_retr": 1
+      }, 
+      "import": {
+        "common_attrs": [
+          "source_photo_info",
+          "featureSourcePId"
+        ]
+      },
+      "export": {
+        "results": [
+          "splash_source2item_retr__result"
+        ]
+      }
+    },
+    "reason": 10406
+  }

@@ -1,0 +1,27 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_rank_merchant_vedio_predict": 0,
+      "enable_explore_rank_merchant_living_predict": 0
+    },
+    "import": {
+      "item_attrs": [
+        "pctr",
+        "merchant_pcart_ctr", 
+        "merchant_cart_cvr", 
+        "merchant_cart_gmv_fen",
+        "merchant_elive_ctr", 
+        "merchant_elive_cvr", 
+        "merchant_elive_price"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "fr_ctcvr_score",
+        "fr_ctcvr_gmv_score",
+        "fr_elive_ctcvr_score",
+        "fr_elive_ctcvr_gmv_score"
+      ]
+    }
+  }
+}

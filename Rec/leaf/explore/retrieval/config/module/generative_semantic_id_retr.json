@@ -1,0 +1,55 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["explore_h3630_retr_enabled", false],
+      "service_request_num": ["explore_h3630_retrieve_num", 1000],
+      "kess_service_name": ["explore_h3630_retr_service", "grpc_exploreGRRetr"],
+      "enable_directly_reach_fullrank": ["enable_explore_h3630_retr_directly_reach_fullrank", false]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "colossus_photo_id_list",
+        "colossus_author_id_list",
+        "colossus_channel_list",
+        "colossus_play_time_list",
+        "colossus_duration_list",
+        "colossus_label_list"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "is_directly_reach_fullrank"
+      ],
+      "results": [
+        "generative_semantic_id_retr__result"
+      ]
+    }
+  },
+  "trimed_user_info": [
+    "id",
+    "device_id",
+    "gender",
+    "location",
+    "request_location",
+    "basic_info.age_segment",
+    "user_profile.user_level",
+    "browsed_photo_ids",
+    "slide_browsed_photo_ids",
+    "user_profile_v1.click_list",
+    "user_profile_v1.video_playing_stat"
+  ],
+  "send_common_attrs": [
+    "colossus_photo_id_list",
+    "colossus_author_id_list",
+    "colossus_channel_list",
+    "colossus_play_time_list",
+    "colossus_duration_list",
+    "colossus_label_list"
+  ],
+  "set_directly_reach_fullrank": true,
+  "reason": 3630
+}

@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["explore_cs_enable_hetuv3_u2i_retr", false],
+      "kess_service_name": ["explore_cs_hetuv3_u2i_ksn", "grpc_exploreColdHetuV3I2IRetr"],
+      "service_request_num": ["explore_cs_hetuv3_u2i_req_num", 1000]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "cold_hetuv3_u2i_retr__result"
+      ]
+    }
+  },
+  "reason": 2049,
+  "service_request_type": "default",
+  "send_browse_set": false,
+  "trimed_user_info": [
+    "browsed_photo_ids",
+    "user_profile_v1.real_show_list.photo_id",
+    "user_profile_v1.click_list.photo_id",
+    "nearby_browsed_photo_ids",
+    "slide_browsed_photo_ids",
+    "user_profile_v1.like_list.photo_id",
+    "user_profile_v1.video_playing_stat.photo_id"
+  ]
+}

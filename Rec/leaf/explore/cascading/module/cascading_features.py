@@ -1,0 +1,71 @@
+
+def simple_user_feture():
+  features = [
+    {"name": "uId", "as": "featureUId"},
+    {"name": "dId", "as": "featureDeviceId"},
+    {"name": "uGender", "as": "featureGender"},
+    {"name": "uAgeSeg", "as": "featureAgeSegment"},
+    {"name": "uCityId", "as": "featureCityId"},
+    {"name": "uClientId", "as": "featureClientId"},
+    {"name": "uMod", "as": "featureVisitMod"},
+    {"name": "uNetwork", "as": "featureVisitNet"},
+    {"name": "uUserLevel", "as": "featureUserLevel"},
+    {"name": "uActiveDays", "as": "featureActiveDays"},
+    {"name": "uFollowCount", "as": "featureFollowCount"},
+    {"name": "uFansCount", "as": "featureFansCount"},
+    {"name": "uUploadCount", "as": "featureUploadCount"},
+
+    {"name": "user_emp_ltr", "as": "featureColossusEmpLtr"},
+    {"name": "user_emp_wtr", "as": "featureColossusEmpWtr"},
+    {"name": "user_emp_ftr", "as": "featureColossusEmpFtr"},
+    {"name": "user_emp_htr", "as": "featureColossusEmpHtr"},
+    {"name": "user_emp_cmtr", "as": "featureColossusEmpCmtr"},
+    {"name": "user_emp_eptr", "as": "featureColossusEmpPtr"},
+    {"name": "user_emp_svtr", "as": "featureColossusEmpSvtr"},
+    {"name": "user_emp_evtr", "as": "featureColossusEmpEvtr"},
+    {"name": "user_emp_lvtr", "as": "featureColossusEmpLvtr"},
+    {"name": "user_emp_fintr", "as": "featureColossusEmpFintr"},
+    {"name": "user_emp_watch_time", "as": "featureColossusAvgWatchTime"},
+    {"name": "user_emp_finish_rate", "as": "featureColossusAvgFinishRate"},
+
+    {"name": "uRequstProvinceId", "as": "featureUserRequestProvinceId"},
+    {"name": "uRequstCityId", "as": "featureUserRequestCityId"},
+    {"name": "uRequestPoiType", "as": "featureUserRequestPoiType"},
+    {"name": "uRequestCityLevel", "as": "featureUserRequestCityLevel"},
+    {"name": "uRequestCommuityType", "as": "featureUserRequestCommunityType"},
+    {"name": "uRegion", "as": "featureUserRegion"},
+
+    {"name": "uClickPids", "as": "featureRealtimeClickList"},
+    {"name": "uLikePids", "as": "featureRealtimeLikeList"},
+    {"name": "uFollowPids", "as": "featureRealtimeFollowList"},
+    {"name": "uProfileV1ClickPidList", "as": "featureUserProfileV1ClickPidList"},
+    {"name": "uProfileV1ClickAidList", "as": "featureUserProfileV1ClickAidList"},
+    {"name": "uProfileV1LikePidList", "as": "featureUserProfileV1LikePidList"},
+    {"name": "uProfileV1LikeAidList", "as": "featureUserProfileV1LikeAidList"},
+    {"name": "uProfileV1FollowPidList", "as": "featureUserProfileV1FollowPidList"},
+    {"name": "uProfileV1FollowAidList", "as": "featureUserProfileV1FollowAidList"},
+    {"name": "uProfileV1ProfileEnterPidList", "as": "featureUserProfileV1ProfileEnterPidList"},
+    {"name": "uProfileV1ProfileEnterAidList", "as": "featureUserProfileV1ProfileEnterAidList"},
+    {"name": "uProfileV1Play7SPidList", "as": "featureUserProfileV1Play7SPidList"},
+    {"name": "uProfileV1Play7SAidList", "as": "featureUserProfileV1Play7SAidList"},
+    {"name": "uProfileV1Play18SPidList", "as": "featureUserProfileV1Play18SPidList"},
+    {"name": "uProfileV1Play18SAidList", "as": "featureUserProfileV1Play18SAidList"},
+    {"name": "uClickPidsFountain", "as": "featureFountainProfileClickPidList"},
+    {"name": "uClickAidsFountain", "as": "featureFountainProfileClickAidList"},
+    {"name": "uLikePidsFountain", "as": "featureFountainProfileLikePidList"},
+    {"name": "uLikeAidsFountain", "as": "featureFountainProfileLikeAidList"},
+    {"name": "uFollowPidsFountain", "as": "featureFountainProfileFollowPidList"},
+    {"name": "uFollowAidsFountain", "as": "featureFountainProfileFollowAidList"},
+    {"name": "uShortViewPidsFountain", "as": "featureFountainProfileShortViewPidList"},
+    {"name": "uShortViewAidsFountain", "as": "featureFountainProfileShortViewAidList"},
+    {"name": "uEffViewPidsFountain", "as": "featureFountainProfileEffViewPidList"},
+    {"name": "uEffViewAidsFountain", "as": "featureFountainProfileEffViewAidList"},
+    {"name": "uLongViewPidsFountain", "as": "featureFountainProfileLongViewPidList"},
+    {"name": "uLongViewAidsFountain", "as": "featureFountainProfileLongViewAidList"},
+    
+    "featureTab"
+  ]
+  
+  return features
+
+

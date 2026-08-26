@@ -1,0 +1,184 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_mc_sort_weight_adjust_s2": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mc_sort_weight_adjust_s2",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "enable_explore_weight_adjust_v2" : 0,
+      "explore_weight_adjust_coeff_a" : 10.0,
+      "explore_weight_adjust_coeff_b" : 10.0,
+      "explore_weight_adjust_coeff_c" : 0.7,
+      "explore_weight_adjust_coeff_d" : 0.5,
+      "explore_weight_adjust_avg_emp_ltr" : 0.032,
+      "explore_weight_adjust_avg_emp_wtr" : 0.0031,
+      "explore_weight_adjust_avg_emp_ftr" : 0.00197,
+      "explore_weight_adjust_avg_emp_cmtr" : 0.0051,
+      "explore_weight_adjust_avg_emp_eptr" : 0.0022,
+      "explore_mc_ensemble_s2_pctr_power_weight" : 0.1,
+      "explore_mc_ensemble_s2_pltr_power_weight": 0.2,
+      "explore_mc_ensemble_s2_pwtr_power_weight": 0.45,
+      "explore_mc_ensemble_s2_pftr_power_weight": 0.05,
+      "explore_mc_ensemble_s2_pcmtr_power_weight": 0.18,
+      "explore_mc_ensemble_s2_pepstr_power_weight": 0.3,
+      "explore_mc_ensemble_s2_plvtr_power_weight": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mc_ensemble_s2_plvtr_power_weight",
+        "param_type": "double",
+        "default_value": 0.2,
+        "report_ab_hit": true
+      },
+      "explore_mc_ensemble_s2_plvtr2_power_weight": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mc_ensemble_s2_plvtr2_power_weight",
+        "param_type": "double",
+        "default_value": 0.12,
+        "report_ab_hit": true
+      },
+      "explore_mc_ensemble_s2_pcestr_power_weight": 0.18,
+      "explore_mc_ensemble_s2_pptime_power_weight": 0.4,
+      "explore_mc_ensemble_s2_pwatch_time_power_weight": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mc_ensemble_s2_pwatch_time_power_weight",
+        "param_type": "double",
+        "default_value": 0.45,
+        "report_ab_hit": true
+      },
+      "explore_weight_adjust_coeff_min" : 0.5,
+      "explore_weight_adjust_coeff_max" : 3.0,
+      "explore_mc_ensemble_sort_ctr_weight_adjust": {
+        "param_name": "explore_mc_ensemble_sort_ctr_weight_adjust",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "enable_specified_group_mc_boost_interactive": {
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "explore_la_mc_like_boost_coeff": 1.0,
+      "explore_la_mc_comment_boost_coeff": 1.0,
+      "choose_type": "LINEAR",
+      "explore_mc_ensemble_sort_ctr_weight_max": 1.0,
+      "explore_mc_ensemble_sort_ctr_weight_min": 0.2,
+      "explore_cascade_s2_weight_low_follow" : 0,
+      "cascade_s2_no_follow_pwtr_weight": 1.0,
+      "cascade_s2_valid_follow_pwtr_weight": 1.0,
+      "cascade_s2_valid_low_follow_pwtr_weight": 1.0,
+      "cascade_s2_valid_media_follow_pwtr_weight": 1.0,
+      "cascade_s2_valid_high_follow_pwtr_weight": 1.0,
+      "cascade_s2_low_follow_pwtr_weight" : 1.0,
+      "cascade_s2_low_follow_thres_s" : 2592000,
+      "cascade_s2_enable_no_follow_boost" : 0,
+      "cascade_s2_enable_low_follow_boost" : 0,
+      "cascade_s2_low_follow_boost_threshold" : 0,
+      "explore_cascade_user_emp_xtr_coeff": 0.5,
+      "explore_cascade_skip_user_emp_xtr_handle": 1,
+      "explore_cascade_skip_zero_play_user_xtr_boost_handle": 0,
+      "explore_mc_ensemble_s2_zero_play_days_threshold": {
+        "default_value": 4,
+        "report_ab_hit": true
+      }, 
+      "explore_mc_ensemble_s2_zero_play_ratio_threshold": {
+        "default_value": 0.4,
+        "report_ab_hit": true
+      }, 
+      "explore_mc_ensemble_s2_zero_play_xtr_boost_weight": {
+        "default_value": 0.0,
+        "report_ab_hit": true
+      },
+      "explore_mc_ensemble_s2_zero_play_ctr_boost_weight": {
+        "default_value": 2.0,
+        "report_ab_hit": true
+      },
+      "explore_mc_ensemble_s2_zero_play_boost_type": {
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "enable_mc_htr_weight_adjust_s2": false,
+      "boost_htr_weight_by_mid_degree": 1.0,
+      "boost_htr_weight_by_high_degree": 1.0,
+      "boost_htr_weight_by_full_degree": 1.0,
+      "boost_htr_weight_by_p_idx": 1.0,
+      "boost_htr_weight_p_idx_down": 0,
+      "boost_htr_weight_p_idx_up": 0,
+      "explore_cascade_skip_infer_uv_ctr_boost_handle": 0,
+      "explore_mc_ensemble_s2_infer_uv_ctr_refresh_times_threshold": {
+        "default_value": 1001,
+        "report_ab_hit": true
+      }, 
+      "explore_mc_ensemble_s2_infer_uv_ctr_infer_uv_ctr_threshold": {
+        "default_value": 100,
+        "report_ab_hit": true
+      }, 
+      "explore_mc_ensemble_s2_infer_uv_ctr_weight_max": {
+        "default_value": 2.0,
+        "report_ab_hit": true
+      },
+      "explore_mc_ensemble_s2_infer_uv_ctr_weight_min": {
+        "default_value": 1.0,
+        "report_ab_hit": true
+      },
+      "explore_mc_ensemble_s2_infer_uv_ctr_alpha": {
+        "default_value": 1.0,
+        "report_ab_hit": true
+      },
+      "explore_mc_ensemble_s2_infer_uv_ctr_beta": {
+        "default_value": 0.01,
+        "report_ab_hit": true
+      },
+      "explore_mc_ensemble_s2_infer_uv_ctr_omega": {
+        "default_value": 2.0,
+        "report_ab_hit": true
+      },
+      "explore_mc_ensemble_s2_infer_uv_ctr_boost_type": {
+        "default_value": 0,
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "item_attrs": [
+        
+      ],
+      "common_attrs": [
+        "user_emp_ltr",
+        "user_emp_wtr",
+        "user_emp_ftr",
+        "user_emp_cmtr",
+        "user_emp_eptr",
+        "explore_vv_3d",
+        "find_visit_days_30d",
+        "explore_zero_play_days_15d",
+        "find_user_active_degree",
+        "page_index",
+        "refresh_times",
+        "is_la_correct_user",
+        "infer_uv_ctr"
+      ],
+      "results": [
+        "cascading_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "explore_mc_ensemble_s2_pltr_power_weight",
+        "explore_mc_ensemble_s2_pwtr_power_weight",
+        "explore_mc_ensemble_s2_pftr_power_weight",
+        "explore_mc_ensemble_s2_pcmtr_power_weight",
+        "explore_mc_ensemble_s2_pepstr_power_weight",
+        "explore_mc_ensemble_s2_pctr_power_weight",
+        "explore_mc_ensemble_s2_plvtr_power_weight",
+        "explore_mc_ensemble_s2_plvtr2_power_weight",
+        "explore_mc_ensemble_s2_pcestr_power_weight",
+        "explore_mc_ensemble_s2_pptime_power_weight",
+        "explore_mc_ensemble_s2_pwatch_time_power_weight",
+        "user_emp_ltr_cas_threshold",
+        "user_emp_wtr_cas_threshold",
+        "user_emp_ftr_cas_threshold",
+        "user_emp_cmtr_cas_threshold"
+      ]
+    }
+  }
+}

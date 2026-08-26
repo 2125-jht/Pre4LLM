@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_enable_mc_phtr_filter_v2": 0,
+      "base_phtr_filter_threshold": 0.1,
+      "min_phtr_filter_threshold": 0.01,
+      "recent_minute_for_high_freq_hate": 30,
+      "phtr_thrshold_temperature": 1,
+      "phtr_thrshold_smooth": 1,
+      "mc_htr_filter_ltr_threshold": 0.1,
+      "mc_htr_filter_wtr_threshold": 0.1
+    },
+    "import": {
+      "common_attrs": [
+        "mc_step2",
+        "hate_list_timestamps"
+      ],
+      "item_attrs": [
+        "cascade_phtr",
+        "mc_ensemble_pltr",
+        "mc_ensemble_pwtr"
+      ],
+      "results": [
+        "cascading_prerank_channel_sort__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "mc_step3"
+      ],
+      "results": [
+        "cascading_stage1_htr_filter__result"
+      ]
+    }
+  }
+}

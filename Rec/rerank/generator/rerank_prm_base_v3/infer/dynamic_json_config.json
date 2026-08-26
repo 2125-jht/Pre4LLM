@@ -1,0 +1,11 @@
+{
+    "kess_config": {
+      "grpc_krpTfHotRerankModelPredictServerInferWtdv2": {}
+    },
+    "predictor_type": "TFPredictor",
+    "remote_ps": {
+      "service_name": "grpc_krpTfHotRerankModelPredictServerWtdv2",
+      "shard_num": 6
+    },
+    "role": "predict_only"
+  }

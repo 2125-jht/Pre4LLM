@@ -1,0 +1,22 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_cascade_follow_ltv_model_predict1": 0,
+      "explore_cascade_follow_ltv_model_predict_kess_service": "grpc_fountainLtvInfer",
+      "explore_cascade_follow_ltv_model_request_type": "predict_by_explore_mc_ua"
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "social_ltv_score1"
+      ]
+    }
+  }
+}

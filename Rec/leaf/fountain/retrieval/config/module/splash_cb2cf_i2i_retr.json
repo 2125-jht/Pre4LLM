@@ -1,0 +1,22 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_splash_cb2cf_i2i_retr", true],
+      "fountain_cb2cf_i2i_retr_splash_service_name": "grpc_fountainCb2CfI2iAnnServer",
+      "fountain_cb2cf_i2i_retr_splash_retr_num": 800,
+      "skip_fountain_cb2cf_i2i_retr_splash": 1
+    }, 
+    "import": {
+      "common_attrs": [
+        "commonRetrievalPhotos",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_cb2cf_i2i_retr__result"
+      ]
+    }
+  },
+  "reason": 10324
+}

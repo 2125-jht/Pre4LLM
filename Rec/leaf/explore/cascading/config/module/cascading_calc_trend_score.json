@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fetch_short_window_photo_info": ["enable_explore_fetch_short_window_photo_info", false],
+      "enable_explore_calc_trend_score": false,
+      "explore_trend_score_lc_weight": 0.0,
+      "explore_trend_score_lpc_weight": 0.0,
+      "explore_trend_score_nc_weight": 0.0
+    },
+    "import": {
+      "item_attrs": [
+        "explore_stat__click_count",
+        "explore_stat__like_count",
+        "explore_stat__long_play_count",
+        "explore_stat__negative_count"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "explore_photo_trend_score",
+        "rc3h",
+        "pc3h"
+      ]
+    }
+  }
+}

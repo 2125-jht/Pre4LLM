@@ -1,0 +1,71 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_short_term_search_retr", false],
+      "retrieval_cache_config": ["explore_short_term_search_retr_cache_config", ""],
+      "kess_service_name": ["explore_short_term_search_retr_kess_service_name", "reco-retrieve-slide-search-retrieval"],
+      "service_request_num": ["explore_short_term_search_retr_request_num", 600]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "q2i_ann_score"
+      ],
+      "results": [
+        "short_term_search__result"
+      ]
+    }
+  },
+  "service_request_type": "fountain_request",
+  "reason": 4356,
+  "trimed_user_info": [
+    "id",
+    "device_id",
+    "risk_level_test",
+    "active_days",
+    "visit_mod",
+    "is_nebula_user",
+    "is_gamora",
+    "gender",
+    "true_gender",
+    "infer_gender",
+    "follow_count",
+    "like_count",
+    "clientlog_heart_beat_count",
+    "upload_count",
+    "location.ip",
+    "location.city_id",
+    "location.province_id",
+    "true_year",
+    "browsed_photo_ids",
+    "nearby_browsed_photo_ids",
+    "slide_browsed_photo_ids",
+    "basic_info.age_segment",
+    "user_profile_v1.video_playing_stat",
+    "user_profile_v1.real_show_list",
+    "user_profile_v1.hate_list",
+    "user_profile_v1.click_list.photo_id",
+    "user_profile_v1.like_list.photo_id",
+    "user_profile_v1.follow_list.photo_id",
+    "user_profile_v1.forward_list.photo_id",
+    "user_profile_v1.comment_list.photo_id",
+    "user_profile_v1.profile_enter_list.photo_id",
+    "user_profile_v1.profile_enter_list.page_type",
+    "user_profile_v1.click_live_list.photo_id",
+    "user_profile_v1.search_query_list",
+    "user_profile_v1.search_list",
+    "user_profile_v1.search_photo_play_list",
+    "user_profile_v1.search_click_photo_list.photo_id",
+    "user_profile_v1.search_click_author_list.author_id"
+  ],
+  "recv_item_attrs": [
+    "q2i_ann_score"
+  ]
+}

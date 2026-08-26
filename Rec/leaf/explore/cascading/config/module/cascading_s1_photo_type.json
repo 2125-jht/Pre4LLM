@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_enable_cover_sense_view_score_trans": false
+    },
+    "import": {
+      "item_attrs": [
+        "sense_view_predict_score",
+        "cover_view_predict_score",
+        "audit_b_second_tag",
+        "audit_hot_cover_level"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "sense_view_predict_trans_score",
+        "cover_view_predict_trans_score"
+      ]
+    }
+  }
+}
+  

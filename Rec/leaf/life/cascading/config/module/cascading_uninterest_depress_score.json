@@ -1,0 +1,22 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_life_realtime_uninterest_deboost_score": false,
+        "enable_life_realtime_uninterest_num_thred": 5
+      },
+      "import": {
+        "common_attrs": [
+          "browse_screen__pid_list", 
+          "colossus_photo_id_list_new_positive"
+        ],
+        "item_attrs": [
+          "hetu_sim_cluster_id"
+        ]
+      },
+      "export": {
+        "item_attrs": [
+          "is_uninterest_depress"
+        ]
+      }
+    }
+  }

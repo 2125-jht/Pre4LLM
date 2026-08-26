@@ -1,0 +1,159 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_mc_u2i_retrieval",
+          "param_type": "bool",
+          "default_value": false
+        },
+        "embedding_service_name": {
+          "biz_name": "RECO_RPC",
+          "param_name": "colossus_ann_retrieval_embedding_service_name",
+          "param_type": "string",
+          "default_value": "grpc_hotMcEmbed"
+        },
+        "enable_retriveal_add_neg_feedback": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_retriveal_add_neg_feedback",
+          "param_type": "int",
+          "default_value": 0
+        },
+        "retriveal_add_neg_feedback_alpha": {
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_feedback_alpha",
+          "param_type": "float",
+          "default_value": 0.2
+        },
+        "not_click_limit_hour": {
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_click_limit_hour",
+          "param_type": "float",
+          "default_value": 1.0
+        },
+        "play_stat_limit_hour": {
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_play_stat_limit_hour",
+          "param_type": "float",
+          "default_value": 1.0
+        },
+        "fountain_short_view_threshold": {
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_fountain_short_view_threshold",
+          "param_type": "int",
+          "default_value": 5000
+        },
+        "short_view_threshold": {
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_short_view_threshold",
+          "param_type": "int",
+          "default_value": 3000
+        },
+        "max_not_click_num": { 
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_max_not_click_num",
+          "param_type": "int",
+          "default_value": 16
+        },
+        "max_click_num": { 
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_max_click_num",
+          "param_type": "int",
+          "default_value": 16
+        },
+        "max_report_num": { 
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_max_report_num",
+          "param_type": "int",
+          "default_value": 16
+        },
+        "not_click_weight": { 
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_not_click_weight",
+          "param_type": "float",
+          "default_value": 2.0
+        },
+        "max_short_view_num": {
+          "biz_name": "RECO_RPC", 
+          "param_name": "retriveal_add_neg_max_short_view_num",
+          "param_type": "int",
+          "default_value": 16
+        },
+        "short_view_weight": { 
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_short_view_weight",
+          "param_type": "float",
+          "default_value": 1.0
+        },
+        "max_hate_num": {
+          "biz_name": "RECO_RPC", 
+          "param_name": "retriveal_add_neg_max_hate_num",
+          "param_type": "int",
+          "default_value": 8
+        },
+        "hate_weight": { 
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_hate_weight",
+          "param_type": "float",
+          "default_value": 2.5
+        },
+        "click_weight": { 
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_click_weight",
+          "param_type": "float",
+          "default_value": -1.5
+        },
+        "report_weight": { 
+          "biz_name": "RECO_RPC",
+          "param_name": "retriveal_add_neg_report_weight",
+          "param_type": "float",
+          "default_value": 4.0
+        },
+        "ann_service_name": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mc_u2i_retr_service_name",
+          "param_type": "string",
+          "default_value": "grpc_exploreMcI2i"
+        },
+        "ann_service_timeout": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mc_u2i_retr_ann_timeout",
+          "param_type": "int",
+          "default_value": 100
+        },
+        "ann_service_retr_count": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mc_u2i_cand_num",
+          "param_type": "int",
+          "default_value": 1000
+        },
+        "ann_service_bucket": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mc_u2i_bucket",
+          "param_type": "string",
+          "default_value": "photo"
+        },
+        "ann_dist_threshold": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mc_u2i_retr_ann_distance",
+          "param_type": "double",
+          "default_value": 0.0
+        },
+        "risk_level_min": ["risk_level_min_main", 0]
+      },
+      "import": {
+        "common_attrs": [
+          "mc_u2i_user_embedding_list",
+          "user_risk_level",
+          "user_info_ptr"
+        ]
+      },
+      "export": {
+        "results": [
+          "mc_u2i_ann__result"
+        ]
+      }
+    },
+    "reason": 3064
+  }
+  

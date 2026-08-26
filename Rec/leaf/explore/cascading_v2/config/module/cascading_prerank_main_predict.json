@@ -1,0 +1,26 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_prerank_model": 0,
+      "cascade_prerank_tower_service_v1": "kws-kuaishou-hot-subdivision-infer-explore-mc-perank-tower-infer",
+      "cascade_prerank_tower_service": ["explore_retrieval_prerank_tower_service", "grpc_HotPrerankTower"],
+      "cascade_prerank_tower_request_type": ["explore_retrieval_prerank_tower_request_type", "predict_by_hot_mc_tower"]
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "find_user_active_degree"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "prerank_step1"
+      ],
+      "item_attrs": [
+        "cascade_prerank_pctr",
+        "cascade_prerank_pltr",
+        "cascade_prerank_prstr"
+      ]
+    }
+  }
+}

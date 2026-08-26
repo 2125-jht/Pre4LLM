@@ -1,0 +1,48 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_produce_need_new_produce_user": 0,
+      "enable_produce_need_14d_produce_user": 0,
+      "enable_produce_need_7d_produce_user": 0,
+      "enable_produce_need_1d_produce_user": 0,
+      "fountain_inside_play_duration_switch": 0,
+      "fountain_inside_play_duration_threhold": 0
+    }, 
+    "import": {
+      "common_attrs": [
+        "kuibaUserAttrStr"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "uBuyerEffectiveType",
+        "uGamoraUploadDayNum30d",
+        "uNebulaUploadDayNum30d",
+        "uLastUploadDays",
+        "uInsidePlayDuration7dKV",
+        "uExploreHateRate",
+        "uShareidCntKV",
+        "uOpenShareidCntKV",
+        "uOpenDeviceCntKV",
+        "uPullNumKV",
+        "uShareBringNewDeviceNumKV",
+        "uAttributionPerShareKV",
+        "uIsNicePicCsm",
+        "merchant_buyer_type",
+        "fountain_produce_user_type",
+        "fountain_produce_consume_deep_user",
+        "uMessageActiveDegreeCode",
+        "uToUserShareSendNum30dKV",
+        "uSexyInterestScore",
+        "uToleranceScoreKV",
+        "uLLMHetuKV",
+        "uInsideShareActiveDegreeDetailCode",
+        "uLikeActiveScore",
+        "uCommentActiveScore",
+        "uShareActiveScore",
+        "uFollowActiveScore",
+        "uCollectActiveScore"
+      ]
+    }
+  }
+}

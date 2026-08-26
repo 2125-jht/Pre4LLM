@@ -1,0 +1,39 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "duration_lower_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "longview_duration_lower_limit",
+        "param_type": "int",
+        "default_value": 20000
+      }, 
+      "duration_upper_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "longview_duration_upper_limit",
+        "param_type": "int",
+        "default_value": 30000
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "downloadAids",
+        "searchClickAids", 
+        "dupClickAids",
+        "profileEnterAids", 
+        "likeAids",
+        "forwardAids",
+        "commentAids",
+        "hate_aids",
+        "profile_v1_click_trigger_aids",
+        "playstat_durations",
+        "playstat_playtimes"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "commonTriggerAids",
+        "a2i_interact_aids"
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "disable_merchant": ["disable_merchant_explore_all_photo_optimize", 0],
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_fountain_merchant_seq_dev_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "fountain_merchant_seq_dev_buyer_type": 2,
+      "kess_service_name": ["fountain_merchant_seq_dev_retr_service_name", "kws-merchant-hot-video-com-retr-slide-seq-adv-retr-merchant"],
+      "service_request_num": ["fountain_merchant_seq_dev_retr_retrieve_num", 600]
+    }, 
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "merchant_buyer_type",
+        "video_playing_stat_pid_list",
+        "video_playing_stat_aid_list",
+        "video_playing_stat_play_time_list",
+        "video_playing_stat_duration_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "merchant_seq_dev__result"
+      ]
+    }
+  },
+  "reason": 353,
+  "service_request_type": "default",
+  "send_common_attrs": [
+    {"name": "_USER_ID_", "as": "uId"},
+    {"name": "_DEVICE_ID_", "as": "dId"},
+    "disable_merchant",
+    "video_playing_stat_pid_list",
+    "video_playing_stat_aid_list",
+    "video_playing_stat_play_time_list",
+    "video_playing_stat_duration_list"
+  ],
+  "extra_skip_condition": "disable_merchant == 1 or merchant_buyer_type == nil or merchant_buyer_type < fountain_merchant_seq_dev_buyer_type"
+}

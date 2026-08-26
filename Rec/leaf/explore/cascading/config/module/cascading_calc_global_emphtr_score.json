@@ -1,0 +1,42 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_mc_cal_global_emphtr_score": false,
+      "explore_hate_like_rate_report_weight": 0.0,
+      "explore_global_realshow_thres_for_emphtr_score": 10000,
+      "enable_mc_cal_emp_report_rate_score": false,
+      "explore_vv_thres_for_emp_report_score": 30000,
+      "enable_mc_cal_emp_cancel_like_score": false,
+      "explore_like_thres_for_emp_cancel_like_score": 300,
+      "explore_raw_cancel_like_weight_for_emp_cancel_like_score": 1.0,
+      "explore_watch_time_weight_for_emp_cancel_like_score": 0.0
+    },
+    "import": {
+      "common_attrs": [
+      ],
+      "item_attrs": [
+        "explore_stat__real_show_count",
+        "explore_stat__negative_count",
+        "explore_stat__report_count",
+        "explore_stat__like_count",
+        "explore_stat__click_count",
+        "fountain_stats__real_show_count",
+        "fountain_stats__report_count",
+        "explore_stat__cancel_like_count",
+        "empirical_watch_time"
+      ],
+      "results": [
+        "cascading_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "global_emphtr_score",
+        "emp_report_score",
+        "emp_cancel_like_score"
+      ],
+      "common_attrs": [
+      ]
+    }
+  }
+}

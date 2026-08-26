@@ -1,0 +1,47 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_var_a2a_retr", false],
+      "fountain_var_a2a_interact_num": {
+        "default_value": 40
+      },
+      "fountain_var_a2a_realtime_num": {
+        "default_value": 20
+      },
+      "fountain_var_a2a_longterm_author_num": {
+        "default_value": 20
+      },
+      "fountain_var_a2a_retr_ann_service": {
+        "default_value": "grpc_fountainVarA2ARetr"
+      },
+      "fountain_var_a2a_retr_index_service": {
+        "default_value": "grpc_recoHotOrderedIndexServer"
+      },
+      "fountain_var_a2a_sim_author_num": {
+        "default_value": 5
+      },
+      "fountain_var_a2a_ordering": {
+        "default_value": "authorId2PhotoIdOrderByExploreStatScore"
+      },
+      "fountain_var_a2a_num_per_author": {
+        "default_value": 5
+      },
+      "fountain_var_a2a_cand_num": {
+        "default_value": 800
+      }
+    }, 
+    "import": {
+      "common_attrs": [
+        "_USER_ID_",
+        "video_playing_stat_aid_list",
+        "featureFountainProfileLikeAidList",  "featureFountainProfileFollowAidList", "featureFountainProfileLongViewAidList"
+      ]
+    },
+    "export": {
+      "results": [
+        "var_a2a_retr__result"
+      ]
+    }
+  },
+  "reason": 461
+}

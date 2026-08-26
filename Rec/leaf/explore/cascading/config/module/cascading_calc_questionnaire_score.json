@@ -1,0 +1,37 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_mc_enable_calc_questionnaire_score": false,
+      "explore_questionnaire_score_use_global": 0,
+      "explore_questionnaire_score_min_total_count": 50,
+      "explore_questionnaire_score_pos_threshold": 0.5,
+      "explore_questionnaire_score_neg_threshold": 0.25,
+      "explore_questionnaire_score_unsure_threshold": 0.5,
+      "explore_questionnaire_score_enable_topk_or_audit_valid": false,
+      "explore_questionnaire_score_topk_level_threshold": -1,
+      "explore_questionnaire_score_audit_level_threshold": -1
+    },
+    "import": {
+      "common_attrs": [
+      ],
+      "item_attrs": [
+        "questionnaire_info__positive_count",
+        "questionnaire_info__negative_count",
+        "questionnaire_info__unsure_count",
+        "explore_questionnaire_info__negative_count",
+        "explore_questionnaire_info__positive_count",
+        "explore_questionnaire_info__unsure_count"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "questionnaire_score"
+      ],
+      "common_attrs": [
+      ]
+    }
+  }
+}

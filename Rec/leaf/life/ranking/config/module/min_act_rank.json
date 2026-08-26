@@ -1,0 +1,35 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_min_act_rank_score": false,
+      "explore_fr_min_act_rank_fscore2_weight": 0.0,
+      "explore_fr_min_act_rank_wtd_weight": 0.0,
+      "explore_fr_min_act_rank_ctr_weight": 0.0,
+      "explore_fr_min_act_rank_ltr_weight": 0.0,
+      "explore_fr_min_act_rank_wtr_weight": 0.0,
+      "explore_fr_min_act_rank_ftr_weight": 0.0,
+      "explore_fr_min_act_rank_cmtr_weight": 0.0,
+      "explore_fr_min_act_rank_cltr_weight": 0.0,
+      "explore_fr_min_act_rank_pic_weight": 1.0,
+      "enable_avg_rank": false
+    },
+    "import": {
+      "item_attrs": [
+        "fr_score2",
+        "awesome_wtd", 
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "pcmtr",
+        "pcltr",
+        "is_picture"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "min_act_rank_score"
+      ]
+    }
+  }
+}

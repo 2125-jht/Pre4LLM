@@ -1,0 +1,61 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_calc_is_picture_v2": 0,
+      "enable_request_explore_pic_hive_index": 0,
+      "enable_request_explore_pic_hive_index_v2": 0,
+      "explore_picture_hive_index_kess_service": ["explore_picture_hive_index_kess_service", "grpc_explorePictureHiveAttrCommonQueryServer"],
+      "enable_calc_pic_target_hetu_photo": 0,
+      "enable_calc_pic_target_hetu_photo_v2": 0,
+      "enable_calc_xhs_type_picture_v2":0,
+      "enable_calc_xhs_type_picture":true,
+      "enable_explore_pic_revisited_item": ["enable_explore_pic_revisited_item", 0],
+      "enable_explore_pic_prerank_queue": ["enable_explore_pic_prerank_queue", 0],
+      "enable_explore_pic_prerank_rand_score": 0,
+      "enable_explore_pic_prerank_emp_calc": 0,
+      "enable_calc_pic_target_high_interact": 0,
+      "calc_xhs_type_mode": ["explore_calc_xhs_type_mode", 0],
+      "enable_cascading_use_longpic_picset": 0
+    },
+    "kconf": {
+      "pic_target_hetu_set": {
+        "kconf_key": "reco.picture.picTargetHetuSet",
+        "value_type": "set_int64",
+        "default_value": [4,5,7,10,11,12,16,17,18,25,26,27,36]
+      },
+      "xhs_hetu_set": {
+        "kconf_key": "reco.offline.xhsTypeList",
+        "value_type": "set_int64",
+        "default_value": []
+      }
+    },
+    "import": {
+      "item_attrs": [
+        "hetu_tag_level_info__hetu_level_one",
+        "hetu_tag_level_info__hetu_level_two",
+        "hetu_tag_level_info__hetu_level_three",
+        "hetu_tag_level_info__hetu_level_four",
+        "audit_b_second_tag"
+      ],
+      "common_attrs": [
+        "support_author_memory_data",
+        "xhs_hetu_memorydata_set"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "is_picture",
+        "is_longpic_picset",
+        "is_boost_hetu_pic",
+        "is_title_usable",
+        "is_key_target_hetu_pic",
+        "is_xhs_type_photo",
+        "revisited_rate_1d",
+        "revisited_rate_3d",
+        "revisited_rate_7d"
+      ],
+      "common_attrs": [
+      ]
+    }
+  }
+}

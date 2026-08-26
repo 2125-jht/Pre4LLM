@@ -1,0 +1,104 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_minority_photo_tags_bits_list_str": "7",
+      "explore_minority_photo_manjiao_markcode_tags_str": "",
+      "enable_explore_prev_items_gen_minority_photo": false,
+      "enable_explore_pic_search_candicate_expand_by_cluster": false,
+      "enable_explore_calc_photo_cluster_id_632": 0,
+      "enable_cal_standard_explore_realshow_list_cluster_id_632": 0,
+      "enable_cal_explore_user_recent_play_list_cluster_id_632": 0,
+      "enable_cal_explore_user_recent_click_list_cluster_id_632": 0,
+      "explore_pic_interest_cluster_target_hetu_str_v2": "3,4,5,6,7,10,12,13,14,15,17,18,20,25,26,27,31,36",
+      "explore_pic_interest_cluster_limit_hetu": 0,
+      "explore_enable_user_pic_growth_cluster_boost": false,
+      "explore_user_pic_growth_cluster_boost_interest_thresh" : 1000,
+      "enable_calc_xhs_type_picture_v2": 0,
+      "calc_xhs_type_mode": ["explore_calc_xhs_type_mode", 0],
+      "enable_short_uninterest_tagger": 0,
+      "explore_short_unterested_timestamp_threshold": 7200,
+      "explore_short_unterested_realshow_num_threshold": 50,
+      "explore_short_unterested_no_click_threshold": 1,
+      "explore_short_unterested_enable_cluster_id": 0,
+      "explore_short_unterested_enable_hetu_level_five": 0,
+      "enable_explore_calc_pic_double_valid_interest_cluster": false,
+      "explore_enable_gen_same_author_tail": 0,
+      "explore_author_exp_tail": -1,
+      "enable_explore_use_mounted_interest_cluster_id": 0,
+      "enable_explore_recent_play_list_use_mounted_interest_cluster_id": 0,
+      "enable_explore_calc_pic_recent_interest_cluster": false,
+      "explore_enable_gen_is_reason_top_photo": false,
+      "explore_reason_top_photo_white_list": "",
+      "explore_reason_top_photo_top_k": 0
+    },
+    "kconf": {
+      "pic_target_hetu_set": {
+        "kconf_key": "reco.picture.picTargetHetuSet",
+        "value_type": "set_int64",
+        "default_value": [4,5,7,10,11,12,16,17,18,25,26,27,36]
+      },
+      "remap_cluster_id_632_list": {
+        "kconf_key": "reco.interestExplore.remapClusterId632",
+        "value_type": "list_int64",
+        "default_value": []
+      },
+      "xhs_hetu_set": {
+        "kconf_key": "reco.offline.xhsTypeList",
+        "value_type": "set_int64",
+        "default_value": []
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "prerank_step1",
+        "followAids",
+        "negative_aid_set_ptr",
+        "explore_recent_play_list",
+        "uPicValidInterestClusterIdList",
+        "uPicLongInterestClusterIdList",
+        "uDoubleOutsideValidPicClusterCnt7dKV",
+        "uPicGrowthCidList",
+        "xhs_hetu_memorydata_set",
+        "explore_pic_long_interest_list",
+        "explore_pic_short_interest_list",
+        "explore_pic_explore_interest_list",
+        "standard_explore_realshow_pid_list",
+        "uStandardExploreRealshowTimestampList",
+        "uStandardExploreRealshowLabelList"
+      ],
+      "item_attrs": [
+        "author__id",
+        "upload_type",
+        "duration_ms",
+        "data_set_tags_bit",
+        "manjiao_markcode",
+        "hetu_tag_level_info__hetu_level_one",
+        "hetu_tag_level_info__hetu_level_two",
+        "hetu_tag_level_info__hetu_level_three",
+        "hetu_tag_level_info__hetu_level_four",
+        "hetu_tag_level_info_v2__hetu_level_one",
+        "hetu_sim_cluster_id"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "prerank_step2"
+      ],
+      "item_attrs": [
+        "is_picture",
+        "is_follow_author",
+        "is_low_cost_photo",
+        "is_minority_photo",
+        "cluster_id_632",
+        "is_key_target_hetu_pic",
+        "is_pic_search_cluster",
+        "is_pic_valid_interest_cluster",
+        "is_pic_growth_cluster",
+        "is_xhs_type_photo",
+        "hetu_level_one_top1",
+        "is_short_uninterested_photo",
+        "mounted_interest_cluster_id"
+      ]
+    }
+  }
+}

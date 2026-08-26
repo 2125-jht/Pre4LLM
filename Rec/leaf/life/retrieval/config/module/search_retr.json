@@ -1,0 +1,51 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_search_emb_explore_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "kess_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "search_emb_explore_retr_service",
+        "param_type": "string",
+        "default_value": "grpc_searchRecoService_Explore_V2_NEW"
+      },
+      "author_kess_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "search_author_explore_retr_service",
+        "param_type": "string",
+        "default_value": "grpc_recoHotOrderedIndexServer"
+      },
+      "search_emb_explore_retr_max_time_decay": 30.0,
+      "ht_negative_feedback_timeout_min_in_search_retr": 30.0,
+      "enable_search_retr_walk_off_by_not_click": false,
+      "search_negative_feedback_filter_threshold": 3,
+      "enable_search_retr_only_select_user": false,
+      "search_retr_high_full_active_or_mid_search": false,
+      "search_retr_high_full_active_and_mid_search": false,
+      "user_active_degree_down": 3, 
+      "user_active_degree_up": 4,
+      "search_day_count_down": 9,
+      "search_day_count_up": 19,
+      "enable_search_back_explore_cal": false,
+      "search_to_current_interval": 360,
+      "backexplore_to_current_interval": 60
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "search_retrival__result"
+      ]
+    }
+  },
+  "reason": 3113,
+  "retrieval_tag": "explore_search_retr"
+}

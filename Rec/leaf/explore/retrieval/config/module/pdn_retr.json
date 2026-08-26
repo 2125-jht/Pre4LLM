@@ -1,0 +1,124 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_pdn_retr",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "index_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_retr_index_service",
+        "param_type": "string",
+        "default_value": "grpc_explorePdnSimIndex"
+      },
+      "index_service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_retr_index_timeout",
+        "param_type": "int",
+        "default_value": 50
+      },
+      "index_term_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_retr_index_term_name",
+        "param_type": "string",
+        "default_value": "sim"
+      },
+      "search_num_per_trigger": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_retr_num_per_trigger",
+        "param_type": "int",
+        "default_value": 30
+      },
+      "index_cache_expire_time_s": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_interact_index_cache_expire_time_sec",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "colossus_trigger_max_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pdn_retr_colossus_aux_triggers_num",
+        "param_type": "int",
+        "default_value": 500
+      },
+      "enable_knowledge_trigger": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_add_knowledge_retr_trigger",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "knowledge_trigger_max_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_add_knowledge_retr_trigger_max_num",
+        "param_type": "int",
+        "default_value": 30
+      },
+      "cand_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pdn_retr_cand_num",
+        "param_type": "int",
+        "default_value": 3000
+      },
+      "trigger_scatter_each_limit": ["explore_pdn_scatter_trigger_each_tag_limit", 25],
+      "play_list_scatter_each_limit": ["explore_pdn_scatter_playlist_each_tag_limit", 3],
+      "play_list_trigger_max_num": ["explore_pdn_playlist_trigger_num", 40],
+      "interest_explore_trigger_expand_cnt": ["pdn_expand_interest_explore_trigger_cnt", 0],
+      "skip_filter_by_browse_screen": ["skip_explore_filter_by_browse_screen", 1],
+      "skip_browse_set": ["skip_explore_filter_by_browse_set", 1],
+      "enable_global_trigger": ["explore_pdn_enable_global_trigger", false],
+      "sample_trigger_num": ["pdn_sample_trigger_num", 400],
+      "start_idx": ["pdn_start_idx", 800],
+      "enable_snake_merge": ["explore_pdn_enable_snake_merge", false],
+      "mc_enable_opt_card_trigger": {
+        "biz_name": "MOBILE",
+        "param_name": "mc_enable_opt_card_trigger",
+        "param_type": "bool",
+        "default_value": false
+      }
+    },
+    "kconf": {
+      "hetu_low_level_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "low_level_tags"
+      },
+      "hetu_level2_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "level2_tags"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "colossus_user_info__trigger_id_list",
+        "colossus_user_info__knowledge_trigger_set",
+        "colossus_user_info__trigger_tag_list",
+        "colossus_user_info__interest_explore_trigger_set",
+        "browse_screen__pid_list",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list",
+        "optcard_like_trigger_id_list",
+        "optcard_dislike_trigger_id_list",
+        "enable_global_trigger_weight_adjust",
+        "videoPlayingPid"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_retr__trigger_pid"
+      ],
+      "results": [
+        "pdn__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 3070,
+  "retrieve_num": 3000
+}

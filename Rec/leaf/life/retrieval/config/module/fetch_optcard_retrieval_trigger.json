@@ -1,0 +1,31 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "mc_enable_calculate_opt_card_trigger": {
+        "biz_name": "MOBILE",
+        "param_name": "mc_enable_calculate_opt_card_trigger",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "adjust_mode": {
+        "biz_name": "MOBILE",
+        "param_name": "fetch_optcard_trigger_adjust_mode",
+        "param_type": "int",
+        "default_value": 2
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "gamora_hetu_adjust_history_list",
+        "opt_card_like_list",
+        "opt_card_dis_like_list"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "optcard_like_trigger_id_list",
+        "optcard_dislike_trigger_id_list"
+      ]
+    }
+  }
+}

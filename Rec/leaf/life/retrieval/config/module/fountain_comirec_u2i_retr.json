@@ -1,0 +1,76 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_xlife_fountain_comirec_u2i_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "fountain_comi_rec_retr_v2_server_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_comi_rec_retr_v2_server_name",
+        "param_type": "string",
+        "default_value": "grpc_kaiFountainMultiInterestCommonRetrServerV2"
+      },
+      "fountain_comi_rec_retr_v2_request_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_comi_rec_retr_v2_request_num",
+        "param_type": "int",
+        "default_value": 1000
+      },
+      "fountain_comi_rec_v2_search_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_comi_rec_v2_search_num",
+        "param_type": "int",
+        "default_value": 1000
+      },
+      "fountain_comi_rec_v2_interest_depth": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_comi_rec_v2_interest_depth",
+        "param_type": "int",
+        "default_value": 400
+      },
+      "fountain_comi_rec_v2_diversity_boost": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_comi_rec_v2_diversity_boost",
+        "param_type": "double",
+        "default_value": 0.1
+      },
+      "fountain_comi_rec_v2_photo_score_boost": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_comi_rec_v2_photo_score_boost",
+        "param_type": "int",
+        "default_value": 0.0
+      },
+      "fountain_comi_rec_v2_ann_src": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_comi_rec_v2_ann_src",
+        "param_type": "string",
+        "default_value": "item"
+      },
+      "fountain_comi_rec_v2_ann_dst": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_comi_rec_v2_ann_dst",
+        "param_type": "string",
+        "default_value": "item"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "featureUId",
+        "did",
+        "featureUserProfileV1FollowAidList",
+        "featureUserProfileV1Play18SPidList",
+        "featureUserProfileV1Play18SAidList",
+        "request_type"
+      ]
+    }, 
+    "export": {
+      "results": [
+        "fountain_comirec_u2i__result"
+      ]
+    }
+  },
+  "reason": 9414
+}

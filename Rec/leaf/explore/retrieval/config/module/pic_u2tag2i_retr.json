@@ -1,0 +1,38 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_pic_u2tag2i_retr", false],
+      "explore_pic_u2tag2i_tag_score_thresh": 0,
+      "explore_pic_u2tag2i_retr_trigger_num": 20,
+      "explore_pic_u2tag2i_retr_num": 1000,
+      "explore_pic_u2tag2i_retr_num_per_key": 50,
+      "explore_pic_u2tag2i_retr_num_final": 200,
+      "explore_pic_u2tag2i_redis_key_prefix": "pic_tagnex_", 
+      "enable_explore_pic_u2tag2i_action_trigger": false,
+      "explore_pic_u2tag2i_action_trigger_tag_max": 2e8,
+      "explore_pic_u2tag2i_action_trigger_tag_min": 1e8,
+      "explore_pic_u2tag2i_action_trigger_tag_num": 50,
+      "enable_explore_pic_u2tag2i_statistics_trigger": true,
+      "pic_u2tag2i_play_cnt": 20,
+      "pic_u2tag2i_like_cnt": 20,
+      "pic_u2tag2i_follow_cnt": 20,
+      "pic_u2tag2i_comment_cnt": 20,
+      "pic_u2tag2i_collect_cnt": 20,
+      "pic_u2tag2i_forward_cnt": 20,
+      "pic_u2tag2i_download_cnt": 20
+    },
+    "import": {
+      "common_attrs": [
+        "user_valid_tag_id_list",
+        "user_valid_tag_score_list",
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_u2tag2i_retr__result"
+      ]
+    }
+  },
+  "reason": 13039
+}

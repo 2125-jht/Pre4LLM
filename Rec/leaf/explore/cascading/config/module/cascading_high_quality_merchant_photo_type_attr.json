@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_high_quality_merchant_photo_calc_type": false,
+      "high_quality_merchant_ctr_threshold": 1.0,
+      "high_quality_merchant_ltr_threshold": 1.0,
+      "high_quality_merchant_wtr_threshold": 1.0,
+      "high_quality_merchant_ftr_threshold": 1.0,
+      "high_quality_merchant_cmtr_threshold": 1.0,
+      "high_quality_merchant_wtd_threshold": 100000.0
+    },
+    "import": {
+      "common_attrs": [
+      ],
+      "item_attrs": [
+        "is_merchant_cart",
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr",
+        "empirical_cmtr",
+        "empirical_watch_time"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "is_high_quality_merchant_cart"
+      ],
+      "common_attrs": [
+      ]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_calc_pic_mc_comment_quality_score": false,
+      "explore_pic_mc_comment_quality_refactor_f1_perf_tag": "f1_default"
+    },
+    "import": {
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ],
+      "item_attrs": [
+        "is_picture",
+        "pic_good_comment_score",
+        "mc_ensemble_pctr",
+        "mc_ensemble_pltr",
+        "mc_ensemble_pwtr",
+        "mc_ensemble_pcltr",
+        "mc_ensemble_pcmtr",
+        "mc_ensemble_pftr",
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_pftr",
+        "cascade_pcltr",
+        "cascade_pcmtr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pic_mc_comment_quality_score"
+      ]
+    }
+  }
+}

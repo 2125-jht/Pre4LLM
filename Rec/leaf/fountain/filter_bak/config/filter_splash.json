@@ -1,0 +1,8 @@
+{
+  "modules": [
+    {
+      "name": "filter_splash",
+      "type_name": "FilterSplashModule"
+    }
+  ]
+}

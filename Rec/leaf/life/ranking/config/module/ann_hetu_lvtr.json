@@ -1,0 +1,44 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_ann_hetu_lvtr": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_enable_ann_hetu_lvtr",
+          "param_type": "int",
+          "default_value": 0
+        },
+        "ann_hetu_lvtr_service": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_ann_hetu_lvtr_service",
+          "param_type": "string",
+          "default_value": "grpc_xln_explore_uplift"
+        },
+        "ann_hetu_lvtr_partition_size": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_ann_hetu_lvtr_partition_size",
+          "param_type": "int",
+          "default_value": 600
+        }
+      },
+      "import": {
+        "results": [
+          "ranking_stage1_truncate__result"
+        ],
+        "common_attrs": [
+          "userInfo"
+        ],
+        "item_attrs": [
+          "hetu_tag_level_info__hetu_level_two",
+          "pctr",
+          "plvtr",
+          "psvr",
+          "pcmtr"
+        ]
+      },
+      "export": {
+        "item_attrs": [
+          "ann_hetu_lvtr_score"
+        ]
+      }
+    }
+  }

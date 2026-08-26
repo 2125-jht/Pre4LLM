@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_pic_region_hotfire_retr", false],
+      "enable_location_ad_code": ["enable_explore_pic_region_hotfire_retr_use_location_ad_code", false],
+      "enable_filter_browse_set": ["enable_explore_pic_region_hotfire_retr_filter_browse_set", false],
+      "explore_pic_region_hotfire_retr_num": 400,
+      "explore_pic_region_hotfire_retr_num_per_key": 200,
+      "explore_pic_region_hotfire_retr_num_final": 200,
+      "explore_pic_region_hotfire_retr_redis_key_prefix": "u2city2i_pic_n_"
+    },
+    "import": {
+      "common_attrs": [
+        "featureCityId",
+        "featureUserRequestCityId",
+        "current_location_ad_code",
+        "hometown_ad_code",
+        "freq_ad_code",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_region_hotfire_retr__result"
+      ]
+    }
+  },
+  "reason": 3085
+}

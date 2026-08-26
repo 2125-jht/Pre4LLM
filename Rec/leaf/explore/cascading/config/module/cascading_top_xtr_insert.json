@@ -1,0 +1,18 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_cascade_top_pwatchtime_photo_insert": false,
+      "explore_cascade_top_pwatchtime_photo_insert_limit": ["mc_final_candidate_num", 520],
+      "explore_cascade_top_pwatchtime_photo_insert_photo_ratio": 0.05
+    },
+    "import": {
+      "insert": [
+        "cascading_final_sort__result"
+      ],
+      "item_attrs": [
+        "mc_ensemble_pwatch_time",
+        "cascade_pctr"
+      ]
+    }
+  }
+}

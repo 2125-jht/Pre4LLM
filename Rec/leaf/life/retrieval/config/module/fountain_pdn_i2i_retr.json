@@ -1,0 +1,123 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_xlife_fountain_pdn_i2i_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "fountain_global_trigger_enable_user_fountain_behv": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_global_trigger_enable_user_fountain_behv",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_global_trigger_min_play_time_s": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_global_trigger_min_play_time_s",
+        "param_type": "int",
+        "default_value": 7
+      },
+      "fountain_global_trigger_play_time_weight": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_global_trigger_play_time_weight",
+        "param_type": "double",
+        "default_value": 1.0
+      },
+      "fountain_global_trigger_max_play_time_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_global_trigger_max_play_time_limit",
+        "param_type": "double",
+        "default_value": 6.0
+      },
+      "fountain_global_trigger_play_ratio_weight": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_global_trigger_play_ratio_weight",
+        "param_type": "double",
+        "default_value": 1.0
+      },
+      "fountain_global_trigger_time_decay_weight": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_global_trigger_time_decay_weight",
+        "param_type": "double",
+        "default_value": 0.8
+      },
+      "fountain_global_trigger_label_weight_map": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_global_trigger_label_weight_map",
+        "param_type": "string",
+        "default_value": "0:1.0;1:1.0;2:1.0;4:1.0;6:1.0;7:1.0"
+      },
+      "fountain_global_trigger_min_cluster_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_global_trigger_min_cluster_size",
+        "param_type": "int",
+        "default_value": 20
+      },
+      "fountain_global_trigger_normal_trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_global_trigger_normal_trigger_num",
+        "param_type": "int",
+        "default_value": 500
+      },
+      "fountain_global_trigger_high_value_trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_global_trigger_high_value_trigger_num",
+        "param_type": "int",
+        "default_value": 100
+      },
+      "fountain_global_trigger_enable_normal_shuffle": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_global_trigger_enable_normal_shuffle",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_pdn_sample_trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_pdn_sample_trigger_num",
+        "param_type": "int",
+        "default_value": 400
+      },
+      "fountain_pdn_start_idx": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_pdn_start_idx",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "fountain_total_pdn_retr_key_prefix": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_total_pdn_retr_key_prefix",
+        "param_type": "string",
+        "default_value": "fcolba"
+      },
+      "fountain_total_pdn_retr_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_total_pdn_retr_num",
+        "param_type": "int",
+        "default_value": 3500
+      },
+      "fountain_total_pdn_retr_num_per_key": {
+        "biz_name": "RECO_RPC",
+        "param_name": "fountain_total_pdn_retr_num_per_key",
+        "param_type": "int",
+        "default_value": 20
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "hetu_v1_id_mapping_ptr",
+        "user_info_ptr",
+        "colossus_resp_v2",
+        "request_type"
+      ]
+    }, 
+    "export": {
+      "results": [
+        "fountain_mix_pdn_i2i__result"
+      ]
+    }
+  },
+  "reason": 9419
+}
+    

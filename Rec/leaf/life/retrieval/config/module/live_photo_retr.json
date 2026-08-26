@@ -1,0 +1,62 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_live_photo_retr", false],
+      "retrieval_cache_config": ["explore_live_photo_retr_cache_config", ""],
+      "kess_service_name": ["explore_live_photo_service", "grpc_PartLiveCommonLeafServer"]
+    },
+    "constant": {
+      "service_timeout_ms": 100,
+      "service_request_num": 1000
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "live_photo_retr__result"
+      ]
+    }
+  },
+  "reason": 0,
+  "service_request_type": "part_live",
+  "trimed_user_info": [
+    "id",
+    "device_id",
+    "gender",
+    "fans_count",
+    "request_location.ipv4",
+    "true_new_user",
+    "basic_info.age_segment",
+    "promotion_attr.first_active_time_ms",
+    "infer_gender",
+    "true_gender",
+    "location.ip",
+    "location.city_id",
+    "location.province_id",
+    "visit_mod",
+    "true_year",
+    "infer_year",
+    "live_profile_v1.live_follow_list.anchor_id",
+    "live_profile_v1.live_follow_list.time_ms",
+    "live_profile_v1.live_like_list.anchor_id",
+    "live_profile_v1.live_like_list.time_ms",
+    "live_profile_v1.live_play_list.anchor_id",
+    "live_profile_v1.live_play_list.live_play_time",
+    "live_profile_v1.live_play_list.like_cnt",
+    "live_profile_v1.live_forward_list.anchor_id",
+    "live_profile_v1.live_forward_list.time_ms",
+    "live_profile_v1.live_gift_list.anchor_id",
+    "live_profile_v1.live_gift_list.time_ms",
+    "live_profile_v1.live_comment_list.anchor_id",
+    "live_profile_v1.live_comment_list.time_ms",
+    "live_profile_v1.live_hate_list.anchor_id",
+    "live_profile_v1.live_hate_list.time_ms",
+    "live_profile_v1.live_click_list.anchor_id",
+    "live_profile_v1.live_click_list.time_ms",
+    "user_profile_v1.follow_list.author_id",
+    "user_profile_v1.follow_list.time_ms"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_life_prerank_tower_model_infer": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_life_prerank_tower_model_infer",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "explore_life_prerank_tower_model_infer_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_life_prerank_tower_model_infer_service",
+        "param_type": "string",
+        "default_value": "grpc_exploreLifeMcUserInfer",
+        "report_ab_hit": true
+      },
+      "explore_life_prerank_request_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_life_prerank_request_type",
+        "param_type": "string",
+        "default_value": "predict_by_lifetab_mc",
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "results": [
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "prerank_life_ctr"
+      ]
+    }
+  }
+}

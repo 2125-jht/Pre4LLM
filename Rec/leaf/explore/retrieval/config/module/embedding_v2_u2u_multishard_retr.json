@@ -1,0 +1,18 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_embedding_v2_u2u_multishard_retr", false],
+      "index_service_name": ["embedding_v2_u2u_multishard_index_service_name", "grpc_exploreU2IPureIndex"],
+      "uid_trigger_num": ["embedding_v2_u2u_multishard_uid_trigger_num", 60],
+      "search_num": ["embedding_v2_u2u_multishard_search_num", 100],
+      "service_request_num": ["embedding_v2_u2u_multishard_request_num", 800]
+    },
+    "export": {
+      "results": [
+        "embedding_v2_u2u_multishard_retr__result"
+      ]
+    }
+  },
+  "reason": 3181
+}
+

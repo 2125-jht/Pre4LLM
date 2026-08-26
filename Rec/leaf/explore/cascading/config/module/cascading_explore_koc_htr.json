@@ -1,0 +1,26 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_cascading_koc_htr_model": false,
+      "explore_cascading_koc_htr_kess_service": "grpc_ExploreCascadeKocHtrInfer",
+      "explore_cascading_koc_htr_request_type": "cascade_explore_koc_htr_infer",
+      "explore_cascading_koc_htr_count_threshold": 1
+    },
+    "import": {
+      "common_attrs": [
+        "uMultiDimensionGroupKV",
+        "uMultiDimensionGroupDetailKV",
+        "recent_hate_count"
+      ],
+      "results": [
+        "cascading_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "cascading_cover_htr",
+        "cascading_detail_htr"
+      ]
+    }
+  }
+}

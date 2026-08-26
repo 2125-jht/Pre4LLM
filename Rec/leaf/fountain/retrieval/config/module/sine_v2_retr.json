@@ -1,0 +1,42 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_sine_v2_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_sine_v2_retr_server_name": "grpc_fountainSineV2CommonRetrServer",
+      "fountain_sine_v2_retr_timeout_ms": 150,
+      "fountain_sine_v2_retr_request_num": 1000,
+      "skip_fountain_sine_v2_retr_server": 1,
+      "fountain_sine_v2_search_num": 1000,
+      "fountain_sine_v2_interest_depth": 400,
+      "fountain_sine_v2_diversity_boost": 0.1,
+      "fountain_sine_v2_photo_score_boost": 0.0
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "featureUId",
+        "featureDeviceId",
+        "featureUserProfileV1LikePidList",
+        "featureUserProfileV1Play18SPidList",
+        "featureUserProfileV1ForwardPidList",
+        "featureFountainProfileEffViewPidList",
+        "featureUserProfileV1Play18SAidList",
+        "featureUserProfileV1FollowAidList"
+      ]
+    },
+    "export": {
+      "results": [
+        "sine_v2_retr__result"
+      ]
+    }
+  },
+  "reason": 416
+}

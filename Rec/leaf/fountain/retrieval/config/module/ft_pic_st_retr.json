@@ -1,0 +1,93 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "param_name": "enable_ft_pic_st_retr",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "ft_pic_st_retr_use_cache_emb": {
+        "param_name": "ft_pic_st_retr_use_cache_emb",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "ft_pic_st_retr_emb_service_name": {
+        "param_name": "ft_pic_st_retr_emb_service_name",
+        "param_type": "string",
+        "default_value": "grpc_explorePicStRetrPsV1a"
+      },
+      "ft_pic_st_retr_colossus_hisotry_num": {
+        "param_name": "ft_pic_st_retr_colossus_hisotry_num",
+        "param_type": "int",
+        "default_value": 1000
+      },
+      "ft_pic_st_retr_predict_service_name": {
+        "param_name": "ft_pic_st_retr_predict_service_name",
+        "param_type": "string",
+        "default_value": "grpc_explorePicStUniPredictV1a"
+      },
+      "ft_pic_st_retr_ann_service_name": {
+        "param_name": "ft_pic_st_retr_ann_service_name",
+        "param_type": "string",
+        "default_value": "grpc_explorePicStAnnV1a"
+      },
+      "ft_pic_st_retr_ann_top_k": {
+        "param_name":"ft_pic_st_retr_ann_top_k",
+        "param_type": "int",
+        "default_value": 100
+      },
+      "ft_pic_st_retr_ann_dest_bucket": {
+        "param_name": "ft_pic_st_retr_ann_dest_bucket",
+        "param_type": "string",
+        "default_value": "pic_dest_show"
+      },
+      "ft_pic_st_retr_ann_dist_threshold": {
+        "param_name": "ft_pic_st_retr_ann_dist_threshold",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "enable_ft_pic_st_retr_infer": {
+        "param_name": "enable_ft_pic_st_retr_infer",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "ft_pic_st_retr_emb_server_mode": {
+        "param_name": "ft_pic_st_retr_emb_server_mode",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "ft_pic_st_retr_delegate_retr_enable": {
+        "param_name": "ft_pic_st_retr_delegate_retr_enable",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "ft_pic_st_retr_delegate_retr_service": {
+        "param_name": "ft_pic_st_retr_delegate_retr_service",
+        "param_type": "string",
+        "default_value": "grpc_picStRetrService"
+      },
+      "ft_pic_st_retr_delegate_retr_num": {
+        "param_name": "ft_pic_st_retr_delegate_retr_num",
+        "param_type": "int",
+        "default_value": 600
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "user_colossus_pic_play_pids",
+        "user_colossus_pic_play_aids",
+        "user_colossus_pic_play_rewards",
+        "user_colossus_pic_play_hetu_level1s",
+        "userInfo",
+        "uIsNicePicCsm"
+      ]
+    },
+    "export": {
+      "results": [
+        "ft_pic_st_retr__result"
+      ]
+    }
+  },
+  "reason": 238
+}

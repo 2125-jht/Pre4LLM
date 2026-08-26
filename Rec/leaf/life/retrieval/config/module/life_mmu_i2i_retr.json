@@ -1,0 +1,69 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_life_mmu_i2i_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_life_mmu_i2i_seed_photo_size",
+        "param_type": "int",
+        "default_value": 20,
+        "report_ab_hit": true
+      },
+      "embedding_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_life_mmu_i2i_embedding_service_name",
+        "param_type": "string",
+        "default_value": "grpc_MMUHetuContentEmbeddingV2",
+        "report_ab_hit": true
+      },
+      "ann_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_life_mmu_i2i_ann_service_name",
+        "param_type": "string", 
+        "default_value": "grpc_lifeMmuAnnI2I",
+        "report_ab_hit": true
+      },
+      "result_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_life_mmu_i2i_result_num",
+        "param_type": "int",
+        "default_value": 1000,
+        "report_ab_hit": true
+      },
+      "ann_src_data_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_life_mmu_i2i_ann_src_data_type",
+        "param_type": "string",
+        "default_value": "photo",
+        "report_ab_hit": true
+      },
+      "retr_dest_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_life_mmu_i2i_ann_dest_bucket",
+        "param_type": "string",
+        "default_value": "mmu_life_tab",
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "realtimeClickList",
+        "searchList",
+        "videoPlayingPid",
+        "explore_selected_trigger_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "life_mmu_i2i_ann__result"
+      ]
+    }
+  },
+  "reason": 13024
+}

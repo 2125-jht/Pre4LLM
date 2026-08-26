@@ -1,0 +1,52 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_diverse_loyal_user_author_retr", false],
+      "loyalfans_aids_num": ["explore_diverse_loyal_a2a_loyalfans_aids_num", 100],
+      "interact_aids_num": ["explore_diverse_loyal_a2a_interact_aids_num", 100],
+      "common_trigger_num": ["explore_diverse_loyal_a2a_common_trigger_num", 100],
+      "longview_aids_num": ["explore_diverse_loyal_a2a_longview_aids_num", 100],
+      "friend_aids_num": ["explore_diverse_loyal_a2a_friend_aids_num", 100],
+      "follow_aids_num": ["explore_diverse_loyal_a2a_follow_aids_num", 100],
+      "hot_follow_aids_num": ["explore_diverse_loyal_a2a_hot_follow_aids_num", 100],
+      "profile_aid_retr_by_redis_retrieval_num": 1000,
+      "longterm_worth_profile_aids_num": 100,
+      "hot_retr_by_redis_retrieval_num": 1000,
+      "longterm_worth_hot_aids_num": 100,
+      "enable_retr_by_ann_embedding": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_retr_by_ann_embedding",
+        "param_type": "int",
+        "default_value": 0
+      }, 
+      "ann_service": ["explore_diverse_loyal_a2a_retr_ann_service", "grpc_exploreVarA2ARetr"],
+      "sim_author_num": ["explore_diverse_loyal_a2a_sim_author_num", 5],
+      "remote_index_service_name": ["diverse_loyal_author_retr_index_service_name", "grpc_recoHotOrderedIndexServer"],
+      "enable_trigger_shuffle": ["explore_diverse_loyal_author_retr_enable_trigger_shuffle", 0],
+      "retr_index_term": ["diverse_loyal_author_retr_index_term", "authorId2PhotoIdOrderByUploadTime"],
+      "remote_index_search_num": ["diverse_loyal_author_retr_search_num", 50],
+      "loyal_author_max_num": ["diverse_loyal_author_retr_max", 500],
+      "enable_random_search": ["explore_diverse_loyal_author_retr_enable_random_search", 1],
+      "enable_diverse_loyal_browset_filter": 0,
+      "result_num": ["diverse_loyal_author_photos_retr_candidates_num", 500]      
+    },
+    "import": {
+      "common_attrs": [
+        "uFansList",
+        "explore_la_long_view_author_list",
+        "a2i_interact_aids",
+        "commonTriggerAids",
+        "friendAids",
+        "followAids",
+        "follow_aids"
+      ]
+    },
+    "export": {
+      "results": [
+        "diverse_loyal_author_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 866
+}

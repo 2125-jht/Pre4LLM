@@ -1,0 +1,401 @@
+from cascading_v2.module.channel.mc_photo_channel import McPhotoChannelParitioner, McPhotoChannelScorer
+from cascading_v2.module.channel.mc_picture_channel import McPictureChannelParitioner, McPictureChannelScorer
+from cascading_v2.common_module import CommonModule
+
+class CascadingChannelSortModule(CommonModule):
+  """
+  添加新队列一定要添加在最后，切记！！！也不要调整已有队列的顺序，再怎么调整也不会对指标有什么正向影响！！！
+  """
+  _MC_QUEUES = ["photo", "picture"]
+
+  def __init__(self, module_name):
+    super().__init__(module_name)
+    
+  def process(self) -> None:
+    scorers = self._define_scorers()
+    partitioners = self._define_partitioners()
+    self._weight_attr_prefix = "mc_csqw_" + self._stage() + "_"
+    self._absolute_weight_attr_prefix = "mc_csqaw_" + self._stage() + "_"
+    self._left_count_attr_prefix = "mc_csqlc_" + self._stage() + "_"
+    self._origin_count_attr_prefix = "mc_csqoc_" + self._stage() + "_"
+    self._queue_definitions = [{
+      "name": queue,
+      "scorer": scorers[queue],
+      "partitioner": partitioners[queue],
+    } for queue in self._MC_QUEUES]
+    self._weight_attrs = [self._get_weight_attr(queue["name"]) for queue in self._queue_definitions]
+    self._score_attrs = [queue["scorer"].get_score_attr() for queue in self._queue_definitions]
+    self._flag_attrs = [queue["partitioner"].get_flag_attr() for queue in self._queue_definitions]
+
+    self.flow.gen_common_attr_by_lua(
+      attr_map={attr: "0.0" for attr in self._weight_attrs})
+    
+    self.flow.explore_enrich_kv_param(
+      origin_param = "{{final_channel_sort_queue_params_relative}}",
+      param_attr_prefix = self._weight_attr_prefix,
+      import_common_attr = self._weight_attrs,
+      export_common_attr = self._weight_attrs,
+      param_separator = ",",
+      kv_separator = ":",
+      param_name_list_attr = "final_channel_sort_queue_names",
+    )
+
+    # 给每个队列所属的 item 打标签
+    for queue in self._queue_definitions:
+      queue_name = queue["name"]
+      weight_attr = self._get_weight_attr(queue_name)
+      
+      self.flow.if_(self._channel_sort_queue_enable_condition(weight_attr))
+      queue["partitioner"].process()
+      self.flow.end_()
+
+    self.flow.set_attr_default_value(
+      item_attrs=[{"name": attr, "type": "int", "value": 0} for attr in self._flag_attrs])
+    
+    # 这段逻辑是把 没有被任何队列标记过的item 标记到默认队列，也就是第一个队列
+    self.flow.set_attr_value(
+      no_overwrite = False,
+      item_attrs = [
+        {
+          "name": self._flag_attrs[0],
+          "type": "int",
+          "value": 1,
+        },
+      ],
+      select_item = { 
+        "join": "and",
+        "filters": [{
+          "attr_name": flag_attr,
+          "select_if": "==",
+          "compare_to": 0,
+          "select_if_attr_missing": True,
+        } for flag_attr in self._flag_attrs[1:]],
+      },
+    )
+
+    # 这段逻辑是统计 weight_attrs 的总和，用于之后计算每个 channel 最后留下多少个 item
+    sum_weight_statements = "+".join([f"{attr}" for attr in self._weight_attrs])
+    self.flow.gen_common_attr_by_lua(
+      attr_map={
+        "sum_of_all_weight_attrs": sum_weight_statements,
+        "final_channel_sort_use_relative_weight": "1"
+      }
+    )
+    
+    # 相当于统计各个队列的 Item 数量
+    self.flow.perflog_attr_value(
+      check_point="final_channel_sort_pre",
+      item_attrs=self._flag_attrs,
+      aggregator="sum")
+
+    self.flow.enrich_attr_by_light_function(
+        import_common_attr = [
+          {"name": "mc_final_candidate_num", "as": "origin_size"},
+          {"name": "increase_quota_status", "as": "increase_quota_status"},
+          {"name": "increase_quota_after_peak_mc_factor", "as": "factor"}
+        ],
+        export_common_attr = [
+          {"name": "final_size", "as": "mc_final_candidate_num"}
+        ],
+        function_name = "IncreaseQuotaProcess",
+        class_name = "ExploreLightFunctionSetV2"
+      )
+    # 给每个队列所属的 item 打分
+    # 这一步要放到所有队列的 flag 都打好之后，因为默认队列的标记需要等其他队列都打完才能上
+    
+    for queue in self._queue_definitions:
+      queue_name = queue["name"]
+      weight_attr = self._get_weight_attr(queue_name)
+      origin_count_attr = self._get_origin_count_attr(queue_name)
+      left_count_attr = self._get_left_count_attr(queue_name)
+      absolute_weight_attr = self._get_absolute_weight_attr(queue_name)
+      
+      self.flow.if_(self._channel_sort_queue_enable_condition(weight_attr))
+      
+      self.flow.count_reco_result(
+        save_count_to = origin_count_attr,
+        target_item = {queue["partitioner"].get_flag_attr(): 1}
+      )
+
+      self.flow.enrich_attr_by_light_function(
+        import_common_attr = [
+          {"name": origin_count_attr, "as": "origin_count"},
+          {"name": weight_attr, "as": "weight"},
+          {"name": "final_channel_sort_use_relative_weight", "as": "use_relative_weight"},
+          {"name": "sum_of_all_weight_attrs", "as": "sum_of_all_weight"},
+          {"name": "mc_final_candidate_num", "as": "sum_of_all_channel_target_count"}
+        ],
+        export_common_attr = [
+          {"name": "left_count", "as": left_count_attr},
+          {"name": "absolute_weight", "as": absolute_weight_attr}
+        ],
+        function_name = "CalcLeftItemCount",
+        class_name = "ExploreLightFunctionSetV2",
+      )
+
+      queue["scorer"].process(queue["partitioner"].get_flag_attr(), absolute_weight_attr, left_count_attr)
+      self.flow.end_()
+
+      self.flow.log_debug_info(
+        common_attrs=[absolute_weight_attr, weight_attr, left_count_attr, origin_count_attr, "sum_of_all_weight_attrs", "mc_final_candidate_num", "final_channel_sort_use_relative_weight"],
+        for_debug_request_only = True
+      )  
+    
+    self.flow.set_attr_default_value(
+      item_attrs=[{"name": attr, "type": "double", "value": 0.0} for attr in self._score_attrs])
+
+    # item attr 落盘
+    self.flow._dump_attr_to_kafka(
+      stage_name = "mc_s2_score", 
+      dump_item_attr_list = [
+        "mc_csqs_cascade_stage2_photo",
+        "mc_csqs_cascade_stage2_picture",
+        "cascade_dstill_pctr",
+        "cascade_distill_read",
+        "cascade_distill_finish",
+        "cascade_distill_play_7s",
+        "cascade_distill_play_60s",
+        "retr_similary_neg_score",
+        "mc_s2_final_index_photo",
+        "mc_s2_interest_id",
+        "mc_s2_interest_select_flag",
+
+        # ES 队列 (copy from s1)
+        "mc_ensemble_pwatch_time",
+        "mc_ensemble_plvtr",
+        "mc_ensemble_plvtr2",
+        "mc_ensemble_pctr",
+        "mc_ensemble_pltr",
+        "mc_ensemble_pwtr",
+        "mc_ensemble_pftr",
+        "mc_ensemble_ptr",
+        "mc_ensemble_pepstr",
+        "mc_ensemble_pcmtr",
+        "mc_ensemble_pcltr",
+        "mc_ensemble_psvtr",
+        "mc_ensemble_smooth_age_score",
+        "mc_ensemble_peftr",
+        "mc_ensemble_pefctr",
+        "mc_ensemble_pwtd_inverse",
+        "mc_ensemble_pfptr",
+
+        # emp xtr
+        "empirical_ctr",
+        "empirical_ftr",
+        "empirical_htr",
+        "empirical_ltr",
+        "empirical_lvtr",
+        "empirical_ptr",
+        "empirical_svtr",
+        "empirical_wtr",
+      ],
+      dump_common_attr_list = [
+        "dynamic_pic_quota",
+        "mc_s2_hetu_quota_control_is_degraded",
+      ]
+    )
+
+    self.flow.explore_channel_sort(
+      name = "explore_mc_channel_sort",
+      traceback = True,
+      channel_queue_names = "{{final_channel_sort_queue_names}}",
+      weight_type = "RELATIVE",
+      output_count = "{{mc_final_candidate_num}}",
+      stage = self._stage(),
+      queue_weight_attrs = self._weight_attrs,
+      queue_score_attrs = self._score_attrs,
+      queue_flag_attrs = self._flag_attrs,
+      enable_double_lowest_score = False,
+    )
+
+    self.flow.pack_item_attr(  # 保存粗排s2结束后（进入精排）的结果集
+      item_source = {
+        "reco_results": True
+      },
+      mappings = [{
+        "aggregator": "concat",
+        "from_item_attr": "item_key",
+        "to_common_attr": "cascade_final_output_item_key_list"
+      }],
+    )
+
+    # 相当于统计各个队列的 Item 数量
+    self.flow.perflog_attr_value(
+      check_point="final_channel_sort_post",
+      item_attrs=self._flag_attrs,
+      aggregator="sum")
+    
+    
+    self.flow.log_debug_info(common_attrs=["final_channel_sort_queue_params", "final_channel_sort_queue_names"] + self._weight_attrs,
+                             item_attrs=self._score_attrs + self._flag_attrs,
+                             item_num_limit=10)
+
+  def _channel_sort_queue_enable_condition(self, attr):
+    return f"{attr} > 0.0"
+  
+  def _get_weight_attr(self, name):
+    return f"{self._weight_attr_prefix}{name}"
+  
+  def _get_absolute_weight_attr(self, name):
+    return f"{self._absolute_weight_attr_prefix}{name}"
+  
+  def _get_origin_count_attr(self, name):
+    return f"{self._origin_count_attr_prefix}{name}"
+
+  def _get_left_count_attr(self, name):
+    return f"{self._left_count_attr_prefix}{name}"
+
+  def _define_partitioners(self):
+    partitioners = {
+      "photo": McPhotoChannelParitioner(self._stage() + "_photo", self.flow, self.config),
+      "picture": McPictureChannelParitioner(self._stage() + "_picture", self.flow, self.config),
+    }
+    return partitioners
+  
+  def _define_scorers(self):
+    scorers = {
+      "photo": McPhotoChannelScorer(self._stage() + "_photo", self.flow, self.config),
+      "picture": McPictureChannelScorer(self._stage() + "_picture", self.flow, self.config),
+    }
+    return scorers
+
+  def _stage(self):
+    return "cascade_stage2"
+
+  def calc_result_count_to_ab_metric(self):
+    return self.flow \
+      .cast_attr_type(
+        attr_type_cast_configs=[
+          {
+            "to_type": "double",
+            "from_item_attr": "prerank_final_index_photo",
+            "to_item_attr": "prerank_final_index_double"
+          },
+        ]
+      ) \
+      .pack_item_attr(
+        item_source = {
+          "reco_results": True,
+          "total_limit": 200,
+        },
+        mappings = [
+          {
+            "aggregator": "avg",
+            "from_item_attr": "prerank_final_index_double",
+            "to_common_attr": "cascade_s2_top200_prerank_index_avg"
+          },
+        ],
+        target_item = {"is_picture" : 0}
+      ) \
+      .count_reco_result(
+        save_count_to = "cascade_s2_follow_author_count",
+        target_item = {"is_follow_author": 1},
+      ) \
+      .count_reco_result(
+        save_count_to = "cascade_s2_new_interest_count",
+        target_item = {"is_new_interest_explore": 1},
+      ) \
+      .count_reco_result(
+        save_count_to = "cascade_s2_show_ration_level6_count",
+        target_item = {"show_ration_level": 6},
+      ) \
+      .count_reco_result(
+        save_count_to = "cascade_s2_upload_time_day0_count",
+        target_item = {"upload_time_day": 0},
+      ) \
+      .count_reco_result(
+        save_count_to = "cascade_s2_upload_time_day1_count",
+        target_item = {"upload_time_day": 1},
+      ) \
+      .count_reco_result(
+        save_count_to = "cascade_s2_upload_time_day2_count",
+        target_item = {"upload_time_day": 2},
+      ) \
+      .count_reco_result(
+        save_count_to = "cascade_s2_upload_time_day3_7_count",
+        target_item = {"upload_time_day": [3, 4, 5, 6, 7]},
+      ) \
+      .count_reco_result(
+        save_count_to = "cascade_s2_upload_time_day30_180_count",
+        select_item = {
+          "attr_name": "upload_time_day",
+          "compare_to": 30,
+          "select_if": ">=",
+        } \
+      ) \
+      .count_reco_result(
+        save_count_to = "cascade_s2_result_count",
+      ) \
+      .count_reco_result(
+        save_count_to = "cascade_s2_explore_show_gt_show_ration_result_count",
+        select_item = {
+            "attr_name": "explore_stat__real_show_count",
+            "compare_to": "{{show_ration_realshow_threshold}}",
+            "select_if": ">"
+        } \
+      ) \
+      .count_reco_result(
+        save_count_to = "cascade_s2_explore_noncoverview_result_count",
+        select_item = {
+          "attr_name": "audit_hot_cover_level",
+          "compare_to": 0,
+          "select_if": "<=",
+          "select_if_attr_missing": True
+        } \
+      ) \
+      .count_reco_result(
+        save_count_to = "cascade_s2_explore_nonsenseview_result_count",
+        select_item = {
+          "attr_name": "audit_b_second_tag",
+          "compare_to": 0,
+          "select_if": "<=",
+          "select_if_attr_missing": True
+        } \
+      ) \
+      .send_abtest_metrics(
+        metrics = [
+          "cascade_s2_follow_author_count",
+          "cascade_s2_top200_prerank_index_avg",
+          "cascade_s2_new_interest_count",
+          "cascade_s2_show_ration_level6_count",
+          "cascade_s2_upload_time_day0_count",
+          "cascade_s2_upload_time_day1_count",
+          "cascade_s2_upload_time_day2_count",
+          "cascade_s2_upload_time_day3_7_count",
+          "cascade_s2_upload_time_day30_180_count",
+          "cascade_s2_result_count",
+          "cascade_s2_explore_show_gt_show_ration_result_count",
+          "cascade_s2_explore_noncoverview_result_count",
+          "cascade_s2_explore_nonsenseview_result_count",
+          "mc_s2_hetu_quota_control_is_degraded"
+        ],
+        metric_name_prefix = "explore_reco_leaf_",
+      )
+
+  def post_process(self) -> None:
+    self.flow.if_("_IS_ABTEST_METRICS_SAMPLING_REQUEST_ == 1 and _IS_ONLINE_SERVICE_ == 1 and _IS_NOT_BACKUP_ == 1")
+    self.calc_result_count_to_ab_metric()
+    self.flow.end_()
+    # 统计结果量级
+    self.flow \
+      .if_("enable_explore_pic_cluster_counter > 0 or explore_need_traceback > 0") \
+        .explore_pic_cluster_counter_enricher(
+          save_pic_cluster_distr_str_attr = "mc_s2_pic_cluster_distr_str",
+          save_long_term_interest_cnt_attr = "mc_s2_pic_long_term_interest_count",
+          save_short_term_interest_cnt_attr = "mc_s2_pic_short_term_interest_count",
+          save_explore_interest_cnt_attr = "mc_s2_pic_explore_interest_count",
+          save_unknown_interest_cnt_attr = "mc_s2_pic_unknown_interest_count",
+          save_pic_cnt_attr = "mc_s2_pic_count",
+          save_hetu_cnt_attr = "mc_s2_pic_hetu_count",
+          long_term_interest_list_attr = "explore_pic_long_interest_list",
+          short_term_interest_list_attr = "explore_pic_short_interest_list",
+          explore_interest_list_attr = "explore_pic_explore_interest_list",
+          hetu_list_attr = "hetu_tag_level_info__hetu_level_one",
+          target_item = {"is_picture": 1}
+        ) \
+      .end_() \
+      .perflog_attr_value(
+        check_point = "cascading_mc_s2_quota_control",
+        common_attrs = ["mc_s2_hetu_quota_control_is_degraded"],
+        aggregator = "count"
+      )

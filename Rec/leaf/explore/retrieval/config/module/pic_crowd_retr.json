@@ -1,0 +1,21 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_pic_crowd_retr", false],
+      "explore_pic_crowd_retr_uid_prefix": "pic_crowd_uid_",
+      "explore_pic_crowd_retr_crowd_prefix": "pic_crowd_crowd_",
+      "explore_pic_crowd_retr_num": 2000,
+      "explore_pic_crowd_retr_num_per_key": 100,
+      "explore_pic_crowd_retr_num_final": 500
+    },
+    "export": {
+      "results": [
+        "pic_crowd_retr__result"
+      ],
+      "item_attrs": [
+        "operation_pic"
+      ]
+    }
+  },
+  "reason": 2300
+}

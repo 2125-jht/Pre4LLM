@@ -1,0 +1,43 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "param_name": "enable_fountain_comi_rec_runner_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "enable_fountain_comi_rec_runner_retr_colossus": ["enable_fountain_comi_rec_runner_retr_colossus", false],
+      "fountain_comi_rec_runner_retr_trigger_select_num": ["fountain_comi_rec_runner_retr_trigger_select_num", 0],
+      "fountain_comi_rec_runner_retr_progressive_alpha": ["fountain_comi_rec_runner_retr_progressive_alpha", 1.2],
+      "fountain_comi_rec_runner_retr_progressive_base": ["fountain_comi_rec_runner_retr_progressive_base", 40],
+      "fountain_comi_rec_runner_retr_progressive_topk": ["fountain_comi_rec_runner_retr_progressive_topk", 15],
+      "fountain_comi_rec_runner_retr_progressive_skip_num": ["fountain_comi_rec_runner_retr_progressive_skip_num", 100],
+      "fountain_comi_rec_runner_retr_enable_only_select_fountain": ["fountain_comi_rec_runner_retr_enable_only_select_fountain", true],
+      "fountain_comi_rec_runner_retr_server_name": ["fountain_comi_rec_runner_retr_server_name", "kws-kuaishou-fountain-com-retr-fountain-comirec-runner-retr"],
+      "fountain_comi_rec_runner_retr_request_num": ["fountain_comi_rec_runner_retr_request_num", 800],
+      "fountain_comi_rec_runner_retr_ann_src": ["fountain_comi_rec_runner_retr_ann_src", "item"],
+      "fountain_comi_rec_runner_retr_ann_dst": ["fountain_comi_rec_runner_retr_ann_dst", "item"]
+    }, 
+    "import": {
+      "common_attrs": [
+        "colossus_resp_v2",
+        "userInfo",
+        "featureUId",
+        "featureDeviceId",
+        "featureUserProfileV1FollowAidList",
+        "featureUserProfileV1Play18SPidList",
+        "featureUserProfileV1Play18SAidList",
+        "user_fountain_follow_aid_list",
+        "featureFountainProfileLongViewPidList",
+        "featureFountainProfileLongViewAidList",
+        "colossusRetrievalTrigger"
+      ]
+    },
+    "export": {
+      "results": [
+        "comi_rec_runner_retr__result"
+      ]
+    }
+  },
+  "reason": 441
+}

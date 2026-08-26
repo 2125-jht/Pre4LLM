@@ -1,0 +1,38 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_audit_bad_i2i_replace_retr", false],
+      "retrieval_cache_config": ["explore_audit_bad_i2i_replace_retr_cache_config", ""],
+      "kess_service_name": ["explore_audit_bad_i2i_replace_retr_service_name", "grpc_AuditBadI2iReplaceRetrServer"],
+      "service_request_num": ["explore_audit_bad_i2i_replace_retr_retrieve_num", 600],
+      "trigger_cache_prefix": ["explore_audit_bad_i2i_replace_retr_trigger_prefix", "e_audit_"],
+      "enable_trigger_shuffle": ["explore_audit_bad_i2i_replace_retr_enable_trigger_shuffle", 0],
+      "trigger_max_num": ["explore_audit_bad_i2i_replace_retr_trigger_max_num", 100],
+      "retrieve_topk_num": ["explore_audit_bad_i2i_replace_retr_ann_topk", 10]
+    }, 
+    "constant": {
+      "service_timeout_ms": 50
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_retr__trigger_pid"
+      ],
+      "results": [
+        "audit_bad_i2i_retr__result"
+      ]
+    }
+  },
+  "reason": 3127,
+  "service_request_type": "default",
+  "send_common_attrs": [
+    "trigger_cache_prefix",
+    "enable_trigger_shuffle",
+    "trigger_max_num",
+    "retrieve_topk_num"
+  ],
+  "recv_item_attrs": [
+    "i2i_retr__trigger_pid"
+  ],
+  "send_browse_set": false,
+  "trimed_user_info": []
+}

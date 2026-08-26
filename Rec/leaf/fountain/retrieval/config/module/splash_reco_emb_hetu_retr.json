@@ -1,0 +1,28 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_splash_reco_emb_hetu_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_reco_emb_hetu_retr_kess_name_splash": "grpc_fountainNNRetrHetuTagServer",
+      "fountain_reco_emb_hetu_retrieval_splash_num": 50
+    }, 
+    "import": {
+      "common_attrs": [
+        "skip_fountain_reco_emb_hetu_retrieval_splash",
+        "topSubdivisionHetuBucket",
+        "colossusRetrievalTrigger",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_reco_emb_hetu_retr__result"
+      ]
+    }
+  },
+  "reason": 10083
+}

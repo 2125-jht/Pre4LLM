@@ -1,0 +1,31 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_fresh_reco_embu2i_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_leaf_itemcf_retr_service_name": "grpc_onlineCFOptServerV1",
+      "fountain_leaf_itemcf_retr_num": 2000,
+      "fountain_leaf_itemcf_retr_timeout_ms": 150,
+      "skip_fountain_leaf_itemcf_retr": 1,
+      "fountain_leaf_itemcf_only_fountain_behavior": 0
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "userInfoPb"
+      ]
+    },
+    "export": {
+      "results": [
+        "itemcf_retr__result"
+      ]
+    }
+  },
+  "reason": 327
+}

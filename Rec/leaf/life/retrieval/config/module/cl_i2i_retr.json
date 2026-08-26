@@ -1,0 +1,66 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_cl_i2i_retrieval", false],
+      "enable_cluster_trigger": ["enable_cl_i2i_cluster_trigger", false],
+      "enable_click_list": ["enable_cl_i2i_cluster_trigger_click_list", true],
+      "cluster_trigger_max_trigger_len": ["enable_cl_i2i_cluster_trigger_max_trigger_len", 300],
+      "cluster_trigger_max_candidate_len": ["enable_cl_i2i_cluster_trigger_max_candidate_len", 1600],
+      "trigger_limit": ["cl_i2i_src_num", 80],
+      "click_limit": ["cl_i2i_click_num", 30],
+      "like_limit": ["cl_i2i_like_num", 30],
+      "follow_limit": ["cl_i2i_follow_num", 30],
+      "forward_limit": ["cl_i2i_forward_num", 30],
+      "profile_enter_limit": ["cl_i2i_prof_num", 30],
+      "download_limit": ["cl_i2i_download_num", 30],
+      "collect_limit": ["cl_i2i_collect_num", 30],
+      "service_name": ["cl_i2i_retr_service_name", "grpc_exploreClrecI2i"],
+      "service_timeout_ms": ["cl_i2i_retr_ann_timeout", 100],
+      "retrieve_num_per_trigger": ["cl_i2i_retr_num", 20],
+      "src_data_type": ["cl_i2i_bucket", "photo"],
+      "dest_bucket": ["cl_i2i_bucket", "photo"],
+      "ann_dist_threshold": ["cl_i2i_retr_ann_distance", 0.5],
+      "retrieve_num": ["cl_i2i_cand_num", 1200],
+      "knowledge_trigger_expand_cnt": ["cl_i2i_expand_knowledge_trigger_cnt", 0],
+      "interest_explore_trigger_expand_cnt": ["cl_i2i_expand_interest_explore_trigger_cnt", 0],
+      "skip_deduplicate": ["explore_common_deduplicate", 1],
+      "skip_browse_set": ["skip_explore_filter_by_browse_set", 1],
+      "colossus_trigger_limit": ["cl_i2i_colossus_trigger_num", 0],
+      "enable_global_trigger": ["cl_enable_global_trigger", false],
+      "sample_trigger_num": ["cl_sample_trigger_num", 200],
+      "start_idx": ["cl_start_idx", 200],
+      "mc_enable_opt_card_trigger": {
+        "biz_name": "MOBILE",
+        "param_name": "mc_enable_opt_card_trigger",
+        "param_type": "bool",
+        "default_value": false
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__pid_list",
+        "colossus_user_info__knowledge_trigger_set",
+        "colossus_user_info__interest_explore_trigger_set",
+        "colossus_user_info__trigger_id_list",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list",
+        "optcard_like_trigger_id_list",
+        "optcard_dislike_trigger_id_list",
+        "enable_global_trigger_weight_adjust"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_retr__trigger_pid"
+      ],
+      "results": [
+        "cl_i2i_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 3096
+}

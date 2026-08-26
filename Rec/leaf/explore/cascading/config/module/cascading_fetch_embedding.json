@@ -1,0 +1,27 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_fetch_mmu_embedding": false,
+      "enable_explore_mc_fetch_mmu_embedding_marketing_compensation_positive_trigger": false
+    },
+    "import": {
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ],
+      "common_attrs": [
+        "explore_marketing_compensation_positive_trigger",
+        "is_marketing_compensation_photo"
+      ],
+      "item_attrs": [
+        "photo_id"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "explore_mc_mmu_embedding_marketing_source_pids",
+        "explore_mc_mmu_embedding_source_pids",
+        "explore_mc_mmu_embeddings"
+      ]
+    }
+  }
+}

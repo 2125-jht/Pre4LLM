@@ -1,0 +1,16 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_slide_cache_retr", false],
+      "retrieve_num": ["fountain_slide_cache_retr_retrieve_num", 1000],
+      "slide_cache_result_expire_s": ["fountain_slide_cache_result_expire_s", 3600],
+      "reserve_reason": ["fountain_slide_cache_retr_reserve_reason", ""]
+    },
+    "export": {
+      "results": [
+        "slide_cache_retr__result"
+      ]
+    }
+  },
+  "reason": 910
+}

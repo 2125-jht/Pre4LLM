@@ -1,0 +1,61 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_fountain_short_term_retr_server",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "kess_service_name": ["fountain_short_term_retr_server_name", "grpc_shortTermInterestCommonRetr"],
+      "service_request_num": ["fountain_short_term_retr_request_num", 1000],
+      "skip_kess_service": ["skip_fountain_short_term_retr_server", 1],
+      "enable_fountain_short_term_merge_list": 0,
+      "fountain_short_term_interval": 5
+    }, 
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "featureUId",
+        "featureDeviceId",
+        "currentTimeMs",
+        "featureUserProfileV1FollowAidList",
+        "featureUserProfileV1FollowTimestampList",
+        "featureUserProfileV1Play18SPidList",
+        "featureUserProfileV1Play18SAidList",
+        "featureUserProfileV1Play18SPidListTime",
+        "user_fountain_follow_aid_list",
+        "fountain_follow_aid_timestamps",
+        "featureFountainProfileLongViewPidList",
+        "featureFountainProfileLongViewAidList",
+        "featureFountainProfileLongViewTimeList"
+      ]
+    },
+    "export": {
+      "results": [
+        "short_term_interest_retr__result"
+      ]
+    }
+  },
+  "reason": 412,
+  "service_request_type": "default",
+  "send_common_attrs": [
+    {"name": "featureUId", "as": "uId"},
+    {"name": "featureDeviceId", "as": "featureDeviceId"},
+    {"name": "currentTimeMs", "as": "currentTimeMs"},
+    {"name": "featureUserProfileV1FollowAidList", "as": "profile_v1_follow_aid"},
+    {"name": "featureUserProfileV1FollowTimestampList", "as": "profile_v1_follow_timestamps"},
+    {"name": "featureUserProfileV1Play18SPidList", "as": "profile_play_18s_pid"},
+    {"name": "featureUserProfileV1Play18SAidList", "as": "profile_play_18s_aid"},
+    {"name": "featureUserProfileV1Play18SPidListTime", "as": "profile_play_18s_timestamps"},
+    {"name": "user_fountain_follow_aid_list", "as": "fountain_follow_aid_list"},
+    {"name": "fountain_follow_aid_timestamps", "as": "fountain_follow_aid_timestamps"},
+    {"name": "featureFountainProfileLongViewPidList", "as": "fountain_longview_pid"},
+    {"name": "featureFountainProfileLongViewAidList", "as": "fountain_longview_aid"},
+    {"name": "featureFountainProfileLongViewTimeList", "as": "fountain_longview_timestamps"},
+    {"name": "enable_fountain_short_term_merge_list", "as": "enable_merge_list"},
+    {"name": "fountain_short_term_interval", "as": "interval"}
+  ]
+}

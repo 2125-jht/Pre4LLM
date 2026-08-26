@@ -1,0 +1,1564 @@
+{
+  "status": "training", 
+  "ps_capacity": 900000000, 
+  "__SERVER_PART": "default_part", 
+  "eval": {
+    "eval_window_seconds": 300, 
+    "eval_window_samples": 0
+  }, 
+  "__SERVER_NAME": "paas_ps_server", 
+  "model_loader": {
+    "producer": "kuiba", 
+    "shard_num": 45, 
+    "threads": 16, 
+    "user": "reco", 
+    "load_network_enable": true, 
+    "consumer": "ps", 
+    "model_path": "viewfs:///home/reco/zhengjie/dul_kuiba_tf_old_mix_crf_v1/checkpoints/1580716800"
+  }, 
+  "shard_num": 55, 
+  "shm_dir": "/dev/shm/ps", 
+  "server_config": {}, 
+  "__SERVER_SHARD": "yz", 
+  "sample_reader": {
+    "group": "hdfs_realtime_log", 
+    "shard_num": 55, 
+    "queues": [], 
+    "type_name": "BTQueueSampleReader", 
+    "begin_time": "20190924183000", 
+    "buffer_size": 8192, 
+    "reader_name": "dul_kuiba_tf_old_mix_crf_v1"
+  }, 
+  "ps_memory": 214748364800, 
+  "max_feature_num": 670000000, 
+  "kess_config": {}, 
+  "online_update": true, 
+  "network": {
+    "model_queue": {
+      "min_feature_score": 5.0, 
+      "warmup": true, 
+      "shard_num": 16, 
+      "queue_name": "dul_kuiba_tf_old_mix_crf_v1", 
+      "batch_update_period_seconds": 7200, 
+      "queue_handler": "infra_btq"
+    }, 
+    "checkpoint": {
+      "path": "viewfs:///home/reco/zhengjie/dul_kuiba_tf_old_mix_crf_v1", 
+      "part_key_num": 10000000, 
+      "save_interval_seconds": 14400
+    }, 
+    "loss_functions": {
+      "ua_cross_n": {
+        "inputs": [
+          "param.user_id", 
+          "param.author_id", 
+          "param.photo_author_score", 
+          "param.author_profile_avg_time", 
+          "param.author_follow_avg_time", 
+          "param.photo_user_author_emp_tpc", 
+          "param.live_user_author_emp_tpc"
+        ], 
+        "labels": {
+          "followNegExp": {}, 
+          "followPosExp": {
+            "sample_rate": 1.0, 
+            "expired_output": [
+              1.0
+            ]
+          }
+        }, 
+        "type": "LogLoss", 
+        "auc_uid": "uId"
+      }, 
+      "ctr_n": {
+        "inputs": [
+          "param.user_id", 
+          "param.photo_id", 
+          "param.author_id", 
+          "param.device_id", 
+          "param.user_gender", 
+          "param.user_age_seg", 
+          "param.user_province", 
+          "param.user_city", 
+          "param.user_day_of_week", 
+          "param.user_hour_of_day", 
+          "param.user_request_ip", 
+          "param.user_request_applist", 
+          "param.user_hot_like_list", 
+          "param.user_follow_like_list", 
+          "param.user_hot_longplay_list", 
+          "param.user_follow_longplay_list", 
+          "param.user_1d_click_sent_aid", 
+          "param.user_3d_click_sent_aid", 
+          "param.user_7d_click_sent_aid", 
+          "param.user_follow_author_days", 
+          "param.user_is_hate_author", 
+          "param.user_is_friend_author", 
+          "param.user_follow_author_hour", 
+          "param.user_follow_author_aggr_watchtime", 
+          "param.user_follow_author_aggr_watchtime_percent", 
+          "param.photo_duration_sec", 
+          "param.photo_user_author_emp_ctr", 
+          "param.photo_user_author_emp_ltr", 
+          "param.photo_user_author_emp_tpc", 
+          "param.photo_user_emp_tpc", 
+          "param.photo_living", 
+          "param.photo_hate_author", 
+          "param.photo_unfollow_author", 
+          "param.photo_is_picture", 
+          "param.photo_follow_pctr", 
+          "param.photo_follow_pltr", 
+          "param.photo_follow_pftr", 
+          "param.photo_follow_plvtr", 
+          "param.photo_follow_psvr", 
+          "param.photo_follow_pcmtr", 
+          "param.photo_follow_pgtr", 
+          "param.photo_follow_pdctr", 
+          "param.user_follow_count", 
+          "param.author_fans_count_low", 
+          "param.author_fans_count_high", 
+          "param.author_follow_emp_ctr", 
+          "param.author_follow_emp_ltr", 
+          "param.author_follow_emp_ftr", 
+          "param.author_follow_emp_cmtr", 
+          "param.author_follow_avg_time", 
+          "param.author_profile_emp_ctr", 
+          "param.author_profile_emp_ltr", 
+          "param.author_profile_emp_ftr", 
+          "param.author_profile_emp_cmtr", 
+          "param.author_profile_emp_ntr", 
+          "param.author_profile_emp_rtr", 
+          "param.author_profile_avg_time", 
+          "param.photo_author_score", 
+          "param.photo_favirate_author", 
+          "param.live_user_author_emp_tpc", 
+          "param.live_user_emp_tpc", 
+          "param.live_hate_author", 
+          "param.author_follow_emp_ctr_live", 
+          "param.author_follow_emp_ltr_live", 
+          "param.author_follow_emp_ftr_live", 
+          "param.author_follow_emp_cmtr_live", 
+          "param.author_follow_avg_time_live", 
+          "param.author_follow_gift_live", 
+          "param.live_click_list", 
+          "param.live_like_list", 
+          "param.live_forward_list", 
+          "param.live_comment_list", 
+          "param.live_gift_list", 
+          "param.live_hate_list", 
+          "param.photo_click_list", 
+          "param.photo_like_list", 
+          "param.photo_forward_list", 
+          "param.photo_hate_list", 
+          "param.live_author_click_list", 
+          "param.live_author_like_list", 
+          "param.live_author_comment_list", 
+          "param.live_author_gift_list", 
+          "param.profile_author_list", 
+          "param.photo_author_hate_list", 
+          "param.photo_author_comment_list", 
+          "param.photo_author_forward_list", 
+          "param.user_item_click", 
+          "param.user_item_like", 
+          "param.user_item_comment", 
+          "param.user_item_forward", 
+          "param.user_author_cross", 
+          "param.pLId"
+        ], 
+        "labels": {
+          "followNegExp": {}, 
+          "followPosExp": {
+            "sample_rate": 1.0, 
+            "expired_output": [
+              1.0
+            ]
+          }
+        }, 
+        "type": "LogLoss", 
+        "auc_uid": "uId", 
+        "weight": "pSampleWeightExp"
+      }
+    }, 
+    "parameters": {
+      "user_follow_longplay_list": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 100, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uLongPlayListFollow"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "live_like_list": {
+        "expire_second": 604800, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 101, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uLikeListFollowLive", 
+              "uLikeListNearLive", 
+              "uLikeListHotLive", 
+              "uLikeListLive"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "live_click_list": {
+        "expire_second": 604800, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 102, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uClickListFollowLive", 
+              "uClickListNearLive", 
+              "uClickListHotLive", 
+              "uClickListLive"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "user_hour_of_day": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 103, 
+            "converter": "id", 
+            "attr": [
+              "uHourOfDay"
+            ]
+          }
+        ]
+      }, 
+      "user_3d_click_sent_aid": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 104, 
+            "converter": "id", 
+            "attr": [
+              "uRecent3DayClickedSentPhotoAuthorId"
+            ]
+          }
+        ]
+      }, 
+      "user_follow_author_hour": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 105, 
+            "converter": "discrete", 
+            "converter_args": "24,0,365,1,0", 
+            "attr": [
+              "uAuthorFollowGapHour"
+            ]
+          }
+        ]
+      }, 
+      "live_author_gift_list": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 106, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uGiftLiveAuthorListFollow", 
+              "uGiftLiveAuthorListNear", 
+              "uGiftLiveAuthorList"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "live_user_emp_tpc": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 107, 
+            "converter": "discrete", 
+            "converter_args": "30,0,10,100,0", 
+            "attr": [
+              "pFollowLiveEmpTPC"
+            ]
+          }
+        ]
+      }, 
+      "live_hate_list": {
+        "expire_second": 604800, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 108, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uHateListFollowLive", 
+              "uHateListNearLive", 
+              "uHateListHotLive"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "user_request_applist": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 109, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "dAppList"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "author_follow_emp_ftr": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 110, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpFtrFollowPhoto"
+            ]
+          }
+        ]
+      }, 
+      "live_author_click_list": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 111, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uClickLiveAuthorListFollow", 
+              "uClickLiveAuthorListNear", 
+              "uClickLiveAuthorList"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "author_profile_emp_ltr": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 112, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpLtrProfile"
+            ]
+          }
+        ]
+      }, 
+      "user_follow_author_aggr_watchtime": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 113, 
+            "converter": "discrete", 
+            "converter_args": "6,0,10,100,0", 
+            "attr": [
+              "uFollowAuthorPhotoAggrWatchTime"
+            ]
+          }
+        ]
+      }, 
+      "author_follow_avg_time_live": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 114, 
+            "converter": "discrete", 
+            "converter_args": "1000,0,60,3,0", 
+            "attr": [
+              "uAuthorAvgTimeFollowLive"
+            ]
+          }
+        ]
+      }, 
+      "author_fans_count_high": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 115, 
+            "converter": "discrete", 
+            "converter_args": "10000,0,100,1,0", 
+            "attr": [
+              "photo_author_fans_cnt"
+            ]
+          }
+        ]
+      }, 
+      "user_author_cross": {
+        "dim": 32, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 116, 
+            "converter": "cross", 
+            "converter_args": {
+              "need_dulp": true
+            }, 
+            "attr": [
+              "uId", 
+              "aId"
+            ]
+          }
+        ], 
+        "expire_second": 2592000
+      }, 
+      "author_follow_emp_cmtr": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 117, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpCmtrFollowPhoto"
+            ]
+          }
+        ]
+      }, 
+      "photo_unfollow_author": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 118, 
+            "converter": "id", 
+            "attr": [
+              "pIsUnfollowAuthorItem"
+            ]
+          }
+        ]
+      }, 
+      "author_profile_emp_ntr": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 119, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpNtrProfile"
+            ]
+          }
+        ]
+      }, 
+      "live_author_like_list": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 120, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uLikeLiveAuthorListFollow", 
+              "uLikeLiveAuthorListNear", 
+              "uLikeLiveAuthorList"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "profile_author_list": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 121, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uProfileListFollow", 
+              "uProfileListNear", 
+              "uProfileListHot"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "photo_forward_list": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 122, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uForwardListFollow", 
+              "uForwardListNear", 
+              "uForwardListHot", 
+              "uForwardList"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "user_is_friend_author": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 123, 
+            "converter": "id", 
+            "attr": [
+              "uAuthorIsFriend"
+            ]
+          }
+        ]
+      }, 
+      "author_profile_emp_rtr": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 124, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpRtrProfile"
+            ]
+          }
+        ]
+      }, 
+      "user_follow_author_days": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 125, 
+            "converter": "discrete", 
+            "converter_args": "365,0,3,100,0", 
+            "attr": [
+              "uFollowAuthorTimeDay"
+            ]
+          }
+        ]
+      }, 
+      "live_author_comment_list": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 126, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uCommentLiveAuthorListFollow", 
+              "uCommentLiveAuthorListNear", 
+              "uCommentLiveAuthorList"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "user_province": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 127, 
+            "converter": "id", 
+            "attr": [
+              "uProvince"
+            ]
+          }
+        ]
+      }, 
+      "default_online_push_limit": 5, 
+      "user_follow_like_list": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 128, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uLikeListFollow"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "user_day_of_week": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 129, 
+            "converter": "id", 
+            "attr": [
+              "uDayOfWeek"
+            ]
+          }
+        ]
+      }, 
+      "author_follow_gift_live": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 130, 
+            "converter": "discrete", 
+            "converter_args": "100,0,5,100,0", 
+            "attr": [
+              "uAuthorAvgGiftFollowLive"
+            ]
+          }
+        ]
+      }, 
+      "user_item_comment": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 131, 
+            "converter": "id", 
+            "attr": [
+              "uIsItemCommented"
+            ]
+          }
+        ]
+      }, 
+      "default_initial_lr": 0.05, 
+      "default_dim": 16, 
+      "photo_id": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 132, 
+            "converter": "id", 
+            "attr": [
+              "pId"
+            ]
+          }
+        ], 
+        "expire_second": 1296000
+      }, 
+      "user_item_forward": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 133, 
+            "converter": "id", 
+            "attr": [
+              "uIsItemedForwarded"
+            ]
+          }
+        ]
+      }, 
+      "photo_is_picture": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 134, 
+            "converter": "id", 
+            "attr": [
+              "pIsPictureType"
+            ]
+          }
+        ]
+      }, 
+      "author_follow_emp_cmtr_live": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 135, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpCmtrFollowLive"
+            ]
+          }
+        ]
+      }, 
+      "default_decay_rate": 0.9999, 
+      "user_7d_click_sent_aid": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 136, 
+            "converter": "id", 
+            "attr": [
+              "uRecent7DayClickedSentPhotoAuthorId"
+            ]
+          }
+        ]
+      }, 
+      "user_is_hate_author": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 137, 
+            "converter": "id", 
+            "attr": [
+              "uHateAuthor"
+            ]
+          }
+        ]
+      }, 
+      "photo_favirate_author": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 138, 
+            "converter": "id", 
+            "attr": [
+              "pIsFavoriateAuthorItem"
+            ]
+          }
+        ]
+      }, 
+      "author_profile_avg_time": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 139, 
+            "converter": "discrete", 
+            "converter_args": "6,0,10,100,0", 
+            "attr": [
+              "uAuthorAvgTimeProfile"
+            ]
+          }
+        ]
+      }, 
+      "author_follow_emp_ltr": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 140, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpLtrFollowPhoto"
+            ]
+          }
+        ]
+      }, 
+      "photo_user_author_emp_tpc": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 141, 
+            "converter": "discrete", 
+            "converter_args": "6,0,10,100,0", 
+            "attr": [
+              "pUserAuthorPhotoEmpTPC"
+            ]
+          }
+        ]
+      }, 
+      "default_initial_g2sum": 3, 
+      "photo_author_hate_list": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 142, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uHatePhotoAuthorListFollow", 
+              "uHatePhotoAuthorListNear", 
+              "uHatePhotoAuthorListHot", 
+              "uHatePhotoAuthorList"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "photo_follow_pctr": {
+        "dim": 32, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 143, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "fr_pctr"
+            ]
+          }
+        ]
+      }, 
+      "photo_like_list": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 144, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uLikeListFollow", 
+              "uLikeListNear", 
+              "uLikeListHot", 
+              "uLikeList"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "author_follow_emp_ctr_live": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 145, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpCtrFollowLive"
+            ]
+          }
+        ]
+      }, 
+      "user_1d_click_sent_aid": {
+        "expire_second": 86400, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 146, 
+            "converter": "id", 
+            "attr": [
+              "uRecent1DayClickedSentPhotoAuthorId"
+            ]
+          }
+        ]
+      }, 
+      "photo_author_score": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 147, 
+            "converter": "discrete", 
+            "converter_args": "1,0,1,100,0", 
+            "attr": [
+              "uAuthorIntimacyScore"
+            ]
+          }
+        ]
+      }, 
+      "user_hot_like_list": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 148, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uLikeList"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "photo_follow_plvtr": {
+        "dim": 32, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 149, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "fr_plvtr"
+            ]
+          }
+        ]
+      }, 
+      "user_gender": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 150, 
+            "converter": "id", 
+            "attr": [
+              "uGender"
+            ]
+          }
+        ]
+      }, 
+      "photo_duration_sec": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 151, 
+            "converter": "discrete", 
+            "converter_args": "1000,0,180,1,0", 
+            "attr": [
+              "pVideoDurationMs"
+            ]
+          }
+        ]
+      }, 
+      "author_profile_emp_ctr": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 152, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpCtrProfile"
+            ]
+          }
+        ]
+      }, 
+      "photo_follow_pltr": {
+        "dim": 32, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 153, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "fr_pltr"
+            ]
+          }
+        ]
+      }, 
+      "live_hate_author": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 154, 
+            "converter": "id", 
+            "attr": [
+              "pIsHateLiveAuthorItem"
+            ]
+          }
+        ]
+      }, 
+      "live_gift_list": {
+        "expire_second": 604800, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 155, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uGiftListFollowLive", 
+              "uGiftListNearLive", 
+              "uGiftListLive"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "author_profile_emp_cmtr": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 156, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpCmtrProfile"
+            ]
+          }
+        ]
+      }, 
+      "default_batch_decay": 0.99, 
+      "user_follow_count": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 157, 
+            "converter": "discrete", 
+            "converter_args": "200,0,10,1,0", 
+            "attr": [
+              "follow_cnt"
+            ]
+          }
+        ]
+      }, 
+      "photo_user_emp_tpc": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 158, 
+            "converter": "discrete", 
+            "converter_args": "6,0,10,100,0", 
+            "attr": [
+              "pFollowPhotoEmpTPC"
+            ]
+          }
+        ]
+      }, 
+      "author_follow_emp_ltr_live": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 159, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpLtrFollowLive"
+            ]
+          }
+        ]
+      }, 
+      "photo_living": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 160, 
+            "converter": "id", 
+            "attr": [
+              "pIsLive"
+            ]
+          }
+        ]
+      }, 
+      "author_follow_emp_ftr_live": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 161, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpFtrFollowLive"
+            ]
+          }
+        ]
+      }, 
+      "photo_follow_psvr": {
+        "dim": 32, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 162, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "fr_psvr"
+            ]
+          }
+        ]
+      }, 
+      "author_profile_emp_ftr": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 163, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpFtrProfile"
+            ]
+          }
+        ]
+      }, 
+      "default_move_length": 0.01, 
+      "live_forward_list": {
+        "expire_second": 604800, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 164, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uForwardListFollowLive", 
+              "uForwardListNearLive", 
+              "uForwardListHotLive", 
+              "uForwardListLive"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "photo_follow_pcmtr": {
+        "dim": 32, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 165, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "fr_pcmtr"
+            ]
+          }
+        ]
+      }, 
+      "live_comment_list": {
+        "expire_second": 604800, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 166, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uCommentListFollowLive", 
+              "uCommentListNearLive", 
+              "uCommentListLive"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "user_item_click": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 167, 
+            "converter": "id", 
+            "attr": [
+              "uIsItemClicked"
+            ]
+          }
+        ]
+      }, 
+      "default_batch_num": 1, 
+      "user_follow_author_aggr_watchtime_percent": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 168, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uFollowAuthorPhotoAggrWatchTimePercent"
+            ]
+          }
+        ]
+      }, 
+      "user_item_like": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 169, 
+            "converter": "id", 
+            "attr": [
+              "uIsItemLiked"
+            ]
+          }
+        ]
+      }, 
+      "default_type": 1, 
+      "default_expire_second": 2592000, 
+      "user_city": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 170, 
+            "converter": "id", 
+            "attr": [
+              "uCity"
+            ]
+          }
+        ]
+      }, 
+      "photo_author_comment_list": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 171, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uCommentPhotoAuthorListFollow", 
+              "uCommentPhotoAuthorListNear", 
+              "uCommentPhotoAuthorListHot", 
+              "uCommentPhotoAuthorList"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "live_user_author_emp_tpc": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 172, 
+            "converter": "discrete", 
+            "converter_args": "30,0,10,100,0", 
+            "attr": [
+              "pUserAuthorLiveEmpTPC"
+            ]
+          }
+        ]
+      }, 
+      "user_hot_longplay_list": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 173, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uLongPlayListHot"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "photo_user_author_emp_ltr": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 174, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "pUserAuthorPhotoEmpLtr"
+            ]
+          }
+        ]
+      }, 
+      "photo_follow_pdctr": {
+        "dim": 32, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 175, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "fr_pdctr"
+            ]
+          }
+        ]
+      }, 
+      "photo_hate_list": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 176, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uHateListFollowLive", 
+              "uHateListNearLive", 
+              "uHateListHotLive"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "device_id": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 177, 
+            "converter": "id", 
+            "attr": [
+              "dId"
+            ]
+          }
+        ], 
+        "expire_second": -1
+      }, 
+      "author_follow_avg_time": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 178, 
+            "converter": "discrete", 
+            "converter_args": "6,0,10,100,0", 
+            "attr": [
+              "uAuthorAvgTimeFollowPhoto"
+            ]
+          }
+        ]
+      }, 
+      "photo_user_author_emp_ctr": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 179, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "pUserAuthorPhotoEmpCtr"
+            ]
+          }
+        ]
+      }, 
+      "user_age_seg": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 180, 
+            "converter": "id", 
+            "attr": [
+              "uAgeSeg"
+            ]
+          }
+        ]
+      }, 
+      "photo_click_list": {
+        "expire_second": 345600, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 181, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uClickListFollow", 
+              "uClickListNear", 
+              "uClickListHot", 
+              "uClickList"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "user_id": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 182, 
+            "converter": "id", 
+            "attr": [
+              "uId"
+            ]
+          }
+        ], 
+        "expire_second": -1
+      }, 
+      "photo_author_forward_list": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 183, 
+            "converter": "list", 
+            "converter_args": null, 
+            "attr": [
+              "uForwardPhotoAuthorListFollow", 
+              "uForwardPhotoAuthorListNear", 
+              "uForwardPhotoAuthorListHot", 
+              "uForwardPhotoAuthorList"
+            ]
+          }
+        ], 
+        "join_limit": 200
+      }, 
+      "author_fans_count_low": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 184, 
+            "converter": "discrete", 
+            "converter_args": "100,0,100,1,0", 
+            "attr": [
+              "photo_author_fans_cnt"
+            ]
+          }
+        ]
+      }, 
+      "user_request_ip": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 185, 
+            "converter": "id", 
+            "attr": [
+              "uIp"
+            ]
+          }
+        ]
+      }, 
+      "photo_follow_pgtr": {
+        "dim": 32, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 186, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "fr_pgtr"
+            ]
+          }
+        ]
+      }, 
+      "pLId": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 187, 
+            "converter": "id", 
+            "attr": [
+              "pLId"
+            ]
+          }
+        ]
+      }, 
+      "author_id": {
+        "dim": 64, 
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 188, 
+            "converter": "id", 
+            "attr": [
+              "aId"
+            ]
+          }
+        ], 
+        "expire_second": -1
+      }, 
+      "photo_follow_pftr": {
+        "dim": 32, 
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 189, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "fr_pftr"
+            ]
+          }
+        ]
+      }, 
+      "author_follow_emp_ctr": {
+        "type": 1, 
+        "attrs": [
+          {
+            "cache_shard": "", 
+            "key_type": 190, 
+            "converter": "discrete", 
+            "converter_args": "0.2,0,5,100,0", 
+            "attr": [
+              "uAuthorEmpCtrFollowPhoto"
+            ]
+          }
+        ]
+      }, 
+      "photo_hate_author": {
+        "type": 1, 
+        "attrs": [
+          {
+            "key_type": 191, 
+            "converter": "id", 
+            "attr": [
+              "pIsHatePhotoAuthorItem"
+            ]
+          }
+        ]
+      }
+    }, 
+    "layers": {
+      "default_initial_lr": 5e-06, 
+      "default_batch_num": 1, 
+      "default_batch_decay": 0.9999, 
+      "default_mom_decay_rate": 0.99, 
+      "default_move_length": 0.001, 
+      "default_ada_decay_rate": 0.9999
+    }, 
+    "shard_num": 55, 
+    "updater_type": "ada_momentum_updater", 
+    "type": "TFNetwork"
+  }
+}

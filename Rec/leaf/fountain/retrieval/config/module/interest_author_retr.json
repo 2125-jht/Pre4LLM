@@ -1,0 +1,38 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_interest_author_retr", false],
+      "fountain_interest_author_retr_service_name": {
+        "param_name": "fountain_interest_author_retr_service_name",
+        "param_type": "string",
+        "default_value": "grpc_recoHotOrderedIndexServer"
+      },
+      "fountain_interest_author_retrieval_query": {
+        "param_name": "fountain_interest_author_retrieval_query",
+        "param_type": "string",
+        "default_value": "authorId2PhotoIdOrderByUploadTime"
+      },
+      "fountain_interest_author_rete_search_num_per_author": {
+        "param_name": "fountain_interest_author_rete_search_num_per_author",
+        "param_type": "int",
+        "default_value": 10
+      },
+      "fountain_interest_author_retr_retrieve_num": {
+        "param_name": "fountain_interest_author_retr_retrieve_num",
+        "param_type": "int",
+        "default_value": 600
+      }
+    }, 
+    "import": {
+      "common_attrs": [
+        "long_term_interest_authors"
+      ]
+    },
+    "export": {
+      "results": [
+        "interest_author_retr__result"
+      ]
+    }
+  },
+  "reason": 354
+}

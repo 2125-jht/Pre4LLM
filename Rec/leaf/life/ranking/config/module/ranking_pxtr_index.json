@@ -1,0 +1,43 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_enable_get_ranking_pxtr_index": 0
+    },
+    "import": {
+      "item_attrs": [
+        "pctr",
+        "fr_score1",
+        "fr_score2",
+        "pltr",
+        "pftr",
+        "pwtr",
+        "pepstr",
+        "psvr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pctr_index",
+        "plvtr_index",
+        "pvtr_index",
+        "pltr_index",
+        "pftr_index",
+        "pwtr_index",
+        "pesptr_index",
+        "psvr_index"
+      ]
+    }
+  },
+  "ab_enable": "explore_enable_get_ranking_pxtr_index",
+  "index_dict": {
+    "pctr": "pctr_index",
+    "fr_score1": "plvtr_index",
+    "fr_score2": "pvtr_index",
+    "pltr": "pltr_index",
+    "pftr": "pftr_index",
+    "pwtr": "pwtr_index",
+    "pepstr": "pesptr_index",
+    "psvr": "psvr_index"
+  }
+}
+    

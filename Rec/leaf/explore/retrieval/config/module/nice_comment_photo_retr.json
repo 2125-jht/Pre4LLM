@@ -1,0 +1,32 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_nice_comment_photo_common_retr", false],
+      "kess_service_name": ["nice_comment_photo_common_retr_service_name", "grpc_niceCommentPhotoCommonRetrServer"],
+      "service_request_num": ["nice_comment_photo_common_retr_request_num", 500]
+    },
+    "constant": {
+      "service_timeout_ms": 50,
+      "enable_trim_user_info": 1
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "nice_comment_photo_retr__result"
+      ]
+    }
+  },
+  "reason": 3111,
+  "service_request_type": "default",
+  "trim_user_info": [
+    "browsed_photo_ids",
+    "user_profile_v1.video_playing_stat.photo_id",
+    "user_profile_v1.video_playing_stat.video_duration",
+    "user_profile_v1.video_playing_stat.playing_time",
+    "user_profile_v1.comment_list.photo_id"
+  ]
+}

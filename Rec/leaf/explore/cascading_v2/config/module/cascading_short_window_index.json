@@ -1,0 +1,24 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fetch_short_window_photo_info": ["enable_explore_fetch_short_window_photo_info", false]
+    },
+    "import": {
+      "common_attrs": [
+        "prerank_step3"
+      ],
+      "results": [
+        "cascading_prerank_channel_sort__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "mc_step1"
+      ],
+      "item_attrs": [
+        "rc3h",
+        "pc3h"
+      ]
+    }
+  }
+}

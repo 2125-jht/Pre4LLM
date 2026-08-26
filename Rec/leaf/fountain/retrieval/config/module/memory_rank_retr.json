@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_memory_rank_retrieval", false],
+      "fountain_memory_rank_retrieval_limit_num": ["fountain_memory_rank_retrieval_limit_num", 300],
+      "fountain_memory_rank_retrieval_num": ["fountain_memory_rank_retrieval_num", 500],
+      "enable_memory_rank_inner_sort" : ["enable_memory_rank_inner_sort", false],
+      "enable_cache_rank_prefilter" : ["fountain_nearline_retrieval_prefile_by_cache_rank", 0]
+    },
+    "constant": {
+      "redis_key_prefix": "frrr"
+    },
+    "import": {
+      "item_attrs": [
+        "memory_rank_score"
+      ],
+      "common_attrs": [
+        "rank_neg_photo_id_list_str",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results" : [
+        "memory_rank_retr__result"
+      ]
+    }
+  },
+  "reason": 410
+}

@@ -1,0 +1,37 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["explore_enable_unbias_interest_top_photo_retr", false],
+      "reco_kconf_key_param": "reco.offline.unbias_interest_cid_map",
+      "enable_only_inactive_user_crows": 0,
+      "cand_num": ["explore_unbias_interest_top_photo_retr_cand_num", 1000],
+      "explore_unbias_interest_top_photo_retr_num_cid": 50,
+      "explore_unbias_interest_top_photo_retr_num_per_cid": 50,
+      "explore_unbias_interest_top_photo_retr_cid_decay_rate": 1.0,
+      "explore_unbias_interest_top_photo_retr_cid_random_range": 1.0,
+      "explore_unbias_interest_top_photo_retr_cid_prefix": ""
+    },
+    "import": {
+      "common_attrs": [
+        "basic_info_age_segment_v2",
+        "basic_info_gender_v2",
+        "unbias_interest_top_photo_map_ptr",
+        "browse_screen__pid_list",
+        "unbias_pid_5w_set_ptr"
+      ],
+      "result": [
+        "memory_data_fetch__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "unbias_interest_selected_cids"
+      ],
+      "results": [
+        "unbias_intesest_top_photo_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 3454
+}

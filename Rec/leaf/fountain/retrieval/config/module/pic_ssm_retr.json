@@ -1,0 +1,43 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "param_name": "enable_fountain_pic_ssm_retr",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "fountain_pic_ssm_u2i_retr_kess_name": {
+        "param_name": "fountain_pic_ssm_u2i_retr_kess_name",
+        "default_value": "grpc_fountainPicSsmU2iRetrV5",
+        "param_type": "string"
+      },
+      "fountain_pic_ssm_u2i_retr_request_num": {
+        "param_name": "fountain_pic_ssm_u2i_retr_request_num",
+        "default_value": 500,
+        "param_type": "int"
+      },
+      "fountain_pic_ssm_u2i_retr_ann_dest_bucket": {
+        "param_name": "fountain_pic_ssm_u2i_retr_ann_dest_bucket",
+        "param_type": "string",
+        "default_value": "photo_dest_index"
+      },
+      "fountain_pic_ssm_u2i_retr_ann_score_thresh": {
+        "param_name": "fountain_pic_ssm_u2i_retr_ann_score_thresh",
+        "param_type": "double",
+        "default_value": 0.0
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "userInfoPb",
+        "colossus_resp_v2"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_ssm_retr__result"
+      ]
+    }
+  },
+  "reason": 235
+}

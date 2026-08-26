@@ -1,0 +1,532 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "explore_pic_power_weight_fullrank_pctr_score": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_power_weight_fullrank_pctr_score",
+          "param_type": "double",
+          "default_value": 0.5,
+          "report_ab_hit": true
+        },
+        "explore_pic_power_weight_fullrank_pltr_score": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_power_weight_fullrank_pltr_score",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_pic_power_weight_fullrank_pwtr_score": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_power_weight_fullrank_pwtr_score",
+          "param_type": "double",
+          "default_value": 0.2,
+          "report_ab_hit": true
+        },
+        "explore_pic_power_weight_fullrank_pftr_score": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_power_weight_fullrank_pftr_score",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_pic_power_weight_fullrank_pcmtr_score": 0.1,
+        "explore_pic_power_weight_fullrank_pptr_score": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_power_weight_fullrank_pptr_score",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_pic_power_weight_fullrank_pcmef_score": 0.0,
+        "explore_pic_power_weight_fullrank_pevtr_score": 0.0,
+        "explore_pic_power_weight_fullrank_fr_score1_score": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_power_weight_fullrank_fr_score1_score",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_pic_power_weight_fullrank_fr_score2_score": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_power_weight_fullrank_fr_score2_score",
+          "param_type": "double",
+          "default_value": 0.0,
+          "report_ab_hit": true
+        },
+        "explore_pic_power_weight_fullrank_pepstr_score": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_power_weight_fullrank_pepstr_score",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_pic_power_weight_fullrank_pdtr_score": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_power_weight_fullrank_pdtr_score",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_pic_power_weight_fullrank_pcltr_score": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_power_weight_fullrank_pcltr_score",
+          "param_type": "double",
+          "default_value": 0.2,
+          "report_ab_hit": true
+        },
+        "explore_pic_power_weight_htr_score": 0.1,
+        "explore_pic_power_weight_fullrank_l2r_score": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_power_weight_fullrank_l2r_score",
+          "param_type": "double",
+          "default_value": 0.5,
+          "report_ab_hit": true
+        },
+        "explore_pic_power_weight_deep_ltr_score": 0.2,
+        "explore_pic_power_weight_explore_fr_ensemble_score": 0.0,
+        "explore_pic_power_weight_fetr": 0.0,
+        "explore_pic_power_weight_fountain_eff": 0.0,
+        "skip_explore_final_pic_rerank": {
+          "biz_name": "RECO_RPC",
+          "param_name": "skip_explore_final_pic_rerank",
+          "param_type": "int",
+          "default_value": 1,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_limit": 500,
+        "skip_explore_pic_rerank_mmr": 1,
+        "explore_pic_rerank_mmr_need_diversity_num": 5,
+        "explore_pic_rerank_mmr_cal_candidate_num": 50,
+        "explore_pic_rerank_mmr_item_ensemble_score_attr": "fr_pic_ensemble_score",
+        "explore_pic_rerank_mmr_lambda": 0.6,
+        "explore_pic_rerank_mmr_gamma": 0.6,
+        "explore_pic_rerank_mmr_no_max_weight_use": true,
+        "explore_pic_rerank_enable_mmr_his_feedback_diversity": false,
+        "explore_pic_rerank_mmr_no_his_max_weight_use": false,
+        "explore_pic_rerank_mmr_diversity_dim_weight": "0.1:0.1:0.1:0.1:0.1:0.1",
+        "explore_pic_rerank_mmr_cal_noclick_num": 20,
+        "explore_pic_rerank_mmr_real_show_expired_gap": 1800,
+        "explore_pic_rerank_mmr_page_num_limit": 10,
+        "explore_pic_rerank_mmr_time_weight_param": 0.25,
+        "explore_pic_rerank_mmr_time_interval_param": 1500.0,
+        "explore_pic_rerank_author_id_decay_window_size": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_author_id_decay_window_size",
+          "param_type": "int",
+          "default_value": 6,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_author_id_decay_occurrent_times": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_author_id_decay_occurrent_times",
+          "param_type": "int",
+          "default_value": 2,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_author_id_decay_rate": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_author_id_decay_rate",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_hetu_one_decay_window_size": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_hetu_one_decay_window_size",
+          "param_type": "int",
+          "default_value": 6,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_hetu_one_decay_occurrent_times": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_hetu_one_decay_occurrent_times",
+          "param_type": "int",
+          "default_value": 3,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_hetu_one_decay_rate": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_hetu_one_decay_rate",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_hetu_two_decay_window_size": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_hetu_two_decay_window_size",
+          "param_type": "int",
+          "default_value": 6,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_hetu_two_decay_occurrent_times": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_hetu_two_decay_occurrent_times",
+          "param_type": "int",
+          "default_value": 3,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_hetu_two_decay_rate": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_hetu_two_decay_rate",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_hetu_five_decay_window_size": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_hetu_five_decay_window_size",
+          "param_type": "int",
+          "default_value": 6,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_hetu_five_decay_occurrent_times": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_hetu_five_decay_occurrent_times",
+          "param_type": "int",
+          "default_value": 3,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_hetu_five_decay_rate": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_hetu_five_decay_rate",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_rerank_long_word_conver_decay_window_size": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_rerank_long_word_conver_decay_window_size",
+          "param_type": "int",
+          "default_value": 6,
+          "report_ab_hit": true
+        },
+        "explore_rerank_long_word_conver_decay_occurrent_times": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_rerank_long_word_conver_decay_occurrent_times",
+          "param_type": "int",
+          "default_value": 3,
+          "report_ab_hit": true
+        },
+        "explore_rerank_long_word_conver_decay_rate": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_rerank_long_word_conver_decay_rate",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_enable_hetu_tag_variant": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_enable_hetu_tag_variant",
+          "param_type": "bool",
+          "default_value": false,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_hetu_tag_decay_window_size": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_hetu_tag_decay_window_size",
+          "param_type": "int",
+          "default_value": 6,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_hetu_tag_decay_occurrent_times": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_hetu_tag_decay_occurrent_times",
+          "param_type": "int",
+          "default_value": 3,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_hetu_tag_decay_rate": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_hetu_tag_decay_rate",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_enable_is_follow_author": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_enable_is_follow_author",
+          "param_type": "bool",
+          "default_value": false,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_is_follow_author_decay_window_size": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_is_follow_author_decay_window_size",
+          "param_type": "int",
+          "default_value": 6,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_is_follow_author_decay_occurrent_times": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_is_follow_author_decay_occurrent_times",
+          "param_type": "int",
+          "default_value": 3,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_is_follow_author_decay_rate": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_is_follow_author_decay_rate",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_enable_photo_dnn_cluster_id_variant": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_enable_photo_dnn_cluster_id_variant",
+          "param_type": "bool",
+          "default_value": false,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_photo_dnn_cluster_id_decay_window_size": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_photo_dnn_cluster_id_decay_window_size",
+          "param_type": "int",
+          "default_value": 6,
+          "report_ab_hit": true
+        },
+        "add_is_long_word_conver": {
+          "biz_name": "RECO_RPC",
+          "param_name": "add_is_long_word_conver",
+          "param_type": "int",
+          "default_value": 0,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_photo_dnn_cluster_id_decay_occurrent_times": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_photo_dnn_cluster_id_decay_occurrent_times",
+          "param_type": "int",
+          "default_value": 3,
+          "report_ab_hit": true
+        },
+        "explore_pic_rerank_photo_dnn_cluster_id_decay_rate": {
+          "biz_name": "RECO_RPC",
+          "param_name": "explore_pic_rerank_photo_dnn_cluster_id_decay_rate",
+          "param_type": "double",
+          "default_value": 0.1,
+          "report_ab_hit": true
+        },
+        "skip_explore_pic_rerank_variant": {
+          "biz_name": "RECO_RPC",
+          "param_name": "skip_explore_pic_rerank_variant",
+          "param_type": "int",
+          "default_value": 1,
+          "report_ab_hit": true
+        },
+        "el_pic_rr_es_power_weight_life_ltr_pctr": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_pic_rr_es_power_weight_life_ltr_pctr",
+          "param_type": "double",
+          "default_value": 0.0,
+          "report_ab_hit": true
+        },
+        "el_pic_rr_es_life_b_ltr_pctr": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_pic_rr_es_life_b_ltr_pctr",
+          "param_type": "double",
+          "default_value": 0.0,
+          "report_ab_hit": true
+        },
+        "el_pic_rr_es_life_k_ltr_pctr": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_pic_rr_es_life_k_ltr_pctr",
+          "param_type": "double",
+          "default_value": 0.0,
+          "report_ab_hit": true
+        },
+        "el_pic_rr_es_life_p_ltr_pctr": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_pic_rr_es_life_p_ltr_pctr",
+          "param_type": "double",
+          "default_value": 0.0,
+          "report_ab_hit": true
+        },
+        "explore_pic_power_weight_pic_weighted_ctr": 0.0,
+        "explore_pic_power_weight_pic_lvtr": 0.0,
+        "explore_pic_power_weight_pic_fvtr": 0.0,
+        "explore_pic_power_weight_pic_wtd": 0.0,
+        "explore_pic_power_weight_pic_acttr": 0.0,
+        "explore_pic_power_weight_corr_pic_wtd": 0.0,
+        "explore_pic_power_weight_corr_pic_lvtr": 0.0,
+        "explore_pic_power_weight_corr_pic_cpr": 0.0,
+        "enable_pic_ltr_fvtr_personalized_weight": false,
+        "explore_pic_power_weight_pic_fvtr_single": 0.0,
+        "explore_pic_power_weight_pic_fvtr_set": 0.0,
+        "explore_pic_power_weight_pic_fvtr_long": 0.0,
+        "explore_pic_power_weight_oppo_cost_score": 0.0,
+        "explore_pic_enable_rerank_adjust_weights_by_emp_xtr": 0,
+        "explore_pic_fr_adjust_queue_weight_p": 0.1,
+        "explore_pic_fr_adjust_queue_weight_max": 2.0,
+        "explore_pic_fr_adjust_queue_weight_mode": 2,
+        "explore_pic_fr_adjust_queue_weight_k_ltr": 1.0,
+        "explore_pic_fr_adjust_queue_weight_k_wtr": 1.0,
+        "explore_pic_fr_adjust_queue_weight_k_ftr": 1.0,
+        "explore_pic_fr_adjust_queue_weight_k_cmtr": 1.0,
+        "explore_pic_fr_adjust_queue_weight_k_cltr": 1.0,
+        "explore_rerank_pic_enable_single_pic_demote": 0,
+        "explore_fr_single_pic_demote_score": 1.0,
+        "explore_pic_power_weight_single_pic_demote_score": 0.0,
+        "explore_pic_power_weight_pctr_quantile": 0.0,
+        "explore_pic_power_weight_pltr_quantile": 0.0,
+        "explore_pic_power_weight_pwtr_quantile": 0.0,
+        "explore_pic_power_weight_pftr_quantile": 0.0,
+        "explore_pic_power_weight_pcmtr_quantile": 0.0,
+        "explore_pic_power_weight_pptr_quantile": 0.0,
+        "explore_pic_power_weight_pcmef_quantile": 0.0,
+        "explore_pic_power_weight_pevtr_quantile": 0.0,
+        "explore_pic_power_weight_fr_score1_quantile": 0.0,
+        "explore_pic_power_weight_fr_score2_quantile": 0.0,
+        "explore_pic_power_weight_pepstr_quantile": 0.0,
+        "explore_pic_power_weight_pdtr_quantile": 0.0,
+        "explore_pic_power_weight_pcltr_quantile": 0.0,
+        "explore_pic_power_weight_phtr_quantile": 0.0,
+        "explore_pic_power_weight_fetr_quantile": 0.0,
+        "explore_pic_power_weight_fountain_eff_quantile": 0.0,
+        "explore_pic_enable_quantile_pctr": 1,
+        "explore_pic_enable_quantile_pltr": 1,
+        "explore_pic_enable_quantile_pwtr": 1,
+        "explore_pic_enable_quantile_pftr": 1,
+        "explore_pic_enable_quantile_pcmtr": 1,
+        "explore_pic_enable_quantile_pptr": 1,
+        "explore_pic_enable_quantile_pcmef": 1,
+        "explore_pic_enable_quantile_pevtr": 1,
+        "explore_pic_enable_quantile_fr_score1": 1,
+        "explore_pic_enable_quantile_fr_score2": 1,
+        "explore_pic_enable_quantile_pepstr": 1,
+        "explore_pic_enable_quantile_pdtr": 1,
+        "explore_pic_enable_quantile_pcltr": 1,
+        "explore_pic_enable_quantile_phtr": 1,
+        "explore_pic_enable_quantile_fetr": 1,
+        "explore_pic_enable_quantile_fountain_eff": 1,
+        "explore_pic_rerank_rank_mode": "default",
+        "explore_pxtr_quantile_map": "explore_pxtr_quantile",
+        "skip_explore_top_video_sim_score": 1,
+        "explore_pic_power_weight_top_video_sim_score": 0.0,
+        "explore_top_video_sim_score_topk": 10,
+        "explore_top_video_sim_weight_author_id": 1.0,
+        "explore_top_video_sim_weight_hetu_level_one": 1.0,
+        "explore_top_video_sim_weight_hetu_level_two": 1.0,
+        "explore_top_video_sim_weight_hetu_level_five": 1.0,
+        "explore_top_video_sim_weight_hetu_tag": 1.0,
+        "explore_top_video_sim_weight_hetu_face_id": 1.0,
+        "enable_rerank_follow_author_pic_boost_v2": 0,
+        "fullrank_follow_author_pic_boost_coeff_v2": 1.0,
+        "explore_pic_power_weight_follow_author_pic_boost_score": 0.0,
+        "enable_rerank_target_hetu_pic_boost_v2": 0,
+        "fullrank_target_hetu_pic_boost_coeff_v2": 1.0,
+        "explore_pic_power_weight_target_hetu_pic_boost_score": 0.0,
+        "enable_rerank_caption_pic_queue":0,
+        "fullrank_caption_pic_queue_coef":1.0,
+        "fullrank_caption_boost_len_thresh":50,
+        "fullrank_caption_boost_len_max":1000,
+        "explore_pic_power_weight_long_caption_score":0.0,
+        "explore_pic_power_weight_pic_interact_fusion_score": 0.0,
+        "explore_pic_power_weight_pic_watch_time_fusion_score": 0.0,
+        "explore_pic_power_weight_pic_ltr_bpr_revisittr": 0.0,
+        "explore_pic_power_weight_pic_ltr_bpr_cltr": 0.0,
+        "explore_pic_power_weight_pic_ltr_bpr_ctr": 0.0,
+
+        "explore_pic_fullrank_pctr_raw_score_b": 1.0,
+        "explore_pic_fullrank_pctr_raw_score_k": 1.0,
+        "explore_pic_fullrank_pctr_raw_score_p": 0.0,
+        "explore_pic_fullrank_pltr_raw_score_b": 1.0,
+        "explore_pic_fullrank_pltr_raw_score_k": 1.0,
+        "explore_pic_fullrank_pltr_raw_score_p": 0.0,
+        "explore_pic_fullrank_pwtr_raw_score_b": 1.0,
+        "explore_pic_fullrank_pwtr_raw_score_k": 1.0,
+        "explore_pic_fullrank_pwtr_raw_score_p": 0.0,
+        "explore_pic_fullrank_pcltr_raw_score_b": 1.0,
+        "explore_pic_fullrank_pcltr_raw_score_k": 1.0,
+        "explore_pic_fullrank_pcltr_raw_score_p": 0.0,
+
+        "enable_explore_pic_rerank_pxtr_calib": 0,
+        "explore_pic_fr_pwtr_calib_w": 1.0,
+        "explore_pic_fr_pcmtr_calib_w": 1.0,
+        "explore_pic_power_weight_fullrank_corr_pwtr_score": 0.0,
+        "explore_pic_power_weight_fullrank_corr_pcmtr_score": 0.0,
+        "explore_pic_power_weight_pic_diversity_score": {
+          "default_value": 0.0,
+          "report_ab_hit": true
+        }
+      },
+      "kconf": {
+        "mc_distill_sample_num": {
+          "kconf_key": "reco.hot.mcdSampleNum",
+          "export_common_attr": "mc_distill_sample_num",
+          "default_value": 10
+        }
+      },
+      "import": {
+        "common_attrs": [
+          "pic_stat_pic_like_cnt",
+          "pic_stat_pic_follow_cnt",
+          "pic_stat_pic_forward_cnt",
+          "pic_stat_pic_comment_cnt",
+          "pic_stat_pic_play_cnt",
+          "pic_stat_video_like_cnt",
+          "pic_stat_video_follow_cnt",
+          "pic_stat_video_forward_cnt",
+          "pic_stat_video_comment_cnt",
+          "pic_stat_video_play_cnt"
+        ],
+        "item_attrs": [
+          "pctr",
+          "pltr",
+          "pwtr",
+          "pftr",
+          "psvr",
+          "pcmtr",
+          "pptr",
+          "pcmef",
+          "phtr",
+          "pevtr",
+          "fr_score1",
+          "fr_score2",
+          "pepstr",
+          "pdtr",
+          "pcltr",
+          "fetr",
+          "fountain_eff",
+          "pctr_x_pcmtr",
+          "svr_act_score",
+          "fr_mc_embedding_score",
+          "consume_time_ltr",
+          "consume_time_pf2r_score",
+          "deep_ltr_score",
+          "ada_xtr_score",
+          "is_picture",
+          "explore_fr_ensemble_score",
+          "pic_ltr_weighted_ctr",
+          "pic_ltr_lvtr",
+          "pic_ltr_fvtr",
+          "pic_ltr_wtd",
+          "pic_ltr_acttr",
+          "corr_pic_wtd",
+          "corr_pic_lvtr",
+          "corr_pic_cpr",
+          "fr_ensemble_pic_oppo_cost_score",
+          "picture_type",
+          "is_boost_hetu_pic",
+          "is_picture_follow_author",
+          "pic_interact_fusion_score",
+          "pic_watch_time_fusion_score",
+          "is_xhs_type_photo",
+          "caption_length",
+          "pic_ltr_bpr_ctr",
+          "pic_ltr_bpr_cltr",
+          "pic_ltr_bpr_revisittr",
+          "is_key_target_hetu_pic",
+          "pic_diversity_score",
+          "ocr_cover_text_word_count",
+          "life_ltr_pctr"
+        ],
+        "results": [
+          "rerank_fetch_predict__result"
+        ]
+      },
+      "export": {
+        "results": [
+          "pic_rerank__result"
+        ]
+      }
+    }
+  }

@@ -1,0 +1,45 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_longterm_hetu_tag_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "remote_index_service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "longterm_hetu_tag_retr_timeout_ms",
+        "param_type": "int",
+        "default_value": 150
+      },
+      "result_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "longterm_hetu_tag_result_num",
+        "param_type": "int",
+        "default_value": 1000
+      },
+      "remote_index_service_name": ["longterm_hetu_remote_index_service_name", "grpc_recoHotOrderedIndexServer"],
+      "redis_retrieval_num": [ "longterm_hetu_tag_retr_max_trigger", 1000 ]
+    },
+    "constant": {
+      "redis_key_prefix": {
+        "attr_type": "common_attr",
+        "value_type": "string",
+        "value": "longterm_interest_v5_"
+      },
+      "remote_index_query_term": "hetuTagLevelTwo2PhotoOrderByShowCount"
+    },
+    "export": {
+      "results": [
+        "longterm_hetu_tag__result"
+      ]
+    }
+  },
+  "reason": 1935,
+  "redis_cluster_name": "recoSubdivisionCache",
+  "redis_timeout_ms": 20,
+  "search_num": 50,
+  "save_to_common_attr_name": "longterm_hetu_tag__level2_list",
+  "remote_index_query_trigger_attr_name": "longterm_hetu_tag__level2_list"
+}

@@ -1,0 +1,33 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["explore_enable_user_app_list_retr", false],
+      "retrieve_num": ["explore_user_app_list_cid_retrieve_num", 100],
+      "cand_num": ["explore_user_app_list_retr_pids_cand_num", 3000],
+      "cluster_remote_index_service_name": ["explore_user_app_list_cluster_remote_index_service_name", "grpc_exploreC2CRetrIndex"],
+      "cid_index_search_num": ["explore_user_app_list_retr_cid_index_search_num", 10],
+      "enable_explore_user_applist_random_interested_cids": 1,
+      "enable_explore_applist_retr_divide_vv_adjust": 0,
+      "enable_explore_applist_retr_divide_active_adjust": 0,
+      "explore_applist_retr_divide_vv_threshold": 5
+    },
+    "import": {
+      "common_attrs": [
+        "active_days_avg_vv",
+        "find_user_active_degree",
+        "app_list_ios",
+        "app_list",
+        "ios_app_name_cluster_id_map_ptr",
+        "android_app_package_id_cluster_id_map_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "user_app_list_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 9301
+}
+  

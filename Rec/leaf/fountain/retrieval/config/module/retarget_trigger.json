@@ -1,0 +1,46 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_enable_get_retarget_trigger": false,
+      "fountain_retarget_enable_interest_score_triggers": false,
+      "fountain_retarget_enable_select_bottom_colossus_list": false,
+      "fountain_retarget_enable_select_explore_colossus_list": false,
+      "fountain_retarget_enable_select_outer_colossus_list": false,
+      "fountain_retarget_enable_select_fountain_colossus_list": false,
+      "fountain_retarget_enable_not_get_shortview_trigger": false,
+      "fountain_retarget_enable_only_get_effview_trigger": false,
+      "fountain_retarget_enable_get_interact_trigger": false,
+      "fountain_retarget_different_signals_triggers_min_minutes_ago": 0,
+      "fountain_retarget_different_signals_triggers_max_minutes_ago": 60,
+      "fountain_retarget_different_signals_interact_triggers_min_minutes_ago": 0,
+      "fountain_retarget_different_signals_interact_triggers_max_minutes_ago": 0,
+      "fountain_retarget_different_signals_interest_triggers_select_num": 400,
+      "fountain_retarget_different_signals_interest_interact_triggers_select_num": 0,
+      "fountain_retarget_enable_default_select_triggers": false,
+      "fountain_retarget_enable_filter_hate": false,
+      "fountain_retarget_play_time_ratio": 3,
+      "fountain_retarget_interest_positive_weights_str": "0.5,0.5,1.0,1.0,1.0,1.0,1.0,0.03",
+      "fountain_enable_get_retarget_history_list": false,
+      "fountain_retatget_history_vv_list_limit": 300,
+      "fountain_retatget_history_vv_list_begin_minute": 0,
+      "fountain_retatget_history_vv_list_end_minute": 120,
+      "fountain_retatget_history_vv_list_channel_str": "77"
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_resp_v2"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "fountain_retarget_interest_colossus_trigger_list@item_id",
+        "fountain_retatget_history_vv_list@item_id"
+      ],
+      "common_attrs": [
+        "fountain_retarget_interest_colossus_trigger_list",
+        "fountain_retarget_interest_colossus_trigger_weight_list",
+        "fountain_retatget_history_vv_list"
+      ]
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_enable_global_trigger_select": 0,
+      "fountain_max_playstat_trigger_num": 150,
+      "fountain_max_colossus_trigger_num": 100,
+      "fountain_max_actionlist_trigger_num": 150,
+      "fountain_golbal_trigger_use_fountain_playstat": 1,
+      "fountain_golbal_trigger_use_fountain_action_list": 1,
+      "fountain_golbal_trigger_use_hot_playstat": 1,
+      "fountain_golbal_trigger_use_hot_action_list": 1,
+      "fountain_playstat_trigger_play_time_ths": 7,
+      "fountain_colossus_trigger_recent_preserve_num": 1000000000,
+      "fountain_global_trigger_select_use_v2": 0,
+      "fountain_global_trigger_enable_user_fountain_behv": true,
+      "fountain_global_trigger_min_play_time_s": 7,
+      "fountain_global_trigger_play_time_weight": 1.0,
+      "fountain_global_trigger_max_play_time_limit": 6.0,
+      "fountain_global_trigger_play_ratio_weight": 1.0,
+      "fountain_global_trigger_time_decay_weight": 0.8,
+      "fountain_global_trigger_label_weight_map": "0:1.0;1:1.0;2:1.0;4:1.0;6:1.0;7:1.0",
+      "fountain_global_trigger_min_cluster_size": 20,
+      "fountain_global_trigger_normal_trigger_num": 500,
+      "fountain_global_trigger_high_value_trigger_num": 100,
+      "fountain_global_trigger_enable_normal_shuffle": true,
+      "fountain_global_trigger_enable_hot_list": true,
+      "fountain_global_trigger_enable_colossus_fountain_list" : true,
+      "fountain_global_trigger_enable_slide_list": true
+    },
+    "kconf": {
+      "hetu_low_level_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "low_level_tags"
+      },
+      "hetu_level2_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "level2_tags"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "userInfoPb",
+        "colossus_resp_v2"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list"
+      ]
+    }
+  }
+}

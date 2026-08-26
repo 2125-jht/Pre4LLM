@@ -1,0 +1,122 @@
+from cascading import CommonModule
+
+class CascadingTowerWtdPredictModule(CommonModule):
+  def __init__(self, name: str) -> None:
+    super().__init__(name)
+
+  def user_feature(self):
+    features = [
+      "uId",
+      "dId",
+      "uHourOfDay",
+      "uDayOfWeek",
+      "uExpCtr",
+      "uExpLtr",
+      "uExpWtr",
+      "uExpFtr",
+      "uExpLvtr",
+      "uExpSvtr",
+      "uExpHtr",
+      "uExpClickCount",
+      "uExpLikeCount",
+      "uExpFollowCount",
+      "uExpForwardCount",
+      "uExpHateCount",
+      "uFansCount",
+      "uClickPidsHot",
+      "uClickAidsHot",
+      "uLikePidsHot",
+      "uLikeAidsHot",
+      "uFollowPidsHot",
+      "uFollowAidsHot",
+      "uCommentPidsHot",
+      "uCommentAidsHot",
+      "uCollectPidsHot",
+      "uCollectAidsHot",
+      "uForwardPidsHot",
+      "uForwardAidsHot",
+      "uPlayViewPidsGlobal",
+      "uPlayViewAidsGlobal",
+      "uPlayViewDurationGlobal",
+      "uPlayViewPlaytimeGlobal",
+      "uPlayViewHetu2Global",
+      "uPlayViewChannelGlobal",
+      "uUploadCount",
+      "uCityLevelNew",
+      "uCityId",
+      "uProvinceId",
+      "uGender",
+      "uTrueYear",
+      "uBasicAge",
+      "uNetwork",
+      "uIsLowActiveUser",
+    ]
+
+    return features
+          
+  def process(self) -> None:
+    self.flow \
+      .if_("enable_explore_mc_ltr_in_s1_predict == 1") \
+        .explore_common_user_feature_enricher(
+          user_info_attr = "user_info_ptr",
+          user_uid_attr = "uId",
+          user_did_attr = "dId",
+          context_hour_of_day_attr = "uHourOfDay",
+          context_day_of_week_attr = "uDayOfWeek",
+          user_exp_ctr_attr = "uExpCtr",
+          user_exp_ltr_attr = "uExpLtr",
+          user_exp_wtr_attr = "uExpWtr",
+          user_exp_ftr_attr = "uExpFtr",
+          user_exp_lvtr_attr = "uExpLvtr",
+          user_exp_svtr_attr = "uExpSvtr",
+          user_exp_htr_attr = "uExpHtr",
+          user_exp_click_count_attr = "uExpClickCount",
+          user_exp_like_count_attr = "uExpLikeCount",
+          user_exp_follow_count_attr = "uExpFollowCount",
+          user_exp_forward_count_attr = "uExpForwardCount",
+          user_exp_hate_count_attr = "uExpHateCount",
+          user_fans_cnt_attr = "uFansCount",
+          hot_click_pids_attr = "uClickPidsHot",
+          hot_click_aids_attr = "uClickAidsHot",
+          hot_like_pids_attr = "uLikePidsHot",
+          hot_like_aids_attr = "uLikeAidsHot",
+          hot_follow_pids_attr = "uFollowPidsHot",
+          hot_follow_aids_attr = "uFollowAidsHot",
+          hot_comment_pids_attr = "uCommentPidsHot",
+          hot_comment_aids_attr = "uCommentAidsHot",
+          hot_forward_pids_attr = "uForwardPidsHot",
+          hot_forward_aids_attr = "uForwardAidsHot",
+          hot_collect_pids_attr = "uCollectPidsHot",
+          hot_collect_aids_attr = "uCollectAidsHot",
+          global_pv_pids_attr = "uPlayViewPidsGlobal",
+          global_pv_aids_attr = "uPlayViewAidsGlobal",
+          global_pv_duration_attr = "uPlayViewDurationGlobal",
+          global_pv_time_attr = "uPlayViewPlaytimeGlobal",
+          global_pv_hetu2_attr = "uPlayViewHetu2Global",
+          global_pv_channel_attr = "uPlayViewChannelGlobal",
+          user_upload_cnt_attr = "uUploadCount",
+          user_city_level_attr = "uCityLevelNew",
+          user_city_attr = "uCityId",
+          user_province_attr = "uProvinceId",
+          user_gender_attr = "uGender",
+          user_true_year_attr = "uTrueYear",
+          user_basic_age_attr = "uBasicAge",
+          user_visit_net_attr = "uNetwork",
+          user_low_active_attr = "uIsLowActiveUser",
+        ) \
+        .delegate_enrich(
+          kess_service = "{{mc_tower_ltr_in_s1_service}}",
+          recv_item_attrs = [
+            {"name": "ctr", "as": "prerank_ctr_in_s1"},
+            {"name": "wtd", "as": "prerank_wtd_in_s1"},
+            {"name": "wltr", "as": "prerank_wltr_in_s1"},
+          ],
+          timeout_ms = 50,
+          send_item_attrs = [
+            {"name": "photo_id", "as": "item_id"},
+          ],
+          send_common_attrs = self.user_feature(),
+          request_type = "{{mc_tower_ltr_in_s1_request_type}}",
+        ) \
+      .end_() \
+        

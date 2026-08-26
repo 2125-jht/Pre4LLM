@@ -1,0 +1,120 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_user_colossus_info": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_user_colossus_info",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "user_colossus_info_min_sec_ago": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_info_min_sec_ago",
+        "param_type": "int",
+        "default_value": 3600 
+      },
+      "user_colossus_info_max_sec_ago": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_info_max_sec_ago",
+        "param_type": "int",
+        "default_value": 7776000 
+      },
+      "enable_colossus_v2": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_colossus_v2",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "user_colossus_interact_weight_like": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_interact_weight_like",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "user_colossus_interact_weight_follow": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_interact_weight_follow",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "user_colossus_interact_weight_forward": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_interact_weight_forward",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "user_colossus_interact_weight_comment": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_interact_weight_comment",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "user_colossus_interact_weight_profile": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_interact_weight_profile",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "user_colossus_item_max_parse_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_item_max_parse_num",
+        "param_type": "int",
+        "default_value": 2000
+      },
+      "user_colossus_info_min_playtime_sec": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_info_min_playtime_sec",
+        "param_type": "int",
+        "default_value": 7 
+      },
+      "user_colossus_info_weight_hetu2": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_info_weight_hetu2",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "user_colossus_info_weight_hetu3": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_info_weight_hetu3",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "user_colossus_info_weight_hetu4": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_info_weight_hetu4",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "user_colossus_info_weight_aid": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_info_weight_aid",
+        "param_type": "double",
+        "default_value": 1.0
+      },
+      "user_colossus_interact_action_max_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "user_colossus_interact_action_max_bucket",
+        "param_type": "int",
+        "default_value": 20 
+      },
+      "consume_time_ltr_disable_hetu_relation_update": {
+        "biz_name": "RECO_RPC",
+        "param_name": "consume_time_ltr_disable_hetu_relation_update",
+        "param_type": "bool",
+        "default_value": false
+      }
+    },
+    "kconf": {
+      "colossus_feature_periods": {
+        "kconf_key": "reco.modelRank.colossusV2FeaturePeriods",
+        "value_type": "list_int64",
+        "default_value": []
+      }
+    },
+    "export": {
+      "item_attrs": [
+        "pColossusScore"
+      ]
+    }
+  }
+}

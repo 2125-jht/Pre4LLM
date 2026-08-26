@@ -1,0 +1,33 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_multi_interest_u2u_retrieval", false],
+      "enable_splited_emb": ["enable_splited_emb", true],
+      "enable_result_shuffle": ["multi_interest_u2u_retr_enable_result_shuffle", false],
+      "embedding_service": ["multi_interest_u2u_embedding_service", "HotMultiInterestEmb"],
+      "ann_service": ["multi_interest_u2u_retr_ann_service", "HotMultiInterestAnn"],
+      "sim_user_num": ["multi_interest_u2u_user_num", 20],
+      "interest_num": ["multi_interest_u2u_interest_num", 8],
+      "photo_num_per_user": ["multi_interest_u2u_photo_num_per_user", 20],
+      "enable_sim_user_shuffle": ["multi_interest_u2u_retr_enable_sim_user_shuffle", false],
+      "sim_user_limit_num": ["multi_interest_u2u_retr_sim_user_limit_num", 200],
+      "redis_type": ["multi_interest_u2u_retr_redis_type", 0],
+      "user_photo_redis_cluster_name": ["multi_interest_u2u_user_photos_redis_cluster_v0", "recoColossusTriggers"],
+      "user_photo_redis_key_prefix": ["multi_interest_u2u_user_photos_redis_prefix", "clicks_"],
+      "user_photo_redis_key_prefix_v1": ["multi_interest_u2u_user_photos_redis_prefix_v1", "uActions_"],
+      "redis_retrieve_num": ["multi_interest_u2u_user_redis_retrieve_num", 2000],
+      "retrieve_num": ["multi_interest_u2u_cand_num", 1000]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "multi_interest_u2u_retr__result"
+      ]
+    }
+  },
+  "reason": 4020
+}

@@ -1,0 +1,21 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_llm_hetu_retr", false],
+      "index_service_name": ["fountain_llm_hetu_index_service_name", "grpc_recoRelevanceTagOrderedIndexServer"],
+      "service_request_num": ["fountain_llm_i2i_retr_request_num", 1000],
+      "index_search_num": ["fountain_llm_i2i_retr_index_search_num", 200]
+    },
+    "import": {
+      "common_attrs": [
+        "uLLMHetuKV"
+      ]
+    },
+    "export": {
+      "results": [
+        "llm_hetu_retr__result"
+      ]
+    }
+  },
+  "reason": 471
+}

@@ -1,0 +1,27 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_splash_gcl_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_gcl_retr_splash_ann_service": "grpc_fountainGclAnnServer",
+      "fountain_gcl_retr_splash_request_num": 500,
+      "skip_fountain_gcl_retr_splash": 1
+    }, 
+    "import": {
+      "common_attrs": [
+        "commonRetrievalPhotos",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_gcl_retr__result"
+      ]
+    }
+  },
+  "reason": 10341
+}

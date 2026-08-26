@@ -1,0 +1,24 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_follow_author_photo_insert": false,
+      "follow_author_photo_insert_position_limit": ["explore_follow_author_photo_position_index_limit", 4]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr"
+      ],
+      "item_attrs": [
+        "is_follow_author"
+      ],
+      "results": [
+        "pic_rerank__result"
+      ]
+    },
+    "export": {
+      "results": [
+        "force_insert__result"
+      ]
+    }
+  }
+}

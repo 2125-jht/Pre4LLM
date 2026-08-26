@@ -1,0 +1,46 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_user_portrait_retr__enable_retr",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "kess_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_user_portrait_retr__service_name",
+        "param_type": "string",
+        "default_value": "grpc_lifePortraitCommRetr",
+        "report_ab_hit": true
+      }
+    },
+    "constant": {
+      "service_timeout_ms": 50,
+      "service_request_num": 500
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "life_user_portrait_retr__result"
+      ]
+    }
+  },
+  "reason": 10020,
+  "trimed_user_info": [
+    "id",
+    "device_id",
+    "gender",
+    "fans_count",
+    "basic_info",
+    "location",
+    "follow_list"
+  ],
+  "send_common_attrs": [
+  ]
+}

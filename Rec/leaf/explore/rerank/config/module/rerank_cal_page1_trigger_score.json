@@ -1,0 +1,35 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_rerank_gen_seed_ensemble_page1_trigger_score_weight": 1.0,
+      "explore_rerank_gen_seed_ensemble_page1_trigger_score_range": 0.0,
+      "explore_rerank_gen_seed_ensemble_page1_trigger_score_raw_weight": 1.0,
+      "explore_rerank_gen_seed_ensemble_page1_trigger_score_raw_pow_weight": 0.0,
+
+      "explore_enable_calc_page1_trigger_similarity_score": 0,
+      "explore_rerank_dpp_emb_dim": 64,
+      "explore_rerank_page1_trigger_ids_size": 32,
+      "explore_rerank_page1_trigger_ids_final_size": 1,
+      "explore_rerank_page1_trigger_sim_weight": 0.9,
+      "explore_rerank_page1_trigger_boost_top_n": 60,
+      "explore_rerank_page1_trigger_boost_score": 0.7
+    },
+
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "friendAids"
+      ]
+    },
+
+    "export": {
+      "item_attrs": [
+        "explore_dpp_emb",
+        "page1_trigger_score"
+      ],
+      "common_attrs": [
+        "explore_rerank_dpp_sim_matrix_dim"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_nn_retr",
+        "param_type": "bool",
+        "default_value": true
+      }, 
+      "kess_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "nn_user_photo_service",
+        "param_type": "string", 
+        "default_value": "grpc_NNRetrServerExp2"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "tmp_user_info_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "nn__result"
+      ]
+    }
+  },
+  "reason": 196
+}

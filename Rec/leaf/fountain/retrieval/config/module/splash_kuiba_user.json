@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "import": {
+      "common_attrs": [
+        "kuibaUserAttrStr"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "uShareidCntKV",
+        "uOpenShareidCntKV",
+        "uOpenDeviceCntKV",
+        "uPullNumKV",
+        "uShareBringNewDeviceNumKV",
+        "uAttributionPerShareKV",
+        "uMessageActiveDegreeCode",
+        "uToUserShareSendNum30dKV",
+        "active_days_gt_5min_rate",
+        "uInsideShareActiveDegreeDetailCode"
+      ]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_cascading_calc_life": {
+        "biz_name": "RECO_RPC",
+        "default_value": 0,
+        "param_name": "el_enable_cascading_calc_life",
+        "param_type": "int",
+        "report_ab_hit": true
+      },
+      "enable_common_index": {
+        "biz_name": "RECO_RPC",
+        "default_value": 0,
+        "param_name": "el_enable_common_index",
+        "param_type": "int",
+        "report_ab_hit": true
+      },
+      "explore_common_index_part_size": {
+        "biz_name": "RECO_RPC",
+        "default_value": 1000,
+        "param_name": "el_explore_common_index_part_size",
+        "param_type": "int",
+        "report_ab_hit": true
+      },
+      "explore_common_index_service": {
+        "biz_name": "RECO_RPC",
+        "default_value": "grpc_exploreLifeCommonQueryServer",
+        "param_name": "el_explore_common_index_service",
+        "param_type": "string",
+        "report_ab_hit": true
+      },
+      "enable_young_photo_get_from_common_index": {
+        "biz_name": "RECO_RPC",
+        "default_value": 0,
+        "param_name": "enable_young_photo_get_from_common_index",
+        "param_type": "int",
+        "report_ab_hit": true
+      },
+      "enable_cascading_calc_hetu_reshape": true,
+      "life_s1_hetu_reshape_coef": 0.05
+    },
+    "import": {
+      "item_attrs": [],
+      "common_attrs": [
+        "colossus_hetu_one_list",
+        "copy_colossus_photo_id_list",
+          "colossus_tag_list"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "hetu_level_one_top1",
+        "colossus_hetu_one_ratio",
+        "life_s1_hetu_one_reshaping_score",
+        "is_young_photo",
+        "da_young_18_30_vv_rate",
+        "da_1_2_city_vv_rate",
+        "young_photo_18_23_prob",
+        "young_photo_24_30_prob",
+        "young_age_boost_rate"
+      ],
+      "common_attrs": [
+      ]
+    }
+  }
+}

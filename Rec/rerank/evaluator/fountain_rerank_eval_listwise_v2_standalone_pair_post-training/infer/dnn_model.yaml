@@ -1,0 +1,805 @@
+ada_decay_rate: 0.99999
+ada_epsilon: 1e-8
+avg_decay_rate: 0.999993
+back_propagate_input: true
+dense_grad: dense_grad_for_fetch:0
+dense_init_val: dense_init_val_for_fetch:0
+embedding:
+  create_threshold: 0
+  initial_g2sum: 3
+  initial_range: 1e-4
+  learning_rate: 0.05
+  slots_config:
+  - compress_group: USER
+    dim: 64
+    dtype: float32
+    expand: 1
+    input_name: user_id
+    is_common: true
+    slots: '16'
+  - compress_group: USER
+    dim: 32
+    dtype: float32
+    expand: 1
+    input_name: user_device_id
+    is_common: true
+    slots: '21'
+  - compress_group: USER
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_age_segment
+    is_common: true
+    slots: '18'
+  - compress_group: USER
+    dim: 4
+    dtype: float32
+    expand: 1
+    input_name: user_gender
+    is_common: true
+    slots: '22'
+  - compress_group: USER
+    dim: 64
+    dtype: float32
+    expand: 200
+    input_name: user_profile_v1_play18s_pid_list
+    is_common: true
+    slots: '50'
+  - compress_group: USER
+    dim: 64
+    dtype: float32
+    expand: 200
+    input_name: user_profile_v1_play18s_aid_list
+    is_common: true
+    slots: '49'
+  - compress_group: USER
+    dim: 64
+    dtype: float32
+    expand: 200
+    input_name: user_fountain_profile_click_pid_list
+    is_common: true
+    slots: '34'
+  - compress_group: USER
+    dim: 64
+    dtype: float32
+    expand: 200
+    input_name: user_fountain_profile_click_aid_list
+    is_common: true
+    slots: '33'
+  - compress_group: USER
+    dim: 64
+    dtype: float32
+    expand: 200
+    input_name: user_fountain_profile_like_pid_list
+    is_common: true
+    slots: '40'
+  - compress_group: USER
+    dim: 64
+    dtype: float32
+    expand: 200
+    input_name: user_fountain_profile_like_aid_list
+    is_common: true
+    slots: '39'
+  - compress_group: USER
+    dim: 64
+    dtype: float32
+    expand: 200
+    input_name: user_fountain_profile_effective_view_pid_list
+    is_common: true
+    slots: '59'
+  - compress_group: USER
+    dim: 64
+    dtype: float32
+    expand: 200
+    input_name: user_fountain_profile_effective_view_aid_list
+    is_common: true
+    slots: '60'
+  - compress_group: USER
+    dim: 64
+    dtype: float32
+    expand: 200
+    input_name: user_fountain_profile_long_view_pid_list
+    is_common: true
+    slots: '55'
+  - compress_group: USER
+    dim: 64
+    dtype: float32
+    expand: 200
+    input_name: user_fountain_profile_long_view_aid_list
+    is_common: true
+    slots: '56'
+  - dim: 64
+    dtype: float32
+    expand: 1
+    input_name: photo_id
+    slots: '1016'
+  - dim: 64
+    dtype: float32
+    expand: 1
+    input_name: photo_author_id
+    slots: '1026'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_pctr
+    slots: '3017'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_pltr
+    slots: '3019'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_pwtr
+    slots: '3025'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_pftr
+    slots: '3018'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_plvtr
+    slots: '3020'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_pvtr
+    slots: '3023'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_pptr
+    slots: '3021'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_pcmtr
+    slots: '3016'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_pepstr
+    slots: '3124'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_pcpr
+    slots: '3122'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_pcltr
+    slots: '3123'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_psvr
+    slots: '3129'
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: context_pwtd
+    slots: '3024'
+  version_aware: true
+  weight_bounds:
+  - -10
+  - 10
+extra_params: []
+extra_preds: expected_list_watch_time expected_list_effective_vv expected_list_interaction
+  expected_consume_length context_pctr context_pwtd context_pltr context_pcmtr context_pwtr
+  context_pftr context_plvtr context_psvtr
+feed_slots:
+- offsets: slot_16_offsets:0
+  signs: slot_16_signs:0
+  slot: 16
+- offsets: slot_21_offsets:0
+  signs: slot_21_signs:0
+  slot: 21
+- offsets: slot_18_offsets:0
+  signs: slot_18_signs:0
+  slot: 18
+- offsets: slot_22_offsets:0
+  signs: slot_22_signs:0
+  slot: 22
+- offsets: slot_50_offsets:0
+  signs: slot_50_signs:0
+  slot: 50
+- offsets: slot_49_offsets:0
+  signs: slot_49_signs:0
+  slot: 49
+- offsets: slot_34_offsets:0
+  signs: slot_34_signs:0
+  slot: 34
+- offsets: slot_33_offsets:0
+  signs: slot_33_signs:0
+  slot: 33
+- offsets: slot_40_offsets:0
+  signs: slot_40_signs:0
+  slot: 40
+- offsets: slot_39_offsets:0
+  signs: slot_39_signs:0
+  slot: 39
+- offsets: slot_59_offsets:0
+  signs: slot_59_signs:0
+  slot: 59
+- offsets: slot_60_offsets:0
+  signs: slot_60_signs:0
+  slot: 60
+- offsets: slot_55_offsets:0
+  signs: slot_55_signs:0
+  slot: 55
+- offsets: slot_56_offsets:0
+  signs: slot_56_signs:0
+  slot: 56
+- offsets: slot_1016_offsets:0
+  signs: slot_1016_signs:0
+  slot: 1016
+- offsets: slot_1026_offsets:0
+  signs: slot_1026_signs:0
+  slot: 1026
+- offsets: slot_3017_offsets:0
+  signs: slot_3017_signs:0
+  slot: 3017
+- offsets: slot_3019_offsets:0
+  signs: slot_3019_signs:0
+  slot: 3019
+- offsets: slot_3025_offsets:0
+  signs: slot_3025_signs:0
+  slot: 3025
+- offsets: slot_3018_offsets:0
+  signs: slot_3018_signs:0
+  slot: 3018
+- offsets: slot_3020_offsets:0
+  signs: slot_3020_signs:0
+  slot: 3020
+- offsets: slot_3023_offsets:0
+  signs: slot_3023_signs:0
+  slot: 3023
+- offsets: slot_3021_offsets:0
+  signs: slot_3021_signs:0
+  slot: 3021
+- offsets: slot_3016_offsets:0
+  signs: slot_3016_signs:0
+  slot: 3016
+- offsets: slot_3124_offsets:0
+  signs: slot_3124_signs:0
+  slot: 3124
+- offsets: slot_3122_offsets:0
+  signs: slot_3122_signs:0
+  slot: 3122
+- offsets: slot_3123_offsets:0
+  signs: slot_3123_signs:0
+  slot: 3123
+- offsets: slot_3129_offsets:0
+  signs: slot_3129_signs:0
+  slot: 3129
+- offsets: slot_3024_offsets:0
+  signs: slot_3024_signs:0
+  slot: 3024
+global_init_range: 0.2
+grad_scale: truediv_1:0
+graph: ../infer/graph.pb
+graph_extra_outputs: {}
+graph_output_labels:
+- zeros_like:0
+graph_q_valid:
+  recall: ones_like:0
+graph_summary: Merge/MergeSummary:0
+graph_targets:
+- opt
+graph_tensor_mapping:
+  context_pcmtr: Reshape_22:0
+  context_pctr: Reshape_19:0
+  context_pftr: Reshape_24:0
+  context_pltr: Reshape_21:0
+  context_plvtr: Reshape_25:0
+  context_psvtr: Reshape_26:0
+  context_pwtd: Reshape_20:0
+  context_pwtr: Reshape_23:0
+  expected_consume_length: evaluator/list_value_branch/expected_consume_length:0
+  expected_list_effective_vv: evaluator/list_value_branch/expected_effective_vv:0
+  expected_list_interaction: evaluator/list_value_branch/expected_interaction:0
+  expected_list_watch_time: evaluator/list_value_branch/expected_watch_time:0
+hyperparameter_kconf: null
+input_type: 3
+is_train_placeholder: is_train:0
+learning_rate: 5.0e-06
+local_init_op: ''
+loss_scale_placeholder: loss_scale:0
+mom_decay_rate: 0.999
+output_hidden_units: update_input continue_normlized_input slide_embedding slide_wide
+  watch_time_wide position_weight_input
+param:
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: list_value_position_embedding
+  rown: 6
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/dense/kernel
+  rown: 336
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_backbone/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/ft_click_mha/Q_w/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/ft_click_mha/K_w/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/ft_click_mha/V_w/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/ft_click_mha/output_proj/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_backbone/ft_click_mha/output_proj/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/ft_lv_mha/Q_w/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/ft_lv_mha/K_w/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/ft_lv_mha/V_w/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 4
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/ft_lv_mha/head_gate/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/ft_lv_mha/head_gate/bias
+  rank: 1
+  rown: 4
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/ft_lv_mha/output_proj/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_backbone/ft_lv_mha/output_proj/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_mha/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_mha/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_mha/dense_2/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_mha/dense_3/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_mha/dense_3/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 1
+  init_range: 0
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_ln1_layer_norm/gamma
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_ln1_layer_norm/beta
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_ffn/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_ffn/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_ffn/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_ffn/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 1
+  init_range: 0
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_ln2_layer_norm/gamma
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_backbone/candidates_aware_transformer_layer_0/encoder_ln2_layer_norm/beta
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/dense_1/kernel
+  rown: 104
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_backbone/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_backbone/dense_2/kernel
+  rown: 224
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_backbone/dense_2/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_input_adapter/projection/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_value_input_adapter/projection/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_mha/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_mha/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_mha/dense_2/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_mha/dense_3/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_mha/dense_3/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 1
+  init_range: 0
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_ln1_layer_norm/gamma
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_ln1_layer_norm/beta
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_ffn/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_ffn/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_ffn/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_ffn/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 1
+  init_range: 0
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_ln2_layer_norm/gamma
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_value_branch/causal_prefix_transformer_layer_0/encoder_ln2_layer_norm/beta
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_branch/continue_hidden/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_value_branch/continue_hidden/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_branch/continue_logits/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_value_branch/continue_logits/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+- coln: 64
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_branch/prefix_value_hidden/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_value_branch/prefix_value_hidden/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_branch/prefix_watch_time_logit/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_value_branch/prefix_watch_time_logit/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_branch/prefix_effective_vv_logit/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_value_branch/prefix_effective_vv_logit/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 1
+  name: evaluator/list_value_branch/prefix_interaction_logit/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  dtype: float32
+  init_mean: 0
+  init_range: 0
+  name: evaluator/list_value_branch/prefix_interaction_logit/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+q_names: expected_list_watch_time expected_list_effective_vv expected_list_interaction
+  expected_consume_length context_pctr context_pwtd context_pltr context_pcmtr context_pwtr
+  context_pftr context_plvtr context_psvtr
+sparse_grad: sparse_grad_for_fetch:0
+sparse_grad_scale: truediv_2:0
+step_placeholder: step:0
+summary:
+- len: 1912
+  name: base_summary
+- len: 2072
+  name: stub_summary
+summary_decay_rate: 0.999999
+summary_init_n: 1e4
+summary_init_squared_sum: 1e4
+summary_squared_sum_epsilon: 1e-4
+test_layers_at_joining: join join_forward update update_forward
+test_layers_at_updating: update update_forward
+test_mode: false
+train_layers_at_joining: join
+train_layers_at_updating: update
+use_sparse_indice: false
+vec_input:
+- common: false
+  dim: 1
+  name: context_info__pctr_infer
+- common: false
+  dim: 1
+  name: context_info__pwtd_infer
+- common: false
+  dim: 1
+  name: context_info__pltr_infer
+- common: false
+  dim: 1
+  name: context_info__pcmtr_infer
+- common: false
+  dim: 1
+  name: context_info__pwtr_infer
+- common: false
+  dim: 1
+  name: context_info__pftr_infer
+- common: false
+  dim: 1
+  name: context_info__plvtr_infer
+- common: false
+  dim: 1
+  name: context_info__psvtr_infer
+- common: true
+  dim: 180
+  name: rerank_list_item_idx_flat_list_double
+with_kai: true

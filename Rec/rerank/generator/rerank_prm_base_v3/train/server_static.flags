@@ -1,0 +1,15 @@
+[krp_ps_server]
+--log_dir=../log/
+--metric_kafka_cluster=PG_LOG2
+--metric_kafka_topic=reco_kuiba_training_monitor
+--reduced_parameter_format=true
+--use_sample_expire=true
+--use_double_shm_kv=true
+
+[krp_tf_learner_server]
+--log_dir=../log/
+--thread_num=24
+--paas_web_server_port=10889
+--max_channel_pool_size=32
+--zero_init_miss_parameter=true
+--base_bt_queue_client_default_group=hdfs_realtime_log

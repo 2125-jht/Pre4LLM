@@ -1,0 +1,35 @@
+--log_dir=../log/
+
+# ################# BEGIN 本地索引相关配置 #################
+# 索引数据的 bt_queue name (类似 kafka topic), 生产方将数据打入这个队列
+--use_local_index=false
+
+### 索引相关配置 ###
+# ads::indexing 中会用到这两个 static_dict_filename
+# 一般软链接到 ../../../../ads_index/api/data/static_dict.dat
+--dynamic_index_static_dict_filename=../data/static_dict.dat
+--index_builder_static_dict_filename=../data/static_dict.dat
+################# END 本地索引相关配置 #################
+
+--photo_store_enable_ttl_remove_kconf_path=reco.distributedIndex.hotPhotoStoreEnableTtlRemove
+
+--grpc_cqs_num=16
+--grpc_thread_num_per_core=0.0625
+--sub_flow_thread_num=16
+
+--logging_switch_uid_mod_divisor=1000
+--enable_fast_stop=true
+--attr_perf_sample_rate=0.001
+--slow_list_length_limit_kconf_key=reco.explore.exploreRecoLeafSlowListLimit
+# cpu耗时统计
+--pipeline_cpu_cost_sample_rate=1.0
+
+--enable_pthread_affinity=true
+--enable_numa_aware=true
+
+# 开启KTHP模块
+--enable_kthp_process=true
+# 保证稳定性，不让其在运行过程中主动规整
+--prevent_runtime_compaction=true
+# 使规整时间为0，不增长启动时间
+--defragment_time=0

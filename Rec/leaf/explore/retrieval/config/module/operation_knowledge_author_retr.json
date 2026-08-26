@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_qualified_content_common_retr_v2", false],
+      "kess_service_name": ["qualified_content_common_retr_v2_service_name", "grpc_fountainKnowledgeContentV2CommonRetrServer"],
+      "service_request_num": ["qualified_content_common_retr_v2_request_num", 500]
+    },
+    "constant": {
+      "service_timeout_ms": 50,
+      "enable_trim_user_info": 1
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "operation_knowledge_author_retr__result"
+      ]
+    }
+  },
+  "reason": 3101,
+  "service_request_type": "explore_default",
+  "trim_user_info": [
+    "browsed_photo_ids",
+    "user_profile_v1.collect_list.photo_id",
+    "user_profile_v1.download_video_list.photo_id",
+    "user_profile_v1.forward_list.photo_id",
+    "user_profile_v1.follow_list.photo_id",
+    "user_profile_v1.comment_list.photo_id",
+    "user_profile_v1.like_list.photo_id"
+  ]
+}

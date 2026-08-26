@@ -1,0 +1,31 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "disable_merchant_explore_all_photo_optimize": 0,
+      "enable_merchant_photo_calc_type": 0
+    },
+    "import": {
+      "common_attrs": [
+        "merchant_live_authors_set__memory_data"
+      ],
+      "item_attrs": [
+        "merchant_item_info__item_id_list",
+        "merchant_photo_cart_relation",
+        "author__id"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "is_merchant_cart",
+        "is_merchant_living",
+        "merchant_author_in_living"
+      ],
+      "common_attrs": [
+        "merchant_buyer_type"
+      ]
+    }
+  }
+}

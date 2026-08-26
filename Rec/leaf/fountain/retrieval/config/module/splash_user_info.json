@@ -1,0 +1,47 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "skip_fountain_splash_filter_action_list": 1,
+      "fountain_splash_trigger_play_ms_threshold": 7000,
+      "fountain_splash_enable_append_other_tags": 0,
+      "enable_fountain_get_user_message_cnt_today_from_redis": 0,
+      "enable_fountain_get_workday_hour_gender": 0,
+      "enable_fountain_koc_htr": false,
+      "fountain_koc_htr_time_gap_minute": 1440
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "uIsLivePayingUser",
+        "uIsLiveHighPayingUser",
+        "source_hetu_level_one",
+        "uMessageActiveDegreeCode",
+        "uToUserShareSendNum30dKV",
+        "uInsideShareActiveDegreeDetailCode"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "_ABTEST_USER_TAG_NAMES_",
+        "_ABTEST_USER_TAG_VALUES_",
+        "location_city_level_v2",
+        "friendAids",
+        "userInfoPb",
+        "user_risk_level",
+        "user_fountain_play_id_list",
+        "user_fountain_play_time_list",
+        "user_fountain_play_hetu_list",
+        "hetu1_filtered_play_photo_id_list",
+        "living_certain_aid_list",
+        "uIsExploreTnuCrowdUser",
+        "bid_follow_num",
+        "u_share_num_30d",
+        "u_message_active_degree",
+        "user_msg_cnt_ssm_today",
+        "user_msg_cnt_gsm_today",
+        "fountain_recent_hate_count",
+        "u_inside_share_active_degree_detail_code"
+      ]
+    }
+  }
+}

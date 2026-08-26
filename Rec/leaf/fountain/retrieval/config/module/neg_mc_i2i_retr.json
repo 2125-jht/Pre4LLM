@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["fountain_enable_neg_mc_i2i_retr", false],
+      "ann_dist_threshold": ["fountain_neg_mc_i2i_ann_dist_threshold", 0.0],
+      "trigger_time_gap_day": ["fountain_neg_mc_i2i_trigger_time_gap_day", 7],
+      "trigger_size": ["fountain_neg_mc_i2i_trigger_size", 20],
+      "embedding_service_name": ["fountain_neg_mc_emb_service_name", "grpc_hotMcEmbed"],
+      "ann_service_name": ["fountain_neg_mc_i2i_ann_service_name", "grpc_lifeTabMcI2i_v1"],
+      "retr_num": ["fountain_neg_mc_i2i_retr_num", 1000],
+      "dest_bucket": ["fountain_neg_mc_i2i_dest_bucket", "photo"]
+    },
+    "import": {
+      "common_attrs": [
+        "hate_list",
+        "hate_list_timestamps"
+      ]
+    },
+    "export": {
+      "results": [
+        "fountain_neg_mc_i2i_retr__result"
+      ],
+      "common_attrs": [
+        "mc_i2i_neg_pid_list"
+      ]
+    }
+  },
+  "reason": 10610
+}

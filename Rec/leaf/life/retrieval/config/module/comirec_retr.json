@@ -1,0 +1,35 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["hot_h3099_enabled", false],
+      "retrieval_cache_config": ["hot_h3099_retr_cache_config", ""],
+      "retrieve_num": ["hot_h3099_retrieve_num", 1000],
+      "auxiliary_arg": ["hot_h3099_auxiliary", ""],
+      "increase_quota_factor": ["explore_pandora_retrieve_factor", 1.0],
+      "service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "hot_h3099_pandora_common_retr_service",
+        "param_type": "string",
+        "default_value": "grpc_exploreMultiInterestCommonRetrServer",
+        "report_ab_hit": true
+      },
+      "skip_personal_quota": ["hot_h3099_skip_personal_quota", 1]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "increase_quota_status",
+        "reason_ratio_map_attr"
+      ]
+    },
+    "export": {
+      "results": [
+        "comirec_retr__result"
+      ]
+    }
+  },
+  "reason": 3099
+}

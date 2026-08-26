@@ -1,0 +1,21 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_audit_topk_pass_retr", true],
+      "trigger_num": ["explore_audit_topk_pass_retr_trigger_num", 70],
+      "retrieve_num": ["explore_audit_topk_pass_retr_result_num", 6000]
+    },
+    "abtest_retrieval_num_attr": "audit_topk_pass_retr_final_result_num",
+    "import": {
+      "common_attrs": [
+        "enable_retr_filter_downgrade"
+      ]
+    },
+    "export": {
+      "results": [
+        "audit_topk_pass_retr__result"
+      ]
+    }
+  },
+  "reason": 9999
+}

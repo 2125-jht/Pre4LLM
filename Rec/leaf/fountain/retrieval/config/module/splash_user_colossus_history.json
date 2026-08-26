@@ -1,0 +1,20 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_fountain_splash_colossus_v2": false,
+      "enable_replace_colossus_v2_from_retr": ["enable_fountain_splash_replace_colossus_v2_from_retr", false]
+    },
+    "export": {
+      "common_attrs": [
+        "colossus_resp_v2"
+      ]
+    }
+  },
+  "enable_colossus_v2": "enable_fountain_splash_colossus_v2",
+  "colossus": {
+    "service_name": "grpc_colossusSimV2",
+    "client_type": "common_item_client",
+    "output_attr": "colossus_resp_v2",
+    "parse_to_pb": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_cascading_gamora_interest_model": 0,
+      "explore_cascading_gamora_interest_kess_service": "grpc_exploreCascadingGamoraInterest"
+    },
+    "import": {
+      "common_attrs": [
+        "uMultiDimensionGroupKV",
+        "uMultiDimensionGroupDetailKV"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "cascading_explore_gamora_interest_ptr",
+        "cascading_explore_gamora_interest_ltr"
+      ]
+    }
+  }
+}

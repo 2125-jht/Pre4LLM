@@ -1,0 +1,45 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_hot_content_mc_u2i_retr", false],
+      "ann_service_name": ["hot_content_mc_u2i_ann_service_name", "grpc_explorePopularContentMcU2iAnnServer"],
+      "ann_service_retr_count": ["hot_content_mc_u2i_cand_num", 500],
+      "ann_service_bucket": ["hot_content_mc_u2i_ann_bucket", "photo"],
+      "ann_dist_threshold": ["hot_content_mc_u2i_ann_dist_ths", 0.0]
+    },
+    "constant": {
+      "embedding_service_name": "grpc_hotMcEmbed",
+      "enable_retriveal_add_neg_feedback": 0,
+      "retriveal_add_neg_feedback_alpha": 0.2,
+      "not_click_limit_hour": 1.0,
+      "play_stat_limit_hour": 1.0,
+      "fountain_short_view_threshold": 5000,
+      "short_view_threshold": 3000,
+      "max_not_click_num": 16,
+      "max_click_num": 16,
+      "max_report_num": 16,
+      "not_click_weight": 2.0,
+      "max_short_view_num": 16,
+      "short_view_weight": 1.0,
+      "max_hate_num": 8,
+      "hate_weight": 2.5,
+      "click_weight": -1.5,
+      "report_weight": 4.0,
+      "ann_service_timeout": 30,
+      "risk_level_min": 0
+    },
+    "import": {
+      "common_attrs": [
+        "mc_u2i_user_embedding_list",
+        "user_risk_level",
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "hot_content_mc_u2i_retr__result"
+      ]
+    }
+  },
+  "reason": 10030
+}

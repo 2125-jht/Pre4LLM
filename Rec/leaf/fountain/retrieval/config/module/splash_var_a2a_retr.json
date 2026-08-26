@@ -1,0 +1,24 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_splash_var_a2a_retr", 0],
+      "fountain_splash_var_a2a_retr_ann_service": "grpc_fountainVarA2ARetr",
+      "fountain_splash_var_a2a_sim_author_num": 100,
+      "fountain_splash_var_a2a_retr_index_service": "grpc_recoHotOrderedIndexServer",
+      "fountain_splash_var_a2a_ordering": "authorId2PhotoIdOrderByExploreStatScore",
+      "fountain_splash_var_a2a_num_per_author": 5,
+      "fountain_splash_var_a2a_cand_num": 800
+    }, 
+    "import": {
+      "common_attrs": [
+        "sourcePidAuthorId"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_var_a2a_retr__result"
+      ]
+    }
+  },
+  "reason": 10461
+}

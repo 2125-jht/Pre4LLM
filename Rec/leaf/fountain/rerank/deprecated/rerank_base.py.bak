@@ -1,0 +1,1525 @@
+#!/usr/bin/env python3
+# coding=utf-8
+
+def gen_variant_config2():
+    return {
+        "default_decay_rate": 0.1,
+        "default_decay_window_size": 6,
+        "default_decay_occurrent_times": 3,
+        "author__id": {
+          "decay_occurrent_times": "{{fountain_rerank_author_id_times}}",
+          "decay_window_size": "{{fountain_rerank_author_id_winsize}}"
+        },
+        "author__category_detail__fourth_level_id": {
+          "decay_window_size": "{{fountain_rerank_author_fourth_level_id_winsize}}",
+          "decay_occurrent_times": "{{fountain_rerank_author_fourth_level_id_times}}"
+        },
+        "author__category_detail__second_level_id": {
+          "decay_window_size": "{{fountain_rerank_author_second_level_id_winsize}}",
+          "decay_occurrent_times": "{{fountain_rerank_author_second_level_id_times}}"
+        },
+        "hetu_level_one_attr": {
+          "decay_occurrent_times": "{{fountain_rerank_hetu_level_one_times}}",
+          "decay_window_size": "{{fountain_rerank_hetu_level_one_winsize}}"
+        },
+        "hetu_level_two_attr": {
+          "decay_occurrent_times": "{{fountain_rerank_hetu_level_two_times}}",
+          "decay_window_size": "{{fountain_rerank_hetu_level_two_winsize}}"
+        },
+        "picture_variant_attr": {
+          "decay_occurrent_times": "{{fountain_rerank_picture_times}}",
+          "decay_window_size": "{{fountain_rerank_picture_winsize}}"
+        },
+        "is_photo_author_followed": {
+          "decay_window_size": "{{fountain_rerank_follow_author_id_winsize}}",
+          "decay_occurrent_times": "{{fountain_rerank_follow_author_id_times}}",
+        },
+        "duration_0_7s": {
+          "decay_occurrent_times": "{{fountain_rerank_duration_0_7s_times}}",
+          "decay_window_size": "{{fountain_rerank_duration_0_7s_winsize}}"
+        },
+        "duration_7_9s": {
+          "decay_occurrent_times": "{{fountain_rerank_duration_7_9s_times}}",
+          "decay_window_size": "{{fountain_rerank_duration_7_9s_winsize}}"
+        },
+        "duration_9_12s": {
+          "decay_occurrent_times": "{{fountain_rerank_duration_9_12s_times}}",
+          "decay_window_size": "{{fountain_rerank_duration_9_12s_winsize}}"
+        },
+        "duration_12_17s": {
+          "decay_occurrent_times": "{{fountain_rerank_duration_12_17s_times}}",
+          "decay_window_size": "{{fountain_rerank_duration_12_17s_winsize}}"
+        },
+        "duration_17_20s": {
+          "decay_occurrent_times": "{{fountain_rerank_duration_17_20s_times}}",
+          "decay_window_size": "{{fountain_rerank_duration_17_20s_winsize}}"
+        },
+        "duration_20_58s": {
+          "decay_occurrent_times": "{{fountain_rerank_duration_20_58s_times}}",
+          "decay_window_size": "{{fountain_rerank_duration_20_58s_winsize}}"
+        },
+        "duration_gt_58s": {
+          "decay_occurrent_times": "{{fountain_rerank_duration_gt_58s_times}}",
+          "decay_window_size": "{{fountain_rerank_duration_gt_58s_winsize}}"
+        },
+        "duration_gt_120s": {
+          "decay_occurrent_times": "{{fountain_rerank_duration_gt_120s_times}}",
+          "decay_window_size": "{{fountain_rerank_duration_gt_120s_winsize}}"
+        },
+        "hetu_level_one_6_type": {
+          "decay_occurrent_times": "{{fountain_rerank_hetu_level_one_6_type_times}}",
+          "decay_window_size": "{{fountain_rerank_hetu_level_one_6_type_winsize}}"
+        },
+        "hetu_level_one_9_type": {
+          "decay_occurrent_times": "{{fountain_rerank_hetu_level_one_9_type_times}}",
+          "decay_window_size": "{{fountain_rerank_hetu_level_one_9_type_winsize}}"
+        },
+        "hetu_level_one_28_type": {
+          "decay_occurrent_times": "{{fountain_rerank_hetu_level_one_28_type_times}}",
+          "decay_window_size": "{{fountain_rerank_hetu_level_one_28_type_winsize}}"
+        },
+        "hetu_level_one_39_type": {
+          "decay_occurrent_times": "{{fountain_rerank_hetu_level_one_39_type_times}}",
+          "decay_window_size": "{{fountain_rerank_hetu_level_one_39_type_winsize}}"
+        }
+    }
+
+def gen_variant_config():
+    return {
+        "default_decay_rate": 0.1,
+        "default_decay_window_size": 6,
+        "default_decay_occurrent_times": 3,
+        "author__id": {
+          "decay_occurrent_times": 3,
+          "decay_window_size": 6
+        },
+    }
+
+def gen_beamsearch_filter_queues():
+    res = []
+    queues = ["click", "like", "follow", "forward", "comment", "profile", "longview",
+              "watchtime", "shortview", "l2r", "pepstr", "outctr", "shortviewinorder", "neg_feedback_discount",
+              "watchtime_ori", "fusion_pctr", "fusion_pcltr"]
+    prefix = "{{fountain_rerank_beamsearch_filter_"
+    for i, q in enumerate(queues) :
+      t = {"name" : "fullrank_" + q + "_score"}
+      t.update({"weight_base" : prefix + q + '_score}}'})
+      res.append(t)
+    return res
+
+def gen_list_ensemble_filter_queues():
+    res = []
+    queues = ["click", "like", "follow", "forward", "comment", "profile", "longview",
+              "watchtime", "shortview", "l2r", "pepstr", "outctr", "shortviewinorder", "neg_feedback_discount",
+              "watchtime_ori"]
+    prefix = "{{fountain_rerank_list_ensemble_filter_"
+    for i, q in enumerate(queues) :
+      t = {"name" : "fullrank_" + q + "_score"}
+      t.update({"weight_base" : prefix + q + '_score}}'})
+      res.append(t)
+    return res
+
+def gen_seed_ensemble_queues_dpp_v2():
+  res = []
+  queues = ["click", "like", "follow", "forward", "comment", "profile", "longview",
+            "watchtime", "shortview", "l2r", "pepstr", "outctr", "shortviewinorder", "neg_feedback_discount",
+            "watchtime_ori", "evtr_v2", "lstr", "collect", "cmef", "lvtr_ori", "pfintr", "finish", "next", "slide", "opportunity_cost",
+            "cl_tran", "ada_xtr", "trans_pvtr", "act_ctr", "topk_mgs_expected", "action_once_interact", "action_once_watchtime", "pcpr",
+            "act_wtd", "pure_value", "fusion_pctr", "fusion_pcltr", "cl", "cascade_linear", "cl_play_time", "satisfy", "rank_before_rerank","rerank_gen_point_pos", "rerank_gen_point_next","rrwtd","rrnext", "min_act_rank_reci",
+            "ori_pswptr", "distill_rerank", "lt_interest", "comment_ltr", "xgb_ltr", "hate_similary", "pre_filter", "unexpected", "shortview_phtr",
+            "pctr_hetu", "pltr_hetu", "pwtr_hetu", "pftr_hetu", "pcmtr_hetu", "pptr_hetu", "rerank_distill", "evtr_distill", "distill_fusion", "triplem", "triplem_interaction", 
+            "merchant_photo_ctcvr", "merchant_photo_gmv", "merchant_live_ctcvr", "merchant_live_gmv", "fractile_fusion", "hetu_behavior", "duration_pxtrs", "vv_pxtrs", "cid_pxtrs", "quality_time", "quality_action", "quality_play",
+            "produce_new_user_clk", "produce_new_user_ups", "produce_month_user_clk", "produce_month_user_ups", "produce_weeks_user_clk", "produce_weeks_user_ups", "produce_week_user_clk", "produce_week_user_ups",
+            "user_author_ltv", "user_author_ltv_time", "esnn", "ctr_kelly_gain", "interact_kelly_gain", "session", "quantile_relative", "wtd_by_frac", "wtd_by_frac_evtr", "wtd_by_frac_lvtr", "wtd_by_frac_svtr", "wtd_by_frac_cpr",
+            "effective_follow_rate", "effective_follow_value", "good_item_similary"]
+  prefix = "{{dpp_fountain_rerank_gen_seed_ensemble_fullrank_"
+  for i, q in enumerate(queues) :
+    t = {"name" : "fullrank_" + q + "_score"}
+    t.update({"weight_base" : prefix + q + '_score}}'})
+    t.update({"weight_addAndMul": prefix + q + '_score_addAndMul}}'})
+    t.update({"bias_range" : prefix + q + '_range}}'})
+    t.update({"weight_lower_bound" : prefix + q + '_lower_bound}}'})
+    t.update({"enable_use_proportion" : prefix + q + '_use_proportion}}'})
+    t.update({"raw_weight" : prefix + q + '_raw_weight}}'})
+    t.update({"raw_pow_weight" : prefix + q + '_raw_pow_weight}}'})
+    t.update({"raw_weight_multiply" : prefix + q + '_raw_weight_multiply}}'})
+    t.update({"raw_pow_weight_multiply" : prefix + q + '_raw_pow_weight_multiply}}'})
+    t.update({"que_discount_coef" : prefix + q + '_que_discount_coef}}'})
+    t.update({"raw_weight_addAndMul" : prefix + q + '_raw_weight_addAndMul}}'})
+    t.update({"raw_pow_weight_addAndMul" : prefix + q + '_raw_pow_weight_addAndMul}}'})
+    t.update({"raw_score_alpha": prefix + q + '_raw_score_alpha}}'})
+    t.update({"score_norm": prefix + q + '_score_norm}}'})
+    if (q == "collect") :
+      t.update({"variant_weight" : "{{fountain_rerank_cltr_score_variant_weight}}"})
+    if (q in ("like", "collect", "comment", "follow", "forward", "click", "pfintr", "outctr", "evtr_v2")) :
+      t.update({"fractile_name": "fullrank_" + q + '_fractile_score'})
+      t.update({"raw_weight_fractile" : prefix + q + '_raw_weight_fractile}}'})
+      t.update({"raw_pow_weight_fractile" : prefix + q + '_raw_pow_weight_fractile}}'})
+    res.append(t)
+
+  queues_v2 = ["fullrank_sim_playtime_finish", "fullrank_sim_ordinal_playtime", "fullrank_sim_evtr_playtime",
+               "fullrank_sim_evtr_duration", "fullrank_sim_wtd_duration", "topk_mgs_neg_score", "fullrank_sim_phtr", "fullrank_distill_rerank_ltr",
+               "fullrank_fractile_sum_score", "fr_duration_xtr_bias_score", "fullrank_sim_living_pctr", "fullrank_ltr_v4_fountain_ordinal_wtd",
+              "fullrank_ltr_v4_short_view", "fullrank_ltr_v4_log_playtime", "fr_living_ctr", "fr_living_lwtr", "fr_living_gtr", "fr_living_mix_score",
+              "high_quality_follow_rate_score", "implicit_follow_rate_score"]
+  prefix = "{{dpp_fountain_rerank_gen_seed_ensemble_fullrank_"
+  for i, q in enumerate(queues_v2) :
+    t = {"name" : q}
+    t.update({"weight_base" : prefix + q + '_score}}'})
+    t.update({"weight_addAndMul": prefix + q + '_score_addAndMul}}'})
+    t.update({"bias_range" : prefix + q + '_range}}'})
+    t.update({"weight_lower_bound" : prefix + q + '_lower_bound}}'})
+    t.update({"enable_use_proportion" : prefix + q + '_use_proportion}}'})
+    t.update({"raw_weight" : prefix + q + '_raw_weight}}'})
+    t.update({"raw_pow_weight" : prefix + q + '_raw_pow_weight}}'})
+    t.update({"raw_weight_multiply" : prefix + q + '_raw_weight_multiply}}'})
+    t.update({"raw_pow_weight_multiply" : prefix + q + '_raw_pow_weight_multiply}}'})
+    t.update({"que_discount_coef" : prefix + q + '_que_discount_coef}}'})
+    t.update({"raw_weight_addAndMul" : prefix + q + '_raw_weight_addAndMul}}'})
+    t.update({"raw_pow_weight_addAndMul" : prefix + q + '_raw_pow_weight_addAndMul}}'})
+    t.update({"raw_score_alpha": prefix + q + '_raw_score_alpha}}'})
+    t.update({"score_norm": prefix + q + '_score_norm}}'})
+    res.append(t)
+
+  return res
+
+def gen_splash_seed_ensemble_queues():
+    res = []
+    queues = ["click", "like", "follow", "forward", "comment", "profile", "longview",
+              "watchtime", "shortview", "l2r", "pepstr", "outctr", "shortviewinorder", "neg_feedback_discount",
+              "watchtime_ori", "evtr_v2", "lstr", "collect", "cmef", "lvtr_ori", "pfintr", "finish", "next", "slide",
+              "cl", "act_ctr", "fusion_pctr", "fusion_pcltr", "cl_play_time"]
+    prefix = "{{fountain_splash_rerank_gen_seed_ensemble_fullrank_"
+    for i, q in enumerate(queues) :
+      t = {"name" : "fullrank_" + q + "_score"}
+      t.update({"weight_base" : prefix + q + '_score}}'})
+      t.update({"bias_range" : prefix + q + '_range}}'})
+      t.update({"weight_lower_bound" : prefix + q + '_lower_bound}}'})
+      t.update({"enable_use_proportion" : prefix + q + '_use_proportion}}'})
+      res.append(t)
+
+    queues = ["duration_0_7s", "duration_7_9s", "duration_9_12s", "duration_12_17s",
+              "duration_17_20s", "duration_20_58s", "duration_gt_58s", "duration_gt_120s", "source_related_score"]
+    prefix = "{{fountain_splash_rerank_gen_seed_ensemble_"
+    for i, q in enumerate(queues) :
+      t = {"name" : q}
+      t.update({"weight_base" : prefix + q + '_score}}'})
+      t.update({"bias_range" : prefix + q + '_range}}'})
+      res.append(t)
+
+    return res
+
+def gen_photo_features_for_idx_position(idx):
+    return [
+        "pId_idx{}".format(idx),
+        "aId_idx{}".format(idx),
+        "pPctr_idx{}".format(idx),
+        "pPltr_idx{}".format(idx),
+        "pPwtr_idx{}".format(idx),
+        "pPftr_idx{}".format(idx),
+        "pPhtr_idx{}".format(idx),
+        "pPlvtr_idx{}".format(idx),
+        "pPsvtr_idx{}".format(idx),
+        "pPvtr_idx{}".format(idx),
+        "pPptr_idx{}".format(idx),
+        "pPcmtr_idx{}".format(idx),
+        "pPcmef_idx{}".format(idx),
+        "pPepstr_idx{}".format(idx),
+        "pPfrScore1_idx{}".format(idx),
+        "pPfrScore2_idx{}".format(idx),
+        "pPwtd_idx{}".format(idx),
+        "pMcPctr_idx{}".format(idx),
+        "pMcPltr_idx{}".format(idx),
+        "pMcPwtr_idx{}".format(idx),
+        "pMcPlvtr_idx{}".format(idx),
+        "pMcPsvtr_idx{}".format(idx),
+        "pEmpCtr_idx{}".format(idx),
+        "pEmpLtr_idx{}".format(idx),
+        "pEmpWtr_idx{}".format(idx),
+        "pEmpFtr_idx{}".format(idx),
+        "pEmpPtr_idx{}".format(idx),
+        "pEmpCmtr_idx{}".format(idx),
+        "pEmpHtr_idx{}".format(idx),
+        "pAuthorFansCount_idx{}".format(idx),
+        "pUploadType_idx{}".format(idx),
+        "pDurationMs_idx{}".format(idx),
+        "pHotShow_idx{}".format(idx),
+        "pHotClick_idx{}".format(idx),
+        "pHotLike_idx{}".format(idx),
+        "pHotFollow_idx{}".format(idx),
+        "pHotHate_idx{}".format(idx),
+        "pHotReport_idx{}".format(idx),
+        "pHotLiving_idx{}".format(idx),
+        "pHotExptag_idx{}".format(idx),
+        "pUploadRate_idx{}".format(idx),
+        "pCityId_idx{}".format(idx),
+        "pProvinceId_idx{}".format(idx),
+        "pContentLevel_idx{}".format(idx),
+        "pAvgWatchtime_idx{}".format(idx),
+        "pHetuTagLevel1Id_idx{}".format(idx),
+        "pHetuTagLevel2Id_idx{}".format(idx),
+        "pDnnClusterId_idx{}".format(idx),
+        "pMmuImgClusterV1_idx{}".format(idx),
+        "pMmuImgClusterV3_idx{}".format(idx),
+        "pMusic_idx{}".format(idx),
+        "pMmuContentId_idx{}".format(idx),
+        "pMusicComboId_idx{}".format(idx),
+        "pOcrCoverTextWordCount_idx{}".format(idx),
+        "position_idx{}".format(idx),
+    ]
+
+def gen_photo_features_for_idx_position_v3(idx):
+  return [
+    "aId_idx{}".format(idx),
+    "pAvgWatchtime_idx{}".format(idx),
+    "pCityId_idx{}".format(idx),
+    "pContentLevel_idx{}".format(idx),
+    "pDurationMs_idx{}".format(idx),
+    "pEmpCmtr_idx{}".format(idx),
+    "pEmpCtr_idx{}".format(idx),
+    "pEmpFtr_idx{}".format(idx),
+    "pEmpHtr_idx{}".format(idx),
+    "pEmpLtr_idx{}".format(idx),
+    "pEmpPtr_idx{}".format(idx),
+    "pEmpWtr_idx{}".format(idx),
+    "pHetuTagLevel1Id_idx{}".format(idx),
+    "pHetuTagLevel2Id_idx{}".format(idx),
+    "pId_idx{}".format(idx),
+    "pMcPctr_idx{}".format(idx),
+    "pMcPltr_idx{}".format(idx),
+    "pMcPlvtr_idx{}".format(idx),
+    "pMcPsvtr_idx{}".format(idx),
+    "pMcPwtr_idx{}".format(idx),
+    "pMmuContentId_idx{}".format(idx),
+    "pMmuImgClusterV1_idx{}".format(idx),
+    "pMmuImgClusterV3_idx{}".format(idx),
+    "pMusic_idx{}".format(idx),
+    "pMusicComboId_idx{}".format(idx),
+    "pOcrCoverTextWordCount_idx{}".format(idx),
+    "pPcmef_idx{}".format(idx),
+    "pPcmtr_idx{}".format(idx),
+    "pPctr_idx{}".format(idx),
+    "pPepstr_idx{}".format(idx),
+    "pPftr_idx{}".format(idx),
+    "pPhtr_idx{}".format(idx),
+    "pPltr_idx{}".format(idx),
+    "pPlvtr_idx{}".format(idx),
+    "pPptr_idx{}".format(idx),
+    "pProvinceId_idx{}".format(idx),
+    "pPsvtr_idx{}".format(idx),
+    "pPvtr_idx{}".format(idx),
+    "pPwtd_idx{}".format(idx),
+    "pPwtr_idx{}".format(idx),
+    "pUploadType_idx{}".format(idx),
+  ]
+
+def gen_photo_short_stat_hetu_features(idx):
+  prefix = ["pShortStatShow", "pShortStatClick"]
+  hetu_prefix = ["Hetu1", "Hetu2", "Hetu3", "Hetu4", "Hetu5"]
+  time_cnt_prefix = ["5m", "30m", "2h", "1d", "100n", "1000n"]
+  hetu_short_prefix = [prefix[i] + hetu_prefix[j] + time_cnt_prefix[k] for i in range(len(prefix)) for j in range(len(hetu_prefix)) for k in range(len(time_cnt_prefix))]
+  return [
+    hetu_short_prefix[i] + "_idx{}".format(idx) for i in range(len(hetu_short_prefix))
+  ]
+def gen_photo_context_feature():
+  return [
+    "maxPctr_context",
+    "maxPltr_context",
+    "maxPwtr_context",
+    "maxPftr_context",
+    "maxPvtr_context",
+    "maxPptr_context",
+    "maxPcmtr_context",
+    "maxPlivingtr_context",
+    "avgPctr_context",
+    "avgPltr_context",
+    "avgPwtr_context",
+    "avgPftr_context",
+    "avgPvtr_context",
+    "avgPptr_context",
+    "avgPcmtr_context",
+    "avgPlivingtr_context",
+    "avg_duration_context",
+    "hetu_level_one_count",
+    "hetu_level_two_count",
+    "0_9s_duration_photo_count",
+    "9_15s_duration_photo_count",
+    "15_20s_duration_photo_count",
+    "20_58s_duration_photo_count",
+    "gt_58s_duration_photo_count",
+  ]
+
+def gen_photo_features_for_all_position_new(n):
+    return [attr for idx in range(n) for attr in gen_photo_features_for_idx_position(idx)] + [attr for idx in range(n) for attr in gen_photo_short_stat_hetu_features(idx)] + gen_photo_context_feature()
+
+def gen_photo_features_for_all_position_v3(n):
+  return [attr for idx in range(n) for attr in gen_photo_features_for_idx_position_v3(idx)]
+
+def gen_list_predict_common_attrs():
+    attrs = []
+    for i in range(30):
+        for tag in ["aid", "tag", "play"]:
+            attr = "realshow_" + tag + "_" + str(i)
+            attrs.append({"name" : attr, "as" : attr})
+    return attrs
+
+splash_rerank_expected_value_queues = [
+  {
+    "name": "fullrank_click_score",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_click_score_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_click_score_power_weight",
+  },
+  {
+    "name": "fullrank_shortview_score",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_shortview_score_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_shortview_score_power_weight",
+  },
+  {
+    "name": "fullrank_ltr_v4_fountain_finish_rate",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_finish_rate_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_finish_rate_power_weight",
+  },
+  {
+    "name": "fullrank_watchtime_score",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_watchtime_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_watchtime_power_weight",
+  },
+  {
+    "name": "fullrank_watchtime_ori_score",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_watchtime_ori_score_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_watchtime_ori_score_power_weight",
+  },
+  {
+    "name": "fullrank_like_score",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_like_score_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_like_score_power_weight",
+  },
+  {
+    "name": "fullrank_profile_score",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_profile_score_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_profile_score_power_weight",
+  },
+  {
+    "name": "fullrank_comment_score",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_comment_score_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_comment_score_power_weight",
+  },
+  {
+    "name": "fullrank_forward_score",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_forward_score_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_forward_score_power_weight",
+  },
+  {
+    "name": "fullrank_follow_score",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_follow_score_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_follow_score_power_weight",
+  },
+  {
+    "name": "fullrank_action_once_interact_score",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_action_once_interact_score_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_action_once_interact_score_power_weight",
+  },
+  {
+    "name": "fullrank_neg_feedback_discount_score",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_neg_feedback_discount_score_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_neg_feedback_discount_score_power_weight",
+  },
+  {
+    "name": "source_related_score",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_source_related_score_weight",
+    "power_weight_attr": "fountain_splash_beamsearch_source_related_score_power_weight",
+  },
+  {
+    "name": "fullrank_detail_new_pevtr_v2",
+    "power_weight_attr": "fountain_splash_beamsearch_pevtr_v2_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_pevtr_v2_weight",
+    "raw_weight_attr": "fountain_splash_beamsearch_pevtr_v2_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_splash_beamsearch_pevtr_v2_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_lstr",
+    "power_weight_attr": "fountain_splash_beamsearch_sim_lstr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_sim_lstr_weight",
+    "raw_weight_attr": "fountain_splash_beamsearch_sim_lstr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_splash_beamsearch_sim_lstr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_evtr_playtime",
+    "power_weight_attr": "fountain_splash_beamsearch_sim_evtr_playtime_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_splash_beamsearch_sim_evtr_playtime_weight",
+    "raw_weight_attr": "fountain_splash_beamsearch_sim_evtr_playtime_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_splash_beamsearch_sim_evtr_playtime_raw_pow_weight_attr",
+  },
+]
+
+rerank_expected_value_queues = [
+  {
+    "name": "fullrank_sim_pevtr",
+    "power_weight_attr": "fountain_expected_value_pevtr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pevtr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pevtr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pevtr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_detail_new_pevtr_v2",
+    "power_weight_attr": "fountain_expected_value_pevtr_v2_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pevtr_v2_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pevtr_v2_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pevtr_v2_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_ltr_v4_fountain_finish_rate",
+    "power_weight_attr": "fountain_expected_value_finish_rate_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_finish_rate_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_finish_rate_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_finish_rate_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_plvtr",
+    "power_weight_attr": "fountain_expected_value_plvtr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_plvtr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_plvtr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_plvtr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pfintr",
+    "power_weight_attr": "fountain_expected_value_pfintr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pfintr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pfintr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pfintr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_trans_pvtr_score",
+    "power_weight_attr": "fountain_expected_value_trans_pvtr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_trans_pvtr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_trans_pvtr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_trans_pvtr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pvtr",
+    "power_weight_attr": "fountain_expected_value_pvtr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pvtr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pvtr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pvtr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pcpr",
+    "power_weight_attr": "fountain_expected_value_pcpr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pcpr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pcpr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pcpr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pltr",
+    "power_weight_attr": "fountain_expected_value_pltr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pltr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pltr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pltr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pwtr",
+    "power_weight_attr": "fountain_expected_value_pwtr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pwtr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pwtr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pwtr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pftr",
+    "power_weight_attr": "fountain_expected_value_pftr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pftr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pftr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pftr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pcltr",
+    "power_weight_attr": "fountain_expected_value_pcltr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pcltr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pcltr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pcltr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pcmtr",
+    "power_weight_attr": "fountain_expected_value_pcmtr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pcmtr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pcmtr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pcmtr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pcmef",
+    "power_weight_attr": "fountain_expected_value_pcmef_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pcmef_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pcmef_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pcmef_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pptr",
+    "power_weight_attr": "fountain_expected_value_pptr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pptr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pptr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pptr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_lstr",
+    "power_weight_attr": "fountain_expected_value_lstr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_lstr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_lstr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_lstr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pepstr",
+    "power_weight_attr": "fountain_expected_value_pepstr_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_pepstr_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_pepstr_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_pepstr_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_action_once_watchtime_score",
+    "power_weight_attr": "fountain_expected_value_action_once_watchtime_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_action_once_watchtime_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_action_once_watchtime_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_action_once_watchtime_raw_pow_weight_attr",
+  },
+  {
+    "name": "fullrank_action_once_interact_score",
+    "power_weight_attr": "fountain_expected_value_action_once_interact_power_weight",
+    "weight": 0,
+    "weight_attr": "fountain_expected_value_action_once_interact_weight",
+    "raw_weight_attr": "fountain_rerank_expected_value_action_once_interact_raw_weight_attr",
+    "raw_pow_weight_attr": "fountain_rerank_expected_value_action_once_interact_raw_pow_weight_attr",
+  },
+]
+
+rerank_ensemble_queues = [
+  {
+    "name": "fullrank_ensemble_score",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_ensemble_score",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_ensemble_score",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+  },
+  {
+    "name": "fullrank_sim_pevtr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pevtr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pevtr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_pevtr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_detail_new_pevtr_v2",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_detail_new_pevtr_v2",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_detail_new_pevtr_v2",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_pevtr_v2_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_act_ctr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_act_ctr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_act_ctr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+  },
+  {
+    "name": "fullrank_act_wtd",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_act_wtd",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_act_wtd",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+  },
+  {
+    "name": "fullrank_ltr_v4_fountain_finish_rate",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_ltr_v4_fountain_finish_rate",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_ltr_v4_fountain_finish_rate",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+  },
+  {
+    "name": "fullrank_ada_xtr_score",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_ada_xtr_score",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_ada_xtr_score",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+  },
+  {
+    "name": "fullrank_sim_plvtr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_plvtr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_plvtr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_plvtr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pfintr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pfintr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pfintr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_pfintr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_trans_pvtr_score",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_trans_pvtr_score",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_trans_pvtr_score",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_trans_pvtr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pcpr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pcpr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pcpr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_pcpr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pltr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pltr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pltr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_pltr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pwtr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pwtr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pwtr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_pwtr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pftr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pftr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pftr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_pftr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pcltr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pcltr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pcltr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_pcltr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pcmtr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pcmtr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pcmtr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_pcmtr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pcmef",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pcmef",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pcmef",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_pcmef_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pptr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pptr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pptr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_pptr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_lstr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_lstr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_lstr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_lstr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_sim_pepstr",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pepstr",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_fullrank_sim_pepstr",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+    "raw_weight_attr": "fountain_rerank_ensemble_pepstr_raw_weight_attr",
+  },
+  {
+    "name": "fullrank_action_once_watchtime_score",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_action_watchtime_once_score",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_action_watchtime_once_score",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+  },
+  {
+    "name": "fullrank_action_once_interact_score",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_action_once_interact_score",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_action_once_interact_score",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+  },
+  {
+    "name": "virtual_rerank_score",
+    "power_weight_attr": "fountain_ensemble_weight_rerank_virtual_rerank_score",
+    "temperature_attr": "fountain_rerank_ensemble_temperature_attr",
+    "weight": 0,
+    "weight_attr": "fountain_ensemble_weight_rerank_virtual_rerank_score",
+    "smooth_attr": "fountain_rerank_ensemble_smooth_attr",
+  },
+]
+
+pos_features = [
+    # 调用精排 or 通过rankResult传入
+    {"name": "fullrank_sim_pevtr",  "as" : "pPctr_idx0"},
+    {"name": "fullrank_sim_pltr",  "as" : "pPltr_idx0"},
+    {"name": "fullrank_sim_pwtr",  "as" : "pPwtr_idx0"},
+    {"name": "fullrank_sim_pftr",  "as" : "pPftr_idx0"},
+    {"name": "fullrank_sim_phtr",  "as" : "pPhtr_idx0"},
+    {"name": "fullrank_sim_plvtr",  "as" : "pPlvtr_idx0"},
+    {"name": "fullrank_sim_out_pctr",  "as" : "pPsvtr_idx0"},
+    {"name": "fullrank_sim_pvtr",  "as" : "pPvtr_idx0"},
+    {"name": "fullrank_sim_pptr",  "as" : "pPptr_idx0"},
+    {"name": "fullrank_sim_pcmtr",  "as" : "pPcmtr_idx0"},
+    #{"name": "fullrank_plivewtr",  "as" : "pPlivingwtr_idx0"},
+    {"name": "fullrank_sim_pcmef",  "as" : "pPcmef_idx0"},
+    {"name": "fullrank_sim_pepstr",  "as" : "pPepstr_idx0"},
+    {"name": "fullrank_sim_pfintr",  "as" : "pPwtd_idx0"},
+
+    # 通过分布式索引
+    {"name": "photo_id",  "as" : "pId_idx0"},
+    {"name": "author__id",  "as" : "aId_idx0"},
+    {"name": "author__fans_count",  "as" : "pAuthorFansCount_idx0"},
+    {"name": "featurePUploadType",  "as" : "pUploadType_idx0"},
+    {"name": "explore_stat__show_count",  "as" : "pHotShow_idx0"},
+    {"name": "explore_stat__click_count",  "as" : "pHotClick_idx0"},
+    {"name": "explore_stat__like_count",  "as" : "pHotLike_idx0"},
+    {"name": "explore_stat__follow_count",  "as" : "pHotFollow_idx0"},
+    {"name": "explore_stat__negative_count",  "as" : "pHotHate_idx0"},
+    {"name": "explore_stat__report_detail__total_report_count",  "as" : "pHotReport_idx0"},
+    #{"name": "click_upload_rate",  "as" : "pUploadRate_idx0"},
+    {"name": "featurePCityId",  "as" : "pCityId_idx0"},
+    {"name": "featurePProvinceId",  "as" : "pProvinceId_idx0"},
+    {"name": "featurePDurationMs",  "as" : "pDurationMs_idx0"},
+    {"name": "content_safety_level_with_namespace__level_hot_online",  "as" : "pContentLevel_idx0"},
+    #{"name": "author.gender",  "as" : "pAuthorGender_idx0"},
+    {"name": "featurePHetuTagLevel1",  "as" : "pHetuTagLevel1Id_idx0"},
+    {"name": "featurePHetuTagLevel2",  "as" : "pHetuTagLevel2Id_idx0"},
+    {"name": "featurePDnnClusterId",  "as" : "pDnnClusterId_idx0"},
+    {"name": "mmu_img_cluster_v1",  "as" : "pMmuImgClusterV1_idx0"},
+    {"name": "featurePMmuImgClusterV3",  "as" : "pMmuImgClusterV3_idx0"},
+    {"name": "mmu_content_id",  "as" : "pMmuContentId_idx0"},
+    {"name": "featurePMusic",  "as" : "pMusic_idx0"},
+    {"name": "featurePMusicComboId",  "as" : "pMusicComboId_idx0"},
+    {"name": "featurePOcrCoverTextWordCount",  "as" : "pOcrCoverTextWordCount_idx0"},
+
+    # 通过rpc传入rankResult对齐recoPhotoInfo的口径
+    {"name": "cascade_pctr",  "as" : "pMcPctr_idx0"}, # 粗排分从RPC传过来的RankResult里拿
+    {"name": "cascade_pltr",  "as" : "pMcPltr_idx0"},
+    {"name": "cascade_pwtr",  "as" : "pMcPwtr_idx0"},
+    {"name": "cascade_plvtr",  "as" : "pMcPlvtr_idx0"},
+    {"name": "cascade_psvtr",  "as" : "pMcPsvtr_idx0"},
+    {"name": "empirical_ctr",  "as" : "pEmpCtr_idx0"},
+    {"name": "empirical_ltr",  "as" : "pEmpLtr_idx0"},
+    {"name": "empirical_wtr",  "as" : "pEmpWtr_idx0"},
+    {"name": "empirical_ftr",  "as" : "pEmpFtr_idx0"},
+    {"name": "empirical_ptr",  "as" : "pEmpPtr_idx0"},
+    {"name": "empirical_cmtr",  "as" : "pEmpCmtr_idx0"},
+    {"name": "empirical_htr",  "as" : "pEmpHtr_idx0"},
+    {"name": "empirical_watchtime",  "as" : "pAvgWatchtime_idx0"},
+    # 暂时没找到, 获取相对比较麻烦 先不传入
+    # {"name": "living",  "as" : "pHotLiving_idx0"},
+    # 这个需要问一下
+    {"name": "reason",  "as" : "pHotExptag_idx0"},
+]
+
+before_rerank_diversity_rules = [
+  dict(attr_name="duration_0_7s",
+       enabled="{{enabled_fountain_rerank_diversity_0_7s}}",
+       window_size= "{{winsize_fountain_rerank_diversity_0_7s}}",
+       max_num="{{maxnum_fountain_rerank_diversity_0_7s}}",
+       priority="{{priority_fountain_rerank_diversity_0_7s}}"),
+  dict(attr_name="duration_7_9s",
+       enabled="{{enabled_fountain_rerank_diversity_7_9s}}",
+       window_size= "{{winsize_fountain_rerank_diversity_7_9s}}",
+       max_num="{{maxnum_fountain_rerank_diversity_7_9s}}",
+       priority="{{priority_fountain_rerank_diversity_7_9s}}"),
+  dict(attr_name="duration_9_12s",
+       enabled="{{enabled_fountain_rerank_diversity_9_12s}}",
+       window_size= "{{winsize_fountain_rerank_diversity_9_12s}}",
+       max_num="{{maxnum_fountain_rerank_diversity_9_12s}}",
+       priority="{{priority_fountain_rerank_diversity_9_12s}}"),
+  dict(attr_name="duration_12_17s",
+       enabled="{{enabled_fountain_rerank_diversity_12_17s}}",
+       window_size= "{{winsize_fountain_rerank_diversity_12_17s}}",
+       max_num="{{maxnum_fountain_rerank_diversity_12_17s}}",
+       priority="{{priority_fountain_rerank_diversity_12_17s}}"),
+  dict(attr_name="duration_17_20s",
+       enabled="{{enabled_fountain_rerank_diversity_17_20s}}",
+       window_size= "{{winsize_fountain_rerank_diversity_17_20s}}",
+       max_num="{{maxnum_fountain_rerank_diversity_17_20s}}",
+       priority="{{priority_fountain_rerank_diversity_17_20s}}"),
+  dict(attr_name="duration_20_58s",
+       enabled="{{enabled_fountain_rerank_diversity_20_58s}}",
+       window_size= "{{winsize_fountain_rerank_diversity_20_58s}}",
+       max_num="{{maxnum_fountain_rerank_diversity_20_58s}}",
+       priority="{{priority_fountain_rerank_diversity_20_58s}}"),
+  dict(attr_name="duration_58_120s",
+       enabled="{{enabled_fountain_rerank_diversity_58_120s}}",
+       window_size= "{{winsize_fountain_rerank_diversity_58_120s}}",
+       max_num="{{maxnum_fountain_rerank_diversity_58_120s}}",
+       priority="{{priority_fountain_rerank_diversity_58_120s}}"),
+  dict(attr_name="duration_gt_120s",
+       enabled="{{enabled_fountain_rerank_diversity_gt_120s}}",
+       window_size= "{{winsize_fountain_rerank_diversity_gt_120s}}",
+       max_num="{{maxnum_fountain_rerank_diversity_gt_120s}}",
+       priority="{{priority_fountain_rerank_diversity_gt_120s}}")
+]
+
+pxtr_matrix_combo_queues = [
+  {
+    "pxtr_attr": "fullrank_sim_out_pctr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_out_pctr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_pltr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_pltr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_pwtr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_pwtr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_pcmtr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_pcmtr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_pftr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_pftr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_pcmef",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_pcmef_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_lstr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_lstr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_ori_pswptr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_pswptr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_pcltr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_pcltr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_pevtr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_pevtr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_plvtr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_plvtr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_psvr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_psvr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_pfintr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_pfintr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_pvtr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_pvtr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_pcpr",
+    "weight_attr": "fountain_rerank_pxtr_sim_matrix_fullrank_pcpr_weight",
+  }
+]
+
+
+model_greedy_extra_queues = [
+  {
+    "pxtr_attr": "fullrank_sim_pevtr",
+    "weight_attr": "fountain_rerank_model_greedy_fullrank_pevtr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_pfintr",
+    "weight_attr": "fountain_rerank_model_greedy_fullrank_pfintr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_sim_pvtr",
+    "weight_attr": "fountain_rerank_model_greedy_fullrank_pvtr_weight",
+  },
+  {
+    "pxtr_attr": "fullrank_pfintr_norm_score",
+    "weight_attr": "fountain_rerank_model_greedy_fullrank_pfintr_norm_score",
+  },
+  {
+    "pxtr_attr": "fullrank_action_once_interact_score",
+    "weight_attr": "fountain_rerank_model_greedy_fullrank_action_once_interact_score",
+  },
+]
+
+rerank_hetu_ensemble_queues = [
+  {
+    "pxtr_attr": "fullrank_pfintr_score",
+    "avg_attr": "avg_pfintr_dev",
+    "weight_attr": "fountain_rerank_hetu_ensemble_fullrank_pfintr_score",
+  },
+  {
+    "pxtr_attr": "fullrank_click_score",
+    "avg_attr": "avg_click_dev",
+    "weight_attr": "fountain_rerank_hetu_ensemble_fullrank_click_score",
+  },
+  {
+    "pxtr_attr": "fullrank_like_score",
+    "avg_attr": "avg_like_dev",
+    "weight_attr": "fountain_rerank_hetu_ensemble_fullrank_like_score",
+  },
+  {
+    "pxtr_attr": "fullrank_follow_score",
+    "avg_attr": "avg_follow_dev",
+    "weight_attr": "fountain_rerank_hetu_ensemble_fullrank_follow_score",
+  },
+  {
+    "pxtr_attr": "fullrank_forward_score",
+    "avg_attr": "avg_forward_dev",
+    "weight_attr": "fountain_rerank_hetu_ensemble_fullrank_forward_score",
+  },
+  {
+    "pxtr_attr": "fullrank_collect_score",
+    "avg_attr": "avg_collect_dev",
+    "weight_attr": "fountain_rerank_hetu_ensemble_fullrank_collect_score",
+  },
+  {
+    "pxtr_attr": "fullrank_comment_score",
+    "avg_attr": "avg_comment_dev",
+    "weight_attr": "fountain_rerank_hetu_ensemble_fullrank_comment_score",
+  },
+]
+rerank_cid_ensemble_queues = [
+  {
+    "pxtr_attr": "fullrank_pfintr_score",
+    "avg_attr": "avg_pfintr_dev",
+    "weight_attr": "fountain_rerank_cid_ensemble_fullrank_pfintr_score",
+  },
+  {
+    "pxtr_attr": "fullrank_emp_avg_play_score",
+    "avg_attr": "avg_play_dev",
+    "weight_attr": "fountain_rerank_cid_ensemble_fullrank_play_score",
+  },
+]
+
+rerank_duration_xtr_queues = [
+  {
+    "name": "pctr",
+    "xtr_attr": "fullrank_sim_pevtr",
+    "weight_attr": "rerank_gen_duration_pctr_weight",
+    "alpha_attr": "frerank_gen_duration_pctr_alpha",
+  },
+  {
+    "name": "plvtr",
+    "xtr_attr": "fullrank_sim_plvtr",
+    "weight_attr": "rerank_gen_duration_lvtr_weight",
+    "alpha_attr": "rerank_gen_duration_lvtr_alpha",
+  },
+  {
+    "name": "pfintr",
+    "xtr_attr": "fullrank_sim_pfintr",
+    "weight_attr": "rerank_gen_duration_pfintr_weight",
+    "alpha_attr": "rerank_gen_duration_pfintr_alpha",
+  },
+  {
+    "name": "pwtd",
+    "xtr_attr": "fullrank_sim_pwatchtime_no_bias",
+    "weight_attr": "rerank_gen_duration_pwtd_weight",
+    "alpha_attr": "rerank_gen_duration_pwtd_alpha",
+  },
+  {
+    "name": "pltr",
+    "xtr_attr": "fullrank_sim_pltr",
+    "weight_attr": "frerank_gen_duration_pltr_weight",
+    "alpha_attr": "rerank_gen_duration_pltr_alpha",
+  },
+  {
+    "name": "pwtr",
+    "xtr_attr": "fullrank_sim_pwtr",
+    "weight_attr": "frerank_gen_duration_pwtr_weight",
+    "alpha_attr": "frerank_gen_duration_pwtr_alpha",
+  }
+]
+
+rerank_vv_xtr_queues = [
+  {
+    "name": "pctr",
+    "xtr_attr": "fullrank_sim_pevtr",
+    "weight_attr": "rerank_gen_vv_pctr_weight",
+    "alpha_attr": "frerank_gen_vv_pctr_alpha",
+  },
+  {
+    "name": "plvtr",
+    "xtr_attr": "fullrank_sim_plvtr",
+    "weight_attr": "rerank_gen_vv_lvtr_weight",
+    "alpha_attr": "rerank_gen_vv_lvtr_alpha",
+  },
+  {
+    "name": "pfintr",
+    "xtr_attr": "fullrank_sim_pfintr",
+    "weight_attr": "rerank_gen_vv_pfintr_weight",
+    "alpha_attr": "rerank_gen_vv_pfintr_alpha",
+  },
+  {
+    "name": "pwtd",
+    "xtr_attr": "fullrank_sim_pwatchtime_no_bias",
+    "weight_attr": "rerank_gen_vv_pwtd_weight",
+    "alpha_attr": "rerank_gen_vv_pwtd_alpha",
+  },
+  {
+    "name": "pltr",
+    "xtr_attr": "fullrank_sim_pltr",
+    "weight_attr": "frerank_gen_vv_pltr_weight",
+    "alpha_attr": "rerank_gen_vv_pltr_alpha",
+  },
+  {
+    "name": "pwtr",
+    "xtr_attr": "fullrank_sim_pwtr",
+    "weight_attr": "frerank_gen_vv_pwtr_weight",
+    "alpha_attr": "frerank_gen_vv_pwtr_alpha",
+  }
+]
+
+rerank_cid_xtr_queues = [
+  {
+    "name": "pctr",
+    "xtr_attr": "fullrank_sim_pevtr",
+    "weight_attr": "rerank_gen_cid_pctr_weight",
+    "alpha_attr": "frerank_gen_cid_pctr_alpha",
+  },
+  {
+    "name": "plvtr",
+    "xtr_attr": "fullrank_sim_plvtr",
+    "weight_attr": "rerank_gen_cid_lvtr_weight",
+    "alpha_attr": "rerank_gen_cid_lvtr_alpha",
+  },
+  {
+    "name": "pfintr",
+    "xtr_attr": "fullrank_sim_pfintr",
+    "weight_attr": "rerank_gen_cid_pfintr_weight",
+    "alpha_attr": "rerank_gen_cid_pfintr_alpha",
+  },
+  {
+    "name": "pwtd",
+    "xtr_attr": "fullrank_sim_pwatchtime_no_bias",
+    "weight_attr": "rerank_gen_cid_pwtd_weight",
+    "alpha_attr": "rerank_gen_cid_pwtd_alpha",
+  },
+  {
+    "name": "pltr",
+    "xtr_attr": "fullrank_sim_pltr",
+    "weight_attr": "frerank_gen_cid_pltr_weight",
+    "alpha_attr": "rerank_gen_cid_pltr_alpha",
+  },
+  {
+    "name": "pwtr",
+    "xtr_attr": "fullrank_sim_pwtr",
+    "weight_attr": "frerank_gen_cid_pwtr_weight",
+    "alpha_attr": "frerank_gen_cid_pwtr_alpha",
+  }
+]
+
+rerank_item_features = [
+  "item_seq"
+]
+
+rerank_user_features = [
+  "featureUId"
+]
+
+# 对齐模型训练特征，注释掉线上环境获取不到的item attr
+rerank_features = [
+  # 调用精排 or 通过rankResult传入
+  {"name": "fullrank_sim_pevtr",  "as" : "pPctr"},
+  {"name": "fullrank_sim_pltr",  "as" : "pPltr"},
+  {"name": "fullrank_sim_pwtr",  "as" : "pPwtr"},
+  {"name": "fullrank_sim_pftr",  "as" : "pPftr"},
+  {"name": "fullrank_sim_phtr",  "as" : "pPhtr"},
+  {"name": "fullrank_sim_plvtr",  "as" : "pPlvtr"},
+  {"name": "fullrank_sim_out_pctr",  "as" : "pPsvtr"},
+  {"name": "fullrank_sim_pvtr",  "as" : "pPvtr"},
+  {"name": "fullrank_sim_pptr",  "as" : "pPptr"},
+  {"name": "fullrank_sim_pcmtr",  "as" : "pPcmtr"},
+  #{"name": "fullrank_plivewtr",  "as" : "pPlivingwtr"},
+  {"name": "fullrank_sim_pcmef",  "as" : "pPcmef"},
+  {"name": "fullrank_sim_pepstr",  "as" : "pPepstr"},
+  {"name": "fullrank_sim_pfintr", "as" : "pPwtd"},
+  # 通过分布式索引
+  {"name": "photo_id",  "as" : "pId"},
+  {"name": "author__id",  "as" : "aId"},
+  {"name": "author__fans_count",  "as" : "pAuthorFansCount"},
+  {"name": "featurePUploadType",  "as" : "pUploadType"},
+  {"name": "explore_stat__show_count",  "as" : "pHotShow"},
+  {"name": "explore_stat__click_count",  "as" : "pHotClick"},
+  {"name": "explore_stat__like_count",  "as" : "pHotLike"},
+  {"name": "explore_stat__follow_count",  "as" : "pHotFollow"},
+  {"name": "explore_stat__negative_count",  "as" : "pHotHate"},
+  {"name": "explore_stat__report_detail__total_report_count",  "as" : "pHotReport"},
+  #{"name": "click_upload_rate",  "as" : "pUploadRate"},
+  {"name": "featurePCityId",  "as" : "pCityId"},
+  {"name": "featurePProvinceId",  "as" : "pProvinceId"},
+  {"name": "featurePDurationMs",  "as" : "pDurationMs"},
+  {"name": "content_safety_level_with_namespace__level_hot_online",  "as" : "pContentLevel"},
+  #{"name": "author.gender",  "as" : "pAuthorGender"},
+  {"name": "featurePHetuTagLevel1",  "as" : "pHetuTagLevel1Id"},
+  {"name": "featurePHetuTagLevel2",  "as" : "pHetuTagLevel2Id"},
+  {"name": "featurePDnnClusterId",  "as" : "pDnnClusterId"},
+  {"name": "mmu_img_cluster_v1",  "as" : "pMmuImgClusterV1"},
+  {"name": "featurePMmuImgClusterV3",  "as" : "pMmuImgClusterV3"},
+  {"name": "mmu_content_id",  "as" : "pMmuContentId"},
+  {"name": "featurePMusic",  "as" : "pMusic"},
+  {"name": "featurePMusicComboId",  "as" : "pMusicComboId"},
+  {"name": "featurePOcrCoverTextWordCount",  "as" : "pOcrCoverTextWordCount"},
+  # 通过rpc传入rankResult对齐recoPhotoInfo的口径
+  {"name": "cascade_pctr",  "as" : "pMcPctr"}, # 粗排分从RPC传过来的RankResult里拿
+  {"name": "cascade_pltr",  "as" : "pMcPltr"},
+  {"name": "cascade_pwtr",  "as" : "pMcPwtr"},
+  {"name": "cascade_plvtr",  "as" : "pMcPlvtr"},
+  {"name": "cascade_psvtr",  "as" : "pMcPsvtr"},
+  {"name": "empirical_ctr",  "as" : "pEmpCtr"},
+  {"name": "empirical_ltr",  "as" : "pEmpLtr"},
+  {"name": "empirical_wtr",  "as" : "pEmpWtr"},
+  {"name": "empirical_ftr",  "as" : "pEmpFtr"},
+  {"name": "empirical_ptr",  "as" : "pEmpPtr"},
+  {"name": "empirical_cmtr",  "as" : "pEmpCmtr"},
+  {"name": "empirical_htr",  "as" : "pEmpHtr"},
+  {"name": "empirical_watchtime",  "as" : "pAvgWatchtime"},
+  # 暂时没找到, 获取相对比较麻烦 先不传入
+  # {"name": "living",  "as" : "pHotLiving"},
+  # 这个需要问一下
+  {"name": "reason",  "as" : "pHotExptag"},
+]
+
+rerank_features_v3 = [
+  {"name": "author__id", "as": "aId"},
+  {"name": "empirical_watchtime", "as": "pAvgWatchtime"},
+  {"name": "featurePCityId", "as": "pCityId"},
+  {"name": "content_safety_level_with_namespace__level_hot_online", "as": "pContentLevel"},
+  {"name": "featurePDurationMs", "as": "pDurationMs"},
+  {"name": "empirical_cmtr", "as": "pEmpCmtr"},
+  {"name": "empirical_ctr", "as": "pEmpCtr"},
+  {"name": "empirical_ftr", "as": "pEmpFtr"},
+  {"name": "empirical_htr", "as": "pEmpHtr"},
+  {"name": "empirical_ltr", "as": "pEmpLtr"},
+  {"name": "empirical_ptr", "as": "pEmpPtr"},
+  {"name": "empirical_wtr", "as": "pEmpWtr"},
+  {"name": "featurePHetuTagLevel1", "as": "pHetuTagLevel1Id"},
+  {"name": "featurePHetuTagLevel2", "as": "pHetuTagLevel2Id"},
+  {"name": "photo_id", "as": "pId"},
+  {"name": "cascade_pctr", "as": "pMcPctr"},
+  {"name": "cascade_pltr", "as": "pMcPltr"},
+  {"name": "cascade_plvtr", "as": "pMcPlvtr"},
+  {"name": "cascade_psvtr", "as": "pMcPsvtr"},
+  {"name": "cascade_pwtr", "as": "pMcPwtr"},
+  {"name": "mmu_content_id", "as": "pMmuContentId"},
+  {"name": "mmu_img_cluster_v1", "as": "pMmuImgClusterV1"},
+  {"name": "featurePMmuImgClusterV3", "as": "pMmuImgClusterV3"},
+  {"name": "featurePMusic", "as": "pMusic"},
+  {"name": "featurePMusicComboId", "as": "pMusicComboId"},
+  {"name": "featurePOcrCoverTextWordCount", "as": "pOcrCoverTextWordCount"},
+  {"name": "fullrank_sim_pcmef", "as": "pPcmef"},
+  {"name": "fullrank_sim_pcmtr", "as": "pPcmtr"},
+  {"name": "fullrank_sim_pevtr", "as": "pPctr"},
+  {"name": "fullrank_sim_pepstr", "as": "pPepstr"},
+  {"name": "fullrank_sim_pftr", "as": "pPftr"},
+  {"name": "fullrank_sim_phtr", "as": "pPhtr"},
+  {"name": "fullrank_sim_pltr", "as": "pPltr"},
+  {"name": "fullrank_sim_plvtr", "as": "pPlvtr"},
+  {"name": "fullrank_sim_pptr", "as": "pPptr"},
+  {"name": "featurePProvinceId", "as": "pProvinceId"},
+  {"name": "fullrank_sim_out_pctr", "as": "pPsvtr"},
+  {"name": "fullrank_sim_pvtr", "as": "pPvtr"},
+  {"name": "fullrank_sim_pfintr", "as": "pPwtd"},
+  {"name": "fullrank_sim_pwtr", "as": "pPwtr"},
+  {"name": "featurePUploadType", "as": "pUploadType"},
+]
+
+rerank_feature_map_all = {
+  "featureUId": "uId",
+  "featureDeviceId": "dId",
+  "featureAgeSegment": "uAgeSeg",
+  "featureProvinceId": "uProvinceId",
+  "featureCityId": "uCityId",
+  "featureClientId": "uClientId",
+  "featureVisitMod": "uMod",
+  "featureVisitNet": "uNetwork",
+  "featureGender": "uBasicGender",
+  "featureAgeSegment": "uBasicAge",
+  "featureRealtimeClickList": "uRealtimeClickList",
+  "featureRealtimeLikeList": "uRealtimeLikeList",
+  "featureRealtimeFollowList": "uRealtimeFollowList",
+  "featureRealtimeForwardList": "uRealtimeForwardList",
+  "featureUserProfileV1ClickPidList": "uClickPhotoList",
+  "featureUserProfileV1ClickAidList": "uClickPhotoAuthorList",
+  "featureUserProfileV1LikePidList": "uLikePhotoList",
+  "featureUserProfileV1LikeAidList": "uLikePhotoAuthorList",
+  "featureUserProfileV1CommentPidList": "uCommentPhotoList",
+  "featureUserProfileV1CommentAidList": "uCommentPhotoAuthorList",
+  "featureUserProfileV1FollowPidList": "uFollowPhotoList",
+  "featureUserProfileV1FollowAidList": "uFollowPhotoAuthorList",
+  "featureSourcePId": "featureSourcePId",
+  "sourcePidAuthorId": "sourcePidAuthorId",
+  "sourcePidFirstLevelCategory": "sourcePidFirstLevelCategory",
+  "sourcePidSecondLevelCategory": "sourcePidSecondLevelCategory",
+  "sourcePidThirdLevelCategory": "sourcePidThirdLevelCategory",
+  "sourcePidHetuLevelOneList": "SourcePidHetuTagLevel1",
+  "sourcePidHetuLevelTwoList": "SourcePidHetuTagLevel2",
+  "sourcePidHetuLevelThreeList": "SourcePidHetuTagLevel3",
+  "sourcePidHetu0": "sourcePidHetu0",
+  "sourcePidDnnCluster": "sourcePidDnnCluster",
+  "sourcePidDuration": "sourcePidDurationMs",
+  "uExpClick": "uExpClick",
+  "uExpLike": "uExpLike",
+  "uExpFollow": "uExpFollow",
+  "uExpLongView": "uExpLongView",
+  "uExpWatchTime": "uExpWatchTime",
+  "uRequestHour": "uRequestHour",
+  "uRequestWeekday": "uRequestWeekday",
+  "featureFountainProfileClickAidList": "featureFountainProfileClikAidList",
+  "featureFountainProfileClickPidList": "featureFountainProfileClikPidList",
+  "featureFountainProfileLikeAidList": "featureFountainProfileLikeAidList",
+  "featureFountainProfileLikePidList": "featureFountainProfileLikePidList",
+  "featureFountainProfileFollowAidList": "featureFountainProfileFollowAidList",
+  "featureFountainProfileFollowPidList": "featureFountainProfileFollowPidList",
+  "featureFountainProfileEffViewPidList": "featureFountainProfileEffViewPidList",
+  "featureFountainProfileEffViewAidList": "featureFountainProfileEffViewAidList",
+  "featureFountainProfileLongViewPidList": "featureFountainProfileLongViewPidList",
+  "featureFountainProfileLongViewAidList": "featureFountainProfileLongViewAidList",
+  "page": "currentPage"
+}
+
+rerank_feature_map = {
+  "featureUId": "uId",
+  "featureDeviceId": "dId",
+  "featureAgeSegment": "uAgeSeg",
+  "featureProvinceId": "uProvinceId",
+  "featureCityId": "uCityId",
+  "featureClientId": "uClientId",
+  "featureVisitMod": "uMod",
+  "featureVisitNet": "uNetwork",
+  "featureRealtimeClickList": "uRealtimeClickList",
+  "featureRealtimeLikeList": "uRealtimeLikeList",
+  "featureRealtimeFollowList": "uRealtimeFollowList",
+  "featureRealtimeForwardList": "uRealtimeForwardList",
+  "featureUserProfileV1ClickPidList": "uClickPhotoList",
+  "featureUserProfileV1ClickAidList": "uClickPhotoAuthorList",
+  "featureUserProfileV1LikePidList": "uLikePhotoList",
+  "featureUserProfileV1LikeAidList": "uLikePhotoAuthorList",
+  "featureUserProfileV1CommentPidList": "uCommentPhotoList",
+  "featureUserProfileV1CommentAidList": "uCommentPhotoAuthorList",
+  "featureUserProfileV1FollowPidList": "uFollowPhotoList",
+  "featureUserProfileV1FollowAidList": "uFollowPhotoAuthorList",
+  "featureSourcePId": "featureSourcePId",
+  "sourcePidAuthorId": "sourcePidAuthorId",
+  "sourcePidFirstLevelCategory": "sourcePidFirstLevelCategory",
+  "sourcePidSecondLevelCategory": "sourcePidSecondLevelCategory",
+  "sourcePidThirdLevelCategory": "sourcePidThirdLevelCategory",
+  "sourcePidHetuLevelOneList": "SourcePidHetuTagLevel1",
+  "sourcePidHetuLevelTwoList": "SourcePidHetuTagLevel2",
+  "sourcePidHetuLevelThreeList": "SourcePidHetuTagLevel3",
+  "sourcePidHetu0": "sourcePidHetu0",
+  "sourcePidDnnCluster": "sourcePidDnnCluster",
+  "sourcePidDuration": "sourcePidDurationMs",
+  "featureFountainProfileClickAidList": "featureFountainProfileClikAidList",
+  "featureFountainProfileClickPidList": "featureFountainProfileClikPidList",
+  "featureFountainProfileLikeAidList": "featureFountainProfileLikeAidList",
+  "featureFountainProfileLikePidList": "featureFountainProfileLikePidList",
+  "featureFountainProfileFollowAidList": "featureFountainProfileFollowAidList",
+  "featureFountainProfileFollowPidList": "featureFountainProfileFollowPidList",
+  "featureFountainProfileEffViewPidList": "featureFountainProfileEffViewPidList",
+  "featureFountainProfileEffViewAidList": "featureFountainProfileEffViewAidList",
+  "featureFountainProfileLongViewPidList": "featureFountainProfileLongViewPidList",
+  "featureFountainProfileLongViewAidList": "featureFountainProfileLongViewAidList",
+  "page": "currentPage"
+}
+
+rerank_feature_map_new = {
+  "featureUId": "uId",
+  "featureDeviceId": "dId",
+  "featureAgeSegment": "uBasicAge",
+  "featureProvinceId": "uProvinceId",
+  "featureCityId": "uCityId",
+  "featureClientId": "uClientId",
+  "featureVisitMod": "uMod",
+  "featureVisitNet": "uNetwork",
+  "featureRealtimeClickList": "uRealtimeClickList",
+  "featureRealtimeLikeList": "uRealtimeLikeList",
+  "featureRealtimeFollowList": "uRealtimeFollowList",
+  "featureRealtimeForwardList": "uRealtimeForwardList",
+  "uRealtimeNegativeList": "uRealtimeNegativeList",
+  "featureUserProfileV1ClickPidList": "uClickPhotoList",
+  "featureUserProfileV1ClickAidList": "uClickPhotoAuthorList",
+  "featureUserProfileV1LikePidList": "uLikePhotoList",
+  "featureUserProfileV1LikeAidList": "uLikePhotoAuthorList",
+  "featureUserProfileV1CommentPidList": "uCommentPhotoList",
+  "featureUserProfileV1CommentAidList": "uCommentPhotoAuthorList",
+  "featureUserProfileV1FollowPidList": "uFollowPhotoList",
+  "featureUserProfileV1FollowAidList": "uFollowPhotoAuthorList",
+  "uExpClick": "uExpClick",
+  "uExpLike": "uExpLike",
+  "uExpFollow": "uExpFollow",
+  "uExpLongView": "uExpLongView",
+  "uExpWatchTime": "uExpWatchTime",
+  "uRequestHour": "uRequestHour",
+  "uRequestWeekday": "uRequestWeekday",
+  "featureFountainProfileClickAidList": "featureFountainProfileClikAidList",
+  "featureFountainProfileClickPidList": "featureFountainProfileClikPidList",
+  "featureFountainProfileLikeAidList": "featureFountainProfileLikeAidList",
+  "featureFountainProfileLikePidList": "featureFountainProfileLikePidList",
+  "featureFountainProfileFollowAidList": "featureFountainProfileFollowAidList",
+  "featureFountainProfileFollowPidList": "featureFountainProfileFollowPidList",
+  "featureFountainProfileEffViewPidList": "featureFountainProfileEffViewPidList",
+  "featureFountainProfileEffViewAidList": "featureFountainProfileEffViewAidList",
+  "featureFountainProfileLongViewPidList": "featureFountainProfileLongViewPidList",
+  "featureFountainProfileLongViewAidList": "featureFountainProfileLongViewAidList",
+  "page": "currentPage"
+}
+
+def rerank_extra_common_attr():
+  features = [
+    "uViewPidListV1",
+    "uViewAidListV1",
+    "uEffectiveViewLabelListV1",
+    "uLongViewLabelListV1",
+    "uShortViewLabelListV1",
+    "uViewHetu1ListV1",
+    "uViewHetu2ListV1",
+    "uViewEffectivePidListV1",
+    "uViewLongPidListV1",
+    "uViewShortPidListV1",
+    "uBasicGender",
+  ]
+  for i in range(30):
+    for suffix in ["", "aid_", "tag_", "play_"]:
+      features.append("realshow_" + suffix + str(i))
+  return features
+
+def rr_wtd_table_common_attr():
+  table_feas = [
+    "fountain_rr_wtd_table_seg",
+    "fountain_rr_wtd_table_0",
+    "fountain_rr_wtd_table_1",
+    "fountain_rr_wtd_table_2",
+    "fountain_rr_wtd_table_3",
+    "fountain_rr_wtd_table_4",
+    "fountain_rr_wtd_table_5",
+    "fountain_rr_wtd_table_6",
+    "fountain_rr_wtd_table_7",
+    "fountain_rr_wtd_table_8",
+  ]
+  return table_feas
+  
+def rr_duration_item_attr():
+  durations_feas = [
+    "pDurationMs_idx0",
+    "pDurationMs_idx1",
+    "pDurationMs_idx2",
+    "pDurationMs_idx3",
+    "pDurationMs_idx4",
+    "pDurationMs_idx5"
+  ]
+  return durations_feas
+
+def get_dpp_rule_dict():
+  rule = [
+    dict(attr_name= "duration_0_7s",
+          enabled="{{fountain_rerank_variety_enable_dura_0_7}}",
+          window_size="{{fountain_rerank_variety_winsize_dura_0_7}}",
+          max_num="{{fountain_rerank_variety_maxnum_dura_0_7}}",
+          priority="{{fountain_rerank_variety_priority_dura_0_7}}"),    
+    dict(attr_name= "author__id",
+          enabled="{{fountain_rerank_variety_enable_author_id}}",
+          window_size= "{{fountain_rerank_variety_author_id_window_size}}",
+          max_num="{{fountain_rerank_variety_author_id_max_num}}",
+          priority="{{fountain_rerank_variety_author_id_priority}}"),
+    dict(attr_name= "hetu_tag_level_info__hetu_level_one",
+          enabled="{{fountain_rerank_variety_enable_hetu_level_one}}",
+          window_size="{{fountain_rerank_variety_hetu_level_one_winsize}}",
+          window_type="{{fountain_rerank_variety_hetu_level_one_wintype}}",
+          max_num="{{fountain_rerank_variety_hetu_level_one_max}}",
+          priority="{{fountain_rerank_variety_hetu_level_one_priority}}"),
+    dict(attr_name= "hetu_tag_level_info__hetu_level_five",
+          enabled="{{fountain_rerank_variety_enable_hetu_level_five}}",
+          window_size= "{{fountain_rerank_variety_hetu_level_five_winsize}}",
+          max_num="{{fountain_rerank_variety_hetu_level_five_max}}",
+          priority="{{fountain_rerank_variety_hetu_level_five_priority}}"),
+    dict(attr_name = "is_marketing_compensation_photo",
+          enabled = "{{fountain_rerank_enable_marketing_compensation_photo_diversity}}",
+          window_size = "{{fountain_rerank_marketing_compensation_photo_diversity_winsize}}",
+          max_num = "{{fountain_rerank_marketing_compensation_photo_diversity_max_num}}",
+          priority = "{{fountain_rerank_marketing_compensation_photo_diversity_priority}}"),
+    dict(attr_name = "is_minority_photo",
+          enabled = "{{enable_fountain_rerank_minority_photo_diversity}}",
+          window_size = "{{fountain_rerank_minority_photo_diversity_winsize}}",
+          max_num = "{{fountain_rerank_minority_photo_diversity_max_num}}",
+          min_num = "{{fountain_rerank_minority_photo_diversity_min_num}}",
+          priority = "{{fountain_rerank_minority_photo_diversity_priority}}")
+  ]
+  return rule

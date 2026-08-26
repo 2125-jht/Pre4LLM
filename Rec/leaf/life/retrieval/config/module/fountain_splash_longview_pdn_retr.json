@@ -1,0 +1,31 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "skip_fountain_longview_pdn_retr_splash",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "fountain_longview_pdn_retr_key_prefix_splash": ["fountain_longview_pdn_retr_key_prefix_splash", "coRetr_"],
+      "fountain_longview_pdn_retr_num_splash": {
+        "param_name": "fountain_longview_pdn_retr_num_splash_life",
+        "default_value": 1200
+      },
+      "fountain_longview_pdn_retr_num_per_key_splash": ["fountain_longview_pdn_retr_num_per_key_splash", 50]
+    }, 
+    "import": {
+      "common_attrs": [
+        "featureFountainProfileLongViewPidList",
+        "source_photo_info",
+        "request_type"
+      ]
+    },
+    "export": {
+      "results": [
+        "fountain_splash_long_view_pdn_retr__result"
+      ]
+    }
+  },
+  "reason": 10417
+}

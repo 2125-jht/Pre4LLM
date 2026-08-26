@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_mc_fc_predict": false,
+      "mc_fc_predict_service": "grpc_newArchHotMcInfer",
+      "mc_fc_request_type": "predict_by_mc_fc"
+    },
+    "import": {
+      "common_attrs": [
+        "prerank_step3",
+        "photo_id",
+        "author__id",
+        "tag",
+        "duration_ms",
+        "upload_time",
+        "user_info_ptr"
+      ],
+      "results": [
+        "cascading_prerank_channel_sort__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "mc_step1"
+      ],
+      "item_attrs": [
+        "cascade_pctr",
+        "cascade_plvtr",
+        "cascade_psvtr",
+        "cascade_pwatch_time",
+        "cascade_pcptr",
+        "cascade_fc_pevr"
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": ["enable_focal_a2a_retrieval", false],
+        "interact_num": ["focal_a2a_interact_num", 40],
+        "realtime_num": ["focal_a2a_realtime_num", 20],
+        "colossus_num": ["focal_a2a_colossus_num", 40],
+        "ann_service": ["focal_a2a_retr_ann_service", "grpc_exploreFocalA2a"],
+        "index_service": ["focal_a2a_retr_index_service", "grpc_recoHotOrderedIndexServer"],
+        "ordering": ["focal_a2a_ordering", "authorId2PhotoIdOrderByExploreStatScore"],
+        "sim_author_num": ["focal_a2a_sim_author_num", 5],
+        "num_per_author": ["focal_a2a_num_per_author", 3],
+        "result_num": ["focal_a2a_cand_num", 800]
+      },
+      "import": {
+        "common_attrs": [
+          "profile_v1_click_trigger_aids",
+          "profile_v1_interaction_trigger_aids",
+          "colossus_user_info__trigger_author_list",
+          "browse_screen__pid_list"
+        ]
+      },
+      "export": {
+        "results": [
+          "focal_a2a_retr__result"
+        ]
+      }
+    },
+    "slot": 100,
+    "reason": 4016
+}

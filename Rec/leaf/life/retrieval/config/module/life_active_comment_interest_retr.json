@@ -1,0 +1,53 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_life_active_comment_interest_i2i_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "life_mc_active_interest_embedding_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_mc_active_interest_embedding_service_name",
+        "param_type": "string",
+        "default_value": "grpc_hotMcEmbed",
+        "report_ab_hit": true
+      },
+      "life_mc_active_interest_ann_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_mc_active_interest_ann_service_name",
+        "param_type": "string", 
+        "default_value": "grpc_lifeTabMcI2i_v1",
+        "report_ab_hit": true
+      },
+      "life_active_interest_mc_retrieval_count": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_active_interest_mc_retrieval_count",
+        "param_type": "int",
+        "default_value": 1000,
+        "report_ab_hit": true
+      },
+      "life_active_interest_mc_retrieval_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_active_interest_mc_retrieval_bucket",
+        "param_type": "string",
+        "default_value": "photo",
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "comment_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "life_mc_active_comment_interest_i2i_ann__result"
+      ]
+    }
+  },
+  "reason": 2420
+}

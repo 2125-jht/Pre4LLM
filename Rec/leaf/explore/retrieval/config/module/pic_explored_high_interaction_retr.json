@@ -1,0 +1,62 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_pic_explored_high_interaction_retr",
+        "param_type": "bool",
+        "default_value": false
+      }, 
+      "kess_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_explored_high_interaction_retr_service_name",
+        "param_type": "string", 
+        "default_value": "grpc_exploreHIExploredPhotoRetr"
+      },
+      "service_request_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_explored_high_interaction_retr_service_request_num",
+        "param_type": "int", 
+        "default_value": 1000
+      },
+      "trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_explored_high_interaction_retr_colossus_trigger_num",
+        "param_type": "int",
+        "default_value": 40
+      },
+      "interact_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_explored_high_interaction_retr_colossus_interact_limit",
+        "param_type": "int",
+        "default_value": 30
+      },
+      "channel_str": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_explored_high_interaction_retr_colossus_channel_str",
+        "param_type": "string",
+        "default_value": "1"
+      }
+    },
+    "constant": {
+      "service_timeout_ms": {
+        "attr_type": "common_attr",
+        "value_type": "int",
+        "value": 100
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "userInfo",
+        "colossus_resp_v2"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_explored_high_interaction_retr__result"
+      ]
+    }
+  },
+  "reason": 13016
+}

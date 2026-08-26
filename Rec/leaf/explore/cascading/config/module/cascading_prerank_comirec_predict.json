@@ -1,0 +1,18 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_prerank_comirec_predict": 0,
+      "explore_prerank_comirec_service": ["explore_prerank_comirec_service", "grpc_explore-prerank-comirec"]
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "prerank_ctr_comirec"
+      ]
+    }
+  }
+}

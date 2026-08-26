@@ -1,0 +1,40 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_interact_feff_score": false,
+      "fr_cascade_linear_score_ctr_weight": 5.0,
+      "fr_cascade_linear_score_ltr_weight": 2.0,
+      "fr_cascade_linear_score_wtr_weight": 1.0,
+      "fr_cascade_linear_score_ftr_weight": 1.0,
+      "fr_cascade_linear_score_cmtr_weight": 1.0,
+      "fr_cascade_linear_score_pptr_weight": 1.0,
+      "fr_cascade_linear_score_pepstr_weight": 0.0,
+      "fr_cascade_linear_score_cltr_weight": 0.0,
+      "fr_cascade_linear_score_svr_weight": 0.0,
+      "fr_cascade_linear_score_lvtr_weight": 0.0,
+      "fr_cascade_linear_score_lvtr2_weight": 1.0,
+      "fr_cascade_linear_score_watchtime_weight": 1.0
+    },
+    "import": {
+      "item_attrs": [
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_pftr",
+        "cascade_plvtr",
+        "cascade_plvtr2",
+        "cascade_psvtr",
+        "cascade_ptr",
+        "cascade_pwatch_time",
+        "cascade_pepstr",
+        "cascade_pcmtr",
+        "cascade_pcltr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "cascade_linear_score"
+      ]
+    }
+  }
+}

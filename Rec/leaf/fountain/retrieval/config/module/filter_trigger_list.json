@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "skip_fountain_eff_view_filter": 1,
+      "skip_fountain_colossus_filter": 1,
+      "skip_fountain_longview_filter": 1
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "featureUserHateList",
+        "featureFountainProfileLongViewPidList"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "featureFountainProfileEffViewPidList",
+        "colossusRetrievalTrigger",
+        "featureFountainProfileLongViewPidListSub"
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_pic_tt_high_interaction_retr", false],
+      "retr_total_limit": ["pic_tt_high_interaction_retr_total_limit", 1000]
+    },
+    "constant": {
+      "ann_service_timeout_ms": 100,
+      "ann_service_name": "grpc_explore_pic_tt_hi_retrieval",
+      "ann_space": "cosine"
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_tt_high_interaction_retr__result"
+      ]
+    }
+  },
+  "service_request_type": "default",
+  "reason": 13009
+}

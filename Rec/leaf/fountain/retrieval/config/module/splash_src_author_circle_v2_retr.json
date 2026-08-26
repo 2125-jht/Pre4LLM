@@ -1,0 +1,21 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["fountain_splash_src_author_circle_v2_retr", false],
+      "cand_num": ["fountain_splash_src_author_circle_v2_cand_num", 1000],
+      "redis_key_prefix": ["fountain_splash_src_author_circle_v2_redis_key_prefix", "acv2_id_"]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list",
+        "source_author_circle_v2"
+      ]
+    },
+    "export": {
+      "results": [
+        "src_author_circle_v2_retr__result"
+      ]
+    }
+  },
+  "reason": 10416
+}

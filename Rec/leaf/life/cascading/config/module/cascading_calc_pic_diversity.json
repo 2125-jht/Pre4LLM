@@ -1,0 +1,47 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_calc_pic_diversity": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_mc_calc_pic_diversity",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "explore_pic_mc_diversity_embedding_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_mc_diversity_embedding_service_name",
+        "param_type": "string",
+        "default_value": "grpc_MMUHetuSimContentEmbedding",
+        "report_ab_hit": true
+      },
+      "explore_pic_mc_diversity_history_mgs_topk": 3,
+      "explore_pic_mc_diversity_enable_mgs_ratio": false,
+      "explore_pic_mc_diversity_mgs_ratio": 0.2,
+      "explore_pic_mc_diversity_calc_diversity_method": 0,
+      "explore_pic_mc_diversity_enable_mgs_his_cnt_less_topk": false,
+      "explore_pic_mc_diversity_time_gap_min": 1440,
+      "explore_pic_mc_diversity_history_num": 30,
+      "explore_pic_mc_diversity_enable_action": 0,
+      "explore_pic_mc_diversity_enable_hot_mc_emb": false,
+      "explore_pic_mc_diversity_need_normalize_embed": false
+    },
+    "import": {
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ],
+      "item_attrs": [
+        "is_picture"
+      ],
+      "common_attrs": [
+        "user_info_ptr",
+        "uStandardRealShowPicAllIdList"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pic_diversity_mgs_score"
+      ]
+    }
+  }
+}

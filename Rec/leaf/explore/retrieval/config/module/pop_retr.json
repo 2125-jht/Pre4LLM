@@ -1,0 +1,21 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": ["enable_pop_retr_retrieval", false],
+        "cluster_redis_prefix": ["pop_retr_user_cluster_redis_prefix", "uclus_"],
+        "photos_redis_prefix": ["pop_retr_photos_redis_prefix", "clustop_"],
+        "result_num": ["pop_retr_cand_num", 1000]
+      },
+      "import": {
+        "common_attrs": [
+          "browse_screen__pid_list"
+        ]
+      },
+      "export": {
+        "results": [
+          "pop_retr__result"
+        ]
+      }
+    },
+    "reason": 4011
+  }

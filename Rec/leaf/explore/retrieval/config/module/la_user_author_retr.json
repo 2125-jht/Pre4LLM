@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_la_user_author_retr", false],
+      "remote_index_service_name": ["la_user_author_retr_index_service_name", "grpc_recoHotOrderedIndexServer"],
+      "enable_trigger_shuffle": ["la_user_author_enable_trigger_shuffle", 0],
+      "retr_index_term": ["la_user_author_retr_index_term", "authorId2PhotoIdOrderByUploadTime"],
+      "remote_index_search_num": ["la_user_author_retr_search_num", 50],
+      "author_max_num": ["la_user_author_retr_max", 500],
+      "result_num": ["la_user_author_photos_retr_candidates_num", 500]
+    },
+    "import": {
+      "common_attrs": [
+        "explore_la_long_view_author_list",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "la_user_author__result"
+      ]
+    }
+  },
+  "reason": 10045
+}

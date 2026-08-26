@@ -1,0 +1,28 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_splash_sim_retr", 0],
+      "fountain_splash_sim_u2i_retr_kess_name": "grpc_fountainSimRetrAsync",
+      "fountain_splash_sim_u2i_retr_total_num": 200
+    }, 
+    "import": {
+      "common_attrs": [
+        "source_hetu_level_one",
+        "source_hetu_level_two",
+        "source_hetu_level_three",
+        "source_hetu_level_five",
+        "source_hetu_face_ids",
+        "userInfoPb",
+        "colossus_resp_v2",
+        "featureSourcePId",
+        "SourcePhotoAuthorId"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_sim_retr__result"
+      ]
+    }
+  },
+  "reason": 13020
+}

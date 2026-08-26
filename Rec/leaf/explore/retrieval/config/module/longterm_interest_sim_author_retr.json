@@ -1,0 +1,85 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_longterm_interest_sim_author_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "enable_similar_author": ["enable_similar_author_for_sim_retr", 0],
+      "enable_homogenous_author": ["enable_homogenous_author_for_sim_retr", 0],
+      "retr_num_each": ["explore_similar_author_retr_num_each", 15],
+      "retr_num_limit": ["explore_similar_author_retr_num_limit", 1000],
+      "longterm_author_max_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "double_longterm_interest_sim_author_max_size",
+        "param_type": "int",
+        "default_value": 500
+      },
+      "remote_index_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "double_longterm_interest_sim_author_retr_index_service_name",
+        "param_type": "string",
+        "default_value": "grpc_recoHotOrderedIndexServer"
+      },
+      "remote_index_search_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "each_longterm_interest_sim_author_retr_num",
+        "param_type": "int",
+        "default_value": 10
+      },
+      "result_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "longterm_interest_sim_author_retr_request_num",
+        "param_type": "int",
+        "default_value": 600
+      }, 
+      "author_max_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "longterm_interest_sim_author_total_num",
+        "param_type": "int", 
+        "default_value": 1000
+      },
+      "use_slide_longterm_author": {
+        "biz_name": "RECO_RPC",
+        "param_name": "longterm_interest_sim_author_retr_use_first_class_author",
+        "param_type": "bool", 
+        "default_value": true
+      },
+      "use_browset_filter": {
+        "biz_name": "RECO_RPC",
+        "param_name": "longterm_interest_sim_author_retr_use_browset_filter",
+        "param_type": "bool", 
+        "default_value": false
+      },
+      "use_rank_neg_filter": {
+        "biz_name": "RECO_RPC",
+        "param_name": "longterm_interest_sim_author_retr_use_rank_neg_filter",
+        "param_type": "bool", 
+        "default_value": false
+      },
+      "enable_snake_merge": {
+        "biz_name": "RECO_RPC",
+        "param_name": "longterm_interest_sim_author_retr_enable_snake_merge",
+        "param_type": "bool",
+        "default_value": false
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__aid_list",
+        "rank_neg_photo_id_list_str"
+      ]
+    }, 
+    "export": {
+      "results": [
+        "longterm_sim_author__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "key_prefix_from_attr": "efirst_",
+  "reason": 3200
+}

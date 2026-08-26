@@ -1,0 +1,31 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["explore_enable_swing_sim_neg_i2i_retrieval", false],
+      "swing_sim_score_threshold": ["explore_swing_sim_neg_i2i_swing_sim_score_threshold", 0.5],
+      "swing_trigger_hate_list_max_len": ["explore_swing_sim_neg_i2i_swing_trigger_hate_list_max_len", 1000],
+      "swing_trigger_i2i_max_len": ["explore_swing_sim_neg_i2i_swing_trigger_i2i_max_len", 1000],
+      "swing_retr_total_request_num": ["explore_swing_sim_neg_i2i_swing_retr_total_request_num", 1000000],
+      "swing_common_index_service": ["explore_swing_sim_neg_i2i_swing_common_index_service", "kws-kuaishou-hot-ord-idx-swing-neg-i2i-server"],
+      "trigger_time_gap_day": ["explore_swing_sim_neg_i2i_trigger_time_gap_day", 7]
+    },
+    "constant": {
+      "service_timeout_ms": 50
+    },
+    "import": {
+      "common_attrs": [
+        "hate_list",
+        "hate_list_timestamps"
+      ]
+    },
+    "export": {
+      "results": [
+        "swing_sim_neg_i2i_retr__result"
+      ],
+      "common_attrs": [
+        "swing_user_hate_i2i_list"
+      ]
+    }
+  },
+  "reason": 10607
+}

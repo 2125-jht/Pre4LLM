@@ -1,0 +1,77 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "skip_fountain_top_subdivision_nn_retrieval_tag_splash": 1,
+      "fountain_retrieval_skip_top_subdivision_nn_retrieval": 1,
+      "skip_fountain_reco_emb_hetu_retrieval_splash": 1,
+      "fountain_skip_reco_emb_u2i_retr_splash": 1,
+      "fountain_skip_gcse_u2i_retrieval_splash": 1,
+      "fountain_enable_first_page_skip_u2i_retrieval": 0,
+      "fountain_skip_ip2tag2ip_retr_splash": 1,
+      "fountain_enable_ip2tag2ip_retr_opt": 0,
+      "fountain_ip2tag2ip_retr_movie2movie_level": 0,
+      "skip_fountain_icf_splash_retr": 1,
+      "skip_fountain_icf_splash_retr_mobile": {
+        "param_name": "skip_fountain_icf_splash_retr_mobile",
+        "param_type": "int",
+        "biz_name": "MOBILE",  
+        "default_value": 1
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "featureSourcePId",
+        "photoTagBucket",
+        "featureUId",
+        "topSubdivisionHetuBucket",
+        "topSubdivisionBucket",
+        "fountainHetuTagBucket",
+        "sourceMovieIp",
+        "currentTimeMs",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "skip_fountain_top_subdivision_nn_retrieval_tag_splash",
+        "fountain_retrieval_skip_top_subdivision_nn_retrieval",
+        "skip_fountain_reco_emb_hetu_retrieval_splash",
+        "fountain_swing_retr_redis_key",
+        "fountain_skip_reco_emb_u2i_retr_splash",
+        "fountain_skip_gcse_u2i_retrieval_splash",
+        "source_hetu_level_one_v2",
+        "source_hetu_level_two_v2",
+        "source_hetu_level_three_v2",
+        "source_hetu_level_four_v2",
+        "source_hetu_tag_v2",
+        "source_hetu_face_id_v2",
+        "source_hetu_cluster_id_v2",
+        "source_movie_related_ips_key",
+        "source_movie_ip_extends_key",
+        "fountain_skip_ip2tag2ip_retr_splash",
+        "fountain_enable_ip2tag2ip_retr_opt",
+        "fountain_relation_interaction_retr_redis_key",
+        "skip_fountain_icf_splash_retr",
+        "increase_quota_status",
+        "source_hetu_level_one",
+        "source_hetu_level_two",
+        "source_hetu_level_three",
+        "source_hetu_level_four",
+        "source_hetu_level_five",
+        "source_hetu_tag_level_info_hetu_tag",
+        "source_hetu_face_ids",
+        "source_hetu_cluster_ids",
+        "source_author_third_level_id",
+        "source_mmu_content_ids_3",
+        "source_mmu_content_ids_8",
+        "source_mmu_content_ids_10",
+        "source_mmu_content_ids_15",
+        "source_mmu_content_ids_16",
+        "source_mmu_content_ids_17",
+        "source_hetu_sim_cluster_id",
+        "source_user_hash_tag_id",
+        "source_author_circle_v2"
+      ]
+    }
+  }
+}

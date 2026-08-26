@@ -1,0 +1,67 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "play_time_ths": ["colossus_ann_min_play_time_sec", 7],
+      "min_days_ago": ["colossus_ann_min_days_ago", 0],
+      "max_days_ago": ["colossus_ann_max_days_ago", 60],
+      "enable_progress_trigger": ["enable_colossus_ann_retrieval_progressive_triggers", false],
+      "enable_completion_trigger": ["enable_colossus_ann_retrieval_completion_triggers", false],
+      "completion_trigger_num": ["colossus_ann_retrieval_completion_num", 50],
+      "progressive_skip_num": ["colossus_ann_retrieval_progressive_skip_num", 100],
+      "progressive_alpha": ["colossus_ann_retrieval_progressive_alpha", 1.2],
+      "progressive_base": ["colossus_ann_retrieval_progressive_base", 40],
+      "progressive_topk": ["colossus_ann_retrieval_progressive_topk", 15],
+      "redis_expire_seconds": ["colossus_ann_retrieval_redis_expire_seconds", 3600],
+      "trigger_select_num": ["colossus_ann_retrieval_select_num", 100],
+      "trigger_sample_amplifier": ["colossus_ann_retrieval_sample_amplifier", 3],
+      "enable_knowledge_trigger": ["enable_explore_add_knowledge_retr_trigger", false],
+      "enable_knowledge_trigger_shuffle": ["enable_explore_add_knowledge_retr_trigger_shuffle", false],
+      "knowledge_trigger_limit": ["expore_knowledge_trigger_limit", 0],
+      "knowledge_trigger_play_time_ths": ["explore_add_knowledge_retr_trigger_min_play_time", 7],
+      "enable_target_item_hetu_set": ["enable_explore_retr_target_item_hetu_set", false],
+      "enable_knowledge_new_hetu_set": ["enable_explore_retr_knowledge_new_hetu_set", false],
+      "enable_colossus_trigger_request_redis": true,
+      "enable_interest_explore_trigger": ["enable_explore_add_interest_explore_retr_trigger", false],
+      "interest_explore_trigger_play_time_ths": ["explore_add_interest_explore_retr_trigger_min_play_time", 7],
+      "enable_cluster_trigger": ["enable_colossus_ann_retrieval_cluster_triggers", false],
+      "cluster_trigger_preserve_ratio": ["colossus_ann_retrieval_cluster_ratio", 0.04],
+      "trigger_select_interval_size": ["colossus_ann_retrieval_cluster_interval_size", 100],
+      "cluster_trigger_play_time_ths": ["colossus_ann_retrieval_cluster_trigger_play_time_ths", 0]
+    },
+    "kconf": {
+      "redis_key_prefix": ["reco.hot.colossusAnnRetrievalRedisPrefixV2", "trigv2_"],
+      "knowledge_hetu_set_base": {
+        "kconf_key": "reco.hot.exploreKnowledgeHetuSet",
+        "value_type": "set_int64",
+        "default_value": []
+      },
+      "knowledge_hetu_set_exp": {
+        "kconf_key": "reco.hot.exploreKnowledgeHetuSetExp",
+        "value_type": "set_int64",
+        "default_value": []
+      },
+      "target_item_hetu_set_exp": {
+        "kconf_key": "reco.hot.exploreTargetItemHetuSet",
+        "value_type": "set_int64",
+        "default_value": []
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_resp_old",
+        "colossus_resp_v2",
+        "colossus_explore_hetu_tags"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "colossus_user_info__trigger_id_list",
+        "colossus_user_info__trigger_weight_list",
+        "colossus_user_info__knowledge_trigger_set",
+        "colossus_user_info__trigger_author_list",
+        "colossus_user_info__trigger_tag_list",
+        "colossus_user_info__interest_explore_trigger_set"
+      ]
+    }
+  }
+}

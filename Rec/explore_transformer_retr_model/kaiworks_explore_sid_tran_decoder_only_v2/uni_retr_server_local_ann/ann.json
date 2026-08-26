@@ -1,0 +1,75 @@
+{
+  "kess_config": {
+    "service_name": "grpc_exploreMtKaiWorksANNV2"
+  },
+  "ann_pool": {},
+  "mq_consumer": {
+    "type_name": "btqueueMqConsumer",
+    "queue_names": [
+      "kaiworks_explore_multi_target_retr_model0"
+    ],
+    "thread_num": 8
+  },
+  "meta_parser": {
+    "bucket_slot_map": {
+      "photo": 4002
+    },
+    "slot_bits_map": {
+      "4002": {
+        "begin_bit": 0,
+        "end_bit": 128
+      }
+    },
+    "slot_bits": 0,
+    "enable_fixed_slot_bits": false,
+    "enforce_use_slot_form_item": false,
+    "parse_data_in_float": false,
+    "enable_kuiba_sign": false,
+    "type_name": "mioEmbeddingParser"
+  },
+  "datas": {
+    "photo": {
+      "kv": {
+        "max_item_num": 100000000,
+        "dim": 128,
+        "cache_expire_second": 14400
+      },
+      "online_id_converter": {
+        "type_name": "mioEmbeddingIdConverter"
+      },
+      "offline_id_converter": {
+        "type_name": "mioEmbeddingIdConverter"
+      }
+    }
+  },
+  "buckets": {
+    "photo": {
+      "data_type": "photo",
+      "ann": {
+        "type_name": "scannAnnFloat",
+        "parameter": {
+          "space": "ip",
+          "dim": 128
+        },
+        "threshold": {
+          "final_neighbors_num": 2000,
+          "leaves_num": 1000,
+          "leaves_to_search": 30,
+          "pre_reorder_neighbors_num": 4000,
+          "training_sample_size": 500000,
+          "anisotropic_quantization_threshold": 0.2
+        },
+        "max_index_size": 0,
+        "min_index_size": 0
+      }
+    }
+  },
+  "server_role": 0,
+  "precision_eval": [
+    {
+      "src_data_type": "photo",
+      "dest_bucket": "photo",
+      "space": "ip"
+    }
+  ]
+}

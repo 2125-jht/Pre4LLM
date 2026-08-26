@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_search_sim_lr_retr", false],
+      "trigger_num": ["explore_search_sim_lr_retr_trigger_num", 50],
+      "kgnn_service_name": ["explore_search_sim_lr_retr_kgnn_service_name", "grpc_kgnn_simlr_fr_1w-I2I"],
+      "kgnn_sample_num": ["explore_search_sim_lr_retr_kgnn_sample_num", 10],
+      "kgnn_shard_num": ["explore_search_sim_lr_retr_kgnn_shard_num", 4],
+      "retrieve_num": ["explore_search_sim_lr_retr_retrieve_num", 200]
+    },
+    "import": {
+      "common_attrs": [
+        "search_click_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "search_sim_lr_retr__result"
+      ]
+    }
+  },
+  "reason": 3066
+}

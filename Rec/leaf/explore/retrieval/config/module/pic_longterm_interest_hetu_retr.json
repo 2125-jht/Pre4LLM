@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_pic_longterm_interest_hetu_retrieval", false],
+      "pic_hetu_longterm_two_limit_num": ["pic_hetu_longterm_two_limit_num", 8],
+      "search_num": ["pic_hetu_retr_index_search_num", 50],
+      "result_num": ["pic_longterm_interest_hetu_retr_num", 300]
+    },
+    "constant": {
+      "remote_index_service_timeout_ms": 100,
+      "remote_index_service_name":"grpc_explorePictureCommonQueryServer"
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_longterm_interest_hetu__result"
+      ]
+    }
+  },
+  "reason": 13001
+}

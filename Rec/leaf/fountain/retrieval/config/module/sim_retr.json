@@ -1,0 +1,55 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_sim_retr", 0],
+      "fountain_sim_u2i_retr_kess_name": "grpc_fountainSimRetrAsync",
+      "fountain_sim_u2i_retr_total_num": 600,
+      "fountain_sim_u2i_action_weight_str": "click:1.0",
+      "fountain_sim_u2i_hetu_count": 4,
+      "fountain_sim_u2i_exploit_hetu_count": 3,
+      "fountain_sim_u2i_reward_window_size": 0,
+      "enable_fountain_sim_u2i_hetu_blacklist": 0,
+      "fountain_sim_u2i_short_view_rate_thd": 0.35,
+      "fountain_sim_u2i_blacklist_min_play_cnt": 10,
+      "enable_fountain_sim_u2i_reward_channel_filter": 0,
+      "fountain_sim_u2i_reward_channel_whitelist": ""
+    }, 
+    "import": {
+      "common_attrs": [
+        "source_hetu_level_one",
+        "source_hetu_level_two",
+        "source_hetu_level_three",
+        "source_hetu_level_five",
+        "source_hetu_face_ids",
+        "userInfoPb",
+        "colossus_resp_v2",
+        "featureSourcePId",
+        "SourcePhotoAuthorId",
+        "featureUId",
+        "featureDeviceId",
+        "uClickPids",
+        "uLikePids",
+        "uFollowAids",
+        "basic_info_age_segment",
+        "uProvinceId",
+        "uCityId",
+        "uAppList",
+        "gender",
+        "infer_gender",
+        "true_gender",
+        "uRecent50PlayPidList",
+        "uRecent50PlayAidList",
+        "uRecent50PlayTsList",
+        "uRecent50PlayTimeList",
+        "uRecent50PlayTagList",
+        "uRecent20FollowPidList"
+      ]
+    },
+    "export": {
+      "results": [
+        "sim_retr__result"
+      ]
+    }
+  },
+  "reason": 233
+}

@@ -1,0 +1,70 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "xlife_fountain_fullrank_sim_predict_kess_service": "grpc_ls_nebula_life_tab",
+      "fountain_fullrank_sim_predict_partition_size": 48,
+      "fountain_fullrank_sim_predict_request_type": "predict_with_search_for_gamora_v1_trt"
+    },
+    "import": {
+      "item_attrs": [
+        "cascade_pctr_index",
+        "cascade_plvtr_index",
+        "cascade_pvtr_index",
+        "cascade_pltr_index",
+        "cascade_pftr_index",
+        "cascade_pwtr_index",
+        "cascade_pesptr_index",
+        "cascade_psvr_index",
+        "featurePAAvgWatchTime"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "fullrank_sim_out_pctr",
+        "fullrank_sim_pltr",
+        "fullrank_sim_pwtr",
+        "fullrank_sim_pftr",
+        "fullrank_sim_psvr",
+        "fullrank_sim_plvtr",
+        "fullrank_sim_pcmtr",
+        "fullrank_sim_pptr",
+        "fullrank_sim_pcmef",
+        "fullrank_sim_phtr",
+        "fullrank_sim_pevtr",
+        "fullrank_sim_pvtr",
+        "fullrank_sim_pepstr",
+        "fullrank_sim_pfintr",
+        "fullrank_sim_pcltr",
+        "fullrank_sim_pcpr",
+        "fullrank_sim_pwtd_v2_playtime",
+        "fullrank_sim_playtime_finish",
+        "fullrank_sim_ordinal_playtime",
+        "fullrank_sim_lstr",
+        "fullrank_sim_lsst",
+        "fullrank_ori_pswptr",
+        "fullrank_detail_new_pevtr_v2",
+        "fullrank_sim_evtr_playtime",
+        "fullrank_sim_evtr_duration",
+        "fullrank_sim_wtd_duration",
+
+        "fullrank_detail_pctr",
+        "fullrank_detail_pltr",
+        "fullrank_detail_pwtr",
+        "fullrank_detail_pftr",
+        "fullrank_detail_plvtr",
+        "fullrank_detail_pvtr",
+        "fullrank_detail_psvr",
+        "fullrank_detail_pcmtr",
+        "fullrank_detail_pcmef",
+        "fullrank_detail_pptr",
+        "fullrank_detail_pepstr",
+        "fullrank_final_lstr",
+        "fullrank_sim_click_score",
+        "fullrank_sim_like_score",
+        "fullrank_sim_follow_score",
+        "fullrank_sim_pcltr",
+        "fullrank_detail_pwtd"
+      ]
+    }
+  }
+}

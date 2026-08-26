@@ -1,0 +1,59 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "param_name": "enable_splash_fountain_pic_sim_retr",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "fountain_splash_pic_sim_u2i_kess_name": {
+        "param_name": "fountain_splash_pic_sim_u2i_kess_name",
+        "param_type": "string",
+        "default_value": "grpc_explorePicSimRetr"
+      },
+      "fountain_splash_pic_sim_u2i_retr_total_num": {
+        "param_name": "fountain_splash_pic_sim_u2i_retr_total_num",
+        "param_type": "int",
+        "default_value": 500
+      },
+      "fountain_splash_pic_sim_u2i_ann_dest_bucket": {
+        "param_name": "fountain_splash_pic_sim_u2i_ann_dest_bucket",
+        "param_type": "string",
+        "default_value": "pic_dest_show"
+      },
+      "fountain_splash_pic_sim_u2i_ann_score_thresh": {
+        "param_name": "fountain_splash_pic_sim_u2i_ann_score_thresh",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "fountain_splash_sim_u2i_retr_total_num": {
+        "param_name": "fountain_splash_sim_u2i_retr_total_num",
+        "param_type": "int",
+        "default_value": 200
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "source_hetu_level_one",
+        "userInfoPb",
+        "colossus_resp_v2",
+        "pHetuL1ActListPids__Top1_splash",
+        "pHetuL1ActListAids__Top1_splash",
+        "pHetuL1ActListTs__Top1_splash",
+        "pHetuL1ActListPtime__Top1_splash",
+        "pHetuL1ActListAction__Top1_splash",
+        "pHetuL1ActPicListPids__Top1_splash",
+        "pHetuL1ActPicListAids__Top1_splash",
+        "pHetuL1ActPicListTs__Top1_splash",
+        "pHetuL1ActPicListPtime__Top1_splash",
+        "pHetuL1ActPicListAction__Top1_splash"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_pic_sim_retr__result"
+      ]
+    }
+  },
+  "reason": 13019
+}

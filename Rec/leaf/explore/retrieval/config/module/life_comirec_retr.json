@@ -1,0 +1,57 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_comirec_retr",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "retrieve_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_comirec_retr_num",
+        "param_type": "int",
+        "default_value": 1500,
+        "report_ab_hit": true
+      },
+      "auxiliary_arg": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_comirec_auxiliary",
+        "param_type": "string",
+        "default_value": "300,0.01,0,context_tensor,context_tensor",
+        "report_ab_hit": true
+      },
+      "increase_quota_factor": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_comirec_retr_factor",
+        "param_type": "double",
+        "default_value":1.0,
+        "report_ab_hit": true
+      },
+      "service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_comirec_retr_kess_name",
+        "param_type": "string",
+        "default_value": "grpc_lifeTabComirecRetr",
+        "report_ab_hit": true
+      }
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "page",
+        "userInfo",
+        "increase_quota_status"
+      ]
+    },
+    "export": {
+      "results": [
+        "life_comirec_retr__result"
+      ]
+    }
+  },
+  "reason": 10043
+}

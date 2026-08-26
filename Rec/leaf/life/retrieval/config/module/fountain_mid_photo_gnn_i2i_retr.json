@@ -1,0 +1,38 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["skip_fountain_mid_photo_gnn_i2i_retr", false],
+      "fountain_mid_photo_gnn_i2i_retr_kess_service": "grpc_MidPhotoGnnRetrExp1",
+      "fountain_mid_photo_gnn_i2i_retr_request_num": 800,
+      "fountain_mid_photo_gnn_i2i_retr_timeout_ms": 50
+    }, 
+    "import": {
+      "common_attrs": [
+        "user_browsed_photo_ids",
+        "user_fountain_play_aid_list",
+        "user_fountain_play_time_list",
+        "user_fountain_play_duration_list",
+        "featureFountainProfileLikeAidList",
+        "uForwardAidsFountain",
+        "featureFountainProfileCommentAidList",
+        "featureUserProfileV1DownloadAidList",
+        "featureUserProfileV1SearchClickAidList",
+        "featureUserProfileV1DupClickAidList",
+        "profile_v1_click_trigger_aids",
+        "playstat_playtimes",
+        "playstat_durations",
+        "featureUserProfileV1ProfileEnterAidList",
+        "featureUserProfileV1LikeAidList",
+        "featureUserProfileV1ForwardAidList",
+        "featureUserProfileV1CommentAidList",
+        "request_type"
+      ]
+    },
+    "export": {
+      "results": [
+        "fountain_mid_photo_gnn_i2i_retr__result"
+      ]
+    }
+  },
+  "reason": 9317
+}

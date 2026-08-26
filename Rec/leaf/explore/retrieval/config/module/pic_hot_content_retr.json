@@ -1,0 +1,26 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_pic_hot_content_retr", false],
+      "explore_pic_hot_content_retr_num": 500,
+      "explore_pic_hot_content_retr_num_final": 500,
+      "explore_pic_hot_content_redis_key_prefix": "zc_explore_pic_hot_content"
+    },
+    "import": {
+      "common_attrs": [
+        "basic_info_age_segment_v2",
+        "basic_info_gender_v2",
+        "location_city_level_v2"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_hotcontent_retr__result"
+      ],
+      "item_attrs": [
+        "is_pic_hot_content"
+      ]
+    }
+  },
+  "reason": 13040
+}

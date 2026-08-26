@@ -1,0 +1,21 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_splash_fountain_longview_like_retr", false],
+      "fountain_long_view_like_retrieval_kess_service_splash": "grpc_LvLikeU2iWhite",
+      "fountain_long_view_like_retrieval_total_limit_splash": 1200
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "topSubdivisionHetuBucket"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_longview_like_u2i_retr__result"
+      ]
+    }
+  },
+  "reason": 10415
+}

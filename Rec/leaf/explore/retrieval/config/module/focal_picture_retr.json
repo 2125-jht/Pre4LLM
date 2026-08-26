@@ -1,0 +1,28 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_picture_la_ann_retr", false],
+      "service_name": ["explore_picture_la_ann_service", "grpc_exploreLARetr"],
+      "service_timeout_ms": ["explore_picture_la_ann_timeout", 50],
+      "retrieve_num_per_trigger": ["explore_picture_la_ann_top_num", 20],
+      "dest_bucket": ["explore_picture_la_ann_bucket", "explore_index_photo"],
+      "retrieve_num": ["explore_picture_la_ann_retr_num", 600],
+      "retrieve_mode": ["explore_focal_picture_retr_mode", 0],
+      "mix_trigger_cnt": ["explore_focal_picture_mix_trigger_cnt", 50]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list",
+        "profile_v1_interaction_trigger_list",
+        "click_list",
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_focal_i2i_retr__result"
+      ]
+    }
+  },
+  "reason": 40120
+}

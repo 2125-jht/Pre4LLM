@@ -1,0 +1,61 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_follow_author_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "remote_index_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "double_follow_author_retr_index_service_name",
+        "param_type": "string",
+        "default_value": "grpc_recoHotOrderedIndexServer"
+      },
+      "remote_index_search_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "double_follow_author_retr_search_num",
+        "param_type": "int",
+        "default_value": 100
+      },
+      "result_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "follow_author_photos_retr_candidates_num",
+        "param_type": "int",
+        "default_value": 500
+      }, 
+      "author_max_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "double_follow_retr_max_seed_author",
+        "param_type": "int", 
+        "default_value": 1000
+      },
+      "max_history_s": ["double_follow_author_trigger_max_history_s", 0],
+      "enable_random_search": ["explore_follow_author_retr_enable_random_search", 1],
+      "enable_trigger_shuffle": ["enable_follow_author_shuffle_trigger", false],
+      "retr_index_term": ["double_follow_author_retr_index_term", "authorId2PhotoIdOrderByUploadTime"],
+      "skip_filter_bifollow": ["double_follow_retr_skip_filter_bifollow", 0],
+      "enable_high_value_ua": ["enable_explore_followed_author_retrieval_high_value_ua", false],
+      "enable_high_value_ua_emp": ["enable_explore_followed_author_retrieval_high_value_ua_emp", false],
+      "enable_snake_merge": ["enable_explore_followed_author_retrieval_snake_merge", false],
+      "enable_trigger_merge": ["enable_explore_followed_author_retrieval_trigger_merge", false],
+      "skip_result_shuffle": ["skip_explore_followed_author_retrieval_result_shuffle", 1]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "friendAids",
+        "followAids",
+        "featureUId"
+      ]
+    }, 
+    "export": {
+      "results": [
+        "follow_author__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 1836
+}

@@ -1,0 +1,22 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_sim_user_hate_item_list_similarity_score": false,
+      "explore_llm_hate_u2u_similar_user_num": 20,
+      "explore_llm_hate_u2u_recall_sim_score_thres": 0.3,
+      "explore_koc_htr_count_threshold": 1
+    },
+    "import": {
+      "common_attrs": [
+        "user_hate_photo_id_map_ptr",
+        "recent_hate_count"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "sim_user_hate_photo_id_list"
+      ]
+    }
+  }
+}
+  

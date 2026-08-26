@@ -1,0 +1,50 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_pic_high_value_i2i_retrieval", false],
+      "trigger_hetu_white_list_str": ["pic_high_value_trigger_hetu_white_list_str", "4,5,10,12,34,36,25,16"],
+      "colossus_pic_all_limit": ["pic_high_value_i2i_pic_all_limit", 100],
+      "colossus_pic_interact_limit": ["pic_high_value_i2i_pic_interact_limit", 50],
+      "colossus_pic_trigger_channel_str": ["pic_high_value_trigger_channel",""],
+      "enable_exclude_single_pic": ["pic_high_value_enable_exclude_single_pic",false],
+      "seleted_eff_play_thd_sec": ["explore_pic_colossus_seleted_eff_play_thd_sec", -1],
+      "colossus_range_days": ["explore_pic_colossus_range_days", 1000],
+      "ann_service_name": ["pic_high_value_i2i_service_name", "grpc_fountainPicSsmI2IRetr"],
+      "colossus_trigger_limit": ["pic_high_value_i2i_trigger_limit", 30],
+      "ann_top_k": ["pic_high_value_i2i_top_k", 20],
+      "src_bucket": ["pic_high_value_i2i_src_bucket", "photo_src"],
+      "dest_bucket": ["pic_high_value_i2i_dest_bucket", "plato_hv_pictures"],
+      "enable_shuffle_result": ["explore_pic_colossus_enable_shuffle_result", 0],
+      "retrieve_num": ["pic_high_value_i2i_retr_ann_limit_num", 500],
+
+      "enable_scatter_trigger": ["enable_pic_high_value_i2i_scatter_trigger", false],
+      "scatter_each_limit": ["pic_high_value_i2i_scatter_trigger_each_tag_limit", 8],
+      "use_colossus_trigger_embedding": ["pic_high_value_i2i_get_embedding", false],
+      "embedding_service_name": ["pic_high_value_i2i_retr_embedding_service_name", "grpc_hotMcEmbed"]
+    },
+    "kconf": {
+      "hetu_low_level_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "low_level_tags"
+      },
+      "hetu_level2_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "level2_tags"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_resp_v2",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_high_value_mc_i2i__result"
+      ]
+    }
+  },
+  "reason": 13008
+}

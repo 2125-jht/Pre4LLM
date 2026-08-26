@@ -1,0 +1,42 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": ["enable_fountain_vertical_content_common_retr", true],
+        "retrieval_cache_config": ["fountain_vertical_content_common_retr_cache_config", ""],
+        "kess_service_name": ["fountain_vertical_content_retr_service_name", "grpc_fountainVerticalContentCommonRetrServer"],
+        "enable_popular_content_retr": ["enable_fountain_vertical_content_retr_popular_content_retr", false],
+        "enable_qualified_author_retr": ["enable_fountain_vertical_content_retr_qualified_author_retr", false],
+        "qualified_author_retr_num": ["fountain_vertical_content_retr_qualified_author_retr_num", 500],
+        "popular_content_retr_num": ["fountain_vertical_content_retr_popular_content_retr_num", 500],
+        "trigger_num": ["fountain_vertical_content_retr_trigger_num", 120]
+      }, 
+      "constant": {
+        "service_timeout_ms": 50,
+        "service_request_num": 1000
+      },
+      "import": {
+        "common_attrs": [
+          "global_normal_trigger_list",
+          "global_high_value_trigger_list"
+        ]
+      },
+      "export": {
+        "results": [
+          "vertical_content_common__result"
+        ]
+      }
+    },
+    "reason": 0,
+    "service_request_type": "fountain_fast_v1",
+    "send_browse_set": false,
+    "send_common_attrs": [
+      {"name": "global_high_value_trigger_list", "as": "high_value_trigger"},
+      {"name": "global_normal_trigger_list", "as": "normal_trigger"},
+      "enable_popular_content_retr",
+      "enable_qualified_author_retr",
+      "qualified_author_retr_num",
+      "popular_content_retr_num",
+      "trigger_num"
+    ],
+    "extra_skip_condition": "enable_popular_content_retr == 0 and enable_qualified_author_retr == 0"
+  }

@@ -1,0 +1,42 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_enable_get_ranking_pxtr_index": 0
+    },
+    "import": {
+      "item_attrs": [
+        "fullrank_sim_pevtr",
+        "fullrank_sim_plvtr",
+        "fullrank_sim_pvtr",
+        "fullrank_sim_pltr",
+        "fullrank_sim_pftr",
+        "fullrank_sim_pwtr",
+        "fullrank_sim_pepstr",
+        "fullrank_sim_psvr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pctr_index",
+        "plvtr_index",
+        "pvtr_index",
+        "pltr_index",
+        "pftr_index",
+        "pwtr_index",
+        "pesptr_index",
+        "psvr_index"
+      ]
+    }
+  },
+  "ab_enable": "fountain_enable_get_ranking_pxtr_index",
+  "index_dict": {
+    "fullrank_sim_pevtr": "pctr_index",
+    "fullrank_sim_plvtr": "plvtr_index",
+    "fullrank_sim_pvtr": "pvtr_index",
+    "fullrank_sim_pltr": "pltr_index",
+    "fullrank_sim_pftr": "pftr_index",
+    "fullrank_sim_pwtr": "pwtr_index",
+    "fullrank_sim_pepstr": "pesptr_index",
+    "fullrank_sim_psvr": "psvr_index"
+  }
+}

@@ -1,0 +1,77 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "skip_mc_distill_sample": {
+          "biz_name": "RECO_RPC",
+          "param_name": "skip_explore_mc_distill_sample",
+          "param_type": "int",
+          "default_value": 1
+        },
+        "max_rpc_fr_result_num" : 120,
+        "explore_enable_full_link_set_user_info": true,
+        "enable_full_link_sample_package": 0,
+        "explore_full_link_mc_distill_sample_num": 10,
+        "explore_full_link_rank_distill_sample_num": 10,
+        "explore_full_link_rarank_distill_sample_num": 10,
+        "explore_enable_rerank_write_rerank_neg_result_to_redis": false,
+        "explore_rerank_neg_photo_index": 6,
+        "explore_rerank_neg_photo_end_index": 60,
+        "explore_rerank_neg_photo_size": 300,
+        "explore_rerank_neg_photo_redis_expire_seconds": 600,
+        "explore_rerank_neg_photo_key_prefix": "e_rerank_",
+        "explore_enable_rerank_write_rerank_pos_result_to_redis": false,
+        "explore_rerank_pos_photo_start_index": 0,
+        "explore_rerank_pos_photo_end_index": 60,
+        "explore_rerank_pos_photo_size": 300,
+        "explore_rerank_pos_photo_redis_expire_seconds": 600,
+        "explore_rerank_pos_photo_key_prefix": "e_rerank_pos_",
+        "explore_enable_rerank_select_rerank_pos_result": false,
+        "explore_select_rerank_pos_result_ctr_power_weight": 1.0,
+        "explore_select_rerank_pos_result_target_count": 10,
+        "explore_enable_rerank_select_rerank_neg_result": false,
+        "explore_rerank_neg_photo_target_ratio": 1.0,
+        "explore_select_rerank_pos_result_throw_thres": 0.0,
+        "explore_select_rerank_pos_result_enable_sort": 0,
+        "explore_select_rerank_pos_result_filter_map_str": ""
+      },
+      "kconf": {
+        "mc_distill_sample_num": {
+          "kconf_key": "reco.hot.mcdSampleNum",
+          "export_common_attr": "mc_distill_sample_num",
+          "default_value": 10
+        }
+      },
+      "import": {
+        "results": [
+          "pic_rerank__result"
+        ],
+        "item_attrs": [
+            "pctr",
+            "pltr",
+            "pwtr",
+            "pftr",
+            "psvr",
+            "pcmtr",
+            "pptr",
+            "pcmef",
+            "phtr",
+            "pevtr",
+            "fr_score1",
+            "fr_score2",
+            "pepstr",
+            "pdtr",
+            "pcltr",
+            "fetr",
+            "fountain_eff"
+        ],
+        "common_attrs": [
+            "cascade_input_item_key_list",
+            "cascade_output_item_key_list",
+            "ranking_output_item_key_list_top10",
+            "ranking_output_item_key_list",
+            "rerank_neg_photo_id_filter_list",
+            "explore_rerank_pos_photo_id_retrieval_list"
+        ]
+      }
+    }
+  }

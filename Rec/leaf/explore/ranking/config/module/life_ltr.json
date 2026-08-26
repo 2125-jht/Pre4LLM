@@ -1,0 +1,60 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_life_ltr_predict": {
+        "biz_name": "RECO_RPC",
+        "param_name": "el_enable_life_ltr_predict",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "life_ltr_predict_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "el_life_ltr_predict_service",
+        "param_type": "string",
+        "default_value": "grpc_exploreLifeLtrServerVb"
+      },
+      "life_ltr_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "el_life_ltr_partition_size",
+        "param_type": "int",
+        "default_value": 1000
+      }
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "userInfo"
+      ],
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "fr_score1",
+        "fr_score2",
+        "photo_picture_count",
+        "caption_length",
+        "location__city_id",
+        "location__province_id",
+        "is_picture",
+        "picture_type"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "life_ltr_pctr"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "hot_mc_ada_ltr_predict_service": "grpc_ExploreAdaXtrWeightInferV1",
+      "enable_explore_mc_ada_ltr": false
+    },
+    "import": {
+      "item_attrs": [
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_pftr",
+        "cascade_plvtr",
+        "cascade_plvtr2",
+        "cascade_ptr",
+        "cascade_pwatch_time",
+        "cascade_pepstr",
+        "cascade_pcmtr",
+        "cascade_pcestr",
+        "cascade_pcltr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "mc_ada_xtr_score"
+      ]
+    }
+  }
+}

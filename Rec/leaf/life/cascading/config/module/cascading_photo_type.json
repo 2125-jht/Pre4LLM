@@ -1,0 +1,56 @@
+
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_calc_photo_type" : false,
+      "enable_sim_hetu_cluster_id_trans": 0,
+      "life_enable_adjust_marketing_compensation_photo": false,
+      "life_marketing_compensation_photo_tags_list_str": "2290506,2290507,2291146,2291145,2291144",
+      "life_marketing_compensation_high_value_author_ignore": true,
+      "life_marketing_compensation_open_reason_thres": 0.00012,
+      "life_enable_gen_is_olympic_photo": false,
+      "life_olympic_latest_photo_hour_limit": 24,
+      "enable_life_gen_is_low_cost_photo": false,
+      "enable_life_gen_minority_photo": false,
+      "life_minority_photo_tags_bits_list_str": "6",
+      "enable_get_danlie_tired_score": true,
+      "enable_life_danlie_depress_score": 0
+    },
+    "kconf": {
+      "remap_cluster_id_632_list": {
+        "kconf_key": "reco.interestExplore.remapClusterId632",
+        "value_type": "list_int64",
+        "default_value": []
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "high_value_black_author_map_ptr",
+        "negative_aid_set_ptr"
+      ],
+      "item_attrs": [
+        "eyeshot_source",
+        "hetu_sim_cluster_id",
+        "sirius_distribution_info__mark_cod",
+        "author__id",
+        "upload_time",
+        "hetu_tag_level_info__hetu_tag",
+        "data_set_tags_bit"
+      ]
+    }, 
+    "export": {
+      "item_attrs": [
+        "is_personified_author",
+        "is_blacklist_author",
+        "is_hot_content",
+        "hetu_sim_cluster_id862",
+        "is_marketing_compensation_photo",
+        "is_olympic",
+        "is_olympic_latest",
+        "is_low_cost_photo",
+        "is_minority_photo"
+      ]
+    }
+  }
+}
+  

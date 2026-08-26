@@ -1,0 +1,52 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_ua_model_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "kess_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_ua_model_retr_kess_name",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-hot-com-retr-explore-lau-ua-model-retr",
+        "report_ab_hit": true
+      },
+      "service_request_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_ua_model_retr_request_num",
+        "param_type": "int",
+        "default_value": 500,
+        "report_ab_hit": true
+      },
+      "service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_ua_model_retr_service_timeout_ms",
+        "param_type": "int",
+        "default_value": 50,
+        "report_ab_hit": true
+      },
+      "retrieval_cache_config": ["ua_model_retr_cache_config", ""]
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "ua_model__result"
+      ]
+    }
+  },
+  "reason": 10049,
+  "trimed_user_info": [
+    "id",
+    "realtime_follow_list",
+    "user_profile_v1.follow_list",
+    "feature_collection.features_map"
+  ]
+}

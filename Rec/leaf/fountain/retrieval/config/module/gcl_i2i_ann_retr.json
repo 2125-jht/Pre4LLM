@@ -1,0 +1,35 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_gcl_i2i_ann_retr", true],
+      "skip_fountain_gcl_retr": 1,
+      "fountain_gcl_i2i_sample_trigger_num": 80,
+      "fountain_gcl_i2i_start_idx": 0,
+      "fountain_gcl_retr_common_retr_service": {
+        "param_name": "fountain_gcl_retr_common_retr_service",
+        "param_type": "string",
+        "default_value": "grpc_fountainGclI2iAnnServer"
+      },
+      "fountain_gcl_retr_request_num": {
+        "param_name": "fountain_gcl_retr_request_num",
+        "param_type": "int",
+        "default_value": 500
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "gcl_i2i_ann_retr__result"
+      ]
+    }
+  },
+  "reason": 341
+}

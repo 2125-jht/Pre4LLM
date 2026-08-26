@@ -1,0 +1,33 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "param_name": "enable_fountain_splash_q2i_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "kess_service_name": ["fountain_splash_q2i_retr_service_name", "grpc_fountainSplashQ2iRetr"],
+      "service_request_num": ["fountain_splash_q2i_retr_request_num", 800]
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "featureSourcePId"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_q2i_retr__result"
+      ]
+    }
+  },
+  "service_request_type": "default",
+  "reason": 10462,
+  "trimed_user_info": [
+    "id",
+    "device_id"
+  ],
+  "send_common_attrs": [
+    "featureSourcePId"
+  ]
+}

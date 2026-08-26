@@ -1,0 +1,1080 @@
+{
+  "_CONFIG_VERSION": "e2692fc68a41f4015066f2f3664cf86b_local",
+  "_DRAGONFLY_CREATE_TIME": "2024-11-04 12:34:43",
+  "_DRAGONFLY_VERSION": "0.8.3",
+  "kess_config": {},
+  "pipeline_manager_config": {
+    "base_pipeline": {
+      "processor": {
+        "_branch_controller_EB7701DB": {
+          "$branch_start": "_branch_controller_EB7701DB",
+          "$code_info": "[if] EB7701DB cofea_reader.py in <module>(): .if_(\"item_num > 0\")",
+          "$metadata": {
+            "$input_common_attrs": [
+              "item_num"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "_if_control_attr_1"
+            ],
+            "$output_item_attrs": []
+          },
+          "export_common_attr": [
+            "_if_control_attr_1"
+          ],
+          "for_branch_control": true,
+          "function_for_common": "evaluate",
+          "import_common_attr": [
+            "item_num"
+          ],
+          "lua_script": "function evaluate() if (item_num > 0) then return false else return true end end",
+          "type_name": "CommonRecoLuaAttrEnricher"
+        },
+        "convert_csv_to_tf_sequence_example_5B177C": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "hive_sample_str"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "tf_sequence_example"
+            ],
+            "$output_item_attrs": []
+          },
+          "column_separator": "|",
+          "common_attrs": [
+            {
+              "column_index": 0,
+              "column_name": "user_id",
+              "type": "int"
+            },
+            {
+              "column_index": 1,
+              "column_name": "device_id",
+              "type": "string"
+            },
+            {
+              "column_index": 2,
+              "column_name": "session_id",
+              "type": "int"
+            },
+            {
+              "column_index": 3,
+              "column_name": "llsid",
+              "type": "string"
+            },
+            {
+              "column_index": 4,
+              "column_name": "user_gender",
+              "type": "int"
+            },
+            {
+              "column_index": 5,
+              "column_name": "user_age_segment",
+              "type": "string"
+            },
+            {
+              "column_index": 6,
+              "column_name": "time_ms",
+              "type": "int"
+            }
+          ],
+          "from_extra_var": "hive_sample_str",
+          "item_attrs": [
+            {
+              "column_index": 7,
+              "column_name": "real_show_index_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 8,
+              "column_name": "photo_id_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 9,
+              "column_name": "author_id_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 10,
+              "column_name": "author_gender_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 11,
+              "column_name": "author_fans_count_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 12,
+              "column_name": "is_click_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 13,
+              "column_name": "is_like_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 14,
+              "column_name": "is_follow_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 15,
+              "column_name": "is_forward_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 16,
+              "column_name": "is_comment_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 17,
+              "column_name": "is_collect_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 18,
+              "column_name": "is_hate_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 19,
+              "column_name": "is_profile_enter_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 20,
+              "column_name": "play_time_ms_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 21,
+              "column_name": "comment_stay_time_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 22,
+              "column_name": "emp_ctr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 23,
+              "column_name": "emp_ltr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 24,
+              "column_name": "emp_wtr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 25,
+              "column_name": "emp_ftr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 26,
+              "column_name": "emp_lvtr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 27,
+              "column_name": "upload_type_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 28,
+              "column_name": "exp_tag_list",
+              "type": "string_list"
+            },
+            {
+              "column_index": 29,
+              "column_name": "city_level_list",
+              "type": "string_list"
+            },
+            {
+              "column_index": 30,
+              "column_name": "duration_ms_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 31,
+              "column_name": "author_dnn_cluster_id_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 32,
+              "column_name": "photo_new_music_fingerprint_id_list",
+              "type": "string_list"
+            },
+            {
+              "column_index": 33,
+              "column_name": "audit_hot_high_tag_level_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 34,
+              "column_name": "hetu_cluster_id_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 35,
+              "column_name": "hetu_level_one_tag_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 36,
+              "column_name": "hetu_level_two_tag_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 37,
+              "column_name": "hetu_level_three_tag_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 38,
+              "column_name": "pctr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 39,
+              "column_name": "pltr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 40,
+              "column_name": "pwtr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 41,
+              "column_name": "pftr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 42,
+              "column_name": "plvtr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 43,
+              "column_name": "pptr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 44,
+              "column_name": "psvtr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 45,
+              "column_name": "pwtd_score_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 46,
+              "column_name": "pcltr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 47,
+              "column_name": "pcmef_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 48,
+              "column_name": "pcmtr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 49,
+              "column_name": "mc_htr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 50,
+              "column_name": "mc_pcestr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 51,
+              "column_name": "mc_pcltr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 52,
+              "column_name": "mc_pcmtr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 53,
+              "column_name": "mc_pctr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 54,
+              "column_name": "mc_pepstr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 55,
+              "column_name": "mc_pltr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 56,
+              "column_name": "mc_plvtr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 57,
+              "column_name": "mc_psvtr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 58,
+              "column_name": "mc_pwtd_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 59,
+              "column_name": "mc_pwtr_list",
+              "type": "float_list"
+            },
+            {
+              "column_index": 60,
+              "column_name": "pctr_index_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 61,
+              "column_name": "pltr_index_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 62,
+              "column_name": "pftr_index_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 63,
+              "column_name": "pwtr_index_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 64,
+              "column_name": "pvtr_index_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 65,
+              "column_name": "plvtr_index_list",
+              "type": "int_list"
+            },
+            {
+              "column_index": 66,
+              "column_name": "max_time",
+              "type": "int"
+            },
+            {
+              "column_index": 67,
+              "column_name": "min_time",
+              "type": "int"
+            },
+            {
+              "column_index": 68,
+              "column_name": "timelist",
+              "type": "string"
+            },
+            {
+              "column_index": 69,
+              "column_name": "d_session_label",
+              "type": "int"
+            }
+          ],
+          "item_separator": ",",
+          "list_separator": " ",
+          "save_result_to": "tf_sequence_example",
+          "type_name": "OfflineCsvToTfSequenceExampleEnricher"
+        },
+        "copy_user_meta_info_3B7B86": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "item_num"
+            ],
+            "$output_item_attrs": []
+          },
+          "save_result_size_to_attr": "item_num",
+          "type_name": "CommonRecoUserMetaInfoEnricher"
+        },
+        "enrich_attr_by_lua_034A9C": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "user_age_segment"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "user_age_segment"
+            ],
+            "$output_item_attrs": []
+          },
+          "export_common_attr": [
+            "user_age_segment"
+          ],
+          "function_for_common": "transfer_user_age",
+          "import_common_attr": [
+            "user_age_segment"
+          ],
+          "lua_script": "function transfer_user_age()\n                    local index = 0\n                    if user_age_segment == \"AGE_0_12\" then\n                    index = 1\n                    elseif user_age_segment == \"AGE_12_17\" then\n                    index = 2\n                    elseif user_age_segment == \"AGE_18_23\" then\n                    index = 3\n                    elseif user_age_segment == \"AGE_24_30\" then\n                    index = 4\n                    elseif user_age_segment == \"AGE_31_40\" then\n                    index = 5\n                    elseif user_age_segment == \"AGE_41_49\" then\n                    index = 6\n                    elseif user_age_segment == \"AGE_50_INF\" then\n                    index = 7\n                    end\n                    return index\n                end",
+          "type_name": "CommonRecoLuaAttrEnricher"
+        },
+        "enrich_attr_by_lua_5FAFFD": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [
+              "d_session_label",
+              "duration_ms_list",
+              "is_click_list",
+              "is_collect_list",
+              "is_comment_list",
+              "is_follow_list",
+              "is_forward_list",
+              "is_hate_list",
+              "is_like_list",
+              "max_time",
+              "min_time",
+              "play_time_ms_list",
+              "real_show_index_list",
+              "timelist"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": [
+              "is_next_label",
+              "is_real_show_list",
+              "is_revisit",
+              "point_ltr_label",
+              "point_ltr_wt",
+              "session_inner_time",
+              "session_vv"
+            ]
+          },
+          "export_item_attr": [
+            "point_ltr_label",
+            "point_ltr_wt",
+            "session_inner_time",
+            "session_vv",
+            "is_revisit",
+            "is_next_label",
+            "is_real_show_list"
+          ],
+          "function_for_item": "gen_label",
+          "import_common_attr": [],
+          "import_item_attr": [
+            "is_click_list",
+            "is_like_list",
+            "is_follow_list",
+            "is_forward_list",
+            "is_comment_list",
+            "is_collect_list",
+            "is_hate_list",
+            "play_time_ms_list",
+            "duration_ms_list",
+            "max_time",
+            "min_time",
+            "timelist",
+            "d_session_label",
+            "real_show_index_list"
+          ],
+          "lua_script": "function split(input, delimiter)\n    if delimiter == nil then\n        delimiter = \"%s\"  -- 默认按空格分割\n    end\n    \n    local result = {}\n    for match in (input..delimiter):gmatch(\"(.-)\"..delimiter) do\n        table.insert(result, match)\n    end\n    \n    return result\nend\n\nfunction check_common()\n    local follow_aids = follow_aids or {}\n    local recent_7d_aids = recent_7d_aids or {}\n\n    local follow_aids_valid = {}\n    local recent_7d_aids_valid = {}\n\n    for i, aid in pairs(follow_aids) do\n        if aid > 0 then\n            table.insert(follow_aids_valid, aid)\n        end\n    end\n    for i, aid in pairs(recent_7d_aids) do\n        if aid > 0 then\n            table.insert(recent_7d_aids_valid, aid)\n        end\n    end\n\n    return follow_aids_valid, recent_7d_aids_valid\nend\n\nfunction process_feature(author_fans_count_list, comment_stay_time_list, play_time_ms_list)\n    local author_fans_count_list = author_fans_count_list or {0,0,0,0,0,0,0,0,0,0}\n    local play_time_ms_list = play_time_ms_list or {0,0,0,0,0,0,0,0,0,0}\n    local comment_stay_time_list = comment_stay_time_list  or {0,0,0,0,0,0,0,0,0,0}\n   \n    local author_fans_count_rel_list = {}\n    local comment_stay_time_rel_list = {}\n    local play_time_ms_rel_list = {}\n    \n    if #author_fans_count_list == 10 then\n        for _, value in ipairs(author_fans_count_list) do\n            local val = math.min(10000000, (value or 0))\n            table.insert(author_fans_count_rel_list, math.floor(5 * math.log(val + 1)))\n        end\n    end\n\n    if #comment_stay_time_list == 10 then\n        for _, value in ipairs(comment_stay_time_list) do\n            table.insert(comment_stay_time_rel_list, (value or 0) / 1000)\n        end\n    end\n\n    if #play_time_ms_list == 10 then\n        for _, value in ipairs(play_time_ms_list) do\n            table.insert(play_time_ms_rel_list, (value or 0) / 1000)\n        end\n    end\n\n    return author_fans_count_rel_list, play_time_ms_rel_list, comment_stay_time_rel_list\nend\n\nfunction transfer_author_age()\n    local author_age_segment_str_list = author_age_segment_str or {}\n    local author_age_segment_list = {}    \n    if #author_age_segment_str_list == 10 then\n        for index, value in ipairs(author_age_segment_str_list) do\n            local index = 0\n            if author_age_segment_str == \"0-12\" then\n                index = 1\n            elseif author_age_segment_str == \"12-17\" then\n                index = 2\n            elseif author_age_segment_str == \"18-23\" then\n                index = 3\n            elseif author_age_segment_str == \"24-30\" then\n                index = 4\n            elseif author_age_segment_str == \"31-40\" then\n                index = 5\n            elseif author_age_segment_str == \"41-49\" then\n                index = 6\n            elseif author_age_segment_str == \"50+\" then\n                index = 7\n            end\n            table.insert(author_age_segment_list, index)\n        end\n    end\n    return author_age_segment_list\nend\n\nfunction gen_label()\n    local is_click_list = is_click_list or {0,0,0,0,0,0,0,0,0,0}\n    local is_like_list = is_like_list or {0,0,0,0,0,0,0,0,0,0}\n    local is_follow_list = is_follow_list or {0,0,0,0,0,0,0,0,0,0}\n    local is_forward_list = is_forward_list or {0,0,0,0,0,0,0,0,0,0}\n    local is_comment_list = is_comment_list or {0,0,0,0,0,0,0,0,0,0}\n    local is_collect_list = is_collect_list or {0,0,0,0,0,0,0,0,0,0}\n    local is_hate_list = is_hate_list or {0,0,0,0,0,0,0,0,0,0}\n    local real_show_index_list = real_show_index_list or {0,0,0,0,0,0,0,0,0,0}\n \n    local play_time_ms_list = play_time_ms_list or {0,0,0,0,0,0,0,0,0,0}\n    local duration_ms_list = duration_ms_list or {0,0,0,0,0,0,0,0,0,0}\n    local max_time = max_time or 0\n    local min_time = min_time or 0\n    local timelist = timelist or \"\"\n    local d_session_label = d_session_label or 0\n\n    local point_ltr_label = {0,0,0,0,0,0,0,0,0,0}\n    local point_ltr_wt = {1,1,1,1,1,1,1,1,1,1}\n    local is_next_label = {0,0,0,0,0,0,0,0,0,0}\n    local is_real_show_list = {0,0,0,0,0,0,0,0,0,0}\n    local session_inner_time = 0\n    -- local session_out_time = 0\n    local session_vv = 0\n    local is_revisit = 0\n    \n    if #is_click_list == 10 and #is_like_list == 10 and #is_follow_list == 10 and #is_forward_list == 10 and #is_comment_list == 10 and \n        #is_collect_list == 10 and #is_hate_list == 10 and #play_time_ms_list == 10 and #duration_ms_list == 10 then\n        for index, value in ipairs(is_click_list) do\n            local wt = 10 * is_like_list[index] + 10 * is_follow_list[index] + 10 * is_forward_list[index]\n            + 10 * is_comment_list[index] + 10 * is_collect_list[index]\n            if play_time_ms_list[index] > 7000 and  play_time_ms_list[index]/duration_ms_list[index] > 0.8 then\n                wt = wt + 10\n            end\n            if is_click_list[index] == 1 or wt > 10 then\n                point_ltr_label[index] = 1\n            end\n            if wt > 1 then\n                point_ltr_wt[index] = wt\n            end\n        end\n    end\n    local difftime  = (max_time - min_time)/1000\n    session_inner_time = difftime\n    local time_list = split(timelist, \",\")\n    session_vv = #time_list - 1\n    -- local tmp_time = 24*60*60\n    -- if #time_list > 0 then\n    --     for index, value in ipairs(time_list) do\n    --         max_min_table = split(value, \",\")\n    --         min_time_before = tonumber(max_min_table[1]) or 24*60*60\n    --         local diff = (min_time_before - max_time)/1000\n    --         if diff > 0  and diff < tmp_time then\n    --             tmp_time = diff\n    --         end\n    --     end\n    -- end\n    -- session_out_time = 24*60*60 - tmp_time\n\n    if #real_show_index_list == 10  then\n        for index, value in ipairs(real_show_index_list) do\n            if index + 1 <= 10 and real_show_index_list[index + 1] > 0 then\n                is_next_label[index] = 1\n            end\n            if real_show_index_list[10] > 0 then\n                is_next_label[10] = 1\n            end\n            if real_show_index_list[index] > 0 then\n                is_real_show_list[index] = 1\n            end\n        end\n    end\n\n    if d_session_label/1000 < 24*60*60 then\n        is_revisit = 1\n    end\n\n    return point_ltr_label, point_ltr_wt, session_inner_time, session_vv, is_revisit, is_next_label ,is_real_show_list, list_size\nend\n\nfunction transform_string_number(input, output)\n    local output = {0,0,0,0,0,0,0,0,0,0}\n    if #input == 10 then\n        for index, value in ipairs(input) do\n            local vals = split(value, \"_\")\n            if #vals > 0 and vals[1] ~= \"\" and vals[1] ~= \"-1\" then\n                output[index] = tonumber(vals[1])\n            end\n        end\n    end\n    return output\nend\n\nfunction process_hetu_feature()\n    local hetu_level_one_tag_list = hetu_level_one_tag_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local hetu_level_two_tag_list = hetu_level_two_tag_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local hetu_level_three_tag_list = hetu_level_three_tag_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local emp_ctr_list = emp_ctr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local emp_ltr_list = emp_ltr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local emp_wtr_list = emp_wtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local emp_ftr_list = emp_ftr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local emp_lvtr_list = emp_lvtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pctr_list = pctr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pltr_list = pltr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pwtr_list = pwtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pftr_list = pftr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local plvtr_list = plvtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pptr_list = pptr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local psvtr_list = psvtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pwtd_score_list = pwtd_score_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pcltr_list = pcltr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pcmef_list = pcmef_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pcmtr_list = pcmtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_htr_list = mc_htr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pcestr_list = mc_pcestr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pcltr_list = mc_pcltr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pcmtr_list = mc_pcmtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pctr_list = mc_pctr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pepstr_list = mc_pepstr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pltr_list = mc_pltr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_plvtr_list = mc_plvtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_psvtr_list = mc_psvtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pwtd_list = mc_pwtd_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pwtr_list = mc_pwtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n\n    local output = {0,0,0,0,0,0,0,0,0,0}\n\n    return  transform_string_number(hetu_level_one_tag_list, output),\n            transform_string_number(hetu_level_two_tag_list, output),\n            transform_string_number(hetu_level_three_tag_list, output),\n            transform_string_number(emp_ctr_list, output),\n            transform_string_number(emp_ltr_list, output),\n            transform_string_number(emp_wtr_list, output),\n            transform_string_number(emp_ftr_list, output),\n            transform_string_number(emp_lvtr_list, output),\n            transform_string_number(pctr_list, output),\n            transform_string_number(pltr_list, output),\n            transform_string_number(pwtr_list, output),\n            transform_string_number(pftr_list, output),\n            transform_string_number(plvtr_list, output),\n            transform_string_number(pptr_list, output),\n            transform_string_number(psvtr_list, output),\n            transform_string_number(pwtd_score_list, output),\n            transform_string_number(pcltr_list, output),\n            transform_string_number(pcmef_list, output),\n            transform_string_number(pcmtr_list, output),\n            transform_string_number(mc_htr_list, output),\n            transform_string_number(mc_pcestr_list, output),\n            transform_string_number(mc_pcltr_list, output),\n            transform_string_number(mc_pcmtr_list, output),\n            transform_string_number(mc_pctr_list, output),\n            transform_string_number(mc_pepstr_list, output),\n            transform_string_number(mc_pltr_list, output),\n            transform_string_number(mc_plvtr_list, output),\n            transform_string_number(mc_psvtr_list, output),\n            transform_string_number(mc_pwtd_list, output),\n            transform_string_number(mc_pwtr_list, output)\nend",
+          "type_name": "CommonRecoLuaAttrEnricher"
+        },
+        "enrich_attr_by_lua_7D0E7D": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [
+              "author_fans_count_list",
+              "comment_stay_time_list",
+              "play_time_ms_list"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": [
+              "comment_stay_time_sec_list",
+              "fans_user_num_log_list",
+              "play_time_sec_list"
+            ]
+          },
+          "export_item_attr": [
+            "fans_user_num_log_list",
+            "play_time_sec_list",
+            "comment_stay_time_sec_list"
+          ],
+          "function_for_item": "process_feature",
+          "import_item_attr": [
+            "author_fans_count_list",
+            "play_time_ms_list",
+            "comment_stay_time_list"
+          ],
+          "lua_script": "function split(input, delimiter)\n    if delimiter == nil then\n        delimiter = \"%s\"  -- 默认按空格分割\n    end\n    \n    local result = {}\n    for match in (input..delimiter):gmatch(\"(.-)\"..delimiter) do\n        table.insert(result, match)\n    end\n    \n    return result\nend\n\nfunction check_common()\n    local follow_aids = follow_aids or {}\n    local recent_7d_aids = recent_7d_aids or {}\n\n    local follow_aids_valid = {}\n    local recent_7d_aids_valid = {}\n\n    for i, aid in pairs(follow_aids) do\n        if aid > 0 then\n            table.insert(follow_aids_valid, aid)\n        end\n    end\n    for i, aid in pairs(recent_7d_aids) do\n        if aid > 0 then\n            table.insert(recent_7d_aids_valid, aid)\n        end\n    end\n\n    return follow_aids_valid, recent_7d_aids_valid\nend\n\nfunction process_feature(author_fans_count_list, comment_stay_time_list, play_time_ms_list)\n    local author_fans_count_list = author_fans_count_list or {0,0,0,0,0,0,0,0,0,0}\n    local play_time_ms_list = play_time_ms_list or {0,0,0,0,0,0,0,0,0,0}\n    local comment_stay_time_list = comment_stay_time_list  or {0,0,0,0,0,0,0,0,0,0}\n   \n    local author_fans_count_rel_list = {}\n    local comment_stay_time_rel_list = {}\n    local play_time_ms_rel_list = {}\n    \n    if #author_fans_count_list == 10 then\n        for _, value in ipairs(author_fans_count_list) do\n            local val = math.min(10000000, (value or 0))\n            table.insert(author_fans_count_rel_list, math.floor(5 * math.log(val + 1)))\n        end\n    end\n\n    if #comment_stay_time_list == 10 then\n        for _, value in ipairs(comment_stay_time_list) do\n            table.insert(comment_stay_time_rel_list, (value or 0) / 1000)\n        end\n    end\n\n    if #play_time_ms_list == 10 then\n        for _, value in ipairs(play_time_ms_list) do\n            table.insert(play_time_ms_rel_list, (value or 0) / 1000)\n        end\n    end\n\n    return author_fans_count_rel_list, play_time_ms_rel_list, comment_stay_time_rel_list\nend\n\nfunction transfer_author_age()\n    local author_age_segment_str_list = author_age_segment_str or {}\n    local author_age_segment_list = {}    \n    if #author_age_segment_str_list == 10 then\n        for index, value in ipairs(author_age_segment_str_list) do\n            local index = 0\n            if author_age_segment_str == \"0-12\" then\n                index = 1\n            elseif author_age_segment_str == \"12-17\" then\n                index = 2\n            elseif author_age_segment_str == \"18-23\" then\n                index = 3\n            elseif author_age_segment_str == \"24-30\" then\n                index = 4\n            elseif author_age_segment_str == \"31-40\" then\n                index = 5\n            elseif author_age_segment_str == \"41-49\" then\n                index = 6\n            elseif author_age_segment_str == \"50+\" then\n                index = 7\n            end\n            table.insert(author_age_segment_list, index)\n        end\n    end\n    return author_age_segment_list\nend\n\nfunction gen_label()\n    local is_click_list = is_click_list or {0,0,0,0,0,0,0,0,0,0}\n    local is_like_list = is_like_list or {0,0,0,0,0,0,0,0,0,0}\n    local is_follow_list = is_follow_list or {0,0,0,0,0,0,0,0,0,0}\n    local is_forward_list = is_forward_list or {0,0,0,0,0,0,0,0,0,0}\n    local is_comment_list = is_comment_list or {0,0,0,0,0,0,0,0,0,0}\n    local is_collect_list = is_collect_list or {0,0,0,0,0,0,0,0,0,0}\n    local is_hate_list = is_hate_list or {0,0,0,0,0,0,0,0,0,0}\n    local real_show_index_list = real_show_index_list or {0,0,0,0,0,0,0,0,0,0}\n \n    local play_time_ms_list = play_time_ms_list or {0,0,0,0,0,0,0,0,0,0}\n    local duration_ms_list = duration_ms_list or {0,0,0,0,0,0,0,0,0,0}\n    local max_time = max_time or 0\n    local min_time = min_time or 0\n    local timelist = timelist or \"\"\n    local d_session_label = d_session_label or 0\n\n    local point_ltr_label = {0,0,0,0,0,0,0,0,0,0}\n    local point_ltr_wt = {1,1,1,1,1,1,1,1,1,1}\n    local is_next_label = {0,0,0,0,0,0,0,0,0,0}\n    local is_real_show_list = {0,0,0,0,0,0,0,0,0,0}\n    local session_inner_time = 0\n    -- local session_out_time = 0\n    local session_vv = 0\n    local is_revisit = 0\n    \n    if #is_click_list == 10 and #is_like_list == 10 and #is_follow_list == 10 and #is_forward_list == 10 and #is_comment_list == 10 and \n        #is_collect_list == 10 and #is_hate_list == 10 and #play_time_ms_list == 10 and #duration_ms_list == 10 then\n        for index, value in ipairs(is_click_list) do\n            local wt = 10 * is_like_list[index] + 10 * is_follow_list[index] + 10 * is_forward_list[index]\n            + 10 * is_comment_list[index] + 10 * is_collect_list[index]\n            if play_time_ms_list[index] > 7000 and  play_time_ms_list[index]/duration_ms_list[index] > 0.8 then\n                wt = wt + 10\n            end\n            if is_click_list[index] == 1 or wt > 10 then\n                point_ltr_label[index] = 1\n            end\n            if wt > 1 then\n                point_ltr_wt[index] = wt\n            end\n        end\n    end\n    local difftime  = (max_time - min_time)/1000\n    session_inner_time = difftime\n    local time_list = split(timelist, \",\")\n    session_vv = #time_list - 1\n    -- local tmp_time = 24*60*60\n    -- if #time_list > 0 then\n    --     for index, value in ipairs(time_list) do\n    --         max_min_table = split(value, \",\")\n    --         min_time_before = tonumber(max_min_table[1]) or 24*60*60\n    --         local diff = (min_time_before - max_time)/1000\n    --         if diff > 0  and diff < tmp_time then\n    --             tmp_time = diff\n    --         end\n    --     end\n    -- end\n    -- session_out_time = 24*60*60 - tmp_time\n\n    if #real_show_index_list == 10  then\n        for index, value in ipairs(real_show_index_list) do\n            if index + 1 <= 10 and real_show_index_list[index + 1] > 0 then\n                is_next_label[index] = 1\n            end\n            if real_show_index_list[10] > 0 then\n                is_next_label[10] = 1\n            end\n            if real_show_index_list[index] > 0 then\n                is_real_show_list[index] = 1\n            end\n        end\n    end\n\n    if d_session_label/1000 < 24*60*60 then\n        is_revisit = 1\n    end\n\n    return point_ltr_label, point_ltr_wt, session_inner_time, session_vv, is_revisit, is_next_label ,is_real_show_list, list_size\nend\n\nfunction transform_string_number(input, output)\n    local output = {0,0,0,0,0,0,0,0,0,0}\n    if #input == 10 then\n        for index, value in ipairs(input) do\n            local vals = split(value, \"_\")\n            if #vals > 0 and vals[1] ~= \"\" and vals[1] ~= \"-1\" then\n                output[index] = tonumber(vals[1])\n            end\n        end\n    end\n    return output\nend\n\nfunction process_hetu_feature()\n    local hetu_level_one_tag_list = hetu_level_one_tag_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local hetu_level_two_tag_list = hetu_level_two_tag_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local hetu_level_three_tag_list = hetu_level_three_tag_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local emp_ctr_list = emp_ctr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local emp_ltr_list = emp_ltr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local emp_wtr_list = emp_wtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local emp_ftr_list = emp_ftr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local emp_lvtr_list = emp_lvtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pctr_list = pctr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pltr_list = pltr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pwtr_list = pwtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pftr_list = pftr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local plvtr_list = plvtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pptr_list = pptr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local psvtr_list = psvtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pwtd_score_list = pwtd_score_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pcltr_list = pcltr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pcmef_list = pcmef_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local pcmtr_list = pcmtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_htr_list = mc_htr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pcestr_list = mc_pcestr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pcltr_list = mc_pcltr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pcmtr_list = mc_pcmtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pctr_list = mc_pctr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pepstr_list = mc_pepstr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pltr_list = mc_pltr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_plvtr_list = mc_plvtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_psvtr_list = mc_psvtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pwtd_list = mc_pwtd_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n    local mc_pwtr_list = mc_pwtr_list or {\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"}\n\n    local output = {0,0,0,0,0,0,0,0,0,0}\n\n    return  transform_string_number(hetu_level_one_tag_list, output),\n            transform_string_number(hetu_level_two_tag_list, output),\n            transform_string_number(hetu_level_three_tag_list, output),\n            transform_string_number(emp_ctr_list, output),\n            transform_string_number(emp_ltr_list, output),\n            transform_string_number(emp_wtr_list, output),\n            transform_string_number(emp_ftr_list, output),\n            transform_string_number(emp_lvtr_list, output),\n            transform_string_number(pctr_list, output),\n            transform_string_number(pltr_list, output),\n            transform_string_number(pwtr_list, output),\n            transform_string_number(pftr_list, output),\n            transform_string_number(plvtr_list, output),\n            transform_string_number(pptr_list, output),\n            transform_string_number(psvtr_list, output),\n            transform_string_number(pwtd_score_list, output),\n            transform_string_number(pcltr_list, output),\n            transform_string_number(pcmef_list, output),\n            transform_string_number(pcmtr_list, output),\n            transform_string_number(mc_htr_list, output),\n            transform_string_number(mc_pcestr_list, output),\n            transform_string_number(mc_pcltr_list, output),\n            transform_string_number(mc_pcmtr_list, output),\n            transform_string_number(mc_pctr_list, output),\n            transform_string_number(mc_pepstr_list, output),\n            transform_string_number(mc_pltr_list, output),\n            transform_string_number(mc_plvtr_list, output),\n            transform_string_number(mc_psvtr_list, output),\n            transform_string_number(mc_pwtd_list, output),\n            transform_string_number(mc_pwtr_list, output)\nend",
+          "type_name": "CommonRecoLuaAttrEnricher"
+        },
+        "extract_kuiba_parameter_35A91D": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "author_id_list",
+              "device_id",
+              "hetu_cluster_id_list",
+              "hetu_level_one_tag_list",
+              "hetu_level_three_tag_list",
+              "hetu_level_two_tag_list",
+              "photo_id_list",
+              "user_age_segment",
+              "user_gender",
+              "user_id"
+            ],
+            "$input_item_attrs": [
+              "author_id_list",
+              "device_id",
+              "hetu_cluster_id_list",
+              "hetu_level_one_tag_list",
+              "hetu_level_three_tag_list",
+              "hetu_level_two_tag_list",
+              "photo_id_list",
+              "user_gender",
+              "user_id"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": [
+              "eyeshot_signs",
+              "eyeshot_slots"
+            ]
+          },
+          "config": {
+            "author_id_list": {
+              "attrs": [
+                {
+                  "attr": [
+                    "author_id_list"
+                  ],
+                  "converter": "list",
+                  "key_type": 202
+                }
+              ],
+              "dim": 16,
+              "expand": 10
+            },
+            "device_id": {
+              "attrs": [
+                {
+                  "attr": [
+                    "device_id"
+                  ],
+                  "converter": "id",
+                  "key_type": 100
+                }
+              ],
+              "dim": 32,
+              "use_common_attr_only": true
+            },
+            "hetu_cluster_id_list": {
+              "attrs": [
+                {
+                  "attr": [
+                    "hetu_cluster_id_list"
+                  ],
+                  "converter": "list",
+                  "key_type": 203
+                }
+              ],
+              "dim": 4,
+              "expand": 10
+            },
+            "hetu_level_one_tag_list": {
+              "attrs": [
+                {
+                  "attr": [
+                    "hetu_level_one_tag_list"
+                  ],
+                  "converter": "list",
+                  "key_type": 204
+                }
+              ],
+              "dim": 4,
+              "expand": 10
+            },
+            "hetu_level_three_tag_list": {
+              "attrs": [
+                {
+                  "attr": [
+                    "hetu_level_three_tag_list"
+                  ],
+                  "converter": "list",
+                  "key_type": 206
+                }
+              ],
+              "dim": 4,
+              "expand": 10
+            },
+            "hetu_level_two_tag_list": {
+              "attrs": [
+                {
+                  "attr": [
+                    "hetu_level_two_tag_list"
+                  ],
+                  "converter": "list",
+                  "key_type": 205
+                }
+              ],
+              "dim": 4,
+              "expand": 10
+            },
+            "photo_id_list": {
+              "attrs": [
+                {
+                  "attr": [
+                    "photo_id_list"
+                  ],
+                  "converter": "list",
+                  "key_type": 201
+                }
+              ],
+              "dim": 8,
+              "expand": 10
+            },
+            "user_age_segment": {
+              "attrs": [
+                {
+                  "attr": [
+                    "user_age_segment"
+                  ],
+                  "converter": "id",
+                  "key_type": 103
+                }
+              ],
+              "dim": 4,
+              "use_common_attr_only": true
+            },
+            "user_gender": {
+              "attrs": [
+                {
+                  "attr": [
+                    "user_gender"
+                  ],
+                  "converter": "id",
+                  "key_type": 102
+                }
+              ],
+              "dim": 4,
+              "use_common_attr_only": true
+            },
+            "user_id": {
+              "attrs": [
+                {
+                  "attr": [
+                    "user_id"
+                  ],
+                  "converter": "id",
+                  "key_type": 101
+                }
+              ],
+              "dim": 32,
+              "use_common_attr_only": true
+            }
+          },
+          "parameters_output": "eyeshot_signs",
+          "slots_output": "eyeshot_slots",
+          "type_name": "KuibaParameterAttrEnricher"
+        },
+        "fetch_message_287081": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "hive_sample_str"
+            ],
+            "$output_item_attrs": []
+          },
+          "group_id": "fountain_revisit_model_exp",
+          "hdfs_format": "raw_text",
+          "hdfs_path": "viewfs://hadoop-lt-cluster/home/reco_analysis/dw/reco_analysis.db/explore_reco_log_sample_rel2_server/p_date=%Y%m%d/*#no_next=ignore&no_current=wait&step=86400",
+          "hdfs_read_thread_num": 64,
+          "output_attr": "hive_sample_str",
+          "type_name": "OfflineMessageFetchEnricher"
+        },
+        "filter_by_attr_90F30D": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [
+              "hive_sample_str"
+            ],
+            "$modify_item_tables": [
+              ""
+            ],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "attr_name": "hive_sample_str",
+          "compare_to": "",
+          "remove_if": "==",
+          "remove_if_attr_missing": true,
+          "type_name": "CommonRecoAttrFilterArranger"
+        },
+        "get_kconf_params_DEE745": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "kconf_configs": [],
+          "type_name": "CommonRecoKconfCommonAttrEnricher"
+        },
+        "log_debug_info_84C6F3": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [
+              "timelist"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "for_debug_request_only": false,
+          "item_attrs": [
+            "timelist"
+          ],
+          "type_name": "CommonRecoDebugInfoObserver"
+        },
+        "log_debug_info_AB2BAD": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "session_id",
+              "time_ms",
+              "user_age_segment",
+              "user_id"
+            ],
+            "$input_item_attrs": [
+              "author_gender_list",
+              "author_id_list",
+              "d_session_label",
+              "duration_ms_list",
+              "emp_ctr_list",
+              "emp_wtr_list",
+              "hetu_level_one_tag_list",
+              "hetu_level_three_tag_list",
+              "hetu_level_two_tag_list",
+              "is_click_list",
+              "is_collect_list",
+              "is_comment_list",
+              "is_follow_list",
+              "is_forward_list",
+              "is_hate_list",
+              "is_like_list",
+              "is_next_label",
+              "is_real_show_list",
+              "is_revisit",
+              "max_time",
+              "mc_pltr_list",
+              "min_time",
+              "pftr_index_list",
+              "play_time_ms_list",
+              "point_ltr_label",
+              "point_ltr_wt",
+              "real_show_index_list",
+              "session_inner_time",
+              "session_vv",
+              "timelist"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "common_attrs": [
+            "user_id",
+            "session_id",
+            "time_ms",
+            "user_age_segment"
+          ],
+          "for_debug_request_only": false,
+          "item_attrs": [
+            "emp_ctr_list",
+            "emp_wtr_list",
+            "mc_pltr_list",
+            "pftr_index_list",
+            "hetu_level_one_tag_list",
+            "hetu_level_two_tag_list",
+            "hetu_level_three_tag_list",
+            "is_click_list",
+            "is_like_list",
+            "is_follow_list",
+            "is_forward_list",
+            "is_comment_list",
+            "is_collect_list",
+            "is_hate_list",
+            "play_time_ms_list",
+            "duration_ms_list",
+            "max_time",
+            "min_time",
+            "timelist",
+            "d_session_label",
+            "author_id_list",
+            "author_gender_list",
+            "point_ltr_label",
+            "point_ltr_wt",
+            "session_inner_time",
+            "session_vv",
+            "is_revisit",
+            "real_show_index_list",
+            "is_next_label",
+            "is_real_show_list"
+          ],
+          "type_name": "CommonRecoDebugInfoObserver"
+        },
+        "log_debug_info_E0B11B": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "hive_sample_str",
+              "tf_sequence_example",
+              "time_ms",
+              "user_age_segment",
+              "user_gender"
+            ],
+            "$input_item_attrs": [
+              "action_label",
+              "action_mask",
+              "action_weight",
+              "author_age_segment",
+              "author_age_segment_str",
+              "author_gender",
+              "author_gender_str",
+              "author_id",
+              "click_label",
+              "click_mask",
+              "click_weight",
+              "ctr_label",
+              "ctr_mask",
+              "ctr_weight",
+              "cvr_label",
+              "cvr_mask",
+              "cvr_weight",
+              "eyeshot_signs",
+              "eyeshot_slots",
+              "hetu_cluster_id",
+              "hetu_level_two_tag"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "common_attrs": [
+            "hive_sample_str",
+            "tf_sequence_example",
+            "time_ms",
+            "user_age_segment",
+            "user_gender"
+          ],
+          "for_debug_request_only": true,
+          "item_attrs": [
+            "eyeshot_slots",
+            "eyeshot_signs",
+            "author_age_segment",
+            "author_age_segment_str",
+            "author_gender",
+            "author_gender_str",
+            "hetu_cluster_id",
+            "hetu_level_two_tag",
+            "author_id",
+            "ctr_label",
+            "ctr_mask",
+            "ctr_weight",
+            "cvr_label",
+            "cvr_mask",
+            "cvr_weight",
+            "click_label",
+            "click_mask",
+            "click_weight",
+            "action_label",
+            "action_mask",
+            "action_weight"
+          ],
+          "print_all_item_attrs": true,
+          "print_all_item_keys": true,
+          "respect_sample_logging": true,
+          "type_name": "CommonRecoDebugInfoObserver"
+        },
+        "retrieve_from_tf_sequence_example_DE0918": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "tf_sequence_example"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "from_extra_var": "tf_sequence_example",
+          "time_ms_attr": "time_ms",
+          "type_name": "OfflineTensorflowSequenceExampleRetriever",
+          "user_id_attr": "user_id"
+        },
+        "send_to_mio_learner_9EE0FA": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "_if_control_attr_1",
+              "device_id",
+              "emp_ctr_list",
+              "emp_ltr_list",
+              "emp_lvtr_list",
+              "emp_wtr_list",
+              "eyeshot_signs",
+              "eyeshot_slots",
+              "is_next_label",
+              "is_real_show_list",
+              "is_revisit",
+              "pcmef_list",
+              "pcmtr_list",
+              "pctr_index_list",
+              "pctr_list",
+              "pltr_index_list",
+              "pltr_list",
+              "plvtr_index_list",
+              "plvtr_list",
+              "point_ltr_label",
+              "point_ltr_wt",
+              "pptr_list",
+              "pvtr_index_list",
+              "pwtr_index_list",
+              "pwtr_list",
+              "session_inner_time",
+              "session_vv",
+              "time_ms",
+              "user_id"
+            ],
+            "$input_item_attrs": [
+              "emp_ctr_list",
+              "emp_ltr_list",
+              "emp_lvtr_list",
+              "emp_wtr_list",
+              "eyeshot_signs",
+              "eyeshot_slots",
+              "is_next_label",
+              "is_real_show_list",
+              "is_revisit",
+              "ltr",
+              "pcmef_list",
+              "pcmtr_list",
+              "pctr_index_list",
+              "pctr_list",
+              "pltr_index_list",
+              "pltr_list",
+              "plvtr_index_list",
+              "plvtr_list",
+              "point_ltr_label",
+              "point_ltr_wt",
+              "pptr_list",
+              "pvtr_index_list",
+              "pwtr_index_list",
+              "pwtr_list",
+              "session_inner_time",
+              "session_vv"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "attrs": [
+            "point_ltr_label",
+            "point_ltr_wt",
+            "session_inner_time",
+            "session_vv",
+            "is_revisit",
+            "is_real_show_list",
+            "is_next_label",
+            "pctr_list",
+            "pltr_list",
+            "pwtr_list",
+            "plvtr_list",
+            "pcmtr_list",
+            "pcmef_list",
+            "pptr_list",
+            "pctr_index_list",
+            "pltr_index_list",
+            "pwtr_index_list",
+            "pvtr_index_list",
+            "plvtr_index_list",
+            "emp_ctr_list",
+            "emp_ltr_list",
+            "emp_wtr_list",
+            "emp_lvtr_list"
+          ],
+          "label_attr": "ltr",
+          "lineid_attr": "user_id",
+          "signs_attrs": [
+            "eyeshot_signs"
+          ],
+          "skip": "{{_if_control_attr_1}}",
+          "slots_attrs": [
+            "eyeshot_slots"
+          ],
+          "time_ms_attr": "time_ms",
+          "type_name": "MioRecordChannelObserver",
+          "user_hash_attr": "device_id"
+        }
+      },
+      "type_name": "CommonRecoPipeline"
+    },
+    "pipeline_map": {
+      "load_raw_sample": {
+        "__PARENT": "base_pipeline",
+        "pipeline": [
+          "fetch_message_287081",
+          "filter_by_attr_90F30D",
+          "convert_csv_to_tf_sequence_example_5B177C",
+          "retrieve_from_tf_sequence_example_DE0918",
+          "log_debug_info_84C6F3",
+          "enrich_attr_by_lua_7D0E7D",
+          "enrich_attr_by_lua_034A9C",
+          "get_kconf_params_DEE745",
+          "enrich_attr_by_lua_5FAFFD",
+          "extract_kuiba_parameter_35A91D",
+          "log_debug_info_AB2BAD",
+          "log_debug_info_E0B11B"
+        ]
+      },
+      "send_to_mio_learner": {
+        "__PARENT": "base_pipeline",
+        "pipeline": [
+          "copy_user_meta_info_3B7B86",
+          "_branch_controller_EB7701DB",
+          "send_to_mio_learner_9EE0FA"
+        ]
+      }
+    }
+  },
+  "runner_pipeline_group": {
+    "default_name": {
+      "core_num_thread_ratio": 0.0,
+      "pipeline": [
+        "load_raw_sample",
+        "send_to_mio_learner"
+      ],
+      "thread_num": -1
+    }
+  },
+  "service_identifier": "fountain_revisit_model_exp"
+}

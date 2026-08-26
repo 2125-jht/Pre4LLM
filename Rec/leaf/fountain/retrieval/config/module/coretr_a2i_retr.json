@@ -1,0 +1,43 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_coretr_a2i_fountain", true],
+      "fountain_coretr_a2i_retr_max_interact_aids_num": 0,
+      "fountain_coretr_a2i_retr_max_sim_src_aids_num": 1000,
+      "fountain_coretr_a2i_retr_max_num": 1000,
+      "fountain_coretr_a2i_retr_num_per_key": 10,
+      "fountain_coretr_a2i_retr_key_prefix": "coRetr_a2i",
+      "skip_fountain_coretr_a2i_retr": 1
+    }, 
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "featureFountainProfileLikeAidList",
+        "featureFountainProfileFollowAidList",
+        "featureFountainProfileLongViewAidList",
+        "featureFountainProfileShortViewAidList",
+        "featureUserProfileV1FollowAidList",
+        "featureUserProfileV1ProfileEnterAidList",
+        "hateAidList",
+        "featureUserProfileV1LikeAidList",
+        "featureUserProfileV1CommentAidList",
+        "featureUserProfileV1DownloadAidList",
+        "featureUserProfileV1FollowAidList",
+        "featureUserProfileV1ForwardAidList",
+        "featureUserProfileV1ProfileEnterAidList",
+        "user_fountain_forward_aid_list",
+        "user_fountain_follow_aid_list",
+        "user_fountain_like_aid_list",
+        "user_fountain_comment_aid_list"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+      ],
+      "results": [
+        "coretr_a2i_retr__result"
+      ]
+    }
+  },
+  "reason": 344
+}

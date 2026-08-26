@@ -1,0 +1,94 @@
+diff --git a/edge_rerank/predict/dsl.py b/edge_rerank/predict/dsl.py
+index 589d57f..01d7175 100644
+--- a/edge_rerank/predict/dsl.py
++++ b/edge_rerank/predict/dsl.py
+@@ -39,7 +39,7 @@ output_pxtrs_as_embedding = True
+ return_item_attr = [
+ "l2r_all_emb",
+ ] + [
+-  "0", "1", "2", "3", "4", "5", "6", "7", "14", "15", "20", "201", "18"
++  "0", "1", "2", "3", "4", "5", "6", "7", "14", "15", "20", "201", "18", "16", "27", "28", "12"
+ ] + [
+ "edge_pid_list", "edge_aid_list", "edge_mmuImgId_list", "edge_hetuLevelOne_list", "edge_hetuLevelTwo_list", "edge_duration_list"
+ ]
+@@ -121,7 +121,7 @@ class PredictServerFlow(LeafFlow, KuibaApiMixin, MioApiMixin, OfflineApiMixin):
+       .deduplicate() \
+       .limit(predict_limit) \
+       .get_item_attr_by_distributed_index(
+-        photo_store_kconf_key = "reco.distributedIndex.frHotPhotoStoreConfig",
++        photo_store_kconf_key = "reco.distributedIndex.fountainPhotoStoreConfig",
+         save_item_info_to_attr="photo_info") \
+       .parse_protobuf_from_string(
+         is_common_attr=True,
+@@ -137,9 +137,10 @@ class PredictServerFlow(LeafFlow, KuibaApiMixin, MioApiMixin, OfflineApiMixin):
+         from_extra_var="photo_info",
+         is_common_attr=False,
+         attrs=[
+-          dict(path="author.id", name="aId"),
+           dict(path="tag", name="pTag"),
+           dict(path="music", name="pMusic"),
++          dict(path="view_length_sum", name="view_length_sum"),
++          dict(path="click_count", name="click_count"),
+           dict(path="mmu_img_cluster_v1", name="pMmuImgClusterV1"),
+           dict(path="mmu_img_cluster_v3", name="pMmuImgClusterV3"),
+           dict(path="mmu_content_id", name="pMmuContentId"),
+@@ -164,8 +165,9 @@ class PredictServerFlow(LeafFlow, KuibaApiMixin, MioApiMixin, OfflineApiMixin):
+         from_extra_var="rank_result_info",
+         is_common_attr=False,
+         attrs=[
+-          dict(path="photo_info.hetu_level_one", name="pHetuTagLevel1Id"),
+-          dict(path="photo_info.hetu_level_two", name="pHetuTagLevel2Id"),
++          dict(path="photo_info.author.id", name="aId"),
++          dict(path="photo_info.hetu_tag_level_info.hetu_level_one", name="pHetuTagLevel1Id"),
++          dict(path="photo_info.hetu_tag_level_info.hetu_level_two", name="pHetuTagLevel2Id"),
+           dict(path="photo_info.duration_ms", name="pDurationMs"),
+           dict(path="photo_info.upload_type", name="pUploadType"),
+           dict(path="photo_info.photo_id", name="pId"),
+@@ -195,12 +197,13 @@ class PredictServerFlow(LeafFlow, KuibaApiMixin, MioApiMixin, OfflineApiMixin):
+           dict(path="empirical_ptr", name="pEmpPtr"),
+         ]) \
+       .enrich_attr_by_lua(
+-        import_item_attr=["pPctr", "pPftr", "pPhtr", "pPltr", "pPptr", "pPwtr", "pPlvtr", "pPsvtr", "pPvtr", "pPcmtr", "pPcmef", "pPepstr"],
++        import_item_attr=["pPctr", "pPftr", "pPhtr", "pPltr", "pPptr", "pPwtr", "pPlvtr", "pPsvtr", "pPvtr", "pPcmtr", "pPcmef", "pPepstr",
++                          "pHetuTagLevel1Id", "pHetuTagLevel2Id", "aId", "pMmuImgClusterV3"],
+         function_for_item="calculate",
+-        export_item_attr=["0", "1", "2", "3", "4", "5", "6", "7", "14", "15", "20", "201"],
++        export_item_attr=["0", "1", "2", "3", "4", "5", "6", "7", "14", "15", "20", "201", "27", "28", "16", "12"],
+         lua_script="""
+           function calculate()
+-            return pPctr, pPftr, pPhtr, pPltr, pPptr, pPwtr, pPlvtr, pPsvtr, pPvtr, pPcmtr, pPcmef, pPepstr 
++            return pPctr, pPftr, pPhtr, pPltr, pPptr, pPwtr, pPlvtr, pPsvtr, pPvtr, pPcmtr, pPcmef, pPepstr, pHetuTagLevel1Id, pHetuTagLevel2Id, aId, pMmuImgClusterV3 
+           end
+         """) \
+       .enrich_attr_by_lua(
+@@ -212,6 +215,17 @@ class PredictServerFlow(LeafFlow, KuibaApiMixin, MioApiMixin, OfflineApiMixin):
+             return a
+           end
+         """) \
++      .enrich_attr_by_lua(
++        function_for_item="calculate",
++        import_item_attr=["view_length_sum", "click_count"],
++        export_item_attr=["pAvgWatchtime"],
++        lua_script="""
++          function calculate()
++            local view_length_sum = view_length_sum or 0
++            local click_count = click_count or 0
++            return view_length_sum * 1.0 / (click_count + 100.0)
++          end
++        """) \
+ 
+   def predict_with_mio_model(self, **kwargs):
+     model_config = kwargs.pop('model_config')
+diff --git a/mix_rerank/conf/static.flags b/mix_rerank/conf/static.flags
+index 23f3588..ad8a947 100755
+--- a/mix_rerank/conf/static.flags
++++ b/mix_rerank/conf/static.flags
+@@ -53,7 +53,7 @@
+ --truncate_expand=true
+ --req_retry_times=999
+ --kess_client_event_loop_nums=32
+---total_btqueue_shards=4
++--total_btqueue_shards=1
+ --init_done_file=./conf/done_list
+ --init_load_dense_path=/
+ --init_load_sparse_path=/

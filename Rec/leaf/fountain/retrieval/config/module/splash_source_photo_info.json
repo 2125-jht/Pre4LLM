@@ -1,0 +1,65 @@
+{
+  "dragon_params": {
+    "import": {
+      "common_attrs": [
+        "featureSourcePId"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "source_photo_info"
+      ]
+    }
+  },
+  "abtest_params_config": {
+    "biz_name": "RECO_RPC",
+    "ab_params": [
+      {
+        "param_name": "fountain_request_data_set_tags_all",
+        "param_type": "string",
+        "attr_name": "fountain_request_data_set_tags_all",
+        "default_value": ""
+      }
+    ],
+    "prioritized_suffix": "{{_ABTEST_SUFFIX_LIST_}}"
+  },
+  "distributed_flat_index_config": {
+    "photo_store_kconf_key": "reco.distributedIndex.hotPhotoInfoCommonIndex",
+    "perf_log": "entry_photo_splash",
+    "photo_store_request_data_set_tags_attr": "fountain_request_data_set_tags_all",
+    "use_dynamic_photo_store": true,
+    "attrs": [
+      "hetu_tag_level_info_v2__hetu_level_one",
+      "hetu_tag_level_info_v2__hetu_level_two",
+      "hetu_tag_level_info_v2__hetu_level_three",
+      "hetu_tag_level_info_v2__hetu_level_four",
+      "hetu_tag_level_info_v2__hetu_tag",
+      "hetu_tag_level_info_v2__hetu_face_id",
+      "hetu_tag_level_info_v2__hetu_cluster_id",
+      "hetu_tag_level_info__hetu_tag",
+      "hetu_tag_level_info__hetu_level_one",
+      "hetu_tag_level_info__hetu_level_two",
+      "hetu_tag_level_info__hetu_level_three",
+      "hetu_tag_level_info__hetu_level_four",
+      "hetu_tag_level_info__hetu_level_five",
+      "hetu_tag_level_info__hetu_face_id",
+      "hetu_tag_level_info__hetu_cluster_id",
+      "author__category_detail__third_level_id",
+      "mmu_content_ids_3",
+      "mmu_content_ids_8",
+      "mmu_content_ids_10",
+      "mmu_content_ids_15",
+      "mmu_content_ids_16",
+      "mmu_content_ids_17",
+      "hetu_sim_cluster_id",
+      "user_hash_tag_id",
+      "author_circle_v2"
+    ],
+    "additional_item_source": {
+      "reco_results": false,
+      "common_attr": [
+        "featureSourcePId"
+      ]
+    }
+  }
+}

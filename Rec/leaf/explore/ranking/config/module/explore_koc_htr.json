@@ -1,0 +1,61 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_koc_htr_model": false,
+      "explore_koc_htr_kess_service": "grpc_krpExploreKocHtrInfer",
+      "explore_koc_htr_partition_size": 180
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "uOldMmuClusterId300ListList",
+        "recent_hate_count",
+        "explore_koc_htr_count_threshold"
+      ],
+      "item_attrs": [
+        "explore_stat__report_detail__total_report_count",
+        "corr_pctr",
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "fr_score1",
+        "fr_score2",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "fetr",
+        "fountain_eff",
+        "pColossusScore",
+        "score_pctr",
+        "awesome_wtd",
+        "pctr_index",
+        "pltr_index",
+        "pwtr_index",
+        "pftr_index",
+        "pvtr_index",
+        "plvtr_index",
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "koc_cover_htr",
+        "koc_detail_htr",
+        "reverse_koc_cover_htr",
+        "reverse_koc_detail_htr"
+      ]
+    }
+  }
+}

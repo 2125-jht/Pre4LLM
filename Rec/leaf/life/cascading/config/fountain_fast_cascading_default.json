@@ -1,0 +1,20 @@
+{
+  "modules": [
+    {
+      "name": "fountain_fast_cascading_predict",
+      "type_name": "FountainFastCascadingPredictModule"
+    },
+    {
+      "name": "fountain_fast_cascading_score",
+      "type_name": "FountainFastCascadingScoreModule"
+    },
+    {
+      "name": "fountain_fast_cascading_prepare",
+      "type_name": "FountainFastCascadingPrepareModule"
+    },
+    {
+      "name": "fountain_fast_cascading_final_score",
+      "type_name": "FountainFastCascadingFinalScoreModule"
+    }
+  ]
+}

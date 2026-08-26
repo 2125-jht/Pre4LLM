@@ -1,0 +1,26 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_u2c_map": 0,
+      "cascade_explore_u2c_default_score": 0.0,
+      "enable_interest_cid_collaborative_filter": false
+    },
+    "import": {
+      "common_attrs": [
+        "interest_cid_collaborative_score_map",
+        "uOldMmuClusterId300ListList"
+      ],
+      "item_attrs": [
+         "explore_u2c"
+       ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "cascade_explore_u2c_score"
+      ]
+    }
+  }
+}

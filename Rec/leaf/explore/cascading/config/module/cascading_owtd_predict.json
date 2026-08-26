@@ -1,0 +1,44 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_owtd_predict": 0,
+      "mc_tower_owtd_service": "grpc_ExploreCascadeOwtdInfer",
+      "mc_tower_owtd_request_type": "predict_by_explore_mc_owtd",
+      "explore_mc_owtd_quantile_num": 3,
+      "explore_mc_owtd_label_threshold": 0.0,
+      "explore_mc_owtd_duration_max_limit": 240.0,
+      "explore_mc_owtd_prob_duration_power_weight": 0.0,
+      "explore_mc_owtd_duration_power_weight": 0.0
+    },
+    "kconf": {
+      "explore_mc_ordinal_duration_list": {
+        "kconf_key": "reco.offline.ordinalDurationClusterList",
+        "value_type": "list_double",
+        "default_value": []
+      },
+      "explore_mc_ordinal_playtime_dist_list": {
+        "kconf_key": "reco.offline.ordinalPlayTimeDistList",
+        "value_type": "list_double",
+        "default_value": []
+      }
+    },
+    "import": {
+      "item_attrs": [
+        "photo_id"
+      ],
+      "common_attrs": [
+        "explore_mc_ordinal_duration_list",
+        "explore_mc_ordinal_playtime_dist_list"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "cascade_ordinal_wtd",
+        "cascade_ordinal_prob"
+      ]
+    }
+  }
+}

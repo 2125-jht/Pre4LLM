@@ -1,0 +1,155 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_pic_ltr_predict_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_ltr_predict_service",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-long-form-infer-explore-pic-ltr-infer-v2"
+      },
+      "skip_explore_pic_ltr_predict": {
+        "biz_name": "RECO_RPC",
+        "param_name": "skip_explore_pic_ltr_predict",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "explore_pic_ltr_predict_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_ltr_predict_partition_size",
+        "param_type": "int",
+        "default_value": 48 
+      },
+      "explore_pic_revisit_ltr_predict_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_revisit_ltr_predict_service",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-long-form-infer-explore-pic-revisit-ltr-infer"
+      },
+      "explore_pic_revisit_ltr_predict_request_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_revisit_ltr_predict_request_type",
+        "param_type": "string",
+        "default_value": "default"
+      },
+      "skip_explore_pic_revisit_ltr_predict": {
+        "biz_name": "RECO_RPC",
+        "param_name": "skip_explore_pic_revisit_ltr_predict",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "skip_calc_pic_ltr_fvtr_with_pic_count": 1,
+      "pic_ltr_fvtr_pic_count_max": 32,
+      "enable_pic_ltr_skip_single_pic": false,
+      "enable_explore_pic_diversity_ltr_predict": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_pic_diversity_ltr_predict",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "explore_pic_diversity_ltr_predict_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_diversity_ltr_predict_partition_size",
+        "param_type": "int",
+        "default_value": 300,
+        "report_ab_hit": true
+      },
+      "explore_pic_diversity_ltr_predict_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_diversity_ltr_predict_service",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-long-form-com-leaf-explore-pic-ltr-leaf",
+        "report_ab_hit": true
+      },
+      "explore_pic_diversity_ltr_predict_request_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_diversity_ltr_predict_request_type",
+        "param_type": "string",
+        "default_value": "default",
+        "report_ab_hit": true
+      },
+      "explore_pic_ltr_mode": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_ltr_mode",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "explore_pic_mix_ltr_predict_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_mix_ltr_predict_partition_size",
+        "param_type": "int",
+        "default_value": 300,
+        "report_ab_hit": true
+      },
+      "explore_pic_mix_ltr_predict_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_mix_ltr_predict_service",
+        "param_type": "string",
+        "default_value": "grpc_explorePicLtrVa",
+        "report_ab_hit": true
+      },
+      "explore_pic_mix_ltr_predict_request_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_mix_ltr_predict_request_type",
+        "param_type": "string",
+        "default_value": "default",
+        "report_ab_hit": true
+      },
+      "explore_pic_diversity_ltr_mode": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_diversity_ltr_mode",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "fr_score1",
+        "fr_score2",
+        "photo_picture_count",
+        "caption_length",
+        "location__city_id",
+        "location__province_id",
+        "is_picture",
+        "picture_type"
+      ],
+      "common_attrs": [
+        "userInfo",
+        "uStandardRealShowPicAllIdList",
+        "uStandardClickPicAllIdList",
+        "uStandardLongviewPicAllIdList"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pic_ltr_weighted_ctr",
+        "pic_ltr_lvtr",
+        "pic_ltr_fvtr",
+        "pic_ltr_wtd",
+        "pic_ltr_acttr",
+        "pic_ltr_bpr_ctr",
+        "pic_ltr_bpr_cltr",
+        "pic_ltr_bpr_revisittr",
+        "pic_diversity_score"
+      ]
+    }
+  }
+}

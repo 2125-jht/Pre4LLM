@@ -1,0 +1,192 @@
+{
+  "modules": [
+    {
+      "name": "ranking_score",
+      "type_name": "RankingScoreModule"
+    },
+    {
+      "name": "ranking_ensemble_sort",
+      "type_name": "RankingEnsembleSortModule"
+    },
+    {
+      "name": "fetch_user_colossus_info",
+      "type_name": "FetchUserColossusInfoModule"
+    },
+    {
+      "name": "ranking_produce_photo_predict",
+      "type_name": "RankingProducePhotoPredictModule"
+    },
+    {
+      "name": "ranking_merchant_photo_predict",
+      "type_name": "RankingMerchantPhotoPredictModule"
+    },
+    {
+      "name": "consume_time_ltr",
+      "type_name": "ConsumeTimeLtrModule"
+    },
+    {
+      "name": "user_long_term_engagement",
+      "type_name": "UserLongTermEngagementModule"
+    },
+    {
+      "name": "simple_ltr",
+      "type_name": "SimpleLtrModule"
+    },
+    {
+      "name": "ranking_merchant_solve_score",
+      "type_name": "RankingMerchantSolveScoreModule"
+    },
+    {
+      "name": "ranking_produce_solve_score",
+      "type_name": "RankingProduceSolveScoreModule"
+    },
+    {
+      "name": "final_variant_diversity",
+      "type_name": "VariantDiversityModule"
+    },
+    {
+      "name": "auto_param",
+      "type_name": "AutoParamModule"
+    },
+    {
+      "name": "ada_xtr",
+      "type_name": "AdaXtrModule"
+    },
+    {
+      "name": "pure_value_score",
+      "type_name": "PureValueScoreModule"
+    },
+    {
+      "name": "cascade_linear_score",
+      "type_name": "CasCadeLinearScore"
+    },
+    {
+      "name": "pic_rerank",
+      "type_name": "PicRerankModule"
+    },
+    {
+      "name": "click_cost_gain_score",
+      "type_name": "ClickCostGainScoreModule"
+    },
+    {
+      "name": "pic_ltr",
+      "type_name": "PicLtrModule"
+    },
+    {
+      "name": "ranking_ensemble_abs_xtr_score",
+      "type_name": "RankingEnsembleAbsXtrScoreModule"
+    },
+    {
+      "name": "ranking_user_emp_xtr_handle",
+      "type_name": "RankingUserEmpXtrHandleModule"
+    },
+    {
+      "name": "ranking_cpr_handle",
+      "type_name": "RankingCprHandleModule"
+    },
+    {
+      "name": "pic_once_action_score",
+      "type_name": "PicOnceActionScoreModule"
+    },
+    {
+      "name": "la_ltr",
+      "type_name": "LaLtrModule"
+    },
+    {
+      "name": "gen_debias_xtr",
+      "type_name": "GenDebiasXtrModule"
+    },
+    {
+      "name": "top_xtr_insert",
+      "type_name": "TopXtrInsertModule"
+    },
+    {
+      "name": "min_act_rank",
+      "type_name": "MinActRankModule"
+    },
+    {
+      "name": "ranking_stage1_truncate",
+      "type_name": "RankingStageOneTruncateModule"
+    },
+    {
+      "name": "life_ltr",
+      "type_name": "LifeLtrModule"
+    },
+    {
+      "name": "ann_hetu_lvtr",
+      "type_name": "ANNHetuLvtrModule"
+    },
+    {
+      "name": "vqvae_u2u2i_interest",
+      "type_name": "VqvaeU2u2iInterestModule"
+    },
+    {
+      "name": "ctr_ltr_model",
+      "type_name": "CtrLtrModelModule"
+    },
+    {
+      "name": "mmoe_macr_model",
+      "type_name": "MMOEMACRModelModule"
+    },
+    {
+      "name": "pantheon_model",
+      "type_name": "PantheonModelModule"
+    },
+    {
+      "name": "ranking_get_diversity_fr",
+      "type_name": "RankingGetDiversityFrModule"
+    },
+    {
+      "name": "ranking_fetch_mmu_embedding",
+      "type_name": "RankingFetchMMUEmbeddingModule"
+    },
+    {
+      "name": "cascade_pxtr_index",
+      "type_name": "PxtrIndexModule"
+    },
+    {
+      "name": "ranking_pxtr_index",
+      "type_name": "PxtrIndexModule"
+    },
+    {
+      "name": "ranking_fetch_cover_embedding",
+      "type_name": "RankingFetchCoverEmbeddingModule"
+    },
+    {
+      "name": "ranking_get_hate_cover_similar_score",
+      "type_name": "RankingGetHateCoverSimilarScoreModule"
+    },
+    {
+      "name": "ranking_calc_svtr_adapt_wtd_score",
+      "type_name": "RankingCalcSvtrAdaptWtdScoreModule"
+    },
+    {
+      "name": "ranking_calc_pairwise_rank_score",
+      "type_name": "RankingCalcPairwiseRankScoreModule"
+    },
+    {
+      "name": "ranking_calc_sharpe_ratio_score",
+      "type_name": "RankingCalcSharpeRatioScoreModule"
+    },
+    {
+      "name": "life_ltr_v2",
+      "type_name": "LifeLtrV2Module"
+    },
+    {
+      "name": "ranking_clustergpt_predict",
+      "type_name": "RankingClustergptPredictModule"
+    },
+    {
+      "name": "sensitive_related_score",
+      "type_name": "SensitiveRelatedScoreModule"
+    },
+    {
+      "name": "ranking_light_calc_score",
+      "type_name": "RankingLightCalcScoreModule"
+    },
+    {
+      "name": "life_macr_svtr",
+      "type_name": "LifeMacrSvtrModule"
+    }
+  ]
+}

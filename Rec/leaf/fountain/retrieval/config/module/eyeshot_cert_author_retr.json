@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_fountain_eyeshot_cert_author_retr",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "fountain_eyeshot_cert_author_retr_service": "grpc_exploreLARetr",
+      "fountain_eyeshot_cert_author_retrieval_num": 600,
+      "fountain_eyeshot_cert_author_retrieval_dest": "explore_index_photo"
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "eyeshot_cert_author_retr__result"
+      ]
+    }
+  },
+  "reason": 400
+}

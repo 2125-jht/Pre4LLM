@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_skip_dup_cluster_id_deduplicate_in_pagesize": 1,
+      "fountain_skip_sim_remove_dup_id_deduplicate_in_pagesize": 1,
+      "fountain_skip_pic_and_selfdup_id_deduplicate_in_pagesize": 1
+    },
+    "import": {
+      "item_attrs": [
+        "item_id",
+        "dup_cluster_id",
+        "sim_remove_dup_id",
+        "pic_and_selfdup_id"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "dup_cluster_id_duplicate_count",
+        "sim_remove_dup_id_duplicate_count",
+        "pic_and_selfdup_id_duplicate_count"
+      ]
+    }
+  },
+  "enable_pagesize_dedup": true
+}

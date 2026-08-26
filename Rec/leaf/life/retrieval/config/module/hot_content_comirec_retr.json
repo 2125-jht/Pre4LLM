@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_hot_content_comirec_retr", false],
+      "retrieval_cache_config": ["hot_content_comirec_retr_cache_config", ""],
+      "retrieve_num": ["hot_content_comirec_retrieve_num", 500],
+      "auxiliary_arg": ["hot_content_comirec_retr_auxiliary", ""],
+      "service_name": ["hot_content_comirec_retr_service_name", "grpc_exploreMultiInterestPopularContentRetrServer"],
+      "skip_personal_quota": ["hot_content_comirec_skip_personal_quota", 1]
+    },
+    "constant": {
+      "service_timeout_ms": 75,
+      "increase_quota_factor": 1.0
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "increase_quota_status",
+        "reason_ratio_map_attr"
+      ]
+    },
+    "export": {
+      "results": [
+        "hot_content_comirec_retr__result"
+      ]
+    }
+  },
+  "reason": 10032
+}

@@ -1,0 +1,42 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_pic_u2c2i_retr", false],
+      "explore_pic_u2c2i_retr_enable_valid_interest_cluster": true,
+      "explore_pic_u2c2i_retr_valid_interest_cluster_trigger_num": 10,
+      "explore_pic_u2c2i_retr_enable_long_interest_cluster": true,
+      "explore_pic_u2c2i_retr_long_interest_cluster_trigger_num": 10,
+      "explore_pic_u2c2i_retr_enable_search_interest_cluster": true,
+      "explore_pic_u2c2i_retr_search_interest_cluster_trigger_num": 10,
+      "explore_pic_u2c2i_retr_enable_double_pic_valid_interest_cluster": false,
+      "explore_pic_u2c2i_retr_double_pic_valid_interest_cluster_trigger_num": 10,
+      "explore_pic_u2c2i_retr_enable_single_pic_valid_interest_cluster": false,
+      "explore_pic_u2c2i_retr_single_pic_valid_interest_cluster_trigger_num": 10,
+      "explore_pic_u2c2i_retr_enable_double_pic_growth_interest_cluster": false,
+      "explore_pic_u2c2i_retr_double_pic_growth_interest_cluster_trigger_num": 10,
+      "explore_pic_u2c2i_retr_user_pic_cluster_thresh": 10000,
+      "explore_pic_u2c2i_retr_trigger_num": 30,
+      "explore_pic_u2c2i_retr_num": 1500,
+      "explore_pic_u2c2i_retr_num_per_key": 50,
+      "explore_pic_u2c2i_retr_num_final": 200,
+      "explore_pic_u2c2i_redis_key_prefix": "pic_cid_"
+    },
+    "import": {
+      "common_attrs": [
+        "uPicValidInterestClusterIdList",
+        "uPicLongInterestClusterIdList",
+        "uPicSearchInterestClusterIdList",
+        "uDoubleOutsideValidPicCluster7dList",
+        "uSingleValidPicCluster7dList",
+        "uPicGrowthCidList",
+        "uDoubleOutsideValidPicClusterCnt7dKV"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_u2c2i_retr__result"
+      ]
+    }
+  },
+  "reason": 13036
+}

@@ -1,0 +1,112 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_llm_i2i_retr", false],
+      "kess_service_name": ["explore_llm_i2i_retr_kess_service_name", "grpc_exploreLLMI2IRetr"],
+      "service_request_num": ["explore_llm_i2i_retr_request_num", 800]
+    },
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list",
+        "browse_screen__pid_list",
+        "featureUId",
+        "upload_count",
+        "fans_count",
+        "follow_count",
+        "location_city_level_v2",
+        "user_age_segment",
+        "featureUserRequestProvinceId",
+        "featureUserRequestCityId",
+        "gender",
+        "true_gender",
+        "infer_gender",
+        "true_year",
+        "infer_year",
+        "featureVisitNet",
+        "is_douyin",
+        "featrueUserLongTermHetu1Id",
+        "featrueUserLongTermHetu1Score",
+        "featrueUserLongTermHetu2Id",
+        "featrueUserLongTermHetu2Score",
+        "featrueUserLongTermHetu3Id",
+        "featrueUserLongTermHetu3Score",
+        "videoPlayingPid",
+        "profile_v1_click_trigger_aids",
+        "playstat_playtimes",
+        "playstat_durations",
+        "user_fountain_play_id_list",
+        "user_fountain_play_aid_list",
+        "user_fountain_play_time_list",
+        "user_fountain_play_duration_list",
+        "fountain_follow_pids",
+        "fountain_follow_aids",
+        "fountain_like_pids",
+        "fountain_like_aids",
+        "realtimeClickList",
+        "realtime_like_list",
+        "realtime_follow_list"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_retr__trigger_pid"
+      ],
+      "results": [
+        "llm_i2i_retr__result"
+      ]
+    }
+  },
+  "send_common_attrs": [
+    "global_normal_trigger_list",
+    "global_high_value_trigger_list",
+    "global_normal_trigger_weight_list",
+    "global_high_value_trigger_weight_list",
+    "browse_screen__pid_list",
+    "featureUId",
+    "upload_count",
+    "fans_count",
+    "follow_count",
+    "location_city_level_v2",
+    "user_age_segment",
+    "featureUserRequestProvinceId",
+    "featureUserRequestCityId",
+    "gender",
+    "true_gender",
+    "infer_gender",
+    "true_year",
+    "infer_year",
+    "featureVisitNet",
+    "is_douyin",
+    "featrueUserLongTermHetu1Id",
+    "featrueUserLongTermHetu1Score",
+    "featrueUserLongTermHetu2Id",
+    "featrueUserLongTermHetu2Score",
+    "featrueUserLongTermHetu3Id",
+    "featrueUserLongTermHetu3Score",
+    "videoPlayingPid",
+    "profile_v1_click_trigger_aids",
+    "playstat_playtimes",
+    "playstat_durations",
+    "user_fountain_play_id_list",
+    "user_fountain_play_aid_list",
+    "user_fountain_play_time_list",
+    "user_fountain_play_duration_list",
+    "fountain_follow_pids",
+    "fountain_follow_aids",
+    "fountain_like_pids",
+    "fountain_like_aids",
+    "realtimeClickList",
+    "realtime_like_list",
+    "realtime_follow_list"
+  ],
+  "recv_item_attrs": [
+    "i2i_retr__trigger_pid"
+  ],
+  "reason": 830
+}

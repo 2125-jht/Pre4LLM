@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "add_fountain_profile_for_interaction_list": 0,
+      "skip_interact_shuffle": 1,
+      "skip_interaction_list_dedup": 1,
+      "skip_fountain_profile_enter_limit": 1,
+      "skip_fountain_eff_view_filter": 1,
+      "skip_fountain_colossus_filter": 1,
+      "skip_fountain_longview_filter": 1
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "featureUserHateList",
+        "featureFountainProfileLongViewPidList",
+        "fountainActionTriggers",
+        "featureUserProfileV1LikePidList",
+        "featureUserProfileV1FollowPidList",
+        "featureUserProfileV1CommentPidList",
+        "featureUserProfileV1ForwardPidList",
+        "featureUserProfileV1ProfileEnterPidList"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "featureFountainProfileEffViewPidList",
+        "colossusRetrievalTrigger",
+        "featureFountainProfileLongViewPidListSub",
+        "shuffle_interaction_photo_list"
+      ]
+    }
+  }
+}

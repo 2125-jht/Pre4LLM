@@ -1,0 +1,49 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "explore_rank_absolute_xtr_score_que": false,
+        "enable_explore_absolute_xtr_cliff": false,
+        "explore_absolute_xtr_ensemble_ctr_wgt" : 0.5,
+        "explore_absolute_xtr_ensemble_ltr_wgt" : 0.5,
+        "explore_absolute_xtr_ensemble_wtr_wgt" : 0.5,
+        "explore_absolute_xtr_ensemble_ftr_wgt" : 0.5,
+        "explore_absolute_xtr_ensemble_ptr_wgt" : 0.5,
+        "explore_absolute_xtr_ensemble_cmtr_wgt" : 0.5,
+        "explore_absolute_xtr_ensemble_cltr_wgt" : 0.5,
+        "explore_absolute_xtr_ensemble_fetr_wgt" : 0.0,
+        "explore_absolute_xtr_ensemble_fountain_eff_wgt" : 0.0,
+        "explore_absolute_xtr_ensemble_score1_wgt" : 0.0,
+        "explore_absolute_xtr_ensemble_score2_wgt" : 0.0,
+        "explore_absolute_xtr_boost_threshold" : 0.8,
+        "explore_absolute_xtr_boost_weight" : 1.2,
+        "enable_highorder_interact_score": false,
+        "highorder_interact_score_weight_str_v2": "0,1,1,0,1,0,1",
+        "highorder_interact_cost_score_alpha": 100.0,
+        "highorder_interact_cost_score_beta": 0.001
+      },
+      "import": {
+        "item_attrs": [
+          "pctr",
+          "pltr",
+          "pwtr",
+          "pftr",
+          "pcmtr",
+          "pptr",
+          "pcltr",
+          "fetr",
+          "fountain_eff",
+          "fr_score1",
+          "fr_score2",
+          "awesome_wtd"
+        ]
+      },
+      "export": {
+        "results": [
+          "absolute_xtr_score_que",
+          "highorder_interact_score",
+          "absolute_interact_score",
+          "fr_ensemble_wtd_fractile"
+        ]
+      }
+    }
+  }

@@ -1,0 +1,76 @@
+mio : conf/mio.yaml
+kai_conf: ./kai_conf.json
+
+minibatch_size : 512
+
+create_clk_prob : 1
+create_nonclk_prob : 1
+clk_coeff : 1
+nonclk_coeff : 0.2
+
+select_prob_slots : 
+    slots : 54 52
+    create_clk_prob : 0.2
+    create_nonclk_prob : 0.2
+    delete_threshold : 0.005
+    base_threshold : 0
+
+#photoid_slots : 38 51
+#userid_slots : 100 500 600 900 910 920 930 940 201 502 602 902 912 922 932 942
+
+delete_threshold : 0.1
+max_delete_threshold : 50
+delete_after_unseen_days : 15
+max_features : 10000000000
+max_load_factor : 0.8
+load_balance : true
+
+eval_runner :
+    pipeline : conf/pipeline_eval.json
+    begin_time: "2023-06-06 11:00:00"
+    end_time: "2023-06-06 12:00:00"
+    model_done_file_path: viewfs:///home/reco_wl/mpi/trinkle/eval_pairwise/done_list
+
+
+uniform_runner :
+    eval_max_ins_num : 100000
+    base_save_threshold : 0.1
+    delta_save_threshold : 0.1
+    #sparse_optimizer: AdagradV2
+    #sparse_lr: 0.001
+
+    message_queue_name : fountain_rr_rerank_model_ranknet
+    is_write_mq : false
+
+    global_shuffle: true
+    local_shuffle_size: 100000
+
+    pipeline : conf/pipeline.json
+
+    save_model_interval_hour: 2
+
+    read_thread_num : 12
+
+    pass_size : 50000
+    channel_capacity : 200000
+
+    model_path : "viewfs:///home/reco_wl/mpi/trinkle/model_ranknet"
+    #sample_server_kess_name: kml-task-44037-kai_ltr_v3_sample_server
+    #sample_server_read_size: 1
+    slot_name_mapping_file: conf/kai_kuiba_config.json
+    
+    #tf路径设置
+    graph_summary_path : "tf" #相对路径
+    graph_summary_path : "/share/renyuxin/fountain_rr_distill_model_bucket/tf" #或者绝对路径
+    graph_summary_rate: 0.1 # 采样率
+    join_data_path: "viewfs:///home/reco_wl/mpi/trinkle/rr_model_mirv2"
+
+    # graph_summary_path : "tf" #相对路径
+    # graph_summary_rate: 0.1 # 采样率
+
+
+
+cvm_plugin :
+    decay_rate : 0.99 #NOTE 1 week half reduce
+
+dnn_plugin : ./conf/dnn-plugin.yaml

@@ -1,0 +1,55 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_xlife_splash_personal_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "fountain_splash_personal_retr_service_name": "grpc_FountainSplashPersonalRetr",
+      "fountain_splash_personal_retr_retrieve_num": 1000
+    }, 
+    "import": {
+      "common_attrs": [
+        "featureSourcePId",
+        "request_type",
+        "featureUId",
+        "sourcePidAuthorId",
+        "sourcePidMmuImgClusterV3",
+        "sourcePidMmuImgClusterV4",
+        "sourcePidDuration",
+        "source_hetu_level_two",
+        "source_hetu_level_three",
+        "source_hetu_level_four",
+        "source_hetu_level_five",
+        "videoPlayingPid",
+        "profile_v1_click_trigger_aids",
+        "playstat_playtimes",
+        "playstat_durations",
+        "playstat_hetu1s",
+        "playstat_hetu2s",
+        "playstat_hetu3s",
+        "playstat_hetu4s",
+        "userRecentViewTimeListRaw",
+        "userRecentViewPageListRaw",
+        "user_fountain_play_id_list",
+        "user_fountain_play_aid_list",
+        "user_fountain_play_time_list",
+        "user_fountain_play_duration_list",
+        "user_fountain_play_timestamp_list",
+        "user_fountain_play_page_list",
+        "user_fountain_play_hetu_l1_top1_list",
+        "user_fountain_play_hetu_l2_top1_list",
+        "user_fountain_play_hetu_l3_top1_list",
+        "user_fountain_play_hetu_l4_top1_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "fountain_splash_personal_retr__result"
+      ]
+    }
+  },
+  "reason": 10409
+}

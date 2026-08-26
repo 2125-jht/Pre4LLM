@@ -1,0 +1,38 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["pic_colossus_author_mmu_retr__enable_retr", false],
+      "service_request_num": ["pic_colossus_author_mmu_retr__retrieve_num", 500],
+      "kess_service_name": ["pic_colossus_author_mmu_retr__service_name", "grpc_picColoMmuCommRetr"]
+    },
+    "constant": {
+      "service_timeout_ms": 50
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "colossus_pic_author__trigger_id",
+        "colossus_pic_author__trigger_weight"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_colossus_author_mmu_retr__result"
+      ]
+    }
+  },
+  "reason": 13012,
+  "trimed_user_info": [
+    "id",
+    "device_id",
+    "gender",
+    "fans_count",
+    "basic_info",
+    "location",
+    "follow_list"
+  ],
+  "send_common_attrs": [
+    {"name": "colossus_pic_author__trigger_id", "as": "trigger_list"},
+    {"name": "colossus_pic_author__trigger_weight", "as": "trigger_weight"}
+  ]
+}

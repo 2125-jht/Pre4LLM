@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_user_career_tgi_retr", false],
+      "enable_divide_active_degree": ["enable_explore_user_career_tgi_retr_divide_active_degree", false],
+      "search_num": ["explore_user_career_tgi_retr_search_num", 20],
+      "retrieve_num": ["explore_user_career_tgi_retr_retrieve_num", 500],
+      "request_num": ["explore_user_career_tgi_retr_request_num", 1000]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list",
+        "explore_user_career_interest_tagnex_tgi_list",
+        "find_user_active_degree"
+      ]
+    },
+    "export": {
+      "results": [
+        "user_career_tgi_retr__result"
+      ]
+    }
+  },
+  "input_tgi_list": "explore_user_career_interest_tagnex_tgi_list",
+  "reason": 9303
+}

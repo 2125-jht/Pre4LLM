@@ -1,0 +1,33 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_fr_cal_playtime_dis_score": false,
+       "explore_fr_playtime_dis_score_days_threshold": 19,
+      "enable_fr_cal_inorder_playtime_dis_score": false,
+      "explore_fr_cal_inorder_playtime_dis_score_sub_coeff": 1.0,
+      "enable_fr_cal_wtd_merge_playtime_dis_score": false,
+      "explore_fr_wtd_merge_playtime_dis_score_alpha": 0.0,
+      "explore_fr_wtd_merge_playtime_dis_score_beta": 1.0
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "uExploreActiveDays"
+       ],
+      "item_attrs": [
+        "photo_id",
+        "duration_ms",
+        "awesome_wtd"
+       ]
+    },
+    "export": {
+      "item_attrs": [
+        "playtime_dis_score",
+        "inorder_playtime_dis_score"
+      ]
+    }
+  }
+}
+  

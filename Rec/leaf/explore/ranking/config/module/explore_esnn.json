@@ -1,0 +1,42 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_fr_esnn_kai2": false,
+      "explore_fr_esnn_kess_service": "grpc_explore_duration_based_5min_calibrated_vtr_model",
+      "explore_fr_esnn_partition_size": 150
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "fr_score1",
+        "fr_score2",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "fetr",
+        "fountain_eff",
+        "pColossusScore",
+        "score_pctr",
+        "awesome_wtd",
+        "cpr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "esnn_model_score"
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_colossus_ann_v2_retrieval", false],
+      "embedding_service_name": ["colossus_ann_retrieval_embedding_service_name", "grpc_hotMcEmbed"],
+      "ann_service_name": ["colossus_ann_retrieval_ann_service_name", "grpc_exploreColossusMcI2i"],
+      "ann_dist_threshold": ["colossus_ann_retrieval_ann_distance", 0.5],
+      "retrieve_num": ["colossus_ann_retrieval_ann_limit_num", 500],
+      "ann_topk": ["colossus_ann_topk", 20]
+    },
+    "import": {
+      "common_attrs": [
+        "common_trigger_generator__trigger_list",
+        "common_trigger_generator__trigger_weight_list",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "colossus_ann_v2_retr__result"
+      ]
+    }
+  },
+  "reason": 3061
+}

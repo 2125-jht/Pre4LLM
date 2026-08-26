@@ -1,0 +1,27 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_mmu_emb_u2u", false],
+      "ann_service_name": ["explore_mmu_u2u_ann_server", "grpc_exploreMmuU2uServer"],
+      "retr_top_k": ["explore_mmu_u2u_retr_top_k", 50],
+      "ann_src_data_type": ["explore_mmu_u2u_src_data_type", "user"],
+      "ann_dest_bucket": ["explore_mmu_u2u_dest_bucket", "explore_pic_users"],
+      "user_photo_redis_key_prefix": ["explore_mmu_u2u_retr_user_photos_redis_prefix", "explore_pic_user_"],
+      "retrieve_num": ["explore_mmu_u2u_retr_num", 800],
+      "user_photo_retrieve_num_per_key": ["explore_mmu_u2u_retr_u2i_each_num", 100],
+      "user_photo_retrieve_num": ["explore_mmu_u2u_retr_u2i_total_num", 3000]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "mmu_u2u_retr__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 13025
+}

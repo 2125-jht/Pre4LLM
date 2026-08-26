@@ -1,0 +1,24 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_ltr_in_s1_predict": 0,
+      "mc_tower_ltr_in_s1_service": "grpc_ExploreMcLtrInfer",
+      "mc_tower_ltr_in_s1_request_type": "predict_by_explore_mc_ltr"
+    },
+    "import": {
+      "item_attrs": [
+        "photo_id"
+      ],
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "prerank_ctr_in_s1",
+        "prerank_wtd_in_s1",
+        "prerank_wltr_in_s1"
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_ft_pic_mmu_u2u_retr_fast", 1],
+      "ann_service_name": {
+        "param_name": "ft_pic_mmu_u2u_ann_service_name_fast",
+        "param_type": "string",
+        "default_value": "grpc_exploreMmuU2uServer"
+      },
+      "retr_top_k": {
+        "param_name": "ft_pic_mmu_u2u_retr_top_k_fast",
+        "param_type": "int",
+        "default_value": 30
+      },
+      "ann_src_data_type": {
+        "param_name": "ft_pic_mmu_u2u_ann_src_data_type_fast",
+        "param_type": "string",
+        "default_value": "user"
+      },
+      "ann_dest_bucket": {
+        "param_name": "ft_pic_mmu_u2u_ann_dest_bucket_fast",
+        "param_type": "string",
+        "default_value": "explore_hv_pic_users"
+      },
+      "user_photo_retrieve_num": {
+        "param_name": "ft_pic_mmu_u2u_user_photo_retrieve_num_fast",
+        "param_type": "int",
+        "default_value": 600
+      },
+      "user_photo_redis_key_prefix": {
+        "param_name": "ft_pic_mmu_u2u_user_photo_redis_key_prefix_fast",
+        "param_type": "string",
+        "default_value": "feasury_click_hv_pic_u_"
+      },
+      "user_photo_retrieve_num_per_key": {
+        "param_name": "ft_pic_mmu_u2u_user_photo_retrieve_num_per_key_fast",
+        "param_type": "int",
+        "default_value": 20
+      },
+      "retrieve_num": {
+        "param_name": "ft_pic_mmu_u2u_retrieve_num_fast",
+        "param_type": "int",
+        "default_value": 300
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_mmu_u2u_retr__result"
+      ]
+    }
+  },
+  "reason": 239
+}

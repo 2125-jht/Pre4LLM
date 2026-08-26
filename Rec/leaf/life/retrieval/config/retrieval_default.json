@@ -1,0 +1,356 @@
+{
+  "modules": [
+    {
+      "name": "colossus_user_info",
+      "type_name": "ColossusUserInfoPreparingModule"
+    },
+    {
+      "name": "user_info",
+      "type_name": "UserInfoParsingModule"
+    },
+    {
+      "name": "global_trigger_select",
+      "type_name": "GlobalTriggerSelectModule"
+    },
+    {
+      "name": "copy_adjust_user_info",
+      "type_name": "UserInfoCopyAdjustModule"
+    },
+    {
+      "name": "browse_screen",
+      "type_name": "BrowseScreenFetchingModule"
+    },
+    {
+      "name": "memory_data_fetch",
+      "type_name": "MemoryDataFetchingModule"
+    },
+    {
+      "name": "explore_sim_u2i_retr",
+      "type_name": "ExploreSimU2iRetrievalModule"
+    },
+    {
+      "name": "interest_author_ppage_retr",
+      "type_name": "CommonRemoteIndexRetrievalModule"
+    },
+    {
+      "name": "comirec_retr",
+      "type_name": "PandoraCommonRetrievalModule"
+    },
+    {
+      "name": "sine_retr",
+      "type_name": "PandoraCommonRetrievalModule"
+    },
+    {
+      "name": "embedding_icf_retr",
+      "type_name": "EmbeddingIcfRetrievalModule"
+    },
+    {
+      "name": "sim_lr_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "life_simlr_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "life_linklr_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "interest_author_hpage_retr",
+      "type_name": "CommonRemoteIndexRetrievalModule"
+    },
+    {
+      "name": "cl_i2i_retr",
+      "type_name": "ClI2iRetrievalModule"
+    },
+    {
+      "name": "colossus_ann",
+      "type_name": "ColossusAnnRetrievalModule"
+    },
+    {
+      "name": "mc_u2i_ann",
+      "type_name": "McU2iRetrievalModule"
+    },
+    {
+      "name": "pdn_action_retr",
+      "type_name": "PdnActionRetrievalModule"
+    },
+    {
+      "name": "pdn_retr",
+      "type_name": "PdnRetrModule"
+    },
+    {
+      "name": "pdn_interact_retr",
+      "type_name": "PdnInteractRetrModule"
+    },
+    {
+      "name": "knowledage_mid_photo",
+      "type_name": "KnowledgeMidPhotoRetrievalModule"
+    },
+    {
+      "name": "reco_emb_i2i_retr",
+      "type_name": "KsCommonRecoRetrievalModule"
+    },
+    {
+      "name": "follow_author_retr",
+      "type_name": "FollowAuthorRetrievalModule"
+    },
+    {
+      "name": "interact_author_retr",
+      "type_name": "InteractAuthorRetrModule"
+    },
+    {
+      "name": "gcl_model_retr",
+      "type_name": "GclRetrievalModule"
+    },
+    {
+      "name": "search_retr",
+      "type_name": "SearchRetrievalModule"
+    },
+    {
+      "name": "live_photo_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "pic_mc_u2i_retr",
+      "type_name": "KsCommonRecoRetrievalModule"
+    },
+    {
+      "name": "focal_retr",
+      "type_name": "AnnI2iRetrievalModule"
+    },
+    {
+      "name": "gcl_u2u_retr",
+      "type_name": "GclU2uRetrievalModule"
+    },
+    {
+      "name": "focal_u2u_retr",
+      "type_name": "AnnU2uRetrievalModule"
+    },
+    {
+      "name": "mc_user_embedding",
+      "type_name": "McUserEmbeddingModule"
+    },
+    {
+      "name": "mc_u2i_level4_ann",
+      "type_name": "McU2iRetrievalModule"
+    },
+    {
+      "name": "remote_index_level_retr",
+      "type_name": "CommonRemoteIndexLevelRetrievalModule"
+    },
+    {
+      "name": "pic_follow_author_retr",
+      "type_name": "PicFollowAuthorRetrievalModule"
+    },
+    {
+      "name": "pic_ssm_u2i_retr",
+      "type_name": "PicSsmU2iRetrievalModule"
+    },
+    {
+      "name": "user_persona",
+      "type_name": "UserPersonaRetrievalModule"
+    },
+    {
+      "name": "explore_explore_hetu_tags_enricher",
+      "type_name": "ExploreExploreHetuTagsEnricherModule"
+    },
+    {
+      "name": "explore_interest_hetu_tags_enricher",
+      "type_name": "ExploreInterestHetuTagsEnricherModule"
+    },
+    {
+      "name": "fetch_colossus_retrieval_trigger",
+      "type_name": "FetchColossusRetrievalTriggerModule"
+    },
+    {
+      "name": "pic_vid2pic_retr",
+      "type_name": "PicVid2picRetrievalModule"
+    },
+    {
+      "name": "life_mc_i2i_retr",
+      "type_name": "LifeMcI2iRetrievalModule"
+    },
+    {
+      "name": "life_mc_u2i_retr",
+      "type_name": "LifeMcU2iRetrievalModule"
+    },
+    {
+      "name": "life_comirec_retr",
+      "type_name": "PandoraCommonRetrievalModule"
+    },
+    {
+      "name": "la_user_author_retr",
+      "type_name": "LaUserAuthorRetrievalModule"
+    },
+    {
+      "name": "life_mix_retr",
+      "type_name": "KsCommonRecoRetrievalModule"
+    },
+    {
+      "name": "uniderection_icf_retr",
+      "type_name": "PdnRetrModule"
+    },
+    {
+      "name": "memory_u2i_retr",
+      "type_name": "MemoryU2iRetrievalModule"
+    },
+    {
+      "name": "a2i_retr",
+      "type_name": "A2iRetrievalModule"
+    },
+    {
+      "name": "life_content_mc_i2i_retr",
+      "type_name": "LifeMcI2iRetrievalModule"
+    },
+    {
+      "name": "life_user_portrait_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "life_mmu_i2i_retr",
+      "type_name": "LifeMmuI2iRetrievalModule"
+    },
+    {
+      "name": "supervised_multi_interset_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "gcl_u2u_person_retr",
+      "type_name": "GclU2uRetrievalModule"
+    },
+    {
+      "name": "hot_content_comirec_retr",
+      "type_name": "PandoraCommonRetrievalModule"
+    },
+    {
+      "name": "explore_pic_mix_st_retr",
+      "type_name": "ExploreStRetrievalModule"
+    },
+    {
+      "name": "vertical_content_common_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "explore_nearline",
+      "type_name": "ExploreNearLineUserUpdateModule"
+    },
+    {
+      "name": "pic_high_value_i2i_retr",
+      "type_name": "PicColossusI2IRetrievalModule"
+    },
+    {
+      "name": "audit_bad_i2i_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "mmu_sim_emb_dup_i2i_retr",
+      "type_name": "MmuSimEmbDupI2IRetrievalModule"
+    },
+    {
+      "name": "comirec_interact_retr",
+      "type_name": "PandoraCommonRetrievalModule"
+    },
+    {
+      "name": "life_direct_tab_i2i_retr",
+      "type_name": "LifeDirectTabI2iRetrievalModule"
+    },
+    {
+      "name": "explore_multi_target_u2i_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "explore_multi_target_u2u_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "life_active_click_interest_retr",
+      "type_name": "LifeActiveClickInterestRetrievalModule"
+    },
+    {
+      "name": "life_active_follow_interest_retr",
+      "type_name": "LifeActiveFollowInterestRetrievalModule"
+    },
+    {
+      "name": "life_active_comment_interest_retr",
+      "type_name": "LifeActiveCommentInterestRetrievalModule"
+    },
+    {
+      "name": "life_active_collect_interest_retr",
+      "type_name": "LifeActiveCollectInterestRetrievalModule"
+    },
+    {
+      "name": "life_follow_author_retr",
+      "type_name": "LifeFollowAuthorRetrievalModule"
+    },
+    {
+      "name": "life_search_i2i_retr",
+      "type_name": "LifeSearchI2iRetrievalModule"
+    },
+    {
+      "name": "life_user_upload_i2i_retr",
+      "type_name": "LifeUserUploadPhotoI2iRetrievalModule"
+    },
+    {
+      "name": "life_revisit_like_collect_i2i_retr",
+      "type_name": "LifeRevisitLikeCollectI2iRetrievalModule"
+    },
+    {
+      "name": "life_profile_page_i2i_retr",
+      "type_name": "LifeProfilePageI2iRetrievalModule"
+    },
+    { 
+      "name": "short_term_search_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "longterm_interest_author_retr",
+      "type_name": "LongtermInterestAuthorRetrievalModule"
+    },
+    {
+      "name": "recent_top_photo_retr",
+      "type_name": "RecentTopPhotoRetrievalModule"
+    },
+    {
+      "name": "life_unbias_interest_retr",
+      "type_name": "LifeUnbiasInterestRetrievalModule"
+    },
+    {
+      "name": "life_st_retr",
+      "type_name": "LifeStRetrievalModule"
+    },
+    {
+      "name": "life_st_unbias_retr",
+      "type_name": "LifeStUnbiasRetrievalModule"
+    },
+    {
+      "name": "life_realtime_user_item_module",
+      "type_name": "LifeRealtimeUserItemModule"
+    },
+    {
+      "name": "life_nice_photo_retr",
+      "type_name": "LifeNicePhotoRetrievalModule"
+    },
+    {
+      "name": "life_user_profile_u2i_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "life_search_i2i_v2_retr",
+      "type_name": "LifeSearchI2iV2RetrievalModule"
+    },
+    {
+      "name": "cross_domain_i2i_retr",
+      "type_name": "CrossDomainI2iRetrievalModule"
+    },
+    {
+      "name": "crossover_u2u2i_retr",
+      "type_name": "CrossoverU2u2iRetrievalModule"
+    },
+    {
+      "name": "life_related_source2pid_retr",
+      "type_name": "LifeRelatedSource2pidRetrievalModule"
+    }
+  ]
+}

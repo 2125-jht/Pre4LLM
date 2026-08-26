@@ -1,0 +1,79 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_pic_u2u_retr", false],
+      "use_delegate": ["explore_pic_u2u_use_delegate", 0],
+      "delegate_service_name": ["explore_pic_u2u_delegate_service_name", "grpc_explorePicV2PU2IInferV1"],
+      "ann_service_name": ["explore_pic_u2u_ann_service_name", "grpc_exploreMmuU2uServer"],
+      "ann_retr_top_k": ["explore_pic_u2u_ann_retr_top_k", 50],
+      "ann_src_data_type": ["explore_pic_u2u_ann_src_data_type", "user"],
+      "ann_src_bucket": ["explore_pic_u2u_ann_src_bucket", "user"],
+      "ann_dest_bucket": ["explore_pic_u2u_ann_dest_bucket", "explore_pic_users"],
+      "enable_u2u_ann_v2": ["explore_pic_u2u_enable_u2u_ann_v2", 0],
+      "ann_service_name_v2": ["explore_pic_u2u_ann_service_name_v2", "grpc_explorePicU2UAnnV1"],
+      "ann_retr_top_k_v2": ["explore_pic_u2u_ann_retr_top_k_v2", 50],
+      "ann_src_data_type_v2": ["explore_pic_u2u_ann_src_data_type_v2", "user"],
+      "ann_src_bucket_v2": ["explore_pic_u2u_ann_src_bucket_v2", "user"],
+      "ann_dest_bucket_v2": ["explore_pic_u2u_ann_dest_bucket_v2", "user_dest"],
+      "shuffle_u2u_result": ["explore_pic_u2u_shuffle_u2u_result", 0],
+      "u2u_num_limit": ["explore_pic_u2u_sim_user_num_limit", 50],
+      "u2i_retrieve_num": ["explore_pic_u2u_u2i_retrieve_num", 800],
+      "u2i_redis_key_prefix": ["explore_pic_u2u_u2i_redis_key_prefix", "active_pic_uid__"],
+      "u2i_index_query_term": ["explore_pic_u2u_u2i_index_query_term", "interaction_user"],
+      "u2i_retrieve_num_per_key": ["explore_pic_u2u_u2i_retrieve_num_per_key", 50],
+      "u2i_from_index": ["explore_pic_u2u_u2i_from_index", 0],
+      "u2i_index_service_name": ["explore_pic_u2u_u2i_index_service_name", "grpc_mmuU2uRecoRetrV1"],
+      "u2i_index_search_num": ["explore_pic_u2u_u2i_index_search_num", 25],
+      "request_num": ["explore_pic_u2u_request_num", 400]
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list",
+        "userInfo",
+        "uStandardRealShowPicAllIdList",
+        "uStandardClickPicAllIdList",
+        "uStandardLongviewPicAllIdList",
+        "uStandardLikePicAllIdList",
+        "uStandardFollowPicAllIdList",
+        "uStandardCollectPicAllIdList"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_u2u_retr__result"
+      ]
+    }
+  },
+  "reason": 13034,
+  "send_browse_set": true,
+  "trim_user_info_attr_list": [
+    "device_id",
+    "id",
+    "gender",
+    "true_gender",
+    "infer_gender",
+    "basic_info.age_segment",
+    "request_location.city_id",
+    "request_location.province_id",
+    "user_profile_v1.like_list.time_ms",
+    "user_profile_v1.like_list.hetu_tag_level_info",
+    "user_profile_v1.follow_list.time_ms",
+    "user_profile_v1.follow_list.hetu_tag_level_info",
+    "user_profile_v1.video_playing_stat.photo_id",
+    "user_profile_v1.video_playing_stat.author_id",
+    "user_profile_v1.video_playing_stat.client_timestamp",
+    "user_profile_v1.video_playing_stat.video_duration",
+    "user_profile_v1.video_playing_stat.playing_time",
+    "user_profile_v1.video_playing_stat.hetu_tag_level_info",
+    "browsed_photo_ids",
+    "slide_browsed_photo_ids"
+  ],
+  "send_common_attrs": [
+    "uStandardRealShowPicAllIdList",
+    "uStandardClickPicAllIdList",
+    "uStandardLongviewPicAllIdList",
+    "uStandardLikePicAllIdList",
+    "uStandardFollowPicAllIdList",
+    "uStandardCollectPicAllIdList"
+  ]
+}

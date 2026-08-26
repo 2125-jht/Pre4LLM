@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_get_embedding_map_ranking": 0,
+      "explore_fr_mgs_emb_kess_name": "grpc_MMUHetuContentEmbeddingV2"
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "user_info_ptr"
+      ],
+      "item_attrs": [
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "mmu_embeddings_ranking",
+        "pid_mmu_embedding_map_ranking"
+      ]
+    }
+  }
+}
+    

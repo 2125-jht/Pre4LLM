@@ -1,0 +1,140 @@
+{
+  "modules": [
+    {
+      "name": "colossus_user_info",
+      "type_name": "ColossusUserInfoPreparingModule"
+    },
+    {
+      "name": "user_info",
+      "type_name": "UserInfoParsingModule"
+    },
+    {
+      "name": "global_trigger_select",
+      "type_name": "GlobalTriggerSelectModule"
+    },
+    {
+      "name": "copy_adjust_user_info",
+      "type_name": "UserInfoCopyAdjustModule"
+    },
+    {
+      "name": "browse_screen",
+      "type_name": "BrowseScreenFetchingModule"
+    },
+    {
+      "name": "memory_data_fetch",
+      "type_name": "MemoryDataFetchingModule"
+    },
+    {
+      "name": "mc_user_embedding",
+      "type_name": "McUserEmbeddingModule"
+    },
+    {
+      "name": "explore_explore_hetu_tags_enricher",
+      "type_name": "ExploreExploreHetuTagsEnricherModule"
+    },
+    {
+      "name": "explore_interest_hetu_tags_enricher",
+      "type_name": "ExploreInterestHetuTagsEnricherModule"
+    },
+    {
+      "name": "fetch_colossus_retrieval_trigger",
+      "type_name": "FetchColossusRetrievalTriggerModule"
+    },
+    {
+      "name": "fountain_colossus_ann",
+      "type_name": "ColossusAnnRetrievalModule"
+    },
+    {
+      "name": "fountain_reco_emb_i2i_retr",
+      "type_name": "KsCommonRecoRetrievalModule"
+    },
+    {
+      "name": "fountain_explore_sim_u2i_retr",
+      "type_name": "ExploreSimU2iRetrievalModule"
+    },
+    {
+      "name": "fountain_comirec_retr",
+      "type_name": "PandoraCommonRetrievalModule"
+    },
+    {
+      "name": "fountain_sine_retr",
+      "type_name": "PandoraCommonRetrievalModule"
+    },
+    {
+      "name": "fountain_gcl_model_retr",
+      "type_name": "GclRetrievalModule"
+    },
+    {
+      "name": "fountain_focal_retr",
+      "type_name": "AnnI2iRetrievalModule"
+    },
+    {
+      "name": "fountain_cl_i2i_retr",
+      "type_name": "ClI2iRetrievalModule"
+    },
+    {
+      "name": "fountain_interact_author_retr",
+      "type_name": "InteractAuthorRetrModule"
+    },
+    {
+      "name": "fountain_mc_u2i_ann",
+      "type_name": "McU2iRetrievalModule"
+    },
+    {
+      "name": "fountain_sim_lr_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "fountain_u2u_retr",
+      "type_name": "FountainU2URetrievalModule"
+    },
+    {
+      "name": "fountain_longview_like_u2i_retr",
+      "type_name": "FountainLongViewLikeU2IRetrievalModule"
+    },
+    {
+      "name": "fountain_pdn_i2i_retr",
+      "type_name": "FountainPdnI2iRetrievalModule"
+    },
+    {
+      "name": "fountain_longview_like_i2i_retr",
+      "type_name": "FountainLongViewLikeI2IRetrievalModule"
+    },
+    {
+      "name": "fountain_comirec_u2i_retr",
+      "type_name": "FountainComirecU2IRetrievalModule"
+    },
+    {
+      "name": "fountain_splash_native_ann_retr",
+      "type_name": "FountainSplashNativeAnnRetrievalModule"
+    },
+    {
+      "name": "fountain_splash_personal_retr",
+      "type_name": "FountainSplashPersonalRetrievalModule"
+    },
+    {
+      "name": "fountain_mmu_sim_emb_dup_i2i_retr",
+      "type_name": "MmuSimEmbDupI2IRetrievalModule"
+    },
+    {
+      "name": "fountain_fresh_reco_embu2i_retr",
+      "type_name": "FountainFreshRecoEmbu2iRetrievalModule"
+    },
+    {
+      "name": "fountain_memory_retr",
+      "type_name": "FountainMemoryRetrievalModule"
+    },
+    {
+      "name": "fountain_splash_source2item_retr",
+      "type_name": "FountainSplashSource2ItemRetrievalModule"
+    },
+    {
+      "name": "fountain_splash_longview_pdn_retr",
+      "type_name": "FountainSplashLongViewPdnRetrievalModule"
+    },
+    {
+      "name": "fountain_mid_photo_gnn_i2i_retr",
+      "type_name": "FountainMidPhotoGnnI2iRetrievalModule"
+    }
+  ]
+}

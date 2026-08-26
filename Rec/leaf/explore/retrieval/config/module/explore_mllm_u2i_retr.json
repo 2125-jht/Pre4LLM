@@ -1,0 +1,17 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_mllm_u2i_retrieval", false],
+      "result_num": ["explore_mllm_u2i_result_num", 2000],
+      "service_name": ["explore_mllm_u2i_kess", "kws-kuaishou-hot-retrieve-hot-llm-emb-ann-u2i"],
+      "src_bucket": ["explore_mllm_u2i_src_bucket", "mio_item"],
+      "dest_bucket": ["explore_mllm_u2i_dest_bucket", "mio_item_index"]
+    },
+    "export": {
+      "results": [
+        "explore_mllm_u2i_ann_result"
+      ]
+    }
+  },
+  "reason": 4016
+}

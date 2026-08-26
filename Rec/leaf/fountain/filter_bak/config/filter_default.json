@@ -1,0 +1,8 @@
+{
+  "modules": [
+    {
+      "name": "filter_default",
+      "type_name": "FilterDefaultModule"
+    }
+  ]
+}

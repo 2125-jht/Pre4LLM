@@ -1,0 +1,85 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_ranking_calc_slide_pctr_score": 0,
+      "enable_ranking_calc_slide_pxtr_score_with_sorted_fr_s2_ratio": 0,
+      "enable_ranking_calc_slide_pxtr_score_with_sorted_diversity_fr": 0,
+      "enable_cal_fr_adjust_diversity_distribution": 0,
+      "explore_fr_slide_pctr_window_size": 10,
+      "explore_fr_slide_awesome_wtd_window_size": 10,
+      "explore_fr_sort_ratio_slide_pctr_window_size": 10,
+      "explore_fr_sort_ratio_slide_pltr_window_size": 10,
+      "explore_fr_sort_ratio_slide_pwtr_window_size": 10,
+      "explore_fr_sort_ratio_slide_pcmtr_window_size": 10,
+      "explore_fr_sort_ratio_slide_pcltr_window_size": 10,
+      "explore_fr_sort_ratio_slide_pftr_window_size": 10,
+      "explore_fr_sort_ratio_slide_awesome_wtd_window_size": 10,
+      "explore_fr_sort_diversity_slide_pctr_window_size": 10,
+      "explore_fr_sort_diversity_slide_pltr_window_size": 10,
+      "explore_fr_sort_diversity_slide_pcmtr_window_size": 10,
+      "explore_fr_sort_diversity_slide_pcltr_window_size": 10,
+      "explore_fr_sort_diversity_slide_awesome_wtd_window_size": 10,
+      "explore_enable_fr_slide_pctr_mul_universal_score": 0,
+      "explore_enable_fr_slide_awesome_wtd_mul_universal_score": 0,
+      "explore_enable_fr_sort_ratio_slide_pctr_mul_universal_score": 0,
+      "explore_enable_fr_sort_ratio_slide_pltr_mul_universal_score": 0,
+      "explore_enable_fr_sort_ratio_slide_pwtr_mul_universal_score": 0,
+      "explore_enable_fr_sort_ratio_slide_pcmtr_mul_universal_score": 0,
+      "explore_enable_fr_sort_ratio_slide_pcltr_mul_universal_score": 0,
+      "explore_enable_fr_sort_ratio_slide_pftr_mul_universal_score": 0,
+      "explore_enable_fr_sort_ratio_slide_awesome_wtd_mul_universal_score": 0,
+      "explore_enable_fr_sort_diversity_slide_pctr_mul_universal_score": 0,
+      "explore_enable_fr_sort_diversity_slide_pltr_mul_universal_score": 0,
+      "explore_enable_fr_sort_diversity_slide_pcmtr_mul_universal_score": 0,
+      "explore_enable_fr_sort_diversity_slide_pcltr_mul_universal_score": 0,
+      "explore_enable_fr_sort_diversity_slide_awesome_wtd_mul_universal_score": 0,
+      "explore_fr_play_realshow_count_denominator_base": 100.0,
+      "explore_fr_play_realshow_count_numerator_base": 14.0,
+      "explore_fr_distribution_ratio_denominator_base": 1.0,
+      "explore_fr_distribution_ratio_numerator_base": 0.0,
+      "explore_fr_diversity_score_base": 0.0
+    },
+    "constant": {
+      "explore_fr_sorted_count_type": 0,
+      "explore_fr_sorted_ratio_type": 1
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "item_attrs": [
+        "hetu_level_one_top1",
+        "rc3h",
+        "pc3h",
+        "corr_pctr",
+        "pltr",
+        "pwtr",
+        "pcmtr",
+        "pcltr",
+        "pftr",
+        "awesome_wtd",
+        "explore_prerank_hetu_level_one_ratio",
+        "diversity_fr_ranking"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "explore_rank_hetu_level_one_ratio",
+        "fr_slide_pctr_score",
+        "fr_slide_awesome_wtd_score",
+        "fr_sort_ratio_slide_pctr_score",
+        "fr_sort_ratio_slide_pltr_score",
+        "fr_sort_ratio_slide_pwtr_score",
+        "fr_sort_ratio_slide_pcmtr_score",
+        "fr_sort_ratio_slide_pcltr_score",
+        "fr_sort_ratio_slide_pftr_score",
+        "fr_sort_ratio_slide_awesome_wtd_score",
+        "fr_sort_diversity_slide_pctr_score",
+        "fr_sort_diversity_slide_pltr_score",
+        "fr_sort_diversity_slide_pcmtr_score",
+        "fr_sort_diversity_slide_pcltr_score",
+        "fr_sort_diversity_slide_awesome_wtd_score"
+      ]
+    }
+  }
+}

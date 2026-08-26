@@ -1,0 +1,38 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_acf_retrieval", false],
+      "enable_rand_source": ["enable_acf_rand_source", false],
+      "follow_source_num": ["acf_follow_source_num", 20],
+      "recent_source_num": ["acf_recent_author_num", 200],
+      "click_num": ["acf_i2i_click_num", 50],
+      "like_num": ["acf_i2i_like_num", 20],
+      "forward_num": ["acf_i2i_forward_num", 20],
+      "profile_num": ["acf_i2i_prof_num", 40],
+      "download_num": ["acf_i2i_download_num", 10],
+      "collect_num": ["acf_i2i_collect_num", 10],
+      "sim_redis_prefix": ["acf_sim_redis_prefix", "acf_"],
+      "enable_rand_sim": ["enable_acf_rand_sim", false],
+      "min_sim_score": ["acf_min_sim_score", 0.0],
+      "sim_num_each": ["acf_sim_num_each", 15],
+      "index_service_name": ["acf_index_service_name", "grpc_recoHotOrderedIndexServer"],
+      "search_num_per_author": ["acf_photo_num_per_author", 5],
+      "sim_author_limit": ["acf_sim_author_limit_num", 200],
+      "retrieve_num": ["acf_retr_cand_limit_num", 1000]
+    },
+    "constant": {
+      "index_timeout_ms": 150
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "acf_retr__result"
+      ]
+    }
+  },
+  "reason": 4010
+}

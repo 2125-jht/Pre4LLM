@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_fountain_colossus_v2": false,
+      "enable_fountain_user_colossus_history": 0,
+      "fountain_user_colossus_history_num": 1000,
+      "enable_replace_colossus_v2_from_retr": ["enable_fountain_fast_replace_colossus_v2_from_retr", false]
+    },
+    "export": {
+      "common_attrs": [
+        "user_colossus_pic_play_pids",
+        "user_colossus_pic_play_aids",
+        "user_colossus_pic_play_rewards",
+        "user_colossus_pic_play_hetu_level1s",
+        "colossus_resp_v2"
+      ]
+    }
+  },
+  "enable_colossus_v2": "enable_fountain_colossus_v2",
+  "enable_user_colossus": "enable_fountain_user_colossus_history",
+  "colossus": {
+    "service_name": "grpc_colossusSimV2",
+    "client_type": "common_item_client",
+    "output_attr": "colossus_resp_v2",
+    "parse_to_pb": false
+  },
+  "explore_user_colossus_history": {
+    "colossus_attr_name": "colossus_resp_v2",
+    "search_user_history_max": "{{fountain_user_colossus_history_num}}",
+    "save_user_pic_play_pids": "user_colossus_pic_play_pids",
+    "save_user_pic_play_aids": "user_colossus_pic_play_aids",
+    "save_user_pic_play_rewards": "user_colossus_pic_play_rewards",
+    "save_user_pic_play_hetus": "user_colossus_pic_play_hetu_level1s"
+  },
+  "need_colossus_histroy": true
+}

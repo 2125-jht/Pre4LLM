@@ -1,0 +1,268 @@
+{
+  "modules": [
+    {
+      "name": "ranking_pxtr_predict",
+      "type_name": "RankingPxtrPredictModule"
+    },
+    {
+      "name": "request_feature_server",
+      "type_name": "RequestFeatureServerModule"
+    },
+    {
+      "name": "ranking_score",
+      "type_name": "RankingScoreModule"
+    },
+    {
+      "name": "ranking_ensemble_sort",
+      "type_name": "RankingEnsembleSortModule"
+    },
+    {
+      "name": "fetch_user_colossus_info",
+      "type_name": "FetchUserColossusInfoModule"
+    },
+    {
+      "name": "ranking_produce_photo_predict",
+      "type_name": "RankingProducePhotoPredictModule"
+    },
+    {
+      "name": "ranking_merchant_photo_predict",
+      "type_name": "RankingMerchantPhotoPredictModule"
+    },
+    {
+      "name": "consume_time_ltr",
+      "type_name": "ConsumeTimeLtrModule"
+    },
+    {
+      "name": "explore_teenager_ltr",
+      "type_name": "ExploreTeenagerLtrModule"
+    },
+    {
+      "name": "explore_full_rank_exclusive_score",
+      "type_name": "ExploreFullRankExclusiveScoreModule"
+    },
+    {
+      "name": "explore_diversity_ltr",
+      "type_name": "ExploreDiversityLtrModule"
+    },
+    {
+      "name": "ranking_diversity_ctr",
+      "type_name": "RankingDiversityCtrModule"
+    },
+    {
+      "name": "explore_session_ltr",
+      "type_name": "ExploreSessionLtrModule"
+    },
+    {
+      "name": "explore_koc_htr",
+      "type_name": "ExploreKocHtrModule"
+    },
+    {
+      "name": "user_long_term_engagement",
+      "type_name": "UserLongTermEngagementModule"
+    },
+    {
+      "name": "simple_ltr",
+      "type_name": "SimpleLtrModule"
+    },
+    {
+      "name": "ranking_merchant_solve_score",
+      "type_name": "RankingMerchantSolveScoreModule"
+    },
+    {
+      "name": "ranking_produce_solve_score",
+      "type_name": "RankingProduceSolveScoreModule"
+    },
+    {
+      "name": "final_variant_diversity",
+      "type_name": "VariantDiversityModule"
+    },
+    {
+      "name": "auto_param",
+      "type_name": "AutoParamModule"
+    },
+    {
+      "name": "ada_xtr",
+      "type_name": "AdaXtrModule"
+    },
+    {
+      "name": "cascade_linear_score",
+      "type_name": "CasCadeLinearScore"
+    },
+    {
+      "name": "pic_rerank",
+      "type_name": "PicRerankModule"
+    },
+    {
+      "name": "click_cost_gain_score",
+      "type_name": "ClickCostGainScoreModule"
+    },
+    {
+      "name": "pic_ltr",
+      "type_name": "PicLtrModule"
+    },
+    {
+      "name": "ranking_ensemble_abs_xtr_score",
+      "type_name": "RankingEnsembleAbsXtrScoreModule"
+    },
+    {
+      "name": "ranking_user_emp_xtr_handle",
+      "type_name": "RankingUserEmpXtrHandleModule"
+    },
+    {
+      "name": "ranking_cpr_handle",
+      "type_name": "RankingCprHandleModule"
+    },
+    {
+      "name": "pic_once_action_score",
+      "type_name": "PicOnceActionScoreModule"
+    },
+    {
+      "name": "la_ltr",
+      "type_name": "LaLtrModule"
+    },
+    {
+      "name": "gen_debias_xtr",
+      "type_name": "GenDebiasXtrModule"
+    },
+    {
+      "name": "top_xtr_insert",
+      "type_name": "TopXtrInsertModule"
+    },
+    {
+      "name": "min_act_rank",
+      "type_name": "MinActRankModule"
+    },
+    {
+      "name": "ranking_stage1_truncate",
+      "type_name": "RankingStageOneTruncateModule"
+    },
+    {
+      "name": "life_ltr",
+      "type_name": "LifeLtrModule"
+    },
+    {
+      "name": "ranking_get_diversity_fr",
+      "type_name": "RankingGetDiversityFrModule"
+    },
+    {
+      "name": "ranking_fetch_mmu_embedding",
+      "type_name": "RankingFetchMMUEmbeddingModule"
+    },
+    {
+      "name": "ranking_fetch_tagnex_embedding",
+      "type_name": "RankingFetchTagNexEmbeddingModule"
+    },
+    {
+      "name": "ranking_get_tagnex_similar_score",
+      "type_name": "RankingGetTagNexSimilarScoreModule"
+    },
+    {
+      "name": "cascade_pxtr_index",
+      "type_name": "PxtrIndexModule"
+    },
+    {
+      "name": "ranking_pxtr_index",
+      "type_name": "PxtrIndexModule"
+    },
+    {
+      "name": "ranking_fetch_cover_embedding",
+      "type_name": "RankingFetchCoverEmbeddingModule"
+    },
+    {
+      "name": "ranking_get_hate_cover_similar_score",
+      "type_name": "RankingGetHateCoverSimilarScoreModule"
+    },
+    {
+      "name": "ranking_calc_svtr_adapt_wtd_score",
+      "type_name": "RankingCalcSvtrAdaptWtdScoreModule"
+    },
+    {
+      "name": "ranking_calc_pairwise_rank_score",
+      "type_name": "RankingCalcPairwiseRankScoreModule"
+    },
+    {
+      "name": "ranking_calc_sharpe_ratio_score",
+      "type_name": "RankingCalcSharpeRatioScoreModule"
+    },
+    {
+      "name": "ranking_calc_playtime_dis_score",
+      "type_name": "RankingCalcPlaytimeDisScoreModule"
+    },
+    {
+      "name": "explore_effective_follow",
+      "type_name": "ExploreEffectiveFollowModule"
+    },
+    {
+      "name": "explore_effective_follow_ua",
+      "type_name": "ExploreEffectiveFollowUAModule"
+    },
+    {
+      "name": "explore_effective_follow_ua_pfd",
+      "type_name": "ExploreEffectiveFollowUAPfdModule"
+    },
+    {
+      "name": "ranking_pctr_ceiling",
+      "type_name": "RankingPctrCeilingModule"
+    },
+    {
+      "name": "ranking_calc_slide_pctr_score",
+      "type_name": "RankingCalSlidePctrScoreModule"
+    },
+    {
+      "name": "explore_ua_tracking_ltr",
+      "type_name": "ExploreUATrackingScoreModule"
+    },
+    {
+      "name": "ranking_calc_pic_interest_score",
+      "type_name": "RankingCalcPicInterestScoreModule"
+    },
+    {
+      "name": "pic_select",
+      "type_name": "PicSelectModule"
+    },
+    {
+      "name": "explore_delay_feedback",
+      "type_name": "ExploreDelayFeedbackModule"
+    },
+    {
+      "name": "pic_calc_diversity_attr",
+      "type_name": "PicCalcDiversityAttrModule"
+    },
+    {
+      "name": "ranking_diversity_interest_lma",
+      "type_name": "RankingDiversityInterestLmaModule"
+    },
+    {
+      "name": "ranking_correction_pctr",
+      "type_name": "RankingCorrectionPctrnModule"
+    },
+    {
+      "name": "explore_duration_based_5min_calibrated_vtr",
+      "type_name": "ExploreDurationBased5MinCalibratedVtrModule"
+    },
+    {
+      "name": "explore_esnn",
+      "type_name": "ExploreESNNModule"
+    },
+    {
+      "name": "explore_prefer_xtr",
+      "type_name": "ExplorePreferXtrModule"
+    },
+    {
+      "name": "ranking_calc_pic_u2c_ensemble_score",
+      "type_name": "RankingCalcPicU2CEnsembleScoreModule"
+    },
+    {
+      "name": "ranking_calc_pic_comment_quality_score",
+      "type_name": "RankingCalcPicCommentQualityScoreModule"
+    },
+    {
+      "name": "ranking_uninterest_ctr",
+      "type_name": "RankingUninterestCtrModule"
+    },
+    {
+      "name": "ranking_calc_hetu_lt_score",
+      "type_name": "RankingCalcHetuLtScoreModule"
+    }
+  ]
+}

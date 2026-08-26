@@ -1,0 +1,32 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_produce_interest_retr", 0],
+      "fountain_retrieval_produce_user_switch": 10,
+      "kess_service_name": ["fountain_produce_interest_retr_service_name", "kws-kuaishou-content-growth-produce-com-retr-product-2105-server-explore"],
+      "service_request_num": ["fountain_produce_interest_retr_retrieve_num", 600]
+    }, 
+    "constant": {
+      "service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "fountain_produce_user_type",
+        "fountain_produce_consume_deep_user",
+        "userInfoPb",
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "produce_interest__result"
+      ]
+    }
+  },
+  "reason": 2105,
+  "service_request_type": "default",
+  "send_common_attrs": [
+    { "name": "userInfoPb", "as": "user" }
+  ],
+  "extra_skip_condition": "fountain_produce_consume_deep_user ~= 0 or fountain_produce_user_type <= fountain_retrieval_produce_user_switch"
+}

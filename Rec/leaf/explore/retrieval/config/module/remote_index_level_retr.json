@@ -1,0 +1,40 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_high_level_index_retr",
+          "param_type": "bool",
+          "default_value": false
+        },
+        "remote_index_service_timeout_ms": {
+          "biz_name": "RECO_RPC",
+          "param_name": "high_level_index_retr_timeout_ms",
+          "param_type": "int",
+          "default_value": 150
+        },
+        "result_num": {
+          "biz_name": "RECO_RPC",
+          "param_name": "high_level_index_retr_result_num",
+          "param_type": "int",
+          "default_value": 800
+        },
+        "search_num": ["high_level_index_retr_search_num", 200],
+        "remote_index_service_name": ["high_level_index_retr_service_name", "grpc_recoRegulationsIndexServer"],
+        "user_risk_min": ["high_level_index_retr_user_risk_min", 3]
+      },
+      "import": {
+        "common_attrs": [
+          "user_risk_level",
+          "user_interest_hetu2"
+        ]
+      },
+      "export": {
+        "results": [
+          "remote_index_level_retr__result"
+        ]
+      }
+    },
+    "reason": 10037,
+    "remote_index_query_term": "hetuTagLevelTwo"
+  }

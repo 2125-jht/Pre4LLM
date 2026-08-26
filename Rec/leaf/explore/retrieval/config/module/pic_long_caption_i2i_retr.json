@@ -1,0 +1,48 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_pic_long_caption_i2i_retrieval", false],
+      "use_colossus_trigger_embedding": ["pic_long_caption_i2i_get_embedding", true],
+      "colossus_pic_all_limit": ["pic_long_caption_i2i_pic_all_limit", 100],
+      "colossus_pic_interact_limit": ["pic_long_caption_i2i_pic_interact_limit", 50],
+      "colossus_pic_trigger_channel_str": ["pic_long_caption_trigger_channel",""],
+      "enable_exclude_single_pic": ["pic_long_caption_enable_exclude_single_pic",false],
+      "colossus_trigger_limit": ["pic_long_caption_i2i_trigger_limit", 30],
+      "enable_scatter_trigger": ["enable_pic_long_caption_i2i_scatter_trigger", false],
+      "scatter_each_limit": ["pic_long_caption_i2i_scatter_trigger_each_tag_limit", 8],
+      "embedding_service_name": ["pic_long_caption_i2i_retr_embedding_service_name", "grpc_hotMcEmbed"],
+      "ann_service_name": ["pic_long_caption_i2i_service_name", "grpc_pictureAnn"],
+      "ann_top_k": ["pic_long_caption_i2i_top_k", 20],
+      "src_bucket": ["pic_long_caption_i2i_src_bucket", "photo"],
+      "dest_bucket": ["pic_long_caption_i2i_dest_bucket", "long_caption_picture"],
+      "retrieve_num": ["pic_long_caption_i2i_retr_ann_limit_num", 500],
+      "seleted_eff_play_thd_sec": ["explore_pic_colossus_seleted_eff_play_thd_sec", -1],
+      "colossus_range_days": ["explore_pic_colossus_range_days", 1000],
+      "enable_shuffle_result": ["explore_pic_colossus_enable_shuffle_result", 0]
+    },
+    "kconf": {
+      "hetu_low_level_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "low_level_tags"
+      },
+      "hetu_level2_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "level2_tags"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_resp_v2",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_long_caption_mc_i2i__result"
+      ]
+    }
+  },
+  "reason": 13014
+}

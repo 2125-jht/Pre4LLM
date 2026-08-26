@@ -1,0 +1,56 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": {
+          "biz_name": "RECO_RPC",
+          "param_name": "enable_mc_u2i_retrieval_level5",
+          "param_type": "bool",
+          "default_value": false
+        },
+        "ann_service_name": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mc_u2i_retr_service_name_level5",
+          "param_type": "string",
+          "default_value": "grpc_exploreMcI2i"
+        },
+        "ann_service_timeout": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mc_u2i_retr_ann_timeout_level5",
+          "param_type": "int",
+          "default_value": 100
+        },
+        "ann_service_retr_count": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mc_u2i_cand_num_level5",
+          "param_type": "int",
+          "default_value": 1000
+        },
+        "ann_service_bucket": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mc_u2i_bucket_level5",
+          "param_type": "string",
+          "default_value": "photo"
+        },
+        "ann_dist_threshold": {
+          "biz_name": "RECO_RPC",
+          "param_name": "mc_u2i_retr_ann_distance_level5",
+          "param_type": "double",
+          "default_value": 0.0
+        },
+        "risk_level_min": ["risk_level_min_level5", 5]
+      },
+      "import": {
+        "common_attrs": [
+          "mc_u2i_user_embedding_list",
+          "user_risk_level"
+        ]
+      },
+      "export": {
+        "results": [
+          "mc_u2i_level5_ann__result"
+        ]
+      }
+    },
+    "reason": 10033
+  }
+  

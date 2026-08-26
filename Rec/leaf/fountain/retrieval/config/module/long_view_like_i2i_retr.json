@@ -1,0 +1,26 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_long_view_like_i2i_retr_fountain", true],
+      "use_effect_view_trigger": ["skip_fountain_long_view_like_i2i_use_effect_view_trigger", 1],
+      "kess_service": ["fountain_long_view_like_i2i_retr_kess_service", "kws-kuaishou-fountain-retrieve-fountain-lv-like-i2i"],
+      "retr_topk_num": ["fountain_long_view_like_i2i_retr_topk_num", 50],
+      "retrieval_skip": {
+        "param_name": "skip_fountain_long_view_like_i2i_retr",
+        "default_value": 1
+      }
+    }, 
+    "import": {
+      "common_attrs": [
+        "featureFountainProfileEffViewPidList",
+        "featureFountainProfileLongViewPidListSub"
+      ]
+    },
+    "export": {
+      "results": [
+        "long_view_like_i2i_retr__result"
+      ]
+    }
+  },
+  "reason": 409
+}

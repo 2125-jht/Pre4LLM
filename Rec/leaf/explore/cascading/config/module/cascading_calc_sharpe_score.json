@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_mc_cal_emp_sharpe_score": false,
+      "explore_mc_cal_emp_sharpe_score_risk_free": 0.0,
+      "explore_mc_cal_emp_sharpe_score_std_beta": 1.0,
+      "explore_mc_cal_emp_sharpe_score_use_raw": 1,
+      "explore_mc_cal_emp_sharpe_score_wtd_weight": 0.0,
+      "explore_mc_cal_emp_sharpe_score_lvtr_weight": 1.0,
+      "explore_mc_cal_emp_sharpe_score_global_risk_free_weight": 1.0,
+      "explore_mc_cal_emp_sharpe_score_request_risk_free_weight": 1.0
+    },
+    "import": {
+      "common_attrs": [
+      ],
+      "item_attrs": [
+        "empirical_ctr",
+        "empirical_lvtr",
+        "empirical_watch_time"
+      ],
+      "results": [
+        "cascading_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "emp_report_score",
+        "emp_sharpe_score"
+      ],
+      "common_attrs": [
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+20220220	18	viewfs:///home/reco_5/mpi/shaohua/fountain_mix_rank_kai/checkpoint/20220220_180001.1645351818023	1645351201032	simple_mio_binary_v2,mio_text	/sparse,/dense
+20220220	20	viewfs:///home/reco_5/mpi/shaohua/fountain_mix_rank_kai/checkpoint/20220220_200123.1645359097131	1645358483519	simple_mio_binary_v2,mio_text	/sparse,/dense
+20220220	22	viewfs:///home/reco_5/mpi/shaohua/fountain_mix_rank_kai/checkpoint/20220220_220125.1645366298444	1645365685757	simple_mio_binary_v2,mio_text	/sparse,/dense
+20220221	00	viewfs:///home/reco_5/mpi/shaohua/fountain_mix_rank_kai/model/20220221	1645372828888	simple_mio_binary_v2,mio_text	/sparse,/dense
+20220221	02	viewfs:///home/reco_5/mpi/shaohua/fountain_mix_rank_kai/checkpoint/20220221_020612.1645380993297	1645380372991	simple_mio_binary_v2,mio_text	/sparse,/dense
+20220221	04	viewfs:///home/reco_5/mpi/shaohua/fountain_mix_rank_kai/checkpoint/20220221_041108.1645388497798	1645387868546	simple_mio_binary_v2,mio_text	/sparse,/dense
+20220221	06	viewfs:///home/reco_5/mpi/shaohua/fountain_mix_rank_kai/checkpoint/20220221_060716.1645395460977	1645394836633	simple_mio_binary_v2,mio_text	/sparse,/dense
+20220221	08	viewfs:///home/reco_5/mpi/shaohua/fountain_mix_rank_kai/checkpoint/20220221_080322.1645402411415	1645401802394	simple_mio_binary_v2,mio_text	/sparse,/dense

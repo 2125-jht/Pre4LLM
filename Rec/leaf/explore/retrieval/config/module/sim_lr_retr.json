@@ -1,0 +1,72 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_sim_1w_retr", false],
+      "retrieval_cache_config": ["explore_sim_1w_retr_cache_config", ""],
+      "kess_service_name": ["explore_sim_1w_retr_kess_service_name", "grpc_slideI2ICenterServer"],
+      "service_request_num": ["explore_sim_1w_retr_request_num", 800],
+      "custom_kconf_key": ["explore_sim_1w_retr_config_key", "rinf.rlRunner.i2i_center_config_simlr_1w"],
+      "custom_iic_simlr_kconf_key": ["explore_sim_lr_retr_custom_iic_simlr_kconf_key", "rinf.rlRunner.iic_simlr_config"],
+      "service_timeout_ms": ["explore_sim_1w_retr_timeout_ms", 100]
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "sim_lr__result"
+      ]
+    }
+  },
+  "service_request_type": "default",
+  "reason": 0,
+  "trimed_user_info": [
+    "is_nebula_user",
+    "is_gamora",
+    "id",
+    "device_id",
+    "risk_level_test",
+    "active_days",
+    "visit_mod",
+    "gender",
+    "true_gender",
+    "infer_gender",
+    "follow_count",
+    "like_count",
+    "clientlog_heart_beat_count",
+    "upload_count",
+    "location.ip",
+    "location.province_id",
+    "location.city_id",
+    "true_year",
+    "infer_year",
+    "browsed_photo_ids",
+    "nearby_browsed_photo_ids",
+    "slide_browsed_photo_ids",
+    "user_profile_v1.video_playing_stat",
+    "user_profile_v1.real_show_list.photo_id",
+    "user_profile_v1.click_list.photo_id",
+    "user_profile_v1.click_list.page_type",
+    "user_profile_v1.like_list.photo_id",
+    "user_profile_v1.like_list.page_type",
+    "user_profile_v1.follow_list.photo_id",
+    "user_profile_v1.follow_list.page_type",
+    "user_profile_v1.follow_list.author_id",
+    "user_profile_v1.forward_list.photo_id",
+    "user_profile_v1.hate_list.photo_id",
+    "user_profile_v1.comment_list.photo_id",
+    "user_profile_v1.profile_enter_list.photo_id",
+    "user_profile_v1.profile_enter_list.page_type",
+    "user_profile_v1.click_live_list.photo_id",
+    "user_profile_v1.click_live_list.photo_id",
+    "realtime_click_list",
+    "feature_collection.gamora_hetu_adjust_history",
+    "feature_collection.nebula_hetu_adjust_history"
+  ],
+  "send_common_attrs": [
+    "custom_kconf_key",
+    "custom_iic_simlr_kconf_key"
+  ]
+}

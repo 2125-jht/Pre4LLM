@@ -1,0 +1,39 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_fr_cal_sharpe_ratio_score": false,
+      "explore_fr_cal_sharpe_ratio_score_skip_age": -1,
+      "explore_fr_cal_sharpe_ratio_score_wtd_weight": 1.0,
+      "explore_fr_cal_sharpe_ratio_score_lvtr_weight": 0.0,
+      "explore_fr_cal_sharpe_ratio_score_fr_score1_weight": 0.0,
+      "explore_fr_cal_sharpe_ratio_score_fr_score2_weight": 0.0,
+      "explore_fr_cal_sharpe_ratio_score_cpr_weight": 0.0,
+      "explore_fr_cal_sharpe_ratio_score_ltr_weight": 0.0,
+      "explore_fr_cal_sharpe_ratio_score_wtr_weight": 0.0,
+      "explore_fr_cal_sharpe_ratio_score_cmtr_weight": 0.0,
+      "explore_fr_cal_sharpe_ratio_score_cltr_weight": 0.0,
+      "explore_fr_cal_sharpe_ratio_score_ftr_weight": 0.0,
+      "explore_fr_cal_sharpe_ratio_score_risk_free": 10.0,
+      "explore_fr_cal_sharpe_ratio_score_std_beta": 1.0,
+      "explore_fr_cal_sharpe_ratio_score_use_raw": 0,
+      "explore_fr_cal_sharpe_ratio_score_global_risk_free_weight": 1.0,
+      "explore_fr_cal_sharpe_ratio_score_request_risk_free_weight": 0.0
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "item_attrs": [
+        "awesome_wtd",
+        "score_pctr",
+        "fetr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "ctr_multy_wtd_sharpe_ratio_score"
+      ]
+    }
+  }
+}
+  

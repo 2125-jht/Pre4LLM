@@ -1,0 +1,71 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "skip_explore_calc_ensemble_score_pure_value": 1,
+      "explore_fullrank_pure_value_score_use_power_calc": 0,
+      "explore_pure_value_pctr_use_mapping": 1,
+      "explore_pure_value_pctr_weight": 1.0,
+      "explore_pure_value_pltr_use_mapping": 1,
+      "explore_pure_value_pltr_weight": 1.0,
+      "explore_pure_value_pwtr_use_mapping": 1,
+      "explore_pure_value_pwtr_weight": 1.0,
+      "explore_pure_value_pftr_use_mapping": 1,
+      "explore_pure_value_pftr_weight": 1.0,
+      "explore_pure_value_pcmtr_use_mapping": 1,
+      "explore_pure_value_pcmtr_weight": 1.0,
+      "explore_pure_value_pcmef_use_mapping": 1,
+      "explore_pure_value_pcmef_weight": 1.0,
+      "explore_pure_value_pptr_use_mapping": 1,
+      "explore_pure_value_pptr_weight": 1.0,
+      "explore_pure_value_pepstr_use_mapping": 1,
+      "explore_pure_value_pepstr_weight": 1.0,
+      "explore_pure_value_pcltr_use_mapping": 1,
+      "explore_pure_value_pcltr_weight": 1.0,
+      "explore_pure_value_fetr_use_mapping": 1,
+      "explore_pure_value_fetr_weight": 1.0,
+      "explore_pure_value_feff_use_mapping": 1,
+      "explore_pure_value_feff_weight": 1.0,
+      "explore_pure_value_fr_score1_use_mapping": 1,
+      "explore_pure_value_fr_score1_weight": 1.0,
+      "explore_pure_value_fr_score2_use_mapping": 1,
+      "explore_pure_value_fr_score2_weight": 1.0,
+      "explore_pure_value_wtd_use_mapping": 1,
+      "explore_pure_value_wtd_weight": 1.0,
+      "explore_pure_value_psvr_use_mapping": 1,
+      "explore_pure_value_psvr_weight": 0.0,
+      "explore_pure_value_plvtr_use_mapping": 1,
+      "explore_pure_value_plvtr_weight": 1.0,
+      "explore_pure_value_pevtr_use_mapping": 1,
+      "explore_pure_value_pevtr_weight": 0.0,
+      "explore_pure_value_pvtr_use_mapping": 1,
+      "explore_pure_value_pvtr_weight": 1.0
+    },
+    "import": {
+      "item_attrs": [
+        "corr_pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "fr_score1",
+        "fr_score2",
+        "pepstr",
+        "pcltr",
+        "fetr",
+        "fountain_eff",
+        "awesome_wtd",
+        "psvt",
+        "plvtr",
+        "pevtr",
+        "pvtr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "explore_fullrank_pure_value_score"
+      ]
+    }
+  }
+}

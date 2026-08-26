@@ -1,0 +1,104 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_life_ltr_predict": {
+        "biz_name": "RECO_RPC",
+        "param_name": "el_enable_life_ltr_predict",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "life_ltr_predict_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "el_life_ltr_predict_service",
+        "param_type": "string",
+        "default_value": "grpc_exploreLifeLtrServerVd"
+      },
+      "life_ltr_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "el_life_ltr_partition_size",
+        "param_type": "int",
+        "default_value": 1000
+      }
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "userInfo"
+      ],
+      "item_attrs": [
+        "photo_id",
+        "author__id",
+        "upload_type",
+        "author__fans_count",
+        "photo_picture_count",
+        "caption_length",
+        "duration_ms",
+        "upload_type",
+        "author__gender",
+        "author_age_info__age_segment",
+        "upload_time",
+        "hetu_tag_level_info__hetu_level_one",
+        "hetu_tag_level_info__hetu_level_two",
+        "hetu_tag_level_info__hetu_level_three",
+        "hetu_tag_level_info__hetu_level_five",
+        "hetu_tag_level_info__hetu_tag",
+        "hetu_tag_level_info__hetu_face_id",
+        "hetu_tag_level_info__hetu_cluster_id",
+        "mmu_img_cluster_v3",
+        "music",
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "fr_score1",
+        "fr_score2",
+        "photo_picture_count",
+        "caption_length",
+        "location__city_id",
+        "location__province_id",
+        "is_picture",
+        "picture_type",
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_plvtr",
+        "cascade_psvtr",
+        "cascade_pftr",
+        "cascade_pcmtr",
+        "cascade_plvtr2",
+        "cascade_pepstr",
+        "cascade_pcestr",
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr",
+        "empirical_ptr",
+        "empirical_cmtr",
+        "empirical_htr",
+        "empirical_watch_time",
+        "explore_stat__show_count",
+        "explore_stat__click_count",
+        "explore_stat__like_count",
+        "explore_stat__follow_count",
+        "explore_stat__negative_count",
+        "explore_stat__report_detail__total_report_count"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "life_ltr_pctr"
+      ]
+    }
+  }
+}

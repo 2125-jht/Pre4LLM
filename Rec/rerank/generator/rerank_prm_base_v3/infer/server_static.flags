@@ -1,0 +1,16 @@
+--grpc_server_port=25280
+--log_dir=../log/
+
+--ip_region_dict_file=../data/ip_region.dat
+--region_searcher_point_file=../data/geography.data
+--region_dict_filename=../data/region_dict.dat
+--dynamic_index_static_dict_filename=../data/static_dict.dat
+--index_builder_static_dict_filename=../data/static_dict.dat
+
+--grpc_thread_num=48
+--web_thread_num=8
+--max_channel_pool_size=32
+
+--item_info_from_request=true
+--batch_id_tensor_name=x
+--parameter_service_timeout_ms=100

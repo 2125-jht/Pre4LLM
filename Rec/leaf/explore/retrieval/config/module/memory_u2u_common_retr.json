@@ -1,0 +1,32 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_memory_u2u_common_retr", false],
+      "retrieval_cache_config": ["explore_memory_u2u_common_retr_cache_config", ""],
+      "kess_service_name": ["explore_memory_u2u_common_retr_service_name", "grpc_UniMemoryModelU2uRetrServer"],
+      "service_request_num": ["explore_memory_u2u_common_retr_retrieve_num", 600],
+      "sim_user_limit_num": ["explore_memory_u2u_common_retr_sim_user_num", 100],
+      "sim_user_topk": ["explore_memory_u2u_common_retr_sim_user_topk", 30],
+      "user_photo_retrieve_num_per_key": ["explore_memory_u2u_common_retr_retr_num_per_user", 20],
+      "user_photo_redis_key_prefix": ["explore_memory_u2u_common_retr_user_photo_prefix", "uActions_"]
+    }, 
+    "constant": {
+      "service_timeout_ms": 50
+    },
+    "export": {
+      "results": [
+        "memory_u2u_common_retr__result"
+      ]
+    }
+  },
+  "reason": 649,
+  "service_request_type": "default",
+  "send_common_attrs": [
+    "sim_user_limit_num",
+    "sim_user_topk",
+    "user_photo_retrieve_num_per_key",
+    "user_photo_redis_key_prefix"
+  ],
+  "send_browse_set": false,
+  "trimed_user_info": []
+}

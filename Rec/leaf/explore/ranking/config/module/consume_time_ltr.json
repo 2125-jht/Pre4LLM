@@ -1,0 +1,270 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "consume_time_ltr_need_long_action_list_new": {
+        "biz_name": "RECO_RPC",
+        "param_name": "consume_time_ltr_need_long_action_list_new",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "consume_time_ltr_long_action_list_click_length": {
+        "biz_name": "RECO_RPC",
+        "param_name": "consume_time_ltr_long_action_list_click_length",
+        "param_type": "int",
+        "default_value": 40
+      },
+      "consume_time_ltr_long_action_list_action_length": {
+        "biz_name": "RECO_RPC",
+        "param_name": "consume_time_ltr_long_action_list_action_length",
+        "param_type": "int",
+        "default_value": 20
+      },
+      "consume_time_view_list_length": {
+        "biz_name": "RECO_RPC",
+        "param_name": "consume_time_view_list_length",
+        "param_type": "int",
+        "default_value": 50
+      },
+      "use_explore_fusion_ltr_model": false,    
+      "consume_time_pftr_kai_kess_service": "grpc_krpKaiTimePftrInfer",
+      "enable_sk_pftr_st_feed": false,
+      "enable_sk_pftr_negative": false,
+      "enable_modified_trunc": false,
+      "pftr_prefx": "pftrRatio",
+      "enable_zip_process": false,
+      "consume_time_pftr_kai_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "consume_time_pftr_kai_partition_size",
+        "param_type": "int",
+        "default_value": 600 
+      },      
+      "explore_xhs_meta_ltr": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_xhs_meta_ltr",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "explore_xhs_meta_ltr_kess_service":{
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_xhs_meta_ltr_kess_service",
+        "param_type": "string",
+        "default_value": "grpc_interact-ltr-gpu-fast-infer"
+      },
+      "xhs_meta_ltr_predict_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "xhs_meta_ltr_predict_partition_size",
+        "param_type": "int",
+        "default_value": 150
+      },
+      "enable_fr_ordinal_wtd_ltr": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_fr_ordinal_wtd_ltr",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "explore_fr_ordinal_wtd_ltr_kess_service":{
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_ordinal_wtd_ltr_kess_service",
+        "param_type": "string",
+        "default_value": "grpc_HotFrOrdinalWtdLtrInfer"
+      },
+      "explore_fr_ordinal_wtd_ltr_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_ordinal_wtd_ltr_partition_size",
+        "param_type": "int",
+        "default_value": 150
+      },
+      "explore_fr_owtd_pctr_weight": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_fr_owtd_pctr_weight",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "explore_fr_owtd_duration_weight": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_fr_owtd_duration_weight",
+        "param_type": "double",
+        "default_value": 0.0
+      },
+      "explore_fr_owtd_duration_max_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_fr_owtd_duration_max_limit",
+        "param_type": "int",
+        "default_value": 240
+      },
+      "explore_fr_owtd_duration_min_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_fr_owtd_duration_min_limit",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "enable_explore_rank_distill_ltr": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_rank_distill_ltr",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "explore_rank_distill_ltr_kess_service":{
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_rank_distill_ltr_kess_service",
+        "param_type": "string",
+        "default_value": "grpc_HotRankDistillInfer"
+      },
+      "explore_rank_distill_ltr_predict_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_rank_distill_ltr_predict_partition_size",
+        "param_type": "int",
+        "default_value": 150
+      },
+      "explore_svd_ltr_model_kess_service": "grpc_krpKaiExploreLtrFusionV1Infer",
+      "svd_ltr_mode": 10,
+      "enable_explore_wtd_frac_model": false,
+      "enable_calc_wtd_frac_score": true,
+      "explore_wtd_frac_model_kess_service": "grpc_krpExploreWtdFracInfer",
+      "explore_wtd_frac_model_partition_size": 600,
+      "explore_follow_longterm_ltr": true,
+      "explore_follow_longterm_ltr_kess_service": "kws-kuaishou-fountain-infer-follow-long-term-value-infer",
+      "follow_longterm_ltr_predict_partition_size": 150,
+      "explore_revisit_model": false,
+      "explore_revisit_model_kess_service": "grpc_hot-revisit-model-cpu-fast-infer",
+      "revisit_model_predict_partition_size": 150,
+      "enable_gen_distill_ltr_in_consume_time_ltr": 0,
+      "explore_rank_gen_distill_kai_partition_size": 100,
+      "explore_rank_gen_distill_kai_kess_service": "grpc_ExploreKaiGenDistillPredictServerXwV1",
+      "explore_ltr_uni_feature_kess_service": "grpc_krpExploreLtrCppInfer",
+      "explore_ltr_uni_feature_partition_size": 180,
+      "use_explore_pf2r_calc": false,
+      "explore_pftr_fractile_score_duration_ms_upper_bound": 600000
+    },
+    "kconf": {
+      "explore_fr_wtd_frac_duration_seg_list": {
+        "kconf_key": "reco.offline.recoExploreFullrankWtdFracSegMap",
+        "value_type": "json",
+        "json_path": "durationSeg"
+      },
+      "explore_fr_wtd_frac_seg_list_0": {
+        "kconf_key": "reco.offline.recoExploreFullrankWtdFracSegMap",
+        "value_type": "json",
+        "json_path": "duration_id_0"
+      },
+      "explore_fr_wtd_frac_seg_list_1": {
+        "kconf_key": "reco.offline.recoExploreFullrankWtdFracSegMap",
+        "value_type": "json",
+        "json_path": "duration_id_1"
+      },
+      "explore_fr_wtd_frac_seg_list_2": {
+        "kconf_key": "reco.offline.recoExploreFullrankWtdFracSegMap",
+        "value_type": "json",
+        "json_path": "duration_id_2"
+      },
+      "explore_fr_wtd_frac_seg_list_3": {
+        "kconf_key": "reco.offline.recoExploreFullrankWtdFracSegMap",
+        "value_type": "json",
+        "json_path": "duration_id_3"
+      },
+      "explore_fr_wtd_frac_seg_list_4": {
+        "kconf_key": "reco.offline.recoExploreFullrankWtdFracSegMap",
+        "value_type": "json",
+        "json_path": "duration_id_4"
+      },
+      "explore_fr_wtd_frac_seg_list_5": {
+        "kconf_key": "reco.offline.recoExploreFullrankWtdFracSegMap",
+        "value_type": "json",
+        "json_path": "duration_id_5"
+      },
+      "explore_fr_wtd_frac_seg_list_6": {
+        "kconf_key": "reco.offline.recoExploreFullrankWtdFracSegMap",
+        "value_type": "json",
+        "json_path": "duration_id_6"
+      },
+      "explore_fr_wtd_frac_seg_list_7": {
+        "kconf_key": "reco.offline.recoExploreFullrankWtdFracSegMap",
+        "value_type": "json",
+        "json_path": "duration_id_7"
+      },
+      "explore_fr_wtd_frac_seg_list_8": {
+        "kconf_key": "reco.offline.recoExploreFullrankWtdFracSegMap",
+        "value_type": "json",
+        "json_path": "duration_id_8"
+      },
+      "explore_fr_active_days_split_conf": {
+        "kconf_key": "reco.exploreRank.recoExploreFrActiveDaysSplitConf",
+          "value_type": "json",
+          "json_path": "ptrSeg"
+      }
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "explore_vv_3d",
+        "conti_zero_click_num",
+        "conti_zero_realshow_num",
+        "infer_uv_ctr",
+        "active_days_gt_5min_rate"
+      ],
+      "item_attrs": [
+        "corr_pctr",
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "fr_score1",
+        "fr_score2",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "fetr",
+        "fountain_eff",
+        "pColossusScore",
+        "score_pctr",
+        "awesome_wtd",
+        "pctr_index",
+        "pltr_index",
+        "pwtr_index",
+        "pftr_index",
+        "pvtr_index",
+        "plvtr_index",
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr",
+        "empirical_lvtr",
+        "userfulness_author_score",
+        "bad_cover_similary_score"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pAgeHour",
+        "consume_time_ltr",
+        "consume_time_pf2r_score",
+        "consume_time_ctr",
+        "consume_time_pltr",
+        "consume_time_lph",
+        "consume_time_pstd",
+        "consume_time_slide",
+        "explore_fr_wtd_from_frac_score",
+        "explore_fr_wtd_frac_5_score",
+        "post_follow_score",
+        "action_diff_score",
+        "ordinal_wtd_ltr",
+        "debias_pf2r_score",
+        "revisit_score_model",
+        "revisit_score_author_model",
+        "consume_time_evtr",
+        "consume_time_lvtr"
+      ]
+    }
+  }
+}

@@ -1,0 +1,462 @@
+ada_decay_rate: 0.99999
+ada_epsilon: 1e-8
+avg_decay_rate: 0.999993
+back_propagate_input: true
+dense_grad: dense_grad_for_fetch:0
+dense_init_val: dense_init_val_for_fetch:0
+embedding:
+  create_threshold: 0
+  initial_g2sum: 3
+  initial_range: 1e-4
+  learning_rate: 0.05
+  slots_config:
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: uCityId_KAI
+    slots: '101'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: uProvinceId_KAI
+    slots: '102'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: uVisitMod_KAI
+    slots: '103'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: uNetwork_KAI
+    slots: '104'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: uGender_KAI
+    slots: '105'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: uAge_KAI
+    slots: '106'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: uFollowCount_KAI
+    slots: '107'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pUploadType_KAI
+    slots: '201'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pHetuTagLevel1_KAI
+    slots: '202'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pHetuTagLevel2_KAI
+    slots: '203'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pHetuTagLevel5_KAI
+    slots: '204'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pMmuImgClusterV3_KAI
+    slots: '205'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pAgeHour_KAI
+    slots: '206'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: aFansCount_KAI
+    slots: '207'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pPctr_KAI
+    slots: '208'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pPltr_KAI
+    slots: '209'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pPwtr_KAI
+    slots: '210'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pPftr_KAI
+    slots: '211'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pPhtr_KAI
+    slots: '212'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pPlvtr_KAI
+    slots: '213'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pPsvtr_KAI
+    slots: '214'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pPptr_KAI
+    slots: '215'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pPcmtr_KAI
+    slots: '216'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pPcmef_KAI
+    slots: '217'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pPepstr_KAI
+    slots: '218'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pPdtr_KAI
+    slots: '219'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pEmpCtr_KAI
+    slots: '220'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pEmpLtr_KAI
+    slots: '221'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pEmpWtr_KAI
+    slots: '222'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pEmpFtr_KAI
+    slots: '223'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pEmpPtr_KAI
+    slots: '224'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pEmpCmtr_KAI
+    slots: '225'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pEmpHtr_KAI
+    slots: '226'
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: pEmpWatchTime_KAI
+    slots: '227'
+    update_type: gradient
+  version_aware: true
+  weight_bounds:
+  - -10
+  - 10
+extra_params: []
+global_init_range: 0.2
+grad_scale: truediv:0
+graph: ./conf/graph.pb
+graph_extra_outputs: {}
+graph_output_labels:
+- Reshape_69:0
+- Reshape_71:0
+- Reshape_73:0
+graph_q_valid:
+  fvtr: Reshape_74:0
+  lvtr: Reshape_72:0
+  weighted_ctr: mul:0
+graph_targets:
+- opt
+graph_tensor_mapping:
+  fvtr: fvtr_mlp/fvtr_predict/dense_1/Sigmoid:0
+  lvtr: lvtr_mlp/lvtr_predict/dense_1/Sigmoid:0
+  weighted_ctr: weighted_ctr_mlp/weighted_ctr_predict/dense_1/Sigmoid:0
+hyperparameter_kconf: null
+is_train_placeholder: is_train:0
+learning_rate: 5.0e-06
+local_init_op: ''
+loss_scale_placeholder: loss_scale:0
+mom_decay_rate: 0.999
+output_hidden_units: update_input continue_normlized_input slide_embedding slide_wide
+  watch_time_wide position_weight_input
+param:
+- coln: 512
+  name: weighted_ctr_mlp/weighted_ctr_mlp/dense/kernel
+  rown: 272
+  scale_by_rown: true
+- coln: 1
+  name: weighted_ctr_mlp/weighted_ctr_mlp/dense/bias
+  rank: 1
+  rown: 512
+  scale_by_rown: true
+- coln: 256
+  name: weighted_ctr_mlp/weighted_ctr_mlp/dense_1/kernel
+  rown: 512
+  scale_by_rown: true
+- coln: 1
+  name: weighted_ctr_mlp/weighted_ctr_mlp/dense_1/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: weighted_ctr_mlp/weighted_ctr_mlp/dense_2/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: weighted_ctr_mlp/weighted_ctr_mlp/dense_2/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: weighted_ctr_mlp/weighted_ctr_mlp/dense_3/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: weighted_ctr_mlp/weighted_ctr_mlp/dense_3/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: weighted_ctr_mlp/weighted_ctr_predict/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: weighted_ctr_mlp/weighted_ctr_predict/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: weighted_ctr_mlp/weighted_ctr_predict/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: weighted_ctr_mlp/weighted_ctr_predict/dense_1/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+- coln: 512
+  name: lvtr_mlp/lvtr_mlp/dense/kernel
+  rown: 272
+  scale_by_rown: true
+- coln: 1
+  name: lvtr_mlp/lvtr_mlp/dense/bias
+  rank: 1
+  rown: 512
+  scale_by_rown: true
+- coln: 256
+  name: lvtr_mlp/lvtr_mlp/dense_1/kernel
+  rown: 512
+  scale_by_rown: true
+- coln: 1
+  name: lvtr_mlp/lvtr_mlp/dense_1/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: lvtr_mlp/lvtr_mlp/dense_2/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: lvtr_mlp/lvtr_mlp/dense_2/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: lvtr_mlp/lvtr_mlp/dense_3/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: lvtr_mlp/lvtr_mlp/dense_3/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: lvtr_mlp/lvtr_predict/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: lvtr_mlp/lvtr_predict/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: lvtr_mlp/lvtr_predict/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: lvtr_mlp/lvtr_predict/dense_1/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+- coln: 512
+  name: fvtr_mlp/fvtr_mlp/dense/kernel
+  rown: 272
+  scale_by_rown: true
+- coln: 1
+  name: fvtr_mlp/fvtr_mlp/dense/bias
+  rank: 1
+  rown: 512
+  scale_by_rown: true
+- coln: 256
+  name: fvtr_mlp/fvtr_mlp/dense_1/kernel
+  rown: 512
+  scale_by_rown: true
+- coln: 1
+  name: fvtr_mlp/fvtr_mlp/dense_1/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: fvtr_mlp/fvtr_mlp/dense_2/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: fvtr_mlp/fvtr_mlp/dense_2/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: fvtr_mlp/fvtr_mlp/dense_3/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: fvtr_mlp/fvtr_mlp/dense_3/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: fvtr_mlp/fvtr_predict/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: fvtr_mlp/fvtr_predict/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: fvtr_mlp/fvtr_predict/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: fvtr_mlp/fvtr_predict/dense_1/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+q_label:
+- auc_set: auc
+  label: Reshape_69:0
+  name: weighted_ctr
+- auc_set: auc
+  label: Reshape_71:0
+  name: lvtr
+- auc_set: auc
+  label: Reshape_73:0
+  name: fvtr
+q_names: weighted_ctr lvtr fvtr
+sparse_grad: sparse_grad_for_fetch:0
+sparse_grad_scale: truediv_1:0
+step_placeholder: step:0
+summary:
+- len: 1912
+  name: base_summary
+- len: 2072
+  name: stub_summary
+summary_decay_rate: 0.999999
+summary_init_n: 1e4
+summary_init_squared_sum: 1e4
+summary_squared_sum_epsilon: 1e-4
+test_layers_at_joining: join join_forward update update_forward
+test_layers_at_updating: update update_forward
+test_mode: false
+train_layers_at_joining: join
+train_layers_at_updating: update
+use_sparse_indice: false
+vec_input:
+- common: false
+  dim: 1
+  name: sampleWeight
+- common: false
+  dim: 1
+  name: weighted_ctr_label
+- common: false
+  dim: 1
+  name: weighted_ctr_mask
+- common: false
+  dim: 1
+  name: lvtr_label
+- common: false
+  dim: 1
+  name: lvtr_mask
+- common: false
+  dim: 1
+  name: fvtr_label
+- common: false
+  dim: 1
+  name: fvtr_mask
+with_kai: true

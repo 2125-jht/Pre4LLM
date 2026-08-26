@@ -1,0 +1,1 @@
+from common.check_rule.lua_name_check_rule import LuaNameCheckRule

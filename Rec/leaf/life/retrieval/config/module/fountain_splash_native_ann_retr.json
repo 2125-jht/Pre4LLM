@@ -1,0 +1,31 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_xlife_splash_native_ann_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "fountain_splash_native_ann_service": "grpc_fountainSplashFocalOwndata",
+      "fountain_splash_native_retr_num": {
+        "param_name": "fountain_splash_native_retr_num_life",
+        "default_value": 1000
+      },
+      "fountain_splash_native_retr_src_type": "source",
+      "fountain_splash_native_retr_dest_bucket": "photo"
+    }, 
+    "import": {
+      "common_attrs": [
+        "featureSourcePId",
+        "request_type"
+      ]
+    },
+    "export": {
+      "results": [
+        "fountain_splash_native_ann_retr__result"
+      ]
+    }
+  },
+  "reason": 10400
+}

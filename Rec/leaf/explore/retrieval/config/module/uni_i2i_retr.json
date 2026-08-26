@@ -1,0 +1,58 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_uni_i2i_retrieval", false],
+      "enable_cluster_trigger": ["enable_uni_i2i_cluster_trigger", false],
+      "enable_click_list": ["enable_uni_cluster_trigger_click_list", false],
+      "cluster_trigger_max_trigger_len": ["enable_uni_i2i_cluster_trigger_max_trigger_len", 300],
+      "cluster_trigger_max_candidate_len": ["enable_uni_i2i_cluster_trigger_max_candidate_len", 1600],
+      "click_num": ["uni_i2i_click_num", 0],
+      "like_num": ["uni_i2i_like_num", 80],
+      "follow_num": ["uni_i2i_follow_num", 80],
+      "forward_num": ["uni_i2i_forward_num", 20],
+      "comment_num": ["uni_i2i_comment_num", 20],
+      "profile_enter_num": ["uni_i2i_profile_enter_num", 80],
+      "collect_num": ["uni_i2i_collect_num", 20],
+      "interact_num": ["uni_i2i_interact_num", 300],
+      "colossus_num": ["uni_i2i_colossus_num", 100],
+      "realtime_num": ["uni_i2i_realtime_num", 40],
+      "service_name": ["uni_i2i_retr_service_name", "grpc_UniRetrModelI2i"],
+      "service_timeout_ms": ["uni_i2i_retr_ann_timeout", 100],
+      "retrieve_num_per_trigger": ["uni_i2i_retr_num", 20],
+      "src_data_type": ["uni_i2i_bucket", "photo"],
+      "dest_bucket": ["uni_i2i_bucket", "photo"],
+      "retrieve_num": ["uni_i2i_cand_num", 1000],
+      "enable_emb_server": ["enable_uni_i2i_emb_server", false],
+      "embedding_service_name": ["uni_i2i_emb_service", "grpc_exploreUniEmb"],
+      "knowledge_trigger_expand_cnt": ["uni_i2i_expand_knowledge_trigger_cnt", 0],
+      "interest_explore_trigger_expand_cnt": ["uni_i2i_expand_interest_explore_trigger_cnt", 0],
+      "enable_global_trigger": ["uni_enable_global_trigger", false],
+      "sample_trigger_num": ["uni_sample_trigger_num", 200],
+      "start_idx": ["uni_start_idx", 1200],
+      "enable_ann_result_sort": ["uni_i2i_enable_ann_result_sort", false]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "browse_screen__pid_list",
+        "colossus_user_info__trigger_id_list",
+        "colossus_user_info__knowledge_trigger_set",
+        "colossus_user_info__interest_explore_trigger_set",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list",
+        "enable_global_trigger_weight_adjust"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_retr__trigger_pid"
+      ],
+      "results": [
+        "uni_i2i_retr__result"
+      ]
+    }
+  },
+  "reason": 4041
+}

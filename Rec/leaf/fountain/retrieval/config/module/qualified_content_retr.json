@@ -1,0 +1,38 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_qualified_content_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_qualified_content_retr_service_name": ["fountain_qualified_content_retr_service_name", "grpc_fountainQualifiedContentCommonRetrServer"],
+      "fountain_qualified_content_retr_request_num": ["fountain_qualified_content_retr_request_num", 500],
+      "fountain_qualified_content_retr_timeout_ms": ["fountain_qualified_content_retr_request_num", 50],
+      "skip_fountain_qualified_content_retr": 1
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "user_browsed_photo_ids",
+        "video_playing_stat_pid_list",
+        "video_playing_stat_duration_list",
+        "video_playing_stat_play_time_list",
+        "featureSourcePId",
+        "user_fountain_play_id_list",
+        "user_fountain_play_time_list",
+        "user_fountain_play_hetu_list",
+        "colossusTargetItemTrigger"
+      ]
+    },
+    "export": {
+      "results": [
+        "qualified_content_retr__result"
+      ]
+    }
+  },
+  "reason": 326
+}

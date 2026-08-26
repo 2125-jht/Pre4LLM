@@ -1,0 +1,66 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_calc_mc_pic_search_score": false,
+      "explore_mc_pic_search_cluster_score_thresh": 1.0,
+      "explore_mc_pic_search_cluster_score_max": 20.0,
+      "explore_mc_pic_search_cluster_score_weight": 1.0,
+      "explore_mc_pic_search_score_pxtr_score_max": 4.0,
+      "explore_mc_pic_search_score_pctr_thresh": 0.1,
+      "explore_mc_pic_search_score_pctr_alpha": 1.0,
+      "explore_mc_pic_search_score_pltr_alpha": 1.0,
+      "explore_mc_pic_search_score_pwtr_alpha": 1.0,
+      "explore_mc_pic_search_score_pcltr_alpha": 1.0,
+      "explore_mc_pic_search_score_pcmtr_alpha": 1.0,
+      "explore_mc_pic_search_score_pftr_alpha": 1.0,
+      "explore_mc_pic_search_score_pctr_beta": 1.0,
+      "explore_mc_pic_search_score_pltr_beta": 1.0,
+      "explore_mc_pic_search_score_pwtr_beta": 1.0,
+      "explore_mc_pic_search_score_pcltr_beta": 1.0,
+      "explore_mc_pic_search_score_pcmtr_beta": 1.0,
+      "explore_mc_pic_search_score_pftr_beta": 1.0,
+      "enable_explore_calc_pic_valid_interest_tag_score": false,
+      "explore_pic_valid_interest_tag_score_scale_coeff": 1.0,
+      "explore_pic_valid_interest_tag_score_bias_coeff": 0.0,
+      "enable_explore_pic_search_interest_tagnex_chase": false,
+      "explore_pic_search_interest_tagnex_chase_default_score": 1.0,
+      "explore_pic_search_interest_tagnex_chase_tagnex_min_val": 200000000,
+      "explore_pic_search_interest_tagnex_chase_tagnex_max_val": 300000000,
+      "explore_pic_search_interest_tagnex_chase_adjust_coeff": 1.0,
+      "explore_pic_search_interest_tagnex_chase_scale_bound": 5.0,
+      "explore_pic_search_interest_tagnex_chase_base_weight": 1.0,
+      "explore_pic_search_interest_user_weight_boost_weight": 1.0,
+      "explore_pic_search_interest_user_weight_boost_power_weight_upbound": 1.0,
+      "explore_pic_search_interest_user_weight_boost_interest_thresh": 2
+    },
+    "import": {
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ],
+      "common_attrs": [
+        "user_valid_tag_id_list",
+        "user_valid_tag_score_list",
+        "user_search_valid_play_pid_list",
+        "user_search_valid_play_rate"
+      ],
+      "item_attrs": [
+        "is_picture",
+        "mc_ensemble_pctr",
+        "mc_ensemble_pltr",
+        "mc_ensemble_pwtr",
+        "mc_ensemble_pcltr",
+        "mc_ensemble_pcmtr",
+        "mc_ensemble_pftr",
+        "pic_search_interest_cluster_score",
+        "hetu_tag_level_info__hetu_tag"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "mc_pic_search_score",
+        "pic_valid_interest_tag_score",
+        "pic_search_interest_tagnex_score"
+      ]
+    }
+  }
+}

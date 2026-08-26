@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_splash_hetu_tag_v2_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_hetu_tag_v2_retrieval_nreason_kess_name": "grpc_recoRelevanceTagOrderedIndexServer",
+      "fountain_hetu_tag_v2_retrieval_nreason_hetu_face_id_search_num": 100,
+      "fountain_hetu_tag_v2_retrieval_nreason_hetu_tag_search_num": 100,
+      "fountain_hetu_tag_v2_retrieval_nreason_hetu_level_four_search_num": 100,
+      "fountain_hetu_tag_v2_retrieval_nreason_hetu_level_three_search_num": 100,
+      "fountain_hetu_tag_v2_retrieval_nreason_hetu_level_two_search_num": 100,
+      "fountain_hetu_tag_v2_retrieval_nreason_request_num": 500,
+      "skip_fountain_hetu_tag_v2_retrieval_nreason_query_server": 1
+    }, 
+    "import": {
+      "common_attrs": [
+        "source_hetu_face_id_v2",
+        "source_hetu_tag_v2",
+        "source_hetu_level_four_v2",
+        "source_hetu_level_three_v2",
+        "source_hetu_level_two_v2",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_hetu_tag_v2_retr__result"
+      ]
+    }
+  },
+  "reason": 10147
+}

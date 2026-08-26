@@ -1,0 +1,47 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_mind_retr_",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "remote_embedding_kess_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mind_kv_service_name",
+        "param_type": "string",
+        "default_value": "grpc_rinfMainLongUserEmbeddingServer"
+      },
+      "service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mind_retrieval_timeout_ms",
+        "param_type": "int",
+        "default_value": 40
+      },
+      "ann_kess_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mind_retrieval_service_name",
+        "param_type": "string",
+        "default_value": "grpc_rinfMain1LongCommonRetrieveServer"
+      },
+      "service_request_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mind_retrieval_retr_num_total",
+        "param_type": "int",
+        "default_value": 800
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "results": [
+        "mind_retr__result"
+      ]
+    }
+  },
+  "reason": 3060
+}

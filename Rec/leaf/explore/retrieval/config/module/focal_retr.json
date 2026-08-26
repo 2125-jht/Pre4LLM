@@ -1,0 +1,68 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_retrieval": ["enable_focal_i2i_retrieval", false],
+        "enable_cluster_trigger": ["enable_focal_i2i_cluster_trigger", false],
+        "enable_click_list": ["enable_focal_i2i_cluster_trigger_click_list", true],
+        "cluster_trigger_max_trigger_len": ["enable_focal_i2i_cluster_trigger_max_trigger_len", 300],
+        "cluster_trigger_max_candidate_len": ["enable_focal_i2i_cluster_trigger_max_candidate_len", 1600],
+        "click_num": ["focal_i2i_click_num", 100],
+        "like_num": ["focal_i2i_like_num", 80],
+        "follow_num": ["focal_i2i_follow_num", 80],
+        "forward_num": ["focal_i2i_forward_num", 20],
+        "comment_num": ["focal_i2i_comment_num", 20],
+        "profile_enter_num": ["focal_i2i_profile_enter_num", 80],
+        "collect_num": ["focal_i2i_collect_num", 20],
+        "interact_num": ["focal_i2i_interact_num", 100],
+        "colossus_num": ["focal_i2i_colossus_num", 100],
+        "realtime_num": ["focal_i2i_realtime_num", 20],
+        "service_name": ["focal_i2i_retr_service_name", "grpc_exploreCclI2i"],
+        "service_timeout_ms": ["focal_i2i_retr_ann_timeout", 100],
+        "retrieve_num_per_trigger": ["focal_i2i_retr_num", 20],
+        "src_data_type": ["focal_i2i_bucket", "photo"],
+        "dest_bucket": ["focal_i2i_bucket", "photo"],
+        "retrieve_num": ["focal_i2i_cand_num", 1000],
+        "enable_emb_server": ["enable_focal_i2i_emb_server", false],
+        "embedding_service_name": ["focal_i2i_emb_service", "grpc_exploreCclEmb"],
+        "knowledge_trigger_expand_cnt": ["focal_i2i_expand_knowledge_trigger_cnt", 0],
+        "interest_explore_trigger_expand_cnt": ["focal_i2i_expand_interest_explore_trigger_cnt", 0],
+        "skip_browse_set": ["skip_explore_filter_by_browse_set", 1],
+        "mc_enable_opt_card_trigger": {
+          "biz_name": "MOBILE",
+          "param_name": "mc_enable_opt_card_trigger",
+          "param_type": "bool",
+          "default_value": false
+        },
+        "enable_global_trigger": ["focal_enable_global_trigger", false],
+        "sample_trigger_num": ["focal_sample_trigger_num", 200],
+        "start_idx": ["focal_start_idx", 400],
+        "enable_ann_result_sort": ["focal_retr_enable_ann_result_sort", false]
+      },
+      "import": {
+        "common_attrs": [
+          "user_info_ptr",
+          "browse_screen__pid_list",
+          "colossus_user_info__trigger_id_list",
+          "colossus_user_info__knowledge_trigger_set",
+          "colossus_user_info__interest_explore_trigger_set",
+          "optcard_like_trigger_id_list",
+          "optcard_dislike_trigger_id_list",
+          "global_normal_trigger_list",
+          "global_high_value_trigger_list",
+          "global_normal_trigger_weight_list",
+          "global_high_value_trigger_weight_list",
+          "enable_global_trigger_weight_adjust"
+        ]
+      },
+      "export": {
+        "item_attrs": [
+          "i2i_retr__trigger_pid"
+        ],
+        "results": [
+          "focal_i2i_retr__result"
+        ]
+      }
+    },
+    "pass_browse_set": true,
+    "reason": 4012
+  }

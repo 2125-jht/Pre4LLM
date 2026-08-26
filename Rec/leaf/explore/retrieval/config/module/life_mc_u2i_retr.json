@@ -1,0 +1,45 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_life_mc_u2i_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "life_mc_u2i_ann_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_mc_u2i_ann_service_name",
+        "param_type": "string",
+        "default_value": "grpc_lifeTabMcU2i",
+        "report_ab_hit": true
+      },
+      "life_mc_u2i_ann_service_retr_count": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_mc_u2i_ann_service_retr_count",
+        "param_type": "int",
+        "default_value": 1000,
+        "report_ab_hit": true
+      },
+      "life_mc_u2i_ann_service_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_mc_u2i_ann_service_bucket",
+        "param_type": "string",
+        "default_value": "photo",
+        "report_ab_hit": true
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "mc_u2i_user_embedding_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "life_tab_mc_u2i_ann__result"
+      ]
+    }
+  },
+  "reason": 10025
+}

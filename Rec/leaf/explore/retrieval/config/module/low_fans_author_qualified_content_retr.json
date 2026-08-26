@@ -1,0 +1,35 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_low_fans_author_qualified_content_common_retr", false],
+      "kess_service_name": ["low_fans_author_qualified_content_common_retr_service_name", "grpc_lowFansAuthorKnowledgeContentCommonRetrServer"],
+      "service_request_num": ["low_fans_author_qualified_content_common_retr_request_num", 500]
+    },
+    "constant": {
+      "service_timeout_ms": 50,
+      "enable_trim_user_info": 1
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "low_fans_author_qualified_content_retr__result"
+      ]
+    }
+  },
+  "reason": 3102,
+  "service_request_type": "default",
+  "trim_user_info": [
+    "browsed_photo_ids",
+    "user_profile_v1.video_playing_stat.photo_id",
+    "user_profile_v1.video_playing_stat.video_duration",
+    "user_profile_v1.video_playing_stat.playing_time",
+    "user_profile_v1.like_list.photo_id",
+    "user_profile_v1.comment_list.photo_id",
+    "user_profile_v1.forward_list.photo_id",
+    "user_profile_v1.collect_list.photo_id"
+  ]
+}

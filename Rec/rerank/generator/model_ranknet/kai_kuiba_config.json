@@ -1,0 +1,3876 @@
+{
+  "sign_feature_is_common": {
+    "position_idx3": false,
+    "pDurationMs_idx8": false,
+    "pPvtr_buck_idx3": false,
+    "pMusic_idx7": false,
+    "position_idx2": false,
+    "pDurationMs_idx7": false,
+    "pPvtr_buck_idx2": false,
+    "pMusic_idx6": false,
+    "pMmuContentId_idx6": false,
+    "pPwtd_idx4": false,
+    "pEmpFtr_idx2": false,
+    "pAgeHour_idx2": false,
+    "slide_wtd_weight_idx3": false,
+    "pMmuImgClusterV1_idx2": false,
+    "pHetuTagLevel1Id_idx7": false,
+    "position_idx8": false,
+    "avg_watchtime_idx5": false,
+    "pMusic_idx9": false,
+    "pPftr_idx5": false,
+    "pPwtd_idx3": false,
+    "pEmpFtr_idx1": false,
+    "slide_wtd_weight_idx2": false,
+    "pMmuImgClusterV1_idx1": false,
+    "pHetuTagLevel1Id_idx6": false,
+    "pAgeHour_idx1": false,
+    "slide_play_weight_idx3": false,
+    "pProvinceId_idx6": false,
+    "uFollowAids": false,
+    "slide_wtd_weight_idx4": false,
+    "user_view_list_hetu1": false,
+    "uRequestHour": false,
+    "pMcPsvtr_idx3": false,
+    "pMcPlvtr_idx1": false,
+    "pCurrentPage_idx1": false,
+    "pCityId_idx8": false,
+    "pEmpWtr_idx0": false,
+    "pPwtr_idx4": false,
+    "pMmuContentId_idx2": false,
+    "pHetuTagLevel2Id_idx9": false,
+    "uLikePids": false,
+    "fountainLikePids": false,
+    "pMusic_idx2": false,
+    "pMcPltr_idx3": false,
+    "slide_wtd_weight_idx1": false,
+    "pEmpFtr_idx5": false,
+    "pEmpCtr_idx0": false,
+    "pAgeHour_idx5": false,
+    "slide_play_weight_idx0": false,
+    "pProvinceId_idx3": false,
+    "aId_idx7": false,
+    "pHetuTagLevel1Id_idx3": false,
+    "uExpLongView": false,
+    "user_view_list_sv": false,
+    "pPctr_idx5": false,
+    "slide_wtd_label_idx4": false,
+    "pMmuImgClusterV3_idx3": false,
+    "pPltr_idx1": false,
+    "pContentLevel_idx5": false,
+    "position_idx6": false,
+    "pMmuContentId_idx4": false,
+    "uFollowPids": false,
+    "pDurationMs_idx0": false,
+    "pMmuContentId_idx9": false,
+    "pEmpHtr_idx4": false,
+    "pMcPctr_idx1": false,
+    "pId_idx5": false,
+    "uClickPids": false,
+    "pHetuTagLevel2Id_idx7": false,
+    "pMmuContentId_idx0": false,
+    "pContentLevel_idx6": false,
+    "uExpWatchTime": false,
+    "pPhtr_idx0": false,
+    "slide_wtd_label_idx3": false,
+    "pMmuImgClusterV3_idx2": false,
+    "pMmuImgClusterV3_idx4": false,
+    "slide_wtd_label_idx5": false,
+    "pPltr_idx0": false,
+    "pContentLevel_idx4": false,
+    "pCurrentPage_idx8": false,
+    "position_idx0": false,
+    "pDurationMs_idx5": false,
+    "pPvtr_buck_idx0": false,
+    "pPltr_idx2": false,
+    "avg_watchtime_idx0": false,
+    "pMcPltr_idx5": false,
+    "pAgeHour_idx7": false,
+    "pPvtr_idx5": false,
+    "pPsvtr_idx4": false,
+    "pMmuImgClusterV1_idx6": false,
+    "pPlvtr_idx2": false,
+    "slide_play_weight_idx4": false,
+    "pProvinceId_idx7": false,
+    "aId_idx5": false,
+    "fountainLongviewPids": false,
+    "user_view_list_hetu2": false,
+    "slide_wtd_weight_idx5": false,
+    "pAgeHour_idx4": false,
+    "pCityId_idx6": false,
+    "pPwtr_idx2": false,
+    "pEmpWtr_idx4": false,
+    "pCurrentPage_idx5": false,
+    "pMmuImgClusterV1_idx5": false,
+    "pPlvtr_idx1": false,
+    "uBasicAge": false,
+    "pHetuTagLevel2Id_idx6": false,
+    "slide_next_weight_idx5": false,
+    "pMmuImgClusterV1_idx3": false,
+    "pHetuTagLevel1Id_idx8": false,
+    "pAgeHour_idx3": false,
+    "pMmuContentId_idx5": false,
+    "pPsvtr_idx0": false,
+    "pPvtr_idx1": false,
+    "position_idx7": false,
+    "pMusic_idx8": false,
+    "pHetuTagLevel2Id_idx3": false,
+    "slide_next_weight_idx2": false,
+    "pPwtd_idx2": false,
+    "pPftr_idx4": false,
+    "pEmpFtr_idx0": false,
+    "aId_idx9": false,
+    "pMmuImgClusterV1_idx0": false,
+    "pHetuTagLevel1Id_idx5": false,
+    "pAgeHour_idx0": false,
+    "pContentLevel_idx8": false,
+    "pPhtr_idx2": false,
+    "pMcPwtr_idx5": false,
+    "pPftr_idx1": false,
+    "pUploadType_idx1": false,
+    "pMmuContentId_idx3": false,
+    "pContentLevel_idx3": false,
+    "pContentLevel_idx2": false,
+    "pMmuContentId_idx1": false,
+    "slide_next_label_idx3": false,
+    "pPwtr_idx1": false,
+    "pCityId_idx5": false,
+    "slide_next_weight_idx0": false,
+    "uExpClick": false,
+    "pHetuTagLevel2Id_idx1": false,
+    "pPcmtr_idx5": false,
+    "pHetuTagLevel1Id_idx1": false,
+    "pProvinceId_idx9": false,
+    "pMcPctr_idx4": false,
+    "pContentLevel_idx0": false,
+    "pPvtr_idx2": false,
+    "pPsvtr_idx1": false,
+    "pEmpWtr_idx1": false,
+    "pCityId_idx9": false,
+    "pPwtr_idx5": false,
+    "pCurrentPage_idx2": false,
+    "pMusic_idx0": false,
+    "pMcPctr_idx5": false,
+    "pEmpPtr_idx5": false,
+    "pMmuImgClusterV3_idx1": false,
+    "slide_wtd_label_idx2": false,
+    "pContentLevel_idx1": false,
+    "pProvinceId_idx8": false,
+    "slide_play_weight_idx5": false,
+    "pProvinceId_idx5": false,
+    "slide_play_weight_idx2": false,
+    "fountainEffviewPids": false,
+    "pPptr_idx0": false,
+    "pMmuImgClusterV3_idx5": false,
+    "pProvinceId_idx4": false,
+    "slide_play_weight_idx1": false,
+    "pMcPltr_idx1": false,
+    "pAgeHour_idx9": false,
+    "pEmpCtr_idx4": false,
+    "pPvtr_buck_idx5": false,
+    "position_idx5": false,
+    "pAgeHour_idx6": false,
+    "pEmpCtr_idx1": false,
+    "pPvtr_idx3": false,
+    "pPsvtr_idx2": false,
+    "pHetuTagLevel1Id_idx9": false,
+    "pMmuImgClusterV1_idx4": false,
+    "pPcmef_idx4": false,
+    "pPepstr_idx0": false,
+    "pMcPlvtr_idx3": false,
+    "pCurrentPage_idx4": false,
+    "pEmpWtr_idx3": false,
+    "pPcmef_idx2": false,
+    "pUploadType_idx8": false,
+    "pPptr_idx1": false,
+    "pMmuImgClusterV3_idx6": false,
+    "pEmpHtr_idx0": false,
+    "pPhtr_idx4": false,
+    "pEmpCmtr_idx4": false,
+    "position_idx1": false,
+    "pPvtr_buck_idx1": false,
+    "pDurationMs_idx6": false,
+    "pHetuTagLevel1Id_idx0": false,
+    "pCityId_idx1": false,
+    "pMcPctr_idx0": false,
+    "pEmpHtr_idx3": false,
+    "pPcmtr_idx3": false,
+    "pPptr_idx2": false,
+    "pMmuImgClusterV3_idx7": false,
+    "pMcPlvtr_idx5": false,
+    "uRequestWeekday": false,
+    "pPltr_idx3": false,
+    "avg_watchtime_idx1": false,
+    "pCityId_idx3": false,
+    "pPwtd_idx0": false,
+    "pPftr_idx2": false,
+    "user_view_list_pids": false,
+    "pEmpPtr_idx3": false,
+    "slide_wtd_label_idx0": false,
+    "pPcmtr_idx0": false,
+    "pMmuImgClusterV1_idx7": false,
+    "slide_next_label_idx2": false,
+    "pEmpLtr_idx2": false,
+    "slide_wtd_label_idx1": false,
+    "pMmuImgClusterV3_idx0": false,
+    "pEmpPtr_idx4": false,
+    "pMusic_idx3": false,
+    "pEmpPtr_idx2": false,
+    "avg_watchtime_idx2": false,
+    "pPltr_idx4": false,
+    "uProvinceId": false,
+    "pPcmtr_idx2": false,
+    "pMmuImgClusterV1_idx9": false,
+    "pCityId_idx0": false,
+    "pUploadType_idx7": false,
+    "pPcmef_idx1": false,
+    "pEmpFtr_idx3": false,
+    "pPwtd_idx5": false,
+    "pPctr_idx0": false,
+    "user_view_list_ev": false,
+    "pHetuTagLevel2Id_idx0": false,
+    "pPcmtr_idx4": false,
+    "pMcPwtr_idx3": false,
+    "pMcPsvtr_idx1": false,
+    "uId": false,
+    "pHetuTagLevel1Id_idx4": false,
+    "pHetuTagLevel2Id_idx2": false,
+    "slide_next_weight_idx1": false,
+    "pEmpPtr_idx0": false,
+    "pPlvtr_idx0": false,
+    "dId": false,
+    "pEmpLtr_idx0": false,
+    "pEmpPtr_idx1": false,
+    "slide_next_label_idx1": false,
+    "pMcPsvtr_idx2": false,
+    "pMusic_idx1": false,
+    "pCurrentPage_idx0": false,
+    "pCityId_idx7": false,
+    "pPwtr_idx3": false,
+    "pMcPltr_idx4": false,
+    "uCityId": false,
+    "pMmuContentId_idx7": false,
+    "aId_idx0": false,
+    "pUploadType_idx5": false,
+    "slide_next_weight_idx4": false,
+    "pHetuTagLevel2Id_idx5": false,
+    "pEmpFtr_idx4": false,
+    "slide_wtd_weight_idx0": false,
+    "uLikeAids": false,
+    "pEmpLtr_idx5": false,
+    "pMmuContentId_idx8": false,
+    "pPftr_idx0": false,
+    "pMcPwtr_idx4": false,
+    "pPhtr_idx1": false,
+    "pContentLevel_idx7": false,
+    "pPctr_idx4": false,
+    "pPcmef_idx0": false,
+    "pPlvtr_idx4": false,
+    "pMcPsvtr_idx5": false,
+    "uExpLike": false,
+    "aId_idx8": false,
+    "slide_next_label_idx4": false,
+    "pCurrentPage_idx9": false,
+    "fountainClickPids": false,
+    "pProvinceId_idx1": false,
+    "pPcmtr_idx1": false,
+    "pMmuImgClusterV1_idx8": false,
+    "pMcPlvtr_idx2": false,
+    "pPvtr_buck_idx4": false,
+    "position_idx4": false,
+    "pDurationMs_idx9": false,
+    "pHetuTagLevel2Id_idx8": false,
+    "pId_idx7": false,
+    "aId_idx2": false,
+    "fountainFollowAids": false,
+    "pPctr_idx2": false,
+    "avg_watchtime_idx4": false,
+    "pPlvtr_idx5": false,
+    "pDurationMs_idx2": false,
+    "pMcPltr_idx2": false,
+    "pId_idx0": false,
+    "pMmuImgClusterV3_idx9": false,
+    "pPptr_idx4": false,
+    "pPsvtr_idx3": false,
+    "pPvtr_idx4": false,
+    "pMcPctr_idx3": false,
+    "pId_idx3": false,
+    "uHatePids": false,
+    "pId_idx2": false,
+    "slide_next_weight_idx3": false,
+    "pHetuTagLevel2Id_idx4": false,
+    "pMcPltr_idx0": false,
+    "pAgeHour_idx8": false,
+    "pPlvtr_idx3": false,
+    "pMcPsvtr_idx0": false,
+    "position_idx9": false,
+    "pDurationMs_idx3": false,
+    "pEmpHtr_idx5": false,
+    "pMcPctr_idx2": false,
+    "pPhtr_idx3": false,
+    "pContentLevel_idx9": false,
+    "uGender": false,
+    "pHetuTagLevel1Id_idx2": false,
+    "pMmuImgClusterV3_idx8": false,
+    "pPptr_idx3": false,
+    "slide_next_label_idx5": false,
+    "pEmpLtr_idx1": false,
+    "pEmpHtr_idx1": false,
+    "pPhtr_idx5": false,
+    "pPptr_idx5": false,
+    "uExpFollow": false,
+    "pMcPwtr_idx2": false,
+    "pPcmef_idx3": false,
+    "pUploadType_idx0": false,
+    "pPcmef_idx5": false,
+    "pPctr_idx3": false,
+    "avg_watchtime_idx3": false,
+    "pPltr_idx5": false,
+    "pEmpWtr_idx5": false,
+    "pCurrentPage_idx6": false,
+    "pDurationMs_idx1": false,
+    "user_view_list_aids": false,
+    "user_view_list_lv": false,
+    "pEmpCmtr_idx2": false,
+    "pEmpCtr_idx5": false,
+    "pEmpLtr_idx4": false,
+    "pPwtr_idx0": false,
+    "pCityId_idx4": false,
+    "pCurrentPage_idx7": false,
+    "pMcPlvtr_idx4": false,
+    "pPftr_idx3": false,
+    "pPwtd_idx1": false,
+    "pId_idx6": false,
+    "pCityId_idx2": false,
+    "pMcPlvtr_idx0": false,
+    "pId_idx9": false,
+    "pPvtr_idx0": false,
+    "pMusic_idx5": false,
+    "pPsvtr_idx5": false,
+    "slide_next_label_idx0": false,
+    "pMusic_idx4": false,
+    "pPepstr_idx1": false,
+    "pPepstr_idx2": false,
+    "pPepstr_idx3": false,
+    "pPepstr_idx4": false,
+    "pPepstr_idx5": false,
+    "pPctr_idx1": false,
+    "pProvinceId_idx2": false,
+    "pMcPwtr_idx0": false,
+    "pMcPwtr_idx1": false,
+    "pUploadType_idx6": false,
+    "pId_idx1": false,
+    "pDurationMs_idx4": false,
+    "pEmpCtr_idx2": false,
+    "pEmpCtr_idx3": false,
+    "pEmpLtr_idx3": false,
+    "pMcPsvtr_idx4": false,
+    "pCurrentPage_idx3": false,
+    "pEmpWtr_idx2": false,
+    "pEmpCmtr_idx1": false,
+    "pEmpCmtr_idx0": false,
+    "pEmpCmtr_idx3": false,
+    "pEmpCmtr_idx5": false,
+    "pEmpHtr_idx2": false,
+    "pId_idx4": false,
+    "pProvinceId_idx0": false,
+    "pId_idx8": false,
+    "aId_idx1": false,
+    "aId_idx3": false,
+    "aId_idx4": false,
+    "aId_idx6": false,
+    "pUploadType_idx2": false,
+    "pUploadType_idx3": false,
+    "pUploadType_idx4": false,
+    "pUploadType_idx9": false
+  },
+  "sign_feature_slot": {
+    "pEmpPtr_idx3": 532,
+    "pContentLevel_idx0": 539,
+    "pEmpFtr_idx1": 529,
+    "pMmuImgClusterV1_idx1": 542,
+    "pHetuTagLevel1Id_idx6": 129,
+    "pAgeHour_idx1": 548,
+    "pPvtr_buck_idx5": 609,
+    "avg_watchtime_idx5": 561,
+    "pMusic_idx9": 540,
+    "pProvinceId_idx8": 537,
+    "uGender": 69,
+    "pHetuTagLevel1Id_idx0": 129,
+    "pMmuContentId_idx2": 543,
+    "pHetuTagLevel2Id_idx9": 130,
+    "pEmpFtr_idx5": 529,
+    "pEmpCtr_idx0": 526,
+    "pAgeHour_idx5": 548,
+    "pEmpHtr_idx1": 531,
+    "pProvinceId_idx3": 537,
+    "aId_idx7": 128,
+    "pHetuTagLevel1Id_idx3": 129,
+    "uExpLongView": 61,
+    "user_view_list_sv": 323,
+    "pPvtr_buck_idx4": 609,
+    "pDurationMs_idx9": 133,
+    "pMmuImgClusterV3_idx3": 142,
+    "pContentLevel_idx5": 539,
+    "avg_watchtime_idx2": 561,
+    "pMusic_idx6": 540,
+    "pDurationMs_idx7": 133,
+    "pPvtr_buck_idx2": 609,
+    "uLikePids": 121,
+    "fountainLikePids": 64,
+    "pMusic_idx2": 540,
+    "pPvtr_buck_idx3": 609,
+    "pDurationMs_idx8": 133,
+    "pMmuImgClusterV3_idx2": 142,
+    "pMusic_idx5": 540,
+    "avg_watchtime_idx1": 561,
+    "pDurationMs_idx6": 133,
+    "pPvtr_buck_idx1": 609,
+    "pDurationMs_idx1": 133,
+    "user_view_list_aids": 128,
+    "pContentLevel_idx4": 539,
+    "pContentLevel_idx7": 539,
+    "pMmuImgClusterV1_idx8": 542,
+    "pCurrentPage_idx8": 546,
+    "pAgeHour_idx7": 548,
+    "user_view_list_pids": 26,
+    "pEmpHtr_idx5": 531,
+    "pProvinceId_idx7": 537,
+    "aId_idx5": 128,
+    "fountainLongviewPids": 66,
+    "pMmuImgClusterV1_idx4": 542,
+    "pHetuTagLevel1Id_idx9": 129,
+    "pAgeHour_idx4": 548,
+    "fountainFollowAids": 65,
+    "pCityId_idx8": 536,
+    "pCurrentPage_idx1": 546,
+    "pEmpWtr_idx0": 528,
+    "pMmuContentId_idx0": 543,
+    "pHetuTagLevel2Id_idx7": 130,
+    "pContentLevel_idx6": 539,
+    "uExpWatchTime": 62,
+    "pMmuImgClusterV1_idx3": 542,
+    "pHetuTagLevel1Id_idx8": 129,
+    "pAgeHour_idx3": 548,
+    "pMmuImgClusterV3_idx4": 142,
+    "pCityId_idx2": 536,
+    "pUploadType_idx1": 535,
+    "pMusic_idx7": 540,
+    "pMmuImgClusterV1_idx2": 542,
+    "pHetuTagLevel1Id_idx7": 129,
+    "pEmpFtr_idx2": 529,
+    "pAgeHour_idx2": 548,
+    "avg_watchtime_idx4": 561,
+    "pMusic_idx8": 540,
+    "aId_idx9": 128,
+    "pMmuImgClusterV1_idx0": 542,
+    "pHetuTagLevel1Id_idx5": 129,
+    "pEmpFtr_idx0": 529,
+    "pAgeHour_idx0": 548,
+    "pMmuContentId_idx6": 543,
+    "pMmuContentId_idx4": 543,
+    "pMusic_idx3": 540,
+    "pMmuContentId_idx3": 543,
+    "pHetuTagLevel2Id_idx8": 130,
+    "pMmuContentId_idx1": 543,
+    "pMmuContentId_idx5": 543,
+    "uFollowPids": 122,
+    "pDurationMs_idx0": 133,
+    "pMmuContentId_idx9": 543,
+    "pId_idx5": 26,
+    "uClickPids": 120,
+    "pCurrentPage_idx4": 546,
+    "pEmpWtr_idx3": 528,
+    "pProvinceId_idx9": 537,
+    "pHetuTagLevel1Id_idx1": 129,
+    "pEmpWtr_idx5": 528,
+    "pCurrentPage_idx6": 546,
+    "pMmuImgClusterV1_idx6": 542,
+    "uExpFollow": 60,
+    "pEmpPtr_idx5": 532,
+    "pMmuImgClusterV3_idx1": 142,
+    "pEmpWtr_idx4": 528,
+    "pCurrentPage_idx5": 546,
+    "pMmuImgClusterV1_idx5": 542,
+    "pPvtr_buck_idx0": 609,
+    "pDurationMs_idx5": 133,
+    "pUploadType_idx0": 535,
+    "pCityId_idx1": 536,
+    "pEmpHtr_idx4": 531,
+    "aId_idx2": 128,
+    "uFollowAids": 124,
+    "pProvinceId_idx6": 537,
+    "pEmpWtr_idx1": 528,
+    "pCityId_idx9": 536,
+    "pCurrentPage_idx2": 546,
+    "pCityId_idx0": 536,
+    "pContentLevel_idx3": 539,
+    "pMmuImgClusterV3_idx0": 142,
+    "pEmpPtr_idx4": 532,
+    "pContentLevel_idx1": 539,
+    "fountainEffviewPids": 67,
+    "pMmuImgClusterV3_idx5": 142,
+    "pAgeHour_idx9": 548,
+    "pEmpCtr_idx4": 526,
+    "pUploadType_idx8": 535,
+    "pCityId_idx5": 536,
+    "pAgeHour_idx6": 548,
+    "pEmpCtr_idx1": 526,
+    "pEmpCmtr_idx4": 530,
+    "user_view_list_hetu2": 325,
+    "pMmuImgClusterV3_idx7": 142,
+    "uProvinceId": 54,
+    "user_view_list_hetu1": 324,
+    "uBasicAge": 68,
+    "pHetuTagLevel2Id_idx6": 130,
+    "pEmpHtr_idx3": 531,
+    "pCurrentPage_idx7": 546,
+    "pMmuImgClusterV1_idx7": 542,
+    "pEmpLtr_idx2": 527,
+    "pEmpPtr_idx2": 532,
+    "fountainClickPids": 63,
+    "pCurrentPage_idx9": 546,
+    "pMmuImgClusterV1_idx9": 542,
+    "pContentLevel_idx2": 539,
+    "uRequestHour": 56,
+    "uHatePids": 123,
+    "pId_idx2": 26,
+    "user_view_list_ev": 321,
+    "pUploadType_idx7": 535,
+    "pMmuContentId_idx8": 543,
+    "uRequestWeekday": 57,
+    "pMusic_idx4": 540,
+    "avg_watchtime_idx0": 561,
+    "uLikeAids": 125,
+    "pEmpPtr_idx0": 532,
+    "dId": 34,
+    "pEmpLtr_idx0": 527,
+    "pHetuTagLevel1Id_idx4": 129,
+    "uId": 38,
+    "aId_idx8": 128,
+    "pEmpPtr_idx1": 532,
+    "pCityId_idx3": 536,
+    "pMmuImgClusterV3_idx6": 142,
+    "pMusic_idx1": 540,
+    "pCurrentPage_idx0": 546,
+    "pCityId_idx7": 536,
+    "uCityId": 53,
+    "pMmuContentId_idx7": 543,
+    "aId_idx0": 128,
+    "pCityId_idx6": 536,
+    "pUploadType_idx5": 535,
+    "pHetuTagLevel2Id_idx2": 130,
+    "pHetuTagLevel2Id_idx5": 130,
+    "pEmpLtr_idx5": 527,
+    "uExpLike": 59,
+    "pEmpLtr_idx1": 527,
+    "pProvinceId_idx1": 537,
+    "pHetuTagLevel2Id_idx3": 130,
+    "pId_idx7": 26,
+    "pMusic_idx0": 540,
+    "uExpClick": 58,
+    "pHetuTagLevel2Id_idx1": 130,
+    "pDurationMs_idx2": 133,
+    "pId_idx0": 26,
+    "pId_idx3": 26,
+    "pHetuTagLevel2Id_idx0": 130,
+    "pHetuTagLevel2Id_idx4": 130,
+    "pAgeHour_idx8": 548,
+    "pDurationMs_idx3": 133,
+    "pContentLevel_idx9": 539,
+    "pHetuTagLevel1Id_idx2": 129,
+    "pEmpHtr_idx0": 531,
+    "pEmpCmtr_idx2": 530,
+    "user_view_list_lv": 322,
+    "pEmpCtr_idx5": 526,
+    "pEmpLtr_idx4": 527,
+    "pCityId_idx4": 536,
+    "pId_idx6": 26,
+    "pId_idx9": 26,
+    "pMmuImgClusterV3_idx8": 142,
+    "pProvinceId_idx2": 537,
+    "pUploadType_idx6": 535,
+    "pId_idx1": 26,
+    "pDurationMs_idx4": 133,
+    "pEmpCtr_idx2": 526,
+    "pEmpCtr_idx3": 526,
+    "pEmpLtr_idx3": 527,
+    "pCurrentPage_idx3": 546,
+    "pEmpWtr_idx2": 528,
+    "pMmuImgClusterV3_idx9": 142,
+    "pEmpFtr_idx4": 529,
+    "pEmpCmtr_idx1": 530,
+    "pEmpCmtr_idx0": 530,
+    "pEmpCmtr_idx3": 530,
+    "pEmpCmtr_idx5": 530,
+    "pEmpHtr_idx2": 531,
+    "pId_idx4": 26,
+    "pProvinceId_idx0": 537,
+    "pId_idx8": 26,
+    "aId_idx1": 128,
+    "aId_idx3": 128,
+    "aId_idx4": 128,
+    "aId_idx6": 128,
+    "pEmpFtr_idx3": 529,
+    "pUploadType_idx2": 535,
+    "pUploadType_idx3": 535,
+    "pUploadType_idx4": 535,
+    "pUploadType_idx9": 535,
+    "avg_watchtime_idx3": 561,
+    "pProvinceId_idx4": 537,
+    "pContentLevel_idx8": 539,
+    "pProvinceId_idx5": 537
+  },
+  "sign_feature_dim": {
+    "position_idx3": 1,
+    "pDurationMs_idx8": 4,
+    "pPvtr_buck_idx3": 8,
+    "pMusic_idx7": 8,
+    "position_idx2": 1,
+    "pDurationMs_idx7": 4,
+    "pPvtr_buck_idx2": 8,
+    "pMusic_idx6": 8,
+    "pMmuContentId_idx6": 8,
+    "pPwtd_idx4": 1,
+    "pEmpFtr_idx2": 8,
+    "pAgeHour_idx2": 8,
+    "slide_wtd_weight_idx3": 1,
+    "pMmuImgClusterV1_idx2": 8,
+    "pHetuTagLevel1Id_idx7": 8,
+    "position_idx8": 1,
+    "avg_watchtime_idx5": 8,
+    "pMusic_idx9": 8,
+    "pPftr_idx5": 1,
+    "pPwtd_idx3": 1,
+    "pEmpFtr_idx1": 8,
+    "slide_wtd_weight_idx2": 1,
+    "pMmuImgClusterV1_idx1": 8,
+    "pHetuTagLevel1Id_idx6": 8,
+    "pAgeHour_idx1": 8,
+    "slide_play_weight_idx3": 1,
+    "pProvinceId_idx6": 8,
+    "uFollowAids": 32,
+    "slide_wtd_weight_idx4": 1,
+    "user_view_list_hetu1": 32,
+    "uRequestHour": 4,
+    "pMcPsvtr_idx3": 1,
+    "pMcPlvtr_idx1": 1,
+    "pCurrentPage_idx1": 8,
+    "pCityId_idx8": 8,
+    "pEmpWtr_idx0": 8,
+    "pPwtr_idx4": 1,
+    "pMmuContentId_idx2": 8,
+    "pHetuTagLevel2Id_idx9": 8,
+    "uLikePids": 32,
+    "fountainLikePids": 32,
+    "pMusic_idx2": 8,
+    "pMcPltr_idx3": 1,
+    "slide_wtd_weight_idx1": 1,
+    "pEmpFtr_idx5": 8,
+    "pEmpCtr_idx0": 8,
+    "pAgeHour_idx5": 8,
+    "slide_play_weight_idx0": 1,
+    "pProvinceId_idx3": 8,
+    "aId_idx7": 32,
+    "pHetuTagLevel1Id_idx3": 8,
+    "uExpLongView": 8,
+    "user_view_list_sv": 32,
+    "pPctr_idx5": 1,
+    "slide_wtd_label_idx4": 1,
+    "pMmuImgClusterV3_idx3": 8,
+    "pPltr_idx1": 1,
+    "pContentLevel_idx5": 2,
+    "position_idx6": 1,
+    "pMmuContentId_idx4": 8,
+    "uFollowPids": 32,
+    "pDurationMs_idx0": 4,
+    "pMmuContentId_idx9": 8,
+    "pEmpHtr_idx4": 8,
+    "pMcPctr_idx1": 1,
+    "pId_idx5": 32,
+    "uClickPids": 32,
+    "pHetuTagLevel2Id_idx7": 8,
+    "pMmuContentId_idx0": 8,
+    "pContentLevel_idx6": 2,
+    "uExpWatchTime": 8,
+    "pPhtr_idx0": 1,
+    "slide_wtd_label_idx3": 1,
+    "pMmuImgClusterV3_idx2": 8,
+    "pMmuImgClusterV3_idx4": 8,
+    "slide_wtd_label_idx5": 1,
+    "pPltr_idx0": 1,
+    "pContentLevel_idx4": 2,
+    "pCurrentPage_idx8": 8,
+    "position_idx0": 1,
+    "pDurationMs_idx5": 4,
+    "pPvtr_buck_idx0": 8,
+    "pPltr_idx2": 1,
+    "avg_watchtime_idx0": 8,
+    "pMcPltr_idx5": 1,
+    "pAgeHour_idx7": 8,
+    "pPvtr_idx5": 1,
+    "pPsvtr_idx4": 1,
+    "pMmuImgClusterV1_idx6": 8,
+    "pPlvtr_idx2": 1,
+    "slide_play_weight_idx4": 1,
+    "pProvinceId_idx7": 8,
+    "aId_idx5": 32,
+    "fountainLongviewPids": 32,
+    "user_view_list_hetu2": 32,
+    "slide_wtd_weight_idx5": 1,
+    "pAgeHour_idx4": 8,
+    "pCityId_idx6": 8,
+    "pPwtr_idx2": 1,
+    "pEmpWtr_idx4": 8,
+    "pCurrentPage_idx5": 8,
+    "pMmuImgClusterV1_idx5": 8,
+    "pPlvtr_idx1": 1,
+    "uBasicAge": 4,
+    "pHetuTagLevel2Id_idx6": 8,
+    "slide_next_weight_idx5": 1,
+    "pMmuImgClusterV1_idx3": 8,
+    "pHetuTagLevel1Id_idx8": 8,
+    "pAgeHour_idx3": 8,
+    "pMmuContentId_idx5": 8,
+    "pPsvtr_idx0": 1,
+    "pPvtr_idx1": 1,
+    "position_idx7": 1,
+    "pMusic_idx8": 8,
+    "pHetuTagLevel2Id_idx3": 8,
+    "slide_next_weight_idx2": 1,
+    "pPwtd_idx2": 1,
+    "pPftr_idx4": 1,
+    "pEmpFtr_idx0": 8,
+    "aId_idx9": 32,
+    "pMmuImgClusterV1_idx0": 8,
+    "pHetuTagLevel1Id_idx5": 8,
+    "pAgeHour_idx0": 8,
+    "pContentLevel_idx8": 2,
+    "pPhtr_idx2": 1,
+    "pMcPwtr_idx5": 1,
+    "pPftr_idx1": 1,
+    "pUploadType_idx1": 8,
+    "pMmuContentId_idx3": 8,
+    "pContentLevel_idx3": 2,
+    "pContentLevel_idx2": 2,
+    "pMmuContentId_idx1": 8,
+    "slide_next_label_idx3": 1,
+    "pPwtr_idx1": 1,
+    "pCityId_idx5": 8,
+    "slide_next_weight_idx0": 1,
+    "uExpClick": 8,
+    "pHetuTagLevel2Id_idx1": 8,
+    "pPcmtr_idx5": 1,
+    "pHetuTagLevel1Id_idx1": 8,
+    "pProvinceId_idx9": 8,
+    "pMcPctr_idx4": 1,
+    "pContentLevel_idx0": 2,
+    "pPvtr_idx2": 1,
+    "pPsvtr_idx1": 1,
+    "pEmpWtr_idx1": 8,
+    "pCityId_idx9": 8,
+    "pPwtr_idx5": 1,
+    "pCurrentPage_idx2": 8,
+    "pMusic_idx0": 8,
+    "pMcPctr_idx5": 1,
+    "pEmpPtr_idx5": 8,
+    "pMmuImgClusterV3_idx1": 8,
+    "slide_wtd_label_idx2": 1,
+    "pContentLevel_idx1": 2,
+    "pProvinceId_idx8": 8,
+    "slide_play_weight_idx5": 1,
+    "pProvinceId_idx5": 8,
+    "slide_play_weight_idx2": 1,
+    "fountainEffviewPids": 32,
+    "pPptr_idx0": 1,
+    "pMmuImgClusterV3_idx5": 8,
+    "pProvinceId_idx4": 8,
+    "slide_play_weight_idx1": 1,
+    "pMcPltr_idx1": 1,
+    "pAgeHour_idx9": 8,
+    "pEmpCtr_idx4": 8,
+    "pPvtr_buck_idx5": 8,
+    "position_idx5": 1,
+    "pAgeHour_idx6": 8,
+    "pEmpCtr_idx1": 8,
+    "pPvtr_idx3": 1,
+    "pPsvtr_idx2": 1,
+    "pHetuTagLevel1Id_idx9": 8,
+    "pMmuImgClusterV1_idx4": 8,
+    "pPcmef_idx4": 1,
+    "pPepstr_idx0": 1,
+    "pMcPlvtr_idx3": 1,
+    "pCurrentPage_idx4": 8,
+    "pEmpWtr_idx3": 8,
+    "pPcmef_idx2": 1,
+    "pUploadType_idx8": 8,
+    "pPptr_idx1": 1,
+    "pMmuImgClusterV3_idx6": 8,
+    "pEmpHtr_idx0": 8,
+    "pPhtr_idx4": 1,
+    "pEmpCmtr_idx4": 8,
+    "position_idx1": 1,
+    "pPvtr_buck_idx1": 8,
+    "pDurationMs_idx6": 4,
+    "pHetuTagLevel1Id_idx0": 8,
+    "pCityId_idx1": 8,
+    "pMcPctr_idx0": 1,
+    "pEmpHtr_idx3": 8,
+    "pPcmtr_idx3": 1,
+    "pPptr_idx2": 1,
+    "pMmuImgClusterV3_idx7": 8,
+    "pMcPlvtr_idx5": 1,
+    "uRequestWeekday": 4,
+    "pPltr_idx3": 1,
+    "avg_watchtime_idx1": 8,
+    "pCityId_idx3": 8,
+    "pPwtd_idx0": 1,
+    "pPftr_idx2": 1,
+    "user_view_list_pids": 32,
+    "pEmpPtr_idx3": 8,
+    "slide_wtd_label_idx0": 1,
+    "pPcmtr_idx0": 1,
+    "pMmuImgClusterV1_idx7": 8,
+    "slide_next_label_idx2": 1,
+    "pEmpLtr_idx2": 8,
+    "slide_wtd_label_idx1": 1,
+    "pMmuImgClusterV3_idx0": 8,
+    "pEmpPtr_idx4": 8,
+    "pMusic_idx3": 8,
+    "pEmpPtr_idx2": 8,
+    "avg_watchtime_idx2": 8,
+    "pPltr_idx4": 1,
+    "uProvinceId": 4,
+    "pPcmtr_idx2": 1,
+    "pMmuImgClusterV1_idx9": 8,
+    "pCityId_idx0": 8,
+    "pUploadType_idx7": 8,
+    "pPcmef_idx1": 1,
+    "pEmpFtr_idx3": 8,
+    "pPwtd_idx5": 1,
+    "pPctr_idx0": 1,
+    "user_view_list_ev": 32,
+    "pHetuTagLevel2Id_idx0": 8,
+    "pPcmtr_idx4": 1,
+    "pMcPwtr_idx3": 1,
+    "pMcPsvtr_idx1": 1,
+    "uId": 32,
+    "pHetuTagLevel1Id_idx4": 8,
+    "pHetuTagLevel2Id_idx2": 8,
+    "slide_next_weight_idx1": 1,
+    "pEmpPtr_idx0": 8,
+    "pPlvtr_idx0": 1,
+    "dId": 32,
+    "pEmpLtr_idx0": 8,
+    "pEmpPtr_idx1": 8,
+    "slide_next_label_idx1": 1,
+    "pMcPsvtr_idx2": 1,
+    "pMusic_idx1": 8,
+    "pCurrentPage_idx0": 8,
+    "pCityId_idx7": 8,
+    "pPwtr_idx3": 1,
+    "pMcPltr_idx4": 1,
+    "uCityId": 4,
+    "pMmuContentId_idx7": 8,
+    "aId_idx0": 32,
+    "pUploadType_idx5": 8,
+    "slide_next_weight_idx4": 1,
+    "pHetuTagLevel2Id_idx5": 8,
+    "pEmpFtr_idx4": 8,
+    "slide_wtd_weight_idx0": 1,
+    "uLikeAids": 32,
+    "pEmpLtr_idx5": 8,
+    "pMmuContentId_idx8": 8,
+    "pPftr_idx0": 1,
+    "pMcPwtr_idx4": 1,
+    "pPhtr_idx1": 1,
+    "pContentLevel_idx7": 2,
+    "pPctr_idx4": 1,
+    "pPcmef_idx0": 1,
+    "pPlvtr_idx4": 1,
+    "pMcPsvtr_idx5": 1,
+    "uExpLike": 8,
+    "aId_idx8": 32,
+    "slide_next_label_idx4": 1,
+    "pCurrentPage_idx9": 8,
+    "fountainClickPids": 32,
+    "pProvinceId_idx1": 8,
+    "pPcmtr_idx1": 1,
+    "pMmuImgClusterV1_idx8": 8,
+    "pMcPlvtr_idx2": 1,
+    "pPvtr_buck_idx4": 8,
+    "position_idx4": 1,
+    "pDurationMs_idx9": 4,
+    "pHetuTagLevel2Id_idx8": 8,
+    "pId_idx7": 32,
+    "aId_idx2": 32,
+    "fountainFollowAids": 32,
+    "pPctr_idx2": 1,
+    "avg_watchtime_idx4": 8,
+    "pPlvtr_idx5": 1,
+    "pDurationMs_idx2": 4,
+    "pMcPltr_idx2": 1,
+    "pId_idx0": 32,
+    "pMmuImgClusterV3_idx9": 8,
+    "pPptr_idx4": 1,
+    "pPsvtr_idx3": 1,
+    "pPvtr_idx4": 1,
+    "pMcPctr_idx3": 1,
+    "pId_idx3": 32,
+    "uHatePids": 32,
+    "pId_idx2": 32,
+    "slide_next_weight_idx3": 1,
+    "pHetuTagLevel2Id_idx4": 8,
+    "pMcPltr_idx0": 1,
+    "pAgeHour_idx8": 8,
+    "pPlvtr_idx3": 1,
+    "pMcPsvtr_idx0": 1,
+    "position_idx9": 1,
+    "pDurationMs_idx3": 4,
+    "pEmpHtr_idx5": 8,
+    "pMcPctr_idx2": 1,
+    "pPhtr_idx3": 1,
+    "pContentLevel_idx9": 2,
+    "uGender": 4,
+    "pHetuTagLevel1Id_idx2": 8,
+    "pMmuImgClusterV3_idx8": 8,
+    "pPptr_idx3": 1,
+    "slide_next_label_idx5": 1,
+    "pEmpLtr_idx1": 8,
+    "pEmpHtr_idx1": 8,
+    "pPhtr_idx5": 1,
+    "pPptr_idx5": 1,
+    "uExpFollow": 8,
+    "pMcPwtr_idx2": 1,
+    "pPcmef_idx3": 1,
+    "pUploadType_idx0": 8,
+    "pPcmef_idx5": 1,
+    "pPctr_idx3": 1,
+    "avg_watchtime_idx3": 8,
+    "pPltr_idx5": 1,
+    "pEmpWtr_idx5": 8,
+    "pCurrentPage_idx6": 8,
+    "pDurationMs_idx1": 4,
+    "user_view_list_aids": 32,
+    "user_view_list_lv": 32,
+    "pEmpCmtr_idx2": 8,
+    "pEmpCtr_idx5": 8,
+    "pEmpLtr_idx4": 8,
+    "pPwtr_idx0": 1,
+    "pCityId_idx4": 8,
+    "pCurrentPage_idx7": 8,
+    "pMcPlvtr_idx4": 1,
+    "pPftr_idx3": 1,
+    "pPwtd_idx1": 1,
+    "pId_idx6": 32,
+    "pCityId_idx2": 8,
+    "pMcPlvtr_idx0": 1,
+    "pId_idx9": 32,
+    "pPvtr_idx0": 1,
+    "pMusic_idx5": 8,
+    "pPsvtr_idx5": 1,
+    "slide_next_label_idx0": 1,
+    "pMusic_idx4": 8,
+    "pPepstr_idx1": 1,
+    "pPepstr_idx2": 1,
+    "pPepstr_idx3": 1,
+    "pPepstr_idx4": 1,
+    "pPepstr_idx5": 1,
+    "pPctr_idx1": 1,
+    "pProvinceId_idx2": 8,
+    "pMcPwtr_idx0": 1,
+    "pMcPwtr_idx1": 1,
+    "pUploadType_idx6": 8,
+    "pId_idx1": 32,
+    "pDurationMs_idx4": 4,
+    "pEmpCtr_idx2": 8,
+    "pEmpCtr_idx3": 8,
+    "pEmpLtr_idx3": 8,
+    "pMcPsvtr_idx4": 1,
+    "pCurrentPage_idx3": 8,
+    "pEmpWtr_idx2": 8,
+    "pEmpCmtr_idx1": 8,
+    "pEmpCmtr_idx0": 8,
+    "pEmpCmtr_idx3": 8,
+    "pEmpCmtr_idx5": 8,
+    "pEmpHtr_idx2": 8,
+    "pId_idx4": 32,
+    "pProvinceId_idx0": 8,
+    "pId_idx8": 32,
+    "aId_idx1": 32,
+    "aId_idx3": 32,
+    "aId_idx4": 32,
+    "aId_idx6": 32,
+    "pUploadType_idx2": 8,
+    "pUploadType_idx3": 8,
+    "pUploadType_idx4": 8,
+    "pUploadType_idx9": 8
+  },
+  "loss_functions": {
+    "slide_next_6": {
+      "auc_uid_attr": "uId",
+      "auc_item_attr": "",
+      "sparse_inputs": [
+        "uId",
+        "dId",
+        "uBasicAge",
+        "uGender",
+        "uCityId",
+        "uProvinceId",
+        "uRequestHour",
+        "uRequestWeekday",
+        "uExpClick",
+        "uExpLike",
+        "uExpFollow",
+        "uExpLongView",
+        "uExpWatchTime",
+        "uClickPids",
+        "uLikePids",
+        "uFollowPids",
+        "uHatePids",
+        "uFollowAids",
+        "uLikeAids",
+        "fountainClickPids",
+        "fountainLikePids",
+        "fountainFollowAids",
+        "fountainLongviewPids",
+        "fountainEffviewPids",
+        "user_view_list_pids",
+        "user_view_list_aids",
+        "user_view_list_ev",
+        "user_view_list_lv",
+        "user_view_list_sv",
+        "user_view_list_hetu1",
+        "user_view_list_hetu2",
+        "pPvtr_buck_idx0",
+        "pEmpCtr_idx0",
+        "pEmpLtr_idx0",
+        "pEmpWtr_idx0",
+        "pEmpFtr_idx0",
+        "pEmpCmtr_idx0",
+        "pEmpHtr_idx0",
+        "pEmpPtr_idx0",
+        "avg_watchtime_idx0",
+        "pId_idx0",
+        "aId_idx0",
+        "pDurationMs_idx0",
+        "pUploadType_idx0",
+        "pCityId_idx0",
+        "pProvinceId_idx0",
+        "pContentLevel_idx0",
+        "pMusic_idx0",
+        "pMmuImgClusterV1_idx0",
+        "pMmuImgClusterV3_idx0",
+        "pMmuContentId_idx0",
+        "pHetuTagLevel1Id_idx0",
+        "pHetuTagLevel2Id_idx0",
+        "pCurrentPage_idx0",
+        "pAgeHour_idx0",
+        "pPvtr_buck_idx1",
+        "pEmpCtr_idx1",
+        "pEmpLtr_idx1",
+        "pEmpWtr_idx1",
+        "pEmpFtr_idx1",
+        "pEmpCmtr_idx1",
+        "pEmpHtr_idx1",
+        "pEmpPtr_idx1",
+        "avg_watchtime_idx1",
+        "pId_idx1",
+        "aId_idx1",
+        "pDurationMs_idx1",
+        "pUploadType_idx1",
+        "pCityId_idx1",
+        "pProvinceId_idx1",
+        "pContentLevel_idx1",
+        "pMusic_idx1",
+        "pMmuImgClusterV1_idx1",
+        "pMmuImgClusterV3_idx1",
+        "pMmuContentId_idx1",
+        "pHetuTagLevel1Id_idx1",
+        "pHetuTagLevel2Id_idx1",
+        "pCurrentPage_idx1",
+        "pAgeHour_idx1",
+        "pPvtr_buck_idx2",
+        "pEmpCtr_idx2",
+        "pEmpLtr_idx2",
+        "pEmpWtr_idx2",
+        "pEmpFtr_idx2",
+        "pEmpCmtr_idx2",
+        "pEmpHtr_idx2",
+        "pEmpPtr_idx2",
+        "avg_watchtime_idx2",
+        "pId_idx2",
+        "aId_idx2",
+        "pDurationMs_idx2",
+        "pUploadType_idx2",
+        "pCityId_idx2",
+        "pProvinceId_idx2",
+        "pContentLevel_idx2",
+        "pMusic_idx2",
+        "pMmuImgClusterV1_idx2",
+        "pMmuImgClusterV3_idx2",
+        "pMmuContentId_idx2",
+        "pHetuTagLevel1Id_idx2",
+        "pHetuTagLevel2Id_idx2",
+        "pCurrentPage_idx2",
+        "pAgeHour_idx2",
+        "pPvtr_buck_idx3",
+        "pEmpCtr_idx3",
+        "pEmpLtr_idx3",
+        "pEmpWtr_idx3",
+        "pEmpFtr_idx3",
+        "pEmpCmtr_idx3",
+        "pEmpHtr_idx3",
+        "pEmpPtr_idx3",
+        "avg_watchtime_idx3",
+        "pId_idx3",
+        "aId_idx3",
+        "pDurationMs_idx3",
+        "pUploadType_idx3",
+        "pCityId_idx3",
+        "pProvinceId_idx3",
+        "pContentLevel_idx3",
+        "pMusic_idx3",
+        "pMmuImgClusterV1_idx3",
+        "pMmuImgClusterV3_idx3",
+        "pMmuContentId_idx3",
+        "pHetuTagLevel1Id_idx3",
+        "pHetuTagLevel2Id_idx3",
+        "pCurrentPage_idx3",
+        "pAgeHour_idx3",
+        "pPvtr_buck_idx4",
+        "pEmpCtr_idx4",
+        "pEmpLtr_idx4",
+        "pEmpWtr_idx4",
+        "pEmpFtr_idx4",
+        "pEmpCmtr_idx4",
+        "pEmpHtr_idx4",
+        "pEmpPtr_idx4",
+        "avg_watchtime_idx4",
+        "pId_idx4",
+        "aId_idx4",
+        "pDurationMs_idx4",
+        "pUploadType_idx4",
+        "pCityId_idx4",
+        "pProvinceId_idx4",
+        "pContentLevel_idx4",
+        "pMusic_idx4",
+        "pMmuImgClusterV1_idx4",
+        "pMmuImgClusterV3_idx4",
+        "pMmuContentId_idx4",
+        "pHetuTagLevel1Id_idx4",
+        "pHetuTagLevel2Id_idx4",
+        "pCurrentPage_idx4",
+        "pAgeHour_idx4",
+        "pPvtr_buck_idx5",
+        "pEmpCtr_idx5",
+        "pEmpLtr_idx5",
+        "pEmpWtr_idx5",
+        "pEmpFtr_idx5",
+        "pEmpCmtr_idx5",
+        "pEmpHtr_idx5",
+        "pEmpPtr_idx5",
+        "avg_watchtime_idx5",
+        "pId_idx5",
+        "aId_idx5",
+        "pDurationMs_idx5",
+        "pUploadType_idx5",
+        "pCityId_idx5",
+        "pProvinceId_idx5",
+        "pContentLevel_idx5",
+        "pMusic_idx5",
+        "pMmuImgClusterV1_idx5",
+        "pMmuImgClusterV3_idx5",
+        "pMmuContentId_idx5",
+        "pHetuTagLevel1Id_idx5",
+        "pHetuTagLevel2Id_idx5",
+        "pCurrentPage_idx5",
+        "pAgeHour_idx5"
+      ],
+      "dense_inputs": [
+        "pPctr_idx0",
+        "pPltr_idx0",
+        "pPwtr_idx0",
+        "pPftr_idx0",
+        "pPhtr_idx0",
+        "pPptr_idx0",
+        "pPcmtr_idx0",
+        "pPepstr_idx0",
+        "pPcmef_idx0",
+        "pMcPctr_idx0",
+        "pMcPwtr_idx0",
+        "pMcPltr_idx0",
+        "pPvtr_idx0",
+        "pPwtd_idx0",
+        "pPlvtr_idx0",
+        "pPsvtr_idx0",
+        "pMcPlvtr_idx0",
+        "pMcPsvtr_idx0",
+        "position_idx0",
+        "slide_next_weight_idx0",
+        "slide_next_label_idx0",
+        "pPctr_idx1",
+        "pPltr_idx1",
+        "pPwtr_idx1",
+        "pPftr_idx1",
+        "pPhtr_idx1",
+        "pPptr_idx1",
+        "pPcmtr_idx1",
+        "pPepstr_idx1",
+        "pPcmef_idx1",
+        "pMcPctr_idx1",
+        "pMcPwtr_idx1",
+        "pMcPltr_idx1",
+        "pPvtr_idx1",
+        "pPwtd_idx1",
+        "pPlvtr_idx1",
+        "pPsvtr_idx1",
+        "pMcPlvtr_idx1",
+        "pMcPsvtr_idx1",
+        "position_idx1",
+        "slide_next_weight_idx1",
+        "slide_next_label_idx1",
+        "pPctr_idx2",
+        "pPltr_idx2",
+        "pPwtr_idx2",
+        "pPftr_idx2",
+        "pPhtr_idx2",
+        "pPptr_idx2",
+        "pPcmtr_idx2",
+        "pPepstr_idx2",
+        "pPcmef_idx2",
+        "pMcPctr_idx2",
+        "pMcPwtr_idx2",
+        "pMcPltr_idx2",
+        "pPvtr_idx2",
+        "pPwtd_idx2",
+        "pPlvtr_idx2",
+        "pPsvtr_idx2",
+        "pMcPlvtr_idx2",
+        "pMcPsvtr_idx2",
+        "position_idx2",
+        "slide_next_weight_idx2",
+        "slide_next_label_idx2",
+        "pPctr_idx3",
+        "pPltr_idx3",
+        "pPwtr_idx3",
+        "pPftr_idx3",
+        "pPhtr_idx3",
+        "pPptr_idx3",
+        "pPcmtr_idx3",
+        "pPepstr_idx3",
+        "pPcmef_idx3",
+        "pMcPctr_idx3",
+        "pMcPwtr_idx3",
+        "pMcPltr_idx3",
+        "pPvtr_idx3",
+        "pPwtd_idx3",
+        "pPlvtr_idx3",
+        "pPsvtr_idx3",
+        "pMcPlvtr_idx3",
+        "pMcPsvtr_idx3",
+        "position_idx3",
+        "slide_next_weight_idx3",
+        "slide_next_label_idx3",
+        "pPctr_idx4",
+        "pPltr_idx4",
+        "pPwtr_idx4",
+        "pPftr_idx4",
+        "pPhtr_idx4",
+        "pPptr_idx4",
+        "pPcmtr_idx4",
+        "pPepstr_idx4",
+        "pPcmef_idx4",
+        "pMcPctr_idx4",
+        "pMcPwtr_idx4",
+        "pMcPltr_idx4",
+        "pPvtr_idx4",
+        "pPwtd_idx4",
+        "pPlvtr_idx4",
+        "pPsvtr_idx4",
+        "pMcPlvtr_idx4",
+        "pMcPsvtr_idx4",
+        "position_idx4",
+        "slide_next_weight_idx4",
+        "slide_next_label_idx4",
+        "pPctr_idx5",
+        "pPltr_idx5",
+        "pPwtr_idx5",
+        "pPftr_idx5",
+        "pPhtr_idx5",
+        "pPptr_idx5",
+        "pPcmtr_idx5",
+        "pPepstr_idx5",
+        "pPcmef_idx5",
+        "pMcPctr_idx5",
+        "pMcPwtr_idx5",
+        "pMcPltr_idx5",
+        "pPvtr_idx5",
+        "pPwtd_idx5",
+        "pPlvtr_idx5",
+        "pPsvtr_idx5",
+        "pMcPlvtr_idx5",
+        "pMcPsvtr_idx5",
+        "position_idx5",
+        "slide_next_weight_idx5",
+        "slide_next_label_idx5"
+      ],
+      "all_inputs": [
+        "uId",
+        "dId",
+        "uBasicAge",
+        "uGender",
+        "uCityId",
+        "uProvinceId",
+        "uRequestHour",
+        "uRequestWeekday",
+        "uExpClick",
+        "uExpLike",
+        "uExpFollow",
+        "uExpLongView",
+        "uExpWatchTime",
+        "uClickPids",
+        "uLikePids",
+        "uFollowPids",
+        "uHatePids",
+        "uFollowAids",
+        "uLikeAids",
+        "fountainClickPids",
+        "fountainLikePids",
+        "fountainFollowAids",
+        "fountainLongviewPids",
+        "fountainEffviewPids",
+        "user_view_list_pids",
+        "user_view_list_aids",
+        "user_view_list_ev",
+        "user_view_list_lv",
+        "user_view_list_sv",
+        "user_view_list_hetu1",
+        "user_view_list_hetu2",
+        "pPctr_idx0",
+        "pPltr_idx0",
+        "pPwtr_idx0",
+        "pPftr_idx0",
+        "pPhtr_idx0",
+        "pPptr_idx0",
+        "pPcmtr_idx0",
+        "pPepstr_idx0",
+        "pPcmef_idx0",
+        "pMcPctr_idx0",
+        "pMcPwtr_idx0",
+        "pMcPltr_idx0",
+        "pPvtr_idx0",
+        "pPwtd_idx0",
+        "pPlvtr_idx0",
+        "pPsvtr_idx0",
+        "pMcPlvtr_idx0",
+        "pMcPsvtr_idx0",
+        "pPvtr_buck_idx0",
+        "pEmpCtr_idx0",
+        "pEmpLtr_idx0",
+        "pEmpWtr_idx0",
+        "pEmpFtr_idx0",
+        "pEmpCmtr_idx0",
+        "pEmpHtr_idx0",
+        "pEmpPtr_idx0",
+        "avg_watchtime_idx0",
+        "pId_idx0",
+        "aId_idx0",
+        "pDurationMs_idx0",
+        "pUploadType_idx0",
+        "pCityId_idx0",
+        "pProvinceId_idx0",
+        "pContentLevel_idx0",
+        "pMusic_idx0",
+        "pMmuImgClusterV1_idx0",
+        "pMmuImgClusterV3_idx0",
+        "pMmuContentId_idx0",
+        "pHetuTagLevel1Id_idx0",
+        "pHetuTagLevel2Id_idx0",
+        "pCurrentPage_idx0",
+        "pAgeHour_idx0",
+        "position_idx0",
+        "slide_next_weight_idx0",
+        "slide_next_label_idx0",
+        "pPctr_idx1",
+        "pPltr_idx1",
+        "pPwtr_idx1",
+        "pPftr_idx1",
+        "pPhtr_idx1",
+        "pPptr_idx1",
+        "pPcmtr_idx1",
+        "pPepstr_idx1",
+        "pPcmef_idx1",
+        "pMcPctr_idx1",
+        "pMcPwtr_idx1",
+        "pMcPltr_idx1",
+        "pPvtr_idx1",
+        "pPwtd_idx1",
+        "pPlvtr_idx1",
+        "pPsvtr_idx1",
+        "pMcPlvtr_idx1",
+        "pMcPsvtr_idx1",
+        "pPvtr_buck_idx1",
+        "pEmpCtr_idx1",
+        "pEmpLtr_idx1",
+        "pEmpWtr_idx1",
+        "pEmpFtr_idx1",
+        "pEmpCmtr_idx1",
+        "pEmpHtr_idx1",
+        "pEmpPtr_idx1",
+        "avg_watchtime_idx1",
+        "pId_idx1",
+        "aId_idx1",
+        "pDurationMs_idx1",
+        "pUploadType_idx1",
+        "pCityId_idx1",
+        "pProvinceId_idx1",
+        "pContentLevel_idx1",
+        "pMusic_idx1",
+        "pMmuImgClusterV1_idx1",
+        "pMmuImgClusterV3_idx1",
+        "pMmuContentId_idx1",
+        "pHetuTagLevel1Id_idx1",
+        "pHetuTagLevel2Id_idx1",
+        "pCurrentPage_idx1",
+        "pAgeHour_idx1",
+        "position_idx1",
+        "slide_next_weight_idx1",
+        "slide_next_label_idx1",
+        "pPctr_idx2",
+        "pPltr_idx2",
+        "pPwtr_idx2",
+        "pPftr_idx2",
+        "pPhtr_idx2",
+        "pPptr_idx2",
+        "pPcmtr_idx2",
+        "pPepstr_idx2",
+        "pPcmef_idx2",
+        "pMcPctr_idx2",
+        "pMcPwtr_idx2",
+        "pMcPltr_idx2",
+        "pPvtr_idx2",
+        "pPwtd_idx2",
+        "pPlvtr_idx2",
+        "pPsvtr_idx2",
+        "pMcPlvtr_idx2",
+        "pMcPsvtr_idx2",
+        "pPvtr_buck_idx2",
+        "pEmpCtr_idx2",
+        "pEmpLtr_idx2",
+        "pEmpWtr_idx2",
+        "pEmpFtr_idx2",
+        "pEmpCmtr_idx2",
+        "pEmpHtr_idx2",
+        "pEmpPtr_idx2",
+        "avg_watchtime_idx2",
+        "pId_idx2",
+        "aId_idx2",
+        "pDurationMs_idx2",
+        "pUploadType_idx2",
+        "pCityId_idx2",
+        "pProvinceId_idx2",
+        "pContentLevel_idx2",
+        "pMusic_idx2",
+        "pMmuImgClusterV1_idx2",
+        "pMmuImgClusterV3_idx2",
+        "pMmuContentId_idx2",
+        "pHetuTagLevel1Id_idx2",
+        "pHetuTagLevel2Id_idx2",
+        "pCurrentPage_idx2",
+        "pAgeHour_idx2",
+        "position_idx2",
+        "slide_next_weight_idx2",
+        "slide_next_label_idx2",
+        "pPctr_idx3",
+        "pPltr_idx3",
+        "pPwtr_idx3",
+        "pPftr_idx3",
+        "pPhtr_idx3",
+        "pPptr_idx3",
+        "pPcmtr_idx3",
+        "pPepstr_idx3",
+        "pPcmef_idx3",
+        "pMcPctr_idx3",
+        "pMcPwtr_idx3",
+        "pMcPltr_idx3",
+        "pPvtr_idx3",
+        "pPwtd_idx3",
+        "pPlvtr_idx3",
+        "pPsvtr_idx3",
+        "pMcPlvtr_idx3",
+        "pMcPsvtr_idx3",
+        "pPvtr_buck_idx3",
+        "pEmpCtr_idx3",
+        "pEmpLtr_idx3",
+        "pEmpWtr_idx3",
+        "pEmpFtr_idx3",
+        "pEmpCmtr_idx3",
+        "pEmpHtr_idx3",
+        "pEmpPtr_idx3",
+        "avg_watchtime_idx3",
+        "pId_idx3",
+        "aId_idx3",
+        "pDurationMs_idx3",
+        "pUploadType_idx3",
+        "pCityId_idx3",
+        "pProvinceId_idx3",
+        "pContentLevel_idx3",
+        "pMusic_idx3",
+        "pMmuImgClusterV1_idx3",
+        "pMmuImgClusterV3_idx3",
+        "pMmuContentId_idx3",
+        "pHetuTagLevel1Id_idx3",
+        "pHetuTagLevel2Id_idx3",
+        "pCurrentPage_idx3",
+        "pAgeHour_idx3",
+        "position_idx3",
+        "slide_next_weight_idx3",
+        "slide_next_label_idx3",
+        "pPctr_idx4",
+        "pPltr_idx4",
+        "pPwtr_idx4",
+        "pPftr_idx4",
+        "pPhtr_idx4",
+        "pPptr_idx4",
+        "pPcmtr_idx4",
+        "pPepstr_idx4",
+        "pPcmef_idx4",
+        "pMcPctr_idx4",
+        "pMcPwtr_idx4",
+        "pMcPltr_idx4",
+        "pPvtr_idx4",
+        "pPwtd_idx4",
+        "pPlvtr_idx4",
+        "pPsvtr_idx4",
+        "pMcPlvtr_idx4",
+        "pMcPsvtr_idx4",
+        "pPvtr_buck_idx4",
+        "pEmpCtr_idx4",
+        "pEmpLtr_idx4",
+        "pEmpWtr_idx4",
+        "pEmpFtr_idx4",
+        "pEmpCmtr_idx4",
+        "pEmpHtr_idx4",
+        "pEmpPtr_idx4",
+        "avg_watchtime_idx4",
+        "pId_idx4",
+        "aId_idx4",
+        "pDurationMs_idx4",
+        "pUploadType_idx4",
+        "pCityId_idx4",
+        "pProvinceId_idx4",
+        "pContentLevel_idx4",
+        "pMusic_idx4",
+        "pMmuImgClusterV1_idx4",
+        "pMmuImgClusterV3_idx4",
+        "pMmuContentId_idx4",
+        "pHetuTagLevel1Id_idx4",
+        "pHetuTagLevel2Id_idx4",
+        "pCurrentPage_idx4",
+        "pAgeHour_idx4",
+        "position_idx4",
+        "slide_next_weight_idx4",
+        "slide_next_label_idx4",
+        "pPctr_idx5",
+        "pPltr_idx5",
+        "pPwtr_idx5",
+        "pPftr_idx5",
+        "pPhtr_idx5",
+        "pPptr_idx5",
+        "pPcmtr_idx5",
+        "pPepstr_idx5",
+        "pPcmef_idx5",
+        "pMcPctr_idx5",
+        "pMcPwtr_idx5",
+        "pMcPltr_idx5",
+        "pPvtr_idx5",
+        "pPwtd_idx5",
+        "pPlvtr_idx5",
+        "pPsvtr_idx5",
+        "pMcPlvtr_idx5",
+        "pMcPsvtr_idx5",
+        "pPvtr_buck_idx5",
+        "pEmpCtr_idx5",
+        "pEmpLtr_idx5",
+        "pEmpWtr_idx5",
+        "pEmpFtr_idx5",
+        "pEmpCmtr_idx5",
+        "pEmpHtr_idx5",
+        "pEmpPtr_idx5",
+        "avg_watchtime_idx5",
+        "pId_idx5",
+        "aId_idx5",
+        "pDurationMs_idx5",
+        "pUploadType_idx5",
+        "pCityId_idx5",
+        "pProvinceId_idx5",
+        "pContentLevel_idx5",
+        "pMusic_idx5",
+        "pMmuImgClusterV1_idx5",
+        "pMmuImgClusterV3_idx5",
+        "pMmuContentId_idx5",
+        "pHetuTagLevel1Id_idx5",
+        "pHetuTagLevel2Id_idx5",
+        "pCurrentPage_idx5",
+        "pAgeHour_idx5",
+        "position_idx5",
+        "slide_next_weight_idx5",
+        "slide_next_label_idx5"
+      ],
+      "weight_attr": "",
+      "output_dim": 1
+    },
+    "slide_l2r_6": {
+      "auc_uid_attr": "uId",
+      "auc_item_attr": "",
+      "sparse_inputs": [
+        "uId",
+        "dId",
+        "uBasicAge",
+        "uGender",
+        "uCityId",
+        "uProvinceId",
+        "uRequestHour",
+        "uRequestWeekday",
+        "uExpClick",
+        "uExpLike",
+        "uExpFollow",
+        "uExpLongView",
+        "uExpWatchTime",
+        "uClickPids",
+        "uLikePids",
+        "uFollowPids",
+        "uHatePids",
+        "uFollowAids",
+        "uLikeAids",
+        "fountainClickPids",
+        "fountainLikePids",
+        "fountainFollowAids",
+        "fountainLongviewPids",
+        "fountainEffviewPids",
+        "user_view_list_pids",
+        "user_view_list_aids",
+        "user_view_list_ev",
+        "user_view_list_lv",
+        "user_view_list_sv",
+        "user_view_list_hetu1",
+        "user_view_list_hetu2",
+        "pPvtr_buck_idx0",
+        "pEmpCtr_idx0",
+        "pEmpLtr_idx0",
+        "pEmpWtr_idx0",
+        "pEmpFtr_idx0",
+        "pEmpCmtr_idx0",
+        "pEmpHtr_idx0",
+        "pEmpPtr_idx0",
+        "avg_watchtime_idx0",
+        "pId_idx0",
+        "aId_idx0",
+        "pDurationMs_idx0",
+        "pUploadType_idx0",
+        "pCityId_idx0",
+        "pProvinceId_idx0",
+        "pContentLevel_idx0",
+        "pMusic_idx0",
+        "pMmuImgClusterV1_idx0",
+        "pMmuImgClusterV3_idx0",
+        "pMmuContentId_idx0",
+        "pHetuTagLevel1Id_idx0",
+        "pHetuTagLevel2Id_idx0",
+        "pCurrentPage_idx0",
+        "pAgeHour_idx0",
+        "pPvtr_buck_idx1",
+        "pEmpCtr_idx1",
+        "pEmpLtr_idx1",
+        "pEmpWtr_idx1",
+        "pEmpFtr_idx1",
+        "pEmpCmtr_idx1",
+        "pEmpHtr_idx1",
+        "pEmpPtr_idx1",
+        "avg_watchtime_idx1",
+        "pId_idx1",
+        "aId_idx1",
+        "pDurationMs_idx1",
+        "pUploadType_idx1",
+        "pCityId_idx1",
+        "pProvinceId_idx1",
+        "pContentLevel_idx1",
+        "pMusic_idx1",
+        "pMmuImgClusterV1_idx1",
+        "pMmuImgClusterV3_idx1",
+        "pMmuContentId_idx1",
+        "pHetuTagLevel1Id_idx1",
+        "pHetuTagLevel2Id_idx1",
+        "pCurrentPage_idx1",
+        "pAgeHour_idx1",
+        "pPvtr_buck_idx2",
+        "pEmpCtr_idx2",
+        "pEmpLtr_idx2",
+        "pEmpWtr_idx2",
+        "pEmpFtr_idx2",
+        "pEmpCmtr_idx2",
+        "pEmpHtr_idx2",
+        "pEmpPtr_idx2",
+        "avg_watchtime_idx2",
+        "pId_idx2",
+        "aId_idx2",
+        "pDurationMs_idx2",
+        "pUploadType_idx2",
+        "pCityId_idx2",
+        "pProvinceId_idx2",
+        "pContentLevel_idx2",
+        "pMusic_idx2",
+        "pMmuImgClusterV1_idx2",
+        "pMmuImgClusterV3_idx2",
+        "pMmuContentId_idx2",
+        "pHetuTagLevel1Id_idx2",
+        "pHetuTagLevel2Id_idx2",
+        "pCurrentPage_idx2",
+        "pAgeHour_idx2",
+        "pPvtr_buck_idx3",
+        "pEmpCtr_idx3",
+        "pEmpLtr_idx3",
+        "pEmpWtr_idx3",
+        "pEmpFtr_idx3",
+        "pEmpCmtr_idx3",
+        "pEmpHtr_idx3",
+        "pEmpPtr_idx3",
+        "avg_watchtime_idx3",
+        "pId_idx3",
+        "aId_idx3",
+        "pDurationMs_idx3",
+        "pUploadType_idx3",
+        "pCityId_idx3",
+        "pProvinceId_idx3",
+        "pContentLevel_idx3",
+        "pMusic_idx3",
+        "pMmuImgClusterV1_idx3",
+        "pMmuImgClusterV3_idx3",
+        "pMmuContentId_idx3",
+        "pHetuTagLevel1Id_idx3",
+        "pHetuTagLevel2Id_idx3",
+        "pCurrentPage_idx3",
+        "pAgeHour_idx3",
+        "pPvtr_buck_idx4",
+        "pEmpCtr_idx4",
+        "pEmpLtr_idx4",
+        "pEmpWtr_idx4",
+        "pEmpFtr_idx4",
+        "pEmpCmtr_idx4",
+        "pEmpHtr_idx4",
+        "pEmpPtr_idx4",
+        "avg_watchtime_idx4",
+        "pId_idx4",
+        "aId_idx4",
+        "pDurationMs_idx4",
+        "pUploadType_idx4",
+        "pCityId_idx4",
+        "pProvinceId_idx4",
+        "pContentLevel_idx4",
+        "pMusic_idx4",
+        "pMmuImgClusterV1_idx4",
+        "pMmuImgClusterV3_idx4",
+        "pMmuContentId_idx4",
+        "pHetuTagLevel1Id_idx4",
+        "pHetuTagLevel2Id_idx4",
+        "pCurrentPage_idx4",
+        "pAgeHour_idx4",
+        "pPvtr_buck_idx5",
+        "pEmpCtr_idx5",
+        "pEmpLtr_idx5",
+        "pEmpWtr_idx5",
+        "pEmpFtr_idx5",
+        "pEmpCmtr_idx5",
+        "pEmpHtr_idx5",
+        "pEmpPtr_idx5",
+        "avg_watchtime_idx5",
+        "pId_idx5",
+        "aId_idx5",
+        "pDurationMs_idx5",
+        "pUploadType_idx5",
+        "pCityId_idx5",
+        "pProvinceId_idx5",
+        "pContentLevel_idx5",
+        "pMusic_idx5",
+        "pMmuImgClusterV1_idx5",
+        "pMmuImgClusterV3_idx5",
+        "pMmuContentId_idx5",
+        "pHetuTagLevel1Id_idx5",
+        "pHetuTagLevel2Id_idx5",
+        "pCurrentPage_idx5",
+        "pAgeHour_idx5"
+      ],
+      "dense_inputs": [
+        "pPctr_idx0",
+        "pPltr_idx0",
+        "pPwtr_idx0",
+        "pPftr_idx0",
+        "pPhtr_idx0",
+        "pPptr_idx0",
+        "pPcmtr_idx0",
+        "pPepstr_idx0",
+        "pPcmef_idx0",
+        "pMcPctr_idx0",
+        "pMcPwtr_idx0",
+        "pMcPltr_idx0",
+        "pPvtr_idx0",
+        "pPwtd_idx0",
+        "pPlvtr_idx0",
+        "pPsvtr_idx0",
+        "pMcPlvtr_idx0",
+        "pMcPsvtr_idx0",
+        "position_idx0",
+        "slide_wtd_weight_idx0",
+        "slide_wtd_label_idx0",
+        "slide_play_weight_idx0",
+        "pPctr_idx1",
+        "pPltr_idx1",
+        "pPwtr_idx1",
+        "pPftr_idx1",
+        "pPhtr_idx1",
+        "pPptr_idx1",
+        "pPcmtr_idx1",
+        "pPepstr_idx1",
+        "pPcmef_idx1",
+        "pMcPctr_idx1",
+        "pMcPwtr_idx1",
+        "pMcPltr_idx1",
+        "pPvtr_idx1",
+        "pPwtd_idx1",
+        "pPlvtr_idx1",
+        "pPsvtr_idx1",
+        "pMcPlvtr_idx1",
+        "pMcPsvtr_idx1",
+        "position_idx1",
+        "slide_wtd_weight_idx1",
+        "slide_wtd_label_idx1",
+        "slide_play_weight_idx1",
+        "pPctr_idx2",
+        "pPltr_idx2",
+        "pPwtr_idx2",
+        "pPftr_idx2",
+        "pPhtr_idx2",
+        "pPptr_idx2",
+        "pPcmtr_idx2",
+        "pPepstr_idx2",
+        "pPcmef_idx2",
+        "pMcPctr_idx2",
+        "pMcPwtr_idx2",
+        "pMcPltr_idx2",
+        "pPvtr_idx2",
+        "pPwtd_idx2",
+        "pPlvtr_idx2",
+        "pPsvtr_idx2",
+        "pMcPlvtr_idx2",
+        "pMcPsvtr_idx2",
+        "position_idx2",
+        "slide_wtd_weight_idx2",
+        "slide_wtd_label_idx2",
+        "slide_play_weight_idx2",
+        "pPctr_idx3",
+        "pPltr_idx3",
+        "pPwtr_idx3",
+        "pPftr_idx3",
+        "pPhtr_idx3",
+        "pPptr_idx3",
+        "pPcmtr_idx3",
+        "pPepstr_idx3",
+        "pPcmef_idx3",
+        "pMcPctr_idx3",
+        "pMcPwtr_idx3",
+        "pMcPltr_idx3",
+        "pPvtr_idx3",
+        "pPwtd_idx3",
+        "pPlvtr_idx3",
+        "pPsvtr_idx3",
+        "pMcPlvtr_idx3",
+        "pMcPsvtr_idx3",
+        "position_idx3",
+        "slide_wtd_weight_idx3",
+        "slide_wtd_label_idx3",
+        "slide_play_weight_idx3",
+        "pPctr_idx4",
+        "pPltr_idx4",
+        "pPwtr_idx4",
+        "pPftr_idx4",
+        "pPhtr_idx4",
+        "pPptr_idx4",
+        "pPcmtr_idx4",
+        "pPepstr_idx4",
+        "pPcmef_idx4",
+        "pMcPctr_idx4",
+        "pMcPwtr_idx4",
+        "pMcPltr_idx4",
+        "pPvtr_idx4",
+        "pPwtd_idx4",
+        "pPlvtr_idx4",
+        "pPsvtr_idx4",
+        "pMcPlvtr_idx4",
+        "pMcPsvtr_idx4",
+        "position_idx4",
+        "slide_wtd_weight_idx4",
+        "slide_wtd_label_idx4",
+        "slide_play_weight_idx4",
+        "pPctr_idx5",
+        "pPltr_idx5",
+        "pPwtr_idx5",
+        "pPftr_idx5",
+        "pPhtr_idx5",
+        "pPptr_idx5",
+        "pPcmtr_idx5",
+        "pPepstr_idx5",
+        "pPcmef_idx5",
+        "pMcPctr_idx5",
+        "pMcPwtr_idx5",
+        "pMcPltr_idx5",
+        "pPvtr_idx5",
+        "pPwtd_idx5",
+        "pPlvtr_idx5",
+        "pPsvtr_idx5",
+        "pMcPlvtr_idx5",
+        "pMcPsvtr_idx5",
+        "position_idx5",
+        "slide_wtd_weight_idx5",
+        "slide_wtd_label_idx5",
+        "slide_play_weight_idx5"
+      ],
+      "all_inputs": [
+        "uId",
+        "dId",
+        "uBasicAge",
+        "uGender",
+        "uCityId",
+        "uProvinceId",
+        "uRequestHour",
+        "uRequestWeekday",
+        "uExpClick",
+        "uExpLike",
+        "uExpFollow",
+        "uExpLongView",
+        "uExpWatchTime",
+        "uClickPids",
+        "uLikePids",
+        "uFollowPids",
+        "uHatePids",
+        "uFollowAids",
+        "uLikeAids",
+        "fountainClickPids",
+        "fountainLikePids",
+        "fountainFollowAids",
+        "fountainLongviewPids",
+        "fountainEffviewPids",
+        "user_view_list_pids",
+        "user_view_list_aids",
+        "user_view_list_ev",
+        "user_view_list_lv",
+        "user_view_list_sv",
+        "user_view_list_hetu1",
+        "user_view_list_hetu2",
+        "pPctr_idx0",
+        "pPltr_idx0",
+        "pPwtr_idx0",
+        "pPftr_idx0",
+        "pPhtr_idx0",
+        "pPptr_idx0",
+        "pPcmtr_idx0",
+        "pPepstr_idx0",
+        "pPcmef_idx0",
+        "pMcPctr_idx0",
+        "pMcPwtr_idx0",
+        "pMcPltr_idx0",
+        "pPvtr_idx0",
+        "pPwtd_idx0",
+        "pPlvtr_idx0",
+        "pPsvtr_idx0",
+        "pMcPlvtr_idx0",
+        "pMcPsvtr_idx0",
+        "pPvtr_buck_idx0",
+        "pEmpCtr_idx0",
+        "pEmpLtr_idx0",
+        "pEmpWtr_idx0",
+        "pEmpFtr_idx0",
+        "pEmpCmtr_idx0",
+        "pEmpHtr_idx0",
+        "pEmpPtr_idx0",
+        "avg_watchtime_idx0",
+        "pId_idx0",
+        "aId_idx0",
+        "pDurationMs_idx0",
+        "pUploadType_idx0",
+        "pCityId_idx0",
+        "pProvinceId_idx0",
+        "pContentLevel_idx0",
+        "pMusic_idx0",
+        "pMmuImgClusterV1_idx0",
+        "pMmuImgClusterV3_idx0",
+        "pMmuContentId_idx0",
+        "pHetuTagLevel1Id_idx0",
+        "pHetuTagLevel2Id_idx0",
+        "pCurrentPage_idx0",
+        "pAgeHour_idx0",
+        "position_idx0",
+        "slide_wtd_weight_idx0",
+        "slide_wtd_label_idx0",
+        "slide_play_weight_idx0",
+        "pPctr_idx1",
+        "pPltr_idx1",
+        "pPwtr_idx1",
+        "pPftr_idx1",
+        "pPhtr_idx1",
+        "pPptr_idx1",
+        "pPcmtr_idx1",
+        "pPepstr_idx1",
+        "pPcmef_idx1",
+        "pMcPctr_idx1",
+        "pMcPwtr_idx1",
+        "pMcPltr_idx1",
+        "pPvtr_idx1",
+        "pPwtd_idx1",
+        "pPlvtr_idx1",
+        "pPsvtr_idx1",
+        "pMcPlvtr_idx1",
+        "pMcPsvtr_idx1",
+        "pPvtr_buck_idx1",
+        "pEmpCtr_idx1",
+        "pEmpLtr_idx1",
+        "pEmpWtr_idx1",
+        "pEmpFtr_idx1",
+        "pEmpCmtr_idx1",
+        "pEmpHtr_idx1",
+        "pEmpPtr_idx1",
+        "avg_watchtime_idx1",
+        "pId_idx1",
+        "aId_idx1",
+        "pDurationMs_idx1",
+        "pUploadType_idx1",
+        "pCityId_idx1",
+        "pProvinceId_idx1",
+        "pContentLevel_idx1",
+        "pMusic_idx1",
+        "pMmuImgClusterV1_idx1",
+        "pMmuImgClusterV3_idx1",
+        "pMmuContentId_idx1",
+        "pHetuTagLevel1Id_idx1",
+        "pHetuTagLevel2Id_idx1",
+        "pCurrentPage_idx1",
+        "pAgeHour_idx1",
+        "position_idx1",
+        "slide_wtd_weight_idx1",
+        "slide_wtd_label_idx1",
+        "slide_play_weight_idx1",
+        "pPctr_idx2",
+        "pPltr_idx2",
+        "pPwtr_idx2",
+        "pPftr_idx2",
+        "pPhtr_idx2",
+        "pPptr_idx2",
+        "pPcmtr_idx2",
+        "pPepstr_idx2",
+        "pPcmef_idx2",
+        "pMcPctr_idx2",
+        "pMcPwtr_idx2",
+        "pMcPltr_idx2",
+        "pPvtr_idx2",
+        "pPwtd_idx2",
+        "pPlvtr_idx2",
+        "pPsvtr_idx2",
+        "pMcPlvtr_idx2",
+        "pMcPsvtr_idx2",
+        "pPvtr_buck_idx2",
+        "pEmpCtr_idx2",
+        "pEmpLtr_idx2",
+        "pEmpWtr_idx2",
+        "pEmpFtr_idx2",
+        "pEmpCmtr_idx2",
+        "pEmpHtr_idx2",
+        "pEmpPtr_idx2",
+        "avg_watchtime_idx2",
+        "pId_idx2",
+        "aId_idx2",
+        "pDurationMs_idx2",
+        "pUploadType_idx2",
+        "pCityId_idx2",
+        "pProvinceId_idx2",
+        "pContentLevel_idx2",
+        "pMusic_idx2",
+        "pMmuImgClusterV1_idx2",
+        "pMmuImgClusterV3_idx2",
+        "pMmuContentId_idx2",
+        "pHetuTagLevel1Id_idx2",
+        "pHetuTagLevel2Id_idx2",
+        "pCurrentPage_idx2",
+        "pAgeHour_idx2",
+        "position_idx2",
+        "slide_wtd_weight_idx2",
+        "slide_wtd_label_idx2",
+        "slide_play_weight_idx2",
+        "pPctr_idx3",
+        "pPltr_idx3",
+        "pPwtr_idx3",
+        "pPftr_idx3",
+        "pPhtr_idx3",
+        "pPptr_idx3",
+        "pPcmtr_idx3",
+        "pPepstr_idx3",
+        "pPcmef_idx3",
+        "pMcPctr_idx3",
+        "pMcPwtr_idx3",
+        "pMcPltr_idx3",
+        "pPvtr_idx3",
+        "pPwtd_idx3",
+        "pPlvtr_idx3",
+        "pPsvtr_idx3",
+        "pMcPlvtr_idx3",
+        "pMcPsvtr_idx3",
+        "pPvtr_buck_idx3",
+        "pEmpCtr_idx3",
+        "pEmpLtr_idx3",
+        "pEmpWtr_idx3",
+        "pEmpFtr_idx3",
+        "pEmpCmtr_idx3",
+        "pEmpHtr_idx3",
+        "pEmpPtr_idx3",
+        "avg_watchtime_idx3",
+        "pId_idx3",
+        "aId_idx3",
+        "pDurationMs_idx3",
+        "pUploadType_idx3",
+        "pCityId_idx3",
+        "pProvinceId_idx3",
+        "pContentLevel_idx3",
+        "pMusic_idx3",
+        "pMmuImgClusterV1_idx3",
+        "pMmuImgClusterV3_idx3",
+        "pMmuContentId_idx3",
+        "pHetuTagLevel1Id_idx3",
+        "pHetuTagLevel2Id_idx3",
+        "pCurrentPage_idx3",
+        "pAgeHour_idx3",
+        "position_idx3",
+        "slide_wtd_weight_idx3",
+        "slide_wtd_label_idx3",
+        "slide_play_weight_idx3",
+        "pPctr_idx4",
+        "pPltr_idx4",
+        "pPwtr_idx4",
+        "pPftr_idx4",
+        "pPhtr_idx4",
+        "pPptr_idx4",
+        "pPcmtr_idx4",
+        "pPepstr_idx4",
+        "pPcmef_idx4",
+        "pMcPctr_idx4",
+        "pMcPwtr_idx4",
+        "pMcPltr_idx4",
+        "pPvtr_idx4",
+        "pPwtd_idx4",
+        "pPlvtr_idx4",
+        "pPsvtr_idx4",
+        "pMcPlvtr_idx4",
+        "pMcPsvtr_idx4",
+        "pPvtr_buck_idx4",
+        "pEmpCtr_idx4",
+        "pEmpLtr_idx4",
+        "pEmpWtr_idx4",
+        "pEmpFtr_idx4",
+        "pEmpCmtr_idx4",
+        "pEmpHtr_idx4",
+        "pEmpPtr_idx4",
+        "avg_watchtime_idx4",
+        "pId_idx4",
+        "aId_idx4",
+        "pDurationMs_idx4",
+        "pUploadType_idx4",
+        "pCityId_idx4",
+        "pProvinceId_idx4",
+        "pContentLevel_idx4",
+        "pMusic_idx4",
+        "pMmuImgClusterV1_idx4",
+        "pMmuImgClusterV3_idx4",
+        "pMmuContentId_idx4",
+        "pHetuTagLevel1Id_idx4",
+        "pHetuTagLevel2Id_idx4",
+        "pCurrentPage_idx4",
+        "pAgeHour_idx4",
+        "position_idx4",
+        "slide_wtd_weight_idx4",
+        "slide_wtd_label_idx4",
+        "slide_play_weight_idx4",
+        "pPctr_idx5",
+        "pPltr_idx5",
+        "pPwtr_idx5",
+        "pPftr_idx5",
+        "pPhtr_idx5",
+        "pPptr_idx5",
+        "pPcmtr_idx5",
+        "pPepstr_idx5",
+        "pPcmef_idx5",
+        "pMcPctr_idx5",
+        "pMcPwtr_idx5",
+        "pMcPltr_idx5",
+        "pPvtr_idx5",
+        "pPwtd_idx5",
+        "pPlvtr_idx5",
+        "pPsvtr_idx5",
+        "pMcPlvtr_idx5",
+        "pMcPsvtr_idx5",
+        "pPvtr_buck_idx5",
+        "pEmpCtr_idx5",
+        "pEmpLtr_idx5",
+        "pEmpWtr_idx5",
+        "pEmpFtr_idx5",
+        "pEmpCmtr_idx5",
+        "pEmpHtr_idx5",
+        "pEmpPtr_idx5",
+        "avg_watchtime_idx5",
+        "pId_idx5",
+        "aId_idx5",
+        "pDurationMs_idx5",
+        "pUploadType_idx5",
+        "pCityId_idx5",
+        "pProvinceId_idx5",
+        "pContentLevel_idx5",
+        "pMusic_idx5",
+        "pMmuImgClusterV1_idx5",
+        "pMmuImgClusterV3_idx5",
+        "pMmuContentId_idx5",
+        "pHetuTagLevel1Id_idx5",
+        "pHetuTagLevel2Id_idx5",
+        "pCurrentPage_idx5",
+        "pAgeHour_idx5",
+        "position_idx5",
+        "slide_wtd_weight_idx5",
+        "slide_wtd_label_idx5",
+        "slide_play_weight_idx5"
+      ],
+      "weight_attr": "",
+      "output_dim": 1
+    }
+  },
+  "sign_feature_expand": {
+    "pEmpPtr_idx3": 1,
+    "pContentLevel_idx0": 1,
+    "pEmpFtr_idx1": 1,
+    "pMmuImgClusterV1_idx1": 1,
+    "pHetuTagLevel1Id_idx6": 1,
+    "pAgeHour_idx1": 1,
+    "pPvtr_buck_idx5": 1,
+    "avg_watchtime_idx5": 1,
+    "pMusic_idx9": 1,
+    "pProvinceId_idx8": 1,
+    "uGender": 1,
+    "pHetuTagLevel1Id_idx0": 1,
+    "pMmuContentId_idx2": 1,
+    "pHetuTagLevel2Id_idx9": 1,
+    "pEmpFtr_idx5": 1,
+    "pEmpCtr_idx0": 1,
+    "pAgeHour_idx5": 1,
+    "pEmpHtr_idx1": 1,
+    "pProvinceId_idx3": 1,
+    "aId_idx7": 1,
+    "pHetuTagLevel1Id_idx3": 1,
+    "uExpLongView": 1,
+    "user_view_list_sv": 1,
+    "pPvtr_buck_idx4": 1,
+    "pDurationMs_idx9": 1,
+    "pMmuImgClusterV3_idx3": 1,
+    "pContentLevel_idx5": 1,
+    "avg_watchtime_idx2": 1,
+    "pMusic_idx6": 1,
+    "pDurationMs_idx7": 1,
+    "pPvtr_buck_idx2": 1,
+    "uLikePids": 1,
+    "fountainLikePids": 50,
+    "pMusic_idx2": 1,
+    "pPvtr_buck_idx3": 1,
+    "pDurationMs_idx8": 1,
+    "pMmuImgClusterV3_idx2": 1,
+    "pMusic_idx5": 1,
+    "avg_watchtime_idx1": 1,
+    "pDurationMs_idx6": 1,
+    "pPvtr_buck_idx1": 1,
+    "pDurationMs_idx1": 1,
+    "user_view_list_aids": 1,
+    "pContentLevel_idx4": 1,
+    "pContentLevel_idx7": 1,
+    "pMmuImgClusterV1_idx8": 1,
+    "pCurrentPage_idx8": 1,
+    "pAgeHour_idx7": 1,
+    "user_view_list_pids": 1,
+    "pEmpHtr_idx5": 1,
+    "pProvinceId_idx7": 1,
+    "aId_idx5": 1,
+    "fountainLongviewPids": 50,
+    "pMmuImgClusterV1_idx4": 1,
+    "pHetuTagLevel1Id_idx9": 1,
+    "pAgeHour_idx4": 1,
+    "fountainFollowAids": 50,
+    "pCityId_idx8": 1,
+    "pCurrentPage_idx1": 1,
+    "pEmpWtr_idx0": 1,
+    "pMmuContentId_idx0": 1,
+    "pHetuTagLevel2Id_idx7": 1,
+    "pContentLevel_idx6": 1,
+    "uExpWatchTime": 1,
+    "pMmuImgClusterV1_idx3": 1,
+    "pHetuTagLevel1Id_idx8": 1,
+    "pAgeHour_idx3": 1,
+    "pMmuImgClusterV3_idx4": 1,
+    "pCityId_idx2": 1,
+    "pUploadType_idx1": 1,
+    "pMusic_idx7": 1,
+    "pMmuImgClusterV1_idx2": 1,
+    "pHetuTagLevel1Id_idx7": 1,
+    "pEmpFtr_idx2": 1,
+    "pAgeHour_idx2": 1,
+    "avg_watchtime_idx4": 1,
+    "pMusic_idx8": 1,
+    "aId_idx9": 1,
+    "pMmuImgClusterV1_idx0": 1,
+    "pHetuTagLevel1Id_idx5": 1,
+    "pEmpFtr_idx0": 1,
+    "pAgeHour_idx0": 1,
+    "pMmuContentId_idx6": 1,
+    "pMmuContentId_idx4": 1,
+    "pMusic_idx3": 1,
+    "pMmuContentId_idx3": 1,
+    "pHetuTagLevel2Id_idx8": 1,
+    "pMmuContentId_idx1": 1,
+    "pMmuContentId_idx5": 1,
+    "uFollowPids": 1,
+    "pDurationMs_idx0": 1,
+    "pMmuContentId_idx9": 1,
+    "pId_idx5": 1,
+    "uClickPids": 1,
+    "pCurrentPage_idx4": 1,
+    "pEmpWtr_idx3": 1,
+    "pProvinceId_idx9": 1,
+    "pHetuTagLevel1Id_idx1": 1,
+    "pEmpWtr_idx5": 1,
+    "pCurrentPage_idx6": 1,
+    "pMmuImgClusterV1_idx6": 1,
+    "uExpFollow": 1,
+    "pEmpPtr_idx5": 1,
+    "pMmuImgClusterV3_idx1": 1,
+    "pEmpWtr_idx4": 1,
+    "pCurrentPage_idx5": 1,
+    "pMmuImgClusterV1_idx5": 1,
+    "pPvtr_buck_idx0": 1,
+    "pDurationMs_idx5": 1,
+    "pUploadType_idx0": 1,
+    "pCityId_idx1": 1,
+    "pEmpHtr_idx4": 1,
+    "aId_idx2": 1,
+    "uFollowAids": 1,
+    "pProvinceId_idx6": 1,
+    "pEmpWtr_idx1": 1,
+    "pCityId_idx9": 1,
+    "pCurrentPage_idx2": 1,
+    "pCityId_idx0": 1,
+    "pContentLevel_idx3": 1,
+    "pMmuImgClusterV3_idx0": 1,
+    "pEmpPtr_idx4": 1,
+    "pContentLevel_idx1": 1,
+    "fountainEffviewPids": 50,
+    "pMmuImgClusterV3_idx5": 1,
+    "pAgeHour_idx9": 1,
+    "pEmpCtr_idx4": 1,
+    "pUploadType_idx8": 1,
+    "pCityId_idx5": 1,
+    "pAgeHour_idx6": 1,
+    "pEmpCtr_idx1": 1,
+    "pEmpCmtr_idx4": 1,
+    "user_view_list_hetu2": 1,
+    "pMmuImgClusterV3_idx7": 1,
+    "uProvinceId": 1,
+    "user_view_list_hetu1": 1,
+    "uBasicAge": 1,
+    "pHetuTagLevel2Id_idx6": 1,
+    "pEmpHtr_idx3": 1,
+    "pCurrentPage_idx7": 1,
+    "pMmuImgClusterV1_idx7": 1,
+    "pEmpLtr_idx2": 1,
+    "pEmpPtr_idx2": 1,
+    "fountainClickPids": 50,
+    "pCurrentPage_idx9": 1,
+    "pMmuImgClusterV1_idx9": 1,
+    "pContentLevel_idx2": 1,
+    "uRequestHour": 1,
+    "uHatePids": 1,
+    "pId_idx2": 1,
+    "user_view_list_ev": 1,
+    "pUploadType_idx7": 1,
+    "pMmuContentId_idx8": 1,
+    "uRequestWeekday": 1,
+    "pMusic_idx4": 1,
+    "avg_watchtime_idx0": 1,
+    "uLikeAids": 1,
+    "pEmpPtr_idx0": 1,
+    "dId": 1,
+    "pEmpLtr_idx0": 1,
+    "pHetuTagLevel1Id_idx4": 1,
+    "uId": 1,
+    "aId_idx8": 1,
+    "pEmpPtr_idx1": 1,
+    "pCityId_idx3": 1,
+    "pMmuImgClusterV3_idx6": 1,
+    "pMusic_idx1": 1,
+    "pCurrentPage_idx0": 1,
+    "pCityId_idx7": 1,
+    "uCityId": 1,
+    "pMmuContentId_idx7": 1,
+    "aId_idx0": 1,
+    "pCityId_idx6": 1,
+    "pUploadType_idx5": 1,
+    "pHetuTagLevel2Id_idx2": 1,
+    "pHetuTagLevel2Id_idx5": 1,
+    "pEmpLtr_idx5": 1,
+    "uExpLike": 1,
+    "pEmpLtr_idx1": 1,
+    "pProvinceId_idx1": 1,
+    "pHetuTagLevel2Id_idx3": 1,
+    "pId_idx7": 1,
+    "pMusic_idx0": 1,
+    "uExpClick": 1,
+    "pHetuTagLevel2Id_idx1": 1,
+    "pDurationMs_idx2": 1,
+    "pId_idx0": 1,
+    "pId_idx3": 1,
+    "pHetuTagLevel2Id_idx0": 1,
+    "pHetuTagLevel2Id_idx4": 1,
+    "pAgeHour_idx8": 1,
+    "pDurationMs_idx3": 1,
+    "pContentLevel_idx9": 1,
+    "pHetuTagLevel1Id_idx2": 1,
+    "pEmpHtr_idx0": 1,
+    "pEmpCmtr_idx2": 1,
+    "user_view_list_lv": 1,
+    "pEmpCtr_idx5": 1,
+    "pEmpLtr_idx4": 1,
+    "pCityId_idx4": 1,
+    "pId_idx6": 1,
+    "pId_idx9": 1,
+    "pMmuImgClusterV3_idx8": 1,
+    "pProvinceId_idx2": 1,
+    "pUploadType_idx6": 1,
+    "pId_idx1": 1,
+    "pDurationMs_idx4": 1,
+    "pEmpCtr_idx2": 1,
+    "pEmpCtr_idx3": 1,
+    "pEmpLtr_idx3": 1,
+    "pCurrentPage_idx3": 1,
+    "pEmpWtr_idx2": 1,
+    "pMmuImgClusterV3_idx9": 1,
+    "pEmpFtr_idx4": 1,
+    "pEmpCmtr_idx1": 1,
+    "pEmpCmtr_idx0": 1,
+    "pEmpCmtr_idx3": 1,
+    "pEmpCmtr_idx5": 1,
+    "pEmpHtr_idx2": 1,
+    "pId_idx4": 1,
+    "pProvinceId_idx0": 1,
+    "pId_idx8": 1,
+    "aId_idx1": 1,
+    "aId_idx3": 1,
+    "aId_idx4": 1,
+    "aId_idx6": 1,
+    "pEmpFtr_idx3": 1,
+    "pUploadType_idx2": 1,
+    "pUploadType_idx3": 1,
+    "pUploadType_idx4": 1,
+    "pUploadType_idx9": 1,
+    "avg_watchtime_idx3": 1,
+    "pProvinceId_idx4": 1,
+    "pContentLevel_idx8": 1,
+    "pProvinceId_idx5": 1
+  },
+  "sign_feature_key_type": {
+    "position_idx3": [
+      547
+    ],
+    "pDurationMs_idx8": [
+      133
+    ],
+    "pPvtr_buck_idx3": [
+      609
+    ],
+    "pMusic_idx7": [
+      540
+    ],
+    "position_idx2": [
+      547
+    ],
+    "pDurationMs_idx7": [
+      133
+    ],
+    "pPvtr_buck_idx2": [
+      609
+    ],
+    "pMusic_idx6": [
+      540
+    ],
+    "pMmuContentId_idx6": [
+      543
+    ],
+    "pPwtd_idx4": [
+      575
+    ],
+    "pEmpFtr_idx2": [
+      529
+    ],
+    "pAgeHour_idx2": [
+      548
+    ],
+    "slide_wtd_weight_idx3": [
+      563
+    ],
+    "pMmuImgClusterV1_idx2": [
+      542
+    ],
+    "pHetuTagLevel1Id_idx7": [
+      129
+    ],
+    "position_idx8": [
+      547
+    ],
+    "avg_watchtime_idx5": [
+      561
+    ],
+    "pMusic_idx9": [
+      540
+    ],
+    "pPftr_idx5": [
+      572
+    ],
+    "pPwtd_idx3": [
+      575
+    ],
+    "pEmpFtr_idx1": [
+      529
+    ],
+    "slide_wtd_weight_idx2": [
+      563
+    ],
+    "pMmuImgClusterV1_idx1": [
+      542
+    ],
+    "pHetuTagLevel1Id_idx6": [
+      129
+    ],
+    "pAgeHour_idx1": [
+      548
+    ],
+    "slide_play_weight_idx3": [
+      564
+    ],
+    "pProvinceId_idx6": [
+      537
+    ],
+    "uFollowAids": [
+      124
+    ],
+    "slide_wtd_weight_idx4": [
+      563
+    ],
+    "user_view_list_hetu1": [
+      324
+    ],
+    "uRequestHour": [
+      56
+    ],
+    "pMcPsvtr_idx3": [
+      586
+    ],
+    "pMcPlvtr_idx1": [
+      585
+    ],
+    "pCurrentPage_idx1": [
+      546
+    ],
+    "pCityId_idx8": [
+      536
+    ],
+    "pEmpWtr_idx0": [
+      528
+    ],
+    "pPwtr_idx4": [
+      570
+    ],
+    "pMmuContentId_idx2": [
+      543
+    ],
+    "pHetuTagLevel2Id_idx9": [
+      130
+    ],
+    "uLikePids": [
+      121
+    ],
+    "fountainLikePids": [
+      64
+    ],
+    "pMusic_idx2": [
+      540
+    ],
+    "pMcPltr_idx3": [
+      581
+    ],
+    "slide_wtd_weight_idx1": [
+      563
+    ],
+    "pEmpFtr_idx5": [
+      529
+    ],
+    "pEmpCtr_idx0": [
+      526
+    ],
+    "pAgeHour_idx5": [
+      548
+    ],
+    "slide_play_weight_idx0": [
+      564
+    ],
+    "pProvinceId_idx3": [
+      537
+    ],
+    "aId_idx7": [
+      128
+    ],
+    "pHetuTagLevel1Id_idx3": [
+      129
+    ],
+    "uExpLongView": [
+      61
+    ],
+    "user_view_list_sv": [
+      323
+    ],
+    "pPctr_idx5": [
+      567
+    ],
+    "slide_wtd_label_idx4": [
+      562
+    ],
+    "pMmuImgClusterV3_idx3": [
+      142
+    ],
+    "pPltr_idx1": [
+      568
+    ],
+    "pContentLevel_idx5": [
+      539
+    ],
+    "position_idx6": [
+      547
+    ],
+    "pMmuContentId_idx4": [
+      543
+    ],
+    "uFollowPids": [
+      122
+    ],
+    "pDurationMs_idx0": [
+      133
+    ],
+    "pMmuContentId_idx9": [
+      543
+    ],
+    "pEmpHtr_idx4": [
+      531
+    ],
+    "pMcPctr_idx1": [
+      580
+    ],
+    "pId_idx5": [
+      26
+    ],
+    "uClickPids": [
+      120
+    ],
+    "pHetuTagLevel2Id_idx7": [
+      130
+    ],
+    "pMmuContentId_idx0": [
+      543
+    ],
+    "pContentLevel_idx6": [
+      539
+    ],
+    "uExpWatchTime": [
+      62
+    ],
+    "pPhtr_idx0": [
+      573
+    ],
+    "slide_wtd_label_idx3": [
+      562
+    ],
+    "pMmuImgClusterV3_idx2": [
+      142
+    ],
+    "pMmuImgClusterV3_idx4": [
+      142
+    ],
+    "slide_wtd_label_idx5": [
+      562
+    ],
+    "pPltr_idx0": [
+      568
+    ],
+    "pContentLevel_idx4": [
+      539
+    ],
+    "pCurrentPage_idx8": [
+      546
+    ],
+    "position_idx0": [
+      547
+    ],
+    "pDurationMs_idx5": [
+      133
+    ],
+    "pPvtr_buck_idx0": [
+      609
+    ],
+    "pPltr_idx2": [
+      568
+    ],
+    "avg_watchtime_idx0": [
+      561
+    ],
+    "pMcPltr_idx5": [
+      581
+    ],
+    "pAgeHour_idx7": [
+      548
+    ],
+    "pPvtr_idx5": [
+      574
+    ],
+    "pPsvtr_idx4": [
+      578
+    ],
+    "pMmuImgClusterV1_idx6": [
+      542
+    ],
+    "pPlvtr_idx2": [
+      577
+    ],
+    "slide_play_weight_idx4": [
+      564
+    ],
+    "pProvinceId_idx7": [
+      537
+    ],
+    "aId_idx5": [
+      128
+    ],
+    "fountainLongviewPids": [
+      66
+    ],
+    "user_view_list_hetu2": [
+      325
+    ],
+    "slide_wtd_weight_idx5": [
+      563
+    ],
+    "pAgeHour_idx4": [
+      548
+    ],
+    "pCityId_idx6": [
+      536
+    ],
+    "pPwtr_idx2": [
+      570
+    ],
+    "pEmpWtr_idx4": [
+      528
+    ],
+    "pCurrentPage_idx5": [
+      546
+    ],
+    "pMmuImgClusterV1_idx5": [
+      542
+    ],
+    "pPlvtr_idx1": [
+      577
+    ],
+    "uBasicAge": [
+      68
+    ],
+    "pHetuTagLevel2Id_idx6": [
+      130
+    ],
+    "slide_next_weight_idx5": [
+      566
+    ],
+    "pMmuImgClusterV1_idx3": [
+      542
+    ],
+    "pHetuTagLevel1Id_idx8": [
+      129
+    ],
+    "pAgeHour_idx3": [
+      548
+    ],
+    "pMmuContentId_idx5": [
+      543
+    ],
+    "pPsvtr_idx0": [
+      578
+    ],
+    "pPvtr_idx1": [
+      574
+    ],
+    "position_idx7": [
+      547
+    ],
+    "pMusic_idx8": [
+      540
+    ],
+    "pHetuTagLevel2Id_idx3": [
+      130
+    ],
+    "slide_next_weight_idx2": [
+      566
+    ],
+    "pPwtd_idx2": [
+      575
+    ],
+    "pPftr_idx4": [
+      572
+    ],
+    "pEmpFtr_idx0": [
+      529
+    ],
+    "aId_idx9": [
+      128
+    ],
+    "pMmuImgClusterV1_idx0": [
+      542
+    ],
+    "pHetuTagLevel1Id_idx5": [
+      129
+    ],
+    "pAgeHour_idx0": [
+      548
+    ],
+    "pContentLevel_idx8": [
+      539
+    ],
+    "pPhtr_idx2": [
+      573
+    ],
+    "pMcPwtr_idx5": [
+      583
+    ],
+    "pPftr_idx1": [
+      572
+    ],
+    "pUploadType_idx1": [
+      535
+    ],
+    "pMmuContentId_idx3": [
+      543
+    ],
+    "pContentLevel_idx3": [
+      539
+    ],
+    "pContentLevel_idx2": [
+      539
+    ],
+    "pMmuContentId_idx1": [
+      543
+    ],
+    "slide_next_label_idx3": [
+      565
+    ],
+    "pPwtr_idx1": [
+      570
+    ],
+    "pCityId_idx5": [
+      536
+    ],
+    "slide_next_weight_idx0": [
+      566
+    ],
+    "uExpClick": [
+      58
+    ],
+    "pHetuTagLevel2Id_idx1": [
+      130
+    ],
+    "pPcmtr_idx5": [
+      571
+    ],
+    "pHetuTagLevel1Id_idx1": [
+      129
+    ],
+    "pProvinceId_idx9": [
+      537
+    ],
+    "pMcPctr_idx4": [
+      580
+    ],
+    "pContentLevel_idx0": [
+      539
+    ],
+    "pPvtr_idx2": [
+      574
+    ],
+    "pPsvtr_idx1": [
+      578
+    ],
+    "pEmpWtr_idx1": [
+      528
+    ],
+    "pCityId_idx9": [
+      536
+    ],
+    "pPwtr_idx5": [
+      570
+    ],
+    "pCurrentPage_idx2": [
+      546
+    ],
+    "pMusic_idx0": [
+      540
+    ],
+    "pMcPctr_idx5": [
+      580
+    ],
+    "pEmpPtr_idx5": [
+      532
+    ],
+    "pMmuImgClusterV3_idx1": [
+      142
+    ],
+    "slide_wtd_label_idx2": [
+      562
+    ],
+    "pContentLevel_idx1": [
+      539
+    ],
+    "pProvinceId_idx8": [
+      537
+    ],
+    "slide_play_weight_idx5": [
+      564
+    ],
+    "pProvinceId_idx5": [
+      537
+    ],
+    "slide_play_weight_idx2": [
+      564
+    ],
+    "fountainEffviewPids": [
+      67
+    ],
+    "pPptr_idx0": [
+      569
+    ],
+    "pMmuImgClusterV3_idx5": [
+      142
+    ],
+    "pProvinceId_idx4": [
+      537
+    ],
+    "slide_play_weight_idx1": [
+      564
+    ],
+    "pMcPltr_idx1": [
+      581
+    ],
+    "pAgeHour_idx9": [
+      548
+    ],
+    "pEmpCtr_idx4": [
+      526
+    ],
+    "pPvtr_buck_idx5": [
+      609
+    ],
+    "position_idx5": [
+      547
+    ],
+    "pAgeHour_idx6": [
+      548
+    ],
+    "pEmpCtr_idx1": [
+      526
+    ],
+    "pPvtr_idx3": [
+      574
+    ],
+    "pPsvtr_idx2": [
+      578
+    ],
+    "pHetuTagLevel1Id_idx9": [
+      129
+    ],
+    "pMmuImgClusterV1_idx4": [
+      542
+    ],
+    "pPcmef_idx4": [
+      576
+    ],
+    "pPepstr_idx0": [
+      579
+    ],
+    "pMcPlvtr_idx3": [
+      585
+    ],
+    "pCurrentPage_idx4": [
+      546
+    ],
+    "pEmpWtr_idx3": [
+      528
+    ],
+    "pPcmef_idx2": [
+      576
+    ],
+    "pUploadType_idx8": [
+      535
+    ],
+    "pPptr_idx1": [
+      569
+    ],
+    "pMmuImgClusterV3_idx6": [
+      142
+    ],
+    "pEmpHtr_idx0": [
+      531
+    ],
+    "pPhtr_idx4": [
+      573
+    ],
+    "pEmpCmtr_idx4": [
+      530
+    ],
+    "position_idx1": [
+      547
+    ],
+    "pPvtr_buck_idx1": [
+      609
+    ],
+    "pDurationMs_idx6": [
+      133
+    ],
+    "pHetuTagLevel1Id_idx0": [
+      129
+    ],
+    "pCityId_idx1": [
+      536
+    ],
+    "pMcPctr_idx0": [
+      580
+    ],
+    "pEmpHtr_idx3": [
+      531
+    ],
+    "pPcmtr_idx3": [
+      571
+    ],
+    "pPptr_idx2": [
+      569
+    ],
+    "pMmuImgClusterV3_idx7": [
+      142
+    ],
+    "pMcPlvtr_idx5": [
+      585
+    ],
+    "uRequestWeekday": [
+      57
+    ],
+    "pPltr_idx3": [
+      568
+    ],
+    "avg_watchtime_idx1": [
+      561
+    ],
+    "pCityId_idx3": [
+      536
+    ],
+    "pPwtd_idx0": [
+      575
+    ],
+    "pPftr_idx2": [
+      572
+    ],
+    "user_view_list_pids": [
+      26
+    ],
+    "pEmpPtr_idx3": [
+      532
+    ],
+    "slide_wtd_label_idx0": [
+      562
+    ],
+    "pPcmtr_idx0": [
+      571
+    ],
+    "pMmuImgClusterV1_idx7": [
+      542
+    ],
+    "slide_next_label_idx2": [
+      565
+    ],
+    "pEmpLtr_idx2": [
+      527
+    ],
+    "slide_wtd_label_idx1": [
+      562
+    ],
+    "pMmuImgClusterV3_idx0": [
+      142
+    ],
+    "pEmpPtr_idx4": [
+      532
+    ],
+    "pMusic_idx3": [
+      540
+    ],
+    "pEmpPtr_idx2": [
+      532
+    ],
+    "avg_watchtime_idx2": [
+      561
+    ],
+    "pPltr_idx4": [
+      568
+    ],
+    "uProvinceId": [
+      54
+    ],
+    "pPcmtr_idx2": [
+      571
+    ],
+    "pMmuImgClusterV1_idx9": [
+      542
+    ],
+    "pCityId_idx0": [
+      536
+    ],
+    "pUploadType_idx7": [
+      535
+    ],
+    "pPcmef_idx1": [
+      576
+    ],
+    "pEmpFtr_idx3": [
+      529
+    ],
+    "pPwtd_idx5": [
+      575
+    ],
+    "pPctr_idx0": [
+      567
+    ],
+    "user_view_list_ev": [
+      321
+    ],
+    "pHetuTagLevel2Id_idx0": [
+      130
+    ],
+    "pPcmtr_idx4": [
+      571
+    ],
+    "pMcPwtr_idx3": [
+      583
+    ],
+    "pMcPsvtr_idx1": [
+      586
+    ],
+    "uId": [
+      38
+    ],
+    "pHetuTagLevel1Id_idx4": [
+      129
+    ],
+    "pHetuTagLevel2Id_idx2": [
+      130
+    ],
+    "slide_next_weight_idx1": [
+      566
+    ],
+    "pEmpPtr_idx0": [
+      532
+    ],
+    "pPlvtr_idx0": [
+      577
+    ],
+    "dId": [
+      34
+    ],
+    "pEmpLtr_idx0": [
+      527
+    ],
+    "pEmpPtr_idx1": [
+      532
+    ],
+    "slide_next_label_idx1": [
+      565
+    ],
+    "pMcPsvtr_idx2": [
+      586
+    ],
+    "pMusic_idx1": [
+      540
+    ],
+    "pCurrentPage_idx0": [
+      546
+    ],
+    "pCityId_idx7": [
+      536
+    ],
+    "pPwtr_idx3": [
+      570
+    ],
+    "pMcPltr_idx4": [
+      581
+    ],
+    "uCityId": [
+      53
+    ],
+    "pMmuContentId_idx7": [
+      543
+    ],
+    "aId_idx0": [
+      128
+    ],
+    "pUploadType_idx5": [
+      535
+    ],
+    "slide_next_weight_idx4": [
+      566
+    ],
+    "pHetuTagLevel2Id_idx5": [
+      130
+    ],
+    "pEmpFtr_idx4": [
+      529
+    ],
+    "slide_wtd_weight_idx0": [
+      563
+    ],
+    "uLikeAids": [
+      125
+    ],
+    "pEmpLtr_idx5": [
+      527
+    ],
+    "pMmuContentId_idx8": [
+      543
+    ],
+    "pPftr_idx0": [
+      572
+    ],
+    "pMcPwtr_idx4": [
+      583
+    ],
+    "pPhtr_idx1": [
+      573
+    ],
+    "pContentLevel_idx7": [
+      539
+    ],
+    "pPctr_idx4": [
+      567
+    ],
+    "pPcmef_idx0": [
+      576
+    ],
+    "pPlvtr_idx4": [
+      577
+    ],
+    "pMcPsvtr_idx5": [
+      586
+    ],
+    "uExpLike": [
+      59
+    ],
+    "aId_idx8": [
+      128
+    ],
+    "slide_next_label_idx4": [
+      565
+    ],
+    "pCurrentPage_idx9": [
+      546
+    ],
+    "fountainClickPids": [
+      63
+    ],
+    "pProvinceId_idx1": [
+      537
+    ],
+    "pPcmtr_idx1": [
+      571
+    ],
+    "pMmuImgClusterV1_idx8": [
+      542
+    ],
+    "pMcPlvtr_idx2": [
+      585
+    ],
+    "pPvtr_buck_idx4": [
+      609
+    ],
+    "position_idx4": [
+      547
+    ],
+    "pDurationMs_idx9": [
+      133
+    ],
+    "pHetuTagLevel2Id_idx8": [
+      130
+    ],
+    "pId_idx7": [
+      26
+    ],
+    "aId_idx2": [
+      128
+    ],
+    "fountainFollowAids": [
+      65
+    ],
+    "pPctr_idx2": [
+      567
+    ],
+    "avg_watchtime_idx4": [
+      561
+    ],
+    "pPlvtr_idx5": [
+      577
+    ],
+    "pDurationMs_idx2": [
+      133
+    ],
+    "pMcPltr_idx2": [
+      581
+    ],
+    "pId_idx0": [
+      26
+    ],
+    "pMmuImgClusterV3_idx9": [
+      142
+    ],
+    "pPptr_idx4": [
+      569
+    ],
+    "pPsvtr_idx3": [
+      578
+    ],
+    "pPvtr_idx4": [
+      574
+    ],
+    "pMcPctr_idx3": [
+      580
+    ],
+    "pId_idx3": [
+      26
+    ],
+    "uHatePids": [
+      123
+    ],
+    "pId_idx2": [
+      26
+    ],
+    "slide_next_weight_idx3": [
+      566
+    ],
+    "pHetuTagLevel2Id_idx4": [
+      130
+    ],
+    "pMcPltr_idx0": [
+      581
+    ],
+    "pAgeHour_idx8": [
+      548
+    ],
+    "pPlvtr_idx3": [
+      577
+    ],
+    "pMcPsvtr_idx0": [
+      586
+    ],
+    "position_idx9": [
+      547
+    ],
+    "pDurationMs_idx3": [
+      133
+    ],
+    "pEmpHtr_idx5": [
+      531
+    ],
+    "pMcPctr_idx2": [
+      580
+    ],
+    "pPhtr_idx3": [
+      573
+    ],
+    "pContentLevel_idx9": [
+      539
+    ],
+    "uGender": [
+      69
+    ],
+    "pHetuTagLevel1Id_idx2": [
+      129
+    ],
+    "pMmuImgClusterV3_idx8": [
+      142
+    ],
+    "pPptr_idx3": [
+      569
+    ],
+    "slide_next_label_idx5": [
+      565
+    ],
+    "pEmpLtr_idx1": [
+      527
+    ],
+    "pEmpHtr_idx1": [
+      531
+    ],
+    "pPhtr_idx5": [
+      573
+    ],
+    "pPptr_idx5": [
+      569
+    ],
+    "uExpFollow": [
+      60
+    ],
+    "pMcPwtr_idx2": [
+      583
+    ],
+    "pPcmef_idx3": [
+      576
+    ],
+    "pUploadType_idx0": [
+      535
+    ],
+    "pPcmef_idx5": [
+      576
+    ],
+    "pPctr_idx3": [
+      567
+    ],
+    "avg_watchtime_idx3": [
+      561
+    ],
+    "pPltr_idx5": [
+      568
+    ],
+    "pEmpWtr_idx5": [
+      528
+    ],
+    "pCurrentPage_idx6": [
+      546
+    ],
+    "pDurationMs_idx1": [
+      133
+    ],
+    "user_view_list_aids": [
+      128
+    ],
+    "user_view_list_lv": [
+      322
+    ],
+    "pEmpCmtr_idx2": [
+      530
+    ],
+    "pEmpCtr_idx5": [
+      526
+    ],
+    "pEmpLtr_idx4": [
+      527
+    ],
+    "pPwtr_idx0": [
+      570
+    ],
+    "pCityId_idx4": [
+      536
+    ],
+    "pCurrentPage_idx7": [
+      546
+    ],
+    "pMcPlvtr_idx4": [
+      585
+    ],
+    "pPftr_idx3": [
+      572
+    ],
+    "pPwtd_idx1": [
+      575
+    ],
+    "pId_idx6": [
+      26
+    ],
+    "pCityId_idx2": [
+      536
+    ],
+    "pMcPlvtr_idx0": [
+      585
+    ],
+    "pId_idx9": [
+      26
+    ],
+    "pPvtr_idx0": [
+      574
+    ],
+    "pMusic_idx5": [
+      540
+    ],
+    "pPsvtr_idx5": [
+      578
+    ],
+    "slide_next_label_idx0": [
+      565
+    ],
+    "pMusic_idx4": [
+      540
+    ],
+    "pPepstr_idx1": [
+      579
+    ],
+    "pPepstr_idx2": [
+      579
+    ],
+    "pPepstr_idx3": [
+      579
+    ],
+    "pPepstr_idx4": [
+      579
+    ],
+    "pPepstr_idx5": [
+      579
+    ],
+    "pPctr_idx1": [
+      567
+    ],
+    "pProvinceId_idx2": [
+      537
+    ],
+    "pMcPwtr_idx0": [
+      583
+    ],
+    "pMcPwtr_idx1": [
+      583
+    ],
+    "pUploadType_idx6": [
+      535
+    ],
+    "pId_idx1": [
+      26
+    ],
+    "pDurationMs_idx4": [
+      133
+    ],
+    "pEmpCtr_idx2": [
+      526
+    ],
+    "pEmpCtr_idx3": [
+      526
+    ],
+    "pEmpLtr_idx3": [
+      527
+    ],
+    "pMcPsvtr_idx4": [
+      586
+    ],
+    "pCurrentPage_idx3": [
+      546
+    ],
+    "pEmpWtr_idx2": [
+      528
+    ],
+    "pEmpCmtr_idx1": [
+      530
+    ],
+    "pEmpCmtr_idx0": [
+      530
+    ],
+    "pEmpCmtr_idx3": [
+      530
+    ],
+    "pEmpCmtr_idx5": [
+      530
+    ],
+    "pEmpHtr_idx2": [
+      531
+    ],
+    "pId_idx4": [
+      26
+    ],
+    "pProvinceId_idx0": [
+      537
+    ],
+    "pId_idx8": [
+      26
+    ],
+    "aId_idx1": [
+      128
+    ],
+    "aId_idx3": [
+      128
+    ],
+    "aId_idx4": [
+      128
+    ],
+    "aId_idx6": [
+      128
+    ],
+    "pUploadType_idx2": [
+      535
+    ],
+    "pUploadType_idx3": [
+      535
+    ],
+    "pUploadType_idx4": [
+      535
+    ],
+    "pUploadType_idx9": [
+      535
+    ]
+  },
+  "sign_feature_pooling": {
+    "pEmpPtr_idx3": 1,
+    "pContentLevel_idx0": 1,
+    "pEmpFtr_idx1": 1,
+    "pMmuImgClusterV1_idx1": 1,
+    "pHetuTagLevel1Id_idx6": 1,
+    "pAgeHour_idx1": 1,
+    "pPvtr_buck_idx5": 1,
+    "avg_watchtime_idx5": 1,
+    "pMusic_idx9": 1,
+    "pProvinceId_idx8": 1,
+    "uGender": 1,
+    "pHetuTagLevel1Id_idx0": 1,
+    "pMmuContentId_idx2": 1,
+    "pHetuTagLevel2Id_idx9": 1,
+    "pEmpFtr_idx5": 1,
+    "pEmpCtr_idx0": 1,
+    "pAgeHour_idx5": 1,
+    "pEmpHtr_idx1": 1,
+    "pProvinceId_idx3": 1,
+    "aId_idx7": 1,
+    "pHetuTagLevel1Id_idx3": 1,
+    "uExpLongView": 1,
+    "user_view_list_sv": 1,
+    "pPvtr_buck_idx4": 1,
+    "pDurationMs_idx9": 1,
+    "pMmuImgClusterV3_idx3": 1,
+    "pContentLevel_idx5": 1,
+    "avg_watchtime_idx2": 1,
+    "pMusic_idx6": 1,
+    "pDurationMs_idx7": 1,
+    "pPvtr_buck_idx2": 1,
+    "uLikePids": 1,
+    "fountainLikePids": 5,
+    "pMusic_idx2": 1,
+    "pPvtr_buck_idx3": 1,
+    "pDurationMs_idx8": 1,
+    "pMmuImgClusterV3_idx2": 1,
+    "pMusic_idx5": 1,
+    "avg_watchtime_idx1": 1,
+    "pDurationMs_idx6": 1,
+    "pPvtr_buck_idx1": 1,
+    "pDurationMs_idx1": 1,
+    "user_view_list_aids": 1,
+    "pContentLevel_idx4": 1,
+    "pContentLevel_idx7": 1,
+    "pMmuImgClusterV1_idx8": 1,
+    "pCurrentPage_idx8": 1,
+    "pAgeHour_idx7": 1,
+    "user_view_list_pids": 1,
+    "pEmpHtr_idx5": 1,
+    "pProvinceId_idx7": 1,
+    "aId_idx5": 1,
+    "fountainLongviewPids": 5,
+    "pMmuImgClusterV1_idx4": 1,
+    "pHetuTagLevel1Id_idx9": 1,
+    "pAgeHour_idx4": 1,
+    "fountainFollowAids": 5,
+    "pCityId_idx8": 1,
+    "pCurrentPage_idx1": 1,
+    "pEmpWtr_idx0": 1,
+    "pMmuContentId_idx0": 1,
+    "pHetuTagLevel2Id_idx7": 1,
+    "pContentLevel_idx6": 1,
+    "uExpWatchTime": 1,
+    "pMmuImgClusterV1_idx3": 1,
+    "pHetuTagLevel1Id_idx8": 1,
+    "pAgeHour_idx3": 1,
+    "pMmuImgClusterV3_idx4": 1,
+    "pCityId_idx2": 1,
+    "pUploadType_idx1": 1,
+    "pMusic_idx7": 1,
+    "pMmuImgClusterV1_idx2": 1,
+    "pHetuTagLevel1Id_idx7": 1,
+    "pEmpFtr_idx2": 1,
+    "pAgeHour_idx2": 1,
+    "avg_watchtime_idx4": 1,
+    "pMusic_idx8": 1,
+    "aId_idx9": 1,
+    "pMmuImgClusterV1_idx0": 1,
+    "pHetuTagLevel1Id_idx5": 1,
+    "pEmpFtr_idx0": 1,
+    "pAgeHour_idx0": 1,
+    "pMmuContentId_idx6": 1,
+    "pMmuContentId_idx4": 1,
+    "pMusic_idx3": 1,
+    "pMmuContentId_idx3": 1,
+    "pHetuTagLevel2Id_idx8": 1,
+    "pMmuContentId_idx1": 1,
+    "pMmuContentId_idx5": 1,
+    "uFollowPids": 1,
+    "pDurationMs_idx0": 1,
+    "pMmuContentId_idx9": 1,
+    "pId_idx5": 1,
+    "uClickPids": 1,
+    "pCurrentPage_idx4": 1,
+    "pEmpWtr_idx3": 1,
+    "pProvinceId_idx9": 1,
+    "pHetuTagLevel1Id_idx1": 1,
+    "pEmpWtr_idx5": 1,
+    "pCurrentPage_idx6": 1,
+    "pMmuImgClusterV1_idx6": 1,
+    "uExpFollow": 1,
+    "pEmpPtr_idx5": 1,
+    "pMmuImgClusterV3_idx1": 1,
+    "pEmpWtr_idx4": 1,
+    "pCurrentPage_idx5": 1,
+    "pMmuImgClusterV1_idx5": 1,
+    "pPvtr_buck_idx0": 1,
+    "pDurationMs_idx5": 1,
+    "pUploadType_idx0": 1,
+    "pCityId_idx1": 1,
+    "pEmpHtr_idx4": 1,
+    "aId_idx2": 1,
+    "uFollowAids": 1,
+    "pProvinceId_idx6": 1,
+    "pEmpWtr_idx1": 1,
+    "pCityId_idx9": 1,
+    "pCurrentPage_idx2": 1,
+    "pCityId_idx0": 1,
+    "pContentLevel_idx3": 1,
+    "pMmuImgClusterV3_idx0": 1,
+    "pEmpPtr_idx4": 1,
+    "pContentLevel_idx1": 1,
+    "fountainEffviewPids": 5,
+    "pMmuImgClusterV3_idx5": 1,
+    "pAgeHour_idx9": 1,
+    "pEmpCtr_idx4": 1,
+    "pUploadType_idx8": 1,
+    "pCityId_idx5": 1,
+    "pAgeHour_idx6": 1,
+    "pEmpCtr_idx1": 1,
+    "pEmpCmtr_idx4": 1,
+    "user_view_list_hetu2": 1,
+    "pMmuImgClusterV3_idx7": 1,
+    "uProvinceId": 1,
+    "user_view_list_hetu1": 1,
+    "uBasicAge": 1,
+    "pHetuTagLevel2Id_idx6": 1,
+    "pEmpHtr_idx3": 1,
+    "pCurrentPage_idx7": 1,
+    "pMmuImgClusterV1_idx7": 1,
+    "pEmpLtr_idx2": 1,
+    "pEmpPtr_idx2": 1,
+    "fountainClickPids": 5,
+    "pCurrentPage_idx9": 1,
+    "pMmuImgClusterV1_idx9": 1,
+    "pContentLevel_idx2": 1,
+    "uRequestHour": 1,
+    "uHatePids": 1,
+    "pId_idx2": 1,
+    "user_view_list_ev": 1,
+    "pUploadType_idx7": 1,
+    "pMmuContentId_idx8": 1,
+    "uRequestWeekday": 1,
+    "pMusic_idx4": 1,
+    "avg_watchtime_idx0": 1,
+    "uLikeAids": 1,
+    "pEmpPtr_idx0": 1,
+    "dId": 1,
+    "pEmpLtr_idx0": 1,
+    "pHetuTagLevel1Id_idx4": 1,
+    "uId": 1,
+    "aId_idx8": 1,
+    "pEmpPtr_idx1": 1,
+    "pCityId_idx3": 1,
+    "pMmuImgClusterV3_idx6": 1,
+    "pMusic_idx1": 1,
+    "pCurrentPage_idx0": 1,
+    "pCityId_idx7": 1,
+    "uCityId": 1,
+    "pMmuContentId_idx7": 1,
+    "aId_idx0": 1,
+    "pCityId_idx6": 1,
+    "pUploadType_idx5": 1,
+    "pHetuTagLevel2Id_idx2": 1,
+    "pHetuTagLevel2Id_idx5": 1,
+    "pEmpLtr_idx5": 1,
+    "uExpLike": 1,
+    "pEmpLtr_idx1": 1,
+    "pProvinceId_idx1": 1,
+    "pHetuTagLevel2Id_idx3": 1,
+    "pId_idx7": 1,
+    "pMusic_idx0": 1,
+    "uExpClick": 1,
+    "pHetuTagLevel2Id_idx1": 1,
+    "pDurationMs_idx2": 1,
+    "pId_idx0": 1,
+    "pId_idx3": 1,
+    "pHetuTagLevel2Id_idx0": 1,
+    "pHetuTagLevel2Id_idx4": 1,
+    "pAgeHour_idx8": 1,
+    "pDurationMs_idx3": 1,
+    "pContentLevel_idx9": 1,
+    "pHetuTagLevel1Id_idx2": 1,
+    "pEmpHtr_idx0": 1,
+    "pEmpCmtr_idx2": 1,
+    "user_view_list_lv": 1,
+    "pEmpCtr_idx5": 1,
+    "pEmpLtr_idx4": 1,
+    "pCityId_idx4": 1,
+    "pId_idx6": 1,
+    "pId_idx9": 1,
+    "pMmuImgClusterV3_idx8": 1,
+    "pProvinceId_idx2": 1,
+    "pUploadType_idx6": 1,
+    "pId_idx1": 1,
+    "pDurationMs_idx4": 1,
+    "pEmpCtr_idx2": 1,
+    "pEmpCtr_idx3": 1,
+    "pEmpLtr_idx3": 1,
+    "pCurrentPage_idx3": 1,
+    "pEmpWtr_idx2": 1,
+    "pMmuImgClusterV3_idx9": 1,
+    "pEmpFtr_idx4": 1,
+    "pEmpCmtr_idx1": 1,
+    "pEmpCmtr_idx0": 1,
+    "pEmpCmtr_idx3": 1,
+    "pEmpCmtr_idx5": 1,
+    "pEmpHtr_idx2": 1,
+    "pId_idx4": 1,
+    "pProvinceId_idx0": 1,
+    "pId_idx8": 1,
+    "aId_idx1": 1,
+    "aId_idx3": 1,
+    "aId_idx4": 1,
+    "aId_idx6": 1,
+    "pEmpFtr_idx3": 1,
+    "pUploadType_idx2": 1,
+    "pUploadType_idx3": 1,
+    "pUploadType_idx4": 1,
+    "pUploadType_idx9": 1,
+    "avg_watchtime_idx3": 1,
+    "pProvinceId_idx4": 1,
+    "pContentLevel_idx8": 1,
+    "pProvinceId_idx5": 1
+  }
+}

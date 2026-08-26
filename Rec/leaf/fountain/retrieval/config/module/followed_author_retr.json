@@ -1,0 +1,38 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_followed_author_retr_fountain", true],
+      "fountain_followed_author_retrieval_query_server": "grpc_recoHotOrderedIndexServer",
+      "fountain_followed_author_retrieval_query": "authorId2PhotoIdOrderByExploreStatScore",
+      "fountain_followed_author_search_num": 500,
+      "fountain_followed_author_search_total_num": 500,
+      "skip_fountain_followed_author_retrieval_query_server": 1,
+      "skip_fountain_followed_author_retr_v3": 1,
+      "fountain_followed_author_retr_v3_total_num": 500,
+      "skip_fountain_followed_author_importance_apply": 1,
+      "fountain_followed_author_retr_v3_top_author_num": 50,
+      "skip_fountain_follow_retr_post_sort_truncate": 1,
+      "fountain_follow_retr_post_truncate_size": 800,
+      "enable_fountain_followed_author_retrieval_high_value_ua": false,
+      "enable_fountain_followed_author_retrieval_high_value_ua_emp": false,
+      "skip_fountain_followed_author_retrieval_snake_merge": 1,
+      "enable_fountain_followed_author_retrieval_trigger_merge": false,
+      "skip_fountain_followed_author_retr_shuffle": 1,
+      "fountain_followed_author_trigger_num": 1000,
+      "fountain_followed_author_snake_merge_limit": 400
+    }, 
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "followAuthors",
+        "featureUId"
+      ]
+    },
+    "export": {
+      "results": [
+        "followed_author_retr__result"
+      ]
+    }
+  },
+  "reason": 405
+}

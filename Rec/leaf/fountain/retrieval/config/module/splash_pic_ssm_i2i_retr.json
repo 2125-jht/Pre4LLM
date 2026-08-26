@@ -1,0 +1,84 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "param_name": "enable_fountain_splash_pic_ssm_i2i_retr",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "fountain_pic_colossus_trigger_limit": {
+        "param_name": "fountain_pic_colossus_trigger_limit_splash",
+        "param_type": "int",
+        "default_value": 100
+      },
+      "fountain_pic_ssm_i2i_retr_kess_name": {
+        "param_name": "fountain_pic_ssm_i2i_retr_kess_name_splash",
+        "param_type": "string",
+        "default_value": "grpc_fountainPicSsmI2IRetr"
+      },
+      "fountain_pic_ssm_i2i_retr_topk": {
+        "param_name": "fountain_pic_ssm_i2i_retr_topk_splash",
+        "param_type": "int",
+        "default_value": 20
+      },
+      "fountain_pic_ssm_i2i_src_bucket": {
+        "param_name": "fountain_pic_ssm_i2i_src_bucket_splash",
+        "param_type": "string",
+        "default_value": "photo_src"
+      },
+      "fountain_pic_ssm_i2i_dest_bucket": {
+        "param_name": "fountain_pic_ssm_i2i_dest_bucket_splash",
+        "param_type": "string",
+        "default_value": "plato_hv_pictures"
+      },
+      "fountain_pic_colossus_all_limit": {
+        "param_name": "fountain_pic_colossus_all_limit_splash",
+        "param_type": "int",
+        "default_value": 100
+      },
+      "fountain_pic_colossus_interact_limit": {
+        "param_name": "fountain_pic_colossus_interact_limit_splash",
+        "param_type": "int",
+        "default_value": 50
+      },
+      "fountain_pic_colossus_trigger_channel_str": {
+        "param_name": "fountain_pic_colossus_trigger_channel_str_splash",
+        "param_type": "string",
+        "default_value": ""
+      },
+      "fountain_pic_colossus_exclude_single_pic": {
+        "param_name": "fountain_pic_colossus_exclude_single_pic_splash",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "fountain_pic_colossus_eff_play_thd_sec": {
+        "param_name": "fountain_pic_colossus_eff_play_thd_sec_splash",
+        "param_type": "int",
+        "default_value": -1
+      },
+      "fountain_pic_colossus_range_days": {
+        "param_name": "fountain_pic_colossus_range_days_splash",
+        "param_type": "int",
+        "default_value": 180
+      },
+      "fountain_pic_ssm_i2i_retr_total_num": {
+        "param_name": "fountain_pic_ssm_i2i_retr_total_num",
+        "param_type": "int",
+        "default_value": 500
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "source_hetu_level_one",
+        "colossus_resp_v2"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_pic_ssm_i2i_retr__result"
+      ]
+    }
+  },
+  "reason": 13026,
+  "copy_from_source_hetu_level_one": true
+}

@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_longterm_retarget_author_retr", false],
+      "filter_future_seconds": ["fountain_longterm_retarget_author_retr_filter_future_s", 2592000],
+      "play_time_s_ths": ["fountain_longterm_retarget_author_retr_playtime_s_ths", 7],
+      "enable_author_shuffle": ["fountain_longterm_retarget_author_retr_enable_author_shuffle", false],
+      "remote_index_search_num": ["fountain_longterm_retarget_author_retr_topk", 2],
+      "max_trigger_num": ["fountain_longterm_retarget_author_retr_max_author_num", 400]
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_resp_v2",
+        "hateAidList"
+      ]
+    }, 
+    "export": {
+      "results": [
+        "longterm_retarget_author__result"
+      ]
+    }
+  },
+  "reason": 358
+}
+    

@@ -1,0 +1,29 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_splash_long_view_like_i2i_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_splash_long_view_like_i2i_retr_kess_service": "kws-kuaishou-fountain-retrieve-fountain-lv-like-i2i",
+      "fountain_splash_long_view_like_i2i_retr_num": 500,
+      "fountain_splash_long_view_like_i2i_retr_src_bucket": "photo",
+      "fountain_splash_long_view_like_i2i_retr_dest_bucket": "photo",
+      "skip_fountain_splash_long_view_like_i2i_retr": 1
+    },
+    "import": {
+      "common_attrs": [
+        "featureSourcePId",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_long_view_like_i2i_retr__result"
+      ]
+    }
+  },
+  "reason": 10401
+}

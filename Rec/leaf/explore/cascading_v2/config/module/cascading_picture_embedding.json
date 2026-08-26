@@ -1,0 +1,35 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_calc_pic_diversity": false,
+      "explore_pic_mc_diversity_history_num": 30,
+      "explore_pic_mc_diversity_time_gap_min": 1440,
+      "explore_pic_mc_diversity_enable_action": 0,
+      "explore_pic_mc_calc_negative_history_pic_ids_by_ddp": 0,
+      "explore_pic_mc_diversity_embedding_service_name": "grpc_MMUHetuSimContentEmbedding"
+    },
+    "import": {
+      "common_attrs": [
+        "prerank_step3",
+        "user_info_ptr",
+        "uStandardRealShowPicAllIdList",
+        "uStandardExploreRealshowPhotoIdList",
+        "uStandardExploreRealshowTimestampList",
+        "uStandardExploreRealshowLabelList"
+      ],
+      "results": [
+        "cascading_prerank_channel_sort__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "mc_step1",
+        "history_pic_ids",
+        "embedding_source_pic_ids",
+        "pic_embeddings"
+      ],
+      "item_attrs": [
+      ]
+    }
+  }
+}

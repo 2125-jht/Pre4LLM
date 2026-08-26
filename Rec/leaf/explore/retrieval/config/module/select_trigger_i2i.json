@@ -1,0 +1,58 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_select_trigger_i2i_retrieval",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "kess_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_select_trigger_i2i_retr_kess_name",
+        "param_type": "string",
+        "default_value": "grpc_ExploreSelectTriggerI2I"
+      },
+      "service_request_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_select_trigger_i2i_retr_request_num",
+        "param_type": "int",
+        "default_value": 800
+      }
+    },
+    "constant": {
+      "service_timeout_ms": 60
+    },
+    "import": {
+      "common_attrs": [
+        "featureUId",
+        "userRecentViewTimeListRaw",
+        "userRecentViewPageListRaw",
+        "playstat_playtimes",
+        "playstat_durations"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_retr__trigger_pid"
+      ],
+      "results": [
+        "explore_multi_target_u2i_retr__result"
+      ]
+    }
+  },
+  "reason": 879,
+  "send_browse_set": true,
+  "trimed_user_info": [],
+  "send_common_attrs": [
+    { "name": "featureUId", "as": "uId"},
+      "userRecentViewTimeListRaw",
+      "userRecentViewPageListRaw",
+      "playstat_playtimes",
+      "playstat_durations"
+  ],
+  "recv_item_attrs": [
+    {"name": "trigger_pid", "as": "i2i_retr__trigger_pid"}
+  ],
+  "service_request_type": "{{_REQ_TYPE_}}"
+}

@@ -1,0 +1,39 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_vertical_content_common_retr", false],
+      "retrieval_cache_config": ["explore_vertical_content_common_retr_cache_config", ""],
+      "kess_service_name": ["explore_vertical_content_common_retr_service_name", "grpc_exploreVerticalContentCommonRetrServer"],
+      "service_request_num": ["explore_vertical_content_common_retr_retrieve_num", 1000],
+      "skip_popular_content_retr": ["explore_vertical_content_common_retr_skip_popular_content", 1],
+      "skip_qualified_author_retr": ["explore_vertical_content_common_retr_skip_qualified_author", 1],
+      "skip_vertical_tab_retr": ["explore_vertical_content_common_retr_skip_vertical_tab", 1]
+    }, 
+    "constant": {
+      "service_timeout_ms": 50
+    },
+    "import": {
+      "common_attrs": [
+        "mc_u2i_user_embedding_list",
+        "secTabHetuV2TagId"
+      ]
+    },
+    "export": {
+      "results": [
+        "explore_vertical_content_common_retr__result"
+      ]
+    }
+  },
+  "reason": 0,
+  "service_request_type": "default",
+  "send_browse_set": false,
+  "send_common_attrs": [
+    {"name": "mc_u2i_user_embedding_list", "as": "mc_user_emb"},
+    {"name": "secTabHetuV2TagId", "as": "vertical_tab_id"},
+    "skip_popular_content_retr",
+    "skip_qualified_author_retr",
+    "skip_vertical_tab_retr"
+  ],
+  "trimed_user_info": [],
+  "extra_skip_condition": "skip_popular_content_retr > 0 and skip_qualified_author_retr > 0 and (skip_vertical_tab_retr > 0 or secTabHetuV2TagId == nil or secTabHetuV2TagId <= 0)"
+}

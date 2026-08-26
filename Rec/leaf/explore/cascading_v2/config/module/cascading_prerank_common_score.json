@@ -1,0 +1,33 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_enable_gen_is_diversity_degraded": false,
+      "explore_diversity_degraded_min_per_hetu1": 200,
+      "explore_diversity_degraded_hetu1_min": 7,
+      "enable_explore_calc_pic_search_boost_user_degree": false,
+      "explore_search_click_pic_time_gap_min": 60,
+      "explore_pic_search_boost_user_cluster_thresh": 2,
+      "enable_explore_calc_pic_double_outside_valid_interest_num": false
+    },
+    "import": {
+      "common_attrs": [
+        "prerank_step1",
+        "search_click_list",
+        "search_click_list_timestamps",
+        "uStandardClickPicAllIdList",
+        "uDoubleOutsideValidPicClusterCnt7dKV"
+      ],
+      "item_attrs": [
+        "hetu_tag_level_info_v2__hetu_level_one"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "prerank_step2",
+        "is_diversity_hetu1_degraded",
+        "pic_search_boost_user_degree",
+        "pic_double_outside_valid_interest_num"
+      ]
+    }
+  }
+}

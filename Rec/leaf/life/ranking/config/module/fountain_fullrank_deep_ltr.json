@@ -1,0 +1,39 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_fullrank_deep_ltr_kess_service": "kws-kuaishou-hot-uni-gpu-predict-fountain-deep-ltr",
+      "skip_fountain_deep_ltr_predict": 1,
+      "enable_fountain_fullrank_deep_ltr_kai2": 0,
+      "fountain_deep_ltr_partition_size": 150,
+      "fountain_deep_ltr_request_type": "kai_predict"
+    },
+    "import": {
+      "common_attrs": [
+        "featureSimilarUserList"
+      ],
+      "item_attrs": [
+        "fullrank_detail_pctr",
+        "fullrank_detail_pltr",
+        "fullrank_detail_pwtr",
+        "fullrank_detail_pftr",
+        "fullrank_detail_plvtr",
+        "fullrank_detail_pvtr",
+        "fullrank_detail_psvr",
+        "fullrank_detail_pcmtr",
+        "fullrank_detail_pptr",
+        "fullrank_detail_pwtd",
+        "featurePAAvgWatchTime"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "fullrank_ltr_score",
+        "fullrank_act_ctr",
+        "fullrank_act_wtd",
+        "fullrank_ltr_v4_fountain_finish_rate",
+        "fullrank_ltr_v4_fountain_next",
+        "fullrank_ltr_v4_fountain_reward"
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dragon_params": {
+    "abtest": {
+        "enable_explore_diversity_update_ranking": 0,
+        "explore_embedding_dim_size_ranking": 64,
+        "diversity_history_size_ranking": 30,
+        "explore_diversity_history_valid_timestamp_gap": 600,
+        "explore_diversity_history_matrix_set_mode": 0,
+        "explore_diversity_fr_topk_select_mod": 0,
+        "explore_diversity_mgs_topk_ranking": 5
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "user_info_ptr",
+        "explore_realshow_click_common_list",
+        "pid_mmu_embedding_map_ranking"
+      ],
+      "item_attrs": [
+        "hetu_sim_cluster_id"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "diversity_fr_ranking"
+      ]
+    }
+  }
+}
+  

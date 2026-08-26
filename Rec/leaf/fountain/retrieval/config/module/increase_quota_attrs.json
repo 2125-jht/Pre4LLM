@@ -1,0 +1,16 @@
+{
+  "dragon_params": {
+    "import": {
+      "common_attrs": [
+        "fountain_increase_quota_time_window"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "increase_quota_status",
+        "increase_quota_current_index",
+        "increase_quota_window_len"
+      ]
+    }
+  }
+}

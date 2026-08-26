@@ -1,0 +1,14 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_browse_screen_time_ms": ["explore_browse_screen_time_ms", 900000],
+      "explore_browse_screen_count": ["explore_browse_screen_count", 50]
+    },
+    "export": {
+      "common_attrs" : [
+        "browse_screen__pid_list",
+        "browse_screen__aid_list"
+      ]
+    }
+  }
+}

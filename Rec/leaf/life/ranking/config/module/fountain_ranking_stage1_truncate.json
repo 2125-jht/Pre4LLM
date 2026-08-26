@@ -1,0 +1,78 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "fountain_ensemble_filter_function": 0,
+      "fountain_ensemble_filter_score_with_rank": 0,
+      "fountain_ensemble_filter_coeff": 0.4,
+
+      "fountain_ensemble_filter_weight_fullrank_out_pctr": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_out_pctr": 0.3,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_out_pctr": 0.0,
+      "xlife_fountain_ensemble_filter_weight_fullrank_pltr": 1.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pltr": 0.1,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pltr": 0.0,
+      "xlife_fountain_ensemble_filter_weight_fullrank_pwtr": 1.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pwtr": 0.2,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pwtr": 0.0,
+      "fountain_ensemble_filter_weight_fullrank_pftr": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pftr": 0.1,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pftr": 0.0,
+      "fountain_ensemble_filter_weight_fullrank_psvr": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_psvr": 0.05,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_psvr": 1.0,
+      "fountain_ensemble_filter_weight_fullrank_plvtr": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_plvtr": 0.7,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_plvtr": 0.0,
+      "fountain_ensemble_filter_weight_fullrank_pcmtr": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pcmtr": 0.3,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pcmtr": 0.0,
+      "fountain_ensemble_filter_weight_fullrank_pptr": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pptr": 0.3,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pptr": 0.0,
+      "fountain_ensemble_filter_weight_fullrank_pcmef": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pcmef": 0.3,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pcmef": 0.0,
+      "fountain_ensemble_filter_weight_fullrank_phtr": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_phtr": 0.05,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_phtr": 1.0,
+      "fountain_ensemble_filter_weight_fullrank_pevtr": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pevtr": 0.3,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pevtr": 0.0,
+      "fountain_ensemble_filter_weight_fullrank_pvtr": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pvtr": 0.6,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pvtr": 0.0,
+      "fountain_ensemble_filter_weight_fullrank_pepstr": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pepstr": 0.3,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pepstr": 0.0,
+      "xlife_fountain_ensemble_filter_weight_fullrank_pfintr": 3.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pfintr": 0.8,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pfintr": 0.0,
+      "xlife_fountain_ensemble_filter_weight_fullrank_pcltr": 0.5,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pcltr": 0.3,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pcltr": 0.0,
+      "fountain_ensemble_filter_weight_fullrank_pcpr": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pcpr": 0.3,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pcpr": 0.0,
+      "fountain_ensemble_filter_weight_fullrank_pevtr_v2": 0.0,
+      "fountain_ensemble_filter_tail_ratio_fullrank_pevtr_v2": 0.3,
+      "fountain_ensemble_filter_global_quantile_value_fullrank_pevtr_v2": 0.0
+    },
+    "import": {
+      "item_attrs": [
+        "fullrank_sim_pcmtr",
+        "fullrank_sim_pevtr",
+        "fullrank_sim_pltr",
+        "fullrank_sim_pwtr",
+        "fullrank_sim_pvtr"
+      ]
+    },
+    "export": {
+      "results": [
+        "fountain_ranking_stage1_truncate__result"
+      ],
+      "item_attrs": [
+        "fullrank_ensemble_filter_score"
+      ]
+    }
+  }
+}

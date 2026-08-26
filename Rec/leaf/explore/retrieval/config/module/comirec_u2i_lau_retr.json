@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name" : "RECO_RPC",
+        "param_name": "open_comirec_u2i_lau_retrieval",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "comirec_u2i_lau_retr_service_name": "reco-reco-explore-lau-comirec-u2i-retr",
+      "comirec_u2i_lau_retr_request_num": 1000,
+      "comirec_u2i_lau_interest_depth": 400,
+      "comirec_u2i_lau_diversity_boost": 0.1,
+      "comirec_u2i_lau_photo_score_boost": 0.0,
+      "comirec_u2i_lau_ann_src": "item",
+      "comirec_u2i_lau_ann_dst": "item",
+      "retrieval_cache_config": ["comirec_u2i_lau_retr_cache_config", ""]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "follow_list",
+        "follow_aids"
+      ]
+    },
+    "export": {
+      "results": [
+        "comirec_u2i_lau__result"
+      ]
+    }
+  },
+  "reason": 10048,
+  "retrieve_num": 1000
+}

@@ -1,0 +1,156 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_pic_colossus_ann_retrieval_v2",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "use_colossus_trigger_embedding": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_get_embedding",
+        "param_type": "bool",
+        "default_value": true,
+        "report_ab_hit": true
+      },
+      "colossus_pic_all_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_pic_all_limit",
+        "param_type": "int",
+        "default_value": 100,
+        "report_ab_hit": true
+      },
+      "colossus_pic_interact_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_pic_interact_limit",
+        "param_type": "int",
+        "default_value": 50,
+        "report_ab_hit": true
+      },
+      "colossus_pic_trigger_channel_str": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_pic_trigger_channel",
+        "param_type": "string",
+        "default_value": "",
+        "report_ab_hit": true
+      },
+      "enable_exclude_single_pic": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_enable_exclude_single_pic",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "enable_scatter_trigger": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_enable_scatter_trigger",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "scatter_each_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_scatter_trigger_each_tag_limit",
+        "param_type": "int",
+        "default_value": 8,
+        "report_ab_hit": true
+      },
+      "colossus_trigger_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_trigger_limit",
+        "param_type": "int",
+        "default_value": 30,
+        "report_ab_hit": true
+      },
+      "embedding_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_retr_embedding_service_name",
+        "param_type": "string",
+        "default_value": "grpc_hotMcEmbed",
+        "report_ab_hit": true
+      },
+      "ann_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_service_name",
+        "param_type": "string",
+        "default_value": "grpc_pictureAnn",
+        "report_ab_hit": true
+      },
+      "ann_top_k": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_top_k",
+        "param_type": "int",
+        "default_value": 20,
+        "report_ab_hit": true
+      },
+      "src_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_src_bucket",
+        "param_type": "string",
+        "default_value": "photo",
+        "report_ab_hit": true
+      },
+      "dest_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_dest_bucket",
+        "param_type": "string",
+        "default_value": "photo",
+        "report_ab_hit": true
+      },
+      "retrieve_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "pic_colossus_ann_retr_ann_limit_num",
+        "param_type": "int",
+        "default_value": 500,
+        "report_ab_hit": true
+      },
+      "seleted_eff_play_thd_sec": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_colossus_seleted_eff_play_thd_sec",
+        "param_type": "int",
+        "default_value": -1,
+        "report_ab_hit": true
+      },
+      "colossus_range_days": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_colossus_range_days",
+        "param_type": "int",
+        "default_value": 1000,
+        "report_ab_hit": true
+      },
+      "enable_shuffle_result": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_colossus_enable_shuffle_result",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      }
+    },
+    "kconf": {
+      "hetu_low_level_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "low_level_tags"
+      },
+      "hetu_level2_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "level2_tags"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_resp_v2",
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_colossus_mc_i2i__result"
+      ]
+    }
+  },
+  "reason": 13010
+}

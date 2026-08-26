@@ -1,0 +1,42 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_longterm_retarget_author_retr", false],
+      "filter_future_seconds": ["explore_longterm_retarget_author_retr_filter_future_s", 2592000],
+      "play_time_s_ths": ["explore_longterm_retarget_author_retr_playtime_s_ths", 7],
+      "enable_author_shuffle": ["explore_longterm_retarget_author_retr_enable_author_shuffle", false],
+      "remote_index_service_name": ["explore_longterm_retarget_author_retr_index_server", "grpc_recoHotOrderedIndexServer"],
+      "remote_index_search_num": ["explore_longterm_retarget_author_retr_topk", 3],
+      "max_trigger_num": ["explore_longterm_retarget_author_retr_max_author_num", 500],
+      "retrieve_num": ["explore_longterm_retarget_author_retr_num", 500],
+      "enable_request_ann_common_retr_server": ["explore_longterm_retarget_retr_enable_request_ann_retr_server", false],
+      "enable_result_shuffle": ["explore_longterm_retarget_retr_enable_result_shuffle", false],
+      "ann_common_retr_server": ["explore_longterm_retarget_retr_ann_common_retr_server", "grpc_exploreCoverI2iCommonRetrServer"],
+      "reserve_channel_id": ["explore_longterm_retarget_author_retr_reserve_channel_id", 37],
+      "enable_channel_filter": ["explore_longterm_retarget_retr_enable_channel_filter", false],
+      "enable_svr_filter": ["explore_longterm_retarget_retr_enable_svr_filter", false],
+      "svr_threshold": ["explore_longterm_retarget_retr_svr_threshold", 0.0],
+      "photo_age_threshold": ["explore_longterm_retarget_retr_photo_age_threshold", 1.0],
+      "enable_new_photo_filter": ["explore_longterm_retarget_retr_enable_new_photo_filter", false],
+      "lvr_threshold": ["explore_longterm_retarget_retr_lvr_threshold", 1.0],
+      "pic_time_threshold": ["explore_longterm_retarget_retr_pic_time_threshold", 12],
+      "lvr_duration_threshold": ["explore_longterm_retarget_retr_lvr_duration_threshold", 30]
+    },
+    "constant": {
+      "remote_index_service_timeout_ms": 100
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_resp_v2",
+        "hate_aids"
+      ]
+    }, 
+    "export": {
+      "results": [
+        "longterm_retarget_author__result"
+      ]
+    }
+  },
+  "reason": 3126
+}
+  

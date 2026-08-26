@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_fr_get_embedding_map_ranking": false
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "user_info_ptr"
+      ],
+      "item_attrs": [
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "pid_mmu_cover_embedding_map_ranking"
+      ]
+    }
+  }
+}
+    

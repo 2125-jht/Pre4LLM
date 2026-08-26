@@ -1,0 +1,242 @@
+{
+  "modules": [
+    {
+      "name": "user_act_emb_cache_consume_module",
+      "type_name": "UserActEmbCacheConsumeModule"
+    },
+    {
+      "name": "splash_kuiba_user",
+      "type_name": "SplashKuibaUserModule"
+    },
+    {
+      "name": "splash_user_colossus_history",
+      "type_name": "UserInfoColossusModule"
+    },
+    {
+      "name": "splash_source_photo_info",
+      "type_name": "PhotoInfoFetchingModule"
+    },
+    {
+      "name": "splash_fetch_redis_neg_photo",
+      "type_name": "SplashFetchRedisNegPhotoModule"
+    },
+    {
+      "name": "splash_entry_photo",
+      "type_name": "SplashEntryPhotoModule"
+    },
+    {
+      "name": "splash_user_info",
+      "type_name": "SplashUserInfoParsingModule"
+    },
+    {
+      "name": "splash_icf_enlarge",
+      "type_name": "SplashIcfEnlargeModule"
+    },
+    {
+      "name": "splash_native_ann_retr",
+      "type_name": "NativeAnnRetrievalModule"
+    },
+    {
+      "name": "splash_personal_retr",
+      "type_name": "SplashPersonalRetrievalModule"
+    },
+    {
+      "name": "splash_source2item_retr",
+      "type_name": "SplashSource2ItemRetrievalModule"
+    },
+    {
+      "name": "splash_transfer_prob_retr",
+      "type_name": "SplashTransferProbRetrievalModule"
+    },
+    {
+      "name": "splash_relevance_mmu_category_retr",
+      "type_name": "SplashRelevanceMMUCategoryRetrievalModule"
+    },
+    {
+      "name": "splash_offline_global_neg_sample_retr",
+      "type_name": "SplashOfflineGlobalNegativeSampleRetrievalModule"
+    },
+    {
+      "name": "splash_gongxian_nreason_retr",
+      "type_name": "SplashGongXianNReasonRetrievalModule"
+    },
+    {
+      "name": "splash_pic_ssm_retr",
+      "type_name": "PicSsmRetrievalModule"
+    },
+    {
+      "name": "splash_pic_ssm_i2i_retr",
+      "type_name": "PicSsmI2IRetrievalModule"
+    },
+    {
+      "name": "splash_focal_life_ann_retr",
+      "type_name": "SplashFocalLifeAnnRetrievalModule"
+    },
+    {
+      "name": "splash_src_i2i_gnn_retr",
+      "type_name": "SrcI2iGnnRetrievalModule"
+    },
+    {
+      "name": "splash_focal_i2i_retr",
+      "type_name": "FocalI2iRetrievalModule"
+    },
+    {
+      "name": "splash_high_level_index_retr",
+      "type_name": "SplashHighLevelIndexRetrievalModule"
+    },
+    {
+      "name": "splash_mc_se_embedding_retr",
+      "type_name": "McSeEmbeddingRetrievalModule"
+    },
+    {
+      "name": "splash_graphsage_i2i_retr",
+      "type_name": "GraphsageI2iRetrievalModule"
+    },
+    {
+      "name": "splash_cb2cf_i2i_retr",
+      "type_name": "Cb2cfI2iRetrievalModule"
+    },
+    {
+      "name": "splash_gnn_i2i_retr",
+      "type_name": "SplashGnnI2iRetrievalModule"
+    },
+    {
+      "name": "splash_hetu_tag_v2_retr",
+      "type_name": "HetuTagV2RetrievalModule"
+    },
+    {
+      "name": "splash_long_view_pdn_retr",
+      "type_name": "SplashLongViewPdnRetrievalModule"
+    },
+    {
+      "name": "splash_icf_retr",
+      "type_name": "SplashIcfRetrievalModule"
+    },
+    {
+      "name": "splash_sim_author_retr",
+      "type_name": "SimAuthorRetrievalModule"
+    },
+    {
+      "name": "splash_gcl_retr",
+      "type_name": "SplashGclRetrievalModule"
+    },
+    {
+      "name": "splash_top_subdivision_nn_retr",
+      "type_name": "TopSubdivisionNnRetrievalModule"
+    },
+    {
+      "name": "splash_emb_i2i_retr",
+      "type_name": "SplashEmbI2iRetrievalModule"
+    },
+    {
+      "name": "splash_src_i2i_sage_retr",
+      "type_name": "SrcI2iSageRetrievalModule"
+    },
+    {
+      "name": "splash_ip2tag2ip_retr",
+      "type_name": "Ip2tag2ipRetrievalModule"
+    },
+    {
+      "name": "splash_fresh_reco_embu2i_retr",
+      "type_name": "FreshRecoEmbu2iRetrievalModule"
+    },
+    {
+      "name": "splash_reco_emb_hetu_retr",
+      "type_name": "RecoEmbHetuRetrievalModule"
+    },
+    {
+      "name": "splash_emb_u2i_retr",
+      "type_name": "SplashEmbU2iRetrievalModule"
+    },
+    {
+      "name": "explore_reco_similar_retr",
+      "type_name": "ExploreRecoSimilarRetrievalModule"
+    },
+    {
+      "name": "splash_sim_retr",
+      "type_name": "SimRetrievalModule"
+    },
+    {
+      "name": "splash_mmu_embedding_retr",
+      "type_name": "MmuEmbeddingRetrievalModule"
+    },
+    {
+      "name": "splash_long_view_like_i2i_retr",
+      "type_name": "LongViewLikeI2IRetrievalModule"
+    },
+    {
+      "name": "splash_longview_like_u2i_retr",
+      "type_name": "LongviewRetrSplashFlow"
+    },
+    {
+      "name": "splash_ft_pic_st_retr",
+      "type_name": "PicStRetrievalModule"
+    },
+    {
+      "name": "splash_pic_sim_retr",
+      "type_name": "SplashPicSimRetrievalModule"
+    },
+    {
+      "name": "splash_pic_mmu_u2u_retr",
+      "type_name": "PicMmuU2uRetrievalModule"
+    },
+    {
+      "name": "splash_var_a2a_retr",
+      "type_name": "SplashVarA2aRetrievalModule"
+    },
+    {
+      "name": "splash_q2i_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "splash_fetch_rerank_top_photo",
+      "type_name": "SplashFetchRerankTopPhotoModule"
+    },
+    {
+      "name": "splash_rerank_top_photo_retr",
+      "type_name": "SplashRerankTopPhotoRetrievalModule"
+    },
+    {
+      "name": "splash_llm_i2i_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "splash_src_user_hash_tag_retr",
+      "type_name": "SplashSourceUserHashTagRetrievalModule"
+    },
+    {
+      "name": "splash_gift_redirect_ua_retr",
+      "type_name": "SplashGiftRedirectUARetrievalModule"
+    },
+    {
+      "name": "splash_memory_u2i_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "splash_src_author_circle_v2_retr",
+      "type_name": "SplashSourceAuthorCircleV2RetrievalModule"
+    },
+    {
+      "name": "splash_src_author_circle_v2_model_retr",
+      "type_name": "CommonRetrievalModule"
+    },
+    {
+      "name": "splash_colossus_parse",
+      "type_name": "ColossusParseModule"
+    },
+    {
+      "name": "splash_user_relevance_preference_calc",
+      "type_name": "SplashUserRelevancePreferenceCalcModule"
+    },
+    {
+      "name": "splash_tagnex_t2i_retr",
+      "type_name": "SplashTagnexT2iRetrievalModule"
+    },
+    {
+      "name": "splash_audit_topk_pass_retr",
+      "type_name": "AuditTopKPassRetrievalModule"
+    }
+  ],
+  "photo_info_module": "photo_info_splash",
+  "pagesize_dedup_module": "pagesize_dedup_splash"
+}

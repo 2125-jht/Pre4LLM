@@ -1,0 +1,192 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "skip_explore_mc_click_emb_server": {
+        "biz_name": "RECO_RPC",
+        "param_name": "skip_call_explore_mc_click_emb_server",
+        "param_type": "int",
+        "default_value": 0
+      },
+      "skip_explore_fullrank_sim_predict": {
+        "biz_name": "RECO_RPC",
+        "param_name": "skip_explore_fullrank_sim_predict",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "xlife_gamora_common_predict_server_kess_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "xlife_gamora_common_predict_server_kess_name",
+        "param_type": "string",
+        "default_value": "grpc_ls_nebula_life_tab"
+      },
+      "gamora_common_predict_server_request_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "gamora_common_predict_server_request_type",
+        "param_type": "string",
+        "default_value": "predict_for_hot"
+      },
+      "explore_skip_fr_score2_change": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_skip_fr_score2_change",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "explore_skip_pxtr_change": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_skip_pxtr_change",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "enable_skip_hot_unexpected_score": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_skip_hot_unexpected_score",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "enable_skip_hot_expected_score": {
+        "biz_name": "RECO_RPC",
+        "param_name": "xlife_enable_skip_hot_expected_score",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "exploreRank_cls_pctr_filter_flag": {
+        "biz_name": "RECO_RPC",
+        "param_name": "exploreRank_cls_pctr_filter_flag",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "enable_produce_v4_fr_refactor": {
+        "biz_name": "MOBILE",
+        "param_name": "enable_produce_v4_fr_refactor",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "exploreRank_cls_pctr_filter_threshold": 0.05,
+      "exploreRank_cls_pctr_filter_threshold_old": {
+        "biz_name": "RECO_RPC",
+        "param_name": "exploreRank_cls_pctr_filter_threshold_old",
+        "param_type": "double",
+        "default_value": 0.035,
+        "report_ab_hit": true
+      },
+      "exploreRank_cls_pctr_filter_remitted_exptags": "50:209:2",
+      "enable_audit_hot_skip_rank_pctr_filter": false,
+      "ranking_server_partition_size": ["gamora_common_predict_server_request_num_limit", 63],
+      "set_default_value_pxtr": 0,
+      "explore_wtd_evtr_pctr_weight": 0.0,
+      "explore_wtd_lvtr_pctr_weight": 0.0,
+      "explore_future_xtr_pctr_weight": 0.0,
+      "explore_pic_wtd_pctr_weight": 0.0,
+      "explore_pic_lvtr_pctr_weight": 0.0,
+      "explore_pic_cpr_pctr_weight": 0.0,
+      "enable_follow_author_retr_skip_26h_filter": false,
+      "normal_photo_life_time_hours": 26,
+      "enable_user_high_level_skip_pctr_filter": false,
+      "fr_pctr_filter_top_pcltr_save_num": 0,
+      "skip_pcltr_set_default_value": 1,
+      "hot_fr_pic_cpr_max_pic_cnt": 20,
+      "enable_follow_author_pwtr_corr": false,
+      "ranking_follow_author_pwtr_corr_coef": 1.0,
+      "skip_photo_life_filter": ["explore_enable_photo_life_filter", false],
+      "explore_fullrank_calibration_ctr_param": 0.1614,
+      "enable_picture_skip_pctr_filter": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_picture_skip_pctr_filter",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "rerank_photo_rstr_norm_show": 1000000.0,
+      "rerank_photo_rstr_norm_report": 2.0,
+      "rerank_rstr_discount_param_n": 0.000004,
+      "rerank_rstr_discount_param_o": 0.000002,
+      "rerank_rstr_discount_param_n_high_good": 0.00001,
+      "enable_report_discount_cal" : true,
+      "enable_pcmef_gender_debias": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_pcmef_gender_debias",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "life_neg_sim_use_hot_mc_emb_server": 0,
+      "life_neg_sim_use_mmu_emb_server": 0,
+      "life_neg_sim_play_stat_limit_hour": 48.0,
+      "life_neg_sim_short_view_threshold": 11000,
+      "life_neg_sim_play_stat_limit_explore": 1,
+      "life_neg_sim_enable_not_click": 1,
+      "life_neg_sim_mmu_short_view_threshold": 3000,
+      "life_neg_sim_mmu_not_click_limit_hour": 1.0,
+      "life_neg_sim_mmu_play_stat_limit_hour": 1.0,
+      "life_neg_sim_mmu_short_view_weight": 3.0,
+      "life_neg_sim_mmu_hate_weight": 3.0,
+      "life_neg_sim_mmu_not_click_weight": 1.0,
+      "enable_life_cal_corr_pctr_psvr": false
+    },
+    "import": {
+      "item_attrs": [
+        "reason",
+        "audit_hot_high_tag_level",
+        "explore_stat__report_detail__total_report_count",
+        "explore_stat__show_count",
+        "hetu_tag_level_info__hetu_level_one",
+        "cascade_pctr_index",
+        "cascade_plvtr_index",
+        "cascade_pvtr_index",
+        "cascade_pltr_index",
+        "cascade_pftr_index",
+        "cascade_pwtr_index",
+        "cascade_pesptr_index",
+        "cascade_psvr_index"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "fr_score1",
+        "fr_score2",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "fetr",
+        "fountain_eff",
+        "svr_act_score",
+        "pctr_x_pcmtr",
+        "fr_mmu_embedding_score",
+        "fr_mc_embedding_score",
+        "corr_pic_wtd",
+        "corr_pic_lvtr",
+        "corr_pic_cpr",
+        "corr_pwtr",
+        "plstr",
+        "plsst",
+        "pcmef_debias_score",
+        "score_pctr",
+        "score_pltr",
+        "score_pwtr",
+        "score_pftr",
+        "score_pcmtr",
+        "score_pptr",
+        "score_psvr",
+        "score_pdtr",
+        "score_pepstr",
+        "score_pcltr",
+        "score_pcmef",
+        "score_phtr",
+        "corr_pctr",
+        "report_discount",
+        "hate_discount",
+        "corr_pctr_psvr"
+      ]
+    }
+  }
+}

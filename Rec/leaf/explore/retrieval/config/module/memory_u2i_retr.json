@@ -1,0 +1,69 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_memory_u2i_retr", false],
+      "retrieval_cache_config": ["explore_memory_u2i_retr_cache_config", ""],
+      "infer_service_name": ["explore_memory_u2i_retr_infer_service_name", "grpc_exploreMemoryModelV1InferServer"],
+      "ann_service_name": ["explore_memory_u2i_retr_ann_service_name", "grpc_exploreMemoryModelV1AnnServer"],
+      "request_num": ["explore_memory_u2i_retr_request_num", 1200],
+      "service_timeout_ms": ["explore_memory_u2i_retr_timeout_ms", 50],
+      "ann_dest_bucket": ["explore_memory_u2i_retr_ann_dest_bucket", "photo_bucket"],
+      "ann_dist_threshold": ["explore_memory_u2i_retr_ann_dist_ths", 0.0],
+      "enable_sort_by_ann_score": ["explore_memory_u2i_retr_enable_sort_by_score", true],
+      "retrieve_num": ["explore_memory_u2i_retr_cand_num", 600]
+    },
+    "import": {
+      "common_attrs": [
+        "userRecentViewTimeListRaw",
+        "userRecentViewPageListRaw",
+        "featureUId",
+        "gender",
+        "true_gender",
+        "infer_gender",        
+        "true_year",
+        "infer_year",
+        "featureAgeSegment",
+        "featureProvinceId",
+        "featureCityId",
+        "featureClientId",
+        "featureVisitMod",
+        "featureVisitNet",
+        "app_list",
+        "featureUserLevel",
+        "featureActiveDays",
+        "featureTopDislikeTopic",
+        "featureRiskLevel",
+        "featureLongTermInterestPhotoDnnClusterId",
+        "featureUserRequestProvinceId",
+        "featureUserRequestCityId",
+        "exp_show",
+        "exp_click", 
+        "exp_like", 
+        "exp_follow",
+        "exp_forward",
+        "exp_long_view",
+        "exp_short_view",
+        "exp_watch_time",
+        "playstat_playtimes",
+        "playstat_durations",
+        "playstat_hetu1s",
+        "playstat_hetu2s",
+        "playstat_hetu3s",
+        "playstat_hetu4s",
+        "videoPlayingPid",
+        "like_list",
+        "follow_list",
+        "forward_list",
+        "collect_list",
+        "profile_enter_list",
+        "profile_v1_click_trigger_aids"
+      ]
+    },
+    "export": {
+      "results": [
+        "memory_u2i__result"
+      ]
+    }
+  },
+  "reason": 3068
+}

@@ -1,0 +1,47 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_generator": ["enable_common_trigger_generator", false],
+      "enable_knowledge_trigger": ["enable_explore_add_knowledge_retr_trigger", false],
+      "knowledge_trigger_max_num": ["explore_add_knowledge_retr_trigger_max_num", 30],
+      "enable_interaction_trigger": ["enable_colossus_ann_retrieval_interact_triggers", false],
+      "interaction_trigger_max_num": ["colosssus_ann_interact_trigger_cand_num", 40],
+      "colossus_trigger_max_num": ["colossus_ann_retrieval_total_select_num", 200],
+      "enable_scatter_trigger": ["colossus_ann_enable_scatter_colossus_trigger", false],
+      "trigger_scatter_each_limit": ["colossus_ann_scatter_trigger_each_tag_limit", 10],
+      "enable_scatter_play_list": ["colossus_ann_enable_scatter_playlist", false],
+      "play_list_scatter_each_limit": ["colossus_ann_scatter_playlist_each_tag_limit", 5],
+      "play_list_trigger_max_num": ["colossus_ann_playlist_trigger_num", 80],
+      "interest_explore_trigger_expand_cnt": ["colossus_ann_expand_interest_explore_trigger_cnt", 0]
+    },
+    "kconf": {
+      "hetu_low_level_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "low_level_tags"
+      },
+      "hetu_level2_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "level2_tags"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_user_info__trigger_id_list",
+        "colossus_user_info__trigger_weight_list",
+        "colossus_user_info__knowledge_trigger_set",
+        "colossus_user_info__trigger_tag_list",
+        "user_info_ptr",
+        "profile_v1_interaction_trigger_list",
+        "colossus_user_info__interest_explore_trigger_set"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "common_trigger_generator__trigger_list",
+        "common_trigger_generator__trigger_weight_list"
+      ]
+    }
+  }
+}

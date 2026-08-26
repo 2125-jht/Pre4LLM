@@ -1,0 +1,48 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_knowledge_mid_photo_retrieval",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "memory_data_key": {
+        "biz_name": "RECO_RPC",
+        "param_name": "knowledge_mid_photo_retrieval_source",
+        "param_type": "string",
+        "default_value": "eyeshot_knowledge_offline_retr"
+      },
+      "play_time_threshold": {
+        "biz_name": "RECO_RPC",
+        "param_name": "knowledge_mid_photo_retr_playtime_ms",
+        "param_type": "int",
+        "default_value": 24000
+      },
+      "duration_time_threshold": {
+        "biz_name": "RECO_RPC",
+        "param_name": "knowledge_mid_photo_retrieval_trigger_duration",
+        "param_type": "int",
+        "default_value": 58000
+      },
+      "trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "knowledge_mid_photo_retrieval_trigger_num",
+        "param_type": "int",
+        "default_value": 40
+      },
+      "trigger_key_prefix": {
+        "biz_name": "RECO_RPC",
+        "param_name": "knowledge_mid_photo_trigger_prefix",
+        "param_type": "string",
+        "default_value": "h6315_"
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    }
+  },
+  "reason": 6315
+}

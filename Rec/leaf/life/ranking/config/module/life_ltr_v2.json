@@ -1,0 +1,128 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_life_ltr_v2_predict": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_life_ltr_v2_predict",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "life_ltr_v2_predict_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_ltr_v2_predict_service",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-long-form-uni-cpu-predict-xlife-rank-ltr-infer-v2"
+      },
+      "use_trimed_user_info": ["enable_life_ltr_v2_use_trimed_user_info", true],
+      "life_psvtr_power_coeff": 1.0
+    },
+    "constant": {
+      "uTab": 100
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "userInfo"
+      ],
+      "item_attrs": [
+        "photo_id",
+        "author__id",
+        "upload_type",
+        "author__fans_count",
+        "photo_picture_count",
+        "caption_length",
+        "duration_ms",
+        "upload_type",
+        "author__gender",
+        "author_age_info__age_segment",
+        "upload_time",
+        "hetu_tag_level_info__hetu_level_one",
+        "hetu_tag_level_info__hetu_level_two",
+        "hetu_tag_level_info__hetu_level_three",
+        "hetu_tag_level_info__hetu_level_five",
+        "hetu_tag_level_info__hetu_tag",
+        "hetu_tag_level_info__hetu_face_id",
+        "hetu_tag_level_info__hetu_cluster_id",
+        "mmu_img_cluster_v3",
+        "music",
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "fr_score1",
+        "fr_score2",
+        "photo_picture_count",
+        "caption_length",
+        "location__city_id",
+        "location__province_id",
+        "is_picture",
+        "picture_type",
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_plvtr",
+        "cascade_psvtr",
+        "cascade_pftr",
+        "cascade_pcmtr",
+        "cascade_plvtr2",
+        "cascade_pepstr",
+        "cascade_pcestr",
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr",
+        "empirical_ptr",
+        "empirical_cmtr",
+        "empirical_htr",
+        "empirical_watch_time",
+        "explore_stat__show_count",
+        "explore_stat__click_count",
+        "explore_stat__like_count",
+        "explore_stat__follow_count",
+        "explore_stat__negative_count",
+        "explore_stat__report_detail__total_report_count"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "life_pctr",
+        "life_psvtr",
+        "life_truth_pctr"
+      ]
+    }
+  },
+  "trimed_user_info": [
+    "id",
+    "device_id",
+    "gender",
+    "infer_gender",
+    "true_gender",
+    "basic_info.age_segment",
+    "client_id",
+    "request_location.poi_type",
+    "request_location.province_id",
+    "request_location.city_id",
+    "visit_mod",
+    "location.region_type",
+    "location.city_id",
+    "location.city_level",
+    "is_douyin",
+    "user_profile_v1.click_list",
+    "user_profile_v1.follow_list",
+    "user_profile_v1.like_list",
+    "user_profile_v1.real_show_list",
+    "user_profile_v1.hate_list",
+    "user_profile_v1.video_playing_stat"
+  ]
+}

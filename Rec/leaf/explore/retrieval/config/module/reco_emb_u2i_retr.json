@@ -1,0 +1,43 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_gnn_u2a_retrieval",
+        "param_type": "bool",
+        "default_value": false
+      }, 
+      "kess_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "gnn_u2a_common_reco_retrieval_service",
+        "param_type": "string", 
+        "default_value": ""
+      },
+      "service_request_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "gnn_u2a_ann_request_num",
+        "param_type": "int", 
+        "default_value": 100
+      },
+      "service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "gnn_u2a_ann_retr_timeout",
+        "param_type": "int",
+        "default_value": 50
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "tmpUserInfo"
+      ]
+    },
+    "export": {
+      "results": [
+        "reco_emb_u2i__result"
+      ]
+    }
+  },
+  "reason": 932,
+  "user_info_type": "tmpUserInfo"
+}

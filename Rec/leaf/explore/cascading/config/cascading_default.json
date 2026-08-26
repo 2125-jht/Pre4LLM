@@ -1,0 +1,248 @@
+{
+  "modules": [
+    {
+      "name": "cascading_prerank_predict",
+      "type_name": "CascadingPrerankPredictModule"
+    },
+    {
+      "name": "cascading_prerank_fountain_efficiency",
+      "type_name": "CascadingPrerankFountainEfficiencyModule"
+    },
+    {
+      "name": "cascading_prerank_score",
+      "type_name": "CascadingPrerankScoreModule"
+    },
+    {
+      "name": "cascading_prerank_comirec_predict",
+      "type_name": "CascadingPrerankComirecPredictModule"
+    },
+    {
+      "name": "cascading_prerank_long_seq_predict",
+      "type_name": "CascadingPrerankLongSeqPredictModule"
+    },
+    {
+      "name": "cascading_merchant_photo_type_attr",
+      "type_name": "CascadingMerchantPhotoTypeAttrModule"
+    },
+    {
+      "name": "cascading_high_quality_merchant_photo_type_attr",
+      "type_name": "CascadingHighQualityMerchantPhotoTypeAttrModule"
+    },
+    {
+      "name": "cascading_calc_questionnaire_score",
+      "type_name": "CascadingCalcQuestionnaireScoreModule"
+    },
+    {
+      "name": "cascading_calc_pic",
+      "type_name": "CascadingCalcPicModule"
+    },
+    {
+      "name": "cascading_calc_pic_diversity",
+      "type_name": "CascadingCalcPicDiversityModule"
+    },
+    {
+      "name": "cascading_calc_pic_unbias_interest",
+      "type_name": "CascadingCalcPicUnbiasInterestModule"
+    },
+    {
+      "name": "cascading_calc_xhs_type_attr",
+      "type_name": "CascadingCalcXhsTypeAttrModule"
+    },
+    {
+      "name": "cascading_calc_xhs_install_attr",
+      "type_name": "CascadingCalcXhsInstallAttrModule"
+    },
+    {
+      "name": "cascading_empirical_xtr",
+      "type_name": "CascadingEmpiricalXtrModule"
+    },
+    {
+      "name": "cascading_user_info",
+      "type_name": "CascadingUserInfoModule"
+    },
+    {
+      "name": "cascading_merchant_photo_predict",
+      "type_name": "CascadingMerchantPhotoPredictModule"
+    },
+    {
+      "name": "cascading_produce_photo_predict",
+      "type_name": "CascadingProducePhotoPredictModule"
+    },
+    {
+      "name": "cascading_downgrade",
+      "type_name": "CascadingDowngradeModule"
+    },
+    {
+      "name": "cascading_score",
+      "type_name": "CascadingScoreModule"
+    },
+    {
+      "name": "cascading_predict",
+      "type_name": "CascadingPredictModule"
+    },
+    {
+      "name": "cascading_final_sort_prepare",
+      "type_name": "CascadingFinalSortPrepareModule"
+    },
+    {
+      "name": "cascading_calc_reach_content",
+      "type_name": "CascadingCalcReachContentModule"
+    },
+    {
+      "name": "cascading_prerank_channel_sort",
+      "type_name": "CascadingPrerankChannelSortModule"
+    },
+    {
+      "name": "cascading_channel_sort",
+      "type_name": "CascadingChannelSortModule"
+    },
+    {
+      "name": "cascading_channel_sort_prepare",
+      "type_name": "CascadingChannelSortPrepareModule"
+    },
+    {
+      "name": "cascading_final_channel_sort",
+      "type_name": "CascadingFinalChannelSortModule"
+    },
+    {
+      "name": "cascading_pfptr_predict",
+      "type_name": "CascadingPfptrPredictModule"
+    },
+    {
+      "name": "cascading_owtd_predict",
+      "type_name": "CascadingOwtdPredictModule"
+    },
+    {
+      "name": "cascading_merchant_solve_score",
+      "type_name": "CascadingMerchantSolveScoreModule"
+    },
+    {
+      "name": "cascading_follow_author",
+      "type_name": "CascadingFollowAuthorModule"
+    },
+    {
+      "name": "cascading_white_author",
+      "type_name": "CascadingWhiteAuthorModule"
+    },
+    {
+      "name": "cascading_final_sort_diversity_fr",
+      "type_name": "CascadingFinalSortDiversityFrModule"
+    },
+    {
+      "name": "cascading_final_sort_slide_pxtr",
+      "type_name": "CascadingFinalSortSlidePxtrModule"
+    },
+    {
+      "name": "cascading_explore_similar_users_hetu_tags_enricher",
+      "type_name": "CascadingExploreSimilarUsersHetuTagsEnricher"
+    },
+    {
+      "name": "cascading_prerank_ltr_predict",
+      "type_name": "CascadingPrerankLtrPredictModule"
+    },
+    {
+      "name": "cascading_prerank_life_predict",
+      "type_name": "CascadingPrerankLifePredictModule"
+    },
+    {
+      "name": "cascading_final_sort_action_once",
+      "type_name": "CascadingFinalSortActionOnceModule"
+    },
+    {
+      "name": "cascading_top_xtr_insert",
+      "type_name": "CascadingTopXtrInsertModule"
+    },
+    {
+      "name": "cascading_final_sort_predict",
+      "type_name": "CascadingFinalSortPredictModule"
+    },
+    {
+      "name": "cascading_tower_wtd_predict",
+      "type_name": "CascadingTowerWtdPredictModule"
+    },
+    {
+      "name": "cascading_calc_life",
+      "type_name": "CascadingCalcLifeModule"
+    },
+    {
+      "name": "cascading_ua_ltv",
+      "type_name": "CascadingUaLtvModule"
+    },
+    {
+      "name": "cascading_pic_fc_ltr_predict",
+      "type_name": "CascadingPicFcLtrPredictModule"
+    },
+    {
+      "name": "cascading_distill_ltr_predict",
+      "type_name": "CascadingDistillLtrPredictModule"
+    },
+    {
+      "name": "cascading_hate_similar_score",
+      "type_name": "CascadingHateSimilarScoreModule"
+    },
+    {
+      "name": "cascading_photo_type",
+      "type_name": "CascadingPhotoTypeModule"
+    },
+    {
+      "name": "cascading_calc_global_emphtr_score",
+      "type_name": "CascadingCalcGlobalEmphtrScoreModule"
+    },
+    {
+      "name": "cascading_calc_sharpe_score",
+      "type_name": "CascadingCalcSharpeScoreModule"
+    },
+    {
+      "name": "cascading_user_history_cids_stat",
+      "type_name": "CascadingUserHistoryCidsStatModule"
+    },
+    {
+      "name": "cascading_u2c_ltr_predict",
+      "type_name": "CascadingU2cLtrPredictModule"
+    },
+    {
+      "name": "cascading_u2c_map",
+      "type_name": "CascadingU2cMapModule"
+    },
+    {
+      "name": "cascading_comment_predict",
+      "type_name": "CascadingCommentPredictModule"   
+    },
+    {
+      "name": "cascading_explore_gamora_interest",
+      "type_name": "CascadingExploreGamoraInterestModule"   
+    },
+    {
+      "name": "cascading_calc_trend_score",
+      "type_name": "CascadingCalcTrendScoreModule"
+    },
+    {
+      "name": "cascading_calc_pic_interest_score",
+      "type_name": "CascadingCalcPicInterestScoreModule"
+    },
+    {
+      "name": "cascading_s1_photo_type",
+      "type_name": "CascadingS1PhotoTypeModule"
+    },
+    {
+      "name": "cascading_calc_emb_similarity_score",
+      "type_name": "CascadingCalcEmbSimilarityScoreModule"
+    },
+    {
+      "name": "cascading_explore_koc_htr",
+      "type_name": "CascadingExploreKocHtrModule"   
+    },
+    {
+      "name": "cascading_calc_pic_u2c_ensemble_score",
+      "type_name": "CascadingCalcPicU2CEnsembleScoreModule"
+    },
+    {
+      "name": "cascading_fetch_embedding",
+      "type_name": "CascadingFetchEmbeddingModule"
+    },
+    {
+      "name": "cascading_calc_pic_comment_quality_score",
+      "type_name": "CascadingCalcPicCommentQualityScoreModule"
+    }
+  ]
+}

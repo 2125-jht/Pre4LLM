@@ -1,0 +1,196 @@
+{
+  "photo_id": {
+    "batch_num": 1, 
+    "dim": 1, 
+    "batch_decay": 0.97999999999999998, 
+    "attrs": [
+      {
+        "key_type": 26, 
+        "converter": "id", 
+        "attr": [
+          "pId"
+        ]
+      }
+    ], 
+    "type": 1
+  }, 
+  "app_list": {
+    "batch_num": 1, 
+    "dim": 1, 
+    "batch_decay": 0.97999999999999998, 
+    "attrs": [
+      {
+        "key_type": 179, 
+        "converter": "list", 
+        "attr": [
+          "dAppList"
+        ]
+      }
+    ], 
+    "type": 1
+  }, 
+  "all_gender": {
+    "batch_num": 1, 
+    "dim": 1, 
+    "batch_decay": 0.97999999999999998, 
+    "attrs": [
+      {
+        "key_type": 184, 
+        "converter": "id", 
+        "attr": [
+          "uGender"
+        ]
+      }
+    ], 
+    "type": 1
+  }, 
+  "like_list": {
+    "batch_num": 1, 
+    "dim": 1, 
+    "batch_decay": 0.97999999999999998, 
+    "attrs": [
+      {
+        "key_type": 39, 
+        "converter": "list", 
+        "attr": [
+          "uLikeListHot", 
+          "uLikeListFollow", 
+          "uLikeListNear", 
+          "uLikeList"
+        ]
+      }
+    ], 
+    "type": 1
+  }, 
+  "user_prov_city": {
+    "batch_num": 1, 
+    "dim": 1, 
+    "batch_decay": 0.97999999999999998, 
+    "attrs": [
+      {
+        "key_type": 182, 
+        "converter": "id", 
+        "attr": [
+          "uCountry", 
+          "uProvince", 
+          "uCity"
+        ]
+      }
+    ], 
+    "type": 1
+  }, 
+  "user_ip": {
+    "batch_num": 1, 
+    "dim": 1, 
+    "batch_decay": 0.97999999999999998, 
+    "attrs": [
+      {
+        "key_type": 180, 
+        "converter": "id", 
+        "attr": [
+          "uIp"
+        ]
+      }
+    ], 
+    "type": 1
+  }, 
+  "click_list": {
+    "batch_num": 1, 
+    "dim": 1, 
+    "batch_decay": 0.97999999999999998, 
+    "attrs": [
+      {
+        "key_type": 32, 
+        "converter": "list", 
+        "attr": [
+          "uClickListHot", 
+          "uClickListFollow", 
+          "uClickListNear", 
+          "uClickList"
+        ]
+      }
+    ], 
+    "type": 1
+  }, 
+  "forward_list": {
+    "batch_num": 1, 
+    "dim": 1, 
+    "batch_decay": 0.97999999999999998, 
+    "attrs": [
+      {
+        "key_type": 164, 
+        "converter": "list", 
+        "attr": [
+          "uForwardListHot", 
+          "uForwardListFollow", 
+          "uForwardListNear", 
+          "uForwardList"
+        ]
+      }
+    ], 
+    "type": 1
+  }, 
+  "user_id": {
+    "batch_num": 1, 
+    "dim": 1, 
+    "batch_decay": 0.97999999999999998, 
+    "attrs": [
+      {
+        "key_type": 38, 
+        "converter": "id", 
+        "attr": [
+          "uId"
+        ]
+      }
+    ], 
+    "type": 1
+  }, 
+  "author_id": {
+    "batch_num": 1, 
+    "dim": 1, 
+    "batch_decay": 0.97999999999999998, 
+    "attrs": [
+      {
+        "key_type": 128, 
+        "converter": "id", 
+        "attr": [
+          "aId"
+        ]
+      }
+    ], 
+    "type": 1
+  }, 
+  "follow_list": {
+    "batch_num": 1, 
+    "dim": 1, 
+    "batch_decay": 0.97999999999999998, 
+    "attrs": [
+      {
+        "key_type": 139, 
+        "converter": "list", 
+        "attr": [
+          "uFollowListHot", 
+          "uFollowListFollow", 
+          "uFollowListNear", 
+          "uFollowList"
+        ]
+      }
+    ], 
+    "type": 1
+  }, 
+  "user_year": {
+    "batch_num": 1, 
+    "dim": 1, 
+    "batch_decay": 0.97999999999999998, 
+    "attrs": [
+      {
+        "key_type": 114, 
+        "converter": "id", 
+        "attr": [
+          "uYear"
+        ]
+      }
+    ], 
+    "type": 1
+  }
+}

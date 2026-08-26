@@ -1,0 +1,28 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_recommend_by_friend_retr", false],
+      "enable_browset_filter": ["enable_explore_recommend_by_friend_browset_filter", false],
+      "result_num": ["explore_recommend_retr_result_num", 200],
+      "redis_retrieval_num": ["explore_recommend_redis_retrieval_num", 1000],
+      "enable_rank_neg_filter": ["explore_recommend_retr_enable_rank_neg_filter", false]
+    }, 
+    "constant": {
+      "redis_key_prefix": "rec_"
+    },
+    "import": {
+      "common_attrs": [
+        "rank_neg_photo_id_list_str"
+      ]
+    }, 
+    "export": {
+      "results" : [
+        "recommend_by_friend_retr__result"
+      ]
+    }
+  },
+  "reason": 810,
+  "pass_browse_set": true,
+  "redis_cluster_name": "recoHpUserOfflineMining",
+  "redis_timeout_ms": 20
+}

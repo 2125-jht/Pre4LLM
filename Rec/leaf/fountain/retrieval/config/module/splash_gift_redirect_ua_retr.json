@@ -1,0 +1,27 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "param_name": "enable_fountain_gift_redirect_ua_retr_splash",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "gift_redirect_ua_final_result_num_explore_leaf_splash": ["gift_redirect_ua_final_result_num_explore_leaf_splash", 800]
+      
+    }, 
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "featureUId",
+        "featureDeviceId",
+        "living_certain_aid_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_gift_redirect_ua_retr__result"
+      ]
+    }
+  },
+  "reason": 10499
+}

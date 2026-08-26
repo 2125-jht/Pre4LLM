@@ -1,0 +1,47 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_calc_mc_pic_u2c_ensemble_score": false,
+      "explore_pic_u2c_score_default_value": 0.0,
+      "explore_mc_pic_u2c_ensemble_score_u2c_alpha": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_pctr_alpha": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_pltr_alpha": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_pwtr_alpha": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_pcltr_alpha": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_pcmtr_alpha": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_pftr_alpha": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_u2c_beta": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_pctr_beta": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_pltr_beta": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_pwtr_beta": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_pcltr_beta": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_pcmtr_beta": 1.0,
+      "explore_mc_pic_u2c_ensemble_score_pftr_beta": 1.0
+    },
+    "import": {
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ],
+      "common_attrs": [
+        "uPicU2CTopkCidList",
+        "uPicU2CTopkProbList"
+      ],
+      "item_attrs": [
+        "is_picture",
+        "cluster_id_632",
+        "mc_ensemble_pctr",
+        "mc_ensemble_pltr",
+        "mc_ensemble_pwtr",
+        "mc_ensemble_pcltr",
+        "mc_ensemble_pcmtr",
+        "mc_ensemble_pftr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pic_u2c_score",
+        "mc_pic_u2c_ensemble_score"
+      ]
+    }
+  }
+}

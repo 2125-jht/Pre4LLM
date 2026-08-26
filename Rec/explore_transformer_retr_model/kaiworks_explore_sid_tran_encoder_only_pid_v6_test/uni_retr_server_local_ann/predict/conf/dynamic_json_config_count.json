@@ -1,0 +1,784 @@
+{
+  "_CONFIG_VERSION": "a01b0ae18dc48b558b735c699e4e4cad_local",
+  "_DRAGONFLY_CREATE_TIME": "2025-05-26 16:49:33",
+  "_DRAGONFLY_VERSION": "0.8.3",
+  "ann_config": {
+    "ann_pool": {},
+    "buckets": {
+      "photo": {
+        "ann": {
+          "max_index_size": 0,
+          "min_index_size": 0,
+          "parameter": {
+            "dim": 64,
+            "space": "ip"
+          },
+          "threshold": {
+            "anisotropic_quantization_threshold": 0.2,
+            "final_neighbors_num": 250,
+            "leaves_num": 1000,
+            "leaves_to_search": 30,
+            "pre_reorder_neighbors_num": 250,
+            "training_sample_size": 500000
+          },
+          "type_name": "scannAnnFloat"
+        },
+        "data_type": "photo",
+        "index_filter_by_common_index": {
+          "import_item_attr": [
+            "author__id"
+          ],
+          "item_remove_check_func": "CheckItemShouldRemove",
+          "lua_script": "\n    function CheckItemShouldRemove()\n        if author__id == nil then\n          return true\n        end\n    end\n  ",
+          "remove_if_lua_fail": true,
+          "type_name": "itemLuaFilter"
+        }
+      },
+      "photo_quality": {
+        "ann": {
+          "max_index_size": 0,
+          "min_index_size": 0,
+          "parameter": {
+            "dim": 2,
+            "space": "ip"
+          },
+          "threshold": {
+            "anisotropic_quantization_threshold": 0.2,
+            "final_neighbors_num": 250,
+            "leaves_num": 1000,
+            "leaves_to_search": 30,
+            "pre_reorder_neighbors_num": 250,
+            "training_sample_size": 500000
+          },
+          "type_name": "scannAnnFloat"
+        },
+        "data_type": "photo_quality",
+        "index_filter_by_common_index": {
+          "import_item_attr": [
+            "author__id"
+          ],
+          "item_remove_check_func": "CheckItemShouldRemove",
+          "lua_script": "\n    function CheckItemShouldRemove()\n        if author__id == nil then\n          return true\n        end\n    end\n  ",
+          "remove_if_lua_fail": true,
+          "type_name": "itemLuaFilter"
+        }
+      }
+    },
+    "datas": {
+      "photo": {
+        "kv": {
+          "cache_expire_second": 43200,
+          "dim": 64,
+          "max_item_num": 100000000
+        },
+        "offline_id_converter": {
+          "type_name": "mioEmbeddingIdConverter"
+        },
+        "online_id_converter": {
+          "type_name": "mioEmbeddingIdConverter"
+        }
+      },
+      "photo_quality": {
+        "kv": {
+          "cache_expire_second": 43200,
+          "dim": 2,
+          "max_item_num": 100000000
+        },
+        "offline_id_converter": {
+          "type_name": "mioEmbeddingIdConverter"
+        },
+        "online_id_converter": {
+          "type_name": "mioEmbeddingIdConverter"
+        }
+      }
+    },
+    "kess_config": {
+      "service_name": "grpc_KaiWorksExploreLongSequenceTransformerRetrANN"
+    },
+    "meta_parser": {
+      "bucket_slot_map": {
+        "photo": 4103,
+        "photo_quality": 4104
+      },
+      "enable_fixed_slot_bits": false,
+      "enable_kuiba_sign": false,
+      "enforce_use_slot_form_item": false,
+      "parse_data_in_float": false,
+      "slot_bits": 0,
+      "slot_bits_map": {
+        "4103": {
+          "begin_bit": 0,
+          "end_bit": 64
+        },
+        "4104": {
+          "begin_bit": 0,
+          "end_bit": 2
+        }
+      },
+      "type_name": "mioEmbeddingParser"
+    },
+    "mq_consumer": {
+      "queue_names": [
+        "kaiworks_fountain_lst_v10"
+      ],
+      "thread_num": 8,
+      "type_name": "btqueueMqConsumer"
+    },
+    "precision_eval": [
+      {
+        "dest_bucket": "photo",
+        "space": "ip",
+        "src_data_type": "photo"
+      },
+      {
+        "dest_bucket": "photo_quality",
+        "space": "ip",
+        "src_data_type": "photo_quality"
+      }
+    ],
+    "server_role": 0
+  },
+  "attrs_from_request": {
+    "common_attr": [
+      "playstat_durations",
+      "playstat_playtimes",
+      "user",
+      "videoPlayingPid"
+    ],
+    "item_attr": []
+  },
+  "default_request_type": "default",
+  "kess_config": {
+    "service_name": "grpc_exploreSidCountRetr"
+  },
+  "pipeline_manager_config": {
+    "base_pipeline": {
+      "processor": {
+        "attr_statistic_D12093": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [
+              "item_id"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "sid_count_list",
+              "sid_list"
+            ],
+            "$output_item_attrs": []
+          },
+          "statistic_config": [
+            {
+              "aggregator": "count",
+              "attr_name": "item_id",
+              "save_results_to": "sid_count_list",
+              "save_values_to": "sid_list"
+            }
+          ],
+          "type_name": "CommonRecoAttrStatisticEnricher"
+        },
+        "copy_attr_CAAD84": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [
+              "hetu_tag_level_info__hetu_cluster_id"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": [
+              "photo_dnn_cluster_id"
+            ]
+          },
+          "attrs": [
+            {
+              "from_item": "hetu_tag_level_info__hetu_cluster_id",
+              "to_item": "photo_dnn_cluster_id"
+            }
+          ],
+          "type_name": "CommonRecoCopyAttrEnricher"
+        },
+        "copy_item_meta_info_264AD6": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": [
+              "item_id"
+            ]
+          },
+          "save_item_id_to_attr": "item_id",
+          "type_name": "CommonRecoItemMetaInfoEnricher"
+        },
+        "copy_user_meta_info_825665": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "dId",
+              "request_num",
+              "uId"
+            ],
+            "$output_item_attrs": []
+          },
+          "save_device_id_to_attr": "dId",
+          "save_request_num_to_attr": "request_num",
+          "save_user_id_to_attr": "uId",
+          "type_name": "CommonRecoUserMetaInfoEnricher"
+        },
+        "count_reco_result_0EF513": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "origin_sid_length"
+            ],
+            "$output_item_attrs": []
+          },
+          "save_result_size_to_common_attr": "origin_sid_length",
+          "type_name": "CommonRecoCountRecoResultEnricher"
+        },
+        "count_reco_result_C631C6": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "sid_num"
+            ],
+            "$output_item_attrs": []
+          },
+          "save_result_size_to_common_attr": "sid_num",
+          "target_reason": 9001,
+          "type_name": "CommonRecoCountRecoResultEnricher"
+        },
+        "deduplicate_62D629": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [
+              "author__id"
+            ],
+            "$modify_item_tables": [
+              ""
+            ],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "on_item_attr": "author__id",
+          "type_name": "CommonRecoResultsDeduplicateArranger"
+        },
+        "deduplicate_BBE8FF": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [
+              ""
+            ],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "type_name": "CommonRecoResultsDeduplicateArranger"
+        },
+        "dispatch_common_attr_19D103": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "sid_count_list"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": [
+              "sid_count"
+            ]
+          },
+          "from_common_attr": "sid_count_list",
+          "to_item_attr": "sid_count",
+          "type_name": "CommonRecoCommonAttrDispatchEnricher"
+        },
+        "enrich_attr_by_light_function_C87C76": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "playstat_durations",
+              "playstat_playtimes",
+              "videoPlayingPid"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "user_effective_play_pid_list"
+            ],
+            "$output_item_attrs": []
+          },
+          "class_name": "ExploreModelLightFunctionSet",
+          "export_common_attr": [
+            {
+              "as": "user_effective_play_pid_list",
+              "name": "effective_play_pid_list"
+            }
+          ],
+          "function_name": "ExtractEffectivePlayPids",
+          "import_common_attr": [
+            {
+              "as": "origin_pids_list",
+              "name": "videoPlayingPid"
+            },
+            {
+              "as": "playtime_ms_list",
+              "name": "playstat_playtimes"
+            },
+            {
+              "as": "duration_ms_list",
+              "name": "playstat_durations"
+            }
+          ],
+          "type_name": "CommonRecoLightFunctionEnricher"
+        },
+        "enrich_attr_by_light_function_F05258": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "user_effective_play_float_sid_list"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "user_effective_play_semantic_id_list_int"
+            ],
+            "$output_item_attrs": []
+          },
+          "class_name": "ExploreModelLightFunctionSet",
+          "export_common_attr": [
+            {
+              "as": "user_effective_play_semantic_id_list_int",
+              "name": "user_effective_play_sid_list"
+            }
+          ],
+          "function_name": "TransformUserSid",
+          "import_common_attr": [
+            "user_effective_play_float_sid_list"
+          ],
+          "type_name": "CommonRecoLightFunctionEnricher"
+        },
+        "enrich_attr_by_py_080BCA": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "sid_list_sorted"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "extract_sid_list",
+              "extract_sid_list_length"
+            ],
+            "$output_item_attrs": []
+          },
+          "['clang', 'gcc']_remote_so_name": "models/explore_transformer_retr_model/kaiworks_explore_sid_tran/uni_retr_server_local_ann/dso/FunctionSet_gcc_74f992d5e631ae7d971125ce862093b9.so",
+          "clang_remote_so_name": "models/explore_transformer_retr_model/kaiworks_explore_sid_tran/uni_retr_server_local_ann/dso/FunctionSet_clang_089150c5befe550aa4b542bb7cbac2f0.so",
+          "clang_so_name": "FunctionSet_clang.so",
+          "compile_tool": "both",
+          "export_common_attr": [
+            "extract_sid_list",
+            "extract_sid_list_length"
+          ],
+          "export_item_attr": [],
+          "function_set": "FunctionSet",
+          "gcc_remote_so_name": "models/explore_transformer_retr_model/kaiworks_explore_sid_tran/uni_retr_server_local_ann/dso/FunctionSet_gcc_74f992d5e631ae7d971125ce862093b9.so",
+          "gcc_so_name": "FunctionSet_gcc.so",
+          "import_common_attr": [
+            "sid_list_sorted"
+          ],
+          "import_item_attr": [],
+          "py_function": "extract_sid_list_func",
+          "static_compile": false,
+          "type_name": "CommonRecoPyAttrEnricher"
+        },
+        "fetch_remote_embedding_3C47FB": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "user_effective_play_pid_list"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "user_effective_play_float_sid_list"
+            ],
+            "$output_item_attrs": []
+          },
+          "client_side_shard": true,
+          "colossusdb_embd_service_name": "u2u_forla",
+          "colossusdb_embd_table_name": "mmusid",
+          "downstream_processor": "enrich_attr_by_light_function_F05258",
+          "id_converter": {
+            "type_name": "mioEmbeddingIdConverter"
+          },
+          "input_attr_name": "user_effective_play_pid_list",
+          "output_attr_name": "user_effective_play_float_sid_list",
+          "protocol": 1,
+          "query_source_type": "common_attr",
+          "shard_num": 1,
+          "size": 4,
+          "slot": 4103,
+          "timeout_ms": 20,
+          "type_name": "FetchRemoteEmbeddingEnricher"
+        },
+        "get_item_attr_by_local_attr_index_1231C0": {
+          "$metadata": {
+            "$downstream_item_attrs": [
+              "index",
+              "score"
+            ],
+            "$downstream_new_result": true,
+            "$input_common_attrs": [],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": [
+              "author__id",
+              "hetu_tag_level_info__hetu_cluster_id"
+            ]
+          },
+          "attrs": [
+            "hetu_tag_level_info__hetu_cluster_id",
+            "author__id"
+          ],
+          "type_name": "CommonRecoLocalAttrIndexItemAttrEnricher"
+        },
+        "log_debug_info_84AA38": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "dId",
+              "request_num"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "common_attrs": [
+            "request_num",
+            "dId"
+          ],
+          "for_debug_request_only": true,
+          "log_tag": "afterRetrieve",
+          "type_name": "CommonRecoDebugInfoObserver"
+        },
+        "log_debug_info_B14EE1": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [
+              "index",
+              "photo_dnn_cluster_id",
+              "score"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "for_debug_request_only": true,
+          "item_attrs": [
+            "photo_dnn_cluster_id",
+            "index",
+            "score"
+          ],
+          "respect_sample_logging": false,
+          "type_name": "CommonRecoDebugInfoObserver"
+        },
+        "log_debug_info_B9854F": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [
+              "item_id",
+              "sid_count"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "for_debug_request_only": true,
+          "item_attrs": [
+            "item_id",
+            "sid_count"
+          ],
+          "log_tag": "mxj",
+          "respect_sample_logging": false,
+          "type_name": "CommonRecoDebugInfoObserver"
+        },
+        "log_debug_info_BAACD9": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "extract_sid_list",
+              "origin_sid_length",
+              "sid_count_list_sorted",
+              "uId",
+              "user_effective_play_semantic_id_list_int"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "common_attrs": [
+            "uId",
+            "origin_sid_length",
+            "sid_count_list_sorted",
+            "user_effective_play_semantic_id_list_int",
+            "extract_sid_list"
+          ],
+          "for_debug_request_only": true,
+          "log_tag": "mxj",
+          "respect_sample_logging": false,
+          "type_name": "CommonRecoDebugInfoObserver"
+        },
+        "log_debug_info_DBE8FB": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "playstat_durations",
+              "playstat_playtimes",
+              "videoPlayingPid"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "common_attrs": [
+            "videoPlayingPid",
+            "playstat_playtimes",
+            "playstat_durations"
+          ],
+          "for_debug_request_only": true,
+          "log_tag": "mxj",
+          "respect_sample_logging": false,
+          "type_name": "CommonRecoDebugInfoObserver"
+        },
+        "pack_item_attr_413B0E": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [
+              "item_id",
+              "sid_count"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [
+              "sid_count_list_sorted",
+              "sid_list_sorted"
+            ],
+            "$output_item_attrs": []
+          },
+          "item_source": {
+            "reco_results": true
+          },
+          "mappings": [
+            {
+              "from_item_attr": "item_id",
+              "to_common_attr": "sid_list_sorted"
+            },
+            {
+              "from_item_attr": "sid_count",
+              "to_common_attr": "sid_count_list_sorted"
+            }
+          ],
+          "target_reason": 9001,
+          "type_name": "CommonRecoItemAttrPackEnricher"
+        },
+        "pandora_multi_interest_retrieval_post_process_DB4326": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "request_num"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [
+              ""
+            ],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "cluster_num": 10000,
+          "diversity_boost": 0.3,
+          "limit": "{{request_num}}",
+          "type_name": "PandoraMultiInterestRetrievalPostProcessArranger"
+        },
+        "perflog_attr_value_B4A8F9": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "extract_sid_list_length",
+              "sid_num"
+            ],
+            "$input_item_attrs": [
+              "sid_count"
+            ],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "check_point": "sid_count",
+          "common_attrs": [
+            "sid_num",
+            "extract_sid_list_length"
+          ],
+          "item_attrs": [
+            "sid_count"
+          ],
+          "type_name": "CommonRecoAttrValuePerflogObserver"
+        },
+        "retrieve_by_common_attr_65BDC8": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "sid_list"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "attrs": [
+            {
+              "name": "sid_list",
+              "reason": 9001
+            }
+          ],
+          "type_name": "CommonRecoCommonAttrRetriever"
+        },
+        "retrieve_by_common_attr_A90E0E": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "user_effective_play_semantic_id_list_int"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "attrs": [
+            {
+              "name": "user_effective_play_semantic_id_list_int",
+              "reason": 9000
+            }
+          ],
+          "type_name": "CommonRecoCommonAttrRetriever"
+        },
+        "sort_by_score_7EAD82": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [
+              "sid_count"
+            ],
+            "$modify_item_tables": [
+              ""
+            ],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "score_from_attr": "sid_count",
+          "type_name": "CommonRecoScoreSortArranger"
+        },
+        "sort_by_score_E44ED1": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [
+              "score"
+            ],
+            "$modify_item_tables": [
+              ""
+            ],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "score_from_attr": "score",
+          "type_name": "CommonRecoScoreSortArranger"
+        },
+        "test": {
+          "$metadata": {
+            "$input_common_attrs": [
+              "extract_sid_list"
+            ],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [],
+            "$output_common_attrs": [],
+            "$output_item_attrs": [
+              "index",
+              "score"
+            ]
+          },
+          "downstream_processor": "get_item_attr_by_local_attr_index_1231C0",
+          "kess_service": "grpc_recoHotRqvaeSidPidIndex",
+          "querys": [
+            {
+              "query": "sid:{{extract_sid_list}}",
+              "search_num": 50
+            }
+          ],
+          "reason": 1,
+          "save_query_index_to_attr": "index",
+          "save_score_to_attr": "score",
+          "shard_num": 0,
+          "timeout_ms": 500,
+          "type_name": "CommonRecoCommonQueryRemoteRetriever"
+        },
+        "truncate_EA6E76": {
+          "$metadata": {
+            "$input_common_attrs": [],
+            "$input_item_attrs": [],
+            "$modify_item_tables": [
+              ""
+            ],
+            "$output_common_attrs": [],
+            "$output_item_attrs": []
+          },
+          "size_limit": 0,
+          "type_name": "CommonRecoTruncateArranger"
+        }
+      },
+      "type_name": "CommonRecoPipeline"
+    },
+    "pipeline_map": {
+      "default": {
+        "__PARENT": "base_pipeline",
+        "pipeline": [
+          "copy_user_meta_info_825665",
+          "enrich_attr_by_light_function_C87C76",
+          "fetch_remote_embedding_3C47FB",
+          "enrich_attr_by_light_function_F05258",
+          "retrieve_by_common_attr_A90E0E",
+          "copy_item_meta_info_264AD6",
+          "count_reco_result_0EF513",
+          "attr_statistic_D12093",
+          "truncate_EA6E76",
+          "retrieve_by_common_attr_65BDC8",
+          "count_reco_result_C631C6",
+          "copy_item_meta_info_264AD6",
+          "dispatch_common_attr_19D103",
+          "sort_by_score_7EAD82",
+          "log_debug_info_B9854F",
+          "pack_item_attr_413B0E",
+          "enrich_attr_by_py_080BCA",
+          "perflog_attr_value_B4A8F9",
+          "truncate_EA6E76",
+          "test",
+          "log_debug_info_84AA38",
+          "get_item_attr_by_local_attr_index_1231C0",
+          "copy_attr_CAAD84",
+          "deduplicate_BBE8FF",
+          "deduplicate_62D629",
+          "sort_by_score_E44ED1",
+          "pandora_multi_interest_retrieval_post_process_DB4326",
+          "log_debug_info_BAACD9",
+          "log_debug_info_DBE8FB",
+          "log_debug_info_B14EE1"
+        ]
+      }
+    }
+  },
+  "request_type_config": {
+    "default": [
+      "default"
+    ]
+  },
+  "return_common_attrs": [
+    "user_emb"
+  ],
+  "return_item_attrs": [
+    "item_src"
+  ]
+}

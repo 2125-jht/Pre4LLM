@@ -1,0 +1,23 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "life_fr_hetu_reshape_coef": 0.05,
+        "enable_fr_light_calc_score": true
+      },
+      "import": {
+        "results": [
+          "ranking_stage1_truncate__result"
+        ],
+        "item_attrs": [
+            "hetu_level_one_top1",
+            "colossus_hetu_one_ratio"
+        ]
+      },
+      "export": {
+        "item_attrs": [
+          "life_fr_hetu_one_reshaping_score"
+        ]
+      }
+    }
+  }
+  

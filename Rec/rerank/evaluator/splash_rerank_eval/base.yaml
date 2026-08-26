@@ -1,0 +1,2876 @@
+ada_decay_rate: 0.99999
+ada_epsilon: 1e-8
+avg_decay_rate: 0.999993
+back_propagate_input: true
+dense_grad: dense_grad_for_fetch:0
+dense_init_val: dense_init_val_for_fetch:0
+embedding:
+  create_threshold: 0
+  initial_g2sum: 3
+  initial_range: 1e-4
+  learning_rate: 0.05
+  slots_config:
+  - dim: 64
+    dtype: float32
+    expand: 1
+    input_name: KAI_uId
+    slots: 111
+    update_type: gradient
+  - dim: 64
+    dtype: float32
+    expand: 1
+    input_name: KAI_dId
+    slots: 212
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_uBasicAge
+    slots: 136
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_uGender
+    slots: 268
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_uCityId
+    slots: 362
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uRealHatePids
+    slots: 357
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uRealClickPids
+    slots: 117
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uRealLikePids
+    slots: 290
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uRealFollowPids
+    slots: 264
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uRealForwardPids
+    slots: 166
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uMidClickPids
+    slots: 142
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uMidLikePids
+    slots: 228
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uMidFollowPids
+    slots: 280
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uMidCommentPids
+    slots: 135
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uMidPlayEffectivePids
+    slots: 120
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uMidPlayLongPids
+    slots: 293
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_uMidPlayShortPids
+    slots: 178
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 50
+    input_name: KAI_uMidPlayViewHetu1
+    slots: 206
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 50
+    input_name: KAI_uMidPlayViewHetu2
+    slots: 276
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_fountainClickPids
+    slots: 88
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_fountainLikePids
+    slots: 81
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_fountainFollowPids
+    slots: 138
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_fountainLongviewPids
+    slots: 85
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_fountainEffviewPids
+    slots: 371
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPltr_idx0
+    slots: 213
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPwtr_idx0
+    slots: 294
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPftr_idx0
+    slots: 118
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPhtr_idx0
+    slots: 216
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPptr_idx0
+    slots: 272
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPcmtr_idx0
+    slots: 191
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPctr_idx0
+    slots: 193
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPctr_idx0
+    slots: 240
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPwtr_idx0
+    slots: 318
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPltr_idx0
+    slots: 335
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPlvtr_idx0
+    slots: 252
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPsvtr_idx0
+    slots: 150
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPvtr_idx0
+    slots: 158
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPwtd_idx0
+    slots: 230
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPlvtr_idx0
+    slots: 288
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPsvtr_idx0
+    slots: 363
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPcmef_idx0
+    slots: 257
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPepstr_idx0
+    slots: 119
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx0
+    slots: 108
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx0
+    slots: 55
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx0
+    slots: 61
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx0
+    slots: 339
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx0
+    slots: 224
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx0
+    slots: 105
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pTag_idx0
+    slots: 348
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx0
+    slots: 209
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pAuthorGender_idx0
+    slots: 98
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pAgeHour_idx0
+    slots: 21
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx0
+    slots: 109
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx0
+    slots: 306
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx0
+    slots: 14
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pOcrCoverTextWordCount_idx0
+    slots: 198
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusicComboId_idx0
+    slots: 259
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx0
+    slots: 220
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx0
+    slots: 110
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx0
+    slots: 181
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx0
+    slots: 137
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx0
+    slots: 380
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx0
+    slots: 134
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx0
+    slots: 325
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx0
+    slots: 4
+    update_type: gradient
+  - dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx0
+    slots: 42
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx0
+    slots: 38
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx0
+    slots: 328
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPltr_idx1
+    slots: 343
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPwtr_idx1
+    slots: 235
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPftr_idx1
+    slots: 196
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPhtr_idx1
+    slots: 322
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPptr_idx1
+    slots: 261
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPcmtr_idx1
+    slots: 326
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPctr_idx1
+    slots: 353
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPctr_idx1
+    slots: 285
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPwtr_idx1
+    slots: 236
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPltr_idx1
+    slots: 123
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPlvtr_idx1
+    slots: 177
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPsvtr_idx1
+    slots: 200
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPvtr_idx1
+    slots: 75
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPwtd_idx1
+    slots: 296
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPlvtr_idx1
+    slots: 86
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPsvtr_idx1
+    slots: 364
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPcmef_idx1
+    slots: 106
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPepstr_idx1
+    slots: 165
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx1
+    slots: 365
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx1
+    slots: 54
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx1
+    slots: 334
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx1
+    slots: 47
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx1
+    slots: 72
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx1
+    slots: 89
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pTag_idx1
+    slots: 147
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx1
+    slots: 263
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pAuthorGender_idx1
+    slots: 310
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pAgeHour_idx1
+    slots: 20
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx1
+    slots: 250
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx1
+    slots: 386
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx1
+    slots: 12
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pOcrCoverTextWordCount_idx1
+    slots: 255
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusicComboId_idx1
+    slots: 113
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx1
+    slots: 100
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx1
+    slots: 281
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx1
+    slots: 370
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx1
+    slots: 242
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx1
+    slots: 377
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx1
+    slots: 332
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx1
+    slots: 175
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx1
+    slots: 63
+    update_type: gradient
+  - dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx1
+    slots: 41
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx1
+    slots: 151
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx1
+    slots: 168
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPltr_idx2
+    slots: 381
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPwtr_idx2
+    slots: 70
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPftr_idx2
+    slots: 241
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPhtr_idx2
+    slots: 201
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPptr_idx2
+    slots: 305
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPcmtr_idx2
+    slots: 145
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPctr_idx2
+    slots: 80
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPctr_idx2
+    slots: 265
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPwtr_idx2
+    slots: 308
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPltr_idx2
+    slots: 146
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPlvtr_idx2
+    slots: 316
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPsvtr_idx2
+    slots: 225
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPvtr_idx2
+    slots: 341
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPwtd_idx2
+    slots: 71
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPlvtr_idx2
+    slots: 360
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPsvtr_idx2
+    slots: 173
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPcmef_idx2
+    slots: 195
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPepstr_idx2
+    slots: 347
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx2
+    slots: 367
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx2
+    slots: 208
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx2
+    slots: 48
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx2
+    slots: 301
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx2
+    slots: 245
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx2
+    slots: 354
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pTag_idx2
+    slots: 390
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx2
+    slots: 214
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pAuthorGender_idx2
+    slots: 87
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pAgeHour_idx2
+    slots: 19
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx2
+    slots: 312
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx2
+    slots: 233
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx2
+    slots: 11
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pOcrCoverTextWordCount_idx2
+    slots: 79
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusicComboId_idx2
+    slots: 345
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx2
+    slots: 368
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx2
+    slots: 215
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx2
+    slots: 374
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx2
+    slots: 315
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx2
+    slots: 383
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx2
+    slots: 388
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx2
+    slots: 182
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx2
+    slots: 25
+    update_type: gradient
+  - dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx2
+    slots: 64
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx2
+    slots: 271
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx2
+    slots: 83
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPltr_idx3
+    slots: 323
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPwtr_idx3
+    slots: 93
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPftr_idx3
+    slots: 297
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPhtr_idx3
+    slots: 382
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPptr_idx3
+    slots: 269
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPcmtr_idx3
+    slots: 115
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPctr_idx3
+    slots: 320
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPctr_idx3
+    slots: 254
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPwtr_idx3
+    slots: 126
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPltr_idx3
+    slots: 69
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPlvtr_idx3
+    slots: 336
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPsvtr_idx3
+    slots: 154
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPvtr_idx3
+    slots: 248
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPwtd_idx3
+    slots: 251
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPlvtr_idx3
+    slots: 128
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPsvtr_idx3
+    slots: 356
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPcmef_idx3
+    slots: 338
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPepstr_idx3
+    slots: 350
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx3
+    slots: 56
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx3
+    slots: 53
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx3
+    slots: 232
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx3
+    slots: 46
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx3
+    slots: 171
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx3
+    slots: 284
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pTag_idx3
+    slots: 286
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx3
+    slots: 185
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pAuthorGender_idx3
+    slots: 176
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pAgeHour_idx3
+    slots: 66
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx3
+    slots: 298
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx3
+    slots: 60
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx3
+    slots: 10
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pOcrCoverTextWordCount_idx3
+    slots: 68
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusicComboId_idx3
+    slots: 170
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx3
+    slots: 369
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx3
+    slots: 372
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx3
+    slots: 78
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx3
+    slots: 302
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx3
+    slots: 384
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx3
+    slots: 169
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx3
+    slots: 199
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx3
+    slots: 204
+    update_type: gradient
+  - dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx3
+    slots: 40
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx3
+    slots: 132
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx3
+    slots: 279
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPltr_idx4
+    slots: 125
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPwtr_idx4
+    slots: 133
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPftr_idx4
+    slots: 107
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPhtr_idx4
+    slots: 210
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPptr_idx4
+    slots: 162
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPcmtr_idx4
+    slots: 97
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPctr_idx4
+    slots: 256
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPctr_idx4
+    slots: 149
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPwtr_idx4
+    slots: 277
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPltr_idx4
+    slots: 94
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPlvtr_idx4
+    slots: 258
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPsvtr_idx4
+    slots: 186
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPvtr_idx4
+    slots: 253
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPwtd_idx4
+    slots: 179
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPlvtr_idx4
+    slots: 327
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPsvtr_idx4
+    slots: 373
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPcmef_idx4
+    slots: 148
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPepstr_idx4
+    slots: 351
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx4
+    slots: 295
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx4
+    slots: 260
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx4
+    slots: 366
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx4
+    slots: 266
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx4
+    slots: 99
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx4
+    slots: 205
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pTag_idx4
+    slots: 45
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx4
+    slots: 333
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pAuthorGender_idx4
+    slots: 35
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pAgeHour_idx4
+    slots: 18
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx4
+    slots: 76
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx4
+    slots: 57
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx4
+    slots: 9
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pOcrCoverTextWordCount_idx4
+    slots: 62
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusicComboId_idx4
+    slots: 187
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx4
+    slots: 291
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx4
+    slots: 304
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx4
+    slots: 355
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx4
+    slots: 376
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx4
+    slots: 190
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx4
+    slots: 270
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx4
+    slots: 184
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx4
+    slots: 246
+    update_type: gradient
+  - dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx4
+    slots: 131
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx4
+    slots: 153
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx4
+    slots: 34
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPltr_idx5
+    slots: 300
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPwtr_idx5
+    slots: 163
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPftr_idx5
+    slots: 160
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPhtr_idx5
+    slots: 331
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPptr_idx5
+    slots: 307
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPcmtr_idx5
+    slots: 84
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPctr_idx5
+    slots: 321
+    update_type: gradient
+  - dim: 16
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPctr_idx5
+    slots: 152
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPwtr_idx5
+    slots: 174
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPltr_idx5
+    slots: 129
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPlvtr_idx5
+    slots: 167
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPsvtr_idx5
+    slots: 74
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPvtr_idx5
+    slots: 194
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPwtd_idx5
+    slots: 141
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPlvtr_idx5
+    slots: 346
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMcPsvtr_idx5
+    slots: 114
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPcmef_idx5
+    slots: 319
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pPepstr_idx5
+    slots: 352
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_pId_idx5
+    slots: 389
+    update_type: gradient
+  - dim: 32
+    dtype: float32
+    expand: 1
+    input_name: KAI_aId_idx5
+    slots: 223
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pDurationMs_idx5
+    slots: 124
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pUploadType_idx5
+    slots: 219
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pCityId_idx5
+    slots: 103
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pProvinceId_idx5
+    slots: 283
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pTag_idx5
+    slots: 102
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusic_idx5
+    slots: 157
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pAuthorGender_idx5
+    slots: 207
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pAgeHour_idx5
+    slots: 17
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV1_idx5
+    slots: 309
+    update_type: gradient
+  - dim: 4
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuImgClusterV3_idx5
+    slots: 274
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMmuContentId_idx5
+    slots: 13
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pOcrCoverTextWordCount_idx5
+    slots: 188
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pMusicComboId_idx5
+    slots: 329
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCtr_idx5
+    slots: 262
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpLtr_idx5
+    slots: 92
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpWtr_idx5
+    slots: 378
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpFtr_idx5
+    slots: 65
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpCmtr_idx5
+    slots: 385
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpHtr_idx5
+    slots: 292
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pEmpPtr_idx5
+    slots: 391
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_avg_watchtime_idx5
+    slots: 3
+    update_type: gradient
+  - dim: 2
+    dtype: float32
+    expand: 1
+    input_name: KAI_pContentLevel_idx5
+    slots: 39
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel1Id_idx5
+    slots: 311
+    update_type: gradient
+  - dim: 8
+    dtype: float32
+    expand: 1
+    input_name: KAI_pHetuTagLevel2Id_idx5
+    slots: 121
+    update_type: gradient
+  version_aware: true
+  weight_bounds:
+  - -10
+  - 10
+extra_params: []
+feed_slots: []
+global_init_range: 0.2
+grad_scale: truediv:0
+graph: ./conf/graph.pb
+graph_extra_outputs: {}
+graph_output_labels:
+- Identity:0
+- Identity_1:0
+- Identity_2:0
+- Identity_3:0
+- Identity_4:0
+- Identity_5:0
+- Reshape_649:0
+graph_q_valid:
+  l2r_idx0: Reshape_620:0
+  l2r_idx1: Reshape_620:0
+  list_play: Reshape_620:0
+  next_idx0: Reshape_620:0
+  next_idx1: Reshape_620:0
+  play_idx0: Reshape_620:0
+  play_idx1: Reshape_620:0
+graph_summary: Merge/MergeSummary:0
+graph_targets:
+- opt
+graph_tensor_mapping:
+  l2r_idx0: wtdltr_out_pos_fc_layer/dense/Sigmoid:0
+  l2r_idx1: wtdltr_out_pos_fc_layer_1/dense/Sigmoid:0
+  list_play: list_play_out_fc_layer/dense/BiasAdd:0
+  next_idx0: nextltr_out_pos_fc_layer/dense/Sigmoid:0
+  next_idx1: nextltr_out_pos_fc_layer_1/dense/Sigmoid:0
+  play_idx0: playltr_out_pos_fc_layer/dense/Sigmoid:0
+  play_idx1: playltr_out_pos_fc_layer_1/dense/Sigmoid:0
+hyperparameter_kconf: null
+is_train_placeholder: is_train:0
+learning_rate: 5.0e-06
+local_init_op: ''
+loss_scale_placeholder: loss_scale:0
+mom_decay_rate: 0.999
+output_hidden_units: update_input continue_normlized_input slide_embedding slide_wide
+  watch_time_wide position_weight_input
+param:
+- coln: 64
+  name: slide_l2r_2pospos_embedding/pos_embedding
+  rown: 6
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2user_act_slot_dnn_fc_layer/dense/kernel
+  rown: 140
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2user_act_slot_dnn_fc_layer/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 3
+  name: slide_l2r_2user_act_slot_dnn_fc_layer/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2user_act_slot_dnn_fc_layer/dense_1/bias
+  rank: 1
+  rown: 3
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2user_play_slot_dnn_fc_layer/dense/kernel
+  rown: 140
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2user_play_slot_dnn_fc_layer/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 5
+  name: slide_l2r_2user_play_slot_dnn_fc_layer/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2user_play_slot_dnn_fc_layer/dense_1/bias
+  rank: 1
+  rown: 5
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2pid_attention_self_attention/dense/kernel
+  rown: 40
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2pid_attention_self_attention/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2pid_attention_self_attention/dense_1/kernel
+  rown: 40
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2pid_attention_self_attention/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2pid_attention_self_attention/dense_2/kernel
+  rown: 40
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2pid_attention_self_attention/dense_2/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2ltr_user_short_fc_layer/dense/kernel
+  rown: 260
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_user_short_fc_layer/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2ltr_user_short2_fc_layer/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_user_short2_fc_layer/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2ltr_view_list_short_net/dense/kernel
+  rown: 16
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_view_list_short_net/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_self_attention/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_self_attention/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_self_attention/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_self_attention/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_self_attention/dense_2/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_self_attention/dense_2/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_proj_fc_one_layer/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_proj_fc_one_layer/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_ln_1/g
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_ln_1/b
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 256
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_mlp/slide_l2r_2ltr_view_list_transformer_mlp_c_fc
+  rown: 65
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_mlp/slide_l2r_2ltr_view_list_transformer_mlp_c_fc2
+  rown: 257
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_ln_2/g
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_view_list_short_net/slide_l2r_2ltr_view_list_transformer/slide_l2r_2ltr_view_list_transformer_ln_2/b
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2pos_list_short_net/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2pos_list_short_net/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_self_attention/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_self_attention/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_self_attention/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_self_attention/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_self_attention/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_self_attention/dense_2/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_proj_fc_one_layer/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_proj_fc_one_layer/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_ln_1/g
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_ln_1/b
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_mlp/slide_l2r_2pos_list_transformer_mlp_c_fc
+  rown: 33
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_mlp/slide_l2r_2pos_list_transformer_mlp_c_fc2
+  rown: 129
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_ln_2/g
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2pos_list_short_net/slide_l2r_2pos_list_transformer/slide_l2r_2pos_list_transformer_ln_2/b
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2play_list_short_net/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2play_list_short_net/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_self_attention/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_self_attention/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_self_attention/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_self_attention/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_self_attention/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_self_attention/dense_2/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_proj_fc_one_layer/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_proj_fc_one_layer/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_ln_1/g
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_ln_1/b
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_mlp/slide_l2r_2play_list_transformer_mlp_c_fc
+  rown: 33
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_mlp/slide_l2r_2play_list_transformer_mlp_c_fc2
+  rown: 129
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_ln_2/g
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2play_list_short_net/slide_l2r_2play_list_transformer/slide_l2r_2play_list_transformer_ln_2/b
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2neg_list_short_net/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2neg_list_short_net/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_self_attention/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_self_attention/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_self_attention/dense_1/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_self_attention/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_self_attention/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_self_attention/dense_2/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_proj_fc_one_layer/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_proj_fc_one_layer/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_ln_1/g
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_ln_1/b
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 128
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_mlp/slide_l2r_2neg_list_transformer_mlp_c_fc
+  rown: 33
+  scale_by_rown: true
+- coln: 32
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_mlp/slide_l2r_2neg_list_transformer_mlp_c_fc2
+  rown: 129
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_ln_2/g
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2neg_list_short_net/slide_l2r_2neg_list_transformer/slide_l2r_2neg_list_transformer_ln_2/b
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 256
+  name: slide_l2r_2l2r_dnn_fc_layer/dense/kernel
+  rown: 702
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2l2r_dnn_fc_layer/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: slide_l2r_2l2r_dnn_fc_layer/dense_1/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2l2r_dnn_fc_layer/dense_1/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2l2r_dnn_fc_layer/dense_2/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2l2r_dnn_fc_layer/dense_2/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 128
+  name: slide_l2r_2vtr_dnn1_gate_tower/slide_l2r_2vtr_dnn10_layer_gate_layer/slide_l2r_2vtr_dnn10_layer_fc
+  rown: 161
+  scale_by_rown: true
+- coln: 96
+  name: slide_l2r_2vtr_dnn1_gate_tower/slide_l2r_2vtr_dnn10_layer_gate_layer/slide_l2r_2vtr_dnn10_layer_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2vtr_dnn1_gate_tower/slide_l2r_2vtr_dnn1_0
+  rown: 97
+  scale_by_rown: true
+- coln: 128
+  name: slide_l2r_2vtr_dnn2_gate_tower/slide_l2r_2vtr_dnn20_layer_gate_layer/slide_l2r_2vtr_dnn20_layer_fc
+  rown: 129
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2vtr_dnn2_gate_tower/slide_l2r_2vtr_dnn20_layer_gate_layer/slide_l2r_2vtr_dnn20_layer_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2vtr_dnn2_gate_tower/slide_l2r_2vtr_dnn2_0
+  rown: 65
+  scale_by_rown: true
+- coln: 128
+  name: slide_l2r_2vtr_gate_gate_layer2/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2vtr_gate_gate_layer2/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2vtr_gate_gate_layer2/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2vtr_gate_gate_layer2/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 256
+  name: pxtr_wt_fc_layer/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: pxtr_wt_fc_layer/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: pxtr_wt_fc_layer/dense_1/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: pxtr_wt_fc_layer/dense_1/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  name: pxtr_wt_fc_layer/dense_2/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: pxtr_wt_fc_layer/dense_2/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 2
+  name: pxtr_wt_fc_layer/dense_3/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: pxtr_wt_fc_layer/dense_3/bias
+  rank: 1
+  rown: 2
+  scale_by_rown: true
+- coln: 256
+  name: data_wt_fc_layer/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: data_wt_fc_layer/dense/bias
+  rank: 1
+  rown: 256
+  scale_by_rown: true
+- coln: 128
+  name: data_wt_fc_layer/dense_1/kernel
+  rown: 256
+  scale_by_rown: true
+- coln: 1
+  name: data_wt_fc_layer/dense_1/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  name: data_wt_fc_layer/dense_2/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: data_wt_fc_layer/dense_2/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 2
+  name: data_wt_fc_layer/dense_3/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: data_wt_fc_layer/dense_3/bias
+  rank: 1
+  rown: 2
+  scale_by_rown: true
+- coln: 128
+  name: slide_l2r_2list_emb_gate_tower/slide_l2r_2list_emb0_layer_gate_layer/slide_l2r_2list_emb0_layer_fc
+  rown: 205
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2list_emb_gate_tower/slide_l2r_2list_emb0_layer_gate_layer/slide_l2r_2list_emb0_layer_weight
+  rown: 129
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2list_emb_gate_tower/slide_l2r_2list_emb_0
+  rown: 65
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_self_attention/dense/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_self_attention/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_self_attention/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_self_attention/dense_1/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_self_attention/dense_2/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_self_attention/dense_2/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_proj
+  rown: 65
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_ln_1/g
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_ln_1/b
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 256
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_mlp/slide_l2r_2ltr_trf_1_transformer_mlp_c_fc
+  rown: 65
+  scale_by_rown: true
+- coln: 64
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_mlp/slide_l2r_2ltr_trf_1_transformer_mlp_c_fc2
+  rown: 257
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_ln_2/g
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: slide_l2r_2ltr_trf_1_transformer/slide_l2r_2ltr_trf_1_transformer_ln_2/b
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 128
+  name: ple/layer0/shared_experts/expert_layer_0/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/shared_experts/expert_layer_0/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: ple/layer0/shared_experts/expert_layer_1/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/shared_experts/expert_layer_1/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: ple/layer0/next_expert/expert_layer_0/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/next_expert/expert_layer_0/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: ple/layer0/next_expert/expert_layer_1/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/next_expert/expert_layer_1/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  name: ple/layer0/next_gate/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/next_gate/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  name: ple/layer0/next_gate/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/next_gate/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 5
+  name: ple/layer0/next_gate/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/next_gate/dense_2/bias
+  rank: 1
+  rown: 5
+  scale_by_rown: true
+- coln: 128
+  name: ple/layer0/wtd_expert/expert_layer_0/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/wtd_expert/expert_layer_0/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: ple/layer0/wtd_expert/expert_layer_1/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/wtd_expert/expert_layer_1/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  name: ple/layer0/wtd_gate/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/wtd_gate/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  name: ple/layer0/wtd_gate/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/wtd_gate/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 5
+  name: ple/layer0/wtd_gate/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/wtd_gate/dense_2/bias
+  rank: 1
+  rown: 5
+  scale_by_rown: true
+- coln: 128
+  name: ple/layer0/play_expert/expert_layer_0/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/play_expert/expert_layer_0/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: ple/layer0/play_expert/expert_layer_1/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/play_expert/expert_layer_1/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  name: ple/layer0/play_gate/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/play_gate/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  name: ple/layer0/play_gate/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/play_gate/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 5
+  name: ple/layer0/play_gate/dense_2/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: ple/layer0/play_gate/dense_2/bias
+  rank: 1
+  rown: 5
+  scale_by_rown: true
+- coln: 384
+  dims:
+  - 1
+  - 3
+  - 128
+  name: output_cross_attention_self_attention/output_cross_attention_self_attention_values
+  rown: 1
+  scale_by_rown: true
+- coln: 128
+  name: output_cross_attention_self_attention/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: output_cross_attention_self_attention/dense/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: output_cross_attention_self_attention/dense_1/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: output_cross_attention_self_attention/dense_1/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 128
+  name: output_cross_attention_self_attention/dense_2/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: output_cross_attention_self_attention/dense_2/bias
+  rank: 1
+  rown: 128
+  scale_by_rown: true
+- coln: 64
+  name: nextltr_proj_fc_layer/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: nextltr_proj_fc_layer/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  name: nextltr_proj_fc_layer/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: nextltr_proj_fc_layer/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: nextltr_out_none_fc_layer/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: nextltr_out_none_fc_layer/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: nextltr_out_pos_fc_layer/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: nextltr_out_pos_fc_layer/dense/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+- coln: 64
+  name: wtdltr_proj_fc_layer/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: wtdltr_proj_fc_layer/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  name: wtdltr_proj_fc_layer/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: wtdltr_proj_fc_layer/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: wtdltr_out_none_fc_layer/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: wtdltr_out_none_fc_layer/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: wtdltr_out_pos_fc_layer/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: wtdltr_out_pos_fc_layer/dense/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+- coln: 64
+  name: playltr_proj_fc_layer/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: playltr_proj_fc_layer/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  name: playltr_proj_fc_layer/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: playltr_proj_fc_layer/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 32
+  name: playltr_out_none_fc_layer/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: playltr_out_none_fc_layer/dense/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: playltr_out_pos_fc_layer/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: playltr_out_pos_fc_layer/dense/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+- coln: 64
+  name: list_play_fc_layer/dense/kernel
+  rown: 128
+  scale_by_rown: true
+- coln: 1
+  name: list_play_fc_layer/dense/bias
+  rank: 1
+  rown: 64
+  scale_by_rown: true
+- coln: 32
+  name: list_play_fc_layer/dense_1/kernel
+  rown: 64
+  scale_by_rown: true
+- coln: 1
+  name: list_play_fc_layer/dense_1/bias
+  rank: 1
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: list_play_out_fc_layer/dense/kernel
+  rown: 32
+  scale_by_rown: true
+- coln: 1
+  name: list_play_out_fc_layer/dense/bias
+  rank: 1
+  rown: 1
+  scale_by_rown: true
+q_label:
+- auc_set: auc
+  label: Identity:0
+  name: next_idx0
+- auc_set: auc
+  label: Identity_1:0
+  name: next_idx1
+- auc_set: auc
+  label: Identity_2:0
+  name: l2r_idx0
+- auc_set: auc
+  label: Identity_3:0
+  name: l2r_idx1
+- auc_set: auc
+  label: Identity_4:0
+  name: play_idx0
+- auc_set: auc
+  label: Identity_5:0
+  name: play_idx1
+- auc_set: auc
+  label: Reshape_649:0
+  name: list_play
+q_names: next_idx0 next_idx1 l2r_idx0 l2r_idx1 play_idx0 play_idx1 list_play
+sparse_grad: sparse_grad_for_fetch:0
+sparse_grad_scale: truediv_1:0
+step_placeholder: step:0
+summary:
+- len: 1912
+  name: base_summary
+- len: 2072
+  name: stub_summary
+summary_decay_rate: 0.999999
+summary_init_n: 1e4
+summary_init_squared_sum: 1e4
+summary_squared_sum_epsilon: 1e-4
+test_layers_at_joining: join join_forward update update_forward
+test_layers_at_updating: update update_forward
+test_mode: false
+train_layers_at_joining: join
+train_layers_at_updating: update
+use_sparse_indice: false
+vec_input:
+- common: false
+  dim: 1
+  name: KAI_pvtr_idx0
+- common: false
+  dim: 1
+  name: KAI_slide_neg_weight_idx0
+- common: false
+  dim: 1
+  name: KAI_slide_wtd_label_idx0
+- common: false
+  dim: 1
+  name: KAI_slide_play_weight_idx0
+- common: false
+  dim: 1
+  name: KAI_slide_play_rate_idx0
+- common: false
+  dim: 1
+  name: KAI_slide_next_weight_idx0
+- common: false
+  dim: 1
+  name: KAI_slide_next_label_idx0
+- common: false
+  dim: 1
+  name: KAI_pvtr_idx1
+- common: false
+  dim: 1
+  name: KAI_slide_neg_weight_idx1
+- common: false
+  dim: 1
+  name: KAI_slide_wtd_label_idx1
+- common: false
+  dim: 1
+  name: KAI_slide_play_weight_idx1
+- common: false
+  dim: 1
+  name: KAI_slide_play_rate_idx1
+- common: false
+  dim: 1
+  name: KAI_slide_next_weight_idx1
+- common: false
+  dim: 1
+  name: KAI_slide_next_label_idx1
+- common: false
+  dim: 1
+  name: KAI_pvtr_idx2
+- common: false
+  dim: 1
+  name: KAI_slide_neg_weight_idx2
+- common: false
+  dim: 1
+  name: KAI_slide_wtd_label_idx2
+- common: false
+  dim: 1
+  name: KAI_slide_play_weight_idx2
+- common: false
+  dim: 1
+  name: KAI_slide_play_rate_idx2
+- common: false
+  dim: 1
+  name: KAI_slide_next_weight_idx2
+- common: false
+  dim: 1
+  name: KAI_slide_next_label_idx2
+- common: false
+  dim: 1
+  name: KAI_pvtr_idx3
+- common: false
+  dim: 1
+  name: KAI_slide_neg_weight_idx3
+- common: false
+  dim: 1
+  name: KAI_slide_wtd_label_idx3
+- common: false
+  dim: 1
+  name: KAI_slide_play_weight_idx3
+- common: false
+  dim: 1
+  name: KAI_slide_play_rate_idx3
+- common: false
+  dim: 1
+  name: KAI_slide_next_weight_idx3
+- common: false
+  dim: 1
+  name: KAI_slide_next_label_idx3
+- common: false
+  dim: 1
+  name: KAI_pvtr_idx4
+- common: false
+  dim: 1
+  name: KAI_slide_neg_weight_idx4
+- common: false
+  dim: 1
+  name: KAI_slide_wtd_label_idx4
+- common: false
+  dim: 1
+  name: KAI_slide_play_weight_idx4
+- common: false
+  dim: 1
+  name: KAI_slide_play_rate_idx4
+- common: false
+  dim: 1
+  name: KAI_slide_next_weight_idx4
+- common: false
+  dim: 1
+  name: KAI_slide_next_label_idx4
+- common: false
+  dim: 1
+  name: KAI_pvtr_idx5
+- common: false
+  dim: 1
+  name: KAI_slide_neg_weight_idx5
+- common: false
+  dim: 1
+  name: KAI_slide_wtd_label_idx5
+- common: false
+  dim: 1
+  name: KAI_slide_play_weight_idx5
+- common: false
+  dim: 1
+  name: KAI_slide_play_rate_idx5
+- common: false
+  dim: 1
+  name: KAI_slide_next_weight_idx5
+- common: false
+  dim: 1
+  name: KAI_slide_next_label_idx5
+- common: false
+  dim: 1
+  name: slide_l2r_2_label
+- common: false
+  dim: 1
+  name: slide_l2r_2_label_value
+- common: false
+  dim: 1
+  name: slide_l2r_2_sample_flag
+with_kai: true

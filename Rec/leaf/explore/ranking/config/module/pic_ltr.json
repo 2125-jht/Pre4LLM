@@ -1,0 +1,187 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_pic_ltr_predict_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_ltr_predict_service",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-long-form-infer-explore-pic-ltr-infer-v2"
+      },
+      "explore_pic_ltr_predict_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_ltr_predict_partition_size",
+        "param_type": "int",
+        "default_value": 48 
+      },
+      "explore_pic_revisit_ltr_predict_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_revisit_ltr_predict_service",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-long-form-infer-explore-pic-revisit-ltr-infer"
+      },
+      "explore_pic_revisit_ltr_predict_request_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_revisit_ltr_predict_request_type",
+        "param_type": "string",
+        "default_value": "default"
+      },
+      "skip_explore_pic_revisit_ltr_predict": {
+        "biz_name": "RECO_RPC",
+        "param_name": "skip_explore_pic_revisit_ltr_predict",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "skip_calc_pic_ltr_fvtr_with_pic_count": 1,
+      "pic_ltr_fvtr_pic_count_max": 32,
+      "enable_pic_ltr_skip_single_pic": false,
+      "enable_explore_pic_diversity_ltr_predict": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_explore_pic_diversity_ltr_predict",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "explore_pic_diversity_ltr_predict_partition_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_diversity_ltr_predict_partition_size",
+        "param_type": "int",
+        "default_value": 300,
+        "report_ab_hit": true
+      },
+      "explore_pic_diversity_ltr_predict_service": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_diversity_ltr_predict_service",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-long-form-com-leaf-explore-pic-ltr-leaf",
+        "report_ab_hit": true
+      },
+      "explore_pic_diversity_ltr_predict_request_type": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_diversity_ltr_predict_request_type",
+        "param_type": "string",
+        "default_value": "default",
+        "report_ab_hit": true
+      },
+      "explore_pic_diversity_ltr_mode": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_pic_diversity_ltr_mode",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "enable_explore_pic_ltv_predict": 0,
+      "explore_pic_ltv_predict_service": "kws-kuaishou-long-form-uni-cpu-predict-explore-pic-ltv-infer-v1",
+      "explore_pic_ltv_predict_request_type": "default",
+      "explore_pic_ltv_predict_partition_size": 48,
+      "enable_explore_pic_ui_ltv_predict": 0,
+      "explore_pic_ui_ltv_predict_service": "kws-kuaishou-long-form-uni-cpu-predict-explore-pic-ui-ltv-infer-v1",
+      "explore_pic_ui_ltv_predict_request_type": "default",
+      "explore_pic_ui_ltv_predict_partition_size": 48,
+      "enable_explore_pic_good_comment_ltr_predict": 0,
+      "explore_pic_good_comment_ltr_predict_service": "grpc_explorePicGoodCommentInfer",
+      "explore_pic_good_comment_ltr_predict_request_type": "default",
+      "explore_pic_good_comment_ltr_predict_partition_size": 48,
+      "enable_explore_pic_fr_div_ctr_predict": 0,
+      "explore_pic_fr_div_ctr_predict_service": "kws-kuaishou-long-form-uni-cpu-predict-explore-pic-div-ctr-infer-v1",
+      "explore_pic_fr_div_ctr_predict_request_type": "default",
+      "explore_pic_fr_div_ctr_predict_partition_size": 100,
+      "enable_explore_pic_fr_interest_predict": 0,
+      "explore_pic_fr_interest_predict_service": "kws-kuaishou-long-form-uni-cpu-predict-explore-pic-interest",
+      "explore_pic_fr_interest_predict_request_type": "default",
+      "explore_pic_fr_interest_predict_partition_size": 100,
+      "enable_explore_pic_u2u_ltr_predict": false,
+      "explore_pic_u2u_ltr_service": "kws-kuaishou-long-form-uni-cpu-predict-explore-pic-u2u-v1",
+      "explore_pic_u2u_ltr_partition_size": 48,
+      "enable_explore_pic_ua_score_predict": false,
+      "explore_pic_ua_score_service": "grpc_exploreUAScoreInfer",
+      "explore_pic_ua_score_partition_size": 48  
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "plvtr",
+        "fr_score1",
+        "fr_score2",
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_pcmtr",
+        "cascade_pcltr",
+        "cascade_pepstr",
+        "cascade_plvtr",
+        "cascade_psvtr",
+        "cascade_phtr",
+        "cascade_pcestr",
+        "photo_picture_count",
+        "caption_length",
+        "location__city_id",
+        "location__province_id",
+        "is_picture",
+        "picture_type",
+        "author__id",
+        "author__gender",
+        "author_age_info__age_segment",
+        "author__fans_count",
+        "hetu_tag_level_info__hetu_cluster_id",
+        "explore_stat__real_show_count",
+        "explore_stat__click_count",
+        "explore_stat__like_count",
+        "explore_stat__follow_count",
+        "explore_stat__comment_count",
+        "explore_stat__negative_count"
+      ],
+      "common_attrs": [
+        "uId",
+        "userInfo",
+        "uStandardRealShowPicAllIdList",
+        "uStandardClickPicAllIdList",
+        "uStandardLongviewPicAllIdList",
+        "uDoubleOutsideValidPicCluster7dList",
+        "uSingleValidPicCluster7dList",
+        "uPicGrowthCidList"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pic_ui_ltv_over_show",
+        "pic_ui_ltv_over_click",
+        "fr_pic_div_ctr",
+        "pic_ltr_weighted_ctr",
+        "pic_ltr_lvtr",
+        "pic_ltr_fvtr",
+        "pic_ltr_wtd",
+        "pic_ltr_acttr",
+        "pic_ltr_bpr_ctr",
+        "pic_ltr_bpr_cltr",
+        "pic_ltr_ctr_db",
+        "pic_ltr_acttr_db",
+        "pic_ltr_bpr_revisittr",
+        "pic_diversity_score",
+        "pic_ltv1",
+        "pic_ltv2",
+        "pic_ltr_collect",
+        "pic_ltr_like_timing",
+        "pic_ltr_action_twice",
+        "fr_pic_u2u_acttr",
+        "fr_pic_u2u_evtr",
+        "fr_pic_ua_action_score",
+        "fr_pic_ua_click_score"
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_frist_screen_customization_cascading_comment_predict_model": 0,
+      "enable_explore_cascading_comment_predict_model_frist_screen": 0,
+      "explore_cascading_comment_predict_kess_service_frist_screen": "grpc_exploreCommentPredict",
+      "explore_mc_ensemble_s2_cascading_valid_play_score_power_weight_frist_screen": 0.0,
+      "explore_fr_cascading_valid_play_score_ranking_weight_frist_screen": 0.0,
+      "explore_rerank_gen_seed_ensemble_cascading_valid_play_score_weight_frist_screen": 0.0,
+      "enable_explore_cascading_comment_predict_model": 0,
+      "explore_cascading_comment_predict_kess_service": "grpc_exploreCommentPredict",
+      "explore_mc_ensemble_s2_cascading_valid_play_score_power_weight": 0.0,
+      "explore_fr_cascading_valid_play_score_ranking_weight": 0.0,
+      "explore_rerank_gen_seed_ensemble_cascading_valid_play_score_weight": 0.0
+    },
+    "import": {
+      "results": [
+        "cascading_prerank_cluster_sort__result",
+        "is_first_refresh"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "explore_mc_ensemble_s2_cascading_valid_play_score_power_weight",
+        "explore_fr_cascading_valid_play_score_ranking_weight",
+        "explore_rerank_gen_seed_ensemble_cascading_valid_play_score_weight"
+      ],
+      "item_attrs": [
+        "cascading_watch_comment_score",
+        "cascading_comment_like_score",
+        "cascading_comment_time_score",
+        "cascading_valid_play_score"
+      ]
+    }
+  }
+}

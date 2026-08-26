@@ -1,0 +1,11 @@
+{
+  "dragon_params": {
+    "abtest": {
+    },
+    "export": {
+      "common_attrs": [
+        "colossus_resp_v2"
+      ]
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_mc_enable_mc_cluster_862_uninterest_cluster_by_u2c": false,
+      "enable_mc_cal_global_emphtr_score": false,
+      "explore_hate_like_rate_report_weight": 0.0,
+      "explore_global_realshow_thres_for_emphtr_score": 10000,
+      "enable_explore_gen_upload_time_second": 0,
+      "explore_enable_gen_photo_quality_score": 0,
+      "enable_explore_pic_search_interest_tagnex_chase": false,
+      "explore_pic_search_interest_tagnex_chase_default_score": 1.0,
+      "explore_pic_search_interest_user_weight_boost_weight": 1.0,
+      "explore_pic_search_interest_user_weight_boost_power_weight_upbound": 1.0,
+      "explore_pic_search_interest_user_weight_boost_interest_thresh": 2,
+      "explore_pic_search_interest_tagnex_chase_tagnex_min_val": 200000000,
+      "explore_pic_search_interest_tagnex_chase_tagnex_max_val": 300000000,
+      "explore_pic_search_interest_tagnex_chase_adjust_coeff": 1.0,
+      "explore_pic_search_interest_tagnex_chase_scale_bound": 5.0,
+      "explore_pic_search_interest_tagnex_chase_base_weight": 1.0,
+      "explore_enable_cover_sense_view_score_trans": false,
+      "explore_enable_cal_user_career_interest_tagnex_tgi": false,
+      "explore_user_career_interest_tagnex_tgi_coeff": 1.0,
+      "explore_user_career_interest_tagnex_tgi_bias": 0.0,
+      "explore_user_career_interest_tagnex_circle_attr_min": 200000000,
+      "explore_user_career_interest_tagnex_circle_attr_max": 300000000,
+      "explore_user_career_interest_tagnex_circle_use_single_match_item": 0
+    },
+    "import": {
+      "common_attrs": [
+        "mc_step1"
+      ],
+      "item_attrs": [
+        "explore_stat__real_show_count",
+        "explore_stat__click_count",
+        "explore_stat__like_count",
+        "explore_stat__follow_count",
+        "explore_stat__forward_count",
+        "explore_stat__long_play_count",
+        "explore_stat__short_play_count",
+        "explore_stat__profile_enter_count",
+        "explore_stat__negative_count",
+        "explore_stat__comment_count",
+        "explore_stat__view_length_sum",
+        "is_picture"
+      ],
+      "results": [
+        "cascading_prerank_channel_sort__result"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "mc_step2"
+      ],
+      "item_attrs": [
+        "item_key",
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr",
+        "empirical_lvtr",
+        "empirical_svtr",
+        "empirical_ptr",
+        "empirical_htr",
+        "empirical_cmtr",
+        "empirical_watch_time",
+        "avg_watch_time",
+        "global_emphtr_score"
+      ]
+    }
+  }
+}

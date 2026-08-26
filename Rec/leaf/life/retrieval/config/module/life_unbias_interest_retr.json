@@ -1,0 +1,45 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_life_unbias_interest_retr",
+        "param_type": "bool",
+        "default_value": false
+      },
+      "enable_life_unbias_interest_retr_redis_v2": false,
+      "life_unbias_interest_retr_limit_low_active": false,
+      "life_unbias_interest_retr_num": 12000,
+      "life_unbias_interest_retr_num_per_key": 200,
+      "life_unbias_interest_retr_num_final": 800,
+      "life_unbias_interest_cluster_prefix": "",
+      "life_unbias_interest_time_gap_min": 259200,
+      "life_unbias_interest_short_play_thresh": 3000,
+      "life_unbias_interest_short_play_rate_thresh": 0.3,
+      "life_unbias_interest_start_hetu_count": 30,
+      "life_unbias_interest_final_hetu_count": 10,
+      "enable_life_unbias_interest_adjust_low_active": false,
+      "life_unbias_interest_start_hetu_count_low_active": 100,
+      "life_unbias_interest_final_hetu_count_low_active": 60,
+      "life_unbias_interest_filter_hate_hetu": 0
+    },
+    "import": {
+      "common_attrs": [
+        "basic_info_age_segment_v2",
+        "basic_info_gender_v2",
+        "user_info_ptr",
+        "uIsLifeHighActive",
+        "browse_screen__pid_list"
+      ]
+    }, 
+    "export": {
+      "common_attrs": [
+        "life_unbias_interest_list"
+      ],
+      "results": [
+        "life_unbias_interest_retr__result"
+      ]
+    }
+  },
+  "reason": 2700
+}

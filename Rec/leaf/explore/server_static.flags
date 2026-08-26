@@ -1,0 +1,51 @@
+--log_dir=../log/
+
+# ################# BEGIN 本地索引相关配置 #################
+# 索引数据的 bt_queue name (类似 kafka topic), 生产方将数据打入这个队列
+--use_local_index=false
+
+### 索引相关配置 ###
+# ads::indexing 中会用到这两个 static_dict_filename
+# 一般软链接到 ../../../../ads_index/api/data/static_dict.dat
+--dynamic_index_static_dict_filename=../data/static_dict.dat
+--index_builder_static_dict_filename=../data/static_dict.dat
+################# END 本地索引相关配置 #################
+
+--photo_store_enable_ttl_remove_kconf_path=reco.distributedIndex.hotPhotoStoreEnableTtlRemove
+
+--logging_switch_uid_mod_divisor=1000
+--grpc_thread_num=120
+--sub_flow_thread_num_per_worker=2
+--dragon_grpc_use_multi_eventloop=true
+--kess_client_event_loop_nums=64
+--enable_pthread_affinity=true
+--enable_fast_stop=true
+--attr_perf_sample_rate=0.001
+--abort_stress_test_request_send_kafka=true
+--traceback_config_kconf_key=prophet.tracebackConf04.explore_reco_leaf
+--default_traceback_config_value=false
+--slow_list_length_limit_kconf_key=reco.explore.exploreRecoLeafSlowListLimit
+
+--reco_memory_data_map_kconf_path=reco.hot.exploreLeafMemoryData
+
+# 用户粗排 mio 特征提取
+--userprofilev1_filter_click=true
+--app_list_name_file=../data/app_name.dat
+
+# colossus 相关
+--colossus_client_timeout_ms=50
+--colossus_common_item_timeout_ms=50
+
+--enable_request_id_mapping=true
+
+--enable_numa_aware=true
+
+# cpu耗时统计
+--pipeline_cpu_cost_sample_rate=1.0
+
+# 开启KTHP模块
+--enable_kthp_process=true
+# 保证稳定性，不让其在运行过程中主动规整
+--prevent_runtime_compaction=true
+# 使规整时间为0，不增长启动时间
+--defragment_time=0

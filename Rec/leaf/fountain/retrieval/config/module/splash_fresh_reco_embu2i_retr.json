@@ -1,0 +1,26 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_splash_fresh_reco_embu2i_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_fresh_reco_embu2i_retrieval_total_limit": ["fountain_fresh_reco_embu2i_retrieval_total_limit_splash", 1000],
+      "fountain_fresh_reco_embu2i_retrieval_bucket": ["fountain_fresh_reco_embu2i_retrieval_bucket_splash", "fountain_extend_candidates_combo"],
+      "fountain_fresh_reco_embu2i_retrieval_skip": ["skip_fountain_fresh_reco_embu2i_retrieval_version2_splash", 1]
+    }, 
+    "import": {
+      "common_attrs": [
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_fresh_reco_embu2i_retr__result"
+      ]
+    }
+  },
+  "reason": 10406
+}

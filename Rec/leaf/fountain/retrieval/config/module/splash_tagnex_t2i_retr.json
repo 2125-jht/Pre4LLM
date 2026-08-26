@@ -1,0 +1,23 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_splash_tagnex_t2i_retr", 0],
+      "search_num": ["fountain_splash_tagnex_t2i_retr_search_num", 200],
+      "request_num": ["fountain_splash_tagnex_t2i_request_num", 800],
+      "enable_tagnex_lv3_trigger": ["enable_fountain_splash_tagnex_lv3_trigger", false],
+      "enable_tagnex_lv4_trigger": ["enable_fountain_splash_tagnex_lv4_trigger", false],
+      "enable_tagnex_lv3_5_trigger": ["enable_fountain_splash_tagnex_lv3_5_trigger", false]
+    },
+    "import": {
+      "common_attrs": [
+        "source_hetu_tag_level_info_hetu_tag"
+      ]
+    },
+    "export": {
+      "results": [
+        "tagnex_t2i_retr__result"
+      ]
+    }
+  },
+  "reason": 10384
+}

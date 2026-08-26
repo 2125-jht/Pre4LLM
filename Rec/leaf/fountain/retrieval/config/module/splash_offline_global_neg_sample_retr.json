@@ -1,0 +1,22 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": [
+        "splash_enable_offline_global_neg_sample_retr",
+        true
+      ],
+      "fountain_skip_swing_retr": 1
+    },
+    "import": {
+      "common_attrs": [
+        "fountain_swing_retr_redis_key"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_offline_global_neg_sample_retr__result"
+      ]
+    }
+  },
+  "reason": 10098
+}

@@ -1,0 +1,13 @@
+--max_body_size=750696490
+#--log_dir=../log/
+#--kai_ps_load_sparse_value_only=true
+--kai_conf_file=./kai_conf.json
+--kai_ps_dense_lr=0.001
+--ps_optimizer_adam_learning_rate=0.001
+--kai_ps_force_access=false
+--kai_ps_max_key_nums=40000000000
+--log_connected=true
+--log_idle_connection_close=true
+--connect_timeout_as_unreachable=800
+--health_check_timeout_ms=1
+--reply_retry_times=10

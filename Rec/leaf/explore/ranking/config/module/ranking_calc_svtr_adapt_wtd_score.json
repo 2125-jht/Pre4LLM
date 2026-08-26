@@ -1,0 +1,21 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_fr_cal_svtr_adapt_wtd_score": false,
+      "svtr_adapt_wtd_threshold": 1.0,
+      "svtr_adapt_wtd_beta": 1.0
+    },
+    "import": {
+      "item_attrs": [
+        "psvr",
+        "awesome_wtd"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "svtr_adapt_wtd_score"
+      ]
+    }
+  }
+}
+  

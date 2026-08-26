@@ -1,0 +1,34 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_ctr_optimize_life": 0,
+      "life_empirical_ctr_filter_threshold":0.075,
+      "life_click_count_filter_threshold":250,
+      "life_long_play_count_filter_threshold":600,
+      "enable_real_show_count_filter":0,
+      "life_real_show_count_filter_threshold":2000,
+      "enable_click_count_filter": 0,
+      "enable_long_play_count_filter": 0,
+      "life_emp_svtr_shift_coef":0.1,
+      "enable_empirical_ctr_filter":1
+    },
+    "import": {
+      "item_attrs": [
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr",
+        "empirical_lvtr",
+        "empirical_svtr",
+        "empirical_ptr",
+        "empirical_htr",
+        "empirical_cmtr"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "optimized_ctr"
+      ]
+    }
+  }
+}

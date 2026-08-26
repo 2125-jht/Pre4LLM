@@ -1,0 +1,39 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_explore_dice_retr", false],
+      "kess_service_name": ["explore_dice_retr_service_name", "grpc_exploreDiceRetrCommonRetrServer"],
+      "service_request_num": ["explore_dice_retr_request_num", 500],
+      "knowledge_trigger_expand_cnt": ["explore_gcl_i2i_expand_knowledge_trigger_cnt", 0],
+      "enable_global_trigger": ["explore_gcl_enable_global_trigger", false],
+      "sample_trigger_num": ["explore_gcl_global_trigger_sample_num", 100],
+      "start_idx": ["explore_gcl_global_trigger_sample_start_idx", 300]
+    },
+    "constant": {
+      "service_timeout_ms": 60
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "colossus_user_info__trigger_id_list",
+        "colossus_user_info__trigger_weight_list",
+        "colossus_user_info__trigger_author_list",
+        "colossus_user_info__knowledge_trigger_set",
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list",
+        "enable_global_trigger_weight_adjust"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "i2i_retr__trigger_pid"
+      ],
+      "results": [
+        "gcl_model_retr__result"
+      ]
+    }
+  },
+  "reason": 3106
+}

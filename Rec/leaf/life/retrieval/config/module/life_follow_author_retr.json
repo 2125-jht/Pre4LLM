@@ -1,0 +1,86 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_life_follow_author_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "life_follow_author_insert_retrieval_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_follow_author_insert_retrieval_num",
+        "param_type": "int",
+        "default_value": 200,
+        "report_ab_hit": true
+      },
+      "life_follow_author_insert_retrieval_per_key": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_follow_author_insert_retrieval_per_key",
+        "param_type": "int",
+        "default_value": 10,
+        "report_ab_hit": true
+      },
+      "enable_life_follow_author_insert_retr_expand": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_life_follow_author_insert_retr_expand",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "life_follow_author_insert_retr_expand_limit_low_active": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_follow_author_insert_retr_expand_limit_low_active",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "life_follow_author_insert_retr_trigger_limit": {
+        "biz_name": "RECO_RPC",
+        "param_name": "life_follow_author_insert_retr_trigger_limit",
+        "param_type": "int",
+        "default_value": 100,
+        "report_ab_hit": true
+      },
+      "life_follow_author_time_gap": 7,
+      "enable_life_follow_author_insert_retr_expand_recent": false,
+      "life_follow_author_insert_retr_expand_recent_limit_low_active": false,
+      "life_recent_author_gap_time_minute": 1440,
+      "life_recent_author_max_num": 20,
+      "enable_life_follow_author_insert_retr_expand_colossus": false,
+      "life_follow_author_insert_retr_expand_colossus_limit_low_active": false,
+      "life_colossus_prefer_author_time_win_day": 30,
+      "life_colossus_prefer_author_score_thresh": 4.0,
+      "life_colossus_prefer_author_count": 50
+    },
+    "import": {
+      "common_attrs": [
+        "colossus_resp_v2",
+        "like_aids",
+        "follow_aids",
+        "forward_aids",
+        "comment_aids",
+        "collect_aids",
+        "like_timestamps",
+        "follow_timestamps",
+        "forward_timestamps",
+        "comment_timestamps",
+        "collect_timestamps",
+        "playstat_playtimes",
+        "playstat_durations",
+        "profile_v1_click_trigger_aids",
+        "userRecentViewTimeListRaw",
+        "browse_screen__pid_list",
+        "uIsLifeHighActive",
+        "uLifePreferAuthor"
+      ]
+    },
+    "export": {
+      "results": [
+        "life_follow_author__result"
+      ]
+    }
+  },
+  "reason": 2422
+}

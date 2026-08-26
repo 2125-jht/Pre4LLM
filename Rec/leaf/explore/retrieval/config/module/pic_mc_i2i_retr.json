@@ -1,0 +1,94 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_mc_pic_i2i_retrieval",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },      
+      "enable_nouse_clicklist_trigger": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_mc_pic_i2i_retr_trigger_weight",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "enable_duration_more_trigger": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_mc_pic_i2i_retr_more_triggers",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "enable_search_more_trigger": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_mc_pic_i2i_retr_search_trigger",
+        "param_type": "bool",
+        "default_value": false,
+        "report_ab_hit": true
+      },
+      "trigger_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mc_pic_i2i_src_num",
+        "param_type": "int", 
+        "default_value": 20,
+        "report_ab_hit": true
+      },
+      "embedding_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mc_pic_i2i_retr_embedding_service_name",
+        "param_type": "string",
+        "default_value": "grpc_hotMcEmbed",
+        "report_ab_hit": true
+      },
+      "ann_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mc_pic_i2i_retr_service_name",
+        "param_type": "string",
+        "default_value": "grpc_exploreMcPicRetr",
+        "report_ab_hit": true
+      },
+      "result_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mc_pic_i2i_cand_num",
+        "param_type": "int",
+        "default_value": 1000,
+        "report_ab_hit": true
+      },
+      "src_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mc_pic_i2i_src_bucket",
+        "param_type": "string",
+        "default_value": "photo"
+      },
+      "dest_bucket": {
+        "biz_name": "RECO_RPC",
+        "param_name": "mc_pic_i2i_dest_bucket",
+        "param_type": "string",
+        "default_value": "photo"
+      },
+      "enable_global_trigger": ["pic_mc_i2i_enable_global_trigger", false],
+      "sample_trigger_num": ["pic_mc_i2i_sample_trigger_num", 200],
+      "start_idx": ["pic_mc_i2i_action_start_idx", 200],
+      "retrieve_num_per_trigger": ["mc_pic_i2i_retrieve_num_per_trigger", 10],
+      "ann_dist_threshold": ["mc_pic_i2i_ann_dist_threshold", 0.5]
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "pic_global_normal_trigger_list",
+        "pic_global_high_value_trigger_list",
+        "pic_global_normal_trigger_weight_list",
+        "pic_global_high_value_trigger_weight_list"
+      ]
+    },
+    "export": {
+      "results": [
+        "pic_mc_i2i__result"
+      ]
+    }
+  },
+  "reason": 3084
+}

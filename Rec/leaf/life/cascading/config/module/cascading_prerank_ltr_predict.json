@@ -1,0 +1,26 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_mc_ltr_predict": 0,
+      "mc_tower_ltr_service": "grpc_ExploreMcLtrInfer",
+      "mc_tower_ltr_request_type": "predict_by_explore_mc_ltr",
+      "enable_prerank_request_hot_fountain_model" : 0,
+      "mc_tower_prerank_service_v2": "grpc_HotMcL2rMetaInfer",
+      "mc_tower_prerank_request_type_v2": "predict_by_explore_mc_prerank"
+    },
+    "import": {
+      "item_attrs": [
+        "photo_id"
+      ],
+      "results": [
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "prerank_ltr",
+        "prerank_ctr",
+        "prerank_wtd"
+      ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_cal_mc_s2_adjust_diversity_distribution": 0,
+      "enable_calc_mc_s2_slide_pctr_score": 0,
+      "enable_calc_slide_pxtr_score_with_sorted_mc_s2_ratio": 0,
+      "explore_cascade_slide_pctr_window_size": 10,
+      "explore_cascade_slide_pltr_window_size": 10,
+      "explore_cascade_slide_pwtr_window_size": 10,
+      "explore_cascade_slide_pcltr_window_size": 10,
+      "explore_cascade_slide_pftr_window_size": 10,
+      "explore_cascade_slide_awesome_wtd_window_size": 10,
+      "explore_cascade_sort_ratio_slide_pctr_window_size": 10,
+      "explore_cascade_sort_ratio_slide_pltr_window_size": 10,
+      "explore_cascade_sort_ratio_slide_pwtr_window_size": 10,
+      "explore_cascade_sort_ratio_slide_pcmtr_window_size": 10,
+      "explore_cascade_sort_ratio_slide_pcltr_window_size": 10,
+      "explore_cascade_sort_ratio_slide_pftr_window_size": 10,
+      "explore_cascade_sort_ratio_slide_awesome_wtd_window_size": 10,
+      "explore_enable_cascade_slide_pctr_mul_universal_score": 0,
+      "explore_enable_cascade_slide_pltr_mul_universal_score": 0,
+      "explore_enable_cascade_slide_pwtr_mul_universal_score": 0,
+      "explore_enable_cascade_slide_pcltr_mul_universal_score": 0,
+      "explore_enable_cascade_slide_pftr_mul_universal_score": 0,
+      "explore_enable_cascade_slide_awesome_wtd_mul_universal_score": 0,
+      "explore_enable_cascade_sort_ratio_slide_pctr_mul_universal_score": 0,
+      "explore_enable_cascade_sort_ratio_slide_pltr_mul_universal_score": 0,
+      "explore_enable_cascade_sort_ratio_slide_pwtr_mul_universal_score": 0,
+      "explore_enable_cascade_sort_ratio_slide_pcmtr_mul_universal_score": 0,
+      "explore_enable_cascade_sort_ratio_slide_pcltr_mul_universal_score": 0,
+      "explore_enable_cascade_sort_ratio_slide_pftr_mul_universal_score": 0,
+      "explore_enable_cascade_sort_ratio_slide_awesome_wtd_mul_universal_score": 0,
+      "rc3h_base": 100.0,
+      "pc3h_base": 14.0,
+      "explore_mc_s2_hetu_level_one_ratio_base": 0.0,
+      "explore_prerank_hetu_level_one_ratio_base": 1.0
+    },
+    "constant": {
+      "explore_play_realshow_count_type": 0,
+      "explore_distribution_ratio_type": 1
+    },
+    "import": {
+      "item_attrs": [
+        "hetu_level_one_top1",
+        "rc3h",
+        "pc3h",
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pwtr",
+        "cascade_pcmtr",
+        "cascade_pcltr",
+        "cascade_pftr",
+        "cascade_pwtd_inverse",
+        "explore_prerank_hetu_level_one_ratio"
+      ],
+      "results": [
+        "cascading_cluster_sort__result"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "explore_mc_s2_hetu_level_one_ratio",
+        "cascade_slide_pctr_score",
+        "cascade_slide_pltr_score",
+        "cascade_slide_pwtr_score",
+        "cascade_slide_pcltr_score",
+        "cascade_slide_pftr_score",
+        "cascade_slide_awesome_wtd_score",
+        "cascade_sort_ratio_slide_pctr_score",
+        "cascade_sort_ratio_slide_pltr_score",
+        "cascade_sort_ratio_slide_pwtr_score",
+        "cascade_sort_ratio_slide_pcmtr_score",
+        "cascade_sort_ratio_slide_pcltr_score",
+        "cascade_sort_ratio_slide_pftr_score",
+        "cascade_sort_ratio_slide_awesome_wtd_score"
+      ]
+    }
+  }
+}
+  

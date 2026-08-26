@@ -1,0 +1,68 @@
+{
+    "dragon_params": {
+      "abtest": {
+        "enable_vqvae_interest": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_enable_vqvae_interest",
+          "param_type": "int",
+          "default_value": 0
+        },
+        "vqvae_interest_service": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_vqvae_interest_service",
+          "param_type": "string",
+          "default_value": "grpc_xln_explore_uplift"
+        },
+        "vqvae_interest_partition_size": {
+          "biz_name": "RECO_RPC",
+          "param_name": "el_vqvae_interest_partition_size",
+          "param_type": "int",
+          "default_value": 600
+        }
+      },
+      "import": {
+        "results": [
+          "ranking_stage1_truncate__result"
+        ],
+        "common_attrs": [
+            "userInfo",
+            "virtualTabId" 
+        ],
+        "item_attrs": [
+            "reason",
+            "photo_id",
+            "author__id",
+            "hetu_tag_level_info__hetu_cluster_id",
+            "picture_type",
+            "hetu_tag_level_info__hetu_level_one",
+            "hetu_tag_level_info__hetu_level_two",
+            "pctr",
+            "pltr",
+            "pftr",
+            "pwtr",
+            "plvtr",
+            "psvr",
+            "pcmtr",
+            "pvtr",
+            "pptr",
+            "pevtr",
+            "pcltr",
+            "empirical_ctr",
+            "empirical_ltr",
+            "empirical_ftr",
+            "empirical_ptr",
+            "empirical_cmtr",
+            "cascade_pctr",
+            "cascade_plvtr",
+            "cascade_psvtr",
+            "cascade_pltr",
+            "cascade_pwtr"
+        ]
+      },
+      "export": {
+        "item_attrs": [
+          "xlife_vqvae_interest_score"
+        ]
+      }
+    }
+  }

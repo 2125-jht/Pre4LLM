@@ -1,0 +1,53 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": ["enable_fountain_mc_u2i_life_content_retr", 1],
+      "fountain_mc_u2i_life_content_service": {
+        "param_name": "fountain_mc_u2i_life_content_service",
+        "param_type": "string",
+        "default_value": "kws-kuaishou-long-form-retrieve-explore-mc-u2i-life-content"
+      },
+      "fountain_mc_u2i_life_content_retrieval_num": {
+        "param_name": "fountain_mc_u2i_life_content_retrieval_num",
+        "param_type": "int",
+        "default_value": 200
+      },
+      "fountain_mc_u2i_life_content_dest_photo_bucket": {
+        "param_name": "fountain_mc_u2i_life_content_dest_photo_bucket",
+        "param_type": "string",
+        "default_value": "photo_dest_personalized"
+      },
+      "fountain_mc_user_emb_service_name": {
+        "param_name": "fountain_mc_user_emb_service_name",
+        "param_type": "string",
+        "default_value": "grpc_hotMcUemb"
+      },
+      "fountain_mc_u2i_timeout": {
+        "param_name": "fountain_mc_u2i_timeout",
+        "param_type": "int",
+        "default_value": 100
+      },
+      "skip_fountain_mc_u2i_retrieval": {
+        "param_name": "skip_fountain_mc_u2i_retrieval",
+        "param_type": "int",
+        "default_value": 1
+      },
+      "skip_fountain_mc_u2i_life_content_retrieval": {
+        "param_name": "skip_fountain_mc_u2i_life_content_retrieval",
+        "param_type": "int",
+        "default_value": 1
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "mc_u2i_life_content_retr__result"
+      ]
+    }
+  },
+  "reason": 123
+}

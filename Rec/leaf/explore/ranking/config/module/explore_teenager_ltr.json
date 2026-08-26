@@ -1,0 +1,55 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_teenager_ltr_model": false,
+      "explore_teenager_ltr_kess_service": "grpc_krpExploreKocHtrInfer",
+      "explore_teenager_ltr_partition_size": 180,
+      "explore_teenager_ltr_age_threshold": 7
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "common_attrs": [
+        "uOldMmuClusterId300ListList",
+        "user_age_segment"
+      ],
+      "item_attrs": [
+        "pctr",
+        "pltr",
+        "pwtr",
+        "pftr",
+        "psvr",
+        "pcmtr",
+        "pptr",
+        "pcmef",
+        "phtr",
+        "pevtr",
+        "fr_score1",
+        "fr_score2",
+        "pepstr",
+        "pdtr",
+        "pcltr",
+        "fetr",
+        "fountain_eff",
+        "score_pctr",
+        "awesome_wtd",
+        "pctr_index",
+        "plvtr_index",
+        "pvtr_index",
+        "pltr_index",
+        "pftr_index",
+        "pwtr_index",
+        "pesptr_index",
+        "psvr_index"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "teenager_ctr",
+        "teenager_wtd",
+        "teenager_ltr"
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_life_get_realshow_item": false,
+      "life_realshow_list_size": 200,
+      "life_realshow_time_gap_s": 43200
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "life_click_common_list",
+        "life_realshow_common_list",
+        "life_realshow_timestamp_common_list"
+      ]
+    }
+  }
+}
+  

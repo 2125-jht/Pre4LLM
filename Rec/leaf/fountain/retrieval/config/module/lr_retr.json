@@ -1,0 +1,31 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_lr_retr",
+        "param_type": "bool",
+        "default_value": true
+      },
+      "fountain_leaf_lr_retr_service_name": "grpc_NebulaSimLRIcfRetrievalHighRateSrcExp",
+      "fountain_leaf_lr_retr_num": 1000,
+      "fountain_leaf_lr_use_simple_user_info": 0,
+      "fountain_skip_leaf_lr_retr": 1
+    }, 
+    "constant": {
+      
+    },
+    "import": {
+      "common_attrs": [
+        "userInfo",
+        "source_photo_info"
+      ]
+    },
+    "export": {
+      "results": [
+        "lr_retr__result"
+      ]
+    }
+  },
+  "reason": 315
+}

@@ -1,0 +1,59 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": {
+        "biz_name": "RECO_RPC",
+        "param_name": "enable_cache_photo_author_retr",
+        "param_type": "bool",
+        "default_value": false
+      }, 
+      "remote_index_service_timeout_ms": {
+        "biz_name": "RECO_RPC",
+        "param_name": "interest_author_hpage_retr_timeout_ms", 
+        "param_type": "int", 
+        "default_value": 150
+      }, 
+      "result_num": {
+        "biz_name": "RECO_RPC",
+        "param_name": "cache_photo_author_retr_max_result_size", 
+        "param_type": "int", 
+        "default_value": 1000
+      },
+      "remote_index_service_name": {
+        "biz_name": "RECO_RPC",
+        "param_name": "interest_author_hpage_remote_index_service_name", 
+        "param_type": "string", 
+        "default_value": "grpc_recoHotOrderedIndexServer"
+      },
+      "remote_index_query_term": ["interest_author_hpage_remote_index_query_term", "authorId2PhotoIdOrderByUploadTime"],
+      "redis_retrieval_num": [ "double_author_retr_max_seed_author", 1000 ],
+      "skip_filter_by_browse_screen": ["skip_explore_filter_by_browse_screen", 1],
+      "skip_browse_set": ["skip_explore_filter_by_browse_set", 1]
+    }, 
+    "constant": {
+      "redis_key_prefix": {
+        "attr_type": "common_attr",
+        "value_type": "string",
+        "value": "User_Hpage_Prefer_"
+      } 
+    },
+    "import": {
+      "common_attrs": [
+        "browse_screen__pid_list"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+      ],
+      "results": [
+        "interest_author_hpage__result"
+      ]
+    }
+  },
+  "pass_browse_set": true,
+  "reason": 3346, 
+  "redis_cluster_name": "dataScienceExp1",
+  "redis_timeout_ms": 20,
+  "save_to_common_attr_name": "interest_auhtor_hpage__author_list",
+  "remote_index_query_trigger_attr_name": "interest_auhtor_hpage__author_list"
+}

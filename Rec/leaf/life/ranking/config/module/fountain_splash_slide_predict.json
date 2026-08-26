@@ -1,0 +1,20 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "skip_fountain_splash_slide_predict": 1,
+      "fountain_splash_slide_predict_kess_service": "grpc_kaiFountainSplashSlide",
+      "fountain_splash_slide_predict_partition_size": 80
+    },
+    "import": {
+      "item_attrs": [
+        "featurePId",
+        "featurePAAvgWatchTime"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "fountain_splash_slide"
+      ]
+    }
+  }
+}

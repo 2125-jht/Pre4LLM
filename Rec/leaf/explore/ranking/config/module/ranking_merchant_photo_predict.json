@@ -1,0 +1,36 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_explore_rank_merchant_vedio_predict": 0,
+      "explore_rank_merchant_vedio_predict_timeout_ms": 100,
+      "explore_rank_merchant_vedio_partition_size": 50,
+      "explore_rank_merchant_vedio_service": "grpc_inferServerMerchantPhotoCartV6",
+      "explore_rank_merchant_vedio_request_type": "explore_v1",
+      "enable_explore_rank_merchant_living_predict": 0,
+      "explore_rank_merchant_living_predict_timeout_ms": 100,
+      "explore_rank_merchant_living_partition_size": 50,
+      "explore_rank_merchant_living_service": "grpc_inferServerMerchantPhoto2LiveSimTrt4",
+      "explore_rank_merchant_living_request_type": "explore_v1"
+    },
+    "import": {
+      "results": [
+        "ranking_stage1_truncate__result"
+      ],
+      "item_attrs": [
+        "is_merchant_cart",
+        "is_merchant_living",
+        "merchant_author_in_living"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "merchant_pcart_ctr", 
+        "merchant_cart_cvr", 
+        "merchant_cart_gmv_fen",
+        "merchant_elive_ctr", 
+        "merchant_elive_cvr", 
+        "merchant_elive_price"
+      ]
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_pic_cascade_fc_ltr_predict": {
+        "biz_name": "RECO_RPC",
+        "default_value": 0,
+        "param_name": "explore_leaf_enable_pic_cascade_fc_ltr_predict",
+        "param_type": "int",
+        "report_ab_hit": true
+      },
+      "pic_cascade_fc_ltr_service": {
+        "biz_name": "RECO_RPC",
+        "default_value": "grpc_explorePicCascadeLtrVa",
+        "param_name": "explore_leaf_pic_cascade_fc_ltr_service",
+        "param_type": "string",
+        "report_ab_hit": true
+      },
+      "pic_cascade_fc_predict_part_size": {
+        "biz_name": "RECO_RPC",
+        "default_value": 300,
+        "param_name": "explore_leaf_pic_cascade_fc_predict_part_size",
+        "param_type": "int",
+        "report_ab_hit": true
+      },
+      "enable_pic_cascade_variety": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mc_enable_pic_cascade_variety_test",
+        "param_type": "int",
+        "default_value": 0,
+        "report_ab_hit": true
+      },
+      "explore_mc_pic_s1_pic_variety_emb_server": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mc_pic_s1_pic_variety_emb_server",
+        "param_type": "string",
+        "default_value": "grpc_MMUHetuContentEmbeddingV2",
+        "report_ab_hit": true
+      },
+      "explore_mc_pic_s1_pic_variety_emb_part_size": {
+        "biz_name": "RECO_RPC",
+        "param_name": "explore_mc_pic_s1_pic_variety_emb_part_size",
+        "param_type": "int",
+        "default_value": 500,
+        "report_ab_hit": true
+      },
+      "enable_pic_cascade_ltr_infer": 0,
+      "explore_mc_pic_ltr_infer_service": "kws-kuaishou-long-form-uni-cpu-predict-explore-pic-mc-ltr",
+      "explore_mc_pic_ltr_infer_partition_size": 350
+    },
+    "import": {
+      "results": [
+        "cascading_prerank_cluster_sort__result"
+      ],
+      "item_attrs": [
+        "author__id",
+        "upload_type",
+        "location__province_id",
+        "author__fans_count",
+        "photo_picture_count",
+        "caption_length",
+        "location__city_id",
+        "location__province_id",
+        "duration_ms",
+        "upload_type",
+        "author__gender",
+        "author_age_info__age_segment",
+        "is_picture",
+        "upload_time",
+        "hetu_tag_level_info__hetu_level_one",
+        "hetu_tag_level_info__hetu_level_two",
+        "hetu_tag_level_info__hetu_level_three",
+        "hetu_tag_level_info__hetu_level_five",
+        "hetu_tag_level_info__hetu_tag",
+        "hetu_tag_level_info__hetu_face_id",
+        "hetu_tag_level_info__hetu_cluster_id",
+        "mmu_img_cluster_v3",
+        "music",
+        "empirical_ctr",
+        "empirical_ltr",
+        "empirical_wtr",
+        "empirical_ftr",
+        "empirical_ptr",
+        "empirical_cmtr",
+        "empirical_htr",
+        "empirical_watch_time",
+        "explore_stat__show_count",
+        "explore_stat__click_count",
+        "explore_stat__like_count",
+        "explore_stat__follow_count",
+        "explore_stat__negative_count",
+        "explore_stat__report_detail__total_report_count",
+        "explore_stat__report_detail__total_report_count",
+        "picture_type",
+        "cascade_pctr",
+        "cascade_pltr",
+        "cascade_pcmtr",
+        "cascade_pftr",
+        "cascade_pwtr",
+        "cascade_plvtr",
+        "cascade_psvtr"
+      ],
+      "common_attrs": [
+        "userInfo"
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "pic_cascade_fc_pctr",
+        "pic_cascade_fc_interact_score",
+        "pic_cascade_fc_ltr",
+        "pic_cascade_fc_wtr",
+        "pic_cascade_fc_cmtr",
+        "pic_cascade_fc_d2q",
+        "pic_mmu_embedding",
+        "pic_mc_ltr_ctr",
+        "pic_mc_ltr_fvtr",
+        "pic_mc_ltr_wtd"
+      ]
+    }
+  }
+}

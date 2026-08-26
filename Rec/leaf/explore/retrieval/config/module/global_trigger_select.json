@@ -1,0 +1,84 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "max_playstat_trigger_num":["global_trigger_select_max_playstat_trigger_num", 100],
+      "max_colossus_trigger_num":["global_trigger_select_max_colossus_trigger_num", 1100],
+      "max_actionlist_trigger_num":["global_trigger_select_max_actionlist_trigger_num", 400],
+      "high_value_interval_size":["global_trigger_select_high_value_interval_size", 40],
+      "normal_interval_size":["global_trigger_select_normal_interval_size", 100],
+      "enable_click_list":["global_trigger_select_enable_click_list", false],
+      "colossus_trigger_play_time_ths":["global_trigger_select_colossus_trigger_play_time_ths", 7],
+      "negative_trigger_min_weight": ["global_trigger_filter_negative_trigger_min_weight", 0.0],
+      "append_prefer_trigger_num": ["global_trigger_append_prefer_trigger_num", 0],
+      "unbias_trigger_num": ["global_trigger_unbias_trigger_num", 0],
+      "unbias_trigger_weight": ["global_trigger_unbias_trigger_weight", 0.0],
+      "enable_global_trigger_weight_adjust": ["global_trigger_enable_weight_adjust", false],
+      "trigger_weight_adjust_coef": ["global_trigger_weight_adjust_coeff", 1.0],
+      "trigger_weight_max_value": ["global_trigger_weight_max_value", 1.0],
+      "use_fountain_playstat": ["explore_golbal_trigger_use_fountain_playstat", false],
+      "use_fountain_action_list": ["explore_golbal_trigger_use_fountain_action_list", false],
+      "playstat_trigger_play_time_ths": ["explore_golbal_trigger_playstat_trigger_play_time_ths", 7],
+      "enable_life_hetu_restrict": ["enable_life_hetu_restrict", 1],
+      "use_explore_trigger_selected": ["use_explore_trigger_selected", 0],
+      "enable_real_show_list": ["explore_enable_real_show_list", 0],
+      "enable_hot_list": ["global_trigger_enable_hot_list", true],
+      "enable_colossus_fountain_list" :["global_trigger_enable_colossus_fountain_list", true],
+      "enable_slide_list": ["global_trigger_enable_slide_list", true],
+      "enable_only_hot_list": ["global_trigger_enable_only_hot_list", false],
+      "append_other_tabs_threshold": ["global_trigger_append_other_tabs_threshold", 0],
+      "append_play_stat_num": ["global_trigger_append_play_stat_num", 5],
+      "append_fountain_play_stat_num": ["global_trigger_append_fountain_play_stat_num", 5],
+      "append_only_slide_list": ["global_trigger_append_only_slide_list", false],
+      "enbable_only_hot_list_freq_control": ["global_trigger_enbable_only_hot_list_freq_control", false],
+      "only_hot_list_freq_control_window_size": ["global_trigger_only_hot_list_freq_control_window_size", 5],
+      "only_hot_list_freq_control_expire_seconds": ["global_trigger_only_hot_list_freq_control_expire_seconds", 1800],
+      "only_hot_list_freq_control_nth_request": ["global_trigger_only_hot_list_freq_control_nth_request", 4],
+      "non_hot_trigger_ratio": ["global_trigger_non_hot_trigger_ratio", 0.0],
+      "enable_same_period_trigger": ["global_trigger_enable_same_period_trigger", false],
+      "playstat_same_period_trigger_ratio": ["global_trigger_playstat_same_period_trigger_ratio", 0.0],
+      "colossus_same_period_trigger_ratio": ["global_trigger_colossus_same_period_trigger_ratio", 0.0],
+      "actionlist_same_period_trigger_ratio": ["global_trigger_actionlist_same_period_trigger_ratio", 0.0],
+      "same_period_time_before_present": ["global_trigger_same_period_time_before_present", 3600],
+      "same_period_time_after_present": ["global_trigger_same_period_time_after_present", 3600],
+      "boost_same_period_trigger_weight": ["global_trigger_boost_same_period_trigger_weight", 1.0],
+      "enable_search_click_photo_list": ["global_trigger_select_enable_search_click_photo_list", false]
+    },
+    "kconf": {
+      "hetu_low_level_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "low_level_tags"
+      },
+      "hetu_level2_tags": {
+        "kconf_key": "reco.offline.exploreHetuTagToLevel2JsonMap",
+        "value_type": "json",
+        "json_path": "level2_tags"
+      },
+      "life_restrict_hetu_level1": {
+        "kconf_key": "reco.offline.life_restrict_hetu_level1",
+        "value_type": "list_int64",
+        "default_value": []
+      }
+    },
+    "import": {
+      "common_attrs": [
+        "user_info_ptr",
+        "colossus_resp_v2",
+        "negative_trigger_ids",
+        "negative_trigger_weights",
+        "uUnbiasTriggerPidsList",
+        "prefer_trigger_ids",
+        "prefer_trigger_weights"
+      ]
+    },
+    "export": {
+      "common_attrs": [
+        "global_normal_trigger_list",
+        "global_high_value_trigger_list",
+        "global_normal_trigger_weight_list",
+        "global_high_value_trigger_weight_list",
+        "explore_selected_trigger_list"
+      ]
+    }
+  }
+}

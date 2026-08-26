@@ -1,0 +1,25 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_retrieval": [
+        "enable_splash_gongxian_nreason_retr",
+        true
+      ],
+      "fountain_gongxian_retrieval_max_size": 200,
+      "fountain_gongxian_retrieval_version": "v1",
+      "skip_fountain_gongxian_retrieval_splash_nreason": 1
+    },
+    "import": {
+      "common_attrs": [
+        "source_photo_info",
+        "featureSourcePId"
+      ]
+    },
+    "export": {
+      "results": [
+        "splash_gongxian_nreason_retr__result"
+      ]
+    }
+  },
+  "reason": 10057
+}

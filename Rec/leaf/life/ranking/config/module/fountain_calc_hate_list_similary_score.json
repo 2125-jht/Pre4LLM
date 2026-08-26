@@ -1,0 +1,27 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "enable_use_cascade_hate_similary_score_for_fullrank": 0,
+      "skip_fullrank_hate_similary_score_in_ensemble_sort": 1,
+      "fountain_fullrank_enable_fix_mmu_embedding_low_hit_rate": false,
+      "fullrank_emb_kess_name_for_hate_similary_score": "grpc_MMUHetuContentEmbedding",
+      "fullrank_hate_similary_score_not_click_hour_limit": 0.0,
+      "fullrank_hate_similary_score_extra_not_click_hour_limit": 1.0,
+      "fullrank_hate_similary_score_play_stat_hour_limit": 0.0,
+      "fullrank_hate_similary_score_not_click_weight": 0.0,
+      "fullrank_hate_similary_score_extra_not_click_weight": 0.0,
+      "fullrank_hate_similary_score_short_view_weight": 0.0
+    },
+    "import": {
+      "common_attrs": [
+      ],
+      "item_attrs": [
+      ]
+    },
+    "export": {
+      "item_attrs": [
+        "fullrank_hate_similary_score"
+      ]
+    }
+  }
+}

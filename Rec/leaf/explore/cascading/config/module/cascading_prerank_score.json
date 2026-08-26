@@ -1,0 +1,50 @@
+{
+  "dragon_params": {
+    "abtest": {
+      "explore_enable_cal_user_age_interest_tagnex_tgi": 0,
+      "explore_user_age_interest_tagnex_tgi_coeff": 1.0,
+      "explore_user_age_interest_tagnex_tgi_bias": 0.0,
+      "explore_user_age_interest_tagnex_circle_attr_min": 200000000,
+      "explore_user_age_interest_tagnex_circle_attr_max": 300000000,
+      "explore_user_age_interest_tagnex_circle_use_single_match_item": 0,
+      "explore_enable_cal_user_career_interest_tagnex_tgi": false,
+      "explore_enable_user_career_interest_tagnex_tgi_divide_active_degree": false,
+      "explore_user_career_interest_tagnex_tgi_coeff": 1.0,
+      "explore_user_career_interest_tagnex_tgi_bias": 0.0,
+      "explore_user_career_interest_tagnex_circle_attr_min": 200000000,
+      "explore_user_career_interest_tagnex_circle_attr_max": 300000000,
+      "explore_user_career_interest_tagnex_circle_use_single_match_item": 0,
+      "explore_enable_cal_user_stage_interest_tagnex_tgi": 0,
+      "explore_enable_user_stage_interest_tagnex_tgi_divide_active_degree": false,
+      "explore_user_stage_interest_tagnex_tgi_coeff": 1.0,
+      "explore_user_stage_interest_tagnex_tgi_bias": 0.0,
+      "explore_user_stage_interest_tagnex_circle_attr_min": 200000000,
+      "explore_user_stage_interest_tagnex_circle_attr_max": 300000000,
+      "explore_user_stage_interest_tagnex_circle_use_single_match_item": 0,
+      "explore_enable_cal_user_no_bias_interest_tagnex_tgi": false,
+      "explore_no_bias_interest_tagnex_tgi_prefix": "",
+      "explore_no_bias_interest_tagnex_tgi_coeff": 1.0,
+      "explore_no_bias_interest_tagnex_tgi_bias": 0.0,
+      "explore_no_bias_interest_tagnex_circle_attr_min": 300010001,
+      "explore_no_bias_interest_tagnex_circle_attr_max": 300100000,
+      "explore_enable_cal_interest_score_history_coef": 0,
+      "explore_interest_score_select_channel_str": "77",
+      "explore_interest_score_select_channel_weight_str": "1.0",
+      "explore_interest_score_channel_default_weight": 1.0,
+      "explore_interest_score_tagnex_v3_alpha": 1.0,
+      "explore_interest_score_real_show_hetu_tag_n_limit": 0,
+      "explore_interest_score_cluster_632_alpha": 1.0,
+      "explore_interest_score_real_show_cluster_632_n_limit": 0
+    },
+    "import": {
+      "common_attrs": [
+        "interest_score_based_valid_user"
+      ],
+      "item_attrs": [
+        "cluster_id_632"
+      ] 
+    },
+    "export": {
+    }
+  }
+}

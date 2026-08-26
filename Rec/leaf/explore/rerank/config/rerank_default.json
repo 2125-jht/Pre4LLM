@@ -1,0 +1,36 @@
+{
+  "modules": [
+    {
+      "name": "rerank_gen_list",
+      "type_name": "RerankGenList"
+    },
+    {
+      "name": "rerank_fetch_predict",
+      "type_name": "RerankFetchPredict"
+    },
+    {
+      "name": "pic_rerank",
+      "type_name": "PicRerankModule"
+    },
+    {
+      "name": "mc_distill_sample",
+      "type_name": "McDistillSampleModule"
+    },
+    {
+      "name": "force_insert",
+      "type_name": "ForceInsertModule"
+    },
+    {
+      "name": "rerank_gen",
+      "type_name": "RerankGenModule"
+    },
+    {
+      "name": "rerank_cal_page1_trigger_score",
+      "type_name": "RerankCalPage1TriggerScoreModule"
+    },
+    {
+      "name": "final_diversity",
+      "type_name": "FinalDiversityModule"
+    }
+  ]
+}

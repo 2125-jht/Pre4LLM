@@ -1,0 +1,213 @@
+import os
+import logging
+import time
+import copy
+import psutil
+import threading
+import json
+import traceback
+from multiprocessing.pool import ThreadPool
+from datetime import datetime
+from ..config import Config
+from ..config import _enable_setting_guard
+from ..core import PerfStream
+from ..utils import hdfs_utils
+from ..utils import log_helper
+from ..utils import Collector
+from ..utils import GraphKeys
+from ..utils.utils import timestamp_to_timestr
+from .. import core
+from .info_judge import pass_info_notify
+
+logger = log_helper.get_logger(__name__, logging.INFO)
+
+
+class ModelSender(object):
+    def __init__(self, kai_base):
+        # call back
+        self.kai_base = kai_base
+        self.perf_status = kai_base.perf_status
+        self._running_task = kai_base._running_task
+        self._counter = kai_base._counter
+        self.update_dense_locally = self.kai_base._config.distributed_strategy.update_dense_locally()
+
+    def report_btq_info(self, btq_option, sparse_save_result):
+        from kconf.client import KConf
+        from kconf.stage import STAGE_PROD
+
+        TOKEN = "54bea8f0e339dc37a6ba3f98db6da3f9"
+        RETRY_MAX_TIME = 3
+        kconf_path = "ad.adPsModelValidate." + btq_option.btq_prefix
+        msg = f"update {kconf_path} ok"
+
+        slot_key_num = sparse_save_result.info_by_slot
+        new_val = {"dense_version": btq_option.model_time_ms,
+                   "sparse_version": btq_option.btq_emb_version,
+                   "slot_key_num": slot_key_num}
+
+        retry_time = 0
+        while (retry_time < RETRY_MAX_TIME):
+            try:
+                kc = KConf(kconf_path)
+                old_val = kc.get_value()
+                if old_val is None:
+                    msg = "kconf %s not exist" % (kconf_path)
+                    return msg
+                resp = kc.update_config(
+                    TOKEN, data=json.dumps(new_val), stage=STAGE_PROD)
+                return msg
+            except Exception as ex:
+                msg = f"update kconf {kconf_path} fail, except: {ex}"
+                retry_time += 1
+                if (retry_time == RETRY_MAX_TIME):
+                    return msg
+
+    def btq_save(self, btq_save_option=None):
+        self.perf_status.set("btq_save")
+        dense_save_result = core.BtqSaveResult()
+        sparse_save_result = core.BtqSaveResult()
+
+        if Config().load_option.cold_start == True:
+            logger.info("冷启动模式下，不会发送 BTQ")
+            return dense_save_result, sparse_save_result
+
+        if not self.kai_base.pass_stability_check():
+            logger.info("未通过稳定性检查，不会发送BTQ")
+            return dense_save_result, sparse_save_result
+
+        if btq_save_option is None:
+            btq_save_option = Config().btq_save_option
+        assert btq_save_option is not None
+
+        if btq_save_option.btq_prefix == "":
+            logger.info("未配置BTQ前缀，不会发送BTQ")
+            return dense_save_result, sparse_save_result
+
+        self.check_ad_btq_config(btq_save_option)
+
+        pass_info_notify(btq_save_option.serialize())
+
+        btq_save_option_c_struct = None
+        from ..config.save_option import BtqSaveOption
+        assert isinstance(btq_save_option, BtqSaveOption)
+        btq_save_option.valid_check()
+        btq_save_option_c_struct = btq_save_option.get_c_struct_copy()
+
+        pass_result = Collector().get_collection(GraphKeys.PASS_CONTEXT, "pass_result")
+        # dense_version
+        model_time_ms = 0
+        if btq_save_option_c_struct.dnn_distribution_mode == "by_sign":
+            # 社科：单位s
+            if Config().runtime_option.mode == "web_server":
+                btq_save_option_c_struct.model_time_ms = round(time.time())
+            else:
+                btq_save_option_c_struct.model_time_ms = round(pass_result.max_timestamp / 1000)
+                btq_save_option_c_struct.model_time_ms = round(time.time())
+            model_time_ms = btq_save_option_c_struct.model_time_ms * 1000
+        elif btq_save_option_c_struct.dnn_distribution_mode == "by_slot":
+            # 商业化：单位ms
+            btq_save_option_c_struct.model_time_ms = round(time.time() * 1000)
+            model_time_ms = btq_save_option_c_struct.model_time_ms
+        else:
+            raise ValueError(
+                f"不支持的dnn_distribution_mode: {btq_save_option_c_struct.dnn_distribution_mode}")
+        # sparse_version
+        btq_save_option_c_struct.btq_emb_version = round(time.time())
+
+        if self.kai_base.is_chief_worker() and btq_save_option_c_struct.use_btq_save:
+            logger.info("Btq send begin, send_mode: {}, btq_prefix: {}, dnn.version: {}({}) {}".format(
+                btq_save_option_c_struct.btq_save_mode, btq_save_option_c_struct.btq_prefix,
+                btq_save_option_c_struct.model_time_ms,
+                timestamp_to_timestr(model_time_ms, time_str_mode="%Y-%m-%d %H:%M:%S"),
+                "web_server模式总是发送当前时刻" if Config().runtime_option.mode == "web_server" else ""))
+            perf = PerfStream("perf.pass")
+            begin_time = time.time()
+            if self.update_dense_locally:
+                dense, extra = self.kai_base._pull_tensorflow_dense()
+            else:
+                dense, extra = self.kai_base.pull_dense_init()
+            dense_save_result = self.kai_base._runtime.btq_save_dense(
+                btq_save_option_c_struct, dense)
+            perf.next("python_btq_save_dense")
+
+            sparse_save_result = self.kai_base._runtime.btq_save_sparse(
+                btq_save_option_c_struct)
+            perf.next("python_btq_save_sparse")
+            end_time = time.time()
+
+            logger.info("btq save {} dense result: total_send_key {}".format(
+                btq_save_option_c_struct.btq_save_mode, dense_save_result.total_sent_keynum))
+            logger.info("btq save {} sparse result: total_send_key {}".format(
+                btq_save_option_c_struct.btq_save_mode, sparse_save_result.total_sent_keynum))
+            logger.info(
+                "btq save {} sparse result detail: {}".format(btq_save_option_c_struct.btq_save_mode, sparse_save_result.serialize()))
+            pass_info_notify({
+                "btq_save_result": {
+                    "mode": btq_save_option_c_struct.btq_save_mode,
+                    "model_time_ms": pass_result.max_timestamp,
+                    "btq_save_using_time": end_time - begin_time,
+                    "dense_total_key": dense_save_result.total_sent_keynum,
+                    "sparse_total_key": sparse_save_result.total_sent_keynum,
+                }
+            })
+
+            # 向模型中心上报 BTQ 发送版本信息
+            if Config().runtime_option.enable_report_model_hub:
+                from kai.tensorflow.base.info_reporter import InfoReporter
+                InfoReporter().report_send_btq_info(
+                    btq_topic_prefix=btq_save_option_c_struct.btq_prefix,
+                    slot_key_num=sparse_save_result.info_by_slot,
+                    dense_version=btq_save_option_c_struct.model_time_ms,
+                    sparse_version=btq_save_option_c_struct.btq_emb_version,
+                    create_type="INFER_SYNC_DELTA" if btq_save_option_c_struct.btq_save_mode == "delta" else "INFER_SYNC_BASE",
+                )
+
+            if btq_save_option_c_struct.enable_moss_validation and btq_save_option_c_struct.embedding_distribution_mode.lower() == "by_slot":
+                report_msg = self.report_btq_info(
+                    btq_save_option_c_struct, sparse_save_result)
+                logger.info(f"用于Moss线上做Validator的BTQ写入信息上报结果 {report_msg}")
+        return dense_save_result, sparse_save_result
+
+    def gen_btq_shard_from_kconf(self, btq_prefix):
+        assert len(btq_prefix) > 0
+        from kconf.get_config import get_json_config
+        try:
+            kconf_btq_shard = get_json_config(
+                "ad.adPsModelEmpShards." + btq_prefix)
+        except BaseException:
+            raise ValueError()(
+                "无法从Kconf中获取您的btq分shard信息，请检查您的BTQ Topic 前缀是否正确填写，若没有申请，请置为空 或 启动时选择不打 BTQ")
+        res = {}
+        for key, infos in kconf_btq_shard.items():
+            if key != "local":
+                if str(key).isdigit():
+                    int(key)
+                else:
+                    #print('not int and not local, key: %s, value: %s' % (key, str(infos)))
+                    continue
+            topic = btq_prefix + "_queue_" + key
+            for info in infos:
+                slot = int(info['remap_slot'])
+                res[slot] = topic
+        dnn_topic = btq_prefix + "_dnn_model"
+        return res, dnn_topic
+
+    def check_ad_btq_config(self, btq_save_option):
+        """
+        在运行过程中，对商业化的 BTQ 发送配置进行检查
+        若btq_topic_by_slot 与 dnn_topic 未配置，需要尝试从 moss 获取
+        """
+
+        if btq_save_option.embedding_distribution_mode.lower() == "by_slot":
+            if len(btq_save_option.btq_topic_by_slot) == 0:
+                logger.info(
+                    "btq_save_option.btq_topic_by_slot 未配置，尝试从 moss 获取")
+                btq_topic_by_slot, dnn_topic = self.gen_btq_shard_from_kconf(
+                    btq_save_option.btq_prefix)
+                with _enable_setting_guard():
+                    btq_save_option.btq_topic_by_slot = btq_topic_by_slot
+                    if btq_save_option.dnn_distribution_mode.lower() == "by_slot":
+                        btq_save_option.dnn_topic = dnn_topic
+                logger.info("BTQ Save Option: {}".format(btq_save_option))
+                from kai.tensorflow.base.info_reporter import InfoReporter
+                InfoReporter().report_config_info()
